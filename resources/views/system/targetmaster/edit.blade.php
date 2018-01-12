@@ -135,7 +135,7 @@
                         <tr align="center" id="itemHeader">
                             <th style="text-align:center;" class="cssBg">Action</th>
                             <th style="width: 150px; text-align:center;" class="cssBg"><b>Item Group</b></th>
-                            <th style="width: 80px; text-align:center;" bgcolor="#b6dde8"><b>Value</b></th>
+                            <th style="width: 80px; text-align:center;" bgcolor="#b6dde8"><b>Month</b></th>
                             <th style="text-align:center;" height="30" class="cssBg"><b>{{ $MonthQ[0] }}</b></th>
                             <th style="text-align:center;" height="30" class="cssBg"><b>{{ $MonthQ[1] }}</b></th>
                             <th style="text-align:center;" height="30" class="cssBg"><b>{{ $MonthQ[2] }}</b></th>

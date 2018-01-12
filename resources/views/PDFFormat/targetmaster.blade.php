@@ -21,7 +21,6 @@ $objs = session('data');
             border-style: hidden;
         }
         th, td {
-            text-align: center;
             font-size: 11px;
         }
         .page-break {
@@ -73,7 +72,13 @@ $objs = session('data');
         </tr> 
         <tr >
             <td class="head" height="15" style="text-align: left;font-size: 16px;"><b>Yuasa Battery (Thailand) Public Company Limited</b></td>
-            <td class="head" height="15" style="text-align: right;font-size: 16px;"><b>Sys Date:  {{ date("d/m/Y") }}</b></td>
+            <td class="head" height="15" style="text-align: right;font-size: 16px;">
+                <b>{{$objs->name}} 
+                    @foreach ($objs->roles->pluck('name') as $role)
+                        - {{ $role }}</span>
+                    @endforeach
+                </b>
+            </td>
         </tr> 
     </table> 
     
@@ -98,7 +103,7 @@ $objs = session('data');
     <table>
         <tr>
             <th bgcolor="#d6d6c2" style="text-align: center;"><b>Item Group</b></th>
-            <th bgcolor="#c9e6ee" style="text-align: center;"><b>Value</b></th>            
+            <th bgcolor="#d6d6c2" style="text-align: center;"><b>Month</b></th>            
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>January</b></th>
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>February</b></th>
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>March</b></th>
@@ -111,7 +116,7 @@ $objs = session('data');
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>October</b></th>
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>November</b></th>
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>December</b></th>
-            <th height="30" bgcolor="#b8dc70" style="text-align: center;"><b>Total</b></th>
+            <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>Total</b></th>
         </tr>  
             @php 
                 $SumAmt01 = 0;
@@ -219,14 +224,14 @@ $objs = session('data');
                 $Unit11 = intval($newUnit11); 
                 $Unit12 = intval($newUnit12);
             @endphp
-            <tr style="text-align: center;">
-                <td rowspan="2" style="text-align:center; vertical-align:middle;" bgcolor="#ffff99">
+            <tr>
+                <td rowspan="2" style="text-align:center; vertical-align:middle;" bgcolor="#ffffcc">
                     <b>{{$Item->ItemGroup}}</b> 
                 </td>
-                <td bgcolor="#c9e6ee" style="text-align: center;  font-size:9px;">
+                <td bgcolor="#d6d6c2" style="text-align: center;  font-size:9px;">
                     <b>Amount</b>
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt01 }}
                     @php 
                         if(count($Item->Amt01) == 1)
@@ -235,7 +240,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt02 }}
                     @php 
                         if(count($Item->Amt02) == 1)
@@ -244,7 +249,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt03 }}
                     @php 
                         if(count($Item->Amt03) == 1)
@@ -253,7 +258,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt04 }}
                     @php 
                         if(count($Item->Amt04) == 1)
@@ -262,7 +267,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt05 }}
                     @php 
                         if(count($Item->Amt05) == 1)
@@ -271,7 +276,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt06 }}
                     @php 
                         if(count($Item->Amt06) == 1)
@@ -280,7 +285,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt07 }}
                     @php 
                         if(count($Item->Amt07) == 1)
@@ -289,7 +294,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt08 }}
                     @php 
                         if(count($Item->Amt08) == 1)
@@ -298,7 +303,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt09 }}
                     @php 
                         if(count($Item->Amt09) == 1)
@@ -307,7 +312,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt10 }}
                     @php 
                         if(count($Item->Amt10) == 1)
@@ -316,7 +321,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt11 }}
                     @php 
                         if(count($Item->Amt01) == 1)
@@ -325,7 +330,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Amt12 }}
                     @php 
                         if(count($Item->Amt12) == 1)
@@ -334,15 +339,15 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#b8dc70" style="font-size: 10px;">
+                <td bgcolor="#fde9d9" style="font-size: 10px; text-align: right;">
                     {{ number_format($AmtQ1 + $AmtQ2 + $AmtQ3 + $AmtQ4,2) }}
                 </td>
             </tr>
             <tr >    
-                <td bgcolor="#c9e6ee" style="text-align: center; font-size:9px;">
+                <td bgcolor="#d6d6c2" style="text-align: center; font-size:9px;">
                     <b>Unit</b>
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit01 }}
                     @php 
                         if(count($Item->Unit01) == 1)
@@ -351,7 +356,7 @@ $objs = session('data');
                         }  
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit02 }}
                     @php 
                         if(count($Item->Unit02) == 1)
@@ -360,7 +365,7 @@ $objs = session('data');
                         }  
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit03 }}
                     @php 
                         if(count($Item->Unit03) == 1)
@@ -369,7 +374,7 @@ $objs = session('data');
                         } 
                     @endphp 
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit04 }}
                     @php 
                         if(count($Item->Unit04) == 1)
@@ -378,7 +383,7 @@ $objs = session('data');
                         }  
                     @endphp
                 </td>
-                <td bgcolor="#ffff99" style="font-size: 10px;">
+                <td bgcolor="#ffffcc" style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit05 }}
                     @php 
                         if(count($Item->Unit05) == 1)
@@ -387,7 +392,7 @@ $objs = session('data');
                         }  
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit06 }}
                     @php 
                         if(count($Item->Unit06) == 1)
@@ -396,7 +401,7 @@ $objs = session('data');
                         }
                     @endphp 
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit07 }}
                     @php 
                         if(count($Item->Unit07) == 1)
@@ -405,7 +410,7 @@ $objs = session('data');
                         } 
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit08 }}
                     @php 
                         if(count($Item->Unit08) == 1)
@@ -414,7 +419,7 @@ $objs = session('data');
                         } 
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit09 }}
                     @php 
                         if(count($Item->Unit09) == 1)
@@ -423,7 +428,7 @@ $objs = session('data');
                         } 
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit10 }}
                     @php 
                         if(count($Item->Unit10) == 1)
@@ -432,7 +437,7 @@ $objs = session('data');
                         } 
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit11 }}
                     @php 
                         if(count($Item->Unit11) == 1)
@@ -441,7 +446,7 @@ $objs = session('data');
                         } 
                     @endphp
                 </td>
-                <td bgcolor="#ffff99"  style="font-size: 10px;">
+                <td bgcolor="#ffffcc"  style="font-size: 10px; text-align: right;">
                     {{ $Item->Unit12 }}
                     @php 
                         if(count($Item->Unit12) == 1)
@@ -450,99 +455,99 @@ $objs = session('data');
                         }
                     @endphp 
                 </td>
-                <td bgcolor="#b8dc70"  style="font-size: 10px;">                   
+                <td bgcolor="#fde9d9"  style="font-size: 10px; text-align: right;">                   
                     {{ number_format($UnitQ1 + $UnitQ2 + $UnitQ3 + $UnitQ4) }}
                 </td>
             </tr>
         @endforeach
         <tr bgcolor="#fde9d9">        
-            <td rowspan="2" style="vertical-align:middle; text-align: center;">
+            <td bgcolor="#d6d6c2" rowspan="2" style="vertical-align:middle; text-align: center;">
                 <b>Total</b>
             </td>       
-            <td bgcolor="#c9e6ee" style=" font-size:9px;">
+            <td bgcolor="#d6d6c2" style=" font-size:9px;">
                 <b>Amount</b>
             </td>    
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt01,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt02,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt03,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt04,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt05,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt06,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt07,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt08,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt09,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt10,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt11,2) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                     {{ number_format($SumAmt12,2) }}
             </td>
-            <td bgcolor="#b8dc70" style="font-size: 10px;"> 
+            <td bgcolor="#d9ffcc" style="font-size: 10px; text-align: right;"> 
                     {{ number_format($SumAmt01+$SumAmt02+$SumAmt03+$SumAmt04+$SumAmt05+$SumAmt06+$SumAmt07+$SumAmt08+$SumAmt09+$SumAmt10+$SumAmt11+$SumAmt12,2) }}
             </td>
         </tr>
         <tr bgcolor="#fde9d9">      
-            <td bgcolor="#c9e6ee" style=" font-size:9px;">
+            <td bgcolor="#d6d6c2" style=" font-size:9px;">
                 <b>Unit</b>
             </td>       
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit01) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit02) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit03) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit04) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit05) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit06) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit07) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit08) }}
             </td>
-            <td style="font-size: 10px;">
+            <td style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit09) }}
             </td>
-            <td style="font-size: 10px;">                          
+            <td style="font-size: 10px; text-align: right;">                          
                 {{ number_format($SumUnit10) }}    
             </td>
-            <td style="font-size: 10px;">                         
+            <td style="font-size: 10px; text-align: right;">                         
                 {{ number_format($SumUnit11) }}  
             </td>
-            <td style="font-size: 10px;">                           
+            <td style="font-size: 10px; text-align: right;">                           
                 {{ number_format($SumUnit12) }}        
             </td>
-            <td bgcolor="#b8dc70" style="font-size: 10px;">
+            <td bgcolor="#d9ffcc" style="font-size: 10px; text-align: right;">
                 {{ number_format($SumUnit01+$SumUnit02+$SumUnit03+$SumUnit04+$SumUnit05+$SumUnit06+$SumUnit07+$SumUnit08+$SumUnit09+$SumUnit10+$SumUnit11+$SumUnit12) }}
             </td>
         </tr>
@@ -553,12 +558,12 @@ $objs = session('data');
     <table>
         <tr style="text-align: center;font-size: 8px;">
             <th bgcolor="#d6d6c2" style="text-align: center;"><b>Item Group</b></th> style="text-align: center;" font-size:9px;"
-            <th bgcolor="#c9e6ee" style="text-align: center;"><b>Value</b></th>        
+            <th bgcolor="#d6d6c2" style="text-align: center;"><b>Quater</b></th>        
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>Q1</b></th>
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>Q2</b></th>
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>Q3</b></th>
             <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>Q4</b></th>
-            <th height="30" bgcolor="#b8dc70" style="text-align: center;"><b>Total</b></th>
+            <th height="30" bgcolor="#d6d6c2" style="text-align: center;"><b>Total</b></th>
         </tr>  
         @foreach ($TargetD as $Item)
             @php
@@ -584,13 +589,13 @@ $objs = session('data');
                 $UnitQ4 = intval($newUnitQ4); 
             @endphp
             <tr style="text-align: center;">
-                <td rowspan="2" style="text-align:center; vertical-align:middle;" bgcolor="#ffff99">
+                <td rowspan="2" style="text-align:center; vertical-align:middle;" bgcolor="#ffffcc">
                     <b>{{$Item->ItemGroup}}</b> 
                 </td>
-                <td bgcolor="#c9e6ee">
+                <td bgcolor="#d6d6c2">
                     <b>Amount</b>
                 </td>
-                <td bgcolor="#ffff99">
+                <td bgcolor="#ffffcc" style="text-align: right;">
                     {{ number_format($AmtQ1,2) }}
                     @php 
                         if(count($Item->AmtQ1) == 1)
@@ -599,7 +604,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99">
+                <td bgcolor="#ffffcc" style="text-align: right;">
                     {{ number_format($AmtQ2,2) }}
                     @php 
                         if(count($Item->AmtQ2) == 1)
@@ -608,7 +613,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99">
+                <td bgcolor="#ffffcc" style="text-align: right;">
                     {{ number_format($AmtQ3,2) }}
                     @php 
                         if(count($Item->AmtQ3) == 1)
@@ -617,7 +622,7 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#ffff99">
+                <td bgcolor="#ffffcc" style="text-align: right;">
                     {{ number_format($AmtQ4,2) }}
                     @php 
                         if(count($Item->AmtQ4) == 1)
@@ -626,15 +631,15 @@ $objs = session('data');
                         }                        
                     @endphp
                 </td>
-                <td bgcolor="#b8dc70">
+                <td bgcolor="#fde9d9" style="text-align: right;">
                     {{ number_format($AmtQ1 + $AmtQ2 + $AmtQ3 + $AmtQ4,2) }}
                 </td>
             </tr>
             <tr >    
-                <td bgcolor="#c9e6ee">
+                <td bgcolor="#d6d6c2">
                     <b>Unit</b>
                 </td>
-                <td bgcolor="#ffff99">
+                <td bgcolor="#ffffcc" style="text-align: right;">
                     {{ $Item->UnitQ1 }}
                     @php 
                         if(count($Item->UnitQ1) == 1)
@@ -643,7 +648,7 @@ $objs = session('data');
                         }  
                     @endphp
                 </td>
-                <td bgcolor="#ffff99">
+                <td bgcolor="#ffffcc" style="text-align: right;">
                     {{ $Item->UnitQ2 }}
                     @php 
                         if(count($Item->UnitQ2) == 1)
@@ -652,7 +657,7 @@ $objs = session('data');
                         }  
                     @endphp
                 </td>
-                <td bgcolor="#ffff99">
+                <td bgcolor="#ffffcc" style="text-align: right;">
                     {{ $Item->UnitQ3 }}
                     @php 
                     if(count($Item->UnitQ3) == 1)
@@ -661,7 +666,7 @@ $objs = session('data');
                         }
                     @endphp  
                 </td>
-                <td bgcolor="#ffff99">
+                <td bgcolor="#ffffcc" style="text-align: right;">
                     {{ $Item->UnitQ4 }}
                     @php 
                         if(count($Item->UnitQ4) == 1)
@@ -670,51 +675,51 @@ $objs = session('data');
                         }  
                     @endphp
                 </td>
-                <td bgcolor="#b8dc70">                   
+                <td bgcolor="#fde9d9" style="text-align: right;">                   
                     {{ number_format($UnitQ1 + $UnitQ2 + $UnitQ3 + $UnitQ4) }}
                 </td>
             </tr>
         @endforeach
-        <tr bgcolor="#fde9d9">        
-            <td rowspan="2" style="vertical-align:middle; text-align: center; ">
+        <tr>        
+            <td bgcolor="#d6d6c2" rowspan="2" style="vertical-align:middle; text-align: center; ">
                 <b>Total</b>
             </td>       
-            <td bgcolor="#c9e6ee">
+            <td bgcolor="#d6d6c2">
                 <b>Amount</b>
             </td>    
-            <td bgcolor="#fde9d9">                        
+            <td bgcolor="#fde9d9" style="text-align: right;">                        
                     {{ number_format($SumAmtQ1,2) }}
             </td>
-            <td bgcolor="#fde9d9">                   
+            <td bgcolor="#fde9d9" style="text-align: right;">                   
                     {{ number_format($SumAmtQ2,2) }}
             </td>
-            <td bgcolor="#fde9d9">                
+            <td bgcolor="#fde9d9" style="text-align: right;">                
                     {{ number_format($SumAmtQ2,2) }}
             </td>
-            <td bgcolor="#fde9d9">          
+            <td bgcolor="#fde9d9" style="text-align: right;">          
                     {{ number_format($SumAmtQ4,2) }}
             </td>
-            <td bgcolor="#b8dc70"> 
+            <td bgcolor="#d9ffcc" style="text-align: right;"> 
                     {{ number_format($SumAmt01+$SumAmt02+$SumAmt03+$SumAmt04+$SumAmt05+$SumAmt06+$SumAmt07+$SumAmt08+$SumAmt09+$SumAmt10+$SumAmt11+$SumAmt12,2) }}
             </td>
         </tr>
         <tr>      
-            <td bgcolor="#c9e6ee">
+            <td bgcolor="#d6d6c2">
                 <b>Unit</b>
             </td>       
-            <td bgcolor="#fde9d9">
+            <td bgcolor="#fde9d9" style="text-align: right;">
                 {{ number_format($SumUnitQ1)  }} 
             </td>
-            <td bgcolor="#fde9d9">
+            <td bgcolor="#fde9d9" style="text-align: right;">
                 {{ number_format($SumUnitQ2)  }}  
             </td>
-            <td bgcolor="#fde9d9">
+            <td bgcolor="#fde9d9" style="text-align: right;">
                 {{ number_format($SumUnitQ3)  }}  
             </td>
-            <td bgcolor="#fde9d9">
+            <td bgcolor="#fde9d9" style="text-align: right;">
                 {{ number_format($SumUnitQ4) }}  
             </td>
-            <td bgcolor="#b8dc70">
+            <td bgcolor="#d9ffcc" style="text-align: right;">
                 {{ number_format($SumUnitQ1 + $SumUnitQ2 + $SumUnitQ3 + $SumUnitQ4) }}  
             </td>
         </tr>
