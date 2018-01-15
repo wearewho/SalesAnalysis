@@ -56,10 +56,10 @@
                                     <b>Yuasa Battery (Thailand) Public Company Limited</b>
                                 </div>
                                 <div class="col-md-5" align="right">  
-                                    @php                      
-                                    $todate = date("d/m/Y", strtotime('-1 day'));
+                                    @php
+                                        $todate = date("d/m/Y", strtotime('-1 day'));
                                     @endphp
-                                    <b>  Data as of:  27/12/2018 </b>
+                                    <b>  Data as of:  {{ $todate }} </b>
                                     <br>
                                     <b>  Sys Date:  {{ date("d/m/Y") }} </b>
                                 </div>

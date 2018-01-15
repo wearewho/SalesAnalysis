@@ -78,7 +78,20 @@
                     <td id="Total_EB_Baht" style="font-weight: bold;" bgcolor="#c2efaa">&nbsp;</td>
                 </tr>
                 <tr style="text-align:center;" bgcolor="#ffd699">
-                    <td bgcolor="#b6dde8"><b>Other</b></td>
+                    <td bgcolor="#b6dde8"><b>Premium</b></td>
+                    <td id="REM_PR_Unit">&nbsp;</td>
+                    <td id="REM_PR_Baht">&nbsp;</td>
+                    <td id="MTD_PR_Unit">&nbsp;</td>
+                    <td id="MTD_PR_Baht">&nbsp;</td>
+                    <td id="SPD_PR_Unit">&nbsp;</td>
+                    <td id="SPD_PR_Baht">&nbsp;</td>
+                    <td id="ST_PR_Unit">&nbsp;</td>
+                    <td id="ST_PR_Baht">&nbsp;</td>
+                    <td id="Total_PR_Unit" style="font-weight: bold;" bgcolor="#c2efaa">&nbsp;</td>
+                    <td id="Total_PR_Baht" style="font-weight: bold;" bgcolor="#c2efaa">&nbsp;</td>
+                </tr>
+                <tr style="text-align:center;" bgcolor="#ffd699">
+                    <td bgcolor="#b6dde8"><b>Others</b></td>
                     <td id="REM_OT_Unit">&nbsp;</td>
                     <td id="REM_OT_Baht">&nbsp;</td>
                     <td id="MTD_OT_Unit">&nbsp;</td>

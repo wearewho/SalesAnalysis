@@ -48,13 +48,10 @@ class SAController extends Controller
 
     public function selectYSD(Request $request) {      
         
-        $strSQL = "SELECT * FROM ( select DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,Price,Total from YS17_Invoice union all select DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,Price,Total from YS17_Credit ) YS17 ";
+        $strSQL = "SELECT DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,UnitPrice,Total FROM YS_".$request->year." ";
           
         if($request->month != '13'){
-            $strSQL .= "WHERE DocMonth = '".$request->month."' AND DocYear = '".$request->year."' ";
-        }
-        else {
-            $strSQL .=  "WHERE DocYear = '".$request->year."' ";
+            $strSQL .= "WHERE DocMonth = '".$request->month."' ";
         }
         
         $result = DB::select($strSQL,[]);    
@@ -64,78 +61,46 @@ class SAController extends Controller
     public function selectDataTableYSD(Request $request) {        
           
         if($request->sort == 'Market'){
-            $queryItem = " SELECT ItemCode,Dscription,SUM(Quantity) As Quantity,SUM(Total) As Total
-                        FROM
-                        (
-                            select DocMonth,DocYear,SalesPersonGroup,ItemCode,Dscription,Quantity,Total
-                            from YS17_Invoice
-                            union all
-                            select DocMonth,DocYear,SalesPersonGroup,ItemCode,Dscription,Quantity,Total
-                            from YS17_Credit
-                        ) YS17   ";
+            $queryItem = " SELECT ItemCode,Dscription,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
 
                         if($request->month != '13'){
-                            $queryItem .= "WHERE DocMonth = '$request->month' AND DocYear = '$request->year' AND SalesPersonGroup = '$request->type' Group by ItemCode,Dscription  ";    
+                            $queryItem .= "WHERE DocMonth = '$request->month' AND SalesPersonGroup = '$request->type' Group by ItemCode,Dscription  ";    
                         }
                         else{
-                            $queryItem .= "WHERE DocYear = '$request->year' AND SalesPersonGroup = '$request->type' Group by ItemCode,Dscription  ";    
+                            $queryItem .= "WHERE SalesPersonGroup = '$request->type' Group by ItemCode,Dscription  ";    
                         }
                         
                         
-            $queryCust = " SELECT CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total 
-                        FROM
-                        (
-                            select DocMonth,DocYear,SalesPersonGroup,CustCode,CustName,Quantity,Total
-                            from YS17_Invoice
-                            union all
-                            select DocMonth,DocYear,SalesPersonGroup,CustCode,CustName,Quantity,Total
-                            from YS17_Credit
-                        ) YS17 ";
+            $queryCust = " SELECT CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
 
                         if($request->month != '13'){
-                            $queryCust .= "WHERE DocMonth = '$request->month' AND DocYear = '$request->year' AND SalesPersonGroup = '$request->type' Group by CustCode,CustName ";
+                            $queryCust .= "WHERE DocMonth = '$request->month' AND SalesPersonGroup = '$request->type' Group by CustCode,CustName ";
                         }
                         else{
-                            $queryCust .= "WHERE DocYear = '$request->year' AND SalesPersonGroup = '$request->type' Group by CustCode,CustName ";
+                            $queryCust .= "WHERE SalesPersonGroup = '$request->type' Group by CustCode,CustName ";
                         }
                         
 
         }
         else if($request->sort == 'Type') {
 
-            $queryItem = " SELECT ItemCode,Dscription,SUM(Quantity) As Quantity,SUM(Total) As Total
-                        FROM
-                        (
-                            select DocMonth,DocYear,ItemGroupName,ItemCode,Dscription,Quantity,Total
-                            from YS17_Invoice
-                            union all
-                            select DocMonth,DocYear,ItemGroupName,ItemCode,Dscription,Quantity,Total
-                            from YS17_Credit
-                        ) YS17  ";
+            $queryItem = " SELECT ItemCode,Dscription,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
 
                         if($request->month != '13'){
-                            $queryItem .= "WHERE DocMonth = '$request->month' AND DocYear = '$request->year' AND ItemGroupName = '$request->type' Group by ItemCode,Dscription  "; 
+                            $queryItem .= "WHERE DocMonth = '$request->month' AND ItemGroupName = '$request->type' Group by ItemCode,Dscription  "; 
                         }
                         else{
-                            $queryItem .= "WHERE DocYear = '$request->year' AND ItemGroupName = '$request->type' Group by ItemCode,Dscription  "; 
+                            $queryItem .= "WHERE ItemGroupName = '$request->type' Group by ItemCode,Dscription  "; 
                         }
                            
                         
-            $queryCust = " SELECT CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total 
-                        FROM
-                        (
-                            select DocMonth,DocYear,ItemGroupName,CustCode,CustName,Quantity,Total
-                            from YS17_Invoice
-                            union all
-                            select DocMonth,DocYear,ItemGroupName,CustCode,CustName,Quantity,Total
-                            from YS17_Credit
-                        ) YS17 ";
+            $queryCust = " SELECT CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
 
                         if($request->month != '13'){
-                            $queryCust .= "WHERE DocMonth = '$request->month' AND DocYear = '$request->year' AND ItemGroupName = '$request->type' Group by CustCode,CustName ";
+                            $queryCust .= "WHERE DocMonth = '$request->month' AND ItemGroupName = '$request->type' Group by CustCode,CustName ";
                         }
                         else{
-                            $queryCust .= "WHERE DocYear = '$request->year' AND ItemGroupName = '$request->type' Group by CustCode,CustName ";
+                            $queryCust .= "WHERE ItemGroupName = '$request->type' Group by CustCode,CustName ";
                         }
                         
         

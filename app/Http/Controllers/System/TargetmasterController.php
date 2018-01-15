@@ -257,7 +257,7 @@ class TargetmasterController extends Controller
         $Filename = "TM".$id.date("Ymd").".pdf";
         
         $pdf = PDF::loadView('PDFFormat.targetmaster', compact('TargetH', 'TargetD'))->setPaper('A4', 'landscape');
-        return $pdf->stream($Filename);
+        return $pdf->download($Filename);
   
       }
 }

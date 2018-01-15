@@ -31,14 +31,7 @@ class HomeController extends Controller
     public function index()
     {    
         $strSQL = "SELECT DocMonth,DocYear,SalesPersonGroup,Sum(Quantity) AS Quantity,Sum(Total) As Total 
-                    FROM
-                    (   select *
-                        from YS17_Invoice  
-                        union all
-                        select *
-                        from YS17_Credit
-                    ) YS17 
-                    Group by DocMonth,DocYear,SalesPersonGroup  ";
+                    FROM YS_2017 Group by DocMonth,DocYear,SalesPersonGroup  ";
 
         $result = DB::select($strSQL,[]); 
         return view('home', compact('result'));

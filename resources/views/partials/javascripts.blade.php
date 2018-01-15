@@ -78,7 +78,7 @@
                 .then((willDelete) => {
                 if (willDelete) {
                     callAjax($id,$path);                                
-                    //location.reload();                        
+                    location.reload();                        
                 } 
             });
     });

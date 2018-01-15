@@ -227,89 +227,109 @@ function calDisplay(month, year, data) {
     var REM_AB_Unit = 0,
         REM_MB_Unit = 0,
         REM_EB_Unit = 0,
-        REM_OT_Unit = 0;
+        REM_OT_Unit = 0,
+        REM_PR_Unit = 0;
     var MTD_AB_Unit = 0,
         MTD_MB_Unit = 0,
         MTD_EB_Unit = 0,
-        MTD_OT_Unit = 0;
+        MTD_OT_Unit = 0,
+        MTD_PR_Unit = 0;
     var SPD_AB_Unit = 0,
         SPD_MB_Unit = 0,
         SPD_EB_Unit = 0,
-        SPD_OT_Unit = 0;
+        SPD_OT_Unit = 0,
+        SPD_PR_Unit = 0;
     var ST_AB_Unit = 0,
         ST_MB_Unit = 0,
         ST_EB_Unit = 0,
-        ST_OT_Unit = 0;
+        ST_OT_Unit = 0,
+        ST_PR_Unit = 0;
     var REM_AB_Baht = 0,
         REM_MB_Baht = 0,
         REM_EB_Baht = 0,
-        REM_OT_Baht = 0;
+        REM_OT_Baht = 0,
+        REM_PR_Baht = 0;
     var MTD_AB_Baht = 0,
         MTD_MB_Baht = 0,
         MTD_EB_Baht = 0,
-        MTD_OT_Baht = 0;
+        MTD_OT_Baht = 0,
+        MTD_PR_Baht = 0;
     var SPD_AB_Baht = 0,
         SPD_MB_Baht = 0,
         SPD_EB_Baht = 0,
-        SPD_OT_Baht = 0;
+        SPD_OT_Baht = 0,
+        SPD_PR_Baht = 0;
     var ST_AB_Baht = 0,
         ST_MB_Baht = 0,
         ST_EB_Baht = 0,
-        ST_OT_Baht = 0;
+        ST_OT_Baht = 0,
+        ST_PR_Baht = 0;
 
     $.each(results, function() {
 
         if (this.SalesPersonGroup == 'REM' && this.ItemGroupName == 'Automotive Battery') {
-            REM_AB_Unit += parseInt(this.Quantity);
+            REM_AB_Unit += parseFloat(this.Quantity);
             REM_AB_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'REM' && this.ItemGroupName == 'Motorcycle Battery') {
-            REM_MB_Unit += parseInt(this.Quantity);
+            REM_MB_Unit += parseFloat(this.Quantity);
             REM_MB_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'REM' && this.ItemGroupName == 'Electric Battery') {
-            REM_EB_Unit += parseInt(this.Quantity);
+            REM_EB_Unit += parseFloat(this.Quantity);
             REM_EB_Baht += parseFloat(this.Total);
+        } else if (this.SalesPersonGroup == 'REM' && this.ItemGroupName == 'Premium') {
+            REM_PR_Unit += parseFloat(this.Quantity);
+            REM_PR_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'REM' && this.ItemGroupName == 'Others') {
-            REM_OT_Unit += parseInt(this.Quantity);
+            REM_OT_Unit += parseFloat(this.Quantity);
             REM_OT_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'MTD' && this.ItemGroupName == 'Automotive Battery') {
-            MTD_AB_Unit += parseInt(this.Quantity);
+            MTD_AB_Unit += parseFloat(this.Quantity);
             MTD_AB_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'MTD' && this.ItemGroupName == 'Motorcycle Battery') {
-            MTD_MB_Unit += parseInt(this.Quantity);
+            MTD_MB_Unit += parseFloat(this.Quantity);
             MTD_MB_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'MTD' && this.ItemGroupName == 'Electric Battery') {
-            MTD_EB_Unit += parseInt(this.Quantity);
+            MTD_EB_Unit += parseFloat(this.Quantity);
             MTD_EB_Baht += parseFloat(this.Total);
+        } else if (this.SalesPersonGroup == 'MTD' && this.ItemGroupName == 'Premium') {
+            MTD_PR_Unit += parseFloat(this.Quantity);
+            MTD_PR_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'MTD' && this.ItemGroupName == 'Others') {
-            MTD_OT_Unit += parseInt(this.Quantity);
+            MTD_OT_Unit += parseFloat(this.Quantity);
             MTD_OT_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'SPD' && this.ItemGroupName == 'Automotive Battery') {
-            SPD_AB_Unit += parseInt(this.Quantity);
+            SPD_AB_Unit += parseFloat(this.Quantity);
             SPD_AB_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'SPD' && this.ItemGroupName == 'Motorcycle Battery') {
-            SPD_MB_Unit += parseInt(this.Quantity);
+            SPD_MB_Unit += parseFloat(this.Quantity);
             SPD_MB_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'SPD' && this.ItemGroupName == 'Electric Battery') {
-            SPD_EB_Unit += parseInt(this.Quantity);
+            SPD_EB_Unit += parseFloat(this.Quantity);
             SPD_EB_Baht += parseFloat(this.Total);
+        } else if (this.SalesPersonGroup == 'SPD' && this.ItemGroupName == 'Premium') {
+            SPD_PR_Unit += parseFloat(this.Quantity);
+            SPD_PR_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'SPD' && this.ItemGroupName == 'Others') {
-            SPD_OT_Unit += parseInt(this.Quantity);
+            SPD_OT_Unit += parseFloat(this.Quantity);
             SPD_OT_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'ST' && this.ItemGroupName == 'Automotive Battery') {
-            ST_AB_Unit += parseInt(this.Quantity);
+            ST_AB_Unit += parseFloat(this.Quantity);
             ST_AB_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'ST' && this.ItemGroupName == 'Motorcycle Battery') {
-            ST_MB_Unit += parseInt(this.Quantity);
+            ST_MB_Unit += parseFloat(this.Quantity);
             ST_MB_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'ST' && this.ItemGroupName == 'Electric Battery') {
-            ST_EB_Unit += parseInt(this.Quantity);
+            ST_EB_Unit += parseFloat(this.Quantity);
             ST_EB_Baht += parseFloat(this.Total);
+        } else if (this.SalesPersonGroup == 'ST' && this.ItemGroupName == 'Premium') {
+            ST_PR_Unit += parseFloat(this.Quantity);
+            ST_PR_Baht += parseFloat(this.Total);
         } else if (this.SalesPersonGroup == 'ST' && this.ItemGroupName == 'Others') {
-            ST_OT_Unit += parseInt(this.Quantity);
+            ST_OT_Unit += parseFloat(this.Quantity);
             ST_OT_Baht += parseFloat(this.Total);
         }
 
-        totalUnit += parseInt(this.Quantity);
+        totalUnit += parseFloat(this.Quantity);
         totalBaht += parseFloat(this.Total);
     });
 
@@ -319,6 +339,8 @@ function calDisplay(month, year, data) {
     $('#REM_MB_Baht_' + month).html(accounting.formatMoney(REM_MB_Baht, "฿"));
     $('#REM_EB_Unit_' + month).html(accounting.formatNumber(REM_EB_Unit));
     $('#REM_EB_Baht_' + month).html(accounting.formatMoney(REM_EB_Baht, "฿"));
+    $('#REM_PR_Unit_' + month).html(accounting.formatNumber(REM_PR_Unit));
+    $('#REM_PR_Baht_' + month).html(accounting.formatMoney(REM_PR_Baht, "฿"));
     $('#REM_OT_Unit_' + month).html(accounting.formatNumber(REM_OT_Unit));
     $('#REM_OT_Baht_' + month).html(accounting.formatMoney(REM_OT_Baht, "฿"));
     $('#MTD_AB_Unit_' + month).html(accounting.formatNumber(MTD_AB_Unit));
@@ -327,6 +349,8 @@ function calDisplay(month, year, data) {
     $('#MTD_MB_Baht_' + month).html(accounting.formatMoney(MTD_MB_Baht, "฿"));
     $('#MTD_EB_Unit_' + month).html(accounting.formatNumber(MTD_EB_Unit));
     $('#MTD_EB_Baht_' + month).html(accounting.formatMoney(MTD_EB_Baht, "฿"));
+    $('#MTD_PR_Unit_' + month).html(accounting.formatNumber(MTD_PR_Unit));
+    $('#MTD_PR_Baht_' + month).html(accounting.formatMoney(MTD_PR_Baht, "฿"));
     $('#MTD_OT_Unit_' + month).html(accounting.formatNumber(MTD_OT_Unit));
     $('#MTD_OT_Baht_' + month).html(accounting.formatMoney(MTD_OT_Baht, "฿"));
     $('#SPD_AB_Unit_' + month).html(accounting.formatNumber(SPD_AB_Unit));
@@ -335,6 +359,8 @@ function calDisplay(month, year, data) {
     $('#SPD_MB_Baht_' + month).html(accounting.formatMoney(SPD_MB_Baht, "฿"));
     $('#SPD_EB_Unit_' + month).html(accounting.formatNumber(SPD_EB_Unit));
     $('#SPD_EB_Baht_' + month).html(accounting.formatMoney(SPD_EB_Baht, "฿"));
+    $('#SPD_PR_Unit_' + month).html(accounting.formatNumber(SPD_PR_Unit));
+    $('#SPD_PR_Baht_' + month).html(accounting.formatMoney(SPD_PR_Baht, "฿"));
     $('#SPD_OT_Unit_' + month).html(accounting.formatNumber(SPD_OT_Unit));
     $('#SPD_OT_Baht_' + month).html(accounting.formatMoney(SPD_OT_Baht, "฿"));
     $('#ST_AB_Unit_' + month).html(accounting.formatNumber(ST_AB_Unit));
@@ -343,6 +369,8 @@ function calDisplay(month, year, data) {
     $('#ST_MB_Baht_' + month).html(accounting.formatMoney(ST_MB_Baht, "฿"));
     $('#ST_EB_Unit_' + month).html(accounting.formatNumber(ST_EB_Unit));
     $('#ST_EB_Baht_' + month).html(accounting.formatMoney(ST_EB_Baht, "฿"));
+    $('#ST_PR_Unit_' + month).html(accounting.formatNumber(ST_PR_Unit));
+    $('#ST_PR_Baht_' + month).html(accounting.formatMoney(ST_PR_Baht, "฿"));
     $('#ST_OT_Unit_' + month).html(accounting.formatNumber(ST_OT_Unit));
     $('#ST_OT_Baht_' + month).html(accounting.formatMoney(ST_OT_Baht, "฿"));
 
@@ -355,6 +383,8 @@ function calDisplay(month, year, data) {
     var EBBahtResult = REM_EB_Baht + MTD_EB_Baht + SPD_EB_Baht + ST_EB_Baht;
     var OTUnitResult = REM_OT_Unit + MTD_OT_Unit + SPD_OT_Unit + ST_OT_Unit;
     var OTBahtResult = REM_OT_Baht + MTD_OT_Baht + SPD_OT_Baht + ST_OT_Baht;
+    var PRUnitResult = REM_PR_Unit + MTD_PR_Unit + SPD_PR_Unit + ST_PR_Unit;
+    var PRBahtResult = REM_PR_Baht + MTD_PR_Baht + SPD_PR_Baht + ST_PR_Baht;
     $('#Total_AB_Unit_' + month).html(accounting.formatNumber(ABUnitResult));
     $('#Total_AB_Baht_' + month).html(accounting.formatMoney(ABBahtResult, "฿"));
     $('#Total_MB_Unit_' + month).html(accounting.formatNumber(MBUnitResult));
@@ -363,16 +393,18 @@ function calDisplay(month, year, data) {
     $('#Total_EB_Baht_' + month).html(accounting.formatMoney(EBBahtResult, "฿"));
     $('#Total_OT_Unit_' + month).html(accounting.formatNumber(OTUnitResult));
     $('#Total_OT_Baht_' + month).html(accounting.formatMoney(OTBahtResult, "฿"));
+    $('#Total_PR_Unit_' + month).html(accounting.formatNumber(PRUnitResult));
+    $('#Total_PR_Baht_' + month).html(accounting.formatMoney(PRBahtResult, "฿"));
 
     //Total Bottom
-    var REMUnitResult = REM_AB_Unit + REM_MB_Unit + REM_EB_Unit + REM_OT_Unit;
-    var REMBahtResult = REM_AB_Baht + REM_MB_Baht + REM_EB_Baht + REM_OT_Baht;
-    var MTDUnitResult = MTD_AB_Unit + MTD_MB_Unit + MTD_EB_Unit + MTD_OT_Unit;
-    var MTDBahtResult = MTD_AB_Baht + MTD_MB_Baht + MTD_EB_Baht + MTD_OT_Baht;
-    var SPDUnitResult = SPD_AB_Unit + SPD_MB_Unit + SPD_EB_Unit + SPD_OT_Unit;
-    var SPDBahtResult = SPD_AB_Baht + SPD_MB_Baht + SPD_EB_Baht + SPD_OT_Baht;
-    var STUnitResult = ST_AB_Unit + ST_MB_Unit + ST_EB_Unit + ST_OT_Unit;
-    var STBahtResult = ST_AB_Baht + ST_MB_Baht + ST_EB_Baht + ST_OT_Baht;
+    var REMUnitResult = REM_AB_Unit + REM_MB_Unit + REM_EB_Unit + REM_PR_Unit + REM_OT_Unit;
+    var REMBahtResult = REM_AB_Baht + REM_MB_Baht + REM_EB_Baht + REM_PR_Baht + REM_OT_Baht;
+    var MTDUnitResult = MTD_AB_Unit + MTD_MB_Unit + MTD_EB_Unit + MTD_PR_Unit + MTD_OT_Unit;
+    var MTDBahtResult = MTD_AB_Baht + MTD_MB_Baht + MTD_EB_Baht + MTD_PR_Baht + MTD_OT_Baht;
+    var SPDUnitResult = SPD_AB_Unit + SPD_MB_Unit + SPD_EB_Unit + SPD_PR_Unit + SPD_OT_Unit;
+    var SPDBahtResult = SPD_AB_Baht + SPD_MB_Baht + SPD_EB_Baht + SPD_PR_Baht + SPD_OT_Baht;
+    var STUnitResult = ST_AB_Unit + ST_MB_Unit + ST_EB_Unit + ST_PR_Unit + ST_OT_Unit;
+    var STBahtResult = ST_AB_Baht + ST_MB_Baht + ST_EB_Baht + ST_PR_Baht + ST_OT_Unit;
     $('#REM_Total_Unit_' + month).html(accounting.formatNumber(REMUnitResult));
     $('#REM_Total_Baht_' + month).html(accounting.formatMoney(REMBahtResult, "฿"));
     $('#MTD_Total_Unit_' + month).html(accounting.formatNumber(MTDUnitResult));
@@ -394,24 +426,24 @@ function calDisplay(month, year, data) {
         $('#pieSection').css("display", "block");
 
         //Cal Pie Charts
-        calPie(month, year, data, ABUnitResult, ABBahtResult, MBUnitResult, MBBahtResult, EBUnitResult, EBBahtResult, OTUnitResult, OTBahtResult,
+        calPie(month, year, data, ABUnitResult, ABBahtResult, MBUnitResult, MBBahtResult, EBUnitResult, EBBahtResult, OTUnitResult, OTBahtResult, PRUnitResult, PRBahtResult,
             REMUnitResult, REMBahtResult, MTDUnitResult, MTDBahtResult, SPDUnitResult, SPDBahtResult, STUnitResult, STBahtResult);
     }
 
 }
 
-function calPie(month, year, data, ABUnitResult, ABBahtResult, MBUnitResult, MBBahtResult, EBUnitResult, EBBahtResult, OTUnitResult, OTBahtResult,
+function calPie(month, year, data, ABUnitResult, ABBahtResult, MBUnitResult, MBBahtResult, EBUnitResult, EBBahtResult, OTUnitResult, OTBahtResult, PRUnitResult, PRBahtResult,
     REMUnitResult, REMBahtResult, MTDUnitResult, MTDBahtResult, SPDUnitResult, SPDBahtResult, STUnitResult, STBahtResult) {
 
     var BMarket = 0,
         UMarket = 0,
         BType = 0,
         UType = 0;
-    var BPerREM, BPerMTD, BPerSPD, BPerST, UPerREM, UPerMTD, UPerSPD, UPerST, BPerAB, BPerMB, BPerEB, BPerOT, UPerAB, UPerMB, UPerEB, UPerOT
+    var BPerREM, BPerMTD, BPerSPD, BPerST, UPerREM, UPerMTD, UPerSPD, UPerST, BPerAB, BPerMB, BPerEB, BPerOT, BPerPR, UPerAB, UPerMB, UPerEB, UPerOT, UPerPR
     BMarket = REMBahtResult + MTDBahtResult + SPDBahtResult + STBahtResult;
     UMarket = REMUnitResult + MTDUnitResult + SPDUnitResult + STUnitResult;
-    BType = ABBahtResult + MBBahtResult + EBBahtResult + OTBahtResult;
-    UType = ABUnitResult + MBUnitResult + EBUnitResult + OTUnitResult;
+    BType = ABBahtResult + MBBahtResult + EBBahtResult + OTBahtResult + PRBahtResult;
+    UType = ABUnitResult + MBUnitResult + EBUnitResult + OTUnitResult + PRUnitResult;
 
     if (BMarket == 0) {
         BPerREM = 0;
@@ -444,12 +476,14 @@ function calPie(month, year, data, ABUnitResult, ABBahtResult, MBUnitResult, MBB
         BPerMB = 0;
         BPerEB = 0;
         BPerOT = 0;
+        BPerPR = 0;
     } else {
         BPerAB = (ABBahtResult / BType) * 100;
         BPerMB = (MBBahtResult / BType) * 100;
         BPerEB = (EBBahtResult / BType) * 100;
         BPerOT = (OTBahtResult / BType) * 100;
-        BahtType(month, year, BPerAB, BPerMB, BPerEB, BPerOT, ABBahtResult, MBBahtResult, EBBahtResult, OTBahtResult);
+        BPerPR = (PRBahtResult / BType) * 100;
+        BahtType(month, year, BPerAB, BPerMB, BPerEB, BPerOT, BPerPR, ABBahtResult, MBBahtResult, EBBahtResult, OTBahtResult, PRBahtResult);
     }
 
     if (UType == 0) {
@@ -457,12 +491,14 @@ function calPie(month, year, data, ABUnitResult, ABBahtResult, MBUnitResult, MBB
         UPerMB = 0;
         UPerEB = 0;
         UPerOT = 0;
+        UPerPR = 0;
     } else {
         UPerAB = (ABUnitResult / UType) * 100;
         UPerMB = (MBUnitResult / UType) * 100;
         UPerEB = (EBUnitResult / UType) * 100;
         UPerOT = (OTUnitResult / UType) * 100;
-        UnitType(month, year, UPerAB, UPerMB, UPerEB, UPerOT, ABUnitResult, MBUnitResult, EBUnitResult, OTUnitResult);
+        UPerPR = (PRUnitResult / UType) * 100;
+        UnitType(month, year, UPerAB, UPerMB, UPerEB, UPerOT, UPerPR, ABUnitResult, MBUnitResult, EBUnitResult, OTUnitResult, PRUnitResult);
     }
 
 }
@@ -612,7 +648,7 @@ function UnitMarket(month, year, UPerREM, UPerMTD, UPerSPD, UPerST, REMUnitResul
     })
 }
 
-function BahtType(month, year, BPerAB, BPerMB, BPerEB, BPerOT, ABBahtResult, MBBahtResult, EBBahtResult, OTBahtResult) {
+function BahtType(month, year, BPerAB, BPerMB, BPerEB, BPerOT, BPerPR, ABBahtResult, MBBahtResult, EBBahtResult, OTBahtResult, PRBahtResult) {
     // Create the chart
     $('#container3_' + month).highcharts({
         chart: {
@@ -627,7 +663,7 @@ function BahtType(month, year, BPerAB, BPerMB, BPerEB, BPerOT, ABBahtResult, MBB
             text: 'Baht'
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b><br>Total: <b>{point.value}</b>'
+            pointFormat: '{series.name}: <b>{point.percentage:.2f}%</b><br>Total: <b>{point.value}</b>'
         },
         plotOptions: {
             pie: {
@@ -672,6 +708,12 @@ function BahtType(month, year, BPerAB, BPerMB, BPerEB, BPerOT, ABBahtResult, MBB
                     value: accounting.formatMoney(EBBahtResult, "฿")
                 },
                 {
+                    name: 'Premium',
+                    code: 'Premium',
+                    y: BPerPR,
+                    value: accounting.formatMoney(PRBahtResult, "฿")
+                },
+                {
                     name: 'Others',
                     code: 'Others',
                     y: BPerOT,
@@ -682,7 +724,7 @@ function BahtType(month, year, BPerAB, BPerMB, BPerEB, BPerOT, ABBahtResult, MBB
     })
 }
 
-function UnitType(month, year, UPerAB, UPerMB, UPerEB, UPerOT, ABUnitResult, MBUnitResult, EBUnitResult, OTUnitResult) {
+function UnitType(month, year, UPerAB, UPerMB, UPerEB, UPerOT, UPerPR, ABUnitResult, MBUnitResult, EBUnitResult, OTUnitResult, PRUnitResult) {
     // Create the chart
     $('#container4_' + month).highcharts({
         chart: {
@@ -697,7 +739,7 @@ function UnitType(month, year, UPerAB, UPerMB, UPerEB, UPerOT, ABUnitResult, MBU
             text: 'Unit'
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b><br>Total: <b>{point.value}</b>'
+            pointFormat: '{series.name}: <b>{point.percentage:.2f}%</b><br>Total: <b>{point.value}</b>'
         },
         plotOptions: {
             pie: {
@@ -740,6 +782,12 @@ function UnitType(month, year, UPerAB, UPerMB, UPerEB, UPerOT, ABUnitResult, MBU
                     code: 'Electric Battery',
                     y: UPerEB,
                     value: accounting.formatNumber(EBUnitResult)
+                },
+                {
+                    name: 'Premium',
+                    code: 'Premium',
+                    y: UPerPR,
+                    value: accounting.formatNumber(PRUnitResult)
                 },
                 {
                     name: 'Others',
