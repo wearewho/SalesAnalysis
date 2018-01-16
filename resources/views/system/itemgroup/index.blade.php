@@ -32,8 +32,8 @@
                                 <td>{{ $ItemGroup->ItemGroupName }}</td>
                                 <td>{{ $ItemGroup->ItemGroupDesp }}</td>
                                 <td>
-                                    <a href="{{ route('system.itemgroup.edit',[$ItemGroup->ItemGroupID]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                    <a href="#" id="{{ $ItemGroup->ItemGroupID }}" data-route="/system/itemgroup/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger">@lang('global.app_delete')</a>
+                                    <a href="{{ route('system.itemgroup.edit',[$ItemGroup->ItemGroupID]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
+                                    <a href="#" id="{{ $ItemGroup->ItemGroupID }}" data-route="/system/itemgroup/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
                                    <!-- {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',

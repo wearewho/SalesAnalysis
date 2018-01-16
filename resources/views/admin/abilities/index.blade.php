@@ -29,8 +29,8 @@
                                 <td></td>
                                 <td>{{ $ability->name }}</td>
                                 <td>
-                                    <a href="{{ route('admin.abilities.edit',[$ability->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                    <a href="#" id="{{ $ability->id }}" data-route="/admin/abilities/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger">@lang('global.app_delete')</a>
+                                    <a href="{{ route('admin.abilities.edit',[$ability->id]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
+                                    <a href="#" id="{{ $ability->id }}" data-route="/admin/abilities/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
                                     <!-- {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',

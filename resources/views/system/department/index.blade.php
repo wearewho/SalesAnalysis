@@ -34,8 +34,8 @@
                                 <td>{{ $department->DepartmentName }}</td>
                                 <td>{{ $department->DepartmentDesp }}</td>
                                 <td>
-                                    <a href="{{ route('system.department.edit',[$department->DepartmentID]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                    <a href="#" id="{{ $department->DepartmentID }}" data-route="/system/department/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger">@lang('global.app_delete')</a>
+                                    <a href="{{ route('system.department.edit',[$department->DepartmentID]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
+                                    <a href="#" id="{{ $department->DepartmentID }}" data-route="/system/department/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
                                     <!-- <a href="#" class="btn btn-xs btn-info" id="delete">@lang('global.app_delete')</a> 
                                     {!! Form::open(array(
                                         'style' => 'display: inline-block;',
