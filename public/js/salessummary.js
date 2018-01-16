@@ -8,6 +8,8 @@ $(function() {
 
     addTable();
     selectData($("ul.sub-ysd > li.active").find('a').data("value"), $("a.date-picker-year").text());
+    $('#m').val($("ul.sub-ysd > li.active").find('a').data("value"));
+    $('#y').val($("a.date-picker-year").text());
 
     //Change Year
     $(".date-picker-year").datepicker({
@@ -17,6 +19,7 @@ $(function() {
         var currYear = String(e.date).split(" ")[3];
         $(".date-picker-year").text(currYear);
         selectData($("ul.sub-ysd > li.active").find('a').data("value"), $("a.date-picker-year").text());
+        $('#y').val($("a.date-picker-year").text());
     });
 
     //Change Company and Month
@@ -29,16 +32,20 @@ $(function() {
         if ($(this).text() == 'YSD') {
             $('#Company').text($(this).text());
             $("#Month").text($("ul.sub-ysd").find("li.active").text());
+            $('#m').val($("ul.sub-ysd > li.active").find('a').data("value"));
         } else {
             $('#Company').text($(this).text());
             $("#Month").text("");
+            $('#m').val("");
         }
     });
     $(document).on("click", "ul.sub-ysd > li.active", function() {
         if ($(this).text() == 'Year to Date') {
             $('#Month').text("");
+            $('#m').val("");
         } else {
             $('#Month').text($(this).text());
+            $('#m').val($("ul.sub-ysd > li.active").find('a').data("value"));
         }
         selectData($(this).find('a').data("value"), $("a.date-picker-year").text());
     });
@@ -421,9 +428,13 @@ function calDisplay(month, year, data) {
     if (totalUnit == 0 && totalBaht == 0) {
         //Hide Pie Charts
         $('#pieSection').css("display", "none");
+        $('#click').css("display", "none");
+        $('#pdf').css("display", "none");
     } else {
         //Show Pie Charts
         $('#pieSection').css("display", "block");
+        $('#click').css("display", "block");
+        $('#pdf').css("display", "block");
 
         //Cal Pie Charts
         calPie(month, year, data, ABUnitResult, ABBahtResult, MBUnitResult, MBBahtResult, EBUnitResult, EBBahtResult, OTUnitResult, OTBahtResult, PRUnitResult, PRBahtResult,

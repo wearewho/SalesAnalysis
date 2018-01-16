@@ -68,7 +68,7 @@ $objs = session('data');
                 $todate = date("d/m/Y", strtotime('-1 day'));
             @endphp
             <th class="head" height="15" style="text-align: left;font-size: 16px;"><b>Sales Analysis Portal V.1.0</b></th>            
-            <th class="head" height="15" style="text-align: right;font-size: 16px;"><b>Data as of:  27/12/2018</b></th>
+            <th class="head" height="15" style="text-align: right;font-size: 16px;"><b>Data as of:  {{ $todate }}</b></th>
         </tr> 
         <tr >
             <td class="head" height="15" style="text-align: left;font-size: 16px;"><b>Yuasa Battery (Thailand) Public Company Limited</b></td>
@@ -98,7 +98,7 @@ $objs = session('data');
 
 <content>
         
-    <h4>Target Master : {{ $TargetH->Company }} Company, {{ $TargetH->Department }} Department, {{ $TargetH->Year }}</h4>
+    <h4><strong>Target Master : {{ $TargetH->Company }} Company, {{ $TargetH->Department }} Department, {{ $TargetH->Year }}</strong></h4>
 
     <table>
         <tr>

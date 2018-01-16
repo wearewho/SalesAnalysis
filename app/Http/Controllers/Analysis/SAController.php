@@ -7,6 +7,8 @@ use Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use PDF;
+use Schema;
 
 class SAController extends Controller
 {
@@ -47,11 +49,20 @@ class SAController extends Controller
     }
 
     public function selectYSD(Request $request) {      
+
+        $tableName = "YS_".$request->year."";
         
-        $strSQL = "SELECT DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,UnitPrice,Total FROM YS_".$request->year." ";
+        if(Schema::hasTable($tableName)){
+
+            $strSQL = "SELECT DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,UnitPrice,Total FROM YS_".$request->year." ";
           
-        if($request->month != '13'){
-            $strSQL .= "WHERE DocMonth = '".$request->month."' ";
+            if($request->month != '13'){
+                $strSQL .= "WHERE DocMonth = '".$request->month."' ";
+            }
+
+        }
+        else{
+            $strSQL = "SELECT DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,UnitPrice,Total FROM YS_2017 WHERE DocMonth = '13' ";
         }
         
         $result = DB::select($strSQL,[]);    
@@ -109,5 +120,25 @@ class SAController extends Controller
         $Item = DB::select($queryItem,[]);    
         $Cust = DB::select($queryCust,[]); 
         return Response::json(array($Item,$Cust));
+    }
+    
+    public function downloadPDF(Request $request)
+    {
+        if(is_null($request->month)){
+            $strSQL = "SELECT DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,UnitPrice,Total FROM YS_".$request->year."  ";      
+        }
+        else{
+            $strSQL = "SELECT DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,UnitPrice,Total FROM YS_".$request->year." WHERE DocMonth = '$request->month' ";      
+        }
+
+        $result = DB::select($strSQL,[]);  
+        $data["month"] = $request->month;
+        $data["year"] = $request->year;
+
+        $Filename = "SS".date("Ymd").".pdf";
+        
+        $pdf = PDF::loadView('PDFFormat.salessummary', compact('data', 'result'))->setPaper('A4', 'landscape');
+        return $pdf->stream($Filename);
+  
     }
 }

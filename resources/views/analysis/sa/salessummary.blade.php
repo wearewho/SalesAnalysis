@@ -7,8 +7,16 @@
         <span id="Company"></span>
         <span> Sales Summary Report : </span>
         <span id="Month"></span>
-        <a name="Year" id="Year" class="date-picker-year">2018</a>
-        <button id="click" class="pull-right btn btn-info">Pie Charts</button>
+        <a name="Year" id="Year" class="date-picker-year">{{date("Y")}}</a>
+        <div class="btn-group pull-right">
+            <button type="button" id="click" class="btn btn-info margin"><i class="fa fa-pie-chart"></i>Pie Charts</button>
+            <form action="{{ route('analysis.sa.salessummary.downloadPDF') }}" method="POST"> 
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">    
+                <input type="hidden" name="month" id="m" value=""> 
+                <input type="hidden" name="year" id="y" value="">    
+                <button type="submit" id="pdf" class="btn btn-danger"><i class="fa fa-file-pdf-o"></i> PDF</button>
+            </form> 
+        </div>
     </h2>
 
     

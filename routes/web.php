@@ -56,7 +56,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
   Route::group(['middleware' => ['auth'], 'prefix' => 'sa', 'as' => 'analysis.sa.'], function () {
     Route::get('salessummary', 'Analysis\SAController@salessummary')->name('SalesSummary');
     Route::post('selectYSD', 'Analysis\SAController@selectYSD')->name('selectYSD');
-    Route::post('selectDataTableYSD', 'Analysis\SAController@selectDataTableYSD')->name('selectDataTableYSD');
+    Route::post('selectDataTableYSD', 'Analysis\SAController@selectDataTableYSD')->name('selectDataTableYSD');    
+    Route::post('downloadPDF', ['uses' => 'Analysis\SAController@downloadPDF', 'as' => 'salessummary.downloadPDF']);  
     Route::get('targetcomparison', 'Analysis\SAController@targetcomparison')->name('TargetComparison');
     Route::get('toplist', 'Analysis\SAController@toplist')->name('TopList');
     Route::get('region', 'Analysis\SAController@region')->name('Region');
