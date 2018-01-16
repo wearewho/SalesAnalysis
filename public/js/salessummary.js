@@ -10,6 +10,7 @@ $(function() {
     selectData($("ul.sub-ysd > li.active").find('a').data("value"), $("a.date-picker-year").text());
     $('#m').val($("ul.sub-ysd > li.active").find('a').data("value"));
     $('#y').val($("a.date-picker-year").text());
+    $('#c').val($("ul.pull-right").find("li.active").text());
 
     //Change Year
     $(".date-picker-year").datepicker({
@@ -31,10 +32,12 @@ $(function() {
     $(document).on("click", "ul.pull-right > li.active", function() {
         if ($(this).text() == 'YSD') {
             $('#Company').text($(this).text());
+            $('#c').val($(this).text());
             $("#Month").text($("ul.sub-ysd").find("li.active").text());
             $('#m').val($("ul.sub-ysd > li.active").find('a').data("value"));
         } else {
             $('#Company').text($(this).text());
+            $('#c').val($(this).text());
             $("#Month").text("");
             $('#m').val("");
         }

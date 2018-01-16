@@ -14,14 +14,15 @@
             </h2>
         </div> 
         <div class="col-md-1 ">        
-            <button type="button" id="click" class="btn btn-info margin"><i class="fa fa-pie-chart"></i>Pie Charts</button> 
+            <button type="button" id="click" class="btn btn-info margin"><i class="fa fa-pie-chart"></i> Pie Charts</button> 
         </div>
         <div class="col-md-1">               
             <form action="{{ route('analysis.sa.salessummary.downloadPDF') }}" method="POST"> 
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">    
                 <input type="hidden" name="month" id="m" value=""> 
                 <input type="hidden" name="year" id="y" value="">   
-                <button type="submit" id="pdf" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button> 
+                <input type="hidden" name="company" id="c" value="">  
+                <button type="submit" id="pdf" target="_blank" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button> 
             </form>      
         </div>    
     </div>

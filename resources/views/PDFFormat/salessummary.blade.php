@@ -22,9 +22,6 @@ $objs = session('data');
         th, td {
             font-size: 16px;
         }
-        .page-break {
-            page-break-after: always;
-        }
         header { 
             position: fixed; 
             top: -30px; 
@@ -45,8 +42,10 @@ $objs = session('data');
             left: 0px; 
             right: 0px; 
             height: 70px; 
-        }  
-        
+        }          
+        div.page_break {
+            page-break-before: always;
+        }
     </style> 
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -110,7 +109,7 @@ $objs = session('data');
             }        
         @endphp
 
-    <h4><strong>Sales Summary : {{$monthName}} {{$data["year"]}}</strong></h4>
+    <h4><strong> {{ $data["company"] }} Sales Summary Report : {{$monthName}} {{$data["year"]}}</strong></h4>
 
         
 
@@ -288,86 +287,87 @@ $objs = session('data');
             <tbody>
                 <tr style="text-align:center;" bgcolor="#ffd699">
                     <td bgcolor="#b6dde8" style="font-size: 14px;"><b>AB</b></td>
-                    <td style="font-size: 14px;"> {{ number_format($REM_AB_Unit) }} </td>
-                    <td style="font-size: 14px;"> {{ number_format($REM_AB_Baht,2) }} </td>
-                    <td style="font-size: 14px;"> {{ number_format($MTD_AB_Unit) }}</td>
-                    <td style="font-size: 14px;"> {{ number_format($MTD_AB_Baht,2) }} </td>
-                    <td style="font-size: 14px;"> {{ number_format($SPD_AB_Unit) }} </td>
-                    <td style="font-size: 14px;"> {{ number_format($SPD_AB_Baht,2) }} </td>
-                    <td style="font-size: 14px;"> {{ number_format($ST_AB_Unit) }} </td>
-                    <td style="font-size: 14px;"> {{ number_format($ST_AB_Baht,2) }} </td>
-                    <td id="Total_AB_Unit" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($ABUnitResult) }}</td>
-                    <td id="Total_AB_Baht" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($ABBahtResult,2) }}</td>
+                    <td style="font-size: 14px; text-align: right;"> {{ number_format($REM_AB_Unit) }} </td>
+                    <td style="font-size: 14px; text-align: right;"> {{ number_format($REM_AB_Baht,2) }} </td>
+                    <td style="font-size: 14px; text-align: right;"> {{ number_format($MTD_AB_Unit) }}</td>
+                    <td style="font-size: 14px; text-align: right;"> {{ number_format($MTD_AB_Baht,2) }} </td>
+                    <td style="font-size: 14px; text-align: right;"> {{ number_format($SPD_AB_Unit) }} </td>
+                    <td style="font-size: 14px; text-align: right;"> {{ number_format($SPD_AB_Baht,2) }} </td>
+                    <td style="font-size: 14px; text-align: right;"> {{ number_format($ST_AB_Unit) }} </td>
+                    <td style="font-size: 14px; text-align: right;"> {{ number_format($ST_AB_Baht,2) }} </td>
+                    <td id="Total_AB_Unit" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($ABUnitResult) }}</td>
+                    <td id="Total_AB_Baht" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($ABBahtResult,2) }}</td>
                 </tr>
                 <tr style="text-align:center;" bgcolor="#ffd699">
                     <td bgcolor="#b6dde8" style="font-size: 14px;"><b>MB</b></td>
-                    <td  style="font-size: 14px;" > {{ number_format($REM_MB_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($REM_MB_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($MTD_MB_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($MTD_MB_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($SPD_MB_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($SPD_MB_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($ST_MB_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($ST_MB_Baht,2) }} </td>
-                    <td id="Total_MB_Unit" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($MBUnitResult) }}</td>
-                    <td id="Total_MB_Baht" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($MBBahtResult,2) }}</td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($REM_MB_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($REM_MB_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($MTD_MB_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($MTD_MB_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($SPD_MB_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($SPD_MB_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($ST_MB_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($ST_MB_Baht,2) }} </td>
+                    <td id="Total_MB_Unit" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($MBUnitResult) }}</td>
+                    <td id="Total_MB_Baht" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($MBBahtResult,2) }}</td>
                 </tr>
                 <tr style="text-align:center;" bgcolor="#ffd699">
                     <td bgcolor="#b6dde8" style="font-size: 14px;"><b>EB</b></td>
-                    <td  style="font-size: 14px;" > {{ number_format($REM_EB_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($REM_EB_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($MTD_EB_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($MTD_EB_Baht,2) }} </td>  
-                    <td  style="font-size: 14px;" > {{ number_format($SPD_EB_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($SPD_EB_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($ST_EB_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($ST_EB_Baht,2) }} </td>
-                    <td id="Total_EB_Unit" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($EBUnitResult) }}</td>
-                    <td id="Total_EB_Baht" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($EBBahtResult,2) }}</td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($REM_EB_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($REM_EB_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($MTD_EB_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($MTD_EB_Baht,2) }} </td>  
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($SPD_EB_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($SPD_EB_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($ST_EB_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($ST_EB_Baht,2) }} </td>
+                    <td id="Total_EB_Unit" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($EBUnitResult) }}</td>
+                    <td id="Total_EB_Baht" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($EBBahtResult,2) }}</td>
                 </tr>
                 <tr style="text-align:center;" bgcolor="#ffd699">
                     <td bgcolor="#b6dde8" style="font-size: 14px;"><b>Premium</b></td>
-                    <td  style="font-size: 14px;" > {{ number_format($REM_PR_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($REM_PR_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($MTD_PR_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($MTD_PR_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($SPD_PR_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($SPD_PR_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($ST_PR_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($ST_PR_Baht,2) }} </td>
-                    <td id="Total_PR_Unit" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($PRUnitResult) }}</td>
-                    <td id="Total_PR_Baht" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($PRBahtResult,2) }}</td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($REM_PR_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($REM_PR_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($MTD_PR_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($MTD_PR_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($SPD_PR_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($SPD_PR_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($ST_PR_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($ST_PR_Baht,2) }} </td>
+                    <td id="Total_PR_Unit" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($PRUnitResult) }}</td>
+                    <td id="Total_PR_Baht" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($PRBahtResult,2) }}</td>
                 </tr>    
                 <tr style="text-align:center;" bgcolor="#ffd699">
                     <td bgcolor="#b6dde8" style="font-size: 14px;"><b>Others</b></td>
-                    <td  style="font-size: 14px;" > {{ number_format($REM_OT_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($REM_OT_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($MTD_OT_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($MTD_OT_Baht,2) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($SPD_OT_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($SPD_OT_Baht,2) }}</td>
-                    <td  style="font-size: 14px;" > {{ number_format($ST_OT_Unit) }} </td>
-                    <td  style="font-size: 14px;" > {{ number_format($ST_OT_Baht,2) }} </td>
-                    <td id="Total_OT_Unit" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($OTUnitResult) }}</td>
-                    <td id="Total_OT_Baht" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($OTBahtResult,2) }}</td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($REM_OT_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($REM_OT_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($MTD_OT_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($MTD_OT_Baht,2) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($SPD_OT_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($SPD_OT_Baht,2) }}</td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($ST_OT_Unit) }} </td>
+                    <td  style="font-size: 14px; text-align: right;" > {{ number_format($ST_OT_Baht,2) }} </td>
+                    <td id="Total_OT_Unit" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($OTUnitResult) }}</td>
+                    <td id="Total_OT_Baht" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($OTBahtResult,2) }}</td>
                 </tr>
             </tbody>            
             <tfoot>
                 <tr style="text-align:center;" bgcolor="#b6dde8"> $unitTotal
                     <td bgcolor="#b6dde8" style="font-size: 14px;"><b>Total</b></td>
-                    <td  style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa"> {{ number_format($REMUnitResult) }} </td>
-                    <td  style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa"> {{ number_format($REMBahtResult,2) }} </td>
-                    <td  style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa"> {{ number_format($MTDUnitResult) }} </td>
-                    <td  style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa"> {{ number_format($MTDBahtResult,2) }} </td>
-                    <td  style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa"> {{ number_format($SPDUnitResult) }} </td>
-                    <td  style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa"> {{ number_format($SPDBahtResult,2) }} </td>
-                    <td  style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa"> {{ number_format($STUnitResult) }} </td>
-                    <td  style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa"> {{ number_format($STBahtResult,2) }} </td>
-                    <td id="Total_Unit" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($totalUnit) }}</td>
-                    <td id="Total_Baht" style="font-weight: bold; font-size: 14px;" bgcolor="#c2efaa">{{ number_format($totalBaht,2) }}</td>
+                    <td  style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa"> {{ number_format($REMUnitResult) }} </td>
+                    <td  style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa"> {{ number_format($REMBahtResult,2) }} </td>
+                    <td  style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa"> {{ number_format($MTDUnitResult) }} </td>
+                    <td  style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa"> {{ number_format($MTDBahtResult,2) }} </td>
+                    <td  style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa"> {{ number_format($SPDUnitResult) }} </td>
+                    <td  style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa"> {{ number_format($SPDBahtResult,2) }} </td>
+                    <td  style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa"> {{ number_format($STUnitResult) }} </td>
+                    <td  style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa"> {{ number_format($STBahtResult,2) }} </td>
+                    <td id="Total_Unit" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($totalUnit) }}</td>
+                    <td id="Total_Baht" style="font-weight: bold; font-size: 14px; text-align: right;" bgcolor="#c2efaa">{{ number_format($totalBaht,2) }}</td>
                 </tr>
             </tfoot>
         </table>
+
 
 </content>   
 

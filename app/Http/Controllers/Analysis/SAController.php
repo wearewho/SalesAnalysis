@@ -134,11 +134,12 @@ class SAController extends Controller
         $result = DB::select($strSQL,[]);  
         $data["month"] = $request->month;
         $data["year"] = $request->year;
+        $data["company"] = $request->company;
 
         $Filename = "SS".date("Ymd").".pdf";
         
         $pdf = PDF::loadView('PDFFormat.salessummary', compact('data', 'result'))->setPaper('A4', 'landscape');
-        return $pdf->download($Filename);
+        return $pdf->stream($Filename);
   
     }
 }
