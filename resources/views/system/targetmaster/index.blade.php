@@ -43,7 +43,7 @@
                                             <a href="#" id="{{ $TargetH->TargetID }}" data-route="/system/targetmaster/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger">@lang('global.app_delete')</a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('system.targetmaster.downloadPDF', ['id' => $TargetH->TargetID])}}" class="btn btn-xs btn-info"><i class="fa fa-file-pdf-o"></i> PDF</a> 
+                                            <a href="{{ route('system.targetmaster.downloadPDF', ['id' => $TargetH->TargetID])}}" class="btn btn-xs btn-danger"><i class="fa fa-file-pdf-o"></i> PDF</a> 
                                         </td>
                                     </tr>
                                 @endforeach

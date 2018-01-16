@@ -138,7 +138,7 @@ class SAController extends Controller
         $Filename = "SS".date("Ymd").".pdf";
         
         $pdf = PDF::loadView('PDFFormat.salessummary', compact('data', 'result'))->setPaper('A4', 'landscape');
-        return $pdf->stream($Filename);
+        return $pdf->download($Filename);
   
     }
 }

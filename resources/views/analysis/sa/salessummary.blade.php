@@ -3,23 +3,29 @@
 @section('content') 
 
     <!-- START CUSTOM TABS -->
-    <h2 class="page-header">
-        <span id="Company"></span>
-        <span> Sales Summary Report : </span>
-        <span id="Month"></span>
-        <a name="Year" id="Year" class="date-picker-year">{{date("Y")}}</a>
-        <div class="btn-group pull-right">
-            <button type="button" id="click" class="btn btn-info margin"><i class="fa fa-pie-chart"></i>Pie Charts</button>
+
+    <div class="row">
+        <div class="col-md-10">            
+            <h2 class="page-header">
+                <span id="Company"></span>
+                <span> Sales Summary Report : </span>
+                <span id="Month"></span>
+                <a name="Year" id="Year" class="date-picker-year">{{date("Y")}}</a>
+            </h2>
+        </div> 
+        <div class="col-md-1 ">        
+            <button type="button" id="click" class="btn btn-info margin"><i class="fa fa-pie-chart"></i>Pie Charts</button> 
+        </div>
+        <div class="col-md-1">               
             <form action="{{ route('analysis.sa.salessummary.downloadPDF') }}" method="POST"> 
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">    
                 <input type="hidden" name="month" id="m" value=""> 
-                <input type="hidden" name="year" id="y" value="">    
-                <button type="submit" id="pdf" class="btn btn-danger"><i class="fa fa-file-pdf-o"></i> PDF</button>
-            </form> 
-        </div>
-    </h2>
+                <input type="hidden" name="year" id="y" value="">   
+                <button type="submit" id="pdf" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button> 
+            </form>      
+        </div>    
+    </div>
 
-    
 
     <div class="row">
     <div class="col-md-12">

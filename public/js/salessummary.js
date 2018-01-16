@@ -411,7 +411,7 @@ function calDisplay(month, year, data) {
     var SPDUnitResult = SPD_AB_Unit + SPD_MB_Unit + SPD_EB_Unit + SPD_PR_Unit + SPD_OT_Unit;
     var SPDBahtResult = SPD_AB_Baht + SPD_MB_Baht + SPD_EB_Baht + SPD_PR_Baht + SPD_OT_Baht;
     var STUnitResult = ST_AB_Unit + ST_MB_Unit + ST_EB_Unit + ST_PR_Unit + ST_OT_Unit;
-    var STBahtResult = ST_AB_Baht + ST_MB_Baht + ST_EB_Baht + ST_PR_Baht + ST_OT_Unit;
+    var STBahtResult = ST_AB_Baht + ST_MB_Baht + ST_EB_Baht + ST_PR_Baht + ST_OT_Baht;
     $('#REM_Total_Unit_' + month).html(accounting.formatNumber(REMUnitResult));
     $('#REM_Total_Baht_' + month).html(accounting.formatMoney(REMBahtResult, "฿"));
     $('#MTD_Total_Unit_' + month).html(accounting.formatNumber(MTDUnitResult));
