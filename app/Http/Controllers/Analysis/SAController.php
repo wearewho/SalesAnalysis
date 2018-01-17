@@ -135,11 +135,32 @@ class SAController extends Controller
         $data["month"] = $request->month;
         $data["year"] = $request->year;
         $data["company"] = $request->company;
+        $arrayImage = array($request->chart1, $request->chart2, $request->chart3, $request->chart4);
+        $pathImage = array();
 
-        $Filename = "SS".date("Ymd").".pdf";
+        $x = 0;
+
+        foreach($arrayImage as $chart){
+            $x++;
+            list($type, $chart) = explode(';', $chart);
+            list(, $chart)      = explode(',', $chart);
+            $image = base64_decode($chart);
+            $image_name= str_random(10).'.svg';
+            $path = public_path() . "/images/tempcharts/" . $image_name;
+            file_put_contents($path, $image); 
+            $data["chart".$x] = $image_name;
+            $pathImage[] = $path;
+        }       
+
+        $Filename = "SS".date("Ymd").".pdf";        
+        $pdf = PDF::loadView('PDFFormat.salessummary', compact('data', 'result'))->setPaper('A4', 'landscape');    
+        file_put_contents(public_path() . "/tempfiles/" .$Filename, $pdf->output()); 
         
-        $pdf = PDF::loadView('PDFFormat.salessummary', compact('data', 'result'))->setPaper('A4', 'landscape');
-        return $pdf->stream($Filename);
-  
+        foreach($pathImage as $path){
+            unlink($path);
+        }
+
+        return response()->download(public_path() . "/tempfiles/" .$Filename)->deleteFileAfterSend(true);
+
     }
 }

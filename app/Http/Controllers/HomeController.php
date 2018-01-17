@@ -54,8 +54,7 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function imageCropPost(Request $request)
-    {
-        
+    {        
         $data = $request->image;
         $userId = $request->id;
 
@@ -86,14 +85,6 @@ class HomeController extends Controller
         return response()->json(['success'=>'done']);
     }
 
-    public function test(){
-
-        //$TargetH = TargetH::findOrFail('16');
-        //$TargetD = TargetD::where('TargetID', '=', '16')->get(); 
-  
-        //return view('test', compact('TargetH','TargetD'));
-        return view('test');
-      }
   
       
 

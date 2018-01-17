@@ -62,7 +62,43 @@ $(function() {
         }
     });
 
+    $('#pdf').click(function() {
+        var index = $("div[id^=container1_]").attr("id").split("_")[1];
+        save_chart($('#container1_' + index).highcharts(), 1);
+        save_chart($('#container2_' + index).highcharts(), 2);
+        save_chart($('#container3_' + index).highcharts(), 3);
+        save_chart($('#container4_' + index).highcharts(), 4);
+    });
+
+
 });
+
+function save_chart(chart, num) {
+    render_width = 1000;
+    render_height = render_width * chart.chartHeight / chart.chartWidth
+
+    // Get the cart's SVG code
+    var svg = chart.getSVG({
+        exporting: {
+            sourceWidth: chart.chartWidth,
+            sourceHeight: chart.chartHeight
+        }
+    });
+
+    // Create a canvas
+    var canvas = document.createElement('canvas');
+    canvas.height = render_height;
+    canvas.width = render_width;
+    document.body.appendChild(canvas);
+
+    // Create an image and draw the SVG onto the canvas
+    var image = new Image;
+    image.onload = function() {
+        canvas.getContext('2d').drawImage(this, 0, 0, render_width, render_height);
+    };
+    image.src = 'data:image/svg+xml;base64,' + window.btoa(svg);
+    $('#chart' + num).val(image.src);
+}
 
 function addTable() {
     var x = 1;

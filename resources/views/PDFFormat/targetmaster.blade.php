@@ -46,7 +46,10 @@ $objs = session('data');
             left: 0px; 
             right: 0px; 
             height: 70px; 
-        }  
+        }        
+        footer .pagenum:before {
+            content: counter(page);
+        }
         
     </style> 
     <link rel="stylesheet" href="{{ ltrim(elixir('adminlte/bootstrap/css/pdfBootstrap.min.css'), '/') }}" />  
@@ -90,7 +93,7 @@ $objs = session('data');
     <table class="head" >
         <tr>
             <th class="head" height="5" style="text-align: left;font-size: 14px;"><b>{{ date("d/m/Y H:i:s") }}</b></th>            
-            <th class="head" height="5" style="text-align: right;font-size: 14px;"><b>Page 1</b></th>
+            <th class="head pagenum-container" height="5" style="text-align: right;font-size: 14px;"><b>Page <span class="pagenum"></span></b></th>
         </tr> 
     </table> 
 

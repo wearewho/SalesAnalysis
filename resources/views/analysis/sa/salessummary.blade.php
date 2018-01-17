@@ -22,11 +22,14 @@
                 <input type="hidden" name="month" id="m" value=""> 
                 <input type="hidden" name="year" id="y" value="">   
                 <input type="hidden" name="company" id="c" value="">  
+                <input type="hidden" name="chart1" id="chart1" value=""> 
+                <input type="hidden" name="chart2" id="chart2" value=""> 
+                <input type="hidden" name="chart3" id="chart3" value=""> 
+                <input type="hidden" name="chart4" id="chart4" value=""> 
                 <button type="submit" id="pdf" target="_blank" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button> 
             </form>      
         </div>    
     </div>
-
 
     <div class="row">
     <div class="col-md-12">

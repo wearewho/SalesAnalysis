@@ -22,12 +22,9 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 // Dashboard
 Route::get('/home', 'HomeController@index');
 
-// Test
-Route::get('/test', 'HomeController@test');
-
 // Profile Picture
-Route::get('image-crop', 'HomeController@imageCrop');
-Route::post('image-crop', 'HomeController@imageCropPost');
+Route::get('/image-crop', 'HomeController@imageCrop');
+Route::post('/image-crop', 'HomeController@imageCropPost');
 
 //Admin Group
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {

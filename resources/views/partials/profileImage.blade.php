@@ -85,9 +85,9 @@
         $uploadCrop.croppie('result', {
             type: 'canvas',
             size: 'viewport'
-        }).then(function (resp) {            
+        }).then(function (resp) {     
             $.ajax({
-                url: "image-crop",
+                url: {!! json_encode(url('/image-crop')) !!},
                 type: "POST",
                 data: {"id": id,"image": resp, _token: "{{ csrf_token() }}"},
                 success: function (data) {

@@ -28,23 +28,19 @@ $objs = session('data');
             left: 0px; 
             right: 0px; 
             height: 60px; 
-        }
-        content { 
-            position: fixed; 
-            bottom: 0px; 
-            top: 75px; 
-            left: 0px; 
-            right: 0px; 
-        }
+        } 
         footer { 
             position: fixed; 
             bottom: -30px; 
             left: 0px; 
             right: 0px; 
             height: 70px; 
-        }          
-        div.page_break {
-            page-break-before: always;
+        }       
+        footer .pagenum:before {
+            content: counter(page);
+        }
+        .page-break {
+            page-break-after: always;
         }
     </style> 
     
@@ -91,14 +87,14 @@ $objs = session('data');
     <table class="head" >
         <tr>
             <th class="head" height="5" style="text-align: left;font-size: 14px;"><b>{{ date("d/m/Y H:i:s") }}</b></th>            
-            <th class="head" height="5" style="text-align: right;font-size: 14px;"><b>Page 1</b></th>
+            <th class="head pagenum-container" height="5" style="text-align: right;font-size: 14px;"><b>Page <span class="pagenum"></span></b></th>
         </tr> 
     </table> 
 
-</footer>
+</footer> 
+            
 
-<content>
-
+<div style="position: absolute; bottom: 0px; top: 75px; left: 0px; right: 0px; ">
         @php
             if(is_null($data["month"])){
                 $monthName = ""; 
@@ -367,10 +363,37 @@ $objs = session('data');
                 </tr>
             </tfoot>
         </table>
+    </div>   
 
+    <div class="page-break"></div>
 
-</content>   
+    <div style="position: absolute; bottom: 0px; top: 100px; left: 0px; right: 0px; ">
+        @php 
+            $path = '/images/tempcharts/'; 
+            $chart1 = $data["chart1"];
+            $chart2 = $data["chart2"];
+            $chart3 = $data["chart3"];
+            $chart4 = $data["chart4"];
+        @endphp 
 
+        <div class="row">
+            <div class="col-xs-6">                   
+                <center><img height="250" style="margin-left:0px; align:center;" src="{{ public_path() . $path . $chart1 }}" ></center>     
+            </div>
+            <div class="col-xs-6">                   
+                <center><img height="250" style="margin-left:0px; align:center;" src="{{ public_path() . $path . $chart2 }}" ></center>     
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">                   
+                <center><img height="250" style="margin-left:0px; align:center;" src="{{ public_path() . $path . $chart3 }}" ></center>     
+            </div>
+            <div class="col-xs-6">                   
+                <center><img height="250" style="margin-left:0px; align:center;" src="{{ public_path() . $path . $chart4 }}" ></center>     
+            </div>
+        </div>
+                
+    </div>
 
 </body>
 </html>
