@@ -16,22 +16,22 @@
         <div class="col-md-1 ">        
             <button type="button" id="click" class="btn btn-info margin"><i class="fa fa-pie-chart"></i> Pie Charts</button> 
         </div>
-        <div class="col-md-1">    
-            {!! Form::open(['method' => 'POST', 'route' => ['analysis.sa.salessummary.downloadPDF']]) !!}        
+        <div class="col-md-1">               
+            <form action="{{ route('analysis.sa.salessummary.downloadPDF') }}" method="POST" id="downloadPDF"> 
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">    
                 <input type="hidden" name="month" id="m" value=""> 
                 <input type="hidden" name="year" id="y" value="">   
                 <input type="hidden" name="company" id="c" value="">  
-                <input type="hidden" name="chart1" id="chart1" value=""> 
-                <input type="hidden" name="chart2" id="chart2" value=""> 
-                <input type="hidden" name="chart3" id="chart3" value=""> 
-                <input type="hidden" name="chart4" id="chart4" value=""> 
-                <button type="submit" id="pdf" target="_blank" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button> 
-            {!! Form::close() !!}    
+                <input type="hidden" name="chart1" id="chart1"> 
+                <input type="hidden" name="chart2" id="chart2"> 
+                <input type="hidden" name="chart3" id="chart3"> 
+                <input type="hidden" name="chart4" id="chart4"> 
+                <button type="button" id="pdf" target="_blank" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button> 
+            </form>      
         </div>    
     </div>
 
-    <button type="button" id="test" target="_blank" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button> 
+    <!-- <button type="button" id="test" target="_blank" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button>  -->
 
     <div class="row">
     <div class="col-md-12">
