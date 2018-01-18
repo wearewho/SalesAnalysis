@@ -62,7 +62,7 @@ $(function() {
         }
     });
 
-    $('#pdf').click(function() {
+    $('#test').click(function() {
         var index = $("div[id^=container1_]").attr("id").split("_")[1];
         save_chart($('#container1_' + index).highcharts(), 1);
         save_chart($('#container2_' + index).highcharts(), 2);
@@ -89,15 +89,15 @@ function save_chart(chart, num) {
     var canvas = document.createElement('canvas');
     canvas.height = render_height;
     canvas.width = render_width;
-    document.body.appendChild(canvas);
 
     // Create an image and draw the SVG onto the canvas
     var image = new Image;
+    image.src = 'data:image/svg+xml;base64,' + window.btoa(svg);
     image.onload = function() {
         canvas.getContext('2d').drawImage(this, 0, 0, render_width, render_height);
+        console.log(canvas.toDataURL('image/jpeg'));
+        $('#chart' + num).val(canvas.toDataURL('image/jpeg'));
     };
-    image.src = 'data:image/svg+xml;base64,' + window.btoa(svg);
-    $('#chart' + num).val(image.src);
 }
 
 function addTable() {

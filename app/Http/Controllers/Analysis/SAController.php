@@ -124,6 +124,8 @@ class SAController extends Controller
     
     public function downloadPDF(Request $request)
     {
+        dd($request->all());
+
         if(is_null($request->month)){
             $strSQL = "SELECT DocMonth,DocYear,CustCode,SalesPersonGroup,ItemGroupName,Quantity,UnitPrice,Total FROM YS_".$request->year."  ";      
         }
@@ -145,20 +147,18 @@ class SAController extends Controller
             list($type, $chart) = explode(';', $chart);
             list(, $chart)      = explode(',', $chart);
             $image = base64_decode($chart);
-            $image_name= str_random(10).'.svg';
+            $image_name= str_random(10).'.jpeg';
             $path = public_path() . "/images/tempcharts/" . $image_name;
             file_put_contents($path, $image); 
             $data["chart".$x] = $image_name;
             $pathImage[] = $path;
         }       
 
-        $Filename = "SS".date("Ymd").".pdf";        
+        $Filename = "SS".$request->month.$request->year.".pdf";        
         $pdf = PDF::loadView('PDFFormat.salessummary', compact('data', 'result'))->setPaper('A4', 'landscape');    
         file_put_contents(public_path() . "/tempfiles/" .$Filename, $pdf->output()); 
         
-        foreach($pathImage as $path){
-            unlink($path);
-        }
+        
 
         return response()->download(public_path() . "/tempfiles/" .$Filename)->deleteFileAfterSend(true);
 
