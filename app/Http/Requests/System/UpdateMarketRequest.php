@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Http\Requests\System;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTargetmasterRequest extends FormRequest
+class UpdateMarketRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +23,8 @@ class StoreTargetmasterRequest extends FormRequest
     public function rules()
     {
         return [
-            'market' => 'required',
-            'company' => 'required',
-            'year' => 'required'
+            'Code' => 'required|max:30',
+            'Name' => 'required|max:30'
         ];
     }
 }

@@ -11,7 +11,7 @@ use App\TargetH;
 use App\TargetD;
 use App\ItemGroup;
 use App\Company;
-use App\Department;
+use App\Market;
 use PDF;
 
 class TargetmasterController extends Controller
@@ -43,11 +43,11 @@ class TargetmasterController extends Controller
             return abort(401);
         }
 
-        $Department = Department::all();
+        $Market = Market::all();
         $Company = Company::all();
         $ItemGroup = ItemGroup::all();
 
-        return view('system.targetmaster.create', compact('ItemGroup','Company','Department'));
+        return view('system.targetmaster.create', compact('ItemGroup','Company','Market'));
     }
 
     /**
@@ -62,7 +62,7 @@ class TargetmasterController extends Controller
         $TargetH                = new TargetH();
         $TargetH->Year          = $request->year;
         $TargetH->Company       = $request->company;
-        $TargetH->Department    = $request->department;
+        $TargetH->Market        = $request->market;
         $TargetH->save(); 
 
         $result = count($request->ItemGroup);

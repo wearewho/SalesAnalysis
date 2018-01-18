@@ -49,5 +49,7 @@
 <link rel="stylesheet" href="{{ URL::asset('anychart/css/anychart-ui.min.css') }}" />
 <!-- High Charts  --> 
 <link rel="stylesheet" href="{{ URL::asset('highchart/css/highcharts.css') }}" />
-  <!-- bootstrap datepicker -->
-  <link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+<!-- bootstrap datepicker -->
+<link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+<!-- daterange picker -->
+<link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">

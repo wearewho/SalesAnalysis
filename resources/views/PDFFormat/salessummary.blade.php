@@ -378,18 +378,18 @@ $objs = session('data');
 
         <div class="row">
             <div class="col-xs-6">                   
-                <center><img height="250" style="margin-left:0px; align:center;" src="{{ public_path() . $path . $chart1 }}" ></center>     
+                <center><img height="250" style="align:center;" src="{{ public_path() . $path . $chart1 }}" ></center>     
             </div>
             <div class="col-xs-6">                   
-                <center><img height="250" style="margin-left:0px; align:center;" src="{{ public_path() . $path . $chart2 }}" ></center>     
+                <center><img height="250" style="align:center;" src="{{ public_path() . $path . $chart2 }}" ></center>     
             </div>
         </div>
         <div class="row">
             <div class="col-xs-6">                   
-                <center><img height="250" style="margin-left:0px; align:center;" src="{{ public_path() . $path . $chart3 }}" ></center>     
+                <center><img height="250" style="align:center;" src="{{ public_path() . $path . $chart3 }}" ></center>     
             </div>
             <div class="col-xs-6">                   
-                <center><img height="250" style="margin-left:0px; align:center;" src="{{ public_path() . $path . $chart4 }}" ></center>     
+                <center><img height="250" style="align:center;" src="{{ public_path() . $path . $chart4 }}" ></center>     
             </div>
         </div>
                 

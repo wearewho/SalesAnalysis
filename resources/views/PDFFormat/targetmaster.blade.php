@@ -101,7 +101,7 @@ $objs = session('data');
 
 <content>
         
-    <h4><strong>Target Master : {{ $TargetH->Company }} Company, {{ $TargetH->Department }} Department, {{ $TargetH->Year }}</strong></h4>
+    <h4><strong>Target Master : {{ $TargetH->Company }} Company, {{ $TargetH->Market }} Market, {{ $TargetH->Year }}</strong></h4>
 
     <table>
         <tr>

@@ -45,6 +45,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
     Route::post('company_mass_destroy', ['uses' => 'System\CompanyController@massDestroy', 'as' => 'company.mass_destroy']);
     Route::resource('department', 'System\DepartmentController');
     Route::post('department_mass_destroy', ['uses' => 'System\DepartmentController@massDestroy', 'as' => 'department.mass_destroy']);
+    Route::resource('market', 'System\MarketController');
+    Route::post('market_mass_destroy', ['uses' => 'System\MarketController@massDestroy', 'as' => 'market.mass_destroy']); 
     Route::resource('itemgroup', 'System\ItemgroupController');
     Route::post('itemgroup_mass_destroy', ['uses' => 'System\ItemgroupController@massDestroy', 'as' => 'itemgroup.mass_destroy']); 
   });
@@ -58,6 +60,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
     Route::get('targetcomparison', 'Analysis\SAController@targetcomparison')->name('TargetComparison');
     Route::get('toplist', 'Analysis\SAController@toplist')->name('TopList');
     Route::get('region', 'Analysis\SAController@region')->name('Region');
+    Route::get('byDate', 'Analysis\SAController@byDate')->name('byDate');
 });
 
 

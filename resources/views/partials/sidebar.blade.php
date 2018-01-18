@@ -33,11 +33,19 @@
                             </span>
                         </a>
                     </li>
+                    <li class="{{ $request->segment(2) == 'bydate' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.sa.byDate') }}">
+                            <i class="fa fa-calendar"></i>
+                            <span class="title">
+                                @lang('global.SA.fields.02')
+                            </span>
+                        </a>
+                    </li>
                     <li class="{{ $request->segment(2) == 'targetcomparison' ? 'active active-sub' : '' }}">
                         <a href="{{ route('analysis.sa.TargetComparison') }}">
                             <i class="fa fa-line-chart"></i>
                             <span class="title">
-                                @lang('global.SA.fields.02')
+                                @lang('global.SA.fields.03')
                             </span>
                         </a>
                     </li>
@@ -45,7 +53,7 @@
                         <a href="{{ route('analysis.sa.TopList') }}">
                             <i class="fa fa-industry"></i>
                             <span class="title">
-                                @lang('global.SA.fields.03')
+                                @lang('global.SA.fields.04')
                             </span>
                         </a>
                     </li>
@@ -53,7 +61,7 @@
                         <a href="{{ route('analysis.sa.Region') }}">
                             <i class="fa fa-map-o"></i>
                             <span class="title">
-                                @lang('global.SA.fields.04')
+                                @lang('global.SA.fields.05')
                             </span>
                         </a>
                     </li>
@@ -137,6 +145,14 @@
                                     <i class="fa fa-building"></i>
                                     <span class="title">
                                         @lang('global.department.title')
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="{{ $request->segment(2) == 'market' ? 'active active-sub' : '' }}">
+                                <a href="{{ route('system.market.index') }}">
+                                    <i class="fa fa-bank"></i>
+                                    <span class="title">
+                                        @lang('global.market.title')
                                     </span>
                                 </a>
                             </li>

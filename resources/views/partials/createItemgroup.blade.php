@@ -8,9 +8,9 @@
                 <option disabled selected value>Select</option>
                 @foreach ($ItemGroup as $Item)
                 @php
-                    $Item->ItemGroupName=str_replace(" ", "", $Item->ItemGroupName); 
+                    $Item->U_ShortItemGroup=str_replace(" ", "", $Item->U_ShortItemGroup); 
                 @endphp 
-                <option value="{{ $Item->ItemGroupName }}">{{ $Item->ItemGroupName }}</option>
+                <option value="{{ $Item->U_ShortItemGroup }}">{{ $Item->U_ShortItemGroup }}</option>
                 @endforeach
             </select>
         </td>

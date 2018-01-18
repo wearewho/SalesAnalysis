@@ -13,13 +13,13 @@ $x++;
         <select class="form-control" name="ItemGroup[]" id="ItemGroup{{"_".$x}}">
             @foreach ($ItemGroup as $ItemNew)    
                 @php
-                    $ItemNew->ItemGroupName=str_replace(" ", "", $ItemNew->ItemGroupName); 
+                    $ItemNew->U_ShortItemGroup=str_replace(" ", "", $ItemNew->U_ShortItemGroup); 
                     $Item->ItemGroup=str_replace(" ", "", $Item->ItemGroup); 
                 @endphp 
-                @if ($ItemNew->ItemGroupName == $Item->ItemGroup )
+                @if ($ItemNew->U_ShortItemGroup == $Item->ItemGroup )
                     <option value="{{$Item->ItemGroup}}" selected="selected">{{$Item->ItemGroup}}</option>
                 @else
-                    <option value="{{$ItemNew->ItemGroupName}}">{{$ItemNew->ItemGroupName}}</option>
+                    <option value="{{$ItemNew->U_ShortItemGroup}}">{{$ItemNew->U_ShortItemGroup}}</option>
                 @endif
             @endforeach
         </select>

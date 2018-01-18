@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use PDF;
 use Schema;
+use App\ItemGroup;
+use App\Market;
 
 class SAController extends Controller
 {
@@ -46,6 +48,18 @@ class SAController extends Controller
         }
 
         return view('analysis.sa.region');
+    }
+
+    public function byDate()
+    {
+        if (! Gate::allows('sales_analysis')) {
+            return abort(401);
+        }
+        
+        $Market = Market::all();
+        $ItemGroup = ItemGroup::all();
+
+        return view('analysis.sa.bydate', compact('ItemGroup','Market'));
     }
 
     public function selectYSD(Request $request) {      

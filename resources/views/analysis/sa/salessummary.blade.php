@@ -31,8 +31,6 @@
         </div>    
     </div>
 
-    <!-- <button type="button" id="test" target="_blank" class="btn btn-danger margin"><i class="fa fa-file-pdf-o"></i> PDF</button>  -->
-
     <div class="row">
     <div class="col-md-12">
         <!-- Custom Tabs (Pulled to the right) -->

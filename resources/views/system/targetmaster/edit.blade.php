@@ -96,11 +96,11 @@
                     </div>
                     <div class="col-xs-3">
                         <div class="form-group">
-                            <label for="department" class="col-sm-5 control-label">Department <span style="color:red">*</span></label>
+                            <label for="market" class="col-sm-5 control-label">Market <span style="color:red">*</span></label>
     
                             <div class="col-sm-7">
-                                <select name="department" class="form-control">
-                                <option disabled selected value="{{ $TargetH->Department }}">{{ $TargetH->Department }}</option>
+                                <select name="market" class="form-control">
+                                <option disabled selected value="{{ $TargetH->Market }}">{{ $TargetH->Market }}</option>
                                 </select>
                             </div>
                         </div>

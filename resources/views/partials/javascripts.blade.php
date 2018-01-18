@@ -28,6 +28,9 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- bootstrap datepicker -->
 <script src="{{ URL::asset('adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<!-- date-range-picker -->
+<script src="{{ URL::asset('adminlte/bower_components/moment/min/moment.min.js') }}"></script>
+<script src="{{ URL::asset('adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
     
     <!-- Sweet Alert -->
     @if (session()->has('complete'))

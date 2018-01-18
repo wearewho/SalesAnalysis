@@ -21,9 +21,10 @@ return [
 		'created_at' => 'Time',
 		'fields' => [
 			'01' => 'Sales Summary',
-			'02' => 'Target Comparison',
-			'03' => 'Top List',
-			'04' => 'Region',
+			'02' => 'Sales Report by Date',
+			'03' => 'Target Comparison',
+			'04' => 'Top List',
+			'05' => 'Region',
 		],
 	],
 
@@ -76,6 +77,15 @@ return [
 		'fields' => [
 			'id' => 'Department ID',
 			'name' => 'Department Name',
+		],
+	], 
+
+	'market' => [
+		'title' => 'Market',
+		'created_at' => 'Time',
+		'fields' => [
+			'id' => 'Market Code',
+			'name' => 'Market Name',
 		],
 	], 
 

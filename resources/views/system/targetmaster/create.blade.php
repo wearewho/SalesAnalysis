@@ -71,7 +71,7 @@
                         <label for="company" class="col-sm-5 control-label">Company <span style="color:red">*</span></label>
 
                         <div class="col-sm-6">
-                            <select name="company" class="form-control">                            
+                            <select name="company" class="form-control select2">                            
                             <option disabled selected value>Select</option>
                             @foreach ($Company as $companyItem)
                             <option value="{{ $companyItem->CompanyName }}">{{ $companyItem->CompanyName }}</option>
@@ -85,7 +85,7 @@
                         <label for="year" class="col-sm-4 control-label">Year <span style="color:red">*</span></label>
 
                         <div class="col-sm-6">
-                            <select name="year" class="form-control">
+                            <select name="year" class="form-control select2">
                                 <option disabled selected value>Select</option>
                                 <option>2017</option>
                                 <option>2018</option>
@@ -102,13 +102,13 @@
                 </div>
                 <div class="col-xs-3">
                     <div class="form-group">
-                        <label for="department" class="col-sm-5 control-label">Department <span style="color:red">*</span></label>
+                        <label for="market" class="col-sm-4 control-label">Market <span style="color:red">*</span></label>
 
-                        <div class="col-sm-7">
-                            <select name="department" class="form-control">
+                        <div class="col-sm-8">
+                            <select name="market" class="form-control select2">
                             <option disabled selected value>Select</option>
-                            @foreach ($Department as $departmentItem)
-                            <option value="{{ $departmentItem->DepartmentName }}">{{ $departmentItem->DepartmentName }}</option>
+                            @foreach ($Market as $market)
+                            <option value="{{ $market->Code }}">{{ $market->Name }}</option>
                             @endforeach
                             </select>
                         </div>

@@ -19,7 +19,7 @@
                                 <th>No.</th>
                                 <th>Company</th>
                                 <th>Year</th>
-                                <th>Department</th>
+                                <th>Market</th>
                                 <th>Action</th>
                                 <th>Export</th>
 
@@ -37,7 +37,7 @@
                                         <td>{{ $x++ }}</td>
                                         <td>{{ $TargetH->Company }}</td>                                 
                                         <td>{{ $TargetH->Year }}</td>  
-                                        <td>{{ $TargetH->Department }}</td> 
+                                        <td>{{ $TargetH->Market }}</td> 
                                         <td>
                                             <a href="{{ route('system.targetmaster.edit',[$TargetH->TargetID]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a> 
                                             <a href="#" id="{{ $TargetH->TargetID }}" data-route="/system/targetmaster/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
