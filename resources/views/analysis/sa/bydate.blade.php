@@ -12,8 +12,8 @@
                     <div class="col-xs-4">
                         <div class="form-group">
                             <label>Market</label>
-                            <select class="form-control select2" style="width: 100%;">
-                            <option selected="selected">All</option>
+                            <select class="form-control select2" name="market" id="market" style="width: 100%;">
+                            <option selected="selected" value="All">All</option>
                             @foreach ($Market as $market)
                             <option value="{{ $market->Code }}">{{ $market->Name }}</option>
                             @endforeach
@@ -23,10 +23,10 @@
                     <div class="col-xs-4">
                         <div class="form-group">
                             <label>Item Group</label>
-                            <select class="form-control select2" style="width: 100%;">
-                                <option selected="selected">All</option>
+                            <select class="form-control select2" name="itemGroup" id="itemGroup" style="width: 100%;">
+                                <option selected="selected" value="All">All</option>
                                 @foreach ($ItemGroup as $item)
-                                <option value="{{ $item->U_ShortItemGroup }}">{{ $item->ItmsGrpNam }}</option>
+                                <option value="{{ $item->ItmsGrpNam }}">{{ $item->ItmsGrpNam }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -47,4 +47,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('javascript')  
+<script src="{{ URL::asset('js/bydate.js') }}"></script> 
 @endsection

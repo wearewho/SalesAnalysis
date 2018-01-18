@@ -10,4 +10,7 @@ class ItemGroup extends Model
 
     protected $guarded = array();
     
+    public function getKeyName(){
+        return "ItmsGrpCod";
+    }
 }

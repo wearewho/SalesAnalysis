@@ -134,7 +134,7 @@ class ItemgroupController extends Controller
             return abort(401);
         }
         if ($request->input('ids')) {
-            $entries = ItemGroup::whereIn('ItemGroupID', $request->input('ids'))->get();
+            $entries = ItemGroup::whereIn('ItmsGrpCod', $request->input('ids'))->get();
 
             foreach ($entries as $entry) {
                 $entry->delete();

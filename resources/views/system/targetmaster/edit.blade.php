@@ -74,10 +74,10 @@
                   <div class="row">
                     <div class="col-xs-3">
                         <div class="form-group">
-                            <label for="company" class="col-sm-5 control-label">Company <span style="color:red">*</span></label>
+                            <label for="company" class="col-sm-5 control-label">Company</label>
     
                             <div class="col-sm-6">
-                                <select name="company" class="form-control">                            
+                                <select name="company" class="form-control" disabled>                            
                                 <option disabled selected value="{{ $TargetH->Company }}">{{ $TargetH->Company }}</option>
                                 </select>
                             </div>
@@ -85,22 +85,22 @@
                     </div>
                     <div class="col-xs-3">
                         <div class="form-group">
-                            <label for="year" class="col-sm-4 control-label">Year <span style="color:red">*</span></label>
+                            <label for="market" class="col-sm-5 control-label">Market</label>
     
-                            <div class="col-sm-6">
-                                <select name="year" class="form-control">
-                                    <option disabled selected value="{{ $TargetH->Year }}">{{ $TargetH->Year }}</option>
+                            <div class="col-sm-7">
+                                <select name="market" class="form-control" disabled> 
+                                <option selected value="{{ $TargetH->Market }}">{{ $TargetH->Market }}</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-3">
                         <div class="form-group">
-                            <label for="market" class="col-sm-5 control-label">Market <span style="color:red">*</span></label>
+                            <label for="year" class="col-sm-4 control-label">Year</label>
     
-                            <div class="col-sm-7">
-                                <select name="market" class="form-control">
-                                <option disabled selected value="{{ $TargetH->Market }}">{{ $TargetH->Market }}</option>
+                            <div class="col-sm-6">
+                                <select name="year" class="form-control" disabled>
+                                    <option disabled selected value="{{ $TargetH->Year }}">{{ $TargetH->Year }}</option>
                                 </select>
                             </div>
                         </div>

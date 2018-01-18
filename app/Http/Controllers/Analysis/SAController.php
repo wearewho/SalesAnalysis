@@ -177,4 +177,31 @@ class SAController extends Controller
         return response()->download(public_path() . "/tempfiles/" .$Filename)->deleteFileAfterSend(true);
 
     }
+
+    public function selectByDate(Request $request) {             
+
+        if($request->startYear == $request->endYear){
+            
+            $tableName = "YS_".$request->startYear."";
+
+            if(Schema::hasTable($tableName)){
+
+                $strSQL = "SELECT Docdate,CustCode,SalesPersonGroup,ItemGroupName,Quantity,UnitPrice,Total FROM YS_".$request->startYear." Where Docdate BETWEEN '$request->startDate' AND '$request->endDate' ";              
+    
+                if($request->market != "All"){
+                    $strSQL .= "And SalesPersonGroup = '$request->market' ";
+                }
+
+                if($request->itemGroup != "All"){
+                    $strSQL .= "And ItemGroupName = '$request->itemGroup'";
+                }
+
+                $strSQL .= "ORDER BY Docdate";
+            }
+        }       
+        
+        $result = DB::select($strSQL,[]);    
+        return Response::json(array($result));
+    }
 }
+ 

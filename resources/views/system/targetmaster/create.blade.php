@@ -82,6 +82,20 @@
                 </div>
                 <div class="col-xs-3">
                     <div class="form-group">
+                        <label for="market" class="col-sm-4 control-label">Market <span style="color:red">*</span></label>
+
+                        <div class="col-sm-8">
+                            <select name="market" class="form-control select2">
+                            <option disabled selected value>Select</option>
+                            @foreach ($Market as $market)
+                            <option value="{{ $market->Code }}">{{ $market->Name }}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="form-group">
                         <label for="year" class="col-sm-4 control-label">Year <span style="color:red">*</span></label>
 
                         <div class="col-sm-6">
@@ -96,20 +110,6 @@
                                 <option>2023</option>
                                 <option>2024</option>
                                 <option>2025</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="form-group">
-                        <label for="market" class="col-sm-4 control-label">Market <span style="color:red">*</span></label>
-
-                        <div class="col-sm-8">
-                            <select name="market" class="form-control select2">
-                            <option disabled selected value>Select</option>
-                            @foreach ($Market as $market)
-                            <option value="{{ $market->Code }}">{{ $market->Name }}</option>
-                            @endforeach
                             </select>
                         </div>
                     </div>

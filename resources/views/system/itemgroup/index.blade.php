@@ -26,21 +26,14 @@
                 <tbody>
                     @if (count($ItemGroup) > 0)
                         @foreach ($ItemGroup as $ItemGroup)
-                            <tr data-entry-id="{{ $ItemGroup->ItemGroupID }}">
+                            <tr data-entry-id="{{ $ItemGroup->ItmsGrpCod }}">
                                 <td></td>
 
-                                <td>{{ $ItemGroup->ItemGroupName }}</td>
-                                <td>{{ $ItemGroup->ItemGroupDesp }}</td>
+                                <td>{{ $ItemGroup->U_ShortItemGroup }}</td>
+                                <td>{{ $ItemGroup->ItmsGrpNam }}</td>
                                 <td>
-                                    <a href="{{ route('system.itemgroup.edit',[$ItemGroup->ItemGroupID]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
-                                    <a href="#" id="{{ $ItemGroup->ItemGroupID }}" data-route="/system/itemgroup/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
-                                   <!-- {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['system.itemgroup.destroy', $ItemGroup->ItemGroupID])) !!}
-                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!} -->
+                                    <a href="{{ route('system.itemgroup.edit',[$ItemGroup->ItmsGrpCod]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
+                                    <a href="#" id="{{ $ItemGroup->ItmsGrpCod }}" data-route="/system/itemgroup/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
                                 </td>
 
                             </tr>

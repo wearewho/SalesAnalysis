@@ -61,6 +61,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
     Route::get('toplist', 'Analysis\SAController@toplist')->name('TopList');
     Route::get('region', 'Analysis\SAController@region')->name('Region');
     Route::get('byDate', 'Analysis\SAController@byDate')->name('byDate');
+    Route::post('selectByDate', 'Analysis\SAController@selectByDate')->name('selectByDate');
 });
 
 

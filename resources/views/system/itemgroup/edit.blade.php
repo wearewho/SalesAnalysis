@@ -3,7 +3,7 @@
 @section('content')
     <h3 class="page-title">@lang('global.itemgroup.title')</h3>
     
-    {!! Form::model($ItemGroup, ['method' => 'PUT', 'route' => ['system.itemgroup.update', $ItemGroup->ItemGroupID]]) !!}
+    {!! Form::model($ItemGroup, ['method' => 'PUT', 'route' => ['system.itemgroup.update', $ItemGroup->ItmsGrpCod]]) !!}
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -23,24 +23,37 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('ItemGroupName', 'ItemGroup Name*', ['class' => 'control-label']) !!}
-                    {!! Form::text('ItemGroupName', old('ItemGroupName'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    {!! Form::label('ItmsGrpCod', 'ItemGroup Code', ['class' => 'control-label']) !!}
+                    {!! Form::text('ItmsGrpCod', old('ItmsGrpCod'), ['class' => 'form-control', 'placeholder' => '', 'disabled' => 'disabled']) !!}
+                    {!! csrf_field() !!}
                     <p class="help-block"></p>
-                    @if($errors->has('ItemGroupName'))
+                    @if($errors->has('ItmsGrpCod'))
                         <p class="help-block">
-                            {{ $errors->first('ItemGroupName') }}
+                            {{ $errors->first('ItmsGrpCod') }}
                         </p>
                     @endif
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('ItemGroupDesp', 'ItemGroup Description*', ['class' => 'control-label']) !!}
-                    {!! Form::text('ItemGroupDesp', old('ItemGroupDesp'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    {!! Form::label('U_ShortItemGroup', 'ItemGroup Short Name*', ['class' => 'control-label']) !!}
+                    {!! Form::text('U_ShortItemGroup', old('U_ShortItemGroup'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('ItemGroupDesp'))
+                    @if($errors->has('U_ShortItemGroup'))
                         <p class="help-block">
-                            {{ $errors->first('ItemGroupDesp') }}
+                            {{ $errors->first('U_ShortItemGroup') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('ItmsGrpNam', 'ItemGroup Name*', ['class' => 'control-label']) !!}
+                    {!! Form::text('ItmsGrpNam', old('ItmsGrpNam'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('ItmsGrpNam'))
+                        <p class="help-block">
+                            {{ $errors->first('ItmsGrpNam') }}
                         </p>
                     @endif
                 </div>

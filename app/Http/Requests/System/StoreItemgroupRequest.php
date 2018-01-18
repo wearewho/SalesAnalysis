@@ -22,9 +22,10 @@ class StoreItemgroupRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'ItemGroupName' => 'required|unique:X_ItemGroup,ItemGroupName|max:10',
-            'ItemGroupDesp' => 'required|max:50'
+        return [ 
+            'ItmsGrpCod' => 'required|integer|unique:S_OITB,ItmsGrpCod',
+            'U_ShortItemGroup' => 'required|unique:S_OITB,U_ShortItemGroup|max:10',
+            'ItmsGrpNam' => 'required|max:20'
         ];
     }
 }

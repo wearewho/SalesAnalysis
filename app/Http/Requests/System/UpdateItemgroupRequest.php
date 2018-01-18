@@ -23,8 +23,8 @@ class UpdateItemgroupRequest extends FormRequest
     public function rules()
     {
         return [
-            'ItemGroupName' => 'required|max:10',
-            'ItemGroupDesp' => 'required|max:50'
+            'U_ShortItemGroup' => 'required|unique:S_OITB,U_ShortItemGroup|max:10',
+            'ItmsGrpNam' => 'required|max:20'
         ];
     }
 }
