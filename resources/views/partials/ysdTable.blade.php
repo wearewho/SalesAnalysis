@@ -1,5 +1,5 @@
 <div class="loadTable" >
-        <table id="YSDTable" class="table table-bordered" style="font-size: 16px;" >
+        <table id="YSDTable" class="table table-bordered" style="font-size: 16px; height:400px;" >
             <thead>
                 <tr style="text-align:center;" bgcolor="#b6dde8">
                     <th rowspan="2" style="vertical-align:middle; text-align:center;" >Type</th>

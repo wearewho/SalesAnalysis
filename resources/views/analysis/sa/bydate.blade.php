@@ -47,8 +47,67 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <i class="fa fa-bar-chart"></i>
+                    <h3 class="box-title">Summary Sales Report by Date</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="createtable"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+   <!--  <div class="row">
+        <div class="col-md-6">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <i class="fa fa-bar-chart"></i>
+                    <h3 class="box-title">Baht</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="container1" style="height: 380px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <i class="fa fa-bar-chart"></i>
+
+                    <h3 class="box-title">Unit</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="container2" style="height: 380px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
 @endsection
 
 @section('javascript')  
+<script src="{{ URL::asset('highchart/highcharts.js') }}"></script>
+<script src="{{ URL::asset('highchart/modules/drilldown.js') }}"></script>
+<script src="{{ URL::asset('highchart/highcharts-3d.js') }}"></script>
+<script src="{{ URL::asset('highchart/modules/data.js') }}"></script>
+<script src="{{ URL::asset('highchart/modules/exporting.js') }}"></script>
+<script src="{{ URL::asset('highchart/modules/offline-exporting.js') }}"></script> 
 <script src="{{ URL::asset('js/bydate.js') }}"></script> 
 @endsection
