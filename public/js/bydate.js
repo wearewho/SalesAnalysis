@@ -9,14 +9,14 @@ $(function() {
     $('#reservation').daterangepicker({
         startDate: moment().subtract(6, 'days'),
         endDate: moment(),
-        minDate: "01/01/2017"
+        minDate: "01/01/2017",
+        maxDate: moment()
     });
 
     var market = $('#market').val();
     var itemGroup = $('#itemGroup').val();
     var startDate = $('#reservation').data('daterangepicker').startDate;
     var endDate = $('#reservation').data('daterangepicker').endDate;
-    console.log(startDate.format('DD/MM/YYYY') + "." + endDate.format('DD/MM/YYYY') + " " + startDate.format('YYYY') + "." + endDate.format('YYYY'));
     selectData(market, itemGroup, startDate.format('YYYY'), endDate.format('YYYY'), startDate.format('DD/MM/YYYY'), endDate.format('DD/MM/YYYY'));
 
 
@@ -206,8 +206,14 @@ function calData(data, startDate, endDate, market, itemGroup) {
     var STUnitResult = ST_AB_Unit + ST_MB_Unit + ST_EB_Unit + ST_PR_Unit + ST_OT_Unit;
     var STBahtResult = ST_AB_Baht + ST_MB_Baht + ST_EB_Baht + ST_PR_Baht + ST_OT_Baht;
 
-    tableCreate(market, itemGroup, REM_AB_Unit, MTD_AB_Unit, SPD_AB_Unit, ST_AB_Unit, REM_MB_Unit, MTD_MB_Unit, SPD_MB_Unit, ST_MB_Unit, REM_EB_Unit, MTD_EB_Unit, SPD_EB_Unit, ST_EB_Unit, REM_OT_Unit, MTD_OT_Unit, SPD_OT_Unit, ST_OT_Unit, REM_PR_Unit, MTD_PR_Unit, SPD_PR_Unit, ST_PR_Unit, REM_OT_Baht, MTD_OT_Baht, SPD_OT_Baht, ST_OT_Baht, REM_PR_Baht, MTD_PR_Baht, SPD_PR_Baht, ST_PR_Baht, REM_EB_Baht, MTD_EB_Baht, SPD_EB_Baht, ST_EB_Baht, REM_MB_Baht, MTD_MB_Baht, SPD_MB_Baht, ST_MB_Baht, REM_AB_Baht, MTD_AB_Baht, SPD_AB_Baht, ST_AB_Baht, ABUnitResult, ABBahtResult, MBUnitResult, MBBahtResult, EBUnitResult, EBBahtResult, OTUnitResult, OTBahtResult, PRUnitResult, PRBahtResult, REMUnitResult, REMBahtResult, MTDUnitResult, MTDBahtResult, SPDUnitResult, SPDBahtResult, STUnitResult, STBahtResult, totalUnit, totalBaht);
-
+    if (totalUnit == 0 && totalBaht == 0) {
+        //Hide Charts
+        $('#chartsSection').css("display", "none");
+    } else {
+        //Show Charts
+        $('#chartsSection').css("display", "block");
+        tableCreate(market, itemGroup, REM_AB_Unit, MTD_AB_Unit, SPD_AB_Unit, ST_AB_Unit, REM_MB_Unit, MTD_MB_Unit, SPD_MB_Unit, ST_MB_Unit, REM_EB_Unit, MTD_EB_Unit, SPD_EB_Unit, ST_EB_Unit, REM_OT_Unit, MTD_OT_Unit, SPD_OT_Unit, ST_OT_Unit, REM_PR_Unit, MTD_PR_Unit, SPD_PR_Unit, ST_PR_Unit, REM_OT_Baht, MTD_OT_Baht, SPD_OT_Baht, ST_OT_Baht, REM_PR_Baht, MTD_PR_Baht, SPD_PR_Baht, ST_PR_Baht, REM_EB_Baht, MTD_EB_Baht, SPD_EB_Baht, ST_EB_Baht, REM_MB_Baht, MTD_MB_Baht, SPD_MB_Baht, ST_MB_Baht, REM_AB_Baht, MTD_AB_Baht, SPD_AB_Baht, ST_AB_Baht, ABUnitResult, ABBahtResult, MBUnitResult, MBBahtResult, EBUnitResult, EBBahtResult, OTUnitResult, OTBahtResult, PRUnitResult, PRBahtResult, REMUnitResult, REMBahtResult, MTDUnitResult, MTDBahtResult, SPDUnitResult, SPDBahtResult, STUnitResult, STBahtResult, totalUnit, totalBaht);
+    }
 }
 
 function tableCreate(market, itemGroup, REM_AB_Unit, MTD_AB_Unit, SPD_AB_Unit, ST_AB_Unit, REM_MB_Unit, MTD_MB_Unit, SPD_MB_Unit, ST_MB_Unit, REM_EB_Unit, MTD_EB_Unit, SPD_EB_Unit, ST_EB_Unit, REM_OT_Unit, MTD_OT_Unit, SPD_OT_Unit, ST_OT_Unit, REM_PR_Unit, MTD_PR_Unit, SPD_PR_Unit, ST_PR_Unit, REM_OT_Baht, MTD_OT_Baht, SPD_OT_Baht, ST_OT_Baht, REM_PR_Baht, MTD_PR_Baht, SPD_PR_Baht, ST_PR_Baht, REM_EB_Baht, MTD_EB_Baht, SPD_EB_Baht, ST_EB_Baht, REM_MB_Baht, MTD_MB_Baht, SPD_MB_Baht, ST_MB_Baht, REM_AB_Baht, MTD_AB_Baht, SPD_AB_Baht, ST_AB_Baht, ABUnitResult, ABBahtResult, MBUnitResult, MBBahtResult, EBUnitResult, EBBahtResult, OTUnitResult, OTBahtResult, PRUnitResult, PRBahtResult, REMUnitResult, REMBahtResult, MTDUnitResult, MTDBahtResult, SPDUnitResult, SPDBahtResult, STUnitResult, STBahtResult, totalUnit, totalBaht) {

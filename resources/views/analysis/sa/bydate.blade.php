@@ -48,23 +48,25 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box box-danger">
-                <div class="box-header with-border">
-                    <i class="fa fa-bar-chart"></i>
-                    <h3 class="box-title">Summary Sales Report by Date</h3>
-                </div>
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="createtable"></div>
+    <section id="chartsSection" >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <i class="fa fa-bar-chart"></i>
+                        <h3 class="box-title">Summary Sales Report by Date</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="createtable"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> 
+        </div> 
+    </section>
 
    <!--  <div class="row">
         <div class="col-md-6">

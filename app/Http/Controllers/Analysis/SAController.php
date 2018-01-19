@@ -160,9 +160,45 @@ class SAController extends Controller
                 $data = DB::select($strSQL,[]);  
                 return Response::json(array($data));
             }
-        }       
+        }   
+        else{
+
+            $tableName1 = "YS_".$request->startYear."";
+            $tableName2 = "YS_".$request->endYear."";
+
+            if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){ 
+
+                $strSQL = "
+
+                DECLARE @lastday varchar(6) = '31/12/';
+                DECLARE @lastyear varchar(4) = '$request->startYear';
+                DECLARE @firstday varchar(6) = '01/01/';
+                DECLARE @firstyear varchar(4) = '$request->endYear';
+                DECLARE @last varchar(10) = @lastday + @lastyear;
+                DECLARE @first varchar(10) = @firstday + @firstyear;
+
+                    Select * From (
+                        SELECT Docdate,CustCode,SalesPersonGroup,ItemGroupName,ItemGroupShort,Quantity,UnitPrice,Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) 
+                        union all
+                        SELECT Docdate,CustCode,SalesPersonGroup,ItemGroupName,ItemGroupShort,Quantity,UnitPrice,Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) 
+                    ) data 
+                    Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)";      
+                    
+                    if($request->market != "All"){
+                        $strSQL .= "And SalesPersonGroup = '$request->market' ";
+                    }
+    
+                    if($request->itemGroup != "All"){
+                        $strSQL .= "And ItemGroupName = '$request->itemGroup'";
+                    }                
+
+                $strSQL .= "ORDER BY Docdate";
+                
+                $data = DB::select($strSQL,[]);  
+                return Response::json(array($data));
+            }
+        }    
                  
-        return back();
     }
     
     public function downloadPDF(Request $request)
