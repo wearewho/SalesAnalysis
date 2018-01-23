@@ -50,7 +50,8 @@ $(function() {
 function selectData(market, itemGroup, startYear, endYear, startDate, endDate) {
     $.ajax({
         beforeSend: function() {
-
+            $("#chartsSection").css("opacity", 0.2);
+            $(".loading-img").show();
         },
         url: '/sa/selectByDate',
         type: "POST",
@@ -66,7 +67,8 @@ function selectData(market, itemGroup, startYear, endYear, startDate, endDate) {
 
         },
         complete: function() {
-
+            $("#chartsSection").css("opacity", 1);
+            $(".loading-img").hide();
         }
     });
 }
@@ -351,7 +353,7 @@ function tableCreate(market, itemGroup, REM_AB_Unit, MTD_AB_Unit, SPD_AB_Unit, S
             table += '<td id="ST_PR_Unit" style="text-align: right;">' + accounting.formatNumber(ST_PR_Unit) + '</td> <td id="ST_PR_Baht" style="text-align: right;">' + accounting.formatMoney(ST_PR_Baht, "฿") + '</td>';
         }
 
-        table += '<td id="Total_PR_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(OTUnitResult) + '</td> <td id="Total_PR_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(PRBahtResult, "฿") + '</td> </tr>';
+        table += '<td id="Total_PR_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(PRUnitResult) + '</td> <td id="Total_PR_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(PRBahtResult, "฿") + '</td> </tr>';
     } else if (itemGroup == 'Others') {
 
         table += '<tr style="text-align:center;" bgcolor="#ffd699"> <td bgcolor="#b6dde8"><b>Others</b></td>';
@@ -371,7 +373,7 @@ function tableCreate(market, itemGroup, REM_AB_Unit, MTD_AB_Unit, SPD_AB_Unit, S
             table += '<td id="ST_OT_Unit" style="text-align: right;">' + accounting.formatNumber(ST_OT_Unit) + '</td> <td id="ST_OT_Baht" style="text-align: right;">' + accounting.formatMoney(ST_OT_Baht, "฿") + '</td>';
         }
 
-        table += '<td id="Total_OT_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(PRUnitResult) + '</td> <td id="Total_OT_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(OTBahtResult, "฿") + '</td> </tr>';
+        table += '<td id="Total_OT_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(OTUnitResult) + '</td> <td id="Total_OT_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(OTBahtResult, "฿") + '</td> </tr>';
     } else if (itemGroup == 'All') {
 
         if (market == "REM") {
@@ -448,12 +450,12 @@ function tableCreate(market, itemGroup, REM_AB_Unit, MTD_AB_Unit, SPD_AB_Unit, S
             table += '<td id="Total_EB_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(EBUnitResult) + '</td> <td id="Total_EB_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(EBBahtResult, "฿") + '</td> </tr>';
 
             table += '<tr style="text-align:center;" bgcolor="#ffd699"> <td bgcolor="#b6dde8"><b>Premium</b></td>';
-            table += ' <td id="ST_PR_Unit" style="text-align: right;">' + accounting.formatNumber(SPD_PR_Unit) + '</td> <td id="ST_PR_Unit" style="text-align: right;">' + accounting.formatMoney(SPD_PR_Baht, "฿") + '</td>';
-            table += '<td id="Total_PR_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(OTUnitResult) + '</td> <td id="Total_PR_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(PRBahtResult, "฿") + '</td> </tr>';
+            table += ' <td id="ST_PR_Unit" style="text-align: right;">' + accounting.formatNumber(ST_PR_Unit) + '</td> <td id="ST_PR_Unit" style="text-align: right;">' + accounting.formatMoney(ST_PR_Baht, "฿") + '</td>';
+            table += '<td id="Total_PR_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(PRUnitResult) + '</td> <td id="Total_PR_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(PRBahtResult, "฿") + '</td> </tr>';
 
             table += '<tr style="text-align:center;" bgcolor="#ffd699"> <td bgcolor="#b6dde8"><b>Others</b></td>';
             table += '<td id="ST_OT_Unit" style="text-align: right;">' + accounting.formatNumber(ST_OT_Unit) + '</td> <td id="ST_OT_Baht" style="text-align: right;">' + accounting.formatMoney(ST_OT_Baht, "฿") + '</td>';
-            table += '<td id="Total_OT_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(PRUnitResult) + '</td> <td id="Total_OT_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(OTBahtResult, "฿") + '</td> </tr>';
+            table += '<td id="Total_OT_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(OTUnitResult) + '</td> <td id="Total_OT_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(OTBahtResult, "฿") + '</td> </tr>';
         } else if (market == "All") {
             table += '<tr style="text-align:center;" bgcolor="#ffd699"> <td bgcolor="#b6dde8"><b>AB</b></td>';
             table += '<td id="REM_AB_Unit" style="text-align: right;">' + accounting.formatNumber(REM_AB_Unit) + '</td> <td id="REM_AB_Baht" style="text-align: right;">' + accounting.formatMoney(REM_AB_Baht, "฿") + '</td>';
@@ -481,14 +483,14 @@ function tableCreate(market, itemGroup, REM_AB_Unit, MTD_AB_Unit, SPD_AB_Unit, S
             table += '<td id="MTD_PR_Unit" style="text-align: right;">' + accounting.formatNumber(MTD_PR_Unit) + '</td> <td id="MTD_PR_Baht" style="text-align: right;">' + accounting.formatMoney(MTD_PR_Baht, "฿") + '</td>';
             table += '<td id="SPD_PR_Unit" style="text-align: right;">' + accounting.formatNumber(SPD_PR_Unit) + '</td> <td id="SPD_PR_Baht" style="text-align: right;">' + accounting.formatMoney(SPD_PR_Baht, "฿") + '</td>';
             table += ' <td id="ST_PR_Unit" style="text-align: right;">' + accounting.formatNumber(SPD_PR_Unit) + '</td> <td id="ST_PR_Baht" style="text-align: right;">' + accounting.formatMoney(ST_PR_Baht, "฿") + '</td>';
-            table += '<td id="Total_PR_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(OTUnitResult) + '</td> <td id="Total_PR_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(PRBahtResult, "฿") + '</td> </tr>';
+            table += '<td id="Total_PR_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(PRUnitResult) + '</td> <td id="Total_PR_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(PRBahtResult, "฿") + '</td> </tr>';
 
             table += '<tr style="text-align:center;" bgcolor="#ffd699"> <td bgcolor="#b6dde8"><b>Others</b></td>';
             table += '<td id="REM_OT_Unit" style="text-align: right;">' + accounting.formatNumber(REM_OT_Unit) + '</td> <td id="REM_OT_Baht" style="text-align: right;">' + accounting.formatMoney(REM_OT_Baht, "฿") + '</td>';
             table += '<td id="MTD_OT_Unit" style="text-align: right;">' + accounting.formatNumber(MTD_OT_Unit) + '</td> <td id="MTD_OT_Baht" style="text-align: right;">' + accounting.formatMoney(MTD_OT_Baht, "฿") + '</td>';
             table += '<td id="SPD_OT_Unit" style="text-align: right;">' + accounting.formatNumber(SPD_OT_Unit) + '</td> <td id="SPD_OT_Baht" style="text-align: right;">' + accounting.formatMoney(SPD_OT_Baht, "฿") + '</td>';
             table += '<td id="ST_OT_Unit" style="text-align: right;">' + accounting.formatNumber(ST_OT_Unit) + '</td> <td id="ST_OT_Baht" style="text-align: right;">' + accounting.formatMoney(ST_OT_Baht, "฿") + '</td>';
-            table += '<td id="Total_OT_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(PRUnitResult) + '</td> <td id="Total_OT_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(OTBahtResult, "฿") + '</td> </tr>';
+            table += '<td id="Total_OT_Unit" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatNumber(OTUnitResult) + '</td> <td id="Total_OT_Baht" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">' + accounting.formatMoney(OTBahtResult, "฿") + '</td> </tr>';
         }
 
 

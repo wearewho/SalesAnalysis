@@ -33,7 +33,7 @@
                             </span>
                         </a>
                     </li>
-                    <li class="{{ $request->segment(2) == 'bydate' ? 'active active-sub' : '' }}">
+                    <li class="{{ $request->segment(2) == 'byDate' ? 'active active-sub' : '' }}">
                         <a href="{{ route('analysis.sa.byDate') }}">
                             <i class="fa fa-calendar"></i>
                             <span class="title">

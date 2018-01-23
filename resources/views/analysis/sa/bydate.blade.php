@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-
+        
     <section id="chartsSection" >
         <div class="row">
             <div class="col-md-12">
@@ -59,13 +59,14 @@
                     <div class="box-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div id="createtable"></div>
+                                <div id="createtable"></div>        
                             </div>
                         </div>
-                    </div>
+                    </div>                     
+                    <div class="loading-img"></div>     
                 </div>
             </div>
-        </div> 
+        </div>        
     </section>
 
    <!--  <div class="row">

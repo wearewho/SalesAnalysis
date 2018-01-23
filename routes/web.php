@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
     Route::get('targetcomparison', 'Analysis\SAController@targetcomparison')->name('TargetComparison');
     Route::get('toplist', 'Analysis\SAController@toplist')->name('TopList');
     Route::get('region', 'Analysis\SAController@region')->name('Region');
+    Route::post('selectProvince', 'Analysis\SAController@selectProvince')->name('selectProvince');  
     Route::get('byDate', 'Analysis\SAController@byDate')->name('byDate');
     Route::post('selectByDate', 'Analysis\SAController@selectByDate')->name('selectByDate');
 });

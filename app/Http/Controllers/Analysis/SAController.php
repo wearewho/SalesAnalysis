@@ -11,6 +11,8 @@ use PDF;
 use Schema;
 use App\ItemGroup;
 use App\Market;
+use App\Region;
+use App\Province;
 
 class SAController extends Controller
 {
@@ -47,7 +49,19 @@ class SAController extends Controller
             return abort(401);
         }
 
-        return view('analysis.sa.region');
+        $Market = Market::all();
+        $Region = Region::all();
+        $Province = Province::all();
+        return view('analysis.sa.region', compact('Market','Region','Province'));
+    }
+
+    public function selectProvince(Request $request)
+    {
+    	if($request->ajax()){
+            $URegion = Region::where('Name', $request->region)->pluck('Code');
+            $Province = Province::where('U_Region',$URegion)->get();  
+            return Response::json(array($Province));
+    	}
     }
 
     public function byDate()
