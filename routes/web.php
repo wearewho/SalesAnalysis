@@ -67,7 +67,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'rem', 'as' => 'analysis.rem.'], function () {
-    Route::get('salessummary', 'Analysis\REMController@salessummary')->name('SalesSummary'); 
+    Route::get('salessummaryREM', 'Analysis\REMController@salessummaryREM')->name('SalesSummaryREM'); 
     Route::post('selectREM', 'Analysis\REMController@selectREM')->name('selectREM');
     Route::post('selectDataTableREM', 'Analysis\REMController@selectDataTableREM')->name('selectDataTableREM');
 });

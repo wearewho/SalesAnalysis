@@ -40,7 +40,10 @@ $(function() {
 function selectData(year) {
     $.ajax({
         beforeSend: function() {
-
+            $(".loadGraph").css("opacity", 0.2);
+            $(".loadTable").css("opacity", 0.2);
+            $(".loading-img").show();
+            $(".loading-img2").show();
         },
         url: '/rem/selectREM',
         type: "POST",
@@ -88,7 +91,10 @@ function selectData(year) {
 
         },
         complete: function() {
-
+            $(".loadGraph").css("opacity", 1);
+            $(".loadTable").css("opacity", 1);
+            $(".loading-img").hide();
+            $(".loading-img2").hide();
         }
     });
 }

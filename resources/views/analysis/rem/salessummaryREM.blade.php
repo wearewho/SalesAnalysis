@@ -36,20 +36,25 @@
             <li class="pull-left header"><i class="fa fa-object-group"></i> Sales Summary Report</li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" id="tab_1-1">                
+            <div class="tab-pane active" id="tab_1-1">  
             
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="Baht"></div>
-                </div>
-                <div class="col-md-6">
-                    <div id="Unit"></div>
+            <div class="loadGraph">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="Baht"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="Unit"></div>
+                    </div>
                 </div>
             </div>
+            <div class="loading-img"></div>
 
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_2-2">
+            
+            <div class="loadTable">
                 <table id="BAHTTable" class="table table-bordered" style="font-size: 14px;" >
                     <thead>
                         <tr style="text-align:center;" bgcolor="#b6dde8">
@@ -253,7 +258,9 @@
                             <td id="UnitGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                         </tr>                   
                     </tbody>
-                </table>
+                </table>                
+            </div>
+            <div class="loading-img2"></div>
             </div>
             <!-- /.tab-pane -->
         </div>

@@ -15,13 +15,13 @@ use App\TargetH;
 
 class REMController extends Controller
 {
-    public function SalesSummary()
+    public function SalesSummaryREM()
     {
         if (! Gate::allows('sales_analysis')) {
             return abort(401);
         }
 
-        return view('analysis.rem.salessummary');
+        return view('analysis.rem.salessummaryREM');
     }
 
     public function selectREM(Request $request) {  

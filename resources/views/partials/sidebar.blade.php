@@ -80,11 +80,11 @@
                 </a>
                 <ul class="treeview-menu">
 
-                    <li class="{{ $request->segment(2) == 'salessummary' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('analysis.rem.SalesSummary') }}">
+                    <li class="{{ $request->segment(2) == 'salessummaryREM' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.rem.SalesSummaryREM') }}">
                             <i class="fa fa-object-group"></i>
                             <span class="title">
-                                @lang('global.REM.fields.01')
+                            @lang('global.REM.fields.01')
                             </span>
                         </a>
                     </li>                    
