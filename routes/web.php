@@ -61,8 +61,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
     Route::get('toplist', 'Analysis\SAController@toplist')->name('TopList');
     Route::get('region', 'Analysis\SAController@region')->name('Region');
     Route::post('selectProvince', 'Analysis\SAController@selectProvince')->name('selectProvince');  
+    Route::post('test', 'Analysis\SAController@test')->name('test');  
     Route::get('byDate', 'Analysis\SAController@byDate')->name('byDate');
     Route::post('selectByDate', 'Analysis\SAController@selectByDate')->name('selectByDate');
+});
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'rem', 'as' => 'analysis.rem.'], function () {
+    Route::get('salessummary', 'Analysis\REMController@salessummary')->name('SalesSummary'); 
+    Route::post('selectREM', 'Analysis\REMController@selectREM')->name('selectREM');
+    Route::post('selectDataTableREM', 'Analysis\REMController@selectDataTableREM')->name('selectDataTableREM');
 });
 
 

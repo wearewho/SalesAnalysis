@@ -68,6 +68,29 @@
                 </ul>
             </li>
             @endcan
+
+            @can('REM')
+            <li class="treeview {{ $request->segment(1) == 'rem' ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-building"></i>
+                    <span class="title">@lang('global.REM.title')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li class="{{ $request->segment(2) == 'salessummary' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.rem.SalesSummary') }}">
+                            <i class="fa fa-object-group"></i>
+                            <span class="title">
+                                @lang('global.REM.fields.01')
+                            </span>
+                        </a>
+                    </li>                    
+                </ul>
+            </li>
+            @endcan
             
             @can('admin_manage') 
             <li class="header">Management</li>         

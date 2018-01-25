@@ -28,6 +28,14 @@ return [
 		],
 	],
 
+	'REM' => [
+		'title' => 'REM',
+		'created_at' => 'Time',
+		'fields' => [
+			'01' => 'Sales Summary',
+		],
+	],
+
 	'targetmaster' => [
 		'title' => 'Target Master',
 		'created_at' => 'Time'

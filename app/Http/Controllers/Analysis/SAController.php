@@ -55,6 +55,11 @@ class SAController extends Controller
         return view('analysis.sa.region', compact('Market','Region','Province'));
     }
 
+    public function test(Request $request)
+    {
+        dd($request->all());
+    }
+
     public function selectProvince(Request $request)
     {
     	if($request->ajax()){

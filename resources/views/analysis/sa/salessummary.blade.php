@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content') 
+    <style>
+        .uniqueClassName {
+            text-align: right;
+        }
+    </style>
 
     <!-- START CUSTOM TABS -->
 
@@ -255,7 +260,14 @@
                                                     <th>Unit</th>
                                                     <th>Baht</th>
                                                 </tr>
-                                            </thead>
+                                            </thead>                                    
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="3" style="text-align:center"></th>
+                                                    <th style="text-align:right"></th>
+                                                    <th style="text-align:right"></th>
+                                                </tr>
+                                            </tfoot>
                                         </table> 
                                     </div>
                                     <!-- /.tab-pane -->
@@ -268,7 +280,14 @@
                                                     <th>Unit</th>
                                                     <th>Baht</th>
                                                 </tr>
-                                            </thead>
+                                            </thead>                                        
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="2" style="text-align:center"></th>
+                                                    <th style="text-align:right"></th>
+                                                    <th style="text-align:right"></th>
+                                                </tr>
+                                            </tfoot>
                                         </table> 
                                     </div>
                                     <!-- /.tab-pane -->
@@ -295,7 +314,7 @@
                             @php                      
                             $todate = date("d/m/Y", strtotime('-1 day'));
                             @endphp
-                            <b>  Data as of:  27/12/2018 </b>
+                            <b>  Data as of: {{ $todate }} </b>
                             <br>
                             <b>  Sys Date:  {{ date("d/m/Y") }} </b>
                         </div>

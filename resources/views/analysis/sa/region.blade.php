@@ -75,7 +75,7 @@
                             </div> 
                             <div class="form-group">
                               <label>Market	</label>
-                              <select class="form-control select2" name="market" style="width: 100%;">
+                              <select class="form-control select2" name="market" id="market" style="width: 100%;"> 
                                 <option selected="selected">All</option>
                                 @foreach ($Market as $market)
                                 <option value="{{ $market->Code }}">{{ $market->Name }}</option>
@@ -95,7 +95,7 @@
 
                             <div class="form-group">  
                               <label>Region	</label>
-                              <select class="form-control select2" name="region" style="width: 100%;">
+                              <select class="form-control select2" name="region" id="region" style="width: 100%;">
                                 <option selected="selected" value="World">World</option> 
                                 <optgroup label="Outside Thailand">
                                   <option value="Asia">Asia</option>
@@ -116,7 +116,7 @@
 
                             <div class="form-group">
                               <label>Province	</label>
-                              <select class="form-control select2" name="province" style="width: 100%;">
+                              <select class="form-control select2" name="province" id="province" style="width: 100%;">
                                 <option selected="selected">-- Select Region --</option>
                               </select>
                             </div> 
@@ -135,18 +135,20 @@
 @endsection
 
 @section('javascript') 
+
     <!-- high Maps -->
     <script src="http://code.highcharts.com/maps/highmaps.js"></script>
     <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
     <script src="http://code.highcharts.com/maps/modules/drilldown.js"></script>
     <script src="http://code.highcharts.com/mapdata/custom/world-continents.js"></script>
     <script src="http://code.highcharts.com/mapdata/custom/asia.js"></script>
-
     <script src="http://code.highcharts.com/mapdata/custom/oceania.js"></script>
     <script src="http://code.highcharts.com/mapdata/custom/european-union.js"></script>
     <script src="http://code.highcharts.com/mapdata/custom/africa.js"></script>
     <script src="http://code.highcharts.com/mapdata/custom/north-america.js"></script>
     <script src="http://code.highcharts.com/mapdata/custom/south-america.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/mapdata/custom/europe.js"></script>
     <script src="{{ URL::asset('highmap/mapdata/countries/th/Region-all.js') }}"></script>
     <script src="{{ URL::asset('highmap/mapdata/countries/th/Northeastern.js') }}"></script>
     <script src="{{ URL::asset('highmap/mapdata/countries/th/Bangkok.js') }}"></script>
@@ -167,8 +169,8 @@
             }
         });   
 
-        selectMap();
-
+        selectMap();  
+        
         $("select[name='region']").change(function(){
           var region = $(this).val();
           if(region == 'World' || region == 'Asia' || region == 'Europe' || region == 'Oceania' || region == 'Africa' || region == 'North America' || region == 'South America'){
@@ -203,7 +205,7 @@
     });     
       
       
-      function selectMap(region) {
+      function selectMap() {
         
         Highcharts.setOptions({
             lang: {
@@ -212,7 +214,7 @@
         });
 
         // Initiate the map
-        $('#map').highcharts('Map', {
+        var chart =  Highcharts.mapChart('map', {
           title: {
             text: 'Sales Report World Map'
           },
@@ -221,15 +223,17 @@
             events: {
       
               drilldown: function(e) {
+                
                 if (!e.seriesOptions) {
                   var chart = this,
                     pointWithLatLon = function(point, latLon) {
                       return Highcharts.merge(point, chart.transformFromLatLon(latLon,
                         Highcharts.maps['custom/world']['hc-transform']['default']));
                     };      
-                    
+                                      
+
                   var continent;
-                  var contName;                
+                  var contName;           
                   $("select[name='region']").val(e.point.name).change();
 
                   switch (e.point.name) {                    
@@ -709,9 +713,6 @@
                 'hc-key': 'as',
                 drilldown: true
               }, {
-                'hc-key': 'th',
-                drilldown: true
-              }, {
                 'hc-key': 'oc',
                 drilldown: true
               }, {
@@ -723,7 +724,7 @@
               }, {
                 'hc-key': 'sa',
                 drilldown: true
-              }      
+              }    
             ],
             mapData: Highcharts.maps['custom/world-continents'],
             joinBy: 'hc-key',
@@ -733,7 +734,28 @@
             }          
           }]
         });
-    }
+
+        if(region == "Asia"){          
+          chart.series[0].data[1].firePointEvent('click');  
+        } 
+        else if(region == "Europe"){
+          chart.series[0].data[2].firePointEvent('click'); 
+        } 
+        else if(region == "Oceania"){
+          chart.series[0].data[2].firePointEvent('click');  
+        } 
+        else if(region == "Africa"){
+          chart.series[0].data[3].firePointEvent('click');  
+        } 
+        else if(region == "North America"){
+          chart.series[0].data[4].firePointEvent('click');  
+        } 
+        else if(region == "South America"){
+          chart.series[0].data[5].firePointEvent('click');  
+        } 
+
+      }
+               
       
     </script>
 

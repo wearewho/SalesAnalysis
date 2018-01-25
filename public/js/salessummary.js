@@ -225,16 +225,75 @@ function selectDataTable(month, year, sort, type) {
                         { data: "Dscription" },
                         {
                             data: "Quantity",
+                            className: "uniqueClassName",
                             render: function(data, type, full) {
                                 return accounting.formatNumber(data);
                             }
                         },
                         {
                             data: "Total",
+                            className: "uniqueClassName",
                             render: function(data, type, full) {
-                                return accounting.formatMoney(data, "฿");
+                                return accounting.formatNumber(data);
                             }
                         }
+                    ],
+                    "footerCallback": function(row, data, start, end, display) {
+                        var api = this.api(),
+                            data;
+
+                        // converting to interger to find total
+                        var intVal = function(i) {
+                            return typeof i === 'string' ?
+                                i.replace(/[\$,]/g, '') * 1 :
+                                typeof i === 'number' ?
+                                i : 0;
+                        };
+
+                        // computing column Total of the complete result 
+                        // Total over all pages
+                        Unit = api
+                            .column(3)
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Total over this page
+                        pageUnit = api
+                            .column(3, { page: 'current' })
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Total over all pages
+                        Total = api
+                            .column(4)
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Total over this page
+                        pageTotal = api
+                            .column(4, { page: 'current' })
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Update footer by showing the total with the reference of the column index 
+                        $(api.column(0).footer()).html('Total');
+                        $(api.column(3).footer()).html(
+                            ' ' + accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
+                        );
+                        $(api.column(4).footer()).html(
+                            ' ' + accounting.formatNumber(pageTotal) + ' ( ' + accounting.formatNumber(Total) + ' Total)'
+                        );
+                    },
+                    "order": [
+                        [4, "desc"]
                     ]
                 });
 
@@ -250,16 +309,75 @@ function selectDataTable(month, year, sort, type) {
                         { data: "CustName" },
                         {
                             data: "Quantity",
+                            className: "uniqueClassName",
                             render: function(data, type, full) {
                                 return accounting.formatNumber(data);
                             }
                         },
                         {
                             data: "Total",
+                            className: "uniqueClassName",
                             render: function(data, type, full) {
-                                return accounting.formatMoney(data, "฿");
+                                return accounting.formatNumber(data);
                             }
                         }
+                    ],
+                    "footerCallback": function(row, data, start, end, display) {
+                        var api = this.api(),
+                            data;
+
+                        // converting to interger to find total
+                        var intVal = function(i) {
+                            return typeof i === 'string' ?
+                                i.replace(/[\$,]/g, '') * 1 :
+                                typeof i === 'number' ?
+                                i : 0;
+                        };
+
+                        // computing column Total of the complete result 
+                        // Total over all pages
+                        Unit = api
+                            .column(2)
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Total over this page
+                        pageUnit = api
+                            .column(2, { page: 'current' })
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Total over all pages
+                        Total = api
+                            .column(3)
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Total over this page
+                        pageTotal = api
+                            .column(3, { page: 'current' })
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Update footer by showing the total with the reference of the column index 
+                        $(api.column(0).footer()).html('Total');
+                        $(api.column(2).footer()).html(
+                            ' ' + accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
+                        );
+                        $(api.column(3).footer()).html(
+                            ' ' + accounting.formatNumber(pageTotal) + ' ( ' + accounting.formatNumber(Total) + ' Total)'
+                        );
+                    },
+                    "order": [
+                        [3, "desc"]
                     ]
                 });
 
