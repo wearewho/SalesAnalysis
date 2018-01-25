@@ -20,7 +20,7 @@
                         
                         <th>@lang('global.department.fields.id')</th>
                         <th>@lang('global.department.fields.name')</th>
-                        <th>&nbsp;</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>

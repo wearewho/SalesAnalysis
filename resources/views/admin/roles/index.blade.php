@@ -18,7 +18,7 @@
                         <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
                         <th>@lang('global.roles.fields.name')</th>
                         <th>@lang('global.roles.fields.abilities')</th>
-                        <th>&nbsp;</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 

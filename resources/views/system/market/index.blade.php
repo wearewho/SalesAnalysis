@@ -19,7 +19,7 @@
                         
                         <th>@lang('global.market.fields.id')</th>
                         <th>@lang('global.market.fields.name')</th>
-                        <th>&nbsp;</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>

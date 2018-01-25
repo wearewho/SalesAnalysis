@@ -19,7 +19,7 @@
                         
                         <th>@lang('global.company.fields.id')</th>
                         <th>@lang('global.company.fields.name')</th>
-                        <th>&nbsp;</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>

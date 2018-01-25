@@ -32,15 +32,12 @@
 <link href="{{ URL::asset('adminlte/css/AdminLTE.min.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('adminlte/css/skins/skin-blue.min.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('adminlte/css/skins/skin-red.min.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
 <link rel="stylesheet"
       href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet"
       href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
 <link rel="stylesheet"
-      href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css"/>      
-<link rel="stylesheet"
-      href="//cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css"/>
+      href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css"/>     
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.4.5/jquery-ui-timepicker-addon.min.css"/>
 <link rel="stylesheet"

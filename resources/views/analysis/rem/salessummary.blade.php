@@ -2,6 +2,7 @@
 
 @section('content') 
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/> 
     <style>
         .uniqueClassName {
             text-align: right;
@@ -367,17 +368,16 @@
 
 @endsection
 
-@section('javascript')  
+@section('javascript')   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 <script src="{{ URL::asset('adminlte/js/select2.full.min.js') }}"></script>
 <script src="{{ URL::asset('adminlte/js/main.js') }}"></script>
 <script src="{{ URL::asset('adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ URL::asset('adminlte/plugins/fastclick/fastclick.js') }}"></script>
-<script src="{{ URL::asset('adminlte/js/app.min.js') }}"></script>
-<script src="{{ URL::asset('adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ URL::asset('adminlte/js/app.min.js') }}"></script> 
 <script src="{{ URL::asset('adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ URL::asset('highchart/highcharts.js') }}"></script>
 <script src="{{ URL::asset('highchart/highcharts-3d.js') }}"></script>

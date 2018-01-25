@@ -18,7 +18,7 @@
                         
                         <th>@lang('global.itemgroup.fields.id')</th>
                         <th>@lang('global.itemgroup.fields.name')</th>
-                        <th>&nbsp;</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>
