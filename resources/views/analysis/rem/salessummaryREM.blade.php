@@ -379,7 +379,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 <script src="{{ URL::asset('adminlte/js/select2.full.min.js') }}"></script>
 <script src="{{ URL::asset('adminlte/js/main.js') }}"></script>
 <script src="{{ URL::asset('adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
@@ -392,7 +391,16 @@
 <script src="{{ URL::asset('highchart/modules/data.js') }}"></script>
 <script src="{{ URL::asset('highchart/modules/exporting.js') }}"></script>
 <script src="{{ URL::asset('highchart/modules/offline-exporting.js') }}"></script> 
-<script src="{{ URL::asset('js/REMsalessummary.js') }}"></script> 
+<script src="{{ URL::asset('js/salessummaryREM.js') }}"></script> 
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script> 
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script> 
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script> 
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> 
 <script>
     $(function() {
         $(document).on("click", "a#topDropdown", function() {
