@@ -114,7 +114,7 @@ function selectDataTable(nameMonth, month, year) {
                 var Customer = $("#Customer");
 
                 Product.dataTable().fnDestroy();
-                Product.dataTable({
+                var tableProduct = Product.dataTable({
                     data: Item,
                     columns: [{
                             data: "index",
@@ -200,7 +200,7 @@ function selectDataTable(nameMonth, month, year) {
                 }, );
 
                 Customer.dataTable().fnDestroy();
-                Customer.dataTable({
+                var tableCustomer = Customer.dataTable({
                     data: Cust,
                     columns: [{
                             data: "index",
