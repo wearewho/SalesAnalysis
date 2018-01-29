@@ -34,22 +34,22 @@ class REMController extends Controller
         $messageTarget  = "";  
          
         if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){             
-            $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'REM' and ItemGroupName = 'Automotive Battery'  ";
-            $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'REM' and ItemGroupName = 'Automotive Battery'  ";
+            $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'REM'   ";
+            $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'REM'   ";
                          
         }
         else if(Schema::hasTable($tableName1) && !Schema::hasTable($tableName2)){
-            $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'REM' and ItemGroupName = 'Automotive Battery'  ";
-            $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' and ItemGroupName = 'Automotive Battery'  ";
+            $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'REM'  ";
+            $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'   ";
         }
         else if(!Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){
-            $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' and ItemGroupName = 'Automotive Battery'  ";
-            $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'REM' and ItemGroupName = 'Automotive Battery'  ";
+            $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
+            $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'REM'  ";
         }
         else{
             $messageData = "nullData";
-            $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' and ItemGroupName = 'Automotive Battery'  ";
-            $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' and ItemGroupName = 'Automotive Battery'  ";
+            $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
+            $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
                          
         }
 
@@ -74,12 +74,12 @@ class REMController extends Controller
         $tableName = "YS_".$request->year."";
 
         if(Schema::hasTable($tableName)){             
-            $queryItem = " SELECT ItemCode,Dscription,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'REM' and ItemGroupName = 'Automotive Battery' Group by ItemCode,Dscription,Commodity  ";                      
-            $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'REM' and ItemGroupName = 'Automotive Battery' Group by CustCode,CustName,MasterDealer ";                         
+            $queryItem = " SELECT ItemCode,Dscription,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'REM' Group by ItemCode,Dscription,Commodity  ";                      
+            $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'REM' Group by CustCode,CustName,MasterDealer ";                         
         }
         else{
-            $queryItem = " SELECT ItemCode,Dscription,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'TEST' and ItemGroupName = 'Automotive Battery' Group by ItemCode,Dscription,Commodity  ";                      
-            $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'TEST' and ItemGroupName = 'Automotive Battery' Group by CustCode,CustName,MasterDealer ";   
+            $queryItem = " SELECT ItemCode,Dscription,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'TEST' Group by ItemCode,Dscription,Commodity  ";                      
+            $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'TEST' Group by CustCode,CustName,MasterDealer ";   
         }        
                        
         $Item = DB::select($queryItem,[]);    

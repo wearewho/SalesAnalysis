@@ -186,7 +186,7 @@ function selectDataTable(nameMonth, month, year) {
                             }, 0);
 
                         // Update footer by showing the total with the reference of the column index 
-                        $(api.column(0).footer()).html('Total');
+                        $(api.column(3).footer()).html('Total');
                         $(api.column(4).footer()).html(
                             ' ' + accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
                         );
@@ -198,6 +198,58 @@ function selectDataTable(nameMonth, month, year) {
                         [5, "desc"]
                     ]
                 }, );
+
+                var buttonsProduct = new $.fn.dataTable.Buttons(tableProduct, {
+                    /* buttons: [
+                        'copy', 'print',
+                        {
+                            extend: 'excel',
+                            title: "REM Sales Summary: " + nameMonth + " " + year
+                        }, {
+                            extend: 'pdf',
+                            title: "REM Sales Summary: " + nameMonth + " " + year
+                        }, {
+                            extend: 'csv',
+                            title: "REM Sales Summary: " + nameMonth + " " + year
+                        }
+                    ] */
+                    buttons: [{
+                        extend: 'pdfHtml5',
+                        text: 'Export PDF',
+                        customize: function(doc) {
+                            var rgbaStrToHex = function(str) {
+                                var firstParens = str.split('('),
+                                    nums = firstParens[1].split(')')[0].split(','),
+                                    a = 1;
+                                if (nums.length == 4) {
+                                    a = parseFloat(nums[3]);
+                                }
+                                return '#' + nums.filter(function(x, ix) { return ix < 3; })
+                                    .map(function(x) {
+                                        x = Math.round(parseInt(x) * a, 0).toString(16);
+                                        return ((x.length == 1) ? "0" + x : x);
+                                    }).join("");
+                            };
+                            var tblBody = doc.content[1].table.body;
+                            $(instance.tbl.context[0].nTable).find('tr').each(function(ix, row) {
+                                var index = ix;
+                                var rowElt = row;
+                                $(row).find('th,td').each(function(ind, elt) {
+                                    if (elt.tagName === "TH") return;
+                                    var color = $(elt).css('background-color');
+                                    if (color === 'rgba(0, 0, 0, 0)') {
+                                        color = $(rowElt).css('background-color');
+                                    }
+                                    if (color !== 'rgba(0, 0, 0, 0)') {
+                                        delete tblBody[index][ind].style;
+                                        tblBody[index][ind].fillColor = rgbaStrToHex(color);
+                                    }
+                                });
+                            });
+                        }
+                    }]
+                }).container().appendTo($('#exportProduct'));
+
 
                 Customer.dataTable().fnDestroy();
                 var tableCustomer = Customer.dataTable({
@@ -272,7 +324,7 @@ function selectDataTable(nameMonth, month, year) {
                             }, 0);
 
                         // Update footer by showing the total with the reference of the column index 
-                        $(api.column(0).footer()).html('Total');
+                        $(api.column(3).footer()).html('Total');
                         $(api.column(4).footer()).html(
                             ' ' + accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
                         );
@@ -284,6 +336,22 @@ function selectDataTable(nameMonth, month, year) {
                         [5, "desc"]
                     ]
                 });
+
+                var buttonsCustomer = new $.fn.dataTable.Buttons(tableCustomer, {
+                    buttons: [
+                        'copy', 'print',
+                        {
+                            extend: 'excel',
+                            title: "REM Sales Summary: " + nameMonth + " " + year
+                        }, {
+                            extend: 'pdf',
+                            title: "REM Sales Summary: " + nameMonth + " " + year
+                        }, {
+                            extend: 'csv',
+                            title: "REM Sales Summary: " + nameMonth + " " + year
+                        }
+                    ]
+                }).container().appendTo($('#exportCustomer'));
 
                 $("#headModal").text("REM Sales Summary: " + nameMonth + " " + year);
                 $("#rightModal").text("REM");
