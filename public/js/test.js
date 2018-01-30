@@ -25,9 +25,6 @@ $(document).ready(function() {
             filename: 'dt_custom_pdf',
             orientation: 'portrait', //landscape
             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-            table: {
-                widths: ['*', '*', '*', '*', '*'],
-            },
             exportOptions: {
                 columns: ':visible',
                 search: 'applied',
@@ -62,31 +59,19 @@ $(document).ready(function() {
                 // Right side: A document title
                 doc['header'] = (function() {
                     return {
-                        columns: [{
-                                image: logo,
-                                width: 40
-                            },
-                            {
-                                alignment: 'left',
-                                italics: false,
-                                text: 'Sales Analysis Portal V.1.0 ',
-                                fontSize: 12,
-                                margin: [10, 0]
-                            },
-                            {
-                                alignment: 'left',
-                                italics: false,
-                                text: 'Yuasa Battery (Thailand) Public Company Limited',
-                                fontSize: 12,
-                                margin: [0, 20]
-                            },
-                            {
-                                alignment: 'right',
-                                fontSize: 14,
-                                text: 'Custom PDF export with dataTables'
-                            }
-                        ],
-                        margin: 20
+                        margin: 20,
+                        table: {
+                            widths: ["auto", 250, "*"],
+                            body: [
+                                [{ rowSpan: 2, image: logo, width: 40 }, { text: 'Sales Analysis Portal V.1.0', alignment: 'left', bold: true, fontSize: 11 },
+                                    { text: 'Data as of: 29/01/2018', alignment: 'right', bold: true, fontSize: 11 }
+                                ],
+                                ['', { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
+                                    { text: 'Thammachart Nimkhiao - Administrator', alignment: 'right', bold: true, fontSize: 11 }
+                                ],
+                            ]
+                        },
+                        layout: 'noBorders'
                     }
                 });
                 // Create a footer object with 2 columns
@@ -117,8 +102,7 @@ $(document).ready(function() {
                 objLayout['paddingLeft'] = function(i) { return 4; };
                 objLayout['paddingRight'] = function(i) { return 4; };
                 doc.content[0].layout = objLayout;
-
-
+                doc.content[0].table.widths = ["*", "*", "*", "*", "*"];
 
             }
         }]

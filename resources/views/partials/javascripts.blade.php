@@ -53,7 +53,7 @@
     @endif 
     <script>
         window._token = '{{ csrf_token() }}';
-    </script>
+    </script>     
 
     <!-- function Delete TargetMaster -->
     <script type="text/javascript">
@@ -103,3 +103,4 @@
     </script>      
 
 @yield('javascript')
+

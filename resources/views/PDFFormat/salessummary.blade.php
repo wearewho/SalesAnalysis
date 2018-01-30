@@ -86,7 +86,7 @@ $objs = session('data');
     <hr>
     <table class="head" >
         <tr>
-            <th class="head" height="5" style="text-align: left;font-size: 14px;"><b>{{ date("d/m/Y H:i:s") }}</b></th>            
+            <th class="head" height="5" style="text-align: left;font-size: 14px;"><b>Created on : {{ date("d/m/Y H:i:s") }}</b></th>            
             <th class="head pagenum-container" height="5" style="text-align: right;font-size: 14px;"><b>Page <span class="pagenum"></span></b></th>
         </tr> 
     </table> 

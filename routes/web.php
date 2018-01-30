@@ -21,6 +21,7 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 // Dashboard
 Route::get('/home', 'HomeController@index');
+Route::post('/convert', 'HomeController@convert')->name('convert');
 
 // Profile Picture
 Route::get('/image-crop', 'HomeController@imageCrop');

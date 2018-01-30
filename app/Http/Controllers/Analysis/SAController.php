@@ -105,46 +105,46 @@ class SAController extends Controller
     public function selectDataTableYSD(Request $request) {        
           
         if($request->sort == 'Market'){
-            $queryItem = " SELECT ItemCode,Dscription,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
+            $queryItem = " SELECT ItemCode,Dscription,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
 
                         if($request->month != '13'){
-                            $queryItem .= "WHERE DocMonth = '$request->month' AND SalesPersonGroup = '$request->type' Group by ItemCode,Dscription  ";    
+                            $queryItem .= "WHERE DocMonth = '$request->month' AND SalesPersonGroup = '$request->type' Group by ItemCode,Dscription,Commodity  ";    
                         }
                         else{
-                            $queryItem .= "WHERE SalesPersonGroup = '$request->type' Group by ItemCode,Dscription  ";    
+                            $queryItem .= "WHERE SalesPersonGroup = '$request->type' Group by ItemCode,Dscription,Commodity  ";    
                         }
                         
                         
-            $queryCust = " SELECT CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
+            $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
 
                         if($request->month != '13'){
-                            $queryCust .= "WHERE DocMonth = '$request->month' AND SalesPersonGroup = '$request->type' Group by CustCode,CustName ";
+                            $queryCust .= "WHERE DocMonth = '$request->month' AND SalesPersonGroup = '$request->type' Group by CustCode,CustName,MasterDealer ";
                         }
                         else{
-                            $queryCust .= "WHERE SalesPersonGroup = '$request->type' Group by CustCode,CustName ";
+                            $queryCust .= "WHERE SalesPersonGroup = '$request->type' Group by CustCode,CustName,MasterDealer ";
                         }
                         
 
         }
         else if($request->sort == 'Type') {
 
-            $queryItem = " SELECT ItemCode,Dscription,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
+            $queryItem = " SELECT ItemCode,Dscription,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
 
                         if($request->month != '13'){
-                            $queryItem .= "WHERE DocMonth = '$request->month' AND ItemGroupName = '$request->type' Group by ItemCode,Dscription  "; 
+                            $queryItem .= "WHERE DocMonth = '$request->month' AND ItemGroupName = '$request->type' Group by ItemCode,Dscription,Commodity  "; 
                         }
                         else{
-                            $queryItem .= "WHERE ItemGroupName = '$request->type' Group by ItemCode,Dscription  "; 
+                            $queryItem .= "WHERE ItemGroupName = '$request->type' Group by ItemCode,Dscription,Commodity  "; 
                         }
                            
                         
-            $queryCust = " SELECT CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
+            $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->year." ";
 
                         if($request->month != '13'){
-                            $queryCust .= "WHERE DocMonth = '$request->month' AND ItemGroupName = '$request->type' Group by CustCode,CustName ";
+                            $queryCust .= "WHERE DocMonth = '$request->month' AND ItemGroupName = '$request->type' Group by CustCode,CustName,MasterDealer ";
                         }
                         else{
-                            $queryCust .= "WHERE ItemGroupName = '$request->type' Group by CustCode,CustName ";
+                            $queryCust .= "WHERE ItemGroupName = '$request->type' Group by CustCode,CustName,MasterDealer ";
                         }
                         
         
