@@ -42,17 +42,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function imageCrop()
-    {
-        return view('imageCrop');
-    }
-
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function imageCropPost(Request $request)
     {        
         $data = $request->image;
