@@ -20,6 +20,8 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 // Dashboard
 $this->get('/home', 'HomeController@index');
+$this->get('/profile/{id}', 'HomeController@profile');
+$this->put('/profile/{id} ', 'HomeController@profileUpdate')->name('profile');
 
 // Profile Picture
 $this->post('/image-crop', 'HomeController@imageCropPost')->name('image-crop');

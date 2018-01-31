@@ -46,8 +46,8 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="{{ URL('test') }}" class="btn btn-default btn-flat">Profile</a>
+                <div class="pull-left">              
+                  <a href="{{ url('profile/'.$objs->id) }} " class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">  
                   <a href="#logout"  class="btn btn-default btn-flat"  onclick="$('#logout').submit();">Log out</a> 

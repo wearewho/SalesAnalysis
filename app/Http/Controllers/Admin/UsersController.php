@@ -57,7 +57,7 @@ class UsersController extends Controller
         if (! Gate::allows('admin_manage')) {
             return abort(401);
         }
-
+        
         $user = User::create($request->all());
 
         foreach ($request->input('roles') as $role) {
@@ -100,13 +100,23 @@ class UsersController extends Controller
         if (! Gate::allows('admin_manage')) {
             return abort(401);
         }
+        
         $user = User::findOrFail($id);
         $user->update($request->all());
+
         foreach ($user->roles as $role) {
             $user->retract($role);
         }
         foreach ($request->input('roles') as $role) {
             $user->assign($role);
+        }
+        
+        if(session('data')->id == $id){
+            $newSession = User::with('roles')->where('id', $id)->first();
+            $department = Department::where('DepartmentID', $newSession->DepartmentID)->first();
+            $newSession->department = $department;
+            $request->session()->forget('data');
+            $request->session()->put('data',$newSession);
         }
 
         $request->session()->flash('editComplete', 'Edit Complete!');
