@@ -34,7 +34,7 @@
                                 <td>{{ $market->Name }}</td>
                                 <td>
                                     <a href="{{ route('system.market.edit',[$market->id]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
-                                    <a href="#" id="{{ $market->id }}" data-route="/system/market/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>                            
+                                    <a href="#" id="{{ $market->id }}" data-route="/SalesAnalysis/system/market/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>                            
                                 </td>
 
                             </tr>

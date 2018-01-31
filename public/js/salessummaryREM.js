@@ -45,7 +45,7 @@ function selectData(year) {
             $(".loading-img").show();
             $(".loading-img2").show();
         },
-        url: '/rem/selectREM',
+        url: '/SalesAnalysis/rem/selectREM',
         type: "POST",
         data: { "year": year },
         success: function(data, statusText, resObject) {
@@ -59,7 +59,7 @@ function selectData(year) {
                 calData(year, data);
             } else if (data[3] == "" && data[4] == "nullTarget") {
                 var base = window.location.origin
-                var route = '/system/targetmaster/create';
+                var route = '/SalesAnalysis/system/targetmaster/create';
                 swal({
                         title: "Target Year " + year + " not found.",
                         text: "Please Create Target Master!",
@@ -75,7 +75,7 @@ function selectData(year) {
                 calData(year, data);
             } else if (data[3] == "nullData" && data[4] == "nullTarget") {
                 var base = window.location.origin
-                var route = '/system/targetmaster/create';
+                var route = '/SalesAnalysis/system/targetmaster/create';
                 swal({
                     title: "Target Year " + year + " and Data not found.",
                     text: "Please contact adminastrator!",
@@ -101,7 +101,7 @@ function selectData(year) {
 
 function selectDataTable(nameMonth, month, year) {
     $.ajax({
-        url: '/rem/selectDataTableREM',
+        url: '/SalesAnalysis/rem/selectDataTableREM',
         type: "POST",
         data: { "month": month, "year": year },
         success: function(data, statusText, resObject) {

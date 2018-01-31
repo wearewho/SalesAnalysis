@@ -20,12 +20,10 @@ $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.password.reset');
 
 // Dashboard
-Route::get('/home', 'HomeController@index');
-Route::post('/convert', 'HomeController@convert')->name('convert');
+$this->get('/home', 'HomeController@index');
 
 // Profile Picture
-Route::get('/image-crop', 'HomeController@imageCrop');
-Route::post('/image-crop', 'HomeController@imageCropPost');
+$this->post('/image-crop', 'HomeController@imageCropPost')->name('imageCrop');
 
 //Admin Group
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {

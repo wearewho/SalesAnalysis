@@ -87,7 +87,8 @@
             size: 'viewport'
         }).then(function (resp) {    
             $.ajax({
-                url: {!! json_encode(url('/image-crop')) !!},
+                url: "{{ route('imageCrop') }}",
+                //url: {!! json_encode(url('/image-crop')) !!},
                 type: "POST",
                 data: {"id": id,"image": resp, _token: "{{ csrf_token() }}"},
                 success: function (data) {
