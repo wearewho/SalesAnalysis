@@ -17,7 +17,7 @@ class REMController extends Controller
 {
     public function SalesSummaryREM()
     {
-        if (! Gate::allows('sales_analysis')) {
+        if (! Gate::allows('REM')) {
             return abort(401);
         }
 
