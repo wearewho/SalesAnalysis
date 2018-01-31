@@ -39,11 +39,8 @@
               <li class="user-header">
                 <img src="{{ URL::asset('images/profiles/'.$objs->img) }}" class="img-circle" alt="User Image" data-toggle="modal" data-target="#modal-default">
                 <p>
-                    <span id="userName">{{$objs->name}}</span>
-                    @foreach ($objs->roles->pluck('name') as $role)
-                        - 
-                    <span id="roles">{{ $role }}</span>
-                    @endforeach
+                    <span id="userName">{{$objs->name}}</span> -
+                    <span id="roles">{{ $objs->department->DepartmentName }}</span>
                   <small>Member since {{($objs->created_at)->toFormattedDateString()}}</small>
                 </p>
               </li>

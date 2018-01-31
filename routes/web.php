@@ -5,8 +5,7 @@ Route::get('/', function () { return redirect('/home'); });
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('auth.login');
 $this->post('login', 'Auth\LoginController@login')->name('auth.login');
 $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('auth.register');
-$this->post('register', 'Auth\RegisterController@registerbyuser')->name('auth.register');
-//$this->post('register', 'Auth\RegisterController@register')->name('auth.register');
+$this->post('register', 'Auth\RegisterController@register')->name('auth.register');
 $this->post('logout', 'Auth\LoginController@logout')->name('auth.logout');
 
 // Change Password Routes...

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use App\Department;
 use Silber\Bouncer\Database\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -38,9 +39,11 @@ class UsersController extends Controller
         if (! Gate::allows('admin_manage')) {
             return abort(401);
         }
+
+        $department = Department::all();
         $roles = Role::get()->pluck('name', 'name');
 
-        return view('admin.users.create', compact('roles'));
+        return view('admin.users.create', compact('roles','department'));
     }
 
     /**
@@ -54,6 +57,7 @@ class UsersController extends Controller
         if (! Gate::allows('admin_manage')) {
             return abort(401);
         }
+
         $user = User::create($request->all());
 
         foreach ($request->input('roles') as $role) {
@@ -76,11 +80,12 @@ class UsersController extends Controller
         if (! Gate::allows('admin_manage')) {
             return abort(401);
         }
-        $roles = Role::get()->pluck('name', 'name');
 
+        $roles = Role::get()->pluck('name', 'name');
+        $department = Department::all();
         $user = User::findOrFail($id);
 
-        return view('admin.users.edit', compact('user', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles', 'department'));
     }
 
     /**
