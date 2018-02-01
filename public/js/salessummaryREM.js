@@ -6,16 +6,26 @@ $(function() {
         }
     });
 
+    //Hide Yearly Table
+    $('#Quarterly').css("display", "none");
+
+    // Set Year and Select Data
     var year = $("a.date-picker-year").text();
     selectData(year);
 
+    // Text in Table
     $('#BahtActualNow').text("Actual " + year);
     $('#BahtTargetNow').text("Target " + year);
     $('#UnitActualNow').text("Actual " + year);
     $('#UnitTargetNow').text("Target " + year);
     $('#BahtActualOld').text("Actual " + (year - 1));
     $('#UnitActualOld').text("Actual " + (year - 1));
-
+    $('#BahtActualQNow').text("Actual " + year);
+    $('#BahtTargetQNow').text("Target " + year);
+    $('#UnitActualQNow').text("Actual " + year);
+    $('#UnitTargetQNow').text("Target " + year);
+    $('#BahtActualQOld').text("Actual " + (year - 1));
+    $('#UnitActualQOld').text("Actual " + (year - 1));
 
     //Change Year
     $(".date-picker-year").datepicker({
@@ -34,14 +44,117 @@ $(function() {
         selectData(currYear);
     });
 
+    $(document).on("click", "#pdf", function() {
+
+        if ($("#Quarterly").css('display') == 'none') {
+            var Ytype = $("ul.typeY > li.active").text();
+            if (Ytype == "Graph") {
+                var arr = new Array();
+                $("#modeHidden").val("Yearly");
+                $("#typeHidden").val("Graph");
+                $("#currYear").val($("a.date-picker-year").text());
+                arr.push($('#Baht').highcharts());
+                arr.push($('#Unit').highcharts());
+
+                save_chart(arr, function(result) {
+                    $('#downloadPDF').submit();
+                });
+
+            } else {
+                $("#modeHidden").val("Yearly");
+                $("#typeHidden").val("Table");
+                $("#currYear").val($("a.date-picker-year").text());
+                $('#downloadPDF').submit();
+            }
+        } else {
+            var Qtype = $("ul.typeQ > li.active").text();
+            if (Qtype == "Graph") {
+                var arr = new Array();
+                $("#modeHidden").val("Quarterly");
+                $("#typeHidden").val("Graph");
+                $("#currYear").val($("a.date-picker-year").text());
+                arr.push($('#BahtQ').highcharts());
+                arr.push($('#UnitQ').highcharts());
+
+                save_chart(arr, function(result) {
+                    $('#downloadPDF').submit();
+                });
+
+            } else {
+                $("#modeHidden").val("Quarterly");
+                $("#typeHidden").val("Table");
+                $("#currYear").val($("a.date-picker-year").text());
+                $('#downloadPDF').submit();
+            }
+        }
+
+
+    });
+
+    $(document).on("click", "#mode", function() {
+
+        var changMode = $(this).html();
+        if (changMode == '<i class="fa fa-bar-chart"></i> Quarterly') {
+            $(this).html('<i class="fa fa-bar-chart"></i> Year');
+            $('#Yearly').removeClass('animated fadeIn');
+            $('#Quarterly').addClass('animated fadeIn');
+            $('#Quarterly').css("display", "block");
+            $('#Yearly').css("display", "none");
+        } else {
+            $(this).html('<i class="fa fa-bar-chart"></i> Quarterly');
+            $('#Quarterly').removeClass('animated fadeIn');
+            $('#Yearly').addClass('animated fadeIn');
+            $('#Yearly').css("display", "block");
+            $('#Quarterly').css("display", "none");
+        }
+
+    });
+
 
 });
+
+function save_chart(chart, callback) {
+
+    var x = 1;
+
+    $.each(chart, function() {
+        render_width = 1000;
+        render_height = render_width * this.chartHeight / this.chartWidth
+
+        // Get the cart's SVG code
+        var svg = this.getSVG({
+            exporting: {
+                sourceWidth: this.chartWidth,
+                sourceHeight: this.chartHeight
+            }
+        });
+
+        // Create a canvas
+        var canvas = document.createElement('canvas');
+        canvas.height = render_height;
+        canvas.width = render_width;
+
+        // Create an image and draw the SVG onto the canvas
+        var image = new Image;
+        image.src = 'data:image/svg+xml;base64,' + window.btoa(svg);
+        image.onload = function() {
+            canvas.getContext('2d').drawImage(this, 0, 0, render_width, render_height);
+            $('#chart' + x++).val(canvas.toDataURL('image/jpeg'));
+            var result = canvas.toDataURL('image/jpeg');
+            callback(result);
+        };
+    });
+
+
+}
 
 function selectData(year) {
     $.ajax({
         beforeSend: function() {
             $(".loadGraph").css("opacity", 0.2);
             $(".loadTable").css("opacity", 0.2);
+            $(".loadGraphQ").css("opacity", 0.2);
+            $(".loadTableQ").css("opacity", 0.2);
             $(".loading-img").show();
             $(".loading-img2").show();
         },
@@ -93,17 +206,19 @@ function selectData(year) {
         complete: function() {
             $(".loadGraph").css("opacity", 1);
             $(".loadTable").css("opacity", 1);
+            $(".loadGraphQ").css("opacity", 1);
+            $(".loadTableQ").css("opacity", 1);
             $(".loading-img").hide();
             $(".loading-img2").hide();
         }
     });
 }
 
-function selectDataTable(nameMonth, month, year) {
+function selectDataTable(nameMonth, month, year, type) {
     $.ajax({
         url: '/rem/selectDataTableREM',
         type: "POST",
-        data: { "month": month, "year": year },
+        data: { "month": month, "year": year, "type": type },
         success: function(data, statusText, resObject) {
             // do something with ajax data
             if (data) {
@@ -124,6 +239,7 @@ function selectDataTable(nameMonth, month, year) {
                         },
                         { data: "ItemCode" },
                         { data: "Dscription" },
+                        { data: "Brand" },
                         { data: "Commodity" },
                         {
                             data: "Quantity",
@@ -155,22 +271,6 @@ function selectDataTable(nameMonth, month, year) {
                         // computing column Total of the complete result 
                         // Total over all pages
                         Unit = api
-                            .column(4)
-                            .data()
-                            .reduce(function(a, b) {
-                                return intVal(a) + intVal(b);
-                            }, 0);
-
-                        // Total over this page
-                        pageUnit = api
-                            .column(4, { page: 'current' })
-                            .data()
-                            .reduce(function(a, b) {
-                                return intVal(a) + intVal(b);
-                            }, 0);
-
-                        // Total over all pages
-                        Total = api
                             .column(5)
                             .data()
                             .reduce(function(a, b) {
@@ -178,20 +278,36 @@ function selectDataTable(nameMonth, month, year) {
                             }, 0);
 
                         // Total over this page
-                        pageTotal = api
+                        pageUnit = api
                             .column(5, { page: 'current' })
                             .data()
                             .reduce(function(a, b) {
                                 return intVal(a) + intVal(b);
                             }, 0);
 
+                        // Total over all pages
+                        Total = api
+                            .column(6)
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Total over this page
+                        pageTotal = api
+                            .column(6, { page: 'current' })
+                            .data()
+                            .reduce(function(a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
                         // Update footer by showing the total with the reference of the column index 
-                        $(api.column(3).footer()).html('Total');
-                        $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
-                        );
+                        $(api.column(4).footer()).html('Total');
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(pageTotal) + ' ( ' + accounting.formatNumber(Total) + ' Total)'
+                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                        );
+                        $(api.column(6).footer()).html(
+                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
                         );
                     },
                     "order": [
@@ -293,12 +409,12 @@ function selectDataTable(nameMonth, month, year) {
                                 objLayout['paddingLeft'] = function(i) { return 4; };
                                 objLayout['paddingRight'] = function(i) { return 4; };
                                 doc.content[0].layout = objLayout;
-                                doc.content[0].table.widths = [30, 80, "*", 70, 60, 80];
+                                doc.content[0].table.widths = [30, 80, "*", 40, 70, 60, 80];
                                 var rowCount = doc.content[0].table.body.length;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
-                                    doc.content[0].table.body[i][4].alignment = 'right';
                                     doc.content[0].table.body[i][5].alignment = 'right';
+                                    doc.content[0].table.body[i][6].alignment = 'right';
                                 };
 
                             }
@@ -385,10 +501,10 @@ function selectDataTable(nameMonth, month, year) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(3).footer()).html('Total');
                         $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
+                            ' ' + accounting.formatNumber(Unit) + ' Unit'
                         );
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(pageTotal) + ' ( ' + accounting.formatNumber(Total) + ' Total)'
+                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
                         );
                     },
                     "order": [
@@ -506,7 +622,13 @@ function selectDataTable(nameMonth, month, year) {
                     ]
                 }).container().appendTo($('#exportCustomer'));
 
-                $("#headModal").text("REM Sales Summary: " + nameMonth + " " + year);
+                console.log(type);
+
+                if (type == "M") {
+                    $("#headModal").text("REM Sales Summary: " + nameMonth + " " + year);
+                } else {
+                    $("#headModal").text("REM Sales Summary: " + nameMonth + " of year " + year);
+                }
                 $("#rightModal").text("REM");
             }
             return false;
@@ -551,6 +673,14 @@ function calData(year, data) {
         currBahtOctober = 0,
         currBahtNovember = 0,
         currBahtDecember = 0,
+        currUnitQ1 = 0,
+        currBahtQ1 = 0,
+        currUnitQ2 = 0,
+        currBahtQ2 = 0,
+        currUnitQ3 = 0,
+        currBahtQ3 = 0,
+        currUnitQ4 = 0,
+        currBahtQ4 = 0,
         oldUnitJanuary = 0,
         oldUnitFebruary = 0,
         oldUnitMarch = 0,
@@ -575,6 +705,14 @@ function calData(year, data) {
         oldBahtOctober = 0,
         oldBahtNovember = 0,
         oldBahtDecember = 0,
+        oldUnitQ1 = 0,
+        oldBahtQ1 = 0,
+        oldUnitQ2 = 0,
+        oldBahtQ2 = 0,
+        oldUnitQ3 = 0,
+        oldBahtQ3 = 0,
+        oldUnitQ4 = 0,
+        oldBahtQ4 = 0,
         achieveBahtJanuary = 0,
         achieveBahtFebruary = 0,
         achieveBahtMarch = 0,
@@ -587,6 +725,14 @@ function calData(year, data) {
         achieveBahtOctober = 0,
         achieveBahtNovember = 0,
         achieveBahtDecember = 0,
+        achieveBahtQ1 = 0,
+        achieveUnitQ1 = 0,
+        achieveBahtQ2 = 0,
+        achieveUnitQ2 = 0,
+        achieveBahtQ3 = 0,
+        achieveUnitQ3 = 0,
+        achieveBahtQ4 = 0,
+        achieveUnitQ4 = 0,
         growthBahtJanuary = 0,
         growthBahtFebruary = 0,
         growthBahtMarch = 0,
@@ -622,7 +768,15 @@ function calData(year, data) {
         growthUnitSeptember = 0,
         growthUnitOctober = 0,
         growthUnitNovember = 0,
-        growthUnitDecember = 0;
+        growthUnitDecember = 0,
+        growthBahtQ1 = 0,
+        growthUnitQ1 = 0,
+        growthBahtQ2 = 0,
+        growthUnitQ2 = 0,
+        growthBahtQ3 = 0,
+        growthUnitQ3 = 0,
+        growthBahtQ4 = 0,
+        growthUnitQ4 = 0;
 
     $.each(currYear, function() {
         if (this.DocMonth == '1') {
@@ -665,6 +819,23 @@ function calData(year, data) {
 
         currTotalBaht += parseFloat(this.Total);
         currTotalUnit += parseFloat(this.Quantity);
+
+    });
+
+    $.each(currYear, function() {
+        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
+            currUnitQ1 += parseFloat(this.Quantity);
+            currBahtQ1 += parseFloat(this.Total);
+        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
+            currUnitQ2 += parseFloat(this.Quantity);
+            currBahtQ2 += parseFloat(this.Total);
+        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
+            currUnitQ3 += parseFloat(this.Quantity);
+            currBahtQ3 += parseFloat(this.Total);
+        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
+            currUnitQ4 += parseFloat(this.Quantity);
+            currBahtQ4 += parseFloat(this.Total);
+        }
 
     });
 
@@ -712,7 +883,22 @@ function calData(year, data) {
 
     });
 
+    $.each(oldYear, function() {
+        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
+            oldUnitQ1 += parseFloat(this.Quantity);
+            oldBahtQ1 += parseFloat(this.Total);
+        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
+            oldUnitQ2 += parseFloat(this.Quantity);
+            oldBahtQ2 += parseFloat(this.Total);
+        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
+            oldUnitQ3 += parseFloat(this.Quantity);
+            oldBahtQ3 += parseFloat(this.Total);
+        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
+            oldUnitQ4 += parseFloat(this.Quantity);
+            oldBahtQ4 += parseFloat(this.Total);
+        }
 
+    });
 
     growthBahtJanuary = ((currBahtJanuary - oldBahtJanuary) * 100) / oldBahtJanuary;
     growthBahtFebruary = ((currBahtFebruary - oldBahtFebruary) * 100) / oldBahtFebruary;
@@ -727,6 +913,10 @@ function calData(year, data) {
     growthBahtNovember = ((currBahtNovember - oldBahtNovember) * 100) / oldBahtNovember;
     growthBahtDecember = ((currBahtDecember - oldBahtDecember) * 100) / oldBahtDecember;
     growthBahtTotal = ((currTotalBaht - oldTotalBaht) * 100) / oldTotalBaht;
+    growthBahtQ1 = ((currBahtQ1 - oldBahtQ1) * 100) / oldBahtQ1;
+    growthBahtQ2 = ((currBahtQ2 - oldBahtQ2) * 100) / oldBahtQ2;
+    growthBahtQ3 = ((currBahtQ3 - oldBahtQ3) * 100) / oldBahtQ3;
+    growthBahtQ4 = ((currBahtQ4 - oldBahtQ4) * 100) / oldBahtQ4;
 
     growthUnitJanuary = ((currUnitJanuary - oldUnitJanuary) * 100) / oldUnitJanuary;
     growthUnitFebruary = ((currUnitFebruary - oldUnitFebruary) * 100) / oldUnitFebruary;
@@ -741,6 +931,10 @@ function calData(year, data) {
     growthUnitNovember = ((currUnitNovember - oldUnitNovember) * 100) / oldUnitNovember;
     growthUnitDecember = ((currUnitDecember - oldUnitDecember) * 100) / oldUnitDecember;
     growthUnitTotal = ((currTotalUnit - oldTotalUnit) * 100) / oldTotalUnit;
+    growthUnitQ1 = ((currUnitQ1 - oldUnitQ1) * 100) / oldUnitQ1;
+    growthUnitQ2 = ((currUnitQ2 - oldUnitQ2) * 100) / oldUnitQ2;
+    growthUnitQ3 = ((currUnitQ3 - oldUnitQ3) * 100) / oldUnitQ3;
+    growthUnitQ4 = ((currUnitQ4 - oldUnitQ4) * 100) / oldUnitQ4;
 
     var totalBahtTarget = accounting.unformat(target.AmtQ1) + accounting.unformat(target.AmtQ2) + accounting.unformat(target.AmtQ3) + accounting.unformat(target.AmtQ4);
     var totalUnitTarget = accounting.unformat(target.UnitQ1) + accounting.unformat(target.UnitQ2) + accounting.unformat(target.UnitQ3) + accounting.unformat(target.UnitQ4);
@@ -758,6 +952,10 @@ function calData(year, data) {
     achieveBahtNovember = (currBahtNovember * 100) / accounting.unformat(target.Amt11);
     achieveBahtDecember = (currBahtDecember * 100) / accounting.unformat(target.Amt12);
     achieveBahtTotal = (currTotalBaht * 100) / totalBahtTarget;
+    achieveBahtQ1 = (currBahtQ1 * 100) / accounting.unformat(target.AmtQ1);
+    achieveBahtQ2 = (currBahtQ2 * 100) / accounting.unformat(target.AmtQ2);
+    achieveBahtQ3 = (currBahtQ3 * 100) / accounting.unformat(target.AmtQ3);
+    achieveBahtQ4 = (currBahtQ4 * 100) / accounting.unformat(target.AmtQ4);
 
     achieveUnitJanuary = (currUnitJanuary * 100) / accounting.unformat(target.Unit01);
     achieveUnitFebruary = (currUnitFebruary * 100) / accounting.unformat(target.Unit02);
@@ -772,49 +970,73 @@ function calData(year, data) {
     achieveUnitNovember = (currUnitNovember * 100) / accounting.unformat(target.Unit11);
     achieveUnitDecember = (currUnitDecember * 100) / accounting.unformat(target.Unit12);
     achieveUnitTotal = (currTotalUnit * 100) / totalUnitTarget;
+    achieveUnitQ1 = (currUnitQ1 * 100) / accounting.unformat(target.UnitQ1);
+    achieveUnitQ2 = (currUnitQ2 * 100) / accounting.unformat(target.UnitQ2);
+    achieveUnitQ3 = (currUnitQ3 * 100) / accounting.unformat(target.UnitQ3);
+    achieveUnitQ4 = (currUnitQ4 * 100) / accounting.unformat(target.UnitQ4);
 
-    $('#BahtActualNow1').html(accounting.formatNumber(currBahtJanuary));
-    $('#BahtActualNow2').html(accounting.formatNumber(currBahtFebruary));
-    $('#BahtActualNow3').html(accounting.formatNumber(currBahtMarch));
-    $('#BahtActualNow4').html(accounting.formatNumber(currBahtApril));
-    $('#BahtActualNow5').html(accounting.formatNumber(currBahtMay));
-    $('#BahtActualNow6').html(accounting.formatNumber(currBahtJune));
-    $('#BahtActualNow7').html(accounting.formatNumber(currBahtJuly));
-    $('#BahtActualNow8').html(accounting.formatNumber(currBahtAugust));
-    $('#BahtActualNow9').html(accounting.formatNumber(currBahtSeptember));
-    $('#BahtActualNow10').html(accounting.formatNumber(currBahtOctober));
-    $('#BahtActualNow11').html(accounting.formatNumber(currBahtNovember));
-    $('#BahtActualNow12').html(accounting.formatNumber(currBahtDecember));
-    $('#BahtActualNowTotal').html(accounting.formatNumber(currTotalBaht));
+    $('#BahtActualNowQ1').html(accounting.formatNumber(currBahtQ1 / 1000, 2));
+    $('#BahtActualNowQ2').html(accounting.formatNumber(currBahtQ2 / 1000, 2));
+    $('#BahtActualNowQ3').html(accounting.formatNumber(currBahtQ3 / 1000, 2));
+    $('#BahtActualNowQ4').html(accounting.formatNumber(currBahtQ4 / 1000, 2));
+    $('#BahtActualNow1').html(accounting.formatNumber(currBahtJanuary / 1000, 2));
+    $('#BahtActualNow2').html(accounting.formatNumber(currBahtFebruary / 1000, 2));
+    $('#BahtActualNow3').html(accounting.formatNumber(currBahtMarch / 1000, 2));
+    $('#BahtActualNow4').html(accounting.formatNumber(currBahtApril / 1000, 2));
+    $('#BahtActualNow5').html(accounting.formatNumber(currBahtMay / 1000, 2));
+    $('#BahtActualNow6').html(accounting.formatNumber(currBahtJune / 1000, 2));
+    $('#BahtActualNow7').html(accounting.formatNumber(currBahtJuly / 1000, 2));
+    $('#BahtActualNow8').html(accounting.formatNumber(currBahtAugust / 1000, 2));
+    $('#BahtActualNow9').html(accounting.formatNumber(currBahtSeptember / 1000, 2));
+    $('#BahtActualNow10').html(accounting.formatNumber(currBahtOctober / 1000, 2));
+    $('#BahtActualNow11').html(accounting.formatNumber(currBahtNovember / 1000, 2));
+    $('#BahtActualNow12').html(accounting.formatNumber(currBahtDecember / 1000, 2));
+    $('#BahtActualNowTotal').html(accounting.formatNumber(currTotalBaht / 1000, 2));
+    $('#BahtActualNowQTotal').html(accounting.formatNumber(currTotalBaht / 1000, 2));
 
-    $('#BahtTargetNow1').html(accounting.formatNumber(accounting.unformat(target.Amt01)));
-    $('#BahtTargetNow2').html(accounting.formatNumber(accounting.unformat(target.Amt02)));
-    $('#BahtTargetNow3').html(accounting.formatNumber(accounting.unformat(target.Amt03)));
-    $('#BahtTargetNow4').html(accounting.formatNumber(accounting.unformat(target.Amt04)));
-    $('#BahtTargetNow5').html(accounting.formatNumber(accounting.unformat(target.Amt05)));
-    $('#BahtTargetNow6').html(accounting.formatNumber(accounting.unformat(target.Amt06)));
-    $('#BahtTargetNow7').html(accounting.formatNumber(accounting.unformat(target.Amt07)));
-    $('#BahtTargetNow8').html(accounting.formatNumber(accounting.unformat(target.Amt08)));
-    $('#BahtTargetNow9').html(accounting.formatNumber(accounting.unformat(target.Amt09)));
-    $('#BahtTargetNow10').html(accounting.formatNumber(accounting.unformat(target.Amt10)));
-    $('#BahtTargetNow11').html(accounting.formatNumber(accounting.unformat(target.Amt11)));
-    $('#BahtTargetNow12').html(accounting.formatNumber(accounting.unformat(target.Amt12)));
-    $('#BahtTargetNowTotal').html(accounting.formatNumber(totalBahtTarget));
+    $('#BahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(target.AmtQ1) / 1000, 2));
+    $('#BahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(target.AmtQ2) / 1000, 2));
+    $('#BahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(target.AmtQ3) / 1000, 2));
+    $('#BahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(target.AmtQ4) / 1000, 2));
+    $('#BahtTargetNow1').html(accounting.formatNumber(accounting.unformat(target.Amt01) / 1000, 2));
+    $('#BahtTargetNow2').html(accounting.formatNumber(accounting.unformat(target.Amt02) / 1000, 2));
+    $('#BahtTargetNow3').html(accounting.formatNumber(accounting.unformat(target.Amt03) / 1000, 2));
+    $('#BahtTargetNow4').html(accounting.formatNumber(accounting.unformat(target.Amt04) / 1000, 2));
+    $('#BahtTargetNow5').html(accounting.formatNumber(accounting.unformat(target.Amt05) / 1000, 2));
+    $('#BahtTargetNow6').html(accounting.formatNumber(accounting.unformat(target.Amt06) / 1000, 2));
+    $('#BahtTargetNow7').html(accounting.formatNumber(accounting.unformat(target.Amt07) / 1000, 2));
+    $('#BahtTargetNow8').html(accounting.formatNumber(accounting.unformat(target.Amt08) / 1000, 2));
+    $('#BahtTargetNow9').html(accounting.formatNumber(accounting.unformat(target.Amt09) / 1000, 2));
+    $('#BahtTargetNow10').html(accounting.formatNumber(accounting.unformat(target.Amt10 / 1000, 2)));
+    $('#BahtTargetNow11').html(accounting.formatNumber(accounting.unformat(target.Amt11) / 1000, 2));
+    $('#BahtTargetNow12').html(accounting.formatNumber(accounting.unformat(target.Amt12) / 1000, 2));
+    $('#BahtTargetNowTotal').html(accounting.formatNumber(totalBahtTarget / 1000, 2));
+    $('#BahtTargetNowQTotal').html(accounting.formatNumber(totalBahtTarget / 1000, 2));
 
-    $('#BahtActualOld1').html(accounting.formatNumber(oldBahtJanuary));
-    $('#BahtActualOld2').html(accounting.formatNumber(oldBahtFebruary));
-    $('#BahtActualOld3').html(accounting.formatNumber(oldBahtMarch));
-    $('#BahtActualOld4').html(accounting.formatNumber(oldBahtApril));
-    $('#BahtActualOld5').html(accounting.formatNumber(oldBahtMay));
-    $('#BahtActualOld6').html(accounting.formatNumber(oldBahtJune));
-    $('#BahtActualOld7').html(accounting.formatNumber(oldBahtJuly));
-    $('#BahtActualOld8').html(accounting.formatNumber(oldBahtAugust));
-    $('#BahtActualOld9').html(accounting.formatNumber(oldBahtSeptember));
-    $('#BahtActualOld10').html(accounting.formatNumber(oldBahtOctober));
-    $('#BahtActualOld11').html(accounting.formatNumber(oldBahtNovember));
-    $('#BahtActualOld12').html(accounting.formatNumber(oldBahtDecember));
-    $('#BahtActualOldTotal').html(accounting.formatNumber(oldTotalBaht));
+    $('#BahtActualOldQ1').html(accounting.formatNumber(oldBahtQ1 / 1000, 2));
+    $('#BahtActualOldQ2').html(accounting.formatNumber(oldBahtQ2 / 1000, 2));
+    $('#BahtActualOldQ3').html(accounting.formatNumber(oldBahtQ3 / 1000, 2));
+    $('#BahtActualOldQ4').html(accounting.formatNumber(oldBahtQ4 / 1000, 2));
+    $('#BahtActualOld1').html(accounting.formatNumber(oldBahtJanuary / 1000, 2));
+    $('#BahtActualOld2').html(accounting.formatNumber(oldBahtFebruary / 1000, 2));
+    $('#BahtActualOld3').html(accounting.formatNumber(oldBahtMarch / 1000, 2));
+    $('#BahtActualOld4').html(accounting.formatNumber(oldBahtApril / 1000, 2));
+    $('#BahtActualOld5').html(accounting.formatNumber(oldBahtMay / 1000, 2));
+    $('#BahtActualOld6').html(accounting.formatNumber(oldBahtJune / 1000, 2));
+    $('#BahtActualOld7').html(accounting.formatNumber(oldBahtJuly / 1000, 2));
+    $('#BahtActualOld8').html(accounting.formatNumber(oldBahtAugust / 1000, 2));
+    $('#BahtActualOld9').html(accounting.formatNumber(oldBahtSeptember / 1000, 2));
+    $('#BahtActualOld10').html(accounting.formatNumber(oldBahtOctober / 1000, 2));
+    $('#BahtActualOld11').html(accounting.formatNumber(oldBahtNovember / 1000, 2));
+    $('#BahtActualOld12').html(accounting.formatNumber(oldBahtDecember / 1000, 2));
+    $('#BahtActualOldTotal').html(accounting.formatNumber(oldTotalBaht / 1000, 2));
+    $('#BahtActualOldQTotal').html(accounting.formatNumber(oldTotalBaht / 1000, 2));
 
+
+    $('#BahtGrowthQ1').html((isNaN(accounting.formatNumber(growthBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtQ1, 2)) + "%");
+    $('#BahtGrowthQ2').html((isNaN(accounting.formatNumber(growthBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtQ2, 2)) + "%");
+    $('#BahtGrowthQ3').html((isNaN(accounting.formatNumber(growthBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtQ3, 2)) + "%");
+    $('#BahtGrowthQ4').html((isNaN(accounting.formatNumber(growthBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtQ4, 2)) + "%");
     $('#BahtGrowth1').html((isNaN(accounting.formatNumber(growthBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtJanuary, 2)) + "%");
     $('#BahtGrowth2').html((isNaN(accounting.formatNumber(growthBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtFebruary, 2)) + "%");
     $('#BahtGrowth3').html((isNaN(accounting.formatNumber(growthBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtMarch, 2)) + "%");
@@ -828,7 +1050,12 @@ function calData(year, data) {
     $('#BahtGrowth11').html((isNaN(accounting.formatNumber(growthBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtNovember, 2)) + "%");
     $('#BahtGrowth12').html((isNaN(accounting.formatNumber(growthBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtDecember, 2)) + "%");
     $('#BahtGrowthTotal').html((isNaN(accounting.formatNumber(growthBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtTotal, 2)) + "%");
+    $('#BahtGrowthQTotal').html((isNaN(accounting.formatNumber(growthBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtTotal, 2)) + "%");
 
+    $('#BahtAchieveQ1').html((isNaN(accounting.formatNumber(achieveBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtQ1, 2)) + "%");
+    $('#BahtAchieveQ2').html((isNaN(accounting.formatNumber(achieveBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtQ2, 2)) + "%");
+    $('#BahtAchieveQ3').html((isNaN(accounting.formatNumber(achieveBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtQ3, 2)) + "%");
+    $('#BahtAchieveQ4').html((isNaN(accounting.formatNumber(achieveBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtQ4, 2)) + "%");
     $('#BahtAchieve1').html((isNaN(accounting.formatNumber(achieveBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtJanuary, 2)) + "%");
     $('#BahtAchieve2').html((isNaN(accounting.formatNumber(achieveBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtFebruary, 2)) + "%");
     $('#BahtAchieve3').html((isNaN(accounting.formatNumber(achieveBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtMarch, 2)) + "%");
@@ -842,7 +1069,12 @@ function calData(year, data) {
     $('#BahtAchieve11').html((isNaN(accounting.formatNumber(achieveBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtNovember, 2)) + "%");
     $('#BahtAchieve12').html((isNaN(accounting.formatNumber(achieveBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtDecember, 2)) + "%");
     $('#BahtAchieveTotal').html((isNaN(accounting.formatNumber(achieveBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtTotal, 2)) + "%");
+    $('#BahtAchieveQTotal').html((isNaN(accounting.formatNumber(achieveBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveBahtTotal, 2)) + "%");
 
+    $('#UnitActualNowQ1').html(accounting.formatNumber(currUnitQ1));
+    $('#UnitActualNowQ2').html(accounting.formatNumber(currUnitQ2));
+    $('#UnitActualNowQ3').html(accounting.formatNumber(currUnitQ3));
+    $('#UnitActualNowQ4').html(accounting.formatNumber(currUnitQ4));
     $('#UnitActualNow1').html(accounting.formatNumber(currUnitJanuary));
     $('#UnitActualNow2').html(accounting.formatNumber(currUnitFebruary));
     $('#UnitActualNow3').html(accounting.formatNumber(currUnitMarch));
@@ -856,7 +1088,12 @@ function calData(year, data) {
     $('#UnitActualNow11').html(accounting.formatNumber(currUnitNovember));
     $('#UnitActualNow12').html(accounting.formatNumber(currUnitDecember));
     $('#UnitActualNowTotal').html(accounting.formatNumber(currTotalUnit));
+    $('#UnitActualNowQTotal').html(accounting.formatNumber(currTotalUnit));
 
+    $('#UnitTargetNowQ1').html(accounting.formatNumber(accounting.unformat(target.UnitQ1)));
+    $('#UnitTargetNowQ2').html(accounting.formatNumber(accounting.unformat(target.UnitQ2)));
+    $('#UnitTargetNowQ3').html(accounting.formatNumber(accounting.unformat(target.UnitQ3)));
+    $('#UnitTargetNowQ4').html(accounting.formatNumber(accounting.unformat(target.UnitQ4)));
     $('#UnitTargetNow1').html(accounting.formatNumber(accounting.unformat(target.Unit01)));
     $('#UnitTargetNow2').html(accounting.formatNumber(accounting.unformat(target.Unit02)));
     $('#UnitTargetNow3').html(accounting.formatNumber(accounting.unformat(target.Unit03)));
@@ -870,7 +1107,12 @@ function calData(year, data) {
     $('#UnitTargetNow11').html(accounting.formatNumber(accounting.unformat(target.Unit11)));
     $('#UnitTargetNow12').html(accounting.formatNumber(accounting.unformat(target.Unit12)));
     $('#UnitTargetNowTotal').html(accounting.formatNumber(totalUnitTarget));
+    $('#UnitTargetNowQTotal').html(accounting.formatNumber(totalUnitTarget));
 
+    $('#UnitActualOldQ1').html(accounting.formatNumber(oldUnitQ1));
+    $('#UnitActualOldQ2').html(accounting.formatNumber(oldUnitQ2));
+    $('#UnitActualOldQ3').html(accounting.formatNumber(oldUnitQ3));
+    $('#UnitActualOldQ4').html(accounting.formatNumber(oldUnitQ4));
     $('#UnitActualOld1').html(accounting.formatNumber(oldUnitJanuary));
     $('#UnitActualOld2').html(accounting.formatNumber(oldUnitFebruary));
     $('#UnitActualOld3').html(accounting.formatNumber(oldUnitMarch));
@@ -884,7 +1126,12 @@ function calData(year, data) {
     $('#UnitActualOld11').html(accounting.formatNumber(oldUnitNovember));
     $('#UnitActualOld12').html(accounting.formatNumber(oldUnitDecember));
     $('#UnitActualOldTotal').html(accounting.formatNumber(oldTotalUnit));
+    $('#UnitActualOldQTotal').html(accounting.formatNumber(oldTotalUnit));
 
+    $('#UnitGrowthQ1').html((isNaN(accounting.formatNumber(growthUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitQ1, 2)) + "%");
+    $('#UnitGrowthQ2').html((isNaN(accounting.formatNumber(growthUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitQ2, 2)) + "%");
+    $('#UnitGrowthQ3').html((isNaN(accounting.formatNumber(growthUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitQ3, 2)) + "%");
+    $('#UnitGrowthQ4').html((isNaN(accounting.formatNumber(growthUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitQ4, 2)) + "%");
     $('#UnitGrowth1').html((isNaN(accounting.formatNumber(growthUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitJanuary, 2)) + "%");
     $('#UnitGrowth2').html((isNaN(accounting.formatNumber(growthUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitFebruary, 2)) + "%");
     $('#UnitGrowth3').html((isNaN(accounting.formatNumber(growthUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitMarch, 2)) + "%");
@@ -898,7 +1145,12 @@ function calData(year, data) {
     $('#UnitGrowth11').html((isNaN(accounting.formatNumber(growthUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitNovember, 2)) + "%");
     $('#UnitGrowth12').html((isNaN(accounting.formatNumber(growthUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitDecember, 2)) + "%");
     $('#UnitGrowthTotal').html((isNaN(accounting.formatNumber(growthUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitTotal, 2)) + "%");
+    $('#UnitGrowthQTotal').html((isNaN(accounting.formatNumber(growthUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthUnitTotal, 2)) + "%");
 
+    $('#UnitAchieveQ1').html((isNaN(accounting.formatNumber(achieveUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitQ1, 2)) + "%");
+    $('#UnitAchieveQ2').html((isNaN(accounting.formatNumber(achieveUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitQ2, 2)) + "%");
+    $('#UnitAchieveQ3').html((isNaN(accounting.formatNumber(achieveUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitQ3, 2)) + "%");
+    $('#UnitAchieveQ4').html((isNaN(accounting.formatNumber(achieveUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitQ4, 2)) + "%");
     $('#UnitAchieve1').html((isNaN(accounting.formatNumber(achieveUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitJanuary, 2)) + "%");
     $('#UnitAchieve2').html((isNaN(accounting.formatNumber(achieveUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitFebruary, 2)) + "%");
     $('#UnitAchieve3').html((isNaN(accounting.formatNumber(achieveUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitMarch, 2)) + "%");
@@ -912,6 +1164,7 @@ function calData(year, data) {
     $('#UnitAchieve11').html((isNaN(accounting.formatNumber(achieveUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitNovember, 2)) + "%");
     $('#UnitAchieve12').html((isNaN(accounting.formatNumber(achieveUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitDecember, 2)) + "%");
     $('#UnitAchieveTotal').html((isNaN(accounting.formatNumber(achieveUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitTotal, 2)) + "%");
+    $('#UnitAchieveQTotal').html((isNaN(accounting.formatNumber(achieveUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitTotal, 2)) + "%");
 
     unitGraph(year, accounting.unformat(target.Unit01), accounting.unformat(target.Unit02), accounting.unformat(target.Unit03), accounting.unformat(target.Unit04),
         accounting.unformat(target.Unit05), accounting.unformat(target.Unit06), accounting.unformat(target.Unit07), accounting.unformat(target.Unit08),
@@ -925,6 +1178,10 @@ function calData(year, data) {
         currBahtJanuary, currBahtFebruary, currBahtMarch, currBahtApril, currBahtMay, currBahtJune, currBahtJuly, currBahtAugust,
         currBahtSeptember, currBahtOctober, currBahtNovember, currBahtDecember, currTotalBaht, oldBahtJanuary, oldBahtFebruary, oldBahtMarch, oldBahtApril, oldBahtMay,
         oldBahtJune, oldBahtJuly, oldBahtAugust, oldBahtSeptember, oldBahtOctober, oldBahtNovember, oldBahtDecember, oldTotalBaht);
+    unitGraphQ(year, accounting.unformat(target.UnitQ1), accounting.unformat(target.UnitQ2), accounting.unformat(target.UnitQ3), accounting.unformat(target.UnitQ4),
+        accounting.unformat(totalUnitTarget), currUnitQ1, currUnitQ2, currUnitQ3, currUnitQ4, currTotalUnit, oldUnitQ1, oldUnitQ2, oldUnitQ3, oldUnitQ4, oldTotalUnit);
+    bahtGraphQ(year, accounting.unformat(target.AmtQ1), accounting.unformat(target.AmtQ2), accounting.unformat(target.AmtQ3), accounting.unformat(target.AmtQ4), accounting.unformat(totalBahtTarget),
+        currBahtQ1, currBahtQ2, currBahtQ3, currBahtQ4, currTotalBaht, oldBahtQ1, oldBahtQ2, oldBahtQ3, oldBahtQ4, oldTotalBaht);
 
 }
 
@@ -956,7 +1213,8 @@ function unitGraph(year, target1, target2, target3, target4, target5, target6, t
                     click: function(event) {
                         var nameMonth = event.point.category;
                         var month = event.point.month;
-                        selectDataTable(nameMonth, month, year);
+                        var type = "M";
+                        selectDataTable(nameMonth, month, year, type);
                     }
                 }
             }
@@ -1156,7 +1414,8 @@ function bahtGraph(year, target1, target2, target3, target4, target5, target6, t
                     click: function(event) {
                         var nameMonth = event.point.category;
                         var month = event.point.month;
-                        selectDataTable(nameMonth, month, year);
+                        var type = "M";
+                        selectDataTable(nameMonth, month, year, type);
                     }
                 }
             }
@@ -1332,4 +1591,222 @@ function bahtGraph(year, target1, target2, target3, target4, target5, target6, t
             dashStyle: 'shortdot'
         }]
     });
+
+}
+
+function unitGraphQ(year, targetQ1, targetQ2, targetQ3, targetQ4, targetTotal, currQ1, currQ2, currQ3, currQ4, currTotal, oldQ1, oldQ2, oldQ3, oldQ4, oldTotal) {
+
+    Highcharts.setOptions({
+        colors: ['#BFD641', '#ECDB54', '#69acde']
+    });
+
+    Highcharts.chart('UnitQ', {
+        chart: {
+            renderTo: 'UnitQ',
+            type: 'column',
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 100
+            }
+        },
+        tooltip: {
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name} : <b>{point.value}</b>'
+        },
+        plotOptions: {
+            series: {
+                cursor: 'pointer',
+                events: {
+                    click: function(event) {
+                        var nameMonth = event.point.category;
+                        var month = event.point.month;
+                        var type = "Q";
+                        selectDataTable(nameMonth, month, year, type);
+                    }
+                }
+            }
+        },
+        title: {
+            text: 'REM Sales Summary Report : Quaterly of ' + year + ' (Unit)'
+        },
+        xAxis: {
+            categories: ['Q1', 'Q2', 'Q3', 'Q4']
+        },
+        series: [{
+            type: 'column',
+            name: year - 1,
+            data: [{
+                y: oldQ1,
+                month: 1,
+                value: accounting.formatNumber(oldQ1)
+            }, {
+                y: oldQ2,
+                month: 2,
+                value: accounting.formatNumber(oldQ2)
+            }, {
+                y: oldQ3,
+                month: 3,
+                value: accounting.formatNumber(oldQ3)
+            }, {
+                y: oldQ4,
+                month: 4,
+                value: accounting.formatNumber(oldQ4)
+            }]
+        }, {
+            type: 'column',
+            name: year,
+            data: [{
+                y: currQ1,
+                month: 1,
+                value: accounting.formatNumber(currQ1)
+            }, {
+                y: currQ2,
+                month: 2,
+                value: accounting.formatNumber(currQ2)
+            }, {
+                y: currQ3,
+                month: 3,
+                value: accounting.formatNumber(currQ3)
+            }, {
+                y: currQ4,
+                month: 4,
+                value: accounting.formatNumber(currQ4)
+            }]
+        }, {
+            type: 'spline',
+            name: 'Target ' + year,
+            data: [{
+                y: targetQ1,
+                month: 1,
+                value: accounting.formatNumber(targetQ1)
+            }, {
+                y: targetQ2,
+                month: 2,
+                value: accounting.formatNumber(targetQ2)
+            }, {
+                y: targetQ3,
+                month: 3,
+                value: accounting.formatNumber(targetQ3)
+            }, {
+                y: targetQ4,
+                month: 4,
+                value: accounting.formatNumber(targetQ4)
+            }],
+            marker: {
+                enabled: false
+            },
+            dashStyle: 'shortdot'
+        }]
+    });
+}
+
+function bahtGraphQ(year, targetQ1, targetQ2, targetQ3, targetQ4, targetTotal, currQ1, currQ2, currQ3, currQ4, currTotal, oldQ1, oldQ2, oldQ3, oldQ4, oldTotal) {
+
+    Highcharts.setOptions({
+        colors: ['#DD4B39', '#222D32', '#69acde']
+    });
+
+    Highcharts.chart('BahtQ', {
+        chart: {
+            renderTo: 'BahtQ',
+            type: 'column',
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 100
+            }
+        },
+        plotOptions: {
+            series: {
+                cursor: 'pointer',
+                events: {
+                    click: function(event) {
+                        var nameMonth = event.point.category;
+                        var month = event.point.month;
+                        var type = "Q";
+                        selectDataTable(nameMonth, month, year, type);
+                    }
+                }
+            }
+        },
+        tooltip: {
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name} : <b>{point.value}</b>'
+        },
+        title: {
+            text: 'REM Sales Summary Report : Quaterly of ' + year + ' (Baht)'
+        },
+        xAxis: {
+            categories: ['Q1', 'Q2', 'Q3', 'Q4']
+        },
+        series: [{
+            type: 'column',
+            name: year - 1,
+            data: [{
+                y: oldQ1,
+                month: 1,
+                value: accounting.formatMoney(oldQ1, "฿")
+            }, {
+                y: oldQ2,
+                month: 2,
+                value: accounting.formatMoney(oldQ2, "฿")
+            }, {
+                y: oldQ3,
+                month: 3,
+                value: accounting.formatMoney(oldQ3, "฿")
+            }, {
+                y: oldQ4,
+                month: 4,
+                value: accounting.formatMoney(oldQ4, "฿")
+            }]
+        }, {
+            type: 'column',
+            name: year,
+            data: [{
+                y: currQ1,
+                month: 1,
+                value: accounting.formatMoney(currQ1, "฿")
+            }, {
+                y: currQ2,
+                month: 2,
+                value: accounting.formatMoney(currQ2, "฿")
+            }, {
+                y: currQ3,
+                month: 3,
+                value: accounting.formatMoney(currQ3, "฿")
+            }, {
+                y: currQ4,
+                month: 4,
+                value: accounting.formatMoney(currQ4, "฿")
+            }]
+        }, {
+            type: 'spline',
+            name: 'Target ' + year,
+            data: [{
+                y: targetQ1,
+                month: 1,
+                value: accounting.formatMoney(targetQ1, "฿")
+            }, {
+                y: targetQ2,
+                month: 2,
+                value: accounting.formatMoney(targetQ2, "฿")
+            }, {
+                y: targetQ3,
+                month: 3,
+                value: accounting.formatMoney(targetQ3, "฿")
+            }, {
+                y: targetQ4,
+                month: 4,
+                value: accounting.formatMoney(targetQ4, "฿")
+            }],
+            marker: {
+                enabled: false
+            },
+            dashStyle: 'shortdot'
+        }]
+    });
+
 }

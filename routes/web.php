@@ -70,6 +70,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'rem', 'as' => 'analysis.rem
     Route::get('salessummaryREM', 'Analysis\REMController@salessummaryREM')->name('SalesSummaryREM'); 
     Route::post('selectREM', 'Analysis\REMController@selectREM')->name('selectREM');
     Route::post('selectDataTableREM', 'Analysis\REMController@selectDataTableREM')->name('selectDataTableREM');
+    Route::post('downloadPDF', ['uses' => 'Analysis\REMController@downloadPDF', 'as' => 'salessummary.downloadPDF']);  
 });
 
 

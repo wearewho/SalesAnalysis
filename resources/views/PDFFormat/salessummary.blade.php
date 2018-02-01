@@ -105,9 +105,7 @@ $objs = session('data');
             }        
         @endphp
 
-    <h4><strong> {{ $data["company"] }} Sales Summary Report : {{$monthName}} {{$data["year"]}}</strong></h4>
-
-        
+    <h4><strong> {{ $data["company"] }} Sales Summary Report : {{$monthName}} {{$data["year"]}}</strong></h4>       
 
     @php    
             $totalUnit = 0;
