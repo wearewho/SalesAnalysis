@@ -33,6 +33,7 @@ return [
 		'created_at' => 'Time',
 		'fields' => [
 			'01' => 'Sales Summary',
+			'02' => 'Sales Enquiry',
 		],
 	],
 

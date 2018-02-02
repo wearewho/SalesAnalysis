@@ -243,14 +243,14 @@ function selectDataTable(nameMonth, month, year, type) {
                         { data: "Commodity" },
                         {
                             data: "Quantity",
-                            className: "uniqueClassName",
+                            className: "uniqueClassName text-right",
                             render: function(data, type, full) {
                                 return accounting.formatNumber(data);
                             }
                         },
                         {
                             data: "Total",
-                            className: "uniqueClassName",
+                            className: "uniqueClassName text-right",
                             render: function(data, type, full) {
                                 return accounting.formatNumber(data, 2);
                             }
@@ -312,6 +312,41 @@ function selectDataTable(nameMonth, month, year, type) {
                     },
                     "order": [
                         [5, "desc"]
+                    ],
+                    'columnDefs': [{
+                            "targets": 0, // your case first column
+                            "className": "text-center",
+                            "width": "5%"
+                        }, {
+                            "targets": 1, // your case first column
+                            "className": "text-center",
+                            "width": "10%"
+                        },
+                        {
+                            "targets": 2,
+                            "className": "text-left",
+                            "width": "21%"
+                        },
+                        {
+                            "targets": 3,
+                            "className": "text-center",
+                            "width": "10%"
+                        },
+                        {
+                            "targets": 4,
+                            "className": "text-left",
+                            "width": "11%"
+                        },
+                        {
+                            "targets": 5,
+                            "className": "text-left",
+                            "width": "15%"
+                        },
+                        {
+                            "targets": 6,
+                            "className": "text-left",
+                            "width": "15%"
+                        }
                     ]
                 }, );
 
@@ -440,14 +475,14 @@ function selectDataTable(nameMonth, month, year, type) {
                         { data: "MasterDealer" },
                         {
                             data: "Quantity",
-                            className: "uniqueClassName",
+                            className: "uniqueClassName text-right",
                             render: function(data, type, full) {
                                 return accounting.formatNumber(data);
                             }
                         },
                         {
                             data: "Total",
-                            className: "uniqueClassName",
+                            className: "uniqueClassName text-right",
                             render: function(data, type, full) {
                                 return accounting.formatNumber(data, 2);
                             }
@@ -509,6 +544,34 @@ function selectDataTable(nameMonth, month, year, type) {
                     },
                     "order": [
                         [5, "desc"]
+                    ],
+                    'columnDefs': [{
+                            "targets": 0,
+                            "className": "text-center",
+                            "width": "5%"
+                        }, {
+                            "targets": 1,
+                            "className": "text-center",
+                            "width": "10%"
+                        },
+                        {
+                            "targets": 2,
+                            "className": "text-left",
+                            "width": "28%"
+                        },
+                        {
+                            "targets": 3,
+                            "className": "text-center",
+                            "width": "14%"
+                        },
+                        {
+                            "targets": 4,
+                            "width": "15%"
+                        },
+                        {
+                            "targets": 5,
+                            "width": "15%"
+                        }
                     ]
                 });
 
@@ -621,8 +684,6 @@ function selectDataTable(nameMonth, month, year, type) {
                         }
                     ]
                 }).container().appendTo($('#exportCustomer'));
-
-                console.log(type);
 
                 if (type == "M") {
                     $("#headModal").text("REM Sales Summary: " + nameMonth + " " + year);

@@ -24,6 +24,15 @@ class REMController extends Controller
         return view('analysis.rem.salessummaryREM');
     }
 
+    public function SalesEnquiryREM()
+    {
+        if (! Gate::allows('REM')) {
+            return abort(401);
+        }
+
+        return view('analysis.rem.salesenquiryREM');
+    }
+
     public function selectREM(Request $request) {  
 
         $oldYear = $request->year - 1;
@@ -66,7 +75,7 @@ class REMController extends Controller
         $table3 = DB::select($strSQL3,[]);   
         return Response::json(array($table1,$table2,$table3,$messageData,$messageTarget)); 
         
-    }
+    } 
 
     public function selectDataTableREM(Request $request) {    
         
@@ -117,6 +126,251 @@ class REMController extends Controller
             $Cust = DB::select($queryCust,[]); 
             return Response::json(array($Item,$Cust));
         }
+        
+    }
+
+    public function selectEnquiryDataTableREM(Request $request) {    
+        
+        if($request->startYear == $request->endYear){
+            
+            $tableName = "YS_".$request->startYear."";
+
+            if(Schema::hasTable($tableName)){
+                            
+                $queryItem = " SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' Group by ItemCode,Dscription,Brand,Commodity  ";                      
+                $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'REM' Group by CustCode,CustName,MasterDealer "; 
+                
+            }
+            else{
+                $queryItem = " SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'TEST' Group by ItemCode,Dscription,Brand,Commodity  ";                      
+                $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'TEST' Group by CustCode,CustName,MasterDealer "; 
+            }
+            
+            $Item = DB::select($queryItem,[]);    
+            $Cust = DB::select($queryCust,[]); 
+            return Response::json(array($Item,$Cust));
+        }   
+        else{
+
+            $tableName1 = "YS_".$request->startYear."";
+            $tableName2 = "YS_".$request->endYear."";
+
+            if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){ 
+
+                $queryItem = "
+
+                DECLARE @lastday varchar(6) = '31/12/';
+                DECLARE @lastyear varchar(4) = '$request->startYear';
+                DECLARE @firstday varchar(6) = '01/01/';
+                DECLARE @firstyear varchar(4) = '$request->endYear';
+                DECLARE @last varchar(10) = @lastday + @lastyear;
+                DECLARE @first varchar(10) = @firstday + @firstyear;
+
+                    Select * From (
+                        SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where DocDate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103)  AND SalesPersonGroup = 'REM' Group by ItemCode,Dscription,Brand,Commodity
+                        union all
+                        SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where DocDate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'REM' Group by ItemCode,Dscription,Brand,Commodity
+                    ) data                              
+                    
+                    ";     
+                
+                $Item = DB::select($queryItem,[]);   
+
+                $queryCust = "
+
+                DECLARE @lastday varchar(6) = '31/12/';
+                DECLARE @lastyear varchar(4) = '$request->startYear';
+                DECLARE @firstday varchar(6) = '01/01/';
+                DECLARE @firstyear varchar(4) = '$request->endYear';
+                DECLARE @last varchar(10) = @lastday + @lastyear;
+                DECLARE @first varchar(10) = @firstday + @firstyear;
+                                       
+                    Select * From (
+                        SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' Group by CustCode,CustName,MasterDealer 
+                        union all
+                        SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' Group by CustCode,CustName,MasterDealer 
+                    ) data 
+                    
+                    ";
+                    
+                $Cust = DB::select($queryCust,[]); 
+                return Response::json(array($Item,$Cust));
+            }
+        }
+        
+    }
+
+    public function selectEnquiryDataTableModalREM(Request $request) {   
+        
+        if($request->type == 'findCustomer'){
+
+            if($request->startYear == $request->endYear){
+            
+                $tableName = "YS_".$request->startYear."";
+                                                      
+                $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by CustCode,CustName,MasterDealer "; 
+                    
+                $Type = 'findCustomer';
+                $Cust = DB::select($queryCust,[]); 
+                return Response::json(array($Cust,$Type));
+            }   
+            else{
+    
+                $tableName1 = "YS_".$request->startYear."";
+                $tableName2 = "YS_".$request->endYear."";
+    
+                if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){ 
+               
+                    $queryCust = "
+    
+                    DECLARE @lastday varchar(6) = '31/12/';
+                    DECLARE @lastyear varchar(4) = '$request->startYear';
+                    DECLARE @firstday varchar(6) = '01/01/';
+                    DECLARE @firstyear varchar(4) = '$request->endYear';
+                    DECLARE @last varchar(10) = @lastday + @lastyear;
+                    DECLARE @first varchar(10) = @firstday + @firstyear;
+                                           
+                        Select * From (
+                            SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by CustCode,CustName,MasterDealer 
+                            union all
+                            SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by CustCode,CustName,MasterDealer 
+                        ) data 
+                        
+                        ";
+                    $Type = 'findCustomer';
+                    $Cust = DB::select($queryCust,[]); 
+                    return Response::json(array($Cust,$Type));
+                }
+            }
+
+        } 
+        else if($request->type == 'findItem'){
+
+            if($request->startYear == $request->endYear){
+            
+                $tableName = "YS_".$request->startYear."";
+                          
+                $queryItem = " SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity  "; 
+                    
+                $Type = 'findItem';
+                $Item = DB::select($queryItem,[]); 
+                return Response::json(array($Item,$Type));
+            }   
+            else{
+    
+                $tableName1 = "YS_".$request->startYear."";
+                $tableName2 = "YS_".$request->endYear."";
+    
+                if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){ 
+               
+                    $queryItem = "
+    
+                    DECLARE @lastday varchar(6) = '31/12/';
+                    DECLARE @lastyear varchar(4) = '$request->startYear';
+                    DECLARE @firstday varchar(6) = '01/01/';
+                    DECLARE @firstyear varchar(4) = '$request->endYear';
+                    DECLARE @last varchar(10) = @lastday + @lastyear;
+                    DECLARE @first varchar(10) = @firstday + @firstyear;                   
+                                           
+                        Select * From (
+                            SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
+                            union all
+                            SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
+                        ) data 
+                        
+                        ";
+                    $Type = 'findItem';
+                    $Item = DB::select($queryItem,[]); 
+                    return Response::json(array($Item,$Type));
+                }
+            }
+
+        }
+        else if($request->type == "findInItem"){
+
+            if($request->startYear == $request->endYear){
+            
+                $tableName = "YS_".$request->startYear."";
+                          
+                $queryItem = " SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice  "; 
+                    
+                $Type = 'findInItem';
+                $Item = DB::select($queryItem,[]); 
+                return Response::json(array($Item,$Type));
+            }   
+            else{
+    
+                $tableName1 = "YS_".$request->startYear."";
+                $tableName2 = "YS_".$request->endYear."";
+    
+                if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){ 
+               
+                    $queryItem = "
+    
+                    DECLARE @lastday varchar(6) = '31/12/';
+                    DECLARE @lastyear varchar(4) = '$request->startYear';
+                    DECLARE @firstday varchar(6) = '01/01/';
+                    DECLARE @firstyear varchar(4) = '$request->endYear';
+                    DECLARE @last varchar(10) = @lastday + @lastyear;
+                    DECLARE @first varchar(10) = @firstday + @firstyear;                   
+                                           
+                        Select * From (
+                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice 
+                            union all
+                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice
+                        ) data 
+                        
+                        ";
+                    $Type = 'findInItem';
+                    $Item = DB::select($queryItem,[]); 
+                    return Response::json(array($Item,$Type));
+                }
+            }
+
+        }
+        else if($request->type == "findInCust"){
+
+            if($request->startYear == $request->endYear){
+            
+                $tableName = "YS_".$request->startYear."";
+                          
+                $queryCust= " SELECT DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice  "; 
+                    
+                $Type = 'findInCust';
+                $Cust = DB::select($queryCust,[]); 
+                return Response::json(array($Cust,$Type));
+            }   
+            else{
+    
+                $tableName1 = "YS_".$request->startYear."";
+                $tableName2 = "YS_".$request->endYear."";
+    
+                if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){ 
+               
+                    $queryCust = "
+    
+                    DECLARE @lastday varchar(6) = '31/12/';
+                    DECLARE @lastyear varchar(4) = '$request->startYear';
+                    DECLARE @firstday varchar(6) = '01/01/';
+                    DECLARE @firstyear varchar(4) = '$request->endYear';
+                    DECLARE @last varchar(10) = @lastday + @lastyear;
+                    DECLARE @first varchar(10) = @firstday + @firstyear;                   
+                                           
+                        Select * From (
+                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice
+                            union all
+                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice
+                        ) data 
+                        
+                        ";
+                    $Type = 'findInCust';
+                    $Cust = DB::select($queryCust,[]); 
+                    return Response::json(array($Cust,$Type));
+                }
+            }
+
+        }
+        
         
     }
 

@@ -48,8 +48,8 @@
             <!-- Custom Tabs (Pulled to the right) -->
             <div class="nav-tabs-custom">
             <ul class="nav nav-tabs pull-right typeY">
-                <li class="active"><a href="#tab_1-1" data-toggle="tab" id="tab_1">Graph</a></li>
-                <li><a href="#tab_2-2" data-toggle="tab" id="tab_2">Table</a></li>
+                <li class="active"><a href="#tab_1-1" data-toggle="tab" id="tab_1"><strong style="font-size:16px;">Graph</strong></a></li>
+                <li><a href="#tab_2-2" data-toggle="tab" id="tab_2"><strong style="font-size:16px;">Table</strong></a></li>
                 <li class="pull-left header"><i class="fa fa-object-group"></i> Sales Summary Report of Yearly</li>
             </ul>
             <div class="tab-content">
@@ -297,8 +297,8 @@
             <!-- Custom Tabs (Pulled to the right) -->
             <div class="nav-tabs-custom">
             <ul class="nav nav-tabs pull-right typeQ">
-                <li class="active"><a href="#tab_Q1-1" data-toggle="tab" id="tab_Q1">Graph</a></li>
-                <li><a href="#tab_Q2-2" data-toggle="tab" id="tab_Q2">Table</a></li>
+                <li class="active"><a href="#tab_Q1-1" data-toggle="tab" id="tab_Q1" style="font-size:16px;"><strong>Graph</strong></a></li>
+                <li><a href="#tab_Q2-2" data-toggle="tab" id="tab_Q2"><strong style="font-size:16px;">Table</strong></a></li>
                 <li class="pull-left header"><i class="fa fa-object-group"></i> Sales Summary Report of Quarterly</li>
             </ul>
             <div class="tab-content">

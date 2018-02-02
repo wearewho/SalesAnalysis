@@ -72,6 +72,7 @@
 
                     @yield('content')
 
+                    <a href="#" class="scrollToTop"></a>
                 </div>
             </div>
         </section>

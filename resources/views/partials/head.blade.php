@@ -50,3 +50,24 @@
 <link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 <!-- daterange picker -->
 <link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
+
+<style>
+      .scrollToTop{
+	width:50px; 
+	height:50px;
+	padding:10px; 
+	text-align:center; 
+	font-weight: bold;
+	text-decoration: none;
+	position:fixed;
+	bottom:30px;
+	right:40px;
+	display:none; 
+      opacity : 0.8;
+	background: url("../images/element/arrowup.PNG");  center no-repeat;
+      background-size: 50px;
+      }
+      .scrollToTop:hover{
+            text-decoration:none;
+      }
+</style>
