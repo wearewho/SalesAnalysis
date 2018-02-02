@@ -300,7 +300,6 @@
                                                     <th>Doccument Date</th>
                                                     <th>Item Code</th>
                                                     <th>Description</th>
-                                                    <th>Commodity</th>
                                                     <th>Price</th>
                                                     <th>Unit</th>
                                                     <th>Amount</th>
@@ -308,7 +307,7 @@
                                             </thead>                                        
                                             <tfoot>
                                                 <tr>
-                                                    <th id="exportCustomerModal" colspan="7" style="text-align:center"></th>
+                                                    <th id="exportCustomerModal" colspan="6" style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>

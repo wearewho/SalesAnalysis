@@ -208,7 +208,7 @@ class REMController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                                                       
-                $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by CustCode,CustName,MasterDealer "; 
+                $queryCust = " SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'REM' AND Dscription = '$request->data' Group by CustCode,CustName,MasterDealer "; 
                     
                 $Type = 'findCustomer';
                 $Cust = DB::select($queryCust,[]); 
@@ -231,9 +231,9 @@ class REMController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;
                                            
                         Select * From (
-                            SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by CustCode,CustName,MasterDealer 
+                            SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND Dscription = '$request->data' Group by CustCode,CustName,MasterDealer 
                             union all
-                            SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by CustCode,CustName,MasterDealer 
+                            SELECT CustCode,CustName,MasterDealer,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND Dscription = '$request->data' Group by CustCode,CustName,MasterDealer 
                         ) data 
                         
                         ";
@@ -250,7 +250,7 @@ class REMController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                           
-                $queryItem = " SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity  "; 
+                $queryItem = " SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustName = '$request->data' Group by ItemCode,Dscription,Brand,Commodity  "; 
                     
                 $Type = 'findItem';
                 $Item = DB::select($queryItem,[]); 
@@ -273,9 +273,9 @@ class REMController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;                   
                                            
                         Select * From (
-                            SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
+                            SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND CustName = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
                             union all
-                            SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
+                            SELECT ItemCode,Dscription,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustName = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
                         ) data 
                         
                         ";
@@ -292,7 +292,7 @@ class REMController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                           
-                $queryItem = " SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice  "; 
+                $queryItem = " SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND Dscription = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice  "; 
                     
                 $Type = 'findInItem';
                 $Item = DB::select($queryItem,[]); 
@@ -315,9 +315,9 @@ class REMController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;                   
                                            
                         Select * From (
-                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice 
+                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND Dscription = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice 
                             union all
-                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice
+                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND Dscription = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,UnitPrice
                         ) data 
                         
                         ";
@@ -334,7 +334,7 @@ class REMController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                           
-                $queryCust= " SELECT DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice  "; 
+                $queryCust= " SELECT DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustName = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice  "; 
                     
                 $Type = 'findInCust';
                 $Cust = DB::select($queryCust,[]); 
@@ -357,9 +357,9 @@ class REMController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;                   
                                            
                         Select * From (
-                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice
+                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'REM' AND CustName = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice
                             union all
-                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice
+                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'REM' AND CustName = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,UnitPrice
                         ) data 
                         
                         ";

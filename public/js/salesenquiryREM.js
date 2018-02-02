@@ -115,7 +115,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         },
                         {
-                            data: "ItemCode",
+                            data: "Dscription",
                             render: function(data, type, row) {
                                 return '<button class="btn-view" type="button" id="customerModal" data-itemcode="' + data + '">Customer</button>' + " &nbsp;&nbsp;" +
                                     '<button class="btn-delete" type="button" id="invoiceItemModal" data-itemcode="' + data + '">Invoice</button>'
@@ -361,7 +361,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         },
                         {
-                            data: "CustCode",
+                            data: "CustName",
                             render: function(data, type, row) {
                                 return '<button class="btn-view" type="button" id="itemModal" data-custcode="' + data + '">Item</button>' + " &nbsp;&nbsp;" +
                                     '<button class="btn-delete" type="button" id="invoiceCustModal" data-custcode="' + data + '">Invoice</button>'
@@ -1345,7 +1345,6 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             },
                             { data: "ItemCode" },
                             { data: "Dscription" },
-                            { data: "Commodity" },
                             {
                                 data: "UnitPrice",
                                 className: "uniqueClassName text-right",
@@ -1383,7 +1382,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // computing column Total of the complete result 
                             // Total over all pages
                             Unit = api
-                                .column(8)
+                                .column(7)
                                 .data()
                                 .reduce(function(a, b) {
                                     return intVal(a) + intVal(b);
@@ -1391,7 +1390,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                             // Total over this page
                             pageUnit = api
-                                .column(8, { page: 'current' })
+                                .column(7, { page: 'current' })
                                 .data()
                                 .reduce(function(a, b) {
                                     return intVal(a) + intVal(b);
@@ -1399,7 +1398,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                             // Total over all pages
                             Total = api
-                                .column(9)
+                                .column(8)
                                 .data()
                                 .reduce(function(a, b) {
                                     return intVal(a) + intVal(b);
@@ -1407,23 +1406,68 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                             // Total over this page
                             pageTotal = api
-                                .column(9, { page: 'current' })
+                                .column(8, { page: 'current' })
                                 .data()
                                 .reduce(function(a, b) {
                                     return intVal(a) + intVal(b);
                                 }, 0);
 
                             // Update footer by showing the total with the reference of the column index 
-                            $(api.column(7).footer()).html('Total');
-                            $(api.column(8).footer()).html(
+                            $(api.column(6).footer()).html('Total');
+                            $(api.column(7).footer()).html(
                                 ' ' + accounting.formatNumber(Unit) + ' Unit'
                             );
-                            $(api.column(9).footer()).html(
+                            $(api.column(8).footer()).html(
                                 ' ' + accounting.formatNumber(Total, 2) + ' Baht'
                             );
                         },
                         "order": [
-                            [9, "desc"]
+                            [8, "desc"]
+                        ],
+                        'columnDefs': [{
+                                "targets": 0, // your case first column
+                                "className": "text-center",
+                                "width": "5%"
+                            }, {
+                                "targets": 1, // your case first column
+                                "className": "text-center",
+                                "width": "8%"
+                            },
+                            {
+                                "targets": 2,
+                                "className": "text-center",
+                                "width": "7%"
+                            },
+                            {
+                                "targets": 3,
+                                "className": "text-center",
+                                "width": "8%"
+                            },
+                            {
+                                "targets": 4,
+                                "className": "text-left",
+                                "width": "8%"
+                            },
+                            {
+                                "targets": 5,
+                                "className": "text-left",
+                                "width": "15%"
+                            },
+                            {
+                                "targets": 6,
+                                "className": "text-right",
+                                "width": "15%"
+                            },
+                            {
+                                "targets": 7,
+                                "className": "text-right",
+                                "width": "10%"
+                            },
+                            {
+                                "targets": 8,
+                                "className": "text-right",
+                                "width": "14%"
+                            }
                         ]
                     }, );
 
@@ -1440,7 +1484,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 filename: "RSSITEM" + startDate + " - " + endDate,
                                 title: "REM Enquiry by Customer: " + startDate + " - " + endDate,
                                 exportOptions: {
-                                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
                                     search: 'applied',
                                     order: 'applied'
                                 },
@@ -1521,7 +1565,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     objLayout['paddingLeft'] = function(i) { return 4; };
                                     objLayout['paddingRight'] = function(i) { return 4; };
                                     doc.content[0].layout = objLayout;
-                                    doc.content[0].table.widths = [30, 50, "*", 40, 70, 60, 80, 70, 60, 80];
+                                    doc.content[0].table.widths = [30, 50, "*", 40, 70, 60, 60, 50, 60];
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
@@ -1537,8 +1581,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                         ]
                     }).container().appendTo($('#exportProductModal'));
 
-                    $("#headItemModal").text("REM Sales Enquiry by Customer :" + startDate + " - " + endDate);
-                    $("#rightItemModal").text(idItem);
+                    $("#headInvoiceCustModal").text("REM Sales Enquiry by Customer :" + startDate + " - " + endDate);
+                    $("#rightInvoiceCustModal").text(idItem);
 
                 }
 
