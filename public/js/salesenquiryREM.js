@@ -726,7 +726,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "RSSCustomer" + startDate + " - " + endDate,
+                                filename: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                                 title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5],
@@ -814,8 +814,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
+                                        doc.content[0].table.body[i][4].alignment = 'right';
                                         doc.content[0].table.body[i][5].alignment = 'right';
-                                        doc.content[0].table.body[i][6].alignment = 'right';
                                     };
 
                                 }
@@ -966,7 +966,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "RSSITEM" + startDate + " - " + endDate,
+                                filename: "REM Enquiry by Item: " + startDate + " - " + endDate,
                                 title: "REM Enquiry by Item: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
@@ -1222,7 +1222,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "RSSITEM" + startDate + " - " + endDate,
+                                filename: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
                                 title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
@@ -1306,12 +1306,13 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     objLayout['paddingLeft'] = function(i) { return 4; };
                                     objLayout['paddingRight'] = function(i) { return 4; };
                                     doc.content[0].layout = objLayout;
-                                    doc.content[0].table.widths = [30, 80, "*", 40, 70, 80, 60, 80];
+                                    doc.content[0].table.widths = [30, 70, 70, 60, "*", 70, 50, 70];
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
                                         doc.content[0].table.body[i][5].alignment = 'right';
                                         doc.content[0].table.body[i][6].alignment = 'right';
+                                        doc.content[0].table.body[i][7].alignment = 'right';
                                     };
 
                                 }
@@ -1484,7 +1485,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "RSSITEM" + startDate + " - " + endDate,
+                                filename: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
                                 title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -1568,12 +1569,13 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     objLayout['paddingLeft'] = function(i) { return 4; };
                                     objLayout['paddingRight'] = function(i) { return 4; };
                                     doc.content[0].layout = objLayout;
-                                    doc.content[0].table.widths = [30, 50, "*", 40, 70, 60, 60, 50, 60];
+                                    doc.content[0].table.widths = [28, 50, 40, 52, 60, "*", 50, 40, 50];
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
-                                        doc.content[0].table.body[i][5].alignment = 'right';
                                         doc.content[0].table.body[i][6].alignment = 'right';
+                                        doc.content[0].table.body[i][7].alignment = 'right';
+                                        doc.content[0].table.body[i][8].alignment = 'right';
                                     };
 
                                 }
