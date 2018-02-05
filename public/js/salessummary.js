@@ -176,7 +176,7 @@ function selectData(month, year) {
             $(".loading-img").show();
             $(".loading-img2").show();
         },
-        url: '/sa/selectYSD',
+        url: '/SalesAnalysis/sa/selectYSD',
         type: "POST",
         data: { "month": month, "year": year },
         success: function(data, statusText, resObject) {
@@ -200,7 +200,7 @@ function selectData(month, year) {
 function selectDataTable(month, year, sort, type) {
     findPie(month);
     $.ajax({
-        url: '/sa/selectDataTableYSD',
+        url: '/SalesAnalysis/sa/selectDataTableYSD',
         type: "POST",
         data: { "month": month, "year": year, "sort": sort, "type": type },
         success: function(data, statusText, resObject) {

@@ -5,8 +5,7 @@ Route::get('/', function () { return redirect('/home'); });
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('auth.login');
 $this->post('login', 'Auth\LoginController@login')->name('auth.login');
 $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('auth.register');
-$this->post('register', 'Auth\RegisterController@registerbyuser')->name('auth.register');
-//$this->post('register', 'Auth\RegisterController@register')->name('auth.register');
+$this->post('register', 'Auth\RegisterController@register')->name('auth.register');
 $this->post('logout', 'Auth\LoginController@logout')->name('auth.logout');
 
 // Change Password Routes...
@@ -21,9 +20,11 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 // Dashboard
 $this->get('/home', 'HomeController@index');
+$this->get('/profile/{id}', 'HomeController@profile');
+$this->put('/profile/{id} ', 'HomeController@profileUpdate')->name('profile');
 
 // Profile Picture
-$this->post('/image-crop', 'HomeController@imageCropPost')->name('imageCrop');
+$this->post('/image-crop', 'HomeController@imageCropPost')->name('image-crop');
 
 //Admin Group
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -67,8 +68,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'rem', 'as' => 'analysis.rem.'], function () {
     Route::get('salessummaryREM', 'Analysis\REMController@salessummaryREM')->name('SalesSummaryREM'); 
+    Route::get('salesenquiryREM', 'Analysis\REMController@salesenquiryREM')->name('SalesEnquiryREM'); 
     Route::post('selectREM', 'Analysis\REMController@selectREM')->name('selectREM');
     Route::post('selectDataTableREM', 'Analysis\REMController@selectDataTableREM')->name('selectDataTableREM');
+    Route::post('selectEnquiryDataTableREM', 'Analysis\REMController@selectEnquiryDataTableREM')->name('selectEnquiryDataTableREM');
+    Route::post('selectEnquiryDataTableModalREM', 'Analysis\REMController@selectEnquiryDataTableModalREM')->name('selectEnquiryDataTableModalREM');
+    Route::post('downloadPDF', ['uses' => 'Analysis\REMController@downloadPDF', 'as' => 'salessummary.downloadPDF']);  
 });
 
 

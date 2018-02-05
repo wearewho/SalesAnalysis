@@ -98,8 +98,10 @@ class HomeController extends Controller
         $path = public_path() . "/images/profiles/" . $image_name;
 
         $user = User::with('roles')->where('id', $userId)->first(); 
+        $department = Department::where('DepartmentID', $user->DepartmentID)->first();
         $oldImg = $user->img;
         $user->img = $image_name;
+        $user->department = $department;
         $user->save();
    
         if($request->session()->has('data')) {

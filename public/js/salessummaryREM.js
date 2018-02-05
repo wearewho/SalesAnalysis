@@ -158,7 +158,7 @@ function selectData(year) {
             $(".loading-img").show();
             $(".loading-img2").show();
         },
-        url: '/rem/selectREM',
+        url: '/SalesAnalysis/rem/selectREM',
         type: "POST",
         data: { "year": year },
         success: function(data, statusText, resObject) {
@@ -216,7 +216,7 @@ function selectData(year) {
 
 function selectDataTable(nameMonth, month, year, type) {
     $.ajax({
-        url: '/rem/selectDataTableREM',
+        url: '/SalesAnalysis/rem/selectDataTableREM',
         type: "POST",
         data: { "month": month, "year": year, "type": type },
         success: function(data, statusText, resObject) {

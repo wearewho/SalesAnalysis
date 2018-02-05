@@ -53,7 +53,7 @@ function selectData(market, itemGroup, startYear, endYear, startDate, endDate) {
             $("#chartsSection").css("opacity", 0.2);
             $(".loading-img").show();
         },
-        url: '/sa/selectByDate',
+        url: '/SalesAnalysis/sa/selectByDate',
         type: "POST",
         data: { "market": market, "itemGroup": itemGroup, "startYear": startYear, "endYear": endYear, "startDate": startDate, "endDate": endDate },
         success: function(data, statusText, resObject) {

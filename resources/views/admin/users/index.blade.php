@@ -40,7 +40,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
-                                    <a href="#" id="{{ $user->id }}" data-route="/admin/users/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
+                                    <a href="#" id="{{ $user->id }}" data-route="/SalesAnalysis/admin/users/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
                                     <!-- {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',

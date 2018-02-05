@@ -79,7 +79,7 @@ $(function() {
 
 function selectDataTable(startYear, endYear, startDate, endDate) {
     $.ajax({
-        url: '/rem/selectEnquiryDataTableREM',
+        url: '/SalesAnalysis/rem/selectEnquiryDataTableREM',
         type: "POST",
         data: { "startYear": startYear, "endYear": endYear, "startDate": startDate, "endDate": endDate },
         success: function(data, statusText, resObject) {
@@ -588,7 +588,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
 function selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp) {
     var idItem = data;
     $.ajax({
-        url: '/rem/selectEnquiryDataTableModalREM',
+        url: '/SalesAnalysis/rem/selectEnquiryDataTableModalREM',
         type: "POST",
         data: { "type": type, "data": data, "startDate": startDate, "endDate": endDate, "startYear": startYear, "endYear": endYear },
         success: function(data, statusText, resObject) {

@@ -33,7 +33,7 @@
                                 <td>{{ $ItemGroup->ItmsGrpNam }}</td>
                                 <td>
                                     <a href="{{ route('system.itemgroup.edit',[$ItemGroup->ItmsGrpCod]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
-                                    <a href="#" id="{{ $ItemGroup->ItmsGrpCod }}" data-route="/system/itemgroup/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
+                                    <a href="#" id="{{ $ItemGroup->ItmsGrpCod }}" data-route="/SalesAnalysis/system/itemgroup/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
                                 </td>
 
                             </tr>
