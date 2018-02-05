@@ -8,7 +8,7 @@
 
     @include('partials.createItemgroup')
     
-    {!! Form::open(['method' => 'POST', 'route' => ['system.targetmaster.store']]) !!}
+    {!! Form::open(['method' => 'POST', 'route' => ['controls.targetmaster.store']]) !!}
 
     <style type="text/css">
         .cssBg{

@@ -6,8 +6,10 @@
     @if(session('success'))
         <!-- If password successfully show message -->
         <div class="row">
-            <div class="alert alert-success">
-                {{ session('success') }}
+            <div class="col-xs-12">
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
             </div>
         </div>
     @else

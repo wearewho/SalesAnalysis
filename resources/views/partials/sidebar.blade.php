@@ -98,9 +98,40 @@
                 </ul>
             </li>
             @endcan
+
+            @can('MTD')
+            <li class="treeview {{ $request->segment(1) == 'mtd' ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-building"></i>
+                    <span class="title">@lang('global.MTD.title')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ $request->segment(2) == 'salessummaryMTD' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.mtd.SalesSummaryMTD') }}">
+                            <i class="fa fa-object-group"></i>
+                            <span class="title">
+                            @lang('global.MTD.fields.01')
+                            </span>
+                        </a>
+                    </li>  
+                    <li class="{{ $request->segment(2) == 'salesenquiryMTD' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.mtd.SalesEnquiryMTD') }}">
+                            <i class="fa fa-book"></i>
+                            <span class="title">
+                            @lang('global.MTD.fields.02')
+                            </span>
+                        </a>
+                    </li>                  
+                </ul>
+            </li>
+            @endcan
             
-            @can('admin_manage') 
-            <li class="header">Management</li>         
+            
+            <li class="header">Management</li>  
+            @can('admin_manage')        
             <li class="treeview {{ $request->segment(1) == 'admin' || $request->segment(1) ==  'system' ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-user-secret"></i> <span>Administration</span>
@@ -153,15 +184,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                        <ul class="treeview-menu {{ $request->segment(1) == 'system' ? 'active' : '' }}">                            
-                            <li class="{{ $request->segment(2) == 'targetmaster' ? 'active active-sub' : '' }}">
-                                <a href="{{ route('system.targetmaster.index') }}">
-                                    <i class="fa fa-line-chart"></i>
-                                    <span class="title">
-                                        @lang('global.targetmaster.title')
-                                    </span>
-                                </a>
-                            </li>
+                        <ul class="treeview-menu {{ $request->segment(1) == 'system' ? 'active' : '' }}">           
                             <li class="{{ $request->segment(2) == 'company' ? 'active active-sub' : '' }}">
                                 <a href="{{ route('system.company.index') }}">
                                     <i class="fa fa-building"></i>
@@ -198,7 +221,30 @@
                     </li>
                 </ul>
             </li>
-            @endcan   
+            @endcan 
+            
+            @can('controls')
+            <li class="treeview {{ $request->segment(1) == 'controls' ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-cog"></i>
+                    <span class="title">@lang('global.controls.title')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ $request->segment(2) == 'targetmaster' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('controls.targetmaster.index') }}">
+                            <i class="fa fa-line-chart"></i>
+                            <span class="title">
+                            @lang('global.targetmaster.title')
+                            </span>
+                        </a>
+                    </li>                  
+                </ul>
+            </li>
+            @endcan
+              
                             
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                         <a href="{{ route('auth.change_password') }}">

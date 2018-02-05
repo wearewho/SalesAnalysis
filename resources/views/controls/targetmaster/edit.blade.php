@@ -8,7 +8,7 @@
             $MonthQ=array("Jan","Feb","Mar","Q1","Apr","May","Jun","Q2","Jul","Aug","Sep","Q3","Oct","Nov","Dec","Q4");
         @endphp           
            
-        {!! Form::open(['method' => 'PUT', 'route' => ['system.targetmaster.update', $TargetH->TargetID]]) !!}
+        {!! Form::open(['method' => 'PUT', 'route' => ['controls.targetmaster.update', $TargetH->TargetID]]) !!}
     
         <style type="text/css">
             .cssBg{
