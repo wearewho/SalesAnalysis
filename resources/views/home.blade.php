@@ -344,12 +344,12 @@
                     options3d: {
                     enabled: true,
                     alpha: 0,
-                    beta: 10,
-                    depth: 20
+                    beta: 12,
+                    depth: 50
                     }
                 },
                 title: {
-                    text: 'Sales Target : Yuasa Battery (Thailand) Public Company Limited.'
+                    text: 'Sales 2017 : Yuasa Battery (Thailand) Public Company Limited.'
                 },
                 tooltip: {
                     pointFormat: 'Total Baht: <b>{point.valueTotal}</b><br/>Quantity: <b>{point.valueQuantity}</b><br/>'
@@ -376,8 +376,21 @@
                     
                 series: [{
                 name: 'Total',
-                colorByPoint: true,
+                colorByPoint: true,	
                 data: [ {
+                    name: '2015',                     
+                    valueTotal: accounting.formatMoney('827653830.550000', "฿"),  
+                    valueQuantity: accounting.formatNumber('1018199.000000'),
+                    y: totalBaht,
+                    drilldown: '2015'
+                },{
+                    name: '2016',                    
+                    valueTotal: accounting.formatMoney('1039170570.310000', "฿"),  
+                    valueQuantity: accounting.formatNumber('1396799.000000'),
+                    y: totalBaht,
+                    drilldown: '2016'
+                },
+                {
                     name: '2017',                    
                     valueTotal: accounting.formatMoney(totalBaht, "฿"),  
                     valueQuantity: accounting.formatNumber(totalUnit),

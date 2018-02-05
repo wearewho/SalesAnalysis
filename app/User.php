@@ -38,11 +38,6 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'role_user');
     }
-    
-    public function department()
-    {
-        return $this->belongsToMany(Department::class, 'DepartmentID');
-    }
-    
+       
     
 }

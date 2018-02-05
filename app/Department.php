@@ -13,8 +13,5 @@ class Department extends Model
     public function getKeyName(){
         return "DepartmentID";
     }
-
-    public function User() {         
-        return $this->hasMany(User::class);
-    }
+    
 }
