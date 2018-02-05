@@ -10,6 +10,8 @@ use Response;
 use PDF;
 use App;
 use App\User;
+use App\Department;
+use Silber\Bouncer\Database\Role;
 
 class HomeController extends Controller
 {
@@ -35,6 +37,47 @@ class HomeController extends Controller
 
         $result = DB::select($strSQL,[]); 
         return view('home', compact('result'));
+    }
+
+    /**
+     * Show the application profile.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function profile($id)
+    {    
+        if (session('data')->id != $id) {
+            return abort(401);
+        }
+
+        $department = Department::all();
+        $user = User::findOrFail($id);
+
+        return view('profile', compact('user', 'department'));
+    }
+
+    /**
+     * Update the application profile.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function profileUpdate(Request $request, $id)
+    {    
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        
+        if(session('data')->id == $id){
+            $newSession = User::with('roles')->where('id', $id)->first();
+            $department = Department::where('DepartmentID', $newSession->DepartmentID)->first();
+            $newSession->department = $department;
+            $request->session()->forget('data');
+            $request->session()->put('data',$newSession);
+        }
+
+        $department = Department::all();
+
+        $request->session()->flash('editComplete', 'Edit Complete!');
+        return redirect()->route('profile', compact('user', 'department'));
     }
 
     /**

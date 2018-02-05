@@ -40,7 +40,7 @@
                                         <td>{{ $TargetH->Market }}</td> 
                                         <td>
                                             <a href="{{ route('system.targetmaster.edit',[$TargetH->TargetID]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a> 
-                                            <a href="#" id="{{ $TargetH->TargetID }}" data-route="/SalesAnalysis/system/targetmaster/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
+                                            <a href="#" id="{{ $TargetH->TargetID }}" data-route="/system/targetmaster/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
                                         </td>
                                         <td>
                                             <a href="{{ route('system.targetmaster.downloadPDF', ['id' => $TargetH->TargetID])}}" class="btn btn-xs btn-danger"><i class="fa fa-file-pdf-o"></i> PDF</a> 

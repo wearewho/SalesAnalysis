@@ -184,7 +184,7 @@
           }
           else{
             $.ajax({
-              url: "/SalesAnalysis/sa/selectProvince",
+              url: "/sa/selectProvince",
               method: 'POST',
               data: {region:region},
               success: function(data) {

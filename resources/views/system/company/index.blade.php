@@ -34,7 +34,7 @@
                                 <td>{{ $company->CompanyDesp }}</td>
                                 <td>
                                     <a href="{{ route('system.company.edit',[$company->CompanyID]) }}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> @lang('global.app_edit')</a>
-                                    <a href="#" id="{{ $company->CompanyID }}" data-route="/SalesAnalysis/system/company/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
+                                    <a href="#" id="{{ $company->CompanyID }}" data-route="/system/company/" data-method="DELETE" class="delete-btn btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> @lang('global.app_delete')</a>
                                    <!-- {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',

@@ -72,7 +72,7 @@ body {
 }
 
 .loading-img {
-    background: url("../../images/spinner.gif") center center no-repeat;
+    background: url("../../images/element/spinner.gif") center center no-repeat;
     display: none;
     height: 40%;
     width: 40%;
@@ -84,7 +84,7 @@ body {
 }
 
 .loading-img2 {
-    background: url("../../images/spinner.gif") center center no-repeat;
+    background: url("../../images/element/spinner.gif") center center no-repeat;
     display: none;
     height: 40%;
     width: 40%;

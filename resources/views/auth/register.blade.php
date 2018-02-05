@@ -46,6 +46,14 @@
       <input type="password" name="password_confirmation" class="form-control" placeholder="Retype password">
       <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
     </div>
+    <div class="form-group has-feedback">
+      <select class="form-control" name="department" style="width: 100%;">
+        <option selected="selected" disabled value="">Department</option>        
+        @foreach ($Department as $department)
+        <option value="{{ $department->DepartmentID }}">{{ $department->DepartmentDesp }}</option>
+        @endforeach
+      </select>
+    </div>
     <div class="row">
       <!-- <div class="col-xs-8">
         <div class="checkbox icheck">

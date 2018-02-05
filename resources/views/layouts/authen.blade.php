@@ -15,7 +15,9 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ URL::asset('adminlte/css/AdminLTE.min.css') }}">
   <!-- iCheck -->
-  <link rel="stylesheet" href="{{ URL::asset('adminlte/plugins/iCheck/square/blue.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('adminlte/plugins/iCheck/square/blue.css') }}">  
+  <!-- select2 -->
+  <link rel="stylesheet" href="{{ URL::asset('adminlte/css/select2.min.css') }}"/>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,8 +43,16 @@
 <script src="{{ URL::asset('adminlte/plugins/iCheck/icheck.min.js') }}"></script>
 <!-- Sweet Alert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- select2 -->
+<script src="{{ URL::asset('adminlte/js/select2.full.min.js') }}"></script>
 <!-- Just winter : Snow -->
 <!--<script src="{{ URL::asset('js/snow.js') }}"></script> -->
+    <script>
+      $(function () {
+          //Initialize Select2 Elements
+          $('.select2').select2()
+      })
+    </script>
     
     @if (session()->has('incomplete'))
     <script>

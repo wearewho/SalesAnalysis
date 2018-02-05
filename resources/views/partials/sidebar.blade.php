@@ -79,7 +79,6 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-
                     <li class="{{ $request->segment(2) == 'salessummaryREM' ? 'active active-sub' : '' }}">
                         <a href="{{ route('analysis.rem.SalesSummaryREM') }}">
                             <i class="fa fa-object-group"></i>
@@ -87,7 +86,15 @@
                             @lang('global.REM.fields.01')
                             </span>
                         </a>
-                    </li>                    
+                    </li>   
+                    <li class="{{ $request->segment(2) == 'salesenquiryREM' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.rem.SalesEnquiryREM') }}">
+                            <i class="fa fa-book"></i>
+                            <span class="title">
+                            @lang('global.REM.fields.02')
+                            </span>
+                        </a>
+                    </li>                 
                 </ul>
             </li>
             @endcan
