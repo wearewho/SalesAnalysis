@@ -32,43 +32,47 @@ $(function() {
     });
 
     $(document).on("click", "#customerModal", function() {
+        var desp = $(this).parent().prev().prev().prev().prev().prev().html();
         var startDate = $('#reservation').data('daterangepicker').startDate.format('DD/MM/YYYY');
         var endDate = $('#reservation').data('daterangepicker').endDate.format('DD/MM/YYYY');
         var startYear = $('#reservation').data('daterangepicker').startDate.format('YYYY');
         var endYear = $('#reservation').data('daterangepicker').endDate.format('YYYY');
         var type = "findCustomer";
         var data = $(this).attr("data-itemcode");
-        selectDataTableModal(type, data, startDate, endDate, startYear, endYear);
+        selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp);
     });
 
     $(document).on("click", "#invoiceItemModal", function() {
+        var desp = $(this).parent().prev().prev().prev().prev().prev().html();
         var startDate = $('#reservation').data('daterangepicker').startDate.format('DD/MM/YYYY');
         var endDate = $('#reservation').data('daterangepicker').endDate.format('DD/MM/YYYY');
         var startYear = $('#reservation').data('daterangepicker').startDate.format('YYYY');
         var endYear = $('#reservation').data('daterangepicker').endDate.format('YYYY');
         var type = "findInItem";
         var data = $(this).attr("data-itemcode");
-        selectDataTableModal(type, data, startDate, endDate, startYear, endYear);
+        selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp);
     });
 
     $(document).on("click", "#itemModal", function() {
+        var desp = $(this).parent().prev().prev().prev().prev().html();
         var startDate = $('#reservation').data('daterangepicker').startDate.format('DD/MM/YYYY');
         var endDate = $('#reservation').data('daterangepicker').endDate.format('DD/MM/YYYY');
         var startYear = $('#reservation').data('daterangepicker').startDate.format('YYYY');
         var endYear = $('#reservation').data('daterangepicker').endDate.format('YYYY');
         var type = "findItem";
         var data = $(this).attr("data-custcode");
-        selectDataTableModal(type, data, startDate, endDate, startYear, endYear);
+        selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp);
     });
 
     $(document).on("click", "#invoiceCustModal", function() {
+        var desp = $(this).parent().prev().prev().prev().prev().html();
         var startDate = $('#reservation').data('daterangepicker').startDate.format('DD/MM/YYYY');
         var endDate = $('#reservation').data('daterangepicker').endDate.format('DD/MM/YYYY');
         var startYear = $('#reservation').data('daterangepicker').startDate.format('YYYY');
         var endYear = $('#reservation').data('daterangepicker').endDate.format('YYYY');
         var type = "findInCust";
         var data = $(this).attr("data-custcode");
-        selectDataTableModal(type, data, startDate, endDate, startYear, endYear);
+        selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp);
     });
 
 });
@@ -96,7 +100,10 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 return meta.row + meta.settings._iDisplayStart + 1;
                             }
                         },
-                        { data: "ItemCode" },
+                        {
+                            data: "ItemCode",
+                            className: "ItemCode text-center"
+                        },
                         { data: "Dscription" },
                         { data: "Brand" },
                         { data: "Commodity" },
@@ -115,10 +122,10 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         },
                         {
-                            data: "Dscription",
+                            data: "ItemCode",
                             render: function(data, type, row) {
-                                return '<button class="btn-view" type="button" id="customerModal" data-itemcode="' + data + '">Customer</button>' + " &nbsp;&nbsp;" +
-                                    '<button class="btn-delete" type="button" id="invoiceItemModal" data-itemcode="' + data + '">Invoice</button>'
+                                return '<button class="btn-view" type="button" id="customerModal" data-itemcode="' + data + '" data-itemname="">Customer</button>' + " &nbsp;&nbsp;" +
+                                    '<button class="btn-delete" type="button" id="invoiceItemModal" data-itemcode="' + data + '" data-itemname="">Invoice</button>'
                             },
                             targets: -1
 
@@ -185,10 +192,6 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             "targets": 0, // your case first column
                             "className": "text-center",
                             "width": "5%"
-                        }, {
-                            "targets": 1, // your case first column
-                            "className": "text-center",
-                            "width": "10%"
                         },
                         {
                             "targets": 2,
@@ -361,7 +364,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         },
                         {
-                            data: "CustName",
+                            data: "CustCode",
                             render: function(data, type, row) {
                                 return '<button class="btn-view" type="button" id="itemModal" data-custcode="' + data + '">Item</button>' + " &nbsp;&nbsp;" +
                                     '<button class="btn-delete" type="button" id="invoiceCustModal" data-custcode="' + data + '">Invoice</button>'
@@ -582,7 +585,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
     });
 }
 
-function selectDataTableModal(type, data, startDate, endDate, startYear, endYear) {
+function selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp) {
     var idItem = data;
     $.ajax({
         url: '/rem/selectEnquiryDataTableModalREM',
@@ -825,7 +828,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
 
                     $("#headCustModal").text("REM Sales Enquiry by Customer :" + startDate + " - " + endDate);
-                    $("#rightCustModal").text(idItem);
+                    $("#rightCustModal").text(idItem + " : " + desp);
 
                 } else if (type == "findItem") {
 
@@ -1064,7 +1067,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                     }).container().appendTo($('#exportProductModal'));
 
                     $("#headItemModal").text("REM Sales Enquiry by Item :" + startDate + " - " + endDate);
-                    $("#rightItemModal").text(idItem);
+                    $("#rightItemModal").text(idItem + " : " + desp);
 
                 } else if (type == "findInItem") {
 
@@ -1214,13 +1217,13 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             'print',
                             {
                                 extend: 'excel',
-                                title: "REM Sales Enquiry by Item: " + startDate + " - " + endDate
+                                title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate
                             }, {
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                                 filename: "RSSITEM" + startDate + " - " + endDate,
-                                title: "REM Sales Enquiry by Item: " + startDate + " - " + endDate,
+                                title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
@@ -1317,10 +1320,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
                             }
                         ]
-                    }).container().appendTo($('#exportProductModal'));
+                    }).container().appendTo($('#exportInvoiceItemModal'));
 
                     $("#headInvoiceItemModal").text("REM Sales Enquiry by Invoice Item :" + startDate + " - " + endDate);
-                    $("#rightInvoiceItemModal").text(idItem);
+                    $("#rightInvoiceItemModal").text(idItem + " : " + desp);
 
                 } else if (type == "findInCust") {
 
@@ -1476,13 +1479,13 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             'print',
                             {
                                 extend: 'excel',
-                                title: "REM Enquiry by Customer: " + startDate + " - " + endDate
+                                title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate
                             }, {
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                                 filename: "RSSITEM" + startDate + " - " + endDate,
-                                title: "REM Enquiry by Customer: " + startDate + " - " + endDate,
+                                title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
                                     search: 'applied',
@@ -1579,10 +1582,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
                             }
                         ]
-                    }).container().appendTo($('#exportProductModal'));
+                    }).container().appendTo($('#exportInvoiceCustModal'));
 
-                    $("#headInvoiceCustModal").text("REM Sales Enquiry by Customer :" + startDate + " - " + endDate);
-                    $("#rightInvoiceCustModal").text(idItem);
+                    $("#headInvoiceCustModal").text("REM Sales Enquiry by Invoice Customer :" + startDate + " - " + endDate);
+                    $("#rightInvoiceCustModal").text(idItem + " : " + desp);
 
                 }
 

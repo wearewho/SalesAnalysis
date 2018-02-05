@@ -307,7 +307,7 @@
                                             </thead>                                        
                                             <tfoot>
                                                 <tr>
-                                                    <th id="exportCustomerModal" colspan="6" style="text-align:center"></th>
+                                                    <th id="exportInvoiceCustModal" colspan="6" style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
@@ -383,7 +383,7 @@
                                             </thead>                                            
                                             <tfoot>
                                                 <tr>
-                                                    <th id="exportProductModal" colspan="5" style="text-align:center"></th>
+                                                    <th id="exportInvoiceItemModal" colspan="5" style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
