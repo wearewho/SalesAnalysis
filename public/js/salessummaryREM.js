@@ -30,7 +30,10 @@ $(function() {
     //Change Year
     $(".date-picker-year").datepicker({
         minViewMode: 2,
-        format: 'yyyy'
+        format: 'yyyy',
+        autoclose: true,
+        startDate: '-1y',
+        endDate: 'y',
     }).on("changeYear", function(e) {
         var currYear = String(e.date).split(" ")[3];
         $(".date-picker-year").text(currYear);
@@ -1068,7 +1071,7 @@ function calData(year, data) {
     $('#BahtTargetNow7').html(accounting.formatNumber(accounting.unformat(target.Amt07) / 1000, 2));
     $('#BahtTargetNow8').html(accounting.formatNumber(accounting.unformat(target.Amt08) / 1000, 2));
     $('#BahtTargetNow9').html(accounting.formatNumber(accounting.unformat(target.Amt09) / 1000, 2));
-    $('#BahtTargetNow10').html(accounting.formatNumber(accounting.unformat(target.Amt10 / 1000, 2)));
+    $('#BahtTargetNow10').html(accounting.formatNumber(accounting.unformat(target.Amt10) / 1000, 2));
     $('#BahtTargetNow11').html(accounting.formatNumber(accounting.unformat(target.Amt11) / 1000, 2));
     $('#BahtTargetNow12').html(accounting.formatNumber(accounting.unformat(target.Amt12) / 1000, 2));
     $('#BahtTargetNowTotal').html(accounting.formatNumber(totalBahtTarget / 1000, 2));

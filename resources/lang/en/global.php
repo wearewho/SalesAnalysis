@@ -9,6 +9,13 @@ return [
 		],
 	],
 
+	'controls' => [
+		'title' => 'Controls',
+		'created_at' => 'Time',
+		'fields' => [
+		],
+	],
+
 	'system-management' => [
 		'title' => 'System Management',
 		'created_at' => 'Time',
@@ -30,6 +37,15 @@ return [
 
 	'REM' => [
 		'title' => 'REM',
+		'created_at' => 'Time',
+		'fields' => [
+			'01' => 'Sales Summary',
+			'02' => 'Sales Enquiry',
+		],
+	],
+
+	'MTD' => [
+		'title' => 'MTD',
 		'created_at' => 'Time',
 		'fields' => [
 			'01' => 'Sales Summary',

@@ -38,9 +38,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
 //System Group
 Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.'], function () {
-    Route::resource('targetmaster', 'System\TargetmasterController');    
-    Route::post('targetmaster_mass_destroy', ['uses' => 'System\TargetmasterController@massDestroy', 'as' => 'targetmaster.mass_destroy']);
-    Route::get('downloadPDF/{id}', ['uses' => 'System\TargetmasterController@downloadPDF', 'as' => 'targetmaster.downloadPDF']); 
     Route::resource('company', 'System\CompanyController');
     Route::post('company_mass_destroy', ['uses' => 'System\CompanyController@massDestroy', 'as' => 'company.mass_destroy']);
     Route::resource('department', 'System\DepartmentController');
@@ -49,6 +46,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'system', 'as' => 'system.']
     Route::post('market_mass_destroy', ['uses' => 'System\MarketController@massDestroy', 'as' => 'market.mass_destroy']); 
     Route::resource('itemgroup', 'System\ItemgroupController');
     Route::post('itemgroup_mass_destroy', ['uses' => 'System\ItemgroupController@massDestroy', 'as' => 'itemgroup.mass_destroy']); 
+  });
+
+  //Controls Group
+Route::group(['middleware' => ['auth'], 'prefix' => 'controls', 'as' => 'controls.'], function () {
+    Route::resource('targetmaster', 'Controls\TargetmasterController');    
+    Route::post('targetmaster_mass_destroy', ['uses' => 'Controls\TargetmasterController@massDestroy', 'as' => 'targetmaster.mass_destroy']);
+    Route::get('downloadPDF/{id}', ['uses' => 'Controls\TargetmasterController@downloadPDF', 'as' => 'targetmaster.downloadPDF']);     
   });
 
   //Analysis Group
@@ -76,6 +80,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'rem', 'as' => 'analysis.rem
     Route::post('downloadPDF', ['uses' => 'Analysis\REMController@downloadPDF', 'as' => 'salessummary.downloadPDF']);  
 });
 
+Route::group(['middleware' => ['auth'], 'prefix' => 'mtd', 'as' => 'analysis.mtd.'], function () {
+    Route::get('salessummaryMTD', 'Analysis\MTDController@salessummaryMTD')->name('SalesSummaryMTD');
+    Route::get('salesenquiryMTD', 'Analysis\MTDController@salesenquiryMTD')->name('SalesEnquiryMTD');
+    Route::post('selectMTD', 'Analysis\MTDController@selectMTD')->name('selectMTD');
+    Route::post('selectDataTableMTD', 'Analysis\MTDController@selectDataTableMTD')->name('selectDataTableMTD');
+    Route::post('selectEnquiryDataTableMTD', 'Analysis\MTDController@selectEnquiryDataTableMTD')->name('selectEnquiryDataTableMTD');
+    Route::post('selectEnquiryDataTableModalMTD', 'Analysis\MTDController@selectEnquiryDataTableModalMTD')->name('selectEnquiryDataTableModalMTD');
+    Route::post('downloadPDF', ['uses' => 'Analysis\MTDController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
+});
 
 
 

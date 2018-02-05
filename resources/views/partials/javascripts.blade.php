@@ -51,6 +51,34 @@
         });
     </script>
     @endif 
+    @if (session()->has('changeSuccess'))
+    <script>
+        swal({
+        title: "<?php echo session()->get('changeSuccess'); ?>",
+        icon: 'success',
+        showConfirmButton: false
+        });
+    </script>
+    @endif
+    @if (session()->has('changeIncorrect'))
+    <script>
+        swal({
+        title: "<?php echo session()->get('changeIncorrect'); ?>",
+        icon: 'error',
+        showConfirmButton: false
+        });
+    </script>
+    @endif 
+    @if (session()->has('insertError'))
+    <script>
+        swal({
+        title: "<?php echo session()->get('insertError'); ?>",
+        text: " Please edit or delete old data before create.",
+        icon: 'error',
+        showConfirmButton: false
+        });
+    </script>
+    @endif
     <script>
         window._token = '{{ csrf_token() }}';
     </script>     
