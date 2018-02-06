@@ -11,7 +11,8 @@ $(function() {
         m = date.getMonth();
     var firstDay = new Date(y, m, 1);
 
-    $('#reservation').daterangepicker({
+    //Change Date
+    $(".date-picker").daterangepicker({
         startDate: moment(firstDay),
         endDate: moment(),
         minDate: "01/01/2017",
@@ -21,22 +22,24 @@ $(function() {
         }
     });
 
-    var startDate = $('#reservation').data('daterangepicker').startDate;
-    var endDate = $('#reservation').data('daterangepicker').endDate;
+    var startDate = $('.date-picker').data('daterangepicker').startDate;
+    var endDate = $('.date-picker').data('daterangepicker').endDate;
+    $('.date-picker').text(startDate.format('DD/MM/YYYY') + " - " + endDate.format('DD/MM/YYYY'));
     selectDataTable(startDate.format('YYYY'), endDate.format('YYYY'), startDate.format('DD/MM/YYYY'), endDate.format('DD/MM/YYYY'));
 
-    $('#reservation').on('apply.daterangepicker', function(ev, picker) {
+    $('.date-picker').on('apply.daterangepicker', function(ev, picker) {
         var startDate = picker.startDate;
         var endDate = picker.endDate;
+        $('.date-picker').text(startDate.format('DD/MM/YYYY') + " - " + endDate.format('DD/MM/YYYY'));
         selectDataTable(startDate.format('YYYY'), endDate.format('YYYY'), startDate.format('DD/MM/YYYY'), endDate.format('DD/MM/YYYY'));
     });
 
     $(document).on("click", "#customerModal", function() {
         var desp = $(this).parent().prev().prev().prev().prev().prev().html();
-        var startDate = $('#reservation').data('daterangepicker').startDate.format('DD/MM/YYYY');
-        var endDate = $('#reservation').data('daterangepicker').endDate.format('DD/MM/YYYY');
-        var startYear = $('#reservation').data('daterangepicker').startDate.format('YYYY');
-        var endYear = $('#reservation').data('daterangepicker').endDate.format('YYYY');
+        var startDate = $('.date-picker').data('daterangepicker').startDate.format('DD/MM/YYYY');
+        var endDate = $('.date-picker').data('daterangepicker').endDate.format('DD/MM/YYYY');
+        var startYear = $('.date-picker').data('daterangepicker').startDate.format('YYYY');
+        var endYear = $('.date-picker').data('daterangepicker').endDate.format('YYYY');
         var type = "findCustomer";
         var data = $(this).attr("data-itemcode");
         selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp);
@@ -44,10 +47,10 @@ $(function() {
 
     $(document).on("click", "#invoiceItemModal", function() {
         var desp = $(this).parent().prev().prev().prev().prev().prev().html();
-        var startDate = $('#reservation').data('daterangepicker').startDate.format('DD/MM/YYYY');
-        var endDate = $('#reservation').data('daterangepicker').endDate.format('DD/MM/YYYY');
-        var startYear = $('#reservation').data('daterangepicker').startDate.format('YYYY');
-        var endYear = $('#reservation').data('daterangepicker').endDate.format('YYYY');
+        var startDate = $('.date-picker').data('daterangepicker').startDate.format('DD/MM/YYYY');
+        var endDate = $('.date-picker').data('daterangepicker').endDate.format('DD/MM/YYYY');
+        var startYear = $('.date-picker').data('daterangepicker').startDate.format('YYYY');
+        var endYear = $('.date-picker').data('daterangepicker').endDate.format('YYYY');
         var type = "findInItem";
         var data = $(this).attr("data-itemcode");
         selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp);
@@ -55,10 +58,10 @@ $(function() {
 
     $(document).on("click", "#itemModal", function() {
         var desp = $(this).parent().prev().prev().prev().prev().html();
-        var startDate = $('#reservation').data('daterangepicker').startDate.format('DD/MM/YYYY');
-        var endDate = $('#reservation').data('daterangepicker').endDate.format('DD/MM/YYYY');
-        var startYear = $('#reservation').data('daterangepicker').startDate.format('YYYY');
-        var endYear = $('#reservation').data('daterangepicker').endDate.format('YYYY');
+        var startDate = $('.date-picker').data('daterangepicker').startDate.format('DD/MM/YYYY');
+        var endDate = $('.date-picker').data('daterangepicker').endDate.format('DD/MM/YYYY');
+        var startYear = $('.date-picker').data('daterangepicker').startDate.format('YYYY');
+        var endYear = $('.date-picker').data('daterangepicker').endDate.format('YYYY');
         var type = "findItem";
         var data = $(this).attr("data-custcode");
         selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp);
@@ -66,10 +69,10 @@ $(function() {
 
     $(document).on("click", "#invoiceCustModal", function() {
         var desp = $(this).parent().prev().prev().prev().prev().html();
-        var startDate = $('#reservation').data('daterangepicker').startDate.format('DD/MM/YYYY');
-        var endDate = $('#reservation').data('daterangepicker').endDate.format('DD/MM/YYYY');
-        var startYear = $('#reservation').data('daterangepicker').startDate.format('YYYY');
-        var endYear = $('#reservation').data('daterangepicker').endDate.format('YYYY');
+        var startDate = $('.date-picker').data('daterangepicker').startDate.format('DD/MM/YYYY');
+        var endDate = $('.date-picker').data('daterangepicker').endDate.format('DD/MM/YYYY');
+        var startYear = $('.date-picker').data('daterangepicker').startDate.format('YYYY');
+        var endYear = $('.date-picker').data('daterangepicker').endDate.format('YYYY');
         var type = "findInCust";
         var data = $(this).attr("data-custcode");
         selectDataTableModal(type, data, startDate, endDate, startYear, endYear, desp);
@@ -92,13 +95,12 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                 var Customer = $("#Customer");
 
                 Product.dataTable().fnDestroy();
-                var tableProduct = Product.dataTable({
+                var tableProduct = Product.DataTable({
+                    responsive: true,
                     data: Item,
                     columns: [{
                             data: "index",
-                            render: function(data, type, row, meta) {
-                                return meta.row + meta.settings._iDisplayStart + 1;
-                            }
+                            defaultContent: ''
                         },
                         {
                             data: "ItemCode",
@@ -126,8 +128,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             render: function(data, type, row) {
                                 return '<button class="btn-view" type="button" id="customerModal" data-itemcode="' + data + '" data-itemname="">Customer</button>' + " &nbsp;&nbsp;" +
                                     '<button class="btn-delete" type="button" id="invoiceItemModal" data-itemcode="' + data + '" data-itemname="">Invoice</button>'
-                            },
-                            targets: -1
+                            }
 
                         }
                     ],
@@ -179,19 +180,23 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(4).footer()).html('Total');
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                            ' ' + accounting.formatNumber(Unit)
                         );
                         $(api.column(6).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                            ' ' + accounting.formatNumber(Total, 2)
                         );
                     },
-                    "order": [
-                        [6, "desc"]
-                    ],
                     'columnDefs': [{
-                            "targets": 0, // your case first column
+                            "targets": 0,
+                            "searchable": false,
+                            "orderable": false,
                             "className": "text-center",
                             "width": "5%"
+                        },
+                        {
+                            "targets": 1,
+                            "className": "text-left",
+                            "width": "14%"
                         },
                         {
                             "targets": 2,
@@ -211,27 +216,48 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             "targets": 5,
                             "className": "text-left",
-                            "width": "15%"
+                            "width": "13%"
                         },
                         {
                             "targets": 6,
                             "className": "text-left",
-                            "width": "15%"
+                            "width": "13%"
                         },
                         {
                             "targets": 7,
+                            "searchable": false,
+                            "orderable": false,
                             "className": "text-center",
                             "width": "13%"
                         }
+                    ],
+                    "order": [
+                        [6, "desc"]
+                    ],
+                    "lengthMenu": [
+                        [5, 10, 25, 50, -1],
+                        [5, 10, 25, 50, "All"]
                     ]
-                }, );
+                });
+
+                tableProduct.on('order.dt search.dt', function() {
+                    tableProduct.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
+                        cell.innerHTML = i + 1;
+                        tableProduct.cell(cell).invalidate('dom');
+                    });
+                }).draw();
 
                 var buttonsProduct = new $.fn.dataTable.Buttons(tableProduct, {
                     buttons: [
                         'print',
                         {
                             extend: 'excel',
-                            title: "REM Sales Summary by Item: " + startDate + " - " + endDate
+                            title: "REM Sales Summary by Item: " + startDate + " - " + endDate,
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5, 6],
+                                search: 'applied',
+                                order: 'applied'
+                            }
                         }, {
                             extend: 'pdf',
                             orientation: 'portrait', //landscape
@@ -332,19 +358,22 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         }, {
                             extend: 'csv',
                             title: "REM Sales Summary by Item: " + startDate + " - " + endDate,
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5, 6],
+                                search: 'applied',
+                                order: 'applied'
+                            }
                         }
                     ]
                 }).container().appendTo($('#exportProduct'));
 
-
                 Customer.dataTable().fnDestroy();
-                var tableCustomer = Customer.dataTable({
+                var tableCustomer = Customer.DataTable({
+                    responsive: true,
                     data: Cust,
                     columns: [{
                             data: "index",
-                            render: function(data, type, row, meta) {
-                                return meta.row + meta.settings._iDisplayStart + 1;
-                            }
+                            defaultContent: ''
                         },
                         { data: "CustCode" },
                         { data: "CustName" },
@@ -421,10 +450,10 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(3).footer()).html('Total');
                         $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                            ' ' + accounting.formatNumber(Unit)
                         );
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                            ' ' + accounting.formatNumber(Total, 2)
                         );
                     },
                     "order": [
@@ -432,6 +461,8 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                     ],
                     'columnDefs': [{
                             "targets": 0,
+                            "searchable": false,
+                            "orderable": false,
                             "className": "text-center",
                             "width": "5%"
                         }, {
@@ -460,10 +491,23 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             "targets": 6,
                             "className": "text-center",
+                            "searchable": false,
+                            "orderable": false,
                             "width": "13%"
                         }
+                    ],
+                    "lengthMenu": [
+                        [5, 10, 25, 50, -1],
+                        [5, 10, 25, 50, "All"]
                     ]
                 });
+
+                tableCustomer.on('order.dt search.dt', function() {
+                    tableCustomer.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
+                        cell.innerHTML = i + 1;
+                        tableCustomer.cell(cell).invalidate('dom');
+                    });
+                }).draw();
 
                 var buttonsCustomer = new $.fn.dataTable.Buttons(tableCustomer, {
                     buttons: [
@@ -471,6 +515,11 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             extend: 'excel',
                             title: "REM Sales Summary by Customer: " + startDate + " - " + endDate,
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5],
+                                search: 'applied',
+                                order: 'applied'
+                            }
                         }, {
                             extend: 'pdf',
                             orientation: 'portrait', //landscape
@@ -570,7 +619,12 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         }, {
                             extend: 'csv',
-                            title: "REM Sales Summary by Customer: " + startDate + " - " + endDate
+                            title: "REM Sales Summary by Customer: " + startDate + " - " + endDate,
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5],
+                                search: 'applied',
+                                order: 'applied'
+                            }
                         }
                     ]
                 }).container().appendTo($('#exportCustomer'));
@@ -603,13 +657,11 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                     var Customer = $("#enquiryCustomer");
 
                     Customer.dataTable().fnDestroy();
-                    var tableCustomer = Customer.dataTable({
+                    var tableCustomer = Customer.DataTable({
                         data: results,
                         columns: [{
                                 data: "index",
-                                render: function(data, type, row, meta) {
-                                    return meta.row + meta.settings._iDisplayStart + 1;
-                                }
+                                defaultContent: ''
                             },
                             { data: "CustCode" },
                             { data: "CustName" },
@@ -677,10 +729,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(3).footer()).html('Total');
                             $(api.column(4).footer()).html(
-                                ' ' + accounting.formatNumber(Unit) + ' Unit'
+                                ' ' + accounting.formatNumber(Unit)
                             );
                             $(api.column(5).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                                ' ' + accounting.formatNumber(Total, 2)
                             );
                         },
                         "order": [
@@ -688,6 +740,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                         ],
                         'columnDefs': [{
                                 "targets": 0,
+                                "searchable": false,
+                                "orderable": false,
                                 "className": "text-center",
                                 "width": "5%"
                             }, {
@@ -713,8 +767,19 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 "targets": 5,
                                 "width": "15%"
                             }
+                        ],
+                        "lengthMenu": [
+                            [5, 10, 25, 50, -1],
+                            [5, 10, 25, 50, "All"]
                         ]
                     });
+
+                    tableCustomer.on('order.dt search.dt', function() {
+                        tableCustomer.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
+                            cell.innerHTML = i + 1;
+                            tableCustomer.cell(cell).invalidate('dom');
+                        });
+                    }).draw();
 
                     var buttonsCustomer = new $.fn.dataTable.Buttons(tableCustomer, {
                         buttons: [
@@ -835,13 +900,11 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                     var Product = $("#enquiryProduct");
 
                     Product.dataTable().fnDestroy();
-                    var tableProduct = Product.dataTable({
+                    var tableProduct = Product.DataTable({
                         data: results,
                         columns: [{
                                 data: "index",
-                                render: function(data, type, row, meta) {
-                                    return meta.row + meta.settings._iDisplayStart + 1;
-                                }
+                                defaultContent: ''
                             },
                             { data: "ItemCode" },
                             { data: "Dscription" },
@@ -910,21 +973,23 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(4).footer()).html('Total');
                             $(api.column(5).footer()).html(
-                                ' ' + accounting.formatNumber(Unit) + ' Unit'
+                                ' ' + accounting.formatNumber(Unit)
                             );
                             $(api.column(6).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                                ' ' + accounting.formatNumber(Total, 2)
                             );
                         },
                         "order": [
                             [6, "desc"]
                         ],
                         'columnDefs': [{
-                                "targets": 0, // your case first column
+                                "targets": 0,
+                                "searchable": false,
+                                "orderable": false,
                                 "className": "text-center",
                                 "width": "5%"
                             }, {
-                                "targets": 1, // your case first column
+                                "targets": 1,
                                 "className": "text-center",
                                 "width": "10%"
                             },
@@ -953,15 +1018,31 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 "className": "text-left",
                                 "width": "15%"
                             }
+                        ],
+                        "lengthMenu": [
+                            [5, 10, 25, 50, -1],
+                            [5, 10, 25, 50, "All"]
                         ]
-                    }, );
+                    });
+
+                    tableProduct.on('order.dt search.dt', function() {
+                        tableProduct.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
+                            cell.innerHTML = i + 1;
+                            tableProduct.cell(cell).invalidate('dom');
+                        });
+                    }).draw();
 
                     var buttonsProduct = new $.fn.dataTable.Buttons(tableProduct, {
                         buttons: [
                             'print',
                             {
                                 extend: 'excel',
-                                title: "REM Enquiry by Item: " + startDate + " - " + endDate
+                                title: "REM Enquiry by Item: " + startDate + " - " + endDate,
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6],
+                                    search: 'applied',
+                                    order: 'applied'
+                                }
                             }, {
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
@@ -1062,6 +1143,11 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             }, {
                                 extend: 'csv',
                                 title: "REM Enquiry by Item: " + startDate + " - " + endDate,
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6],
+                                    search: 'applied',
+                                    order: 'applied'
+                                },
                             }
                         ]
                     }).container().appendTo($('#exportProductModal'));
@@ -1074,13 +1160,11 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                     var Product = $("#enquiryInvoiceProduct");
 
                     Product.dataTable().fnDestroy();
-                    var tableProduct = Product.dataTable({
+                    var tableProduct = Product.DataTable({
                         data: results,
                         columns: [{
                                 data: "index",
-                                render: function(data, type, row, meta) {
-                                    return meta.row + meta.settings._iDisplayStart + 1;
-                                }
+                                defaultContent: ''
                             },
                             { data: "DocNum" },
                             { data: "DocumentType" },
@@ -1161,21 +1245,23 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(5).footer()).html('Total');
                             $(api.column(6).footer()).html(
-                                ' ' + accounting.formatNumber(Unit) + ' Unit'
+                                ' ' + accounting.formatNumber(Unit)
                             );
                             $(api.column(7).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                                ' ' + accounting.formatNumber(Total, 2)
                             );
                         },
                         "order": [
                             [7, "desc"]
                         ],
                         'columnDefs': [{
-                                "targets": 0, // your case first column
+                                "targets": 0,
+                                "searchable": false,
+                                "orderable": false,
                                 "className": "text-center",
                                 "width": "5%"
                             }, {
-                                "targets": 1, // your case first column
+                                "targets": 1,
                                 "className": "text-center",
                                 "width": "10%"
                             },
@@ -1209,8 +1295,19 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 "className": "text-left",
                                 "width": "15%"
                             }
+                        ],
+                        "lengthMenu": [
+                            [5, 10, 25, 50, -1],
+                            [5, 10, 25, 50, "All"]
                         ]
-                    }, );
+                    });
+
+                    tableProduct.on('order.dt search.dt', function() {
+                        tableProduct.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
+                            cell.innerHTML = i + 1;
+                            tableProduct.cell(cell).invalidate('dom');
+                        });
+                    }).draw();
 
                     var buttonsProduct = new $.fn.dataTable.Buttons(tableProduct, {
                         buttons: [
@@ -1331,13 +1428,11 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                     var Product = $("#enquiryInvoiceCustomer");
 
                     Product.dataTable().fnDestroy();
-                    var tableProduct = Product.dataTable({
+                    var tableProduct = Product.DataTable({
                         data: results,
                         columns: [{
                                 data: "index",
-                                render: function(data, type, row, meta) {
-                                    return meta.row + meta.settings._iDisplayStart + 1;
-                                }
+                                defaultContent: ''
                             },
                             { data: "DocNum" },
                             { data: "DocumentType" },
@@ -1419,17 +1514,19 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(6).footer()).html('Total');
                             $(api.column(7).footer()).html(
-                                ' ' + accounting.formatNumber(Unit) + ' Unit'
+                                ' ' + accounting.formatNumber(Unit)
                             );
                             $(api.column(8).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                                ' ' + accounting.formatNumber(Total, 2)
                             );
                         },
                         "order": [
                             [8, "desc"]
                         ],
                         'columnDefs': [{
-                                "targets": 0, // your case first column
+                                "targets": 0,
+                                "searchable": false,
+                                "orderable": false,
                                 "className": "text-center",
                                 "width": "5%"
                             }, {
@@ -1472,8 +1569,19 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 "className": "text-right",
                                 "width": "14%"
                             }
+                        ],
+                        "lengthMenu": [
+                            [5, 10, 25, 50, -1],
+                            [5, 10, 25, 50, "All"]
                         ]
-                    }, );
+                    });
+
+                    tableProduct.on('order.dt search.dt', function() {
+                        tableProduct.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
+                            cell.innerHTML = i + 1;
+                            tableProduct.cell(cell).invalidate('dom');
+                        });
+                    }).draw();
 
                     var buttonsProduct = new $.fn.dataTable.Buttons(tableProduct, {
                         buttons: [

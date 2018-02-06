@@ -77,6 +77,13 @@
             </div>
         </section>
     </div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+        <b>Sales Analysis Portal </b> V.1.0
+        </div>
+        <strong>Copyright &copy; 2018 <a href="http://www.yuasathai.com">Yuasa Battery (Thailand) Public Company Limited</a>.</strong> All rights
+        reserved.
+  </footer>
 </div>
 
 {!! Form::open(['route' => 'auth.logout', 'style' => 'display:none;', 'id' => 'logout']) !!}

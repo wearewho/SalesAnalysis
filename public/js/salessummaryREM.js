@@ -231,13 +231,11 @@ function selectDataTable(nameMonth, month, year, type) {
                 var Customer = $("#Customer");
 
                 Product.dataTable().fnDestroy();
-                var tableProduct = Product.dataTable({
+                var tableProduct = Product.DataTable({
                     data: Item,
                     columns: [{
                             data: "index",
-                            render: function(data, type, row, meta) {
-                                return meta.row + meta.settings._iDisplayStart + 1;
-                            }
+                            defaultContent: ''
                         },
                         { data: "ItemCode" },
                         { data: "Dscription" },
@@ -306,21 +304,22 @@ function selectDataTable(nameMonth, month, year, type) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(4).footer()).html('Total');
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                            ' ' + accounting.formatNumber(Unit)
                         );
                         $(api.column(6).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                            ' ' + accounting.formatNumber(Total, 2)
                         );
                     },
                     "order": [
-                        [5, "desc"]
+                        [6, "desc"]
                     ],
                     'columnDefs': [{
                             "targets": 0, // your case first column
+                            "orderable": false,
                             "className": "text-center",
                             "width": "5%"
                         }, {
-                            "targets": 1, // your case first column
+                            "targets": 1,
                             "className": "text-center",
                             "width": "10%"
                         },
@@ -349,8 +348,19 @@ function selectDataTable(nameMonth, month, year, type) {
                             "className": "text-left",
                             "width": "15%"
                         }
+                    ],
+                    "lengthMenu": [
+                        [5, 10, 25, 50, -1],
+                        [5, 10, 25, 50, "All"]
                     ]
                 }, );
+
+                tableProduct.on('order.dt search.dt', function() {
+                    tableProduct.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
+                        cell.innerHTML = i + 1;
+                        tableProduct.cell(cell).invalidate('dom');
+                    });
+                }).draw();
 
                 var buttonsProduct = new $.fn.dataTable.Buttons(tableProduct, {
                     buttons: [
@@ -448,14 +458,21 @@ function selectDataTable(nameMonth, month, year, type) {
                                 doc.content[0].layout = objLayout;
                                 doc.content[0].table.widths = [30, 80, "*", 40, 70, 60, 80];
                                 var rowCount = doc.content[0].table.body.length;
+                                var sumtotal = 0;
+                                var sumunit = 0;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
                                     doc.content[0].table.body[i][5].alignment = 'right';
                                     doc.content[0].table.body[i][6].alignment = 'right';
+
+                                    sumunit += parseFloat(accounting.unformat(doc.content[0].table.body[i][5].text));
+                                    sumtotal += parseFloat(accounting.unformat(doc.content[0].table.body[i][6].text));
+
                                 };
 
                             }
-                        }, {
+                        },
+                        {
                             extend: 'csv',
                             title: "REM Sales Summary: " + nameMonth + " " + year
                         }
@@ -464,13 +481,11 @@ function selectDataTable(nameMonth, month, year, type) {
 
 
                 Customer.dataTable().fnDestroy();
-                var tableCustomer = Customer.dataTable({
+                var tableCustomer = Customer.DataTable({
                     data: Cust,
                     columns: [{
                             data: "index",
-                            render: function(data, type, row, meta) {
-                                return meta.row + meta.settings._iDisplayStart + 1;
-                            }
+                            defaultContent: ''
                         },
                         { data: "CustCode" },
                         { data: "CustName" },
@@ -538,10 +553,10 @@ function selectDataTable(nameMonth, month, year, type) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(3).footer()).html('Total');
                         $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                            ' ' + accounting.formatNumber(Unit)
                         );
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                            ' ' + accounting.formatNumber(Total, 2)
                         );
                     },
                     "order": [
@@ -549,6 +564,7 @@ function selectDataTable(nameMonth, month, year, type) {
                     ],
                     'columnDefs': [{
                             "targets": 0,
+                            "orderable": false,
                             "className": "text-center",
                             "width": "5%"
                         }, {
@@ -574,8 +590,19 @@ function selectDataTable(nameMonth, month, year, type) {
                             "targets": 5,
                             "width": "15%"
                         }
+                    ],
+                    "lengthMenu": [
+                        [5, 10, 25, 50, -1],
+                        [5, 10, 25, 50, "All"]
                     ]
                 });
+
+                tableCustomer.on('order.dt search.dt', function() {
+                    tableCustomer.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
+                        cell.innerHTML = i + 1;
+                        tableCustomer.cell(cell).invalidate('dom');
+                    });
+                }).draw();
 
                 var buttonsCustomer = new $.fn.dataTable.Buttons(tableCustomer, {
                     buttons: [

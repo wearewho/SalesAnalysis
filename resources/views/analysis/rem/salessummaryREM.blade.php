@@ -22,8 +22,8 @@
     <div class="row">
         <div class="col-md-10">            
             <h2 class="page-header">
-                <span>REM Sales Summary Report : </span>
-                <a name="Year" id="Year" class="date-picker-year">{{date("Y")}}</a>
+                <span><b>REM Sales Summary Report : </b></span>
+                <b><a name="Year" id="Year" class="date-picker-year">{{date("Y")}}</a></b>
             </h2>
         </div> 
         <div class="col-md-1 ">        
@@ -450,7 +450,7 @@
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="headModal">REM Sales Summary: </h4>
+                    <b><h4 class="modal-title" id="headModal">REM Sales Summary: </h4></b>
                 </div>
                 <div class="modal-body">
                     <div class="row">
