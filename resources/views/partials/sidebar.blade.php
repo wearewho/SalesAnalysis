@@ -6,7 +6,7 @@
     <section class="sidebar">
         <ul class="sidebar-menu">               
             
-            <li class="header">Sales Analysis Portal</li>
+            <li class="header"><b>Sales Analysis Portal</b></li>
             <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
                 <a href="{{ url('/') }}">
                     <i class="fa fa-dashboard"></i>
@@ -89,7 +89,7 @@
                     </li>   
                     <li class="{{ $request->segment(2) == 'salesenquiryREM' ? 'active active-sub' : '' }}">
                         <a href="{{ route('analysis.rem.SalesEnquiryREM') }}">
-                            <i class="fa fa-book"></i>
+                            <i class="fa fa-table"></i>
                             <span class="title">
                             @lang('global.REM.fields.02')
                             </span>
@@ -130,7 +130,7 @@
             @endcan
             
             
-            <li class="header">Management</li>  
+            <li class="header" style="font-color:red;"><b>Management</b></li>  
             @can('admin_manage')        
             <li class="treeview {{ $request->segment(1) == 'admin' || $request->segment(1) ==  'system' ? 'active' : '' }}">
                 <a href="#">

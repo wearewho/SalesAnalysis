@@ -10,30 +10,42 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
 
-    <style>
-        .uniqueClassName {
-            text-align: right;
-        }
-        .dataTables_wrapper .dt-buttons {
-            float:none;  
-            text-align:center;
-        }
-    </style>
-
     <div class="row">
         <div class="col-md-12">
             <div class="box box-danger">
                 <div class="box-header with-border">
-                <h3 class="box-title"><i class="fa fa-table"></i> <b>REM Sales Enquiry</b></h3>
+                <h3 class="box-title">REM Sales Enquiry</h3>
                 </div>
                 <div class="box-body">
                     <div class="row">
-                        
-                    </div>   
-                    @php                      
-                        $todate = date("d/m/Y", strtotime('-1 day'));
-                    @endphp
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control pull-right" id="reservation">
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        </div>
 
+        
+        @php                      
+            $todate = date("d/m/Y", strtotime('-1 day'));
+        @endphp
+
+        <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                <h3 class="box-title">REM Sales Enquiry Table</h3>
+                </div>
+                <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
                             <!-- Custom Tabs (Pulled to the right) -->
@@ -41,10 +53,7 @@
                             <ul class="nav nav-tabs pull-right typeY">
                                 <li class="active"><a href="#tab_1-1" data-toggle="tab" id="tab_1"><strong style="font-size:16px;">Product</strong></a></li>
                                 <li><a href="#tab_2-2" data-toggle="tab" id="tab_2"><strong style="font-size:16px;">Customer</strong></a></li>
-                                <li class="pull-left header">
-                                     <span><b>Date range : </b></span>
-                                     <b><a class="date-picker">{{date('01/m/Y')}} - {{date('d/m/Y')}}</a></b>
-                                </li>
+                                <li class="pull-left header"><i class="fa fa-book"></i> Sales Enquiry</li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1-1">                          
@@ -107,10 +116,10 @@
                             <!-- /.col -->
                         </div>
                         <!-- /.row -->
-                        <!-- END CUSTOM TABS -->                 
+                        <!-- END CUSTOM TABS -->
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
 
         <div class="modal fade" id="modal-customerDataTable">
@@ -293,7 +302,7 @@
                                                     <th>Description</th>
                                                     <th>Price</th>
                                                     <th>Unit</th>
-                                                    <th>Baht</th>
+                                                    <th>Amount</th>
                                                 </tr>
                                             </thead>                                        
                                             <tfoot>
@@ -369,7 +378,7 @@
                                                     <th>Customer Name</th>
                                                     <th>Price</th>
                                                     <th>Unit</th>
-                                                    <th>Baht</th>
+                                                    <th>Amount</th>
                                                 </tr>
                                             </thead>                                            
                                             <tfoot>

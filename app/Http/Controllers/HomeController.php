@@ -30,12 +30,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    /* public function index()
     {    
         $strSQL = "SELECT DocMonth,DocYear,SalesPersonGroup,Sum(Quantity) AS Quantity,Sum(Total) As Total 
                     FROM YS_2017 Group by DocMonth,DocYear,SalesPersonGroup  ";
 
         $result = DB::select($strSQL,[]); 
+        return view('home', compact('result'));
+    } */
+    public function index()
+    {  
+         $result = session('data');   
         return view('home', compact('result'));
     }
 

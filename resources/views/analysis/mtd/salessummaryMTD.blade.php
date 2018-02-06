@@ -22,15 +22,15 @@
     <div class="row">
         <div class="col-md-10">            
             <h2 class="page-header">
-                <span><b>REM Sales Summary Report : </b></span>
-                <b><a name="Year" id="Year" class="date-picker-year">{{date("Y")}}</a></b>
+                <span>MTD Sales Summary Report : </span>
+                <a name="Year" id="Year" class="date-picker-year">{{date("Y")}}</a>
             </h2>
         </div> 
         <div class="col-md-1 ">        
             <button type="button" id="mode" style="float: left;" class="btn btn-info margin"><i class="fa fa-bar-chart"></i> Quarterly</button> 
         </div>
         <div class="col-md-1">               
-            <form action="{{ route('analysis.rem.salessummary.downloadPDF') }}" method="POST" id="downloadPDF"> 
+            <form action="{{ route('analysis.mtd.salessummary.downloadPDF') }}" method="POST" id="downloadPDF"> 
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">    
                 <input type="hidden" id="typeHidden" name="type" value="">  
                 <input type="hidden" id="modeHidden" name="mode" value="">  
@@ -75,7 +75,7 @@
                     <table id="BAHTTable" class="table table-bordered" style="font-size: 14px;" >
                         <thead>
                             <tr style="text-align:center;" bgcolor="#b6dde8">
-                                <th style="vertical-align:middle; text-align:center; width:130px;">AMB (1,000 BAHT)</th>
+                                <th style="vertical-align:middle; text-align:center; width:130px;">Amount (1,000 BAHT)</th>
                                 <th style="text-align:center;">January</th>
                                 <th style="text-align:center;">February</th>
                                 <th style="text-align:center;">March</th>
@@ -177,7 +177,7 @@
                     <table id="BAHTTable" class="table table-bordered" style="font-size: 14px;" >
                         <thead>
                             <tr style="text-align:center;" bgcolor="#b6dde8">
-                                <th style="vertical-align:middle; text-align:center; width:130px;">AMB (UNIT)</th>
+                                <th style="vertical-align:middle; text-align:center; width:130px;">Amount (UNIT)</th>
                                 <th style="text-align:center;">January</th>
                                 <th style="text-align:center;">February</th>
                                 <th style="text-align:center;">March</th>
@@ -274,7 +274,7 @@
                                 <td id="UnitGrowth12" style="text-align: right;">&nbsp;</td>
                                 <td id="UnitGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>                   
-                        </tbody>
+                        </tbody>                        
                     </table>                
                 </div>
                 <div class="loading-img2"></div>
@@ -450,7 +450,7 @@
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                    <b><h4 class="modal-title" id="headModal">REM Sales Summary: </h4></b>
+                <h4 class="modal-title" id="headModal">MTD Sales Summary: </h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -576,8 +576,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script> 
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script> 
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> 
+<script src='https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js'></script>
 
-<script src="{{ URL::asset('js/salessummaryREM.js') }}"></script> 
+<script src="{{ URL::asset('js/salessummaryMTD.js') }}"></script> 
 
 <script>
     $(function() {

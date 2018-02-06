@@ -59,7 +59,7 @@
         showConfirmButton: false
         });
     </script>
-    @endif
+    @endif 
     @if (session()->has('changeIncorrect'))
     <script>
         swal({
@@ -78,7 +78,7 @@
         showConfirmButton: false
         });
     </script>
-    @endif
+    @endif 
     <script>
         window._token = '{{ csrf_token() }}';
     </script>     
