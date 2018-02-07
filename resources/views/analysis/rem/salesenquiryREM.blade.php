@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"/>
+
 <!-- daterange picker -->
 <link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
 
@@ -17,6 +18,9 @@
         .dataTables_wrapper .dt-buttons {
             float:none;  
             text-align:center;
+        }
+        div.dt-buttons {
+            clear: both;
         }
     </style>
 
@@ -47,7 +51,7 @@
                                 </li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane active" id="tab_1-1">                          
+                                <div class="tab-pane active" id="tab_1-1">                        
                                     <table id="Product" class="table table-bordered table-striped" style="font-size: 14px;" width="100%">
                                         <thead>
                                             <tr>
@@ -63,14 +67,17 @@
                                         </thead>                                            
                                         <tfoot>
                                             <tr>
-                                                <th id="exportProduct" colspan="4" style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
                                                 <th style="text-align:center"></th>
                                                 <th style="text-align:right"></th>
                                                 <th style="text-align:right"></th>
                                                 <th style="text-align:center"></th>
-                                            </tr>
+                                            </tr>   
                                         </tfoot>
-                                    </table>  
+                                    </table>                                
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="tab_2-2">
@@ -88,7 +95,9 @@
                                         </thead>                                        
                                         <tfoot>
                                             <tr>
-                                                <th id="exportCustomer" colspan="3" style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
                                                 <th style="text-align:center"></th>
                                                 <th style="text-align:right"></th>
                                                 <th style="text-align:right"></th>
@@ -145,7 +154,9 @@
                                             </thead>                                        
                                             <tfoot>
                                                 <tr>
-                                                    <th id="exportCustomerModal" colspan="3" style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
@@ -219,8 +230,11 @@
                                                 </tr>
                                             </thead>                                            
                                             <tfoot>
-                                                <tr>
-                                                    <th id="exportProductModal" colspan="4" style="text-align:center"></th>
+                                                <tr>    
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
@@ -269,7 +283,7 @@
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="headInvoiceCustModal">REM Sales Enquiry by Invoice Customer</h4>
+                <h4 class="modal-title" id="headInvoiceCustModal">REM Sales Enquiry by Invoice</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -291,15 +305,20 @@
                                                     <th>Doccument Date</th>
                                                     <th>Item Code</th>
                                                     <th>Description</th>
-                                                    <th>Price</th>
                                                     <th>Unit</th>
+                                                    <th>Price</th>
                                                     <th>Baht</th>
                                                 </tr>
                                             </thead>                                        
                                             <tfoot>
-                                                <tr>
-                                                    <th id="exportInvoiceCustModal" colspan="6" style="text-align:center"></th>
+                                                <tr>    
                                                     <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
                                                 </tr>
@@ -346,7 +365,7 @@
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="headInvoiceItemModal">REM Sales Enquiry by Invoice Product</h4>
+                <h4 class="modal-title" id="headInvoiceItemModal">REM Sales Enquiry by Invoice</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -367,15 +386,19 @@
                                                     <th>Doccument Type</th>
                                                     <th>Doccument Date</th>
                                                     <th>Customer Name</th>
-                                                    <th>Price</th>
                                                     <th>Unit</th>
+                                                    <th>Price</th>
                                                     <th>Baht</th>
                                                 </tr>
                                             </thead>                                            
                                             <tfoot>
-                                                <tr>
-                                                    <th id="exportInvoiceItemModal" colspan="5" style="text-align:center"></th>
+                                                <tr>                                                    
                                                     <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
                                                 </tr>

@@ -1217,13 +1217,13 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             'print',
                             {
                                 extend: 'excel',
-                                title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate
+                                title: "REM Sales Enquiry by Invoice : " + startDate + " - " + endDate
                             }, {
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
-                                title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
+                                filename: "REM Sales Enquiry by Invoice : " + startDate + " - " + endDate,
+                                title: "REM Sales Enquiry by Invoice : " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
@@ -1318,12 +1318,12 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }
                             }, {
                                 extend: 'csv',
-                                title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
+                                title: "REM Sales Enquiry by Invoice : " + startDate + " - " + endDate,
                             }
                         ]
                     }).container().appendTo($('#exportInvoiceItemModal'));
 
-                    $("#headInvoiceItemModal").text("REM Sales Enquiry by Invoice Item :" + startDate + " - " + endDate);
+                    $("#headInvoiceItemModal").text("REM Sales Enquiry by Invoice :" + startDate + " - " + endDate);
                     $("#rightInvoiceItemModal").text(idItem + " : " + desp);
 
                 } else if (type == "findInCust") {
@@ -1480,13 +1480,13 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             'print',
                             {
                                 extend: 'excel',
-                                title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate
+                                title: "REM Enquiry by Invoice: " + startDate + " - " + endDate
                             }, {
                                 extend: 'pdf',
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
-                                title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
+                                filename: "REM Enquiry by Invoice: " + startDate + " - " + endDate,
+                                title: "REM Enquiry by Invoice: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
                                     search: 'applied',
@@ -1581,12 +1581,12 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }
                             }, {
                                 extend: 'csv',
-                                title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
+                                title: "REM Enquiry by Invoice: " + startDate + " - " + endDate,
                             }
                         ]
                     }).container().appendTo($('#exportInvoiceCustModal'));
 
-                    $("#headInvoiceCustModal").text("REM Sales Enquiry by Invoice Customer :" + startDate + " - " + endDate);
+                    $("#headInvoiceCustModal").text("REM Sales Enquiry by Invoice :" + startDate + " - " + endDate);
                     $("#rightInvoiceCustModal").text(idItem + " : " + desp);
 
                 }
