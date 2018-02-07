@@ -253,7 +253,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             extend: 'excel',
                             footer: true,
-                            title: "REM Sales Summary by Item: " + startDate + " - " + endDate,
+                            title: "REM Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6],
                                 search: 'applied',
@@ -265,7 +265,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSSITEM" + startDate + " - " + endDate,
-                            title: "REM Sales Summary by Item: " + startDate + " - " + endDate,
+                            title: "REM Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6],
                                 search: 'applied',
@@ -289,7 +289,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                 // or one number for equal spread
                                 // It's important to create enough space at the top for a header !!!
-                                doc.pageMargins = [20, 80, 20, 40];
+                                doc.pageMargins = [20, 85, 20, 40];
                                 // Set the font size fot the entire document
                                 doc.defaultStyle.fontSize = 10;
                                 // Set the fontsize for the table header
@@ -314,6 +314,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
+                                                [{ colSpan: 3, text: "REM Sales Enquiry by Product: " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                             ]
 
                                         },
@@ -363,7 +364,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         }, {
                             extend: 'csv',
                             footer: true,
-                            title: "REM Sales Summary by Item: " + startDate + " - " + endDate,
+                            title: "REM Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6],
                                 search: 'applied',
@@ -525,7 +526,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             extend: 'excel',
                             footer: true,
-                            title: "REM Sales Summary by Customer: " + startDate + " - " + endDate,
+                            title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5],
                                 search: 'applied',
@@ -537,7 +538,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSSCustomer" + startDate + " - " + endDate,
-                            title: "REM Sales Summary by Customer: " + startDate + " - " + endDate,
+                            title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5],
                                 search: 'applied',
@@ -561,7 +562,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                 // or one number for equal spread
                                 // It's important to create enough space at the top for a header !!!
-                                doc.pageMargins = [20, 80, 20, 40];
+                                doc.pageMargins = [20, 85, 20, 40];
                                 // Set the font size fot the entire document
                                 doc.defaultStyle.fontSize = 10;
                                 // Set the fontsize for the table header
@@ -586,6 +587,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
+                                                [{ colSpan: 3, text: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                             ]
 
                                         },
@@ -633,7 +635,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         }, {
                             extend: 'csv',
                             footer: true,
-                            title: "REM Sales Summary by Customer: " + startDate + " - " + endDate,
+                            title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5],
                                 search: 'applied',
@@ -836,7 +838,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                     // or one number for equal spread
                                     // It's important to create enough space at the top for a header !!!
-                                    doc.pageMargins = [20, 80, 20, 40];
+                                    doc.pageMargins = [20, 85, 20, 40];
                                     // Set the font size fot the entire document
                                     doc.defaultStyle.fontSize = 10;
                                     // Set the fontsize for the table header
@@ -861,6 +863,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
+                                                    [{ colSpan: 3, text: "REM Sales Enquiry (" + desp + ") by Customer : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1064,7 +1067,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             {
                                 extend: 'excel',
                                 footer: true,
-                                title: "REM Enquiry by Item: " + startDate + " - " + endDate,
+                                title: "REM Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -1075,8 +1078,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "REM Enquiry by Item: " + startDate + " - " + endDate,
-                                title: "REM Enquiry by Item: " + startDate + " - " + endDate,
+                                filename: "REM Enquiry by Product: " + startDate + " - " + endDate,
+                                title: "REM Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -1100,7 +1103,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                     // or one number for equal spread
                                     // It's important to create enough space at the top for a header !!!
-                                    doc.pageMargins = [20, 80, 20, 40];
+                                    doc.pageMargins = [20, 85, 20, 40];
                                     // Set the font size fot the entire document
                                     doc.defaultStyle.fontSize = 10;
                                     // Set the fontsize for the table header
@@ -1125,6 +1128,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
+                                                    [{ colSpan: 3, text: "REM Sales Enquiry (" + desp + ") by Product : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1173,7 +1177,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             }, {
                                 extend: 'csv',
                                 footer: true,
-                                title: "REM Enquiry by Item: " + startDate + " - " + endDate,
+                                title: "REM Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -1187,7 +1191,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                         tableProduct.table().container()
                     );
 
-                    $("#headItemModal").text("REM Sales Enquiry by Item :" + startDate + " - " + endDate);
+                    $("#headItemModal").text("REM Sales Enquiry by Product :" + startDate + " - " + endDate);
                     $("#rightItemModal").text(idItem + " : " + desp);
 
                 } else if (type == "findInItem") {
@@ -1381,7 +1385,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                     // or one number for equal spread
                                     // It's important to create enough space at the top for a header !!!
-                                    doc.pageMargins = [20, 80, 20, 40];
+                                    doc.pageMargins = [20, 85, 20, 40];
                                     // Set the font size fot the entire document
                                     doc.defaultStyle.fontSize = 10;
                                     // Set the fontsize for the table header
@@ -1406,6 +1410,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
+                                                    [{ colSpan: 3, text: "REM Sales Enquiry (" + desp + ") by Invoice : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1666,7 +1671,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                     // or one number for equal spread
                                     // It's important to create enough space at the top for a header !!!
-                                    doc.pageMargins = [20, 80, 20, 40];
+                                    doc.pageMargins = [20, 85, 20, 40];
                                     // Set the font size fot the entire document
                                     doc.defaultStyle.fontSize = 10;
                                     // Set the fontsize for the table header
@@ -1691,6 +1696,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
+                                                    [{ colSpan: 3, text: "REM Sales Enquiry (" + desp + ") by Invoice : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
