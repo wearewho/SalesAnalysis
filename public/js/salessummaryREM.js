@@ -302,7 +302,7 @@ function selectDataTable(nameMonth, month, year, type) {
                             }, 0);
 
                         // Update footer by showing the total with the reference of the column index 
-                        $(api.column(4).footer()).html('Total');
+                        $(api.column(4).footer()).html('Grand Total');
                         $(api.column(5).footer()).html(
                             ' ' + accounting.formatNumber(Unit)
                         );
@@ -367,9 +367,11 @@ function selectDataTable(nameMonth, month, year, type) {
                         'print',
                         {
                             extend: 'excel',
+                            footer: true,
                             title: "REM Sales Summary: " + nameMonth + " " + year
                         }, {
                             extend: 'pdf',
+                            footer: true,
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSS" + nameMonth + year,
@@ -397,7 +399,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                 // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                 // or one number for equal spread
                                 // It's important to create enough space at the top for a header !!!
-                                doc.pageMargins = [20, 80, 20, 40];
+                                doc.pageMargins = [20, 85, 20, 40];
                                 // Set the font size fot the entire document
                                 doc.defaultStyle.fontSize = 10;
                                 // Set the fontsize for the table header
@@ -422,6 +424,13 @@ function selectDataTable(nameMonth, month, year, type) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
+                                                [{
+                                                    colSpan: 3,
+                                                    text: "REM Sales Summary by Product: " + nameMonth + " " + year,
+                                                    alignment: 'center',
+                                                    bold: true,
+                                                    fontSize: 11
+                                                }],
                                             ]
 
                                         },
@@ -462,6 +471,8 @@ function selectDataTable(nameMonth, month, year, type) {
                                 var sumunit = 0;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
+                                    doc.content[0].table.body[i][3].alignment = 'center';
+                                    doc.content[0].table.body[i][4].alignment = 'center';
                                     doc.content[0].table.body[i][5].alignment = 'right';
                                     doc.content[0].table.body[i][6].alignment = 'right';
 
@@ -471,13 +482,17 @@ function selectDataTable(nameMonth, month, year, type) {
                                 };
 
                             }
-                        },
-                        {
+                        }, {
                             extend: 'csv',
+                            footer: true,
                             title: "REM Sales Summary: " + nameMonth + " " + year
                         }
                     ]
-                }).container().appendTo($('#exportProduct'));
+                });
+
+                tableProduct.buttons(null, null).container().appendTo(
+                    tableProduct.table().container()
+                );
 
 
                 Customer.dataTable().fnDestroy();
@@ -551,7 +566,7 @@ function selectDataTable(nameMonth, month, year, type) {
                             }, 0);
 
                         // Update footer by showing the total with the reference of the column index 
-                        $(api.column(3).footer()).html('Total');
+                        $(api.column(3).footer()).html('Grand Total');
                         $(api.column(4).footer()).html(
                             ' ' + accounting.formatNumber(Unit)
                         );
@@ -609,9 +624,11 @@ function selectDataTable(nameMonth, month, year, type) {
                         'print',
                         {
                             extend: 'excel',
+                            footer: true,
                             title: "REM Sales Summary: " + nameMonth + " " + year
                         }, {
                             extend: 'pdf',
+                            footer: true,
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSS" + nameMonth + year,
@@ -639,7 +656,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                 // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                 // or one number for equal spread
                                 // It's important to create enough space at the top for a header !!!
-                                doc.pageMargins = [20, 80, 20, 40];
+                                doc.pageMargins = [20, 85, 20, 40];
                                 // Set the font size fot the entire document
                                 doc.defaultStyle.fontSize = 10;
                                 // Set the fontsize for the table header
@@ -664,6 +681,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
+                                                [{ colSpan: 3, text: "REM Sales Summary by Customer: " + nameMonth + " " + year, alignment: 'center', bold: true, fontSize: 11 }],
                                             ]
 
                                         },
@@ -702,6 +720,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                 var rowCount = doc.content[0].table.body.length;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
+                                    doc.content[0].table.body[i][3].alignment = 'center';
                                     doc.content[0].table.body[i][4].alignment = 'right';
                                     doc.content[0].table.body[i][5].alignment = 'right';
                                 };
@@ -709,10 +728,15 @@ function selectDataTable(nameMonth, month, year, type) {
                             }
                         }, {
                             extend: 'csv',
+                            footer: true,
                             title: "REM Sales Summary: " + nameMonth + " " + year
                         }
                     ]
-                }).container().appendTo($('#exportCustomer'));
+                });
+
+                tableCustomer.buttons(null, null).container().appendTo(
+                    tableCustomer.table().container()
+                );
 
                 if (type == "M") {
                     $("#headModal").text("REM Sales Summary: " + nameMonth + " " + year);

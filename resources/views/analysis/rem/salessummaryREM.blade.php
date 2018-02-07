@@ -15,6 +15,9 @@
             float:none;  
             text-align:center;
         }
+        div.dt-buttons {
+            clear: both;
+        }
     </style>
 
     <!-- START CUSTOM TABS -->
@@ -478,7 +481,10 @@
                                             </thead>                                            
                                             <tfoot>
                                                 <tr>
-                                                    <th id="exportProduct" colspan="4" style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
@@ -500,8 +506,10 @@
                                                 </tr>
                                             </thead>                                        
                                             <tfoot>
-                                                <tr>
-                                                    <th id="exportCustomer" colspan="3" style="text-align:center"></th>
+                                                <tr>                                                        
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
@@ -531,7 +539,7 @@
                         </div>
                         <div class="col-md-5" align="right">  
                             @php                      
-                            $todate = date("d/m/Y", strtotime('-1 day'));
+                                $todate = date("d/m/Y", strtotime('-1 day'));
                             @endphp
                             <b>  Data as of:  {{ $todate }} </b>
                             <br>

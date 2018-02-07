@@ -178,7 +178,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }, 0);
 
                         // Update footer by showing the total with the reference of the column index 
-                        $(api.column(4).footer()).html('Total');
+                        $(api.column(4).footer()).html('Grand Total');
                         $(api.column(5).footer()).html(
                             ' ' + accounting.formatNumber(Unit)
                         );
@@ -210,7 +210,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         },
                         {
                             "targets": 4,
-                            "className": "text-left",
+                            "className": "text-center",
                             "width": "11%"
                         },
                         {
@@ -252,7 +252,8 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         'print',
                         {
                             extend: 'excel',
-                            title: "REM Sales Summary by Item: " + startDate + " - " + endDate,
+                            footer: true,
+                            title: "REM Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6],
                                 search: 'applied',
@@ -260,10 +261,11 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         }, {
                             extend: 'pdf',
+                            footer: true,
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSSITEM" + startDate + " - " + endDate,
-                            title: "REM Sales Summary by Item: " + startDate + " - " + endDate,
+                            title: "REM Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6],
                                 search: 'applied',
@@ -287,7 +289,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                 // or one number for equal spread
                                 // It's important to create enough space at the top for a header !!!
-                                doc.pageMargins = [20, 80, 20, 40];
+                                doc.pageMargins = [20, 85, 20, 40];
                                 // Set the font size fot the entire document
                                 doc.defaultStyle.fontSize = 10;
                                 // Set the fontsize for the table header
@@ -312,6 +314,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
+                                                [{ colSpan: 3, text: "REM Sales Enquiry by Product: " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                             ]
 
                                         },
@@ -347,9 +350,12 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 objLayout['paddingRight'] = function(i) { return 4; };
                                 doc.content[0].layout = objLayout;
                                 doc.content[0].table.widths = [30, 80, "*", 40, 70, 60, 80];
+
                                 var rowCount = doc.content[0].table.body.length;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
+                                    doc.content[0].table.body[i][3].alignment = 'center';
+                                    doc.content[0].table.body[i][4].alignment = 'center';
                                     doc.content[0].table.body[i][5].alignment = 'right';
                                     doc.content[0].table.body[i][6].alignment = 'right';
                                 };
@@ -357,7 +363,8 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         }, {
                             extend: 'csv',
-                            title: "REM Sales Summary by Item: " + startDate + " - " + endDate,
+                            footer: true,
+                            title: "REM Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6],
                                 search: 'applied',
@@ -365,7 +372,11 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         }
                     ]
-                }).container().appendTo($('#exportProduct'));
+                });
+
+                tableProduct.buttons(null, null).container().appendTo(
+                    tableProduct.table().container()
+                );
 
                 Customer.dataTable().fnDestroy();
                 var tableCustomer = Customer.DataTable({
@@ -448,7 +459,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }, 0);
 
                         // Update footer by showing the total with the reference of the column index 
-                        $(api.column(3).footer()).html('Total');
+                        $(api.column(3).footer()).html('Grand Total');
                         $(api.column(4).footer()).html(
                             ' ' + accounting.formatNumber(Unit)
                         );
@@ -514,7 +525,8 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         'print',
                         {
                             extend: 'excel',
-                            title: "REM Sales Summary by Customer: " + startDate + " - " + endDate,
+                            footer: true,
+                            title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5],
                                 search: 'applied',
@@ -522,10 +534,11 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         }, {
                             extend: 'pdf',
+                            footer: true,
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSSCustomer" + startDate + " - " + endDate,
-                            title: "REM Sales Summary by Customer: " + startDate + " - " + endDate,
+                            title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5],
                                 search: 'applied',
@@ -549,7 +562,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                 // or one number for equal spread
                                 // It's important to create enough space at the top for a header !!!
-                                doc.pageMargins = [20, 80, 20, 40];
+                                doc.pageMargins = [20, 85, 20, 40];
                                 // Set the font size fot the entire document
                                 doc.defaultStyle.fontSize = 10;
                                 // Set the fontsize for the table header
@@ -574,6 +587,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
+                                                [{ colSpan: 3, text: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                             ]
 
                                         },
@@ -612,14 +626,16 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 var rowCount = doc.content[0].table.body.length;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
+                                    doc.content[0].table.body[i][3].alignment = 'center';
+                                    doc.content[0].table.body[i][4].alignment = 'right';
                                     doc.content[0].table.body[i][5].alignment = 'right';
-                                    doc.content[0].table.body[i][6].alignment = 'right';
                                 };
 
                             }
                         }, {
                             extend: 'csv',
-                            title: "REM Sales Summary by Customer: " + startDate + " - " + endDate,
+                            footer: true,
+                            title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5],
                                 search: 'applied',
@@ -627,7 +643,11 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             }
                         }
                     ]
-                }).container().appendTo($('#exportCustomer'));
+                });
+
+                tableCustomer.buttons(null, null).container().appendTo(
+                    tableCustomer.table().container()
+                );
 
             }
             return false;
@@ -727,7 +747,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }, 0);
 
                             // Update footer by showing the total with the reference of the column index 
-                            $(api.column(3).footer()).html('Total');
+                            $(api.column(3).footer()).html('Grand Total');
                             $(api.column(4).footer()).html(
                                 ' ' + accounting.formatNumber(Unit)
                             );
@@ -786,9 +806,11 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             'print',
                             {
                                 extend: 'excel',
+                                footer: true,
                                 title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             }, {
                                 extend: 'pdf',
+                                footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                                 filename: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate,
@@ -816,7 +838,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                     // or one number for equal spread
                                     // It's important to create enough space at the top for a header !!!
-                                    doc.pageMargins = [20, 80, 20, 40];
+                                    doc.pageMargins = [20, 85, 20, 40];
                                     // Set the font size fot the entire document
                                     doc.defaultStyle.fontSize = 10;
                                     // Set the fontsize for the table header
@@ -841,6 +863,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
+                                                    [{ colSpan: 3, text: "REM Sales Enquiry (" + desp + ") by Customer : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -879,6 +902,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
+                                        doc.content[0].table.body[i][3].alignment = 'center';
                                         doc.content[0].table.body[i][4].alignment = 'right';
                                         doc.content[0].table.body[i][5].alignment = 'right';
                                     };
@@ -886,10 +910,15 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }
                             }, {
                                 extend: 'csv',
+                                footer: true,
                                 title: "REM Sales Enquiry by Customer: " + startDate + " - " + endDate
                             }
                         ]
-                    }).container().appendTo($('#exportCustomerModal'));
+                    });
+
+                    tableCustomer.buttons(null, null).container().appendTo(
+                        tableCustomer.table().container()
+                    );
 
 
                     $("#headCustModal").text("REM Sales Enquiry by Customer :" + startDate + " - " + endDate);
@@ -971,7 +1000,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }, 0);
 
                             // Update footer by showing the total with the reference of the column index 
-                            $(api.column(4).footer()).html('Total');
+                            $(api.column(4).footer()).html('Grand Total');
                             $(api.column(5).footer()).html(
                                 ' ' + accounting.formatNumber(Unit)
                             );
@@ -1037,7 +1066,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             'print',
                             {
                                 extend: 'excel',
-                                title: "REM Enquiry by Item: " + startDate + " - " + endDate,
+                                footer: true,
+                                title: "REM Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -1045,10 +1075,11 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }
                             }, {
                                 extend: 'pdf',
+                                footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "REM Enquiry by Item: " + startDate + " - " + endDate,
-                                title: "REM Enquiry by Item: " + startDate + " - " + endDate,
+                                filename: "REM Enquiry by Product: " + startDate + " - " + endDate,
+                                title: "REM Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -1072,7 +1103,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                     // or one number for equal spread
                                     // It's important to create enough space at the top for a header !!!
-                                    doc.pageMargins = [20, 80, 20, 40];
+                                    doc.pageMargins = [20, 85, 20, 40];
                                     // Set the font size fot the entire document
                                     doc.defaultStyle.fontSize = 10;
                                     // Set the fontsize for the table header
@@ -1097,6 +1128,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
+                                                    [{ colSpan: 3, text: "REM Sales Enquiry (" + desp + ") by Product : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1135,6 +1167,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
+                                        doc.content[0].table.body[i][3].alignment = 'center';
+                                        doc.content[0].table.body[i][4].alignment = 'center';
                                         doc.content[0].table.body[i][5].alignment = 'right';
                                         doc.content[0].table.body[i][6].alignment = 'right';
                                     };
@@ -1142,7 +1176,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }
                             }, {
                                 extend: 'csv',
-                                title: "REM Enquiry by Item: " + startDate + " - " + endDate,
+                                footer: true,
+                                title: "REM Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -1150,9 +1185,13 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 },
                             }
                         ]
-                    }).container().appendTo($('#exportProductModal'));
+                    });
 
-                    $("#headItemModal").text("REM Sales Enquiry by Item :" + startDate + " - " + endDate);
+                    tableProduct.buttons(null, null).container().appendTo(
+                        tableProduct.table().container()
+                    );
+
+                    $("#headItemModal").text("REM Sales Enquiry by Product :" + startDate + " - " + endDate);
                     $("#rightItemModal").text(idItem + " : " + desp);
 
                 } else if (type == "findInItem") {
@@ -1176,17 +1215,17 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             },
                             { data: "CustName" },
                             {
-                                data: "UnitPrice",
-                                className: "uniqueClassName text-right",
-                                render: function(data, type, full) {
-                                    return accounting.formatNumber(data, 2);
-                                }
-                            },
-                            {
                                 data: "Quantity",
                                 className: "uniqueClassName text-right",
                                 render: function(data, type, full) {
                                     return accounting.formatNumber(data);
+                                }
+                            },
+                            {
+                                data: "UnitPrice",
+                                className: "uniqueClassName text-right",
+                                render: function(data, type, full) {
+                                    return accounting.formatNumber(data, 2);
                                 }
                             },
                             {
@@ -1212,7 +1251,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // computing column Total of the complete result 
                             // Total over all pages
                             Unit = api
-                                .column(6)
+                                .column(5)
                                 .data()
                                 .reduce(function(a, b) {
                                     return intVal(a) + intVal(b);
@@ -1220,7 +1259,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                             // Total over this page
                             pageUnit = api
-                                .column(6, { page: 'current' })
+                                .column(5, { page: 'current' })
                                 .data()
                                 .reduce(function(a, b) {
                                     return intVal(a) + intVal(b);
@@ -1243,8 +1282,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }, 0);
 
                             // Update footer by showing the total with the reference of the column index 
-                            $(api.column(5).footer()).html('Total');
-                            $(api.column(6).footer()).html(
+                            $(api.column(4).footer()).html('Grand Total');
+                            $(api.column(5).footer()).html(
                                 ' ' + accounting.formatNumber(Unit)
                             );
                             $(api.column(7).footer()).html(
@@ -1314,13 +1353,15 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             'print',
                             {
                                 extend: 'excel',
-                                title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate
+                                footer: true,
+                                title: "REM Sales Enquiry by Invoice : " + startDate + " - " + endDate
                             }, {
                                 extend: 'pdf',
+                                footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
-                                title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
+                                filename: "REM Sales Enquiry by Invoice : " + startDate + " - " + endDate,
+                                title: "REM Sales Enquiry by Invoice : " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
@@ -1344,7 +1385,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                     // or one number for equal spread
                                     // It's important to create enough space at the top for a header !!!
-                                    doc.pageMargins = [20, 80, 20, 40];
+                                    doc.pageMargins = [20, 85, 20, 40];
                                     // Set the font size fot the entire document
                                     doc.defaultStyle.fontSize = 10;
                                     // Set the fontsize for the table header
@@ -1369,6 +1410,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
+                                                    [{ colSpan: 3, text: "REM Sales Enquiry (" + desp + ") by Invoice : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1403,10 +1445,14 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     objLayout['paddingLeft'] = function(i) { return 4; };
                                     objLayout['paddingRight'] = function(i) { return 4; };
                                     doc.content[0].layout = objLayout;
-                                    doc.content[0].table.widths = [30, 70, 70, 60, "*", 70, 50, 70];
+                                    doc.content[0].table.widths = [20, 70, 60, 60, 85, 50, 70, 70];
+
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
+                                        doc.content[0].table.body[i][1].alignment = 'center';
+                                        doc.content[0].table.body[i][2].alignment = 'center';
+                                        doc.content[0].table.body[i][3].alignment = 'center';
                                         doc.content[0].table.body[i][5].alignment = 'right';
                                         doc.content[0].table.body[i][6].alignment = 'right';
                                         doc.content[0].table.body[i][7].alignment = 'right';
@@ -1415,12 +1461,17 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }
                             }, {
                                 extend: 'csv',
-                                title: "REM Sales Enquiry by Invoice Item: " + startDate + " - " + endDate,
+                                footer: true,
+                                title: "REM Sales Enquiry by Invoice : " + startDate + " - " + endDate,
                             }
                         ]
-                    }).container().appendTo($('#exportInvoiceItemModal'));
+                    });
 
-                    $("#headInvoiceItemModal").text("REM Sales Enquiry by Invoice Item :" + startDate + " - " + endDate);
+                    tableProduct.buttons(null, null).container().appendTo(
+                        tableProduct.table().container()
+                    );
+
+                    $("#headInvoiceItemModal").text("REM Sales Enquiry by Invoice :" + startDate + " - " + endDate);
                     $("#rightInvoiceItemModal").text(idItem + " : " + desp);
 
                 } else if (type == "findInCust") {
@@ -1445,17 +1496,17 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             { data: "ItemCode" },
                             { data: "Dscription" },
                             {
-                                data: "UnitPrice",
-                                className: "uniqueClassName text-right",
-                                render: function(data, type, full) {
-                                    return accounting.formatNumber(data, 2);
-                                }
-                            },
-                            {
                                 data: "Quantity",
                                 className: "uniqueClassName text-right",
                                 render: function(data, type, full) {
                                     return accounting.formatNumber(data);
+                                }
+                            },
+                            {
+                                data: "UnitPrice",
+                                className: "uniqueClassName text-right",
+                                render: function(data, type, full) {
+                                    return accounting.formatNumber(data, 2);
                                 }
                             },
                             {
@@ -1481,7 +1532,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // computing column Total of the complete result 
                             // Total over all pages
                             Unit = api
-                                .column(7)
+                                .column(6)
                                 .data()
                                 .reduce(function(a, b) {
                                     return intVal(a) + intVal(b);
@@ -1489,7 +1540,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                             // Total over this page
                             pageUnit = api
-                                .column(7, { page: 'current' })
+                                .column(6, { page: 'current' })
                                 .data()
                                 .reduce(function(a, b) {
                                     return intVal(a) + intVal(b);
@@ -1512,8 +1563,8 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }, 0);
 
                             // Update footer by showing the total with the reference of the column index 
-                            $(api.column(6).footer()).html('Total');
-                            $(api.column(7).footer()).html(
+                            $(api.column(5).footer()).html('Grand Total');
+                            $(api.column(6).footer()).html(
                                 ' ' + accounting.formatNumber(Unit)
                             );
                             $(api.column(8).footer()).html(
@@ -1588,13 +1639,15 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             'print',
                             {
                                 extend: 'excel',
-                                title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate
+                                footer: true,
+                                title: "REM Enquiry by Invoice : " + startDate + " - " + endDate
                             }, {
                                 extend: 'pdf',
+                                footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
-                                title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
+                                filename: "REM Enquiry by Invoice : " + startDate + " - " + endDate,
+                                title: "REM Enquiry by Invoice : " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
                                     search: 'applied',
@@ -1618,7 +1671,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                     // or one number for equal spread
                                     // It's important to create enough space at the top for a header !!!
-                                    doc.pageMargins = [20, 80, 20, 40];
+                                    doc.pageMargins = [20, 85, 20, 40];
                                     // Set the font size fot the entire document
                                     doc.defaultStyle.fontSize = 10;
                                     // Set the fontsize for the table header
@@ -1643,6 +1696,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
+                                                    [{ colSpan: 3, text: "REM Sales Enquiry (" + desp + ") by Invoice : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1677,7 +1731,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                     objLayout['paddingLeft'] = function(i) { return 4; };
                                     objLayout['paddingRight'] = function(i) { return 4; };
                                     doc.content[0].layout = objLayout;
-                                    doc.content[0].table.widths = [28, 50, 40, 52, 60, "*", 50, 40, 50];
+                                    doc.content[0].table.widths = [28, 55, 45, 52, 60, 85, 40, 50, 50];
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
@@ -1689,12 +1743,17 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                                 }
                             }, {
                                 extend: 'csv',
-                                title: "REM Enquiry by Invoice Customer: " + startDate + " - " + endDate,
+                                footer: true,
+                                title: "REM Enquiry by Invoice : " + startDate + " - " + endDate,
                             }
                         ]
-                    }).container().appendTo($('#exportInvoiceCustModal'));
+                    });
 
-                    $("#headInvoiceCustModal").text("REM Sales Enquiry by Invoice Customer :" + startDate + " - " + endDate);
+                    tableProduct.buttons(null, null).container().appendTo(
+                        tableProduct.table().container()
+                    );
+
+                    $("#headInvoiceCustModal").text("REM Sales Enquiry by Invoice : " + startDate + " - " + endDate);
                     $("#rightInvoiceCustModal").text(idItem + " : " + desp);
 
                 }
