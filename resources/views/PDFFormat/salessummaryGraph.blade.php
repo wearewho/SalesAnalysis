@@ -95,7 +95,7 @@ $objs = session('data');
 
 <div style="position: absolute; bottom: 0px; top: 75px; left: 0px; right: 0px; ">
 
-    <h4><strong> REM Sales Summary Graph Report : {{$data["oldYear"]}} - {{$data["year"]}}</strong></h4>    
+    <h4><strong> {{$data["doc"]}} Sales Summary Graph Report : {{$data["oldYear"]}} - {{$data["year"]}}</strong></h4>    
 
     <div style="position: absolute; bottom: 0px; top: 100px; left: 0px; right: 0px; ">
         @php 

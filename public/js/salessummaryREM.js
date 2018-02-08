@@ -1094,10 +1094,10 @@ function calData(year, data) {
     achieveUnitQ3 = (currUnitQ3 * 100) / accounting.unformat(target.UnitQ3);
     achieveUnitQ4 = (currUnitQ4 * 100) / accounting.unformat(target.UnitQ4);
 
-    $('#BahtActualNowQ1').html(accounting.formatNumber(currBahtQ1 / 1000, 2));
-    $('#BahtActualNowQ2').html(accounting.formatNumber(currBahtQ2 / 1000, 2));
-    $('#BahtActualNowQ3').html(accounting.formatNumber(currBahtQ3 / 1000, 2));
-    $('#BahtActualNowQ4').html(accounting.formatNumber(currBahtQ4 / 1000, 2));
+    $('#BahtActualNowQ1').html(accounting.formatNumber(currBahtQ1, 2));
+    $('#BahtActualNowQ2').html(accounting.formatNumber(currBahtQ2, 2));
+    $('#BahtActualNowQ3').html(accounting.formatNumber(currBahtQ3, 2));
+    $('#BahtActualNowQ4').html(accounting.formatNumber(currBahtQ4, 2));
     $('#BahtActualNow1').html(accounting.formatNumber(currBahtJanuary / 1000, 2));
     $('#BahtActualNow2').html(accounting.formatNumber(currBahtFebruary / 1000, 2));
     $('#BahtActualNow3').html(accounting.formatNumber(currBahtMarch / 1000, 2));
@@ -1111,12 +1111,12 @@ function calData(year, data) {
     $('#BahtActualNow11').html(accounting.formatNumber(currBahtNovember / 1000, 2));
     $('#BahtActualNow12').html(accounting.formatNumber(currBahtDecember / 1000, 2));
     $('#BahtActualNowTotal').html(accounting.formatNumber(currTotalBaht / 1000, 2));
-    $('#BahtActualNowQTotal').html(accounting.formatNumber(currTotalBaht / 1000, 2));
+    $('#BahtActualNowQTotal').html(accounting.formatNumber(currTotalBaht, 2));
 
-    $('#BahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(target.AmtQ1) / 1000, 2));
-    $('#BahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(target.AmtQ2) / 1000, 2));
-    $('#BahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(target.AmtQ3) / 1000, 2));
-    $('#BahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(target.AmtQ4) / 1000, 2));
+    $('#BahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(target.AmtQ1), 2));
+    $('#BahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(target.AmtQ2), 2));
+    $('#BahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(target.AmtQ3), 2));
+    $('#BahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(target.AmtQ4), 2));
     $('#BahtTargetNow1').html(accounting.formatNumber(accounting.unformat(target.Amt01) / 1000, 2));
     $('#BahtTargetNow2').html(accounting.formatNumber(accounting.unformat(target.Amt02) / 1000, 2));
     $('#BahtTargetNow3').html(accounting.formatNumber(accounting.unformat(target.Amt03) / 1000, 2));
@@ -1130,12 +1130,12 @@ function calData(year, data) {
     $('#BahtTargetNow11').html(accounting.formatNumber(accounting.unformat(target.Amt11) / 1000, 2));
     $('#BahtTargetNow12').html(accounting.formatNumber(accounting.unformat(target.Amt12) / 1000, 2));
     $('#BahtTargetNowTotal').html(accounting.formatNumber(totalBahtTarget / 1000, 2));
-    $('#BahtTargetNowQTotal').html(accounting.formatNumber(totalBahtTarget / 1000, 2));
+    $('#BahtTargetNowQTotal').html(accounting.formatNumber(totalBahtTarget, 2));
 
-    $('#BahtActualOldQ1').html(accounting.formatNumber(oldBahtQ1 / 1000, 2));
-    $('#BahtActualOldQ2').html(accounting.formatNumber(oldBahtQ2 / 1000, 2));
-    $('#BahtActualOldQ3').html(accounting.formatNumber(oldBahtQ3 / 1000, 2));
-    $('#BahtActualOldQ4').html(accounting.formatNumber(oldBahtQ4 / 1000, 2));
+    $('#BahtActualOldQ1').html(accounting.formatNumber(oldBahtQ1, 2));
+    $('#BahtActualOldQ2').html(accounting.formatNumber(oldBahtQ2, 2));
+    $('#BahtActualOldQ3').html(accounting.formatNumber(oldBahtQ3, 2));
+    $('#BahtActualOldQ4').html(accounting.formatNumber(oldBahtQ4, 2));
     $('#BahtActualOld1').html(accounting.formatNumber(oldBahtJanuary / 1000, 2));
     $('#BahtActualOld2').html(accounting.formatNumber(oldBahtFebruary / 1000, 2));
     $('#BahtActualOld3').html(accounting.formatNumber(oldBahtMarch / 1000, 2));
@@ -1149,7 +1149,7 @@ function calData(year, data) {
     $('#BahtActualOld11').html(accounting.formatNumber(oldBahtNovember / 1000, 2));
     $('#BahtActualOld12').html(accounting.formatNumber(oldBahtDecember / 1000, 2));
     $('#BahtActualOldTotal').html(accounting.formatNumber(oldTotalBaht / 1000, 2));
-    $('#BahtActualOldQTotal').html(accounting.formatNumber(oldTotalBaht / 1000, 2));
+    $('#BahtActualOldQTotal').html(accounting.formatNumber(oldTotalBaht, 2));
 
 
     $('#BahtGrowthQ1').html((isNaN(accounting.formatNumber(growthBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthBahtQ1, 2)) + "%");

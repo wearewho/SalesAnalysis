@@ -377,6 +377,7 @@ class MTDController extends Controller
     public function downloadPDF(Request $request)
     {
         $oldYear = $request->year - 1;
+        $data["doc"] = "MTD";
         $data["year"] = $request->year;
         $data["oldYear"] = $oldYear;
         
@@ -402,7 +403,7 @@ class MTDController extends Controller
                     $pathImage[] = $path;
                 }       
     
-                $Filename = "SSGraph".$oldYear."&".$request->year.".pdf";        
+                $Filename = "MTD SSGraph".$oldYear."&".$request->year.".pdf";        
                 $pdf = PDF::loadView('PDFFormat.salessummaryGraph', compact('data'))->setPaper('A4', 'landscape');    
                 file_put_contents(public_path() . "/tempfiles/" .$Filename, $pdf->output()); 
                 
@@ -419,22 +420,22 @@ class MTDController extends Controller
                 $messageTarget  = "";  
                 
                 if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){             
-                    $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')    ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')    ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')    ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')    ";
                                 
                 }
                 else if(Schema::hasTable($tableName1) && !Schema::hasTable($tableName2)){
-                    $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')   ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'   ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')   ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'   ";
                 }
                 else if(!Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){
-                    $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')   ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')   ";
                 }
                 else{
                     $messageData = "nullData";
-                    $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
                                 
                 }
 
@@ -451,7 +452,7 @@ class MTDController extends Controller
                 $targetData = DB::select($strSQL3,[]);
     
                 $Filename = "SSTable".$request->month.$request->year.".pdf";        
-                $pdf = PDF::loadView('PDFFormat.salessummaryYearTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape');  
+                $pdf = PDF::loadView('PDFFormat.salessummaryMTDYearTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape');  
                 return $pdf->download($Filename);  
             }
     
@@ -478,7 +479,7 @@ class MTDController extends Controller
                     $pathImage[] = $path;
                 }       
     
-                $Filename = "SSGraphQuaterof".$request->year.".pdf";        
+                $Filename = "MTD SSGraphQuaterof".$request->year.".pdf";        
                 $pdf = PDF::loadView('PDFFormat.salessummaryGraph', compact('data'))->setPaper('A4', 'landscape');    
                 file_put_contents(public_path() . "/tempfiles/" .$Filename, $pdf->output()); 
                 
@@ -495,22 +496,22 @@ class MTDController extends Controller
                 $messageTarget  = "";  
                 
                 if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){             
-                    $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')    ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')    ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')    ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')    ";
                                 
                 }
                 else if(Schema::hasTable($tableName1) && !Schema::hasTable($tableName2)){
-                    $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')   ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'   ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')   ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'   ";
                 }
                 else if(!Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){
-                    $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')   ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB')   ";
                 }
                 else{
                     $messageData = "nullData";
-                    $strSQL1 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
                                 
                 }
 
@@ -527,7 +528,7 @@ class MTDController extends Controller
                 $targetData = DB::select($strSQL3,[]);   
     
                 $Filename = "SSTableQuaterof".$request->year.".pdf";        
-                $pdf = PDF::loadView('PDFFormat.salessummaryQuaterTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape'); 
+                $pdf = PDF::loadView('PDFFormat.salessummaryMTDQuaterTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape'); 
                 return $pdf->download($Filename);  
             }
     

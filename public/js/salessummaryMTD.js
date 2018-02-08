@@ -154,7 +154,6 @@ $(function() {
             }
         }
 
-
     });
 
     $(document).on("click", "#mode", function() {
