@@ -14,6 +14,9 @@
         div.dt-buttons {
             clear: both;
         }
+        div.dt-buttons {
+            clear: both;
+        }
     </style>
 
     <!-- START CUSTOM TABS -->

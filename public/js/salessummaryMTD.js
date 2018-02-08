@@ -293,7 +293,7 @@ function selectData(year) {
                 calData(year, data);
             } else if (data[3] == "" && data[4] == "nullTarget") {
                 var base = window.location.origin
-                var route = '/SalesAnalysis/system/targetmaster/create';
+                var route = '/system/targetmaster/create';
                 swal({
                         title: "Target Year " + year + " not found.",
                         text: "Please Create Target Master!",
@@ -309,7 +309,7 @@ function selectData(year) {
                 calData(year, data);
             } else if (data[3] == "nullData" && data[4] == "nullTarget") {
                 var base = window.location.origin
-                var route = '/SalesAnalysis/system/targetmaster/create';
+                var route = '/system/targetmaster/create';
                 swal({
                     title: "Target Year " + year + " and Data not found.",
                     text: "Please contact adminastrator!",
