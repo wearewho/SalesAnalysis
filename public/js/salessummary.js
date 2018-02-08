@@ -294,10 +294,10 @@ function selectDataTable(month, year, sort, type) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(3).footer()).html('Total');
                         $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
+                            accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
                         );
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(pageTotal) + ' ( ' + accounting.formatNumber(Total) + ' Total)'
+                            accounting.formatNumber(pageTotal) + ' ( ' + accounting.formatNumber(Total) + ' Total)'
                         );
                     },
                     "order": [
@@ -490,10 +490,10 @@ function selectDataTable(month, year, sort, type) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(3).footer()).html('Total');
                         $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
+                            accounting.formatNumber(pageUnit) + ' ( ' + accounting.formatNumber(Unit) + ' Unit)'
                         );
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(pageTotal) + ' ( ' + accounting.formatNumber(Total) + ' Total)'
+                            accounting.formatNumber(pageTotal) + ' ( ' + accounting.formatNumber(Total) + ' Total)'
                         );
                     },
                     "order": [

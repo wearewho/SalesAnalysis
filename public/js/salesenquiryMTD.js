@@ -179,10 +179,10 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(4).footer()).html('Total');
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                            accounting.formatNumber(Unit) + ' Unit'
                         );
                         $(api.column(6).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                            accounting.formatNumber(Total, 2) + ' Baht'
                         );
                     },
                     "order": [
@@ -421,10 +421,10 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(3).footer()).html('Total');
                         $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                            accounting.formatNumber(Unit) + ' Unit'
                         );
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                            accounting.formatNumber(Total, 2) + ' Baht'
                         );
                     },
                     "order": [
@@ -677,10 +677,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(3).footer()).html('Total');
                             $(api.column(4).footer()).html(
-                                ' ' + accounting.formatNumber(Unit) + ' Unit'
+                                accounting.formatNumber(Unit) + ' Unit'
                             );
                             $(api.column(5).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                                accounting.formatNumber(Total, 2) + ' Baht'
                             );
                         },
                         "order": [
@@ -910,10 +910,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(4).footer()).html('Total');
                             $(api.column(5).footer()).html(
-                                ' ' + accounting.formatNumber(Unit) + ' Unit'
+                                accounting.formatNumber(Unit) + ' Unit'
                             );
                             $(api.column(6).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                                accounting.formatNumber(Total, 2) + ' Baht'
                             );
                         },
                         "order": [
@@ -1161,10 +1161,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(5).footer()).html('Total');
                             $(api.column(6).footer()).html(
-                                ' ' + accounting.formatNumber(Unit) + ' Unit'
+                                accounting.formatNumber(Unit) + ' Unit'
                             );
                             $(api.column(7).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                                accounting.formatNumber(Total, 2) + ' Baht'
                             );
                         },
                         "order": [
@@ -1419,10 +1419,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(6).footer()).html('Total');
                             $(api.column(7).footer()).html(
-                                ' ' + accounting.formatNumber(Unit) + ' Unit'
+                                accounting.formatNumber(Unit) + ' Unit'
                             );
                             $(api.column(8).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                                accounting.formatNumber(Total, 2) + ' Baht'
                             );
                         },
                         "order": [

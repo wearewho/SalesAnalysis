@@ -309,10 +309,10 @@ function selectDataTable(nameMonth, month, year, type) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(4).footer()).html('Grand Total');
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Unit)
+                            accounting.formatNumber(Unit)
                         );
                         $(api.column(6).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2)
+                            accounting.formatNumber(Total, 2)
                         );
                     },
                     "order": [
@@ -573,10 +573,10 @@ function selectDataTable(nameMonth, month, year, type) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(3).footer()).html('Grand Total');
                         $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(Unit)
+                            accounting.formatNumber(Unit)
                         );
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2)
+                            accounting.formatNumber(Total, 2)
                         );
                     },
                     "order": [

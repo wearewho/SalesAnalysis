@@ -458,10 +458,10 @@ function selectDataTable(nameMonth, month, year, type) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(5).footer()).html('Grand Total');
                         $(api.column(6).footer()).html(
-                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                            accounting.formatNumber(Unit)
                         );
                         $(api.column(7).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                            accounting.formatNumber(Total, 2)
                         );
                     },
                     "order": [
@@ -732,16 +732,16 @@ function selectDataTable(nameMonth, month, year, type) {
                             }, 0);
 
                         // Update footer by showing the total with the reference of the column index 
-                        $(api.column(4).footer()).html('Grand Total');
+                        $(api.column(3).footer()).html('Grand Total');
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Unit) + ' Unit'
+                            accounting.formatNumber(Unit)
                         );
                         $(api.column(6).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2) + ' Baht'
+                            accounting.formatNumber(Total, 2)
                         );
                     },
                     "order": [
-                        [5, "desc"]
+                        [6, "desc"]
                     ],
                     'columnDefs': [{
                             "targets": 0,
