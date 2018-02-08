@@ -219,7 +219,7 @@ function selectDataTable(month, year, sort, type) {
                     txtHead = "Sales Summary: " + nameMonth + " " + year;
                 }
 
-                Product.dataTable().fnDestroy();
+                Product.DataTable().destroy();
                 var p = Product.dataTable({
                     data: Item,
                     columns: [{
@@ -415,7 +415,7 @@ function selectDataTable(month, year, sort, type) {
                     ]
                 }).container().appendTo($('#exportProduct'));
 
-                Customer.dataTable().fnDestroy();
+                Customer.DataTable().destroy();
                 var c = Customer.dataTable({
                     data: Cust,
                     columns: [{

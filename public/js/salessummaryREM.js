@@ -43,7 +43,12 @@ $(function() {
         $('#UnitTargetNow').text("Target " + currYear);
         $('#BahtActualOld').text("Actual " + (currYear - 1));
         $('#UnitActualOld').text("Actual " + (currYear - 1));
-
+        $('#BahtActualQNow').text("Actual " + currYear);
+        $('#BahtTargetQNow').text("Target " + currYear);
+        $('#UnitActualQNow').text("Actual " + currYear);
+        $('#UnitTargetQNow').text("Target " + currYear);
+        $('#BahtActualQOld').text("Actual " + (currYear - 1));
+        $('#UnitActualQOld').text("Actual " + (currYear - 1));
         selectData(currYear);
     });
 
@@ -230,7 +235,7 @@ function selectDataTable(nameMonth, month, year, type) {
                 var Product = $("#Product");
                 var Customer = $("#Customer");
 
-                Product.dataTable().fnDestroy();
+                Product.DataTable().destroy();
                 var tableProduct = Product.DataTable({
                     data: Item,
                     columns: [{
@@ -495,7 +500,7 @@ function selectDataTable(nameMonth, month, year, type) {
                 );
 
 
-                Customer.dataTable().fnDestroy();
+                Customer.DataTable().destroy();
                 var tableCustomer = Customer.DataTable({
                     data: Cust,
                     columns: [{

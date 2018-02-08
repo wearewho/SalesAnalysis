@@ -401,7 +401,7 @@
                         var Product = $("#Product");
                         var Customer = $("#Customer");                    
 
-                        Product.dataTable().fnDestroy();
+                        Product.DataTable().destroy();
                         var t = Product.dataTable({
                             data: Item,       
                             columns: [                      
@@ -425,7 +425,7 @@
                             ]
                          });
                          
-                        Customer.dataTable().fnDestroy();
+                        Customer.DataTable().destroy();
                         Customer.dataTable({
                             data: Cust,       
                             columns: [                                

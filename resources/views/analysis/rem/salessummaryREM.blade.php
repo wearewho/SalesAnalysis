@@ -11,10 +11,6 @@
         .uniqueClassName {
             text-align: right;
         }
-        .dataTables_wrapper .dt-buttons {
-            float:none;  
-            text-align:center;
-        }
         div.dt-buttons {
             clear: both;
         }
