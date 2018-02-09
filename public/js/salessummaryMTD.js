@@ -373,9 +373,7 @@ function selectDataTable(nameMonth, month, year, type) {
                     data: Item,
                     columns: [{
                             data: "index",
-                            render: function(data, type, row, meta) {
-                                return meta.row + meta.settings._iDisplayStart + 1;
-                            }
+                            defaultContent: ''
                         },
                         { data: "ItemCode" },
                         { data: "Dscription" },
@@ -408,18 +406,6 @@ function selectDataTable(nameMonth, month, year, type) {
                                 typeof i === 'number' ?
                                 i : 0;
                         };
-
-                        // Total over all pages
-                        if (api.column(2, { search: 'applied' }).data().length > 0) {
-                            total_revenue = api
-                                .column(2, { search: 'applied' })
-                                .data()
-                                .reduce(function(a, b) {
-                                    return intVal(a) + intVal(b);
-                                });
-                        } else {
-                            total_revenue = 0;
-                        }
 
                         // computing column Total of the complete result 
                         // Total over all pages
@@ -484,8 +470,6 @@ function selectDataTable(nameMonth, month, year, type) {
                         },
                         {
                             "targets": 3,
-                            "className": "text-center",
-                            "width": "10%",
                             "visible": false
                         },
                         {
@@ -527,15 +511,17 @@ function selectDataTable(nameMonth, month, year, type) {
                         'print',
                         {
                             extend: 'excel',
-                            title: "MTD Sales Summary: " + nameMonth + " " + year
+                            footer: true,
+                            title: "MTD Sales Summary by Product : " + nameMonth + " " + year
                         }, {
                             extend: 'pdf',
+                            footer: true,
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSS" + nameMonth + year,
-                            title: "MTD Sales Summary: " + nameMonth + " " + year,
+                            title: "MTD Sales Summary by Product : " + nameMonth + " " + year,
                             exportOptions: {
-                                columns: ':visible',
+                                columns: [0, 1, 2, 4, 5, 6, 7],
                                 search: 'applied',
                                 order: 'applied'
                             },
@@ -582,6 +568,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
+                                                [{ colSpan: 3, text: "MTD Sales Summary by Product : " + nameMonth + " " + year, alignment: 'center', bold: true, fontSize: 11 }]
                                             ]
 
                                         },
@@ -616,18 +603,21 @@ function selectDataTable(nameMonth, month, year, type) {
                                 objLayout['paddingLeft'] = function(i) { return 4; };
                                 objLayout['paddingRight'] = function(i) { return 4; };
                                 doc.content[0].layout = objLayout;
-                                doc.content[0].table.widths = [30, 80, 40, "*", 40, 70, 60, 80];
+                                doc.content[0].table.widths = [30, 70, "*", 45, 65, 60, 80];
                                 var rowCount = doc.content[0].table.body.length;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
+                                    doc.content[0].table.body[i][3].alignment = 'center';
+                                    doc.content[0].table.body[i][4].alignment = 'center';
+                                    doc.content[0].table.body[i][5].alignment = 'right';
                                     doc.content[0].table.body[i][6].alignment = 'right';
-                                    doc.content[0].table.body[i][7].alignment = 'right';
                                 };
 
                             }
                         }, {
                             extend: 'csv',
-                            title: "MTD Sales Summary: " + nameMonth + " " + year
+                            footer: true,
+                            title: "MTD Sales Summary by Product : " + nameMonth + " " + year,
                         }
                     ]
                 });
@@ -662,9 +652,7 @@ function selectDataTable(nameMonth, month, year, type) {
                     data: Cust,
                     columns: [{
                             data: "index",
-                            render: function(data, type, row, meta) {
-                                return meta.row + meta.settings._iDisplayStart + 1;
-                            }
+                            defaultContent: ''
                         },
                         { data: "CustCode" },
                         { data: "CustName" },
@@ -763,8 +751,6 @@ function selectDataTable(nameMonth, month, year, type) {
                         },
                         {
                             "targets": 4,
-                            "className": "text-center",
-                            "width": "14%",
                             "visible": false
                         },
                         {
@@ -794,15 +780,17 @@ function selectDataTable(nameMonth, month, year, type) {
                         'print',
                         {
                             extend: 'excel',
-                            title: "MTD Sales Summary: " + nameMonth + " " + year
+                            footer: true,
+                            title: "MTD Sales Summary by Customer : " + nameMonth + " " + year,
                         }, {
                             extend: 'pdf',
+                            footer: true,
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSS" + nameMonth + year,
-                            title: "MTD Sales Summary: " + nameMonth + " " + year,
+                            title: "MTD Sales Summary by Customer : " + nameMonth + " " + year,
                             exportOptions: {
-                                columns: ':visible',
+                                columns: [0, 1, 2, 3, 5, 6],
                                 search: 'applied',
                                 order: 'applied'
                             },
@@ -824,7 +812,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                 // Set page margins [left,top,right,bottom] or [horizontal,vertical]
                                 // or one number for equal spread
                                 // It's important to create enough space at the top for a header !!!
-                                doc.pageMargins = [20, 80, 20, 40];
+                                doc.pageMargins = [20, 85, 20, 40];
                                 // Set the font size fot the entire document
                                 doc.defaultStyle.fontSize = 10;
                                 // Set the fontsize for the table header
@@ -849,6 +837,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
+                                                [{ colSpan: 3, text: "MTD Sales Summary by Customer : " + nameMonth + " " + year, alignment: 'center', bold: true, fontSize: 11 }]
                                             ]
 
                                         },
@@ -883,18 +872,19 @@ function selectDataTable(nameMonth, month, year, type) {
                                 objLayout['paddingLeft'] = function(i) { return 4; };
                                 objLayout['paddingRight'] = function(i) { return 4; };
                                 doc.content[0].layout = objLayout;
-                                doc.content[0].table.widths = [30, 80, "*", 70, 50, 60, 80];
+                                doc.content[0].table.widths = [30, 80, "*", 70, 60, 80];
                                 var rowCount = doc.content[0].table.body.length;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
+                                    doc.content[0].table.body[i][4].alignment = 'right';
                                     doc.content[0].table.body[i][5].alignment = 'right';
-                                    doc.content[0].table.body[i][6].alignment = 'right';
                                 };
 
                             }
                         }, {
                             extend: 'csv',
-                            title: "MTD Sales Summary: " + nameMonth + " " + year
+                            footer: true,
+                            title: "MTD Sales Summary by Customer : " + nameMonth + " " + year,
                         }
                     ]
                 });
