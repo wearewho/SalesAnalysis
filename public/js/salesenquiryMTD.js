@@ -284,7 +284,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             footer: true,
                             title: "MTD Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
-                                columns: [0, 1, 2, 4, 5, 6, 7],
+                                columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                 search: 'applied',
                                 order: 'applied'
                             }
@@ -296,7 +296,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             filename: "RSSITEM" + startDate + " - " + endDate,
                             title: "MTD Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
-                                columns: [0, 1, 2, 4, 5, 6, 7],
+                                columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                 search: 'applied',
                                 order: 'applied'
                             },
@@ -378,15 +378,16 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 objLayout['paddingLeft'] = function(i) { return 4; };
                                 objLayout['paddingRight'] = function(i) { return 4; };
                                 doc.content[0].layout = objLayout;
-                                doc.content[0].table.widths = [30, 80, "*", 40, 70, 60, 80];
+                                doc.content[0].table.widths = [30, 80, "*", 40, 40, 70, 60, 80];
 
                                 var rowCount = doc.content[0].table.body.length;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
                                     doc.content[0].table.body[i][3].alignment = 'center';
                                     doc.content[0].table.body[i][4].alignment = 'center';
-                                    doc.content[0].table.body[i][5].alignment = 'right';
+                                    doc.content[0].table.body[i][5].alignment = 'center';
                                     doc.content[0].table.body[i][6].alignment = 'right';
+                                    doc.content[0].table.body[i][7].alignment = 'right';
                                 };
 
                             }
@@ -395,7 +396,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             footer: true,
                             title: "MTD Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
-                                columns: [0, 1, 2, 4, 5, 6, 7],
+                                columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                 search: 'applied',
                                 order: 'applied'
                             }
@@ -534,7 +535,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             "targets": 2,
                             "className": "text-left",
-                            "width": "28%"
+                            "width": "23%"
                         },
                         {
                             "targets": 3,
@@ -563,7 +564,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             "className": "text-center",
                             "searchable": false,
                             "orderable": false,
-                            "width": "13%"
+                            "width": "18%"
                         }
                     ],
                     "lengthMenu": [
@@ -681,7 +682,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                 objLayout['paddingLeft'] = function(i) { return 4; };
                                 objLayout['paddingRight'] = function(i) { return 4; };
                                 doc.content[0].layout = objLayout;
-                                doc.content[0].table.widths = [30, 70, "*", 70, 80, 60, 80];
+                                doc.content[0].table.widths = [30, 70, "*", 70, 70, 60, 80];
                                 var rowCount = doc.content[0].table.body.length;
                                 for (i = 1; i < rowCount; i++) {
                                     doc.content[0].table.body[i][0].alignment = 'center';
@@ -837,12 +838,12 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             },
                             {
                                 "targets": 3,
-                                "className": "text-center",
+                                "className": "text-left",
                                 "width": "15%"
                             },
                             {
                                 "targets": 4,
-                                "className": "text-center",
+                                "className": "text-left",
                                 "width": "15%"
                             },
                             {
@@ -874,6 +875,11 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 extend: 'excel',
                                 footer: true,
                                 title: "MTD Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6],
+                                    search: 'applied',
+                                    order: 'applied'
+                                }
                             }, {
                                 extend: 'pdf',
                                 footer: true,
@@ -882,7 +888,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 filename: "MTD Sales Enquiry by Customer: " + startDate + " - " + endDate,
                                 title: "MTD Sales Enquiry by Customer: " + startDate + " - " + endDate,
                                 exportOptions: {
-                                    columns: [0, 1, 2, 3, 4, 5],
+                                    columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
                                     order: 'applied'
                                 },
@@ -964,20 +970,26 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                     objLayout['paddingLeft'] = function(i) { return 4; };
                                     objLayout['paddingRight'] = function(i) { return 4; };
                                     doc.content[0].layout = objLayout;
-                                    doc.content[0].table.widths = [30, 80, "*", 70, 60, 80];
+                                    doc.content[0].table.widths = [30, 80, "*", 70, 70, 60, 80];
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
-                                        doc.content[0].table.body[i][3].alignment = 'center';
-                                        doc.content[0].table.body[i][4].alignment = 'right';
+                                        doc.content[0].table.body[i][3].alignment = 'left';
+                                        doc.content[0].table.body[i][3].alignment = 'left';
                                         doc.content[0].table.body[i][5].alignment = 'right';
+                                        doc.content[0].table.body[i][6].alignment = 'right';
                                     };
 
                                 }
                             }, {
                                 extend: 'csv',
                                 footer: true,
-                                title: "MTD Sales Enquiry by Customer: " + startDate + " - " + endDate
+                                title: "MTD Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6],
+                                    search: 'applied',
+                                    order: 'applied'
+                                }
                             }
                         ]
                     });
@@ -1161,7 +1173,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 footer: true,
                                 title: "MTD Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
-                                    columns: [0, 1, 2, 3, 4, 5, 6],
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
                                     order: 'applied'
                                 }
@@ -1173,7 +1185,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 filename: "MTD Enquiry by Product: " + startDate + " - " + endDate,
                                 title: "MTD Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
-                                    columns: [0, 1, 2, 3, 4, 5, 6],
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
                                     order: 'applied'
                                 },
@@ -1255,14 +1267,15 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                     objLayout['paddingLeft'] = function(i) { return 4; };
                                     objLayout['paddingRight'] = function(i) { return 4; };
                                     doc.content[0].layout = objLayout;
-                                    doc.content[0].table.widths = [30, 80, "*", 40, 70, 60, 80];
+                                    doc.content[0].table.widths = [30, 80, "*", 40, 70, 72, 60, 70];
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
                                         doc.content[0].table.body[i][3].alignment = 'center';
                                         doc.content[0].table.body[i][4].alignment = 'center';
-                                        doc.content[0].table.body[i][5].alignment = 'right';
+                                        doc.content[0].table.body[i][5].alignment = 'center';
                                         doc.content[0].table.body[i][6].alignment = 'right';
+                                        doc.content[0].table.body[i][7].alignment = 'right';
                                     };
 
                                 }
@@ -1271,7 +1284,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 footer: true,
                                 title: "MTD Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
-                                    columns: [0, 1, 2, 3, 4, 5, 6],
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
                                     order: 'applied'
                                 },
@@ -1843,10 +1856,12 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                     objLayout['paddingLeft'] = function(i) { return 4; };
                                     objLayout['paddingRight'] = function(i) { return 4; };
                                     doc.content[0].layout = objLayout;
-                                    doc.content[0].table.widths = [28, 55, 45, 52, 60, 85, 40, 50, 50];
+                                    doc.content[0].table.widths = [28, 55, 45, 52, "*", 40, 40, 50, 50];
                                     var rowCount = doc.content[0].table.body.length;
                                     for (i = 1; i < rowCount; i++) {
                                         doc.content[0].table.body[i][0].alignment = 'center';
+                                        doc.content[0].table.body[i][2].alignment = 'center';
+                                        doc.content[0].table.body[i][5].alignment = 'center';
                                         doc.content[0].table.body[i][6].alignment = 'right';
                                         doc.content[0].table.body[i][7].alignment = 'right';
                                         doc.content[0].table.body[i][8].alignment = 'right';
