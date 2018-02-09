@@ -7,45 +7,33 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"/>
+
 <!-- daterange picker -->
 <link rel="stylesheet" href="{{ URL::asset('adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
+
+    <style>
+        .uniqueClassName {
+            text-align: right;
+        }
+        div.dt-buttons {
+            clear: both;
+        }
+    </style>
 
     <div class="row">
         <div class="col-md-12">
             <div class="box box-danger">
                 <div class="box-header with-border">
-                <h3 class="box-title">REM Sales Enquiry</h3>
+                <h3 class="box-title"><i class="fa fa-table"></i> <b>MTD Sales Enquiry</b></h3>
                 </div>
                 <div class="box-body">
                     <div class="row">
-                        <div class="col-xs-4">
-                            <div class="form-group">
-                                <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
-                                </div>
-                                <input type="text" class="form-control pull-right" id="reservation">
-                                </div>
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-            </div>
-        </div>
-        </div>
+                        
+                    </div>   
+                    @php                      
+                        $todate = date("d/m/Y", strtotime('-1 day'));
+                    @endphp
 
-        
-        @php                      
-            $todate = date("d/m/Y", strtotime('-1 day'));
-        @endphp
-
-        <div class="row">
-        <div class="col-md-12">
-            <div class="box box-danger">
-                <div class="box-header with-border">
-                <h3 class="box-title">REM Sales Enquiry Table</h3>
-                </div>
-                <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
                             <!-- Custom Tabs (Pulled to the right) -->
@@ -53,16 +41,20 @@
                             <ul class="nav nav-tabs pull-right typeY">
                                 <li class="active"><a href="#tab_1-1" data-toggle="tab" id="tab_1"><strong style="font-size:16px;">Product</strong></a></li>
                                 <li><a href="#tab_2-2" data-toggle="tab" id="tab_2"><strong style="font-size:16px;">Customer</strong></a></li>
-                                <li class="pull-left header"><i class="fa fa-book"></i> Sales Enquiry</li>
+                                <li class="pull-left header">
+                                     <span><b>Date range : </b></span>
+                                     <b><a class="date-picker">{{date('01/m/Y')}} - {{date('d/m/Y')}}</a></b>
+                                </li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane active" id="tab_1-1">                          
+                                <div class="tab-pane active" id="tab_1-1">                        
                                     <table id="Product" class="table table-bordered table-striped" style="font-size: 14px;" width="100%">
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
                                                 <th>Item</th>
                                                 <th>Description</th>
+                                                <th>Type</th>
                                                 <th>Brand</th>
                                                 <th>Commodity</th>
                                                 <th>Unit</th>
@@ -72,14 +64,18 @@
                                         </thead>                                            
                                         <tfoot>
                                             <tr>
-                                                <th id="exportProduct" colspan="4" style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
                                                 <th style="text-align:center"></th>
                                                 <th style="text-align:right"></th>
                                                 <th style="text-align:right"></th>
                                                 <th style="text-align:center"></th>
-                                            </tr>
+                                            </tr>   
                                         </tfoot>
-                                    </table>  
+                                    </table>                                
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="tab_2-2">
@@ -89,7 +85,9 @@
                                                 <th>No.</th>
                                                 <th>Customer Code</th>
                                                 <th>Customer Name</th>
-                                                <th>Master Dealer</th>
+                                                <th>Type</th>
+                                                <th>Province</th>
+                                                <th>Region</th>
                                                 <th>Unit</th>
                                                 <th>Baht</th>
                                                 <th>Drilldown</th>
@@ -97,7 +95,11 @@
                                         </thead>                                        
                                         <tfoot>
                                             <tr>
-                                                <th id="exportCustomer" colspan="3" style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
                                                 <th style="text-align:center"></th>
                                                 <th style="text-align:right"></th>
                                                 <th style="text-align:right"></th>
@@ -116,10 +118,10 @@
                             <!-- /.col -->
                         </div>
                         <!-- /.row -->
-                        <!-- END CUSTOM TABS -->
-                    </div>
+                        <!-- END CUSTOM TABS -->                 
                 </div>
             </div>
+        </div>
         </div>
 
         <div class="modal fade" id="modal-customerDataTable">
@@ -128,7 +130,7 @@
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="headCustModal">REM Sales Enquiry by Customer</h4>
+                <h4 class="modal-title" id="headCustModal">MTD Sales Enquiry by Customer</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -147,14 +149,18 @@
                                                     <th>No.</th>
                                                     <th>Customer Code</th>
                                                     <th>Customer Name</th>
-                                                    <th>Master Dealer</th>
+                                                    <th>Province</th>
+                                                    <th>Region</th>
                                                     <th>Unit</th>
                                                     <th>Baht</th>
                                                 </tr>
                                             </thead>                                        
                                             <tfoot>
                                                 <tr>
-                                                    <th id="exportCustomerModal" colspan="3" style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
@@ -202,7 +208,7 @@
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="headItemModal">REM Sales Enquiry by Product</h4>
+                <h4 class="modal-title" id="headItemModal">MTD Sales Enquiry by Product</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -221,6 +227,7 @@
                                                     <th>No.</th>
                                                     <th>Item</th>
                                                     <th>Description</th>
+                                                    <th>Type</th>
                                                     <th>Brand</th>
                                                     <th>Commodity</th>
                                                     <th>Unit</th>
@@ -228,8 +235,12 @@
                                                 </tr>
                                             </thead>                                            
                                             <tfoot>
-                                                <tr>
-                                                    <th id="exportProductModal" colspan="4" style="text-align:center"></th>
+                                                <tr>    
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
                                                     <th style="text-align:center"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
@@ -278,7 +289,7 @@
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="headInvoiceCustModal">REM Sales Enquiry by Invoice</h4>
+                <h4 class="modal-title" id="headInvoiceCustModal">MTD Sales Enquiry by Invoice</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -298,17 +309,22 @@
                                                     <th>Doccument No.</th>
                                                     <th>Doccument Type</th>
                                                     <th>Doccument Date</th>
-                                                    <th>Item Code</th>
                                                     <th>Description</th>
-                                                    <th>Price</th>
+                                                    <th>Type</th>
                                                     <th>Unit</th>
-                                                    <th>Amount</th>
+                                                    <th>Price</th>
+                                                    <th>Baht</th>
                                                 </tr>
                                             </thead>                                        
                                             <tfoot>
-                                                <tr>
-                                                    <th id="exportInvoiceCustModal" colspan="6" style="text-align:center"></th>
+                                                <tr>    
                                                     <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
                                                 </tr>
@@ -355,7 +371,7 @@
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="headInvoiceItemModal">REM Sales Enquiry by Invoice</h4>
+                <h4 class="modal-title" id="headInvoiceItemModal">MTD Sales Enquiry by Invoice</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -376,15 +392,19 @@
                                                     <th>Doccument Type</th>
                                                     <th>Doccument Date</th>
                                                     <th>Customer Name</th>
-                                                    <th>Price</th>
                                                     <th>Unit</th>
-                                                    <th>Amount</th>
+                                                    <th>Price</th>
+                                                    <th>Baht</th>
                                                 </tr>
                                             </thead>                                            
                                             <tfoot>
-                                                <tr>
-                                                    <th id="exportInvoiceItemModal" colspan="5" style="text-align:center"></th>
+                                                <tr>                                                    
                                                     <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:center"></th>
+                                                    <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
                                                     <th style="text-align:right"></th>
                                                 </tr>
@@ -458,7 +478,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script> 
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script> 
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> 
-<script src="{{ URL::asset('js/salesenquiryREM.js') }}"></script> 
+<script src="{{ URL::asset('js/salesenquiryMTD.js') }}"></script> 
 
 <script>
     $(function() {
