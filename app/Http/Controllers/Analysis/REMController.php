@@ -377,6 +377,7 @@ class REMController extends Controller
     public function downloadPDF(Request $request)
     {
         $oldYear = $request->year - 1;
+        $data["doc"] = "REM";
         $data["year"] = $request->year;
         $data["oldYear"] = $oldYear;
         
@@ -402,7 +403,7 @@ class REMController extends Controller
                     $pathImage[] = $path;
                 }       
     
-                $Filename = "SSGraph".$oldYear."&".$request->year.".pdf";        
+                $Filename = "REM SSGraph".$oldYear."&".$request->year.".pdf";        
                 $pdf = PDF::loadView('PDFFormat.salessummaryGraph', compact('data'))->setPaper('A4', 'landscape');    
                 file_put_contents(public_path() . "/tempfiles/" .$Filename, $pdf->output()); 
                 
@@ -451,7 +452,7 @@ class REMController extends Controller
                 $targetData = DB::select($strSQL3,[]);
     
                 $Filename = "SSTable".$request->month.$request->year.".pdf";        
-                $pdf = PDF::loadView('PDFFormat.salessummaryYearTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape');  
+                $pdf = PDF::loadView('PDFFormat.salessummaryREMYearTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape');  
                 return $pdf->download($Filename);  
             }
     
@@ -478,7 +479,7 @@ class REMController extends Controller
                     $pathImage[] = $path;
                 }       
     
-                $Filename = "SSGraphQuaterof".$request->year.".pdf";        
+                $Filename = "REM SSGraphQuaterof".$request->year.".pdf";        
                 $pdf = PDF::loadView('PDFFormat.salessummaryGraph', compact('data'))->setPaper('A4', 'landscape');    
                 file_put_contents(public_path() . "/tempfiles/" .$Filename, $pdf->output()); 
                 
@@ -527,7 +528,7 @@ class REMController extends Controller
                 $targetData = DB::select($strSQL3,[]);   
     
                 $Filename = "SSTableQuaterof".$request->year.".pdf";        
-                $pdf = PDF::loadView('PDFFormat.salessummaryQuaterTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape'); 
+                $pdf = PDF::loadView('PDFFormat.salessummaryREMQuaterTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape'); 
                 return $pdf->download($Filename);  
             }
     

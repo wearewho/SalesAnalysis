@@ -94,7 +94,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                 var Product = $("#Product");
                 var Customer = $("#Customer");
 
-                Product.dataTable().fnDestroy();
+                Product.DataTable().destroy();
                 var tableProduct = Product.DataTable({
                     responsive: true,
                     data: Item,
@@ -180,10 +180,10 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(4).footer()).html('Grand Total');
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Unit)
+                            accounting.formatNumber(Unit)
                         );
                         $(api.column(6).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2)
+                            accounting.formatNumber(Total, 2)
                         );
                     },
                     'columnDefs': [{
@@ -378,7 +378,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                     tableProduct.table().container()
                 );
 
-                Customer.dataTable().fnDestroy();
+                Customer.DataTable().destroy();
                 var tableCustomer = Customer.DataTable({
                     responsive: true,
                     data: Cust,
@@ -461,10 +461,10 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         // Update footer by showing the total with the reference of the column index 
                         $(api.column(3).footer()).html('Grand Total');
                         $(api.column(4).footer()).html(
-                            ' ' + accounting.formatNumber(Unit)
+                            accounting.formatNumber(Unit)
                         );
                         $(api.column(5).footer()).html(
-                            ' ' + accounting.formatNumber(Total, 2)
+                            accounting.formatNumber(Total, 2)
                         );
                     },
                     "order": [
@@ -676,7 +676,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                     var Customer = $("#enquiryCustomer");
 
-                    Customer.dataTable().fnDestroy();
+                    Customer.DataTable().destroy();
                     var tableCustomer = Customer.DataTable({
                         data: results,
                         columns: [{
@@ -749,10 +749,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(3).footer()).html('Grand Total');
                             $(api.column(4).footer()).html(
-                                ' ' + accounting.formatNumber(Unit)
+                                accounting.formatNumber(Unit)
                             );
                             $(api.column(5).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2)
+                                accounting.formatNumber(Total, 2)
                             );
                         },
                         "order": [
@@ -928,7 +928,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                     var Product = $("#enquiryProduct");
 
-                    Product.dataTable().fnDestroy();
+                    Product.DataTable().destroy();
                     var tableProduct = Product.DataTable({
                         data: results,
                         columns: [{
@@ -1002,10 +1002,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(4).footer()).html('Grand Total');
                             $(api.column(5).footer()).html(
-                                ' ' + accounting.formatNumber(Unit)
+                                accounting.formatNumber(Unit)
                             );
                             $(api.column(6).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2)
+                                accounting.formatNumber(Total, 2)
                             );
                         },
                         "order": [
@@ -1198,7 +1198,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                     var Product = $("#enquiryInvoiceProduct");
 
-                    Product.dataTable().fnDestroy();
+                    Product.DataTable().destroy();
                     var tableProduct = Product.DataTable({
                         data: results,
                         columns: [{
@@ -1284,10 +1284,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(4).footer()).html('Grand Total');
                             $(api.column(5).footer()).html(
-                                ' ' + accounting.formatNumber(Unit)
+                                accounting.formatNumber(Unit)
                             );
                             $(api.column(7).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2)
+                                accounting.formatNumber(Total, 2)
                             );
                         },
                         "order": [
@@ -1478,7 +1478,7 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
 
                     var Product = $("#enquiryInvoiceCustomer");
 
-                    Product.dataTable().fnDestroy();
+                    Product.DataTable().destroy();
                     var tableProduct = Product.DataTable({
                         data: results,
                         columns: [{
@@ -1565,10 +1565,10 @@ function selectDataTableModal(type, data, startDate, endDate, startYear, endYear
                             // Update footer by showing the total with the reference of the column index 
                             $(api.column(5).footer()).html('Grand Total');
                             $(api.column(6).footer()).html(
-                                ' ' + accounting.formatNumber(Unit)
+                                accounting.formatNumber(Unit)
                             );
                             $(api.column(8).footer()).html(
-                                ' ' + accounting.formatNumber(Total, 2)
+                                accounting.formatNumber(Total, 2)
                             );
                         },
                         "order": [

@@ -365,7 +365,7 @@
                     $(".loading-img").show();
                     $(".loading-img2").show();
                 },
-                url: '/SalesAnalysis/sa/selectYSD',
+                url: '/sa/selectYSD',
                 type: "POST",
                 data: { "month": month, "year": year, _token: "{{ csrf_token() }}" },
                 success: function(data, statusText, resObject) {
@@ -389,7 +389,7 @@
         function selectDataTable( month, year, sort, type) {
             findPie(month);
             $.ajax({
-                url: '/SalesAnalysis/sa/selectDataTableYSD',
+                url: '/sa/selectDataTableYSD',
                 type: "POST",
                 data: { "month": month, "year": year, "sort": sort, "type": type, _token: "{{ csrf_token() }}" },
                 success: function(data, statusText, resObject) {
@@ -401,7 +401,7 @@
                         var Product = $("#Product");
                         var Customer = $("#Customer");                    
 
-                        Product.dataTable().fnDestroy();
+                        Product.DataTable().destroy();
                         var t = Product.dataTable({
                             data: Item,       
                             columns: [                      
@@ -425,7 +425,7 @@
                             ]
                          });
                          
-                        Customer.dataTable().fnDestroy();
+                        Customer.DataTable().destroy();
                         Customer.dataTable({
                             data: Cust,       
                             columns: [                                
