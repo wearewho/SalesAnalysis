@@ -7,7 +7,7 @@ $(function() {
     });
 
     //Hide Yearly Table
-    $('#Quarterly').css("display", "none");
+    $('#Quarterly').hide();
 
     // Set Year and Select Data
     var year = $("a.date-picker-year").text();
@@ -105,14 +105,14 @@ $(function() {
             $(this).html('<i class="fa fa-bar-chart"></i> Year');
             $('#Yearly').removeClass('animated fadeIn');
             $('#Quarterly').addClass('animated fadeIn');
-            $('#Quarterly').css("display", "block");
-            $('#Yearly').css("display", "none");
+            $('#Quarterly').show();
+            $('#Yearly').hide();
         } else {
             $(this).html('<i class="fa fa-bar-chart"></i> Quarterly');
             $('#Quarterly').removeClass('animated fadeIn');
             $('#Yearly').addClass('animated fadeIn');
-            $('#Yearly').css("display", "block");
-            $('#Quarterly').css("display", "none");
+            $('#Yearly').show();
+            $('#Quarterly').hide();
         }
 
     });

@@ -60,10 +60,10 @@
                 <div class="loadGraph">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="Baht"></div>
+                            <div id="Baht" style="height: 400px;"></div>
                         </div>
                         <div class="col-md-6">
-                            <div id="Unit"></div>
+                            <div id="Unit" style="height: 400px;"></div>
                         </div>
                     </div>
                 </div>
@@ -309,10 +309,10 @@
                 <div class="loadGraphQ">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="BahtQ"></div>
+                            <div id="BahtQ" style="height: 400px;"></div>
                         </div>
                         <div class="col-md-6">
-                            <div id="UnitQ"></div>
+                            <div id="UnitQ" style="height: 400px;"></div>
                         </div>
                     </div>
                 </div>
