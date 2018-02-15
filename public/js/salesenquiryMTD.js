@@ -220,27 +220,27 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             "targets": 1,
                             "className": "text-left",
-                            "width": "12%"
+                            "width": "11%"
                         },
                         {
                             "targets": 2,
                             "className": "text-left",
-                            "width": "16%"
+                            "width": "20%"
                         },
                         {
                             "targets": 3,
                             "className": "text-center",
-                            "width": "10%"
+                            "width": "9%"
                         },
                         {
                             "targets": 4,
                             "className": "text-center",
-                            "width": "10%"
+                            "width": "9%"
                         },
                         {
                             "targets": 5,
                             "className": "text-center",
-                            "width": "11%"
+                            "width": "10%"
                         },
                         {
                             "targets": 6,

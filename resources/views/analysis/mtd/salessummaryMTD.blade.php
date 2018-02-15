@@ -138,8 +138,8 @@
                                 <td id="allBahtTargetNow12" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtTargetNowTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="allBahtAchieve1" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtAchieve2" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtAchieve3" style="text-align: right;">&nbsp;</td>
@@ -152,7 +152,7 @@
                                 <td id="allBahtAchieve10" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtAchieve11" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtAchieve12" style="text-align: right;">&nbsp;</td>
-                                <td id="allBahtAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="allBahtAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="allBahtActualOld" ></b></td>
@@ -170,8 +170,8 @@
                                 <td id="allBahtActualOld12" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtActualOldTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="allBahtGrowth1" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtGrowth2" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtGrowth3" style="text-align: right;">&nbsp;</td>
@@ -184,7 +184,7 @@
                                 <td id="allBahtGrowth10" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtGrowth11" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtGrowth12" style="text-align: right;">&nbsp;</td>
-                                <td id="allBahtGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="allBahtGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>    
                         </tbody>
                     </table>
@@ -240,8 +240,8 @@
                                 <td id="allUnitTargetNow12" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitTargetNowTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="allUnitAchieve1" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitAchieve2" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitAchieve3" style="text-align: right;">&nbsp;</td>
@@ -254,7 +254,7 @@
                                 <td id="allUnitAchieve10" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitAchieve11" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitAchieve12" style="text-align: right;">&nbsp;</td>
-                                <td id="allUnitAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="allUnitAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="allUnitActualOld"></b></td>
@@ -272,8 +272,8 @@
                                 <td id="allUnitActualOld12" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitActualOldTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="allUnitGrowth1" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitGrowth2" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitGrowth3" style="text-align: right;">&nbsp;</td>
@@ -286,7 +286,7 @@
                                 <td id="allUnitGrowth10" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitGrowth11" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitGrowth12" style="text-align: right;">&nbsp;</td>
-                                <td id="allUnitGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="allUnitGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                                  
                         </tbody>                        
                     </table>  
@@ -342,8 +342,8 @@
                                 <td id="ambBahtTargetNow12" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtTargetNowTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                                 </tr> 
-                                <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                                <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="ambBahtAchieve1" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtAchieve2" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtAchieve3" style="text-align: right;">&nbsp;</td>
@@ -356,7 +356,7 @@
                                 <td id="ambBahtAchieve10" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtAchieve11" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtAchieve12" style="text-align: right;">&nbsp;</td>
-                                <td id="ambBahtAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="ambBahtAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                                 </tr>
                                 <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="ambBahtActualOld" ></b></td>
@@ -374,8 +374,8 @@
                                 <td id="ambBahtActualOld12" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtActualOldTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                                 </tr>
-                                <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                                <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="ambBahtGrowth1" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtGrowth2" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtGrowth3" style="text-align: right;">&nbsp;</td>
@@ -388,7 +388,7 @@
                                 <td id="ambBahtGrowth10" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtGrowth11" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtGrowth12" style="text-align: right;">&nbsp;</td>
-                                <td id="ambBahtGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="ambBahtGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                                 </tr>                   
                         </tbody>
                     </table>
@@ -444,8 +444,8 @@
                                 <td id="ambUnitTargetNow12" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitTargetNowTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="ambUnitAchieve1" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitAchieve2" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitAchieve3" style="text-align: right;">&nbsp;</td>
@@ -458,7 +458,7 @@
                                 <td id="ambUnitAchieve10" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitAchieve11" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitAchieve12" style="text-align: right;">&nbsp;</td>
-                                <td id="ambUnitAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="ambUnitAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="ambUnitActualOld"></b></td>
@@ -476,8 +476,8 @@
                                 <td id="ambUnitActualOld12" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitActualOldTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="ambUnitGrowth1" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitGrowth2" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitGrowth3" style="text-align: right;">&nbsp;</td>
@@ -490,7 +490,7 @@
                                 <td id="ambUnitGrowth10" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitGrowth11" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitGrowth12" style="text-align: right;">&nbsp;</td>
-                                <td id="ambUnitGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="ambUnitGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>                        
                     </table>  
@@ -546,8 +546,8 @@
                                 <td id="mcbBahtTargetNow12" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtTargetNowTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                                 </tr> 
-                                <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                                <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="mcbBahtAchieve1" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtAchieve2" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtAchieve3" style="text-align: right;">&nbsp;</td>
@@ -560,7 +560,7 @@
                                 <td id="mcbBahtAchieve10" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtAchieve11" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtAchieve12" style="text-align: right;">&nbsp;</td>
-                                <td id="mcbBahtAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="mcbBahtAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                                 </tr>
                                 <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="mcbBahtActualOld" ></b></td>
@@ -578,8 +578,8 @@
                                 <td id="mcbBahtActualOld12" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtActualOldTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                                 </tr>
-                                <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                                <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="mcbBahtGrowth1" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtGrowth2" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtGrowth3" style="text-align: right;">&nbsp;</td>
@@ -592,7 +592,7 @@
                                 <td id="mcbBahtGrowth10" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtGrowth11" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtGrowth12" style="text-align: right;">&nbsp;</td>
-                                <td id="mcbBahtGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="mcbBahtGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>
                     </table>
@@ -648,8 +648,8 @@
                                 <td id="mcbUnitTargetNow12" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitTargetNowTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="mcbUnitAchieve1" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitAchieve2" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitAchieve3" style="text-align: right;">&nbsp;</td>
@@ -662,7 +662,7 @@
                                 <td id="mcbUnitAchieve10" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitAchieve11" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitAchieve12" style="text-align: right;">&nbsp;</td>
-                                <td id="mcbUnitAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="mcbUnitAchieveTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="mcbUnitActualOld"></b></td>
@@ -680,8 +680,8 @@
                                 <td id="mcbUnitActualOld12" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitActualOldTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="mcbUnitGrowth1" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitGrowth2" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitGrowth3" style="text-align: right;">&nbsp;</td>
@@ -694,7 +694,7 @@
                                 <td id="mcbUnitGrowth10" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitGrowth11" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitGrowth12" style="text-align: right;">&nbsp;</td>
-                                <td id="mcbUnitGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="mcbUnitGrowthTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>                        
                     </table>                
@@ -762,10 +762,10 @@
                         <thead>
                             <tr style="text-align:center;" bgcolor="#b6dde8">
                                 <th style="vertical-align:middle; text-align:center; width:180px;">AMB,MCB (BAHT)</th>
-                                <th style="text-align:center;">Q1</th>
-                                <th style="text-align:center;">Q2</th>
-                                <th style="text-align:center;">Q3</th>
-                                <th style="text-align:center;">Q4</th>
+                                <th style="text-align:center; width:220px;">Q1</th>
+                                <th style="text-align:center; width:220px;">Q2</th>
+                                <th style="text-align:center; width:220px;">Q3</th>
+                                <th style="text-align:center; width:220px;">Q4</th>
                                 <th style="text-align:center;">Total</th>
                             </tr>                               
                         </thead>
@@ -786,13 +786,13 @@
                                 <td id="allBahtTargetNowQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtTargetNowQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="allBahtAchieveQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtAchieveQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtAchieveQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtAchieveQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="allBahtAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="allBahtAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="allBahtActualQOld" ></b></td>
@@ -802,13 +802,13 @@
                                 <td id="allBahtActualOldQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtActualOldQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="allBahtGrowthQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtGrowthQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtGrowthQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="allBahtGrowthQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="allBahtGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="allBahtGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>
                     </table>
@@ -816,10 +816,10 @@
                         <thead>
                             <tr style="text-align:center;" bgcolor="#b6dde8">
                                 <th style="vertical-align:middle; text-align:center; width:180px;">AMB,MCB (UNIT)</th>
-                                <th style="text-align:center;">Q1</th>
-                                <th style="text-align:center;">Q2</th>
-                                <th style="text-align:center;">Q3</th>
-                                <th style="text-align:center;">Q4</th>
+                                <th style="text-align:center; width:220px;">Q1</th>
+                                <th style="text-align:center; width:220px;">Q2</th>
+                                <th style="text-align:center; width:220px;">Q3</th>
+                                <th style="text-align:center; width:220px;">Q4</th>
                                 <th style="text-align:center;">Total</th>
                             </tr>                               
                         </thead>
@@ -840,13 +840,13 @@
                                 <td id="allUnitTargetNowQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitTargetNowQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="allUnitAchieveQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitAchieveQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitAchieveQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitAchieveQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="allUnitAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="allUnitAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="allUnitActualQOld"></b></td>
@@ -856,23 +856,23 @@
                                 <td id="allUnitActualOldQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitActualOldQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="allUnitGrowthQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitGrowthQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitGrowthQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="allUnitGrowthQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="allUnitGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="allUnitGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>
                         <table id="AMBQBAHTTable" class="table table-bordered" style="font-size: 14px;" >
                         <thead>
                             <tr style="text-align:center;" bgcolor="#b6dde8">
                                 <th style="vertical-align:middle; text-align:center; width:180px;">AMB (BAHT)</th>
-                                <th style="text-align:center;">Q1</th>
-                                <th style="text-align:center;">Q2</th>
-                                <th style="text-align:center;">Q3</th>
-                                <th style="text-align:center;">Q4</th>
+                                <th style="text-align:center; width:220px;">Q1</th>
+                                <th style="text-align:center; width:220px;">Q2</th>
+                                <th style="text-align:center; width:220px;">Q3</th>
+                                <th style="text-align:center; width:220px;">Q4</th>
                                 <th style="text-align:center;">Total</th>
                             </tr>                               
                         </thead>
@@ -893,13 +893,13 @@
                                 <td id="ambBahtTargetNowQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtTargetNowQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="ambBahtAchieveQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtAchieveQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtAchieveQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtAchieveQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="ambBahtAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="ambBahtAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="ambBahtActualQOld" ></b></td>
@@ -909,13 +909,13 @@
                                 <td id="ambBahtActualOldQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtActualOldQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="ambBahtGrowthQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtGrowthQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtGrowthQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="ambBahtGrowthQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="ambBahtGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="ambBahtGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>
                     </table>
@@ -923,10 +923,10 @@
                         <thead>
                             <tr style="text-align:center;" bgcolor="#b6dde8">
                                 <th style="vertical-align:middle; text-align:center; width:180px;">AMB (UNIT)</th>
-                                <th style="text-align:center;">Q1</th>
-                                <th style="text-align:center;">Q2</th>
-                                <th style="text-align:center;">Q3</th>
-                                <th style="text-align:center;">Q4</th>
+                                <th style="text-align:center; width:220px;">Q1</th>
+                                <th style="text-align:center; width:220px;">Q2</th>
+                                <th style="text-align:center; width:220px;">Q3</th>
+                                <th style="text-align:center; width:220px;">Q4</th>
                                 <th style="text-align:center;">Total</th>
                             </tr>                               
                         </thead>
@@ -947,13 +947,13 @@
                                 <td id="ambUnitTargetNowQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitTargetNowQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="ambUnitAchieveQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitAchieveQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitAchieveQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitAchieveQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="ambUnitAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="ambUnitAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="ambUnitActualQOld"></b></td>
@@ -963,23 +963,23 @@
                                 <td id="ambUnitActualOldQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitActualOldQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="ambUnitGrowthQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitGrowthQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitGrowthQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="ambUnitGrowthQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="ambUnitGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="ambUnitGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>
                         <table id="MCBQBAHTTable" class="table table-bordered" style="font-size: 14px;" >
                         <thead>
                             <tr style="text-align:center;" bgcolor="#b6dde8">
                                 <th style="vertical-align:middle; text-align:center; width:180px;">MCB (1,000 BAHT)</th>
-                                <th style="text-align:center;">Q1</th>
-                                <th style="text-align:center;">Q2</th>
-                                <th style="text-align:center;">Q3</th>
-                                <th style="text-align:center;">Q4</th>
+                                <th style="text-align:center; width:220px;">Q1</th>
+                                <th style="text-align:center; width:220px;">Q2</th>
+                                <th style="text-align:center; width:220px;">Q3</th>
+                                <th style="text-align:center; width:220px;">Q4</th>
                                 <th style="text-align:center;">Total</th>
                             </tr>                               
                         </thead>
@@ -1000,13 +1000,13 @@
                                 <td id="mcbBahtTargetNowQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtTargetNowQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="mcbBahtAchieveQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtAchieveQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtAchieveQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtAchieveQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="mcbBahtAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="mcbBahtAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="mcbBahtActualQOld" ></b></td>
@@ -1016,13 +1016,13 @@
                                 <td id="mcbBahtActualOldQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtActualOldQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="mcbBahtGrowthQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtGrowthQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtGrowthQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbBahtGrowthQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="mcbBahtGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="mcbBahtGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>
                     </table>
@@ -1030,10 +1030,10 @@
                         <thead>
                             <tr style="text-align:center;" bgcolor="#b6dde8">
                                 <th style="vertical-align:middle; text-align:center; width:180px;">MCB (UNIT)</th>
-                                <th style="text-align:center;">Q1</th>
-                                <th style="text-align:center;">Q2</th>
-                                <th style="text-align:center;">Q3</th>
-                                <th style="text-align:center;">Q4</th>
+                                <th style="text-align:center; width:220px;">Q1</th>
+                                <th style="text-align:center; width:220px;">Q2</th>
+                                <th style="text-align:center; width:220px;">Q3</th>
+                                <th style="text-align:center; width:220px;">Q4</th>
                                 <th style="text-align:center;">Total</th>
                             </tr>                               
                         </thead>
@@ -1054,13 +1054,13 @@
                                 <td id="mcbUnitTargetNowQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitTargetNowQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr> 
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Achieve(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Achieve(%)</b></td>
                                 <td id="mcbUnitAchieveQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitAchieveQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitAchieveQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitAchieveQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="mcbUnitAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="mcbUnitAchieveQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>
                             <tr style="text-align:center;" bgcolor="#ffd699">
                                 <td bgcolor="#b6dde8"><b id="mcbUnitActualQOld"></b></td>
@@ -1070,13 +1070,13 @@
                                 <td id="mcbUnitActualOldQ4" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitActualOldQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
                             </tr>
-                            <tr style="text-align:center;" bgcolor="#ffd699">
-                                <td bgcolor="#b6dde8"><b>Growth(%)</b></td>
+                            <tr style="text-align:center;" bgcolor="#ffb84d">
+                                <td bgcolor="#8bc9da"><b>Growth(%)</b></td>
                                 <td id="mcbUnitGrowthQ1" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitGrowthQ2" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitGrowthQ3" style="text-align: right;">&nbsp;</td>
                                 <td id="mcbUnitGrowthQ4" style="text-align: right;">&nbsp;</td>
-                                <td id="mcbUnitGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#c2efaa">&nbsp;</td>
+                                <td id="mcbUnitGrowthQTotal" style="font-weight: bold; text-align: right;" bgcolor="#94e269">&nbsp;</td>
                             </tr>                   
                         </tbody>
                     </table>                
