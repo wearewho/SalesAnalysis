@@ -196,12 +196,12 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             "targets": 1,
                             "className": "text-left",
-                            "width": "14%"
+                            "width": "12%"
                         },
                         {
                             "targets": 2,
                             "className": "text-left",
-                            "width": "21%"
+                            "width": "20%"
                         },
                         {
                             "targets": 3,
@@ -228,7 +228,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             "searchable": false,
                             "orderable": false,
                             "className": "text-center",
-                            "width": "13%"
+                            "width": "16%"
                         }
                     ],
                     "order": [

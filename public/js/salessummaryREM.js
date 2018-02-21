@@ -181,17 +181,11 @@ function selectData(year) {
                 var base = window.location.origin
                 var route = '/SalesAnalysis/system/targetmaster/create';
                 swal({
-                        title: "Target Year " + year + " not found.",
-                        text: "Please Create Target Master!",
-                        icon: 'info',
-                        buttons: ["Create Target Master", true],
-                        dangerMode: true,
-                    })
-                    .then((willDelete) => {
-                        if (!willDelete) {
-                            window.location = base + route;
-                        }
-                    });
+                    title: "Target Year " + year + " not found.",
+                    text: "Please Create Target Master!",
+                    icon: 'info',
+                    showConfirmButton: false
+                });
                 calData(year, data);
             } else if (data[3] == "nullData" && data[4] == "nullTarget") {
                 var base = window.location.origin
@@ -358,7 +352,7 @@ function selectDataTable(nameMonth, month, year, type) {
                         [5, 10, 25, 50, -1],
                         [5, 10, 25, 50, "All"]
                     ]
-                }, );
+                });
 
                 tableProduct.on('order.dt search.dt', function() {
                     tableProduct.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
