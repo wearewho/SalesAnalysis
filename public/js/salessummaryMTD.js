@@ -2694,51 +2694,51 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             data: [{
                 y: oldAMBJanuary,
                 month: 1,
-                value: accounting.formatNumber(oldAMBJanuary)
+                value: accounting.formatMoney(oldAMBJanuary, "฿")
             }, {
                 y: oldAMBFebruary,
                 month: 2,
-                value: accounting.formatNumber(oldAMBFebruary)
+                value: accounting.formatMoney(oldAMBFebruary, "฿")
             }, {
                 y: oldAMBMarch,
                 month: 3,
-                value: accounting.formatNumber(oldAMBMarch)
+                value: accounting.formatMoney(oldAMBMarch, "฿")
             }, {
                 y: oldAMBApril,
                 month: 4,
-                value: accounting.formatNumber(oldAMBApril)
+                value: accounting.formatMoney(oldAMBApril, "฿")
             }, {
                 y: oldAMBMay,
                 month: 5,
-                value: accounting.formatNumber(oldAMBMay)
+                value: accounting.formatMoney(oldAMBMay, "฿")
             }, {
                 y: oldAMBJune,
                 month: 6,
-                value: accounting.formatNumber(oldAMBJune)
+                value: accounting.formatMoney(oldAMBJune, "฿")
             }, {
                 y: oldAMBJuly,
                 month: 7,
-                value: accounting.formatNumber(oldAMBJuly)
+                value: accounting.formatMoney(oldAMBJuly, "฿")
             }, {
                 y: oldAMBAugust,
                 month: 8,
-                value: accounting.formatNumber(oldAMBAugust)
+                value: accounting.formatMoney(oldAMBAugust, "฿")
             }, {
                 y: oldAMBSeptember,
                 month: 9,
-                value: accounting.formatNumber(oldAMBSeptember)
+                value: accounting.formatMoney(oldAMBSeptember, "฿")
             }, {
                 y: oldAMBOctober,
                 month: 10,
-                value: accounting.formatNumber(oldAMBOctober)
+                value: accounting.formatMoney(oldAMBOctober, "฿")
             }, {
                 y: oldAMBNovember,
                 month: 11,
-                value: accounting.formatNumber(oldAMBNovember)
+                value: accounting.formatMoney(oldAMBNovember, "฿")
             }, {
                 y: oldAMBDecember,
                 month: 12,
-                value: accounting.formatNumber(oldAMBDecember)
+                value: accounting.formatMoney(oldAMBDecember, "฿")
             }],
             stack: 'old',
             color: '#ff7666'
@@ -2747,51 +2747,51 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             data: [{
                 y: oldMCBJanuary,
                 month: 1,
-                value: accounting.formatNumber(oldMCBJanuary)
+                value: accounting.formatMoney(oldMCBJanuary, "฿")
             }, {
                 y: oldMCBFebruary,
                 month: 2,
-                value: accounting.formatNumber(oldMCBFebruary)
+                value: accounting.formatMoney(oldMCBFebruary, "฿")
             }, {
                 y: oldMCBMarch,
                 month: 3,
-                value: accounting.formatNumber(oldMCBMarch)
+                value: accounting.formatMoney(oldMCBMarch, "฿")
             }, {
                 y: oldMCBApril,
                 month: 4,
-                value: accounting.formatNumber(oldMCBApril)
+                value: accounting.formatMoney(oldMCBApril, "฿")
             }, {
                 y: oldMCBMay,
                 month: 5,
-                value: accounting.formatNumber(oldMCBMay)
+                value: accounting.formatMoney(oldMCBMay, "฿")
             }, {
                 y: oldMCBJune,
                 month: 6,
-                value: accounting.formatNumber(oldMCBJune)
+                value: accounting.formatMoney(oldMCBJune, "฿")
             }, {
                 y: oldMCBJuly,
                 month: 7,
-                value: accounting.formatNumber(oldMCBJuly)
+                value: accounting.formatMoney(oldMCBJuly, "฿")
             }, {
                 y: oldMCBAugust,
                 month: 8,
-                value: accounting.formatNumber(oldMCBAugust)
+                value: accounting.formatMoney(oldMCBAugust, "฿")
             }, {
                 y: oldMCBSeptember,
                 month: 9,
-                value: accounting.formatNumber(oldMCBSeptember)
+                value: accounting.formatMoney(oldMCBSeptember, "฿")
             }, {
                 y: oldMCBOctober,
                 month: 10,
-                value: accounting.formatNumber(oldMCBOctober)
+                value: accounting.formatMoney(oldMCBOctober, "฿")
             }, {
                 y: oldMCBNovember,
                 month: 11,
-                value: accounting.formatNumber(oldMCBNovember)
+                value: accounting.formatMoney(oldMCBNovember, "฿")
             }, {
                 y: oldMCBDecember,
                 month: 12,
-                value: accounting.formatNumber(oldMCBDecember)
+                value: accounting.formatMoney(oldMCBDecember, "฿")
             }],
             stack: 'old',
             color: '#737b7e'
@@ -2800,51 +2800,51 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             data: [{
                 y: currAMBJanuary,
                 month: 1,
-                value: accounting.formatNumber(currAMBJanuary)
+                value: accounting.formatMoney(currAMBJanuary, "฿")
             }, {
                 y: currAMBFebruary,
                 month: 2,
-                value: accounting.formatNumber(currAMBFebruary)
+                value: accounting.formatMoney(currAMBFebruary, "฿")
             }, {
                 y: currAMBMarch,
                 month: 3,
-                value: accounting.formatNumber(currAMBMarch)
+                value: accounting.formatMoney(currAMBMarch, "฿")
             }, {
                 y: currAMBApril,
                 month: 4,
-                value: accounting.formatNumber(currAMBApril)
+                value: accounting.formatMoney(currAMBApril, "฿")
             }, {
                 y: currAMBMay,
                 month: 5,
-                value: accounting.formatNumber(currAMBMay)
+                value: accounting.formatMoney(currAMBMay, "฿")
             }, {
                 y: currAMBJune,
                 month: 6,
-                value: accounting.formatNumber(currAMBJune)
+                value: accounting.formatMoney(currAMBJune, "฿")
             }, {
                 y: currAMBJuly,
                 month: 7,
-                value: accounting.formatNumber(currAMBJuly)
+                value: accounting.formatMoney(currAMBJuly, "฿")
             }, {
                 y: currAMBAugust,
                 month: 8,
-                value: accounting.formatNumber(currAMBAugust)
+                value: accounting.formatMoney(currAMBAugust, "฿")
             }, {
                 y: currAMBSeptember,
                 month: 9,
-                value: accounting.formatNumber(currAMBSeptember)
+                value: accounting.formatMoney(currAMBSeptember, "฿")
             }, {
                 y: currAMBOctober,
                 month: 10,
-                value: accounting.formatNumber(currAMBOctober)
+                value: accounting.formatMoney(currAMBOctober, "฿")
             }, {
                 y: currAMBNovember,
                 month: 11,
-                value: accounting.formatNumber(currAMBNovember)
+                value: accounting.formatMoney(currAMBNovember, "฿")
             }, {
                 y: currAMBDecember,
                 month: 12,
-                value: accounting.formatNumber(currAMBDecember)
+                value: accounting.formatMoney(currAMBDecember, "฿")
             }],
             stack: 'new',
             color: '#DD4B39'
@@ -2853,51 +2853,51 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             data: [{
                 y: currMCBJanuary,
                 month: 1,
-                value: accounting.formatNumber(currMCBJanuary)
+                value: accounting.formatMoney(currMCBJanuary, "฿")
             }, {
                 y: currMCBFebruary,
                 month: 2,
-                value: accounting.formatNumber(currMCBFebruary)
+                value: accounting.formatMoney(currMCBFebruary, "฿")
             }, {
                 y: currMCBMarch,
                 month: 3,
-                value: accounting.formatNumber(currMCBMarch)
+                value: accounting.formatMoney(currMCBMarch, "฿")
             }, {
                 y: currMCBApril,
                 month: 4,
-                value: accounting.formatNumber(currMCBApril)
+                value: accounting.formatMoney(currMCBApril, "฿")
             }, {
                 y: currMCBMay,
                 month: 5,
-                value: accounting.formatNumber(currMCBMay)
+                value: accounting.formatMoney(currMCBMay, "฿")
             }, {
                 y: currMCBJune,
                 month: 6,
-                value: accounting.formatNumber(currMCBJune)
+                value: accounting.formatMoney(currMCBJune, "฿")
             }, {
                 y: currMCBJuly,
                 month: 7,
-                value: accounting.formatNumber(currMCBJuly)
+                value: accounting.formatMoney(currMCBJuly, "฿")
             }, {
                 y: currMCBAugust,
                 month: 8,
-                value: accounting.formatNumber(currMCBAugust)
+                value: accounting.formatMoney(currMCBAugust, "฿")
             }, {
                 y: currMCBSeptember,
                 month: 9,
-                value: accounting.formatNumber(currMCBSeptember)
+                value: accounting.formatMoney(currMCBSeptember, "฿")
             }, {
                 y: currMCBOctober,
                 month: 10,
-                value: accounting.formatNumber(currMCBOctober)
+                value: accounting.formatMoney(currMCBOctober, "฿")
             }, {
                 y: currMCBNovember,
                 month: 11,
-                value: accounting.formatNumber(currMCBNovember)
+                value: accounting.formatMoney(currMCBNovember, "฿")
             }, {
                 y: currMCBDecember,
                 month: 12,
-                value: accounting.formatNumber(currMCBDecember)
+                value: accounting.formatMoney(currMCBDecember, "฿")
             }],
             stack: 'new',
             color: '#222D32'
@@ -2907,51 +2907,51 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             data: [{
                 y: targetAMB1 + targetMCB1,
                 month: 1,
-                value: accounting.formatNumber(targetAMB1 + targetMCB1)
+                value: accounting.formatMoney(targetAMB1 + targetMCB1, "฿")
             }, {
                 y: targetAMB2 + targetMCB2,
                 month: 2,
-                value: accounting.formatNumber(targetAMB2 + targetMCB2)
+                value: accounting.formatMoney(targetAMB2 + targetMCB2, "฿")
             }, {
                 y: targetAMB3 + targetMCB3,
                 month: 3,
-                value: accounting.formatNumber(targetAMB3 + targetMCB3)
+                value: accounting.formatMoney(targetAMB3 + targetMCB3, "฿")
             }, {
                 y: targetAMB4 + targetMCB4,
                 month: 4,
-                value: accounting.formatNumber(targetAMB4 + targetMCB4)
+                value: accounting.formatMoney(targetAMB4 + targetMCB4, "฿")
             }, {
                 y: targetAMB5 + targetMCB4,
                 month: 5,
-                value: accounting.formatNumber(targetAMB5 + targetMCB4)
+                value: accounting.formatMoney(targetAMB5 + targetMCB4, "฿")
             }, {
                 y: targetAMB6 + targetMCB6,
                 month: 6,
-                value: accounting.formatNumber(targetAMB6 + targetMCB6)
+                value: accounting.formatMoney(targetAMB6 + targetMCB6, "฿")
             }, {
                 y: targetAMB7 + targetMCB7,
                 month: 7,
-                value: accounting.formatNumber(targetAMB7 + targetMCB7)
+                value: accounting.formatMoney(targetAMB7 + targetMCB7, "฿")
             }, {
                 y: targetAMB8 + targetMCB8,
                 month: 8,
-                value: accounting.formatNumber(targetAMB8 + targetMCB8)
+                value: accounting.formatMoney(targetAMB8 + targetMCB8, "฿")
             }, {
                 y: targetAMB9 + targetMCB9,
                 month: 9,
-                value: accounting.formatNumber(targetAMB9 + targetMCB9)
+                value: accounting.formatMoney(targetAMB9 + targetMCB9, "฿")
             }, {
                 y: targetAMB10 + targetMCB10,
                 month: 10,
-                value: accounting.formatNumber(targetAMB10 + targetMCB10)
+                value: accounting.formatMoney(targetAMB10 + targetMCB10, "฿")
             }, {
                 y: targetAMB11 + targetMCB11,
                 month: 11,
-                value: accounting.formatNumber(targetAMB11 + targetMCB11)
+                value: accounting.formatMoney(targetAMB11 + targetMCB11, "฿")
             }, {
                 y: targetAMB12 + targetMCB12,
                 month: 12,
-                value: accounting.formatNumber(targetAMB12 + targetMCB12)
+                value: accounting.formatMoney(targetAMB12 + targetMCB12, "฿")
             }],
             marker: {
                 enabled: false
