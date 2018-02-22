@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Market;
+use LogActivity;
 
 class MarketController extends Controller
 {
@@ -56,6 +57,7 @@ class MarketController extends Controller
         $market = Market::create($request->all());
 
         $request->session()->flash('insertComplete', 'Insert Complete!');
+        LogActivity::addToLog('Create Market');  
         return redirect()->route('system.market.index');
     }
 
@@ -103,6 +105,7 @@ class MarketController extends Controller
         $market->update($request->all());
 
         $request->session()->flash('editComplete', 'Edit Complete!');
+        LogActivity::addToLog('Edit Market');  
         return redirect()->route('system.market.index');
     }
 
@@ -122,6 +125,7 @@ class MarketController extends Controller
         $market->delete();
 
         $request->session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');
+        LogActivity::addToLog('Destroy Market');  
         return back();
     }
 
@@ -141,6 +145,8 @@ class MarketController extends Controller
             foreach ($entries as $entry) {
                 $entry->delete();
             }
+
+            LogActivity::addToLog('Mass Destroy Market');  
         }
     }
 }

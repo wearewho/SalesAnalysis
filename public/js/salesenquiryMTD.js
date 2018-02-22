@@ -103,19 +103,19 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                     dom: 'Bfrtip',
                     buttons: [{
                         text: 'All',
-                        className: "btn-xs margin",
+                        className: "btn-sm margin",
                         action: function(e, dt, node, config) {
                             Product.DataTable().column(3).search('').draw();
                         }
                     }, {
                         text: 'AMB',
-                        className: "btn-xs margin",
+                        className: "btn-sm margin",
                         action: function(e, dt, node, config) {
                             Product.DataTable().column(3).search('AMB').draw();
                         }
                     }, {
                         text: 'MCB',
-                        className: "btn-xs margin",
+                        className: "btn-sm margin",
                         action: function(e, dt, node, config) {
                             Product.DataTable().column(3).search('MCB').draw();
                         }
@@ -413,19 +413,19 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                     dom: 'Bfrtip',
                     buttons: [{
                         text: 'All',
-                        className: "btn-xs margin",
+                        className: "btn-sm margin",
                         action: function(e, dt, node, config) {
                             Customer.DataTable().column(3).search('').draw();
                         }
                     }, {
                         text: 'AMB',
-                        className: "btn-xs margin",
+                        className: "btn-sm margin",
                         action: function(e, dt, node, config) {
                             Customer.DataTable().column(3).search('AMB').draw();
                         }
                     }, {
                         text: 'MCB',
-                        className: "btn-xs margin",
+                        className: "btn-sm margin",
                         action: function(e, dt, node, config) {
                             Customer.DataTable().column(3).search('MCB').draw();
                         }
@@ -1011,19 +1011,19 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                         dom: 'Bfrtip',
                         buttons: [{
                             text: 'All',
-                            className: "btn-xs margin",
+                            className: "btn-sm margin",
                             action: function(e, dt, node, config) {
                                 Product.DataTable().column(3).search('').draw();
                             }
                         }, {
                             text: 'AMB',
-                            className: "btn-xs margin",
+                            className: "btn-sm margin",
                             action: function(e, dt, node, config) {
                                 Product.DataTable().column(3).search('AMB').draw();
                             }
                         }, {
                             text: 'MCB',
-                            className: "btn-xs margin",
+                            className: "btn-sm margin",
                             action: function(e, dt, node, config) {
                                 Product.DataTable().column(3).search('MCB').draw();
                             }
@@ -1588,19 +1588,19 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                         dom: 'Bfrtip',
                         buttons: [{
                             text: 'All',
-                            className: "btn-xs margin",
+                            className: "btn-sm margin",
                             action: function(e, dt, node, config) {
                                 Product.DataTable().column(5).search('').draw();
                             }
                         }, {
                             text: 'AMB',
-                            className: "btn-xs margin",
+                            className: "btn-sm margin",
                             action: function(e, dt, node, config) {
                                 Product.DataTable().column(5).search('AMB').draw();
                             }
                         }, {
                             text: 'MCB',
-                            className: "btn-xs margin",
+                            className: "btn-sm margin",
                             action: function(e, dt, node, config) {
                                 Product.DataTable().column(5).search('MCB').draw();
                             }

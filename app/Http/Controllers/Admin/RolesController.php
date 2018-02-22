@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreRolesRequest;
 use App\Http\Requests\Admin\UpdateRolesRequest;
+use LogActivity;
 
 class RolesController extends Controller
 {
@@ -57,7 +58,8 @@ class RolesController extends Controller
         $role = Role::create($request->all());
         $role->allow($request->input('abilities'));
 
-        $request->session()->flash('insertComplete', 'Insert Complete!');
+        $request->session()->flash('insertComplete', 'Insert Complete!');        
+        LogActivity::addToLog('Create Roles');
         return redirect()->route('admin.roles.index');
     }
 
@@ -99,7 +101,8 @@ class RolesController extends Controller
         }
         $role->allow($request->input('abilities'));
 
-        $request->session()->flash('editComplete', 'Edit Complete!');
+        $request->session()->flash('editComplete', 'Edit Complete!');  
+        LogActivity::addToLog('Edit Roles');      
         return redirect()->route('admin.roles.index');
     }
 
@@ -119,6 +122,7 @@ class RolesController extends Controller
         $role->delete();
 
         $request->session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');
+        LogActivity::addToLog('Destroy Roles');
         return back();
     }
 
@@ -138,6 +142,8 @@ class RolesController extends Controller
             foreach ($entries as $entry) {
                 $entry->delete();
             }
+
+            LogActivity::addToLog('Mass Destroy Roles');
         }
     }
 

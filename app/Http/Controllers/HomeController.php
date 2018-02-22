@@ -12,6 +12,7 @@ use App;
 use App\User;
 use App\Department;
 use Silber\Bouncer\Database\Role;
+use LogActivity;
 
 class HomeController extends Controller
 {
@@ -81,7 +82,8 @@ class HomeController extends Controller
 
         $department = Department::all();
 
-        $request->session()->flash('editComplete', 'Edit Complete!');
+        $request->session()->flash('editComplete', 'Edit Complete!');    
+        LogActivity::addToLog('Edit Profile');
         return redirect()->route('profile', compact('user', 'department'));
     }
 
@@ -121,6 +123,7 @@ class HomeController extends Controller
             File::delete($pathFile);
         }
 
+        LogActivity::addToLog('Edit Profile Picture');
         return response()->json(['success'=>'done']);
     }
       

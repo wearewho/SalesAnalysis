@@ -244,14 +244,22 @@
                 </ul>
             </li>
             @endcan
-              
+             
+            @can('log')
+            <li class="{{ $request->segment(1) == 'log' ? 'active' : '' }}">
+                <a href="{{ route('admin.logActivity') }}">
+                    <i class="fa fa-key"></i>
+                    <span class="title">Log Activity</span>
+                </a>
+            </li>
+            @endcan
                             
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
-                        <a href="{{ route('auth.change_password') }}">
-                            <i class="fa fa-key"></i>
-                            <span class="title">Change password</span>
-                        </a>
-                    </li>
+                <a href="{{ route('auth.change_password') }}">
+                    <i class="fa fa-key"></i>
+                    <span class="title">Change password</span>
+                </a>
+            </li>
             <li>
                 <a href="#logout" onclick="$('#logout').submit();">
                     <i class="fa fa-arrow-left"></i>

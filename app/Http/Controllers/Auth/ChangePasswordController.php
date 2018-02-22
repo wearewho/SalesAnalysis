@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Hash;
 use Validator;
+use LogActivity;
 
 class ChangePasswordController extends Controller
 {
@@ -36,7 +37,7 @@ class ChangePasswordController extends Controller
         $user = Auth::getUser();
 
         return view('auth.change_password', compact('user'));
-    }
+    }    
 
     /**
      * Change password.
@@ -52,10 +53,12 @@ class ChangePasswordController extends Controller
             $user->password = $request->get('new_password');
             $user->save();            
             $request->session()->flash('changeSuccess', 'Password change successfully!');
+            LogActivity::addToLog('Password change success');       
             return redirect($this->redirectTo);
             //return redirect($this->redirectTo)->with('success', 'Password change successfully!');
         } else {
             $request->session()->flash('changeIncorrect', 'Current password is incorrect');
+            LogActivity::addToLog('Password change failure');       
             return redirect()->back()->withErrors('Current password is incorrect');
         }
     }

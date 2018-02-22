@@ -13,6 +13,7 @@ use App\ItemGroup;
 use App\Company;
 use App\Market;
 use PDF;
+use LogActivity;
 
 class TargetmasterController extends Controller
 {
@@ -112,6 +113,7 @@ class TargetmasterController extends Controller
             } 
 
             $request->session()->flash('insertComplete', 'Insert Target Complete!');
+            LogActivity::addToLog('Insert Target Master');       
             return redirect()->route('controls.targetmaster.index');
         }
                
@@ -205,6 +207,7 @@ class TargetmasterController extends Controller
         } 
         
         $request->session()->flash('editComplete', 'Edit Complete!');
+        LogActivity::addToLog('Edit Target Master');       
         return redirect()->route('controls.targetmaster.index');
     }
 
@@ -230,6 +233,7 @@ class TargetmasterController extends Controller
         $allTargetH = TargetH::all();
 
         session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');
+        LogActivity::addToLog('Destroy Target Master');       
         return Response::json(array($allTargetH));
     }
 
@@ -256,6 +260,8 @@ class TargetmasterController extends Controller
             foreach ($TargetDs as $Dentry) {
                 $Dentry->delete();
             }
+            
+            LogActivity::addToLog('Mass Destroy Target Master'); 
         }
     }
     

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Department;
+use LogActivity;
 
 class DepartmentController extends Controller
 {
@@ -56,6 +57,7 @@ class DepartmentController extends Controller
         $department = Department::create($request->all());
 
         $request->session()->flash('insertComplete', 'Insert Complete!');
+        LogActivity::addToLog('Create Department');  
         return redirect()->route('system.department.index');
     }
 
@@ -103,6 +105,7 @@ class DepartmentController extends Controller
         $department->update($request->all());
 
         $request->session()->flash('editComplete', 'Edit Complete!');
+        LogActivity::addToLog('Edit Department');  
         return redirect()->route('system.department.index');
     }
 
@@ -122,6 +125,7 @@ class DepartmentController extends Controller
         $department->delete();
 
         $request->session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');
+        LogActivity::addToLog('Destroy Department');  
         return back();
     }
 
@@ -141,6 +145,8 @@ class DepartmentController extends Controller
             foreach ($entries as $entry) {
                 $entry->delete();
             }
+
+            LogActivity::addToLog('Mass Destroy Department');  
         }
     }
 }
