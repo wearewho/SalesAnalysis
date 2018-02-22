@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreUsersRequest;
 use App\Http\Requests\Admin\UpdateUsersRequest;
+use LogActivity;
 
 class UsersController extends Controller
 {
@@ -65,6 +66,7 @@ class UsersController extends Controller
         }
 
         $request->session()->flash('insertComplete', 'Insert Target Complete!');
+        LogActivity::addToLog('Create Users');
         return redirect()->route('admin.users.index');
     }
 
@@ -120,6 +122,7 @@ class UsersController extends Controller
         }
 
         $request->session()->flash('editComplete', 'Edit Complete!');
+        LogActivity::addToLog('Edit Users');
         return redirect()->route('admin.users.index');
     }
 
@@ -138,6 +141,7 @@ class UsersController extends Controller
         $user->delete();
 
         $request->session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');
+        LogActivity::addToLog('Destroy Users');
         return back();
     }
 
@@ -157,6 +161,8 @@ class UsersController extends Controller
             foreach ($entries as $entry) {
                 $entry->delete();
             }
+
+            LogActivity::addToLog('Mass Destroy Users');
         }
     }
 

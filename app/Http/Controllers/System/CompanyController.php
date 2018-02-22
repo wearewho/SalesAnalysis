@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Company;
+use LogActivity;
 
 class CompanyController extends Controller
 {
@@ -55,6 +56,7 @@ class CompanyController extends Controller
         $company = Company::create($request->all());
 
         $request->session()->flash('insertComplete', 'Insert Complete!');
+        LogActivity::addToLog('Create Company');       
         return redirect()->route('system.company.index');
     }
 
@@ -102,6 +104,7 @@ class CompanyController extends Controller
         $company->update($request->all());
 
         $request->session()->flash('editComplete', 'Edit Complete!');
+        LogActivity::addToLog('Edit Company');  
         return redirect()->route('system.company.index');
     }
 
@@ -120,6 +123,7 @@ class CompanyController extends Controller
         $company->delete();
 
         $request->session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');
+        LogActivity::addToLog('Destroy Company');  
         return back();
     }
 
@@ -139,6 +143,8 @@ class CompanyController extends Controller
             foreach ($entries as $entry) {
                 $entry->delete();
             }
+
+            LogActivity::addToLog('Mass Destroy Company');  
         }
     }
 }

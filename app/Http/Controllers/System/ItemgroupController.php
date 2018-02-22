@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\ItemGroup;
+use LogActivity;
+
 class ItemgroupController extends Controller
 {
     /**
@@ -55,6 +57,7 @@ class ItemgroupController extends Controller
         $ItemGroup = ItemGroup::create($request->all());
 
         $request->session()->flash('insertComplete', 'Insert Complete!');
+        LogActivity::addToLog('Create Item group');  
         return redirect()->route('system.itemgroup.index');
     }
 
@@ -102,6 +105,7 @@ class ItemgroupController extends Controller
         $ItemGroup->update($request->all());
 
         $request->session()->flash('editComplete', 'Edit Complete!');
+        LogActivity::addToLog('Edit Item group');  
         return redirect()->route('system.itemgroup.index');
     }
 
@@ -120,6 +124,7 @@ class ItemgroupController extends Controller
         $ItemGroup->delete();
 
         $request->session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');
+        LogActivity::addToLog('Destroy Item group');  
         return back();
     }
 
@@ -139,6 +144,8 @@ class ItemgroupController extends Controller
             foreach ($entries as $entry) {
                 $entry->delete();
             }
+
+            LogActivity::addToLog('Mass Destroy Item group');  
         }
     }
 }

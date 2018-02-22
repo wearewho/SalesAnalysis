@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use Silber\Bouncer\Database\Ability;
+use LogActivity;
 
 class AbilitiesController extends Controller
 {
@@ -54,7 +55,8 @@ class AbilitiesController extends Controller
         }
         Ability::create($request->all());
 
-        $request->session()->flash('insertComplete', 'Insert Complete!');
+        $request->session()->flash('insertComplete', 'Insert Complete!');        
+        LogActivity::addToLog('Create Abilities');
         return redirect()->route('admin.abilities.index');
     }
 
@@ -90,7 +92,8 @@ class AbilitiesController extends Controller
         $ability = Ability::findOrFail($id);
         $ability->update($request->all());
 
-        $request->session()->flash('editComplete', 'Edit Complete!');
+        $request->session()->flash('editComplete', 'Edit Complete!');        
+        LogActivity::addToLog('Edit Abilities');        
         return redirect()->route('admin.abilities.index');
     }
 
@@ -109,7 +112,8 @@ class AbilitiesController extends Controller
         $ability = Ability::findOrFail($id);
         $ability->delete();
 
-        $request->session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');
+        $request->session()->flash('deleteComplete', 'Poof! Your imaginary file has been deleted!');        
+        LogActivity::addToLog('Destroy Abilities');        
         return back();
     }
 
@@ -129,6 +133,9 @@ class AbilitiesController extends Controller
             foreach ($entries as $entry) {
                 $entry->delete();
             }
+            
+        LogActivity::addToLog('Mass Destroy Abilities');
+            
         }
     }
 

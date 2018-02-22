@@ -250,6 +250,7 @@ return [
         'Html'         => Collective\Html\HtmlFacade::class,
         'Bouncer'      => Silber\Bouncer\BouncerFacade::class,
         'PDF'          => Barryvdh\DomPDF\Facade::class,
+        'LogActivity'  => App\Helpers\LogActivity::class,
     ],
 
 ];
