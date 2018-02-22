@@ -1336,112 +1336,136 @@ function unitGraph(year, target1, target2, target3, target4, target5, target6, t
             text: 'REM Sales Summary Report : ' + year + ' (Unit)'
         },
         xAxis: {
-            categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+            categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         },
         series: [{
             type: 'column',
             name: year - 1,
             data: [{
-                y: oldJanuary,
-                month: 1,
-                value: accounting.formatNumber(oldJanuary)
-            }, {
-                y: oldFebruary,
-                month: 2,
-                value: accounting.formatNumber(oldFebruary)
-            }, {
-                y: oldMarch,
-                month: 3,
-                value: accounting.formatNumber(oldMarch)
-            }, {
-                y: oldApril,
-                month: 4,
-                value: accounting.formatNumber(oldApril)
-            }, {
-                y: oldMay,
-                month: 5,
-                value: accounting.formatNumber(oldMay)
-            }, {
-                y: oldJune,
-                month: 6,
-                value: accounting.formatNumber(oldJune)
-            }, {
-                y: oldJuly,
-                month: 7,
-                value: accounting.formatNumber(oldJuly)
-            }, {
-                y: oldAugust,
-                month: 8,
-                value: accounting.formatNumber(oldAugust)
-            }, {
-                y: oldSeptember,
-                month: 9,
-                value: accounting.formatNumber(oldSeptember)
-            }, {
-                y: oldOctober,
-                month: 10,
-                value: accounting.formatNumber(oldOctober)
-            }, {
-                y: oldNovember,
-                month: 11,
-                value: accounting.formatNumber(oldNovember)
-            }, {
-                y: oldDecember,
-                month: 12,
-                value: accounting.formatNumber(oldDecember)
-            }]
+                    y: oldJanuary,
+                    month: 1,
+                    value: accounting.formatNumber(oldJanuary)
+                }, {
+                    y: oldFebruary,
+                    month: 2,
+                    value: accounting.formatNumber(oldFebruary)
+                }, {
+                    y: oldMarch,
+                    month: 3,
+                    value: accounting.formatNumber(oldMarch)
+                }, {
+                    y: oldApril,
+                    month: 4,
+                    value: accounting.formatNumber(oldApril)
+                }, {
+                    y: oldMay,
+                    month: 5,
+                    value: accounting.formatNumber(oldMay)
+                }, {
+                    y: oldJune,
+                    month: 6,
+                    value: accounting.formatNumber(oldJune)
+                }, {
+                    y: oldJuly,
+                    month: 7,
+                    value: accounting.formatNumber(oldJuly)
+                }, {
+                    y: oldAugust,
+                    month: 8,
+                    value: accounting.formatNumber(oldAugust)
+                }, {
+                    y: oldSeptember,
+                    month: 9,
+                    value: accounting.formatNumber(oldSeptember)
+                }, {
+                    y: oldOctober,
+                    month: 10,
+                    value: accounting.formatNumber(oldOctober)
+                }, {
+                    y: oldNovember,
+                    month: 11,
+                    value: accounting.formatNumber(oldNovember)
+                }, {
+                    y: oldDecember,
+                    month: 12,
+                    value: accounting.formatNumber(oldDecember)
+                }]
+                //,
+                // dataLabels: {
+                //     enabled: true,
+                //     rotation: -90,
+                //     color: '#FFFFFF',
+                //     align: 'right',
+                //     format: '{point.value}', // one decimal
+                //     style: {
+                //         fontSize: '11px',
+                //         fontFamily: 'sans-serif'
+                //     }
+                // }
         }, {
             type: 'column',
             name: year,
             data: [{
-                y: currJanuary,
-                month: 1,
-                value: accounting.formatNumber(currJanuary)
-            }, {
-                y: currFebruary,
-                month: 2,
-                value: accounting.formatNumber(currFebruary)
-            }, {
-                y: currMarch,
-                month: 3,
-                value: accounting.formatNumber(currMarch)
-            }, {
-                y: currApril,
-                month: 4,
-                value: accounting.formatNumber(currApril)
-            }, {
-                y: currMay,
-                month: 5,
-                value: accounting.formatNumber(currMay)
-            }, {
-                y: currJune,
-                month: 6,
-                value: accounting.formatNumber(currJune)
-            }, {
-                y: currJuly,
-                month: 7,
-                value: accounting.formatNumber(currJuly)
-            }, {
-                y: currAugust,
-                month: 8,
-                value: accounting.formatNumber(currAugust)
-            }, {
-                y: currSeptember,
-                month: 9,
-                value: accounting.formatNumber(currSeptember)
-            }, {
-                y: currOctober,
-                month: 10,
-                value: accounting.formatNumber(currOctober)
-            }, {
-                y: currNovember,
-                month: 11,
-                value: accounting.formatNumber(currNovember)
-            }, {
-                y: currDecember,
-                month: 12,
-                value: accounting.formatNumber(currDecember)
-            }]
+                    y: currJanuary,
+                    month: 1,
+                    value: accounting.formatNumber(currJanuary)
+                }, {
+                    y: currFebruary,
+                    month: 2,
+                    value: accounting.formatNumber(currFebruary)
+                }, {
+                    y: currMarch,
+                    month: 3,
+                    value: accounting.formatNumber(currMarch)
+                }, {
+                    y: currApril,
+                    month: 4,
+                    value: accounting.formatNumber(currApril)
+                }, {
+                    y: currMay,
+                    month: 5,
+                    value: accounting.formatNumber(currMay)
+                }, {
+                    y: currJune,
+                    month: 6,
+                    value: accounting.formatNumber(currJune)
+                }, {
+                    y: currJuly,
+                    month: 7,
+                    value: accounting.formatNumber(currJuly)
+                }, {
+                    y: currAugust,
+                    month: 8,
+                    value: accounting.formatNumber(currAugust)
+                }, {
+                    y: currSeptember,
+                    month: 9,
+                    value: accounting.formatNumber(currSeptember)
+                }, {
+                    y: currOctober,
+                    month: 10,
+                    value: accounting.formatNumber(currOctober)
+                }, {
+                    y: currNovember,
+                    month: 11,
+                    value: accounting.formatNumber(currNovember)
+                }, {
+                    y: currDecember,
+                    month: 12,
+                    value: accounting.formatNumber(currDecember)
+                }]
+                //,
+                // dataLabels: {
+                //     enabled: true,
+                //     rotation: -90,
+                //     color: '#FFFFFF',
+                //     align: 'right',
+                //     format: '{point.value}', // one decimal
+                //     style: {
+                //         fontSize: '11px',
+                //         fontFamily: 'sans-serif'
+                //     }
+                // }
         }, {
             type: 'spline',
             name: 'Target ' + year,

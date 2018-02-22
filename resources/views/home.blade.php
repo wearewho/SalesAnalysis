@@ -1,6 +1,55 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+
+    .outerdiv
+    {
+        width:932px; 
+        height:269px;
+        overflow:hidden;
+        position:relative;
+    }
+    .inneriframe
+    {
+        position:absolute;
+        top:-425px;
+        left:-25px;
+        width:1280px;
+        height:1200px;
+    }
+    
+    .outerdiv2
+    {
+        width:400px; 
+        height:269px;
+        overflow:hidden;
+        position:relative;
+        margin-left:25px;
+    }
+    .inneriframe2
+    {
+        position:absolute;
+        width: 1280px;
+        height: 1085px;        
+        top:-550px;
+        left:-332px;
+        -ms-transform: scale(0.79); 
+        -moz-transform: scale(0.79);
+        -o-transform: scale(0.79);
+        -webkit-transform: scale(0.79);
+        transform: scale(0.79);
+        
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+
+</style>
+
     <div class="row">      
         <div class="col-md-4">                       
             <div class="box box-danger" style="height:320px;">
@@ -74,6 +123,19 @@
             </div>
         </div>
     </div>
+    
+    <div class="row">      
+        <div class="col-md-8"> 
+            <div class="outerdiv"> 
+                <iframe class="inneriframe" src="http://www.settrade.com/C04_01_stock_quote_p1.jsp?txtSymbol=YUASA&ssoPageId=9&selectPage=" marginwidth="0" marginleft="0" scrolling="no" frameborder="no"></iframe>
+            </div>
+        </div>        
+        <div class="col-md-4"> 
+            <div class="outerdiv2"> 
+                <iframe class="inneriframe2" src="http://www.settrade.com/C04_01_stock_quote_p1.jsp?txtSymbol=YUASA&ssoPageId=9&selectPage=" marginwidth="0" marginleft="0" scrolling="no" frameborder="no"></iframe>
+            </div>    
+        </div>      
+    </div>    
 
 @endsection
 
