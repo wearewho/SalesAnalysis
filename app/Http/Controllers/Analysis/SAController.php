@@ -18,7 +18,7 @@ class SAController extends Controller
 {
     public function SalesSummary()
     {
-        if (! Gate::allows('sales_analysis')) {
+        if (! Gate::allows('Sales_Analysis')) {
             return abort(401);
         }
 
@@ -27,7 +27,7 @@ class SAController extends Controller
 
     public function TargetComparison()
     {
-        if (! Gate::allows('sales_analysis')) {
+        if (! Gate::allows('Sales_Analysis')) {
             return abort(401);
         }
 
@@ -36,7 +36,7 @@ class SAController extends Controller
 
     public function TopList()
     {
-        if (! Gate::allows('sales_analysis')) {
+        if (! Gate::allows('Sales_Analysis')) {
             return abort(401);
         }
 
@@ -45,7 +45,7 @@ class SAController extends Controller
 
     public function Region()
     {
-        if (! Gate::allows('sales_analysis')) {
+        if (! Gate::allows('Sales_Analysis')) {
             return abort(401);
         }
 
@@ -71,7 +71,7 @@ class SAController extends Controller
 
     public function byDate()
     {
-        if (! Gate::allows('sales_analysis')) {
+        if (! Gate::allows('Sales_Analysis')) {
             return abort(401);
         }
         

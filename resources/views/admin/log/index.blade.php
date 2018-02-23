@@ -29,7 +29,15 @@
                                 <td>{{ ++$key }}</td>
                                 <td>{{ $log->subject }}</td>
                                 <td class="text-success">{{ $log->url }}</td>
-                                <td><label class="label label-info">{{ $log->method }}</label></td>
+                                <td>
+                                    @if ($log->method == "POST")
+                                    <label class="label label-warning">{{ $log->method }}</label>                                    
+                                    @elseif ($log->method == "GET")
+                                    <label class="label label-danger">{{ $log->method }}</label> 
+                                    @else
+                                    <label class="label label-info">{{ $log->method }}</label>
+                                    @endif 
+                                </td>
                                 <td class="text-warning">{{ $log->ip }}</td>
                                 <td class="text-danger">{{ $log->agent }}</td>
                                 <td>{{ $log->user_id }}</td>

@@ -24,7 +24,7 @@ class TargetmasterController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('controls')) {
+        if (! Gate::allows('Controls')) {
             return abort(401);
         }
 
@@ -40,7 +40,7 @@ class TargetmasterController extends Controller
      */
     public function create()
     {
-        if (! Gate::allows('controls')) {
+        if (! Gate::allows('Controls')) {
             return abort(401);
         }
 
@@ -139,7 +139,7 @@ class TargetmasterController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('controls')) {
+        if (! Gate::allows('Controls')) {
             return abort(401);
         }
 
@@ -159,7 +159,7 @@ class TargetmasterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (! Gate::allows('controls')) {
+        if (! Gate::allows('Controls')) {
             return abort(401);  
         }
         
@@ -219,7 +219,7 @@ class TargetmasterController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('controls')) {
+        if (! Gate::allows('Controls')) {
             return abort(401);
         }
         $TargetH = TargetH::findOrFail($id);   
@@ -244,7 +244,7 @@ class TargetmasterController extends Controller
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('controls')) {
+        if (! Gate::allows('Controls')) {
             return abort(401);
         }
 
