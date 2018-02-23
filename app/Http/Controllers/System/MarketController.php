@@ -19,7 +19,7 @@ class MarketController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
 
@@ -36,7 +36,7 @@ class MarketController extends Controller
      */
     public function create()
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         return view('system.market.create');
@@ -50,7 +50,7 @@ class MarketController extends Controller
      */
     public function store(StoreMarketRequest $request)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         
@@ -80,7 +80,7 @@ class MarketController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
 
@@ -98,7 +98,7 @@ class MarketController extends Controller
      */
     public function update(UpdateMarketRequest $request, $id)
     {  
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         $market = Market::findOrFail($id);
@@ -117,7 +117,7 @@ class MarketController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         
@@ -136,7 +136,7 @@ class MarketController extends Controller
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         if ($request->input('ids')) {

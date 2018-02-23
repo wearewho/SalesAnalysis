@@ -14,7 +14,7 @@
                 </a>
             </li>
             
-            @can('sales_analysis')
+            @can('Sales_Analysis') 
             <li class="treeview {{ $request->segment(1) == 'sa' ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-building"></i>
@@ -131,7 +131,7 @@
             
             
             <li class="header" style="font-color:red;"><b>Management</b></li>  
-            @can('admin_manage')        
+            @can('Admin_Manage')        
             <li class="treeview {{ $request->segment(1) == 'admin' || $request->segment(1) ==  'system' ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-user-secret"></i> <span>Administration</span>
@@ -223,7 +223,7 @@
             </li>
             @endcan 
             
-            @can('controls')
+            @can('Controls')
             <li class="treeview {{ $request->segment(1) == 'controls' ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-cog"></i>
@@ -245,10 +245,10 @@
             </li>
             @endcan
              
-            @can('log')
-            <li class="{{ $request->segment(1) == 'log' ? 'active' : '' }}">
-                <a href="{{ route('admin.logActivity') }}">
-                    <i class="fa fa-key"></i>
+            @can('Log_Activity')
+            <li class="{{ $request->segment(1) == 'logActivity' ? 'active' : '' }}">
+                <a href="{{ route('logActivity') }}">
+                    <i class="fa fa-download"></i>
                     <span class="title">Log Activity</span>
                 </a>
             </li>

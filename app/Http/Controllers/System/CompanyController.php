@@ -19,7 +19,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
 
@@ -35,7 +35,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         return view('system.company.create');
@@ -49,7 +49,7 @@ class CompanyController extends Controller
      */
     public function store(StoreCompanyRequest $request)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
     
@@ -79,7 +79,7 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
 
@@ -97,7 +97,7 @@ class CompanyController extends Controller
      */
     public function update(UpdateCompanyRequest $request, $id)
     {  
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         $company = Company::findOrFail($id);
@@ -116,7 +116,7 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         $company =Company::findOrFail($id);
@@ -134,7 +134,7 @@ class CompanyController extends Controller
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         if ($request->input('ids')) {

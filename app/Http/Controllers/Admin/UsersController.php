@@ -21,7 +21,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
 
@@ -37,7 +37,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
 
@@ -55,7 +55,7 @@ class UsersController extends Controller
      */
     public function store(StoreUsersRequest $request)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         
@@ -79,7 +79,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
 
@@ -99,7 +99,7 @@ class UsersController extends Controller
      */
     public function update(UpdateUsersRequest $request, $id)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         
@@ -134,7 +134,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         $user = User::findOrFail($id);
@@ -152,7 +152,7 @@ class UsersController extends Controller
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('admin_manage')) {
+        if (! Gate::allows('Admin_Manage')) {
             return abort(401);
         }
         if ($request->input('ids')) {
