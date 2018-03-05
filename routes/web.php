@@ -23,6 +23,7 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 // Dashboard
 $this->get('/home', 'HomeController@index');
+$this->post('/selectYSD', 'HomeController@selectYSD')->name('selectYSD');
 $this->get('/profile/{id}', 'HomeController@profile');
 $this->put('/profile/{id} ', 'HomeController@profileUpdate')->name('profile');
 

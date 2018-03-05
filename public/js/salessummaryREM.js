@@ -1338,6 +1338,9 @@ function unitGraph(year, target1, target2, target3, target4, target5, target6, t
         xAxis: {
             categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         },
+        yAxis: {
+            min: 0
+        },
         series: [{
             type: 'column',
             name: year - 1,
@@ -1566,6 +1569,9 @@ function bahtGraph(year, target1, target2, target3, target4, target5, target6, t
         xAxis: {
             categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         },
+        yAxis: {
+            min: 0
+        },
         series: [{
             type: 'column',
             name: year - 1,
@@ -1771,6 +1777,9 @@ function unitGraphQ(year, targetQ1, targetQ2, targetQ3, targetQ4, targetTotal, c
         xAxis: {
             categories: ['Q1', 'Q2', 'Q3', 'Q4']
         },
+        yAxis: {
+            min: 0
+        },
         series: [{
             type: 'column',
             name: year - 1,
@@ -1878,6 +1887,9 @@ function bahtGraphQ(year, targetQ1, targetQ2, targetQ3, targetQ4, targetTotal, c
         },
         xAxis: {
             categories: ['Q1', 'Q2', 'Q3', 'Q4']
+        },
+        yAxis: {
+            min: 0
         },
         series: [{
             type: 'column',

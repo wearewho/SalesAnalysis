@@ -2348,6 +2348,9 @@ function unitGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
         xAxis: {
             categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         },
+        yAxis: {
+            min: 0
+        },
         tooltip: {
             pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name} : <b>{point.value}</b>'
         },
@@ -2683,6 +2686,9 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
         xAxis: {
             categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         },
+        yAxis: {
+            min: 0
+        },
         series: [{
             name: 'AMB ' + (year - 1),
             data: [{
@@ -2995,6 +3001,9 @@ function unitGraphQ(year, targetAMBQ1, targetAMBQ2, targetAMBQ3, targetAMBQ4, ta
         xAxis: {
             categories: ['Q1', 'Q2', 'Q3', 'Q4']
         },
+        yAxis: {
+            min: 0
+        },
         series: [{
             type: 'column',
             name: year - 1,
@@ -3149,6 +3158,9 @@ function bahtGraphQ(year, targetAMBQ1, targetAMBQ2, targetAMBQ3, targetAMBQ4, ta
         },
         xAxis: {
             categories: ['Q1', 'Q2', 'Q3', 'Q4']
+        },
+        yAxis: {
+            min: 0
         },
         series: [{
             type: 'column',
