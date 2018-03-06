@@ -28,7 +28,7 @@ class TargetmasterController extends Controller
             return abort(401);
         }
 
-        $TargetH = TargetH::all();
+        $TargetH = TargetH::where('TargetID', '!=', '17')->orderBy('Year', 'ASC')->orderBy('Market', 'ASC')->get();
 
         return view('controls.targetmaster.index', compact('TargetH'));
     }

@@ -1094,6 +1094,24 @@ function calData(year, data) {
     achieveUnitQ3 = (currUnitQ3 * 100) / accounting.unformat(target.UnitQ3);
     achieveUnitQ4 = (currUnitQ4 * 100) / accounting.unformat(target.UnitQ4);
 
+    var percentBaht = (currTotalBaht / totalBahtTarget) * 100;
+    var percentUnit = (currTotalUnit / totalUnitTarget) * 100;
+
+    if (percentBaht === Infinity) {
+        percentBaht = 0;
+    }
+
+    if (percentUnit === Infinity) {
+        percentUnit = 0;
+    }
+
+    $('#totalBaht').text(accounting.formatNumber(currTotalBaht, 2) + " (" + accounting.formatNumber(percentBaht, 1) + "%)");
+    $('#totalUnit').text(accounting.formatNumber(currTotalUnit) + " (" + accounting.formatNumber(percentUnit, 1) + "%)");
+    $('#despTotalBaht').text(accounting.formatNumber(currTotalBaht, 2) + " / " + accounting.formatNumber(totalBahtTarget, 2));
+    $('#despTotalUnit').text(accounting.formatNumber(currTotalUnit) + " / " + accounting.formatNumber(totalUnitTarget));
+    $('#percentBaht').css("width", accounting.formatNumber(percentBaht) + "%");
+    $('#percentUnit').css("width", accounting.formatNumber(percentUnit) + "%");
+
     $('#BahtActualNowQ1').html(accounting.formatNumber(currBahtQ1, 2));
     $('#BahtActualNowQ2').html(accounting.formatNumber(currBahtQ2, 2));
     $('#BahtActualNowQ3').html(accounting.formatNumber(currBahtQ3, 2));
