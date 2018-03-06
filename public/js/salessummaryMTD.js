@@ -1722,6 +1722,24 @@ function calData(year, data) {
         growthBahtQ4 = growthAMBBahtQ4 + growthMCBBahtQ4,
         growthUnitQ4 = growthAMBUnitQ4 + growthMCBUnitQ4;
 
+    var percentBaht = (currTotalBaht / totalBahtTarget) * 100;
+    var percentUnit = (currTotalUnit / totalUnitTarget) * 100;
+
+    if (percentBaht === Infinity) {
+        percentBaht = 0;
+    }
+
+    if (percentUnit === Infinity) {
+        percentUnit = 0;
+    }
+
+    $('#totalBaht').text(accounting.formatNumber(currTotalBaht, 2) + " (" + accounting.formatNumber(percentBaht, 1) + "%)");
+    $('#totalUnit').text(accounting.formatNumber(currTotalUnit) + " (" + accounting.formatNumber(percentUnit, 1) + "%)");
+    $('#despTotalBaht').text(accounting.formatNumber(currTotalBaht, 2) + " / " + accounting.formatNumber(totalBahtTarget, 2));
+    $('#despTotalUnit').text(accounting.formatNumber(currTotalUnit) + " / " + accounting.formatNumber(totalUnitTarget));
+    $('#percentBaht').css("width", accounting.formatNumber(percentBaht) + "%");
+    $('#percentUnit').css("width", accounting.formatNumber(percentUnit) + "%");
+
     //AMB        
     $('#ambBahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetAMB.AmtQ1), 2));
     $('#ambBahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetAMB.AmtQ2), 2));

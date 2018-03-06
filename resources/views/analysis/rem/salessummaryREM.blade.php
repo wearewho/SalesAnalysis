@@ -446,6 +446,48 @@
         <!-- END CUSTOM TABS -->  
     </div> 
 
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box bg-aqua">
+        <span class="info-box-icon"><i class="fa fa-btc"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Baht</span>
+          <span class="info-box-number" id="totalBaht"></span>
+
+          <div class="progress">
+            <div class="progress-bar" id="percentBaht"></div>
+          </div>
+              <span class="progress-description" id="despTotalBaht">
+              </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box bg-green">
+        <span class="info-box-icon"><i class="fa fa-cubes"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Unit</span>
+          <span class="info-box-number" id="totalUnit"></span>
+
+          <div class="progress"> 
+            <div class="progress-bar" id="percentUnit"></div>
+          </div>
+              <span class="progress-description" id="despTotalUnit">
+              </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
     <div class="modal fade" id="modal-dataTable">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
