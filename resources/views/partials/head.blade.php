@@ -64,7 +64,7 @@
 	right:40px;
 	display:none; 
       opacity : 0.8;
-	background: url("../images/element/arrowup.PNG");  center no-repeat;
+	background: url("../SalesAnalysis/images/element/arrowup.PNG");  center no-repeat;
       background-size: 50px;
       }
       .scrollToTop:hover{
