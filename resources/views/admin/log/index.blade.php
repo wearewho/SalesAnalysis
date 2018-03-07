@@ -17,7 +17,7 @@
                             <th>URL</th>
                             <th>Method</th>
                             <th>IP</th>
-                            <th width="300px">User Agent</th>
+                            <th>Time</th>
                             <th>User Id</th>
                         </tr>
                     </thead>
@@ -38,7 +38,10 @@
                                     @endif 
                                 </td>
                                 <td class="text-warning">{{ $log->ip }}</td>
-                                <td class="text-danger">{{ $log->agent }}</td>
+                                @php
+                                    $newDate = date("d/m/y H:i:s", strtotime($log->created_at));
+                                @endphp
+                                <td class="text-danger" style="text-align:center;">{{ $newDate }}</td>
                                 <td>{{ $log->user_id }}</td>
                             </tr>
                             @endforeach
