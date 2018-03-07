@@ -2373,6 +2373,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve1').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve1').attr('title', accounting.formatNumber(achieveBahtJanuary, 2) + "%");
 
     if (achieveBahtFebruary >= 100) {
         $('#bahtAchieve2').removeClass().addClass('dotGreen');
@@ -2381,6 +2382,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve2').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve2').attr('title', accounting.formatNumber(achieveBahtFebruary, 2) + "%");
 
     if (achieveBahtMarch >= 100) {
         $('#bahtAchieve3').removeClass().addClass('dotGreen');
@@ -2389,6 +2391,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve3').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve3').attr('title', accounting.formatNumber(achieveBahtMarch, 2) + "%");
 
     if (achieveBahtApril >= 100) {
         $('#bahtAchieve4').removeClass().addClass('dotGreen');
@@ -2397,6 +2400,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve4').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve4').attr('title', accounting.formatNumber(achieveBahtApril, 2) + "%");
 
     if (achieveBahtMay >= 100) {
         $('#bahtAchieve5').removeClass().addClass('dotGreen');
@@ -2405,6 +2409,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve5').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve5').attr('title', accounting.formatNumber(achieveBahtMay, 2) + "%");
 
     if (achieveBahtJune >= 100) {
         $('#bahtAchieve6').removeClass().addClass('dotGreen');
@@ -2413,6 +2418,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve6').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve6').attr('title', accounting.formatNumber(achieveBahtJune, 2) + "%");
 
     if (achieveBahtJuly >= 100) {
         $('#bahtAchieve7').removeClass().addClass('dotGreen');
@@ -2421,6 +2427,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve7').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve7').attr('title', accounting.formatNumber(achieveBahtJuly, 2) + "%");
 
     if (achieveBahtAugust >= 100) {
         $('#bahtAchieve8').removeClass().addClass('dotGreen');
@@ -2429,6 +2436,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve8').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve8').attr('title', accounting.formatNumber(achieveBahtAugust, 2) + "%");
 
     if (achieveBahtSeptember >= 100) {
         $('#bahtAchieve9').removeClass().addClass('dotGreen');
@@ -2437,6 +2445,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve9').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve9').attr('title', accounting.formatNumber(achieveBahtSeptember, 2) + "%");
 
     if (achieveBahtOctober >= 100) {
         $('#bahtAchieve10').removeClass().addClass('dotGreen');
@@ -2445,6 +2454,8 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve10').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve10').attr('title', accounting.formatNumber(achieveBahtOctober, 2) + "%");
+
     if (achieveBahtNovember >= 100) {
         $('#bahtAchieve11').removeClass().addClass('dotGreen');
     } else if (achieveBahtNovember == 0) {
@@ -2452,6 +2463,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve11').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve11').attr('title', accounting.formatNumber(achieveBahtNovember, 2) + "%");
 
     if (achieveBahtDecember >= 100) {
         $('#bahtAchieve12').removeClass().addClass('dotGreen');
@@ -2460,6 +2472,7 @@ function calData(year, data) {
     } else {
         $('#bahtAchieve12').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieve12').attr('title', accounting.formatNumber(achieveBahtDecember, 2) + "%");
 
     if (achieveBahtTotal >= 100) {
         $('#bahtAchieveTotal').removeClass().addClass('dotGreen');
@@ -2468,15 +2481,17 @@ function calData(year, data) {
     } else {
         $('#bahtAchieveTotal').removeClass().addClass('dotRed');
     }
+    $('#bahtAchieveTotal').attr('title', accounting.formatNumber(achieveBahtTotal, 2) + "%");
 
     //growthBaht
-    if (accounting.formatNumber(growthUnitJanuary) > 0) {
+    if (accounting.formatNumber(growthBahtJanuary) > 0) {
         $('#bahtGrowth1').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitJanuary) == -100) {
+    } else if (accounting.formatNumber(growthBahtJanuary) == -100) {
         $('#bahtGrowth1').removeClass().addClass('dotWhite');
     } else {
         $('#bahtGrowth1').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth1').attr('title', accounting.formatNumber(growthBahtJanuary, 2) + "%");
 
     if (accounting.formatNumber(growthBahtFebruary) > 0) {
         $('#bahtGrowth2').removeClass().addClass('dotGreen');
@@ -2485,6 +2500,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth2').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth2').attr('title', accounting.formatNumber(growthBahtFebruary, 2) + "%");
 
     if (accounting.formatNumber(growthBahtMarch) > 0) {
         $('#bahtGrowth3').removeClass().addClass('dotGreen');
@@ -2493,6 +2509,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth3').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth3').attr('title', accounting.formatNumber(growthBahtMarch, 2) + "%");
 
     if (accounting.formatNumber(growthBahtApril) > 0) {
         $('#bahtGrowth4').removeClass().addClass('dotGreen');
@@ -2501,6 +2518,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth4').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth4').attr('title', accounting.formatNumber(growthBahtApril, 2) + "%");
 
     if (accounting.formatNumber(growthBahtMay) > 0) {
         $('#bahtGrowth5').removeClass().addClass('dotGreen');
@@ -2509,6 +2527,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth5').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth5').attr('title', accounting.formatNumber(growthBahtMay, 2) + "%");
 
     if (accounting.formatNumber(growthBahtJune) > 0) {
         $('#bahtGrowth6').removeClass().addClass('dotGreen');
@@ -2517,6 +2536,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth6').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth6').attr('title', accounting.formatNumber(growthBahtJune, 2) + "%");
 
     if (accounting.formatNumber(growthBahtJuly) > 0) {
         $('#bahtGrowth7').removeClass().addClass('dotGreen');
@@ -2525,6 +2545,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth7').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth7').attr('title', accounting.formatNumber(growthBahtJuly, 2) + "%");
 
     if (accounting.formatNumber(growthBahtAugust) > 0) {
         $('#bahtGrowth8').removeClass().addClass('dotGreen');
@@ -2533,6 +2554,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth8').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth8').attr('title', accounting.formatNumber(growthBahtAugust, 2) + "%");
 
     if (accounting.formatNumber(growthBahtSeptember) > 0) {
         $('#bahtGrowth9').removeClass().addClass('dotGreen');
@@ -2541,6 +2563,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth9').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth9').attr('title', accounting.formatNumber(growthBahtSeptember, 2) + "%");
 
     if (accounting.formatNumber(growthBahtOctober) > 0) {
         $('#bahtGrowth10').removeClass().addClass('dotGreen');
@@ -2549,6 +2572,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth10').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth10').attr('title', accounting.formatNumber(growthBahtOctober, 2) + "%");
 
     if (accounting.formatNumber(growthBahtNovember) > 0) {
         $('#bahtGrowth11').removeClass().addClass('dotGreen');
@@ -2557,6 +2581,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth11').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth11').attr('title', accounting.formatNumber(growthBahtNovember, 2) + "%");
 
     if (accounting.formatNumber(growthBahtDecember) > 0) {
         $('#bahtGrowth12').removeClass().addClass('dotGreen');
@@ -2565,6 +2590,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowth12').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowth12').attr('title', accounting.formatNumber(growthBahtDecember, 2) + "%");
 
     if (accounting.formatNumber(growthBahtTotal) > 0) {
         $('#bahtGrowthTotal').removeClass().addClass('dotGreen');
@@ -2573,6 +2599,7 @@ function calData(year, data) {
     } else {
         $('#bahtGrowthTotal').removeClass().addClass('dotRed');
     }
+    $('#bahtGrowthTotal').attr('title', accounting.formatNumber(growthBahtTotal, 2) + "%");
 
     //achieveunit
     if (achieveUnitJanuary >= 100) {
@@ -2582,6 +2609,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve1').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve1').attr('title', accounting.formatNumber(achieveUnitJanuary, 2) + "%");
 
     if (achieveUnitFebruary >= 100) {
         $('#unitAchieve2').removeClass().addClass('dotGreen');
@@ -2590,6 +2618,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve2').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve2').attr('title', accounting.formatNumber(achieveUnitFebruary, 2) + "%");
 
     if (achieveUnitMarch >= 100) {
         $('#unitAchieve3').removeClass().addClass('dotGreen');
@@ -2598,6 +2627,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve3').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve3').attr('title', accounting.formatNumber(achieveUnitMarch, 2) + "%");
 
     if (achieveUnitApril >= 100) {
         $('#unitAchieve4').removeClass().addClass('dotGreen');
@@ -2606,6 +2636,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve4').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve4').attr('title', accounting.formatNumber(achieveUnitApril, 2) + "%");
 
     if (achieveUnitMay >= 100) {
         $('#unitAchieve5').removeClass().addClass('dotGreen');
@@ -2614,6 +2645,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve5').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve5').attr('title', accounting.formatNumber(achieveUnitMay, 2) + "%");
 
     if (achieveUnitJune >= 100) {
         $('#unitAchieve6').removeClass().addClass('dotGreen');
@@ -2622,6 +2654,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve6').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve6').attr('title', accounting.formatNumber(achieveUnitJune, 2) + "%");
 
     if (achieveUnitJuly >= 100) {
         $('#unitAchieve7').removeClass().addClass('dotGreen');
@@ -2630,6 +2663,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve7').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve7').attr('title', accounting.formatNumber(achieveUnitJuly, 2) + "%");
 
     if (achieveUnitAugust >= 100) {
         $('#unitAchieve8').removeClass().addClass('dotGreen');
@@ -2638,6 +2672,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve8').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve8').attr('title', accounting.formatNumber(achieveUnitAugust, 2) + "%");
 
     if (achieveUnitSeptember >= 100) {
         $('#unitAchieve9').removeClass().addClass('dotGreen');
@@ -2646,6 +2681,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve9').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve9').attr('title', accounting.formatNumber(achieveUnitSeptember, 2) + "%");
 
     if (achieveUnitOctober >= 100) {
         $('#unitAchieve10').removeClass().addClass('dotGreen');
@@ -2654,6 +2690,8 @@ function calData(year, data) {
     } else {
         $('#unitAchieve10').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve10').attr('title', accounting.formatNumber(achieveUnitOctober, 2) + "%");
+
     if (achieveUnitNovember >= 100) {
         $('#unitAchieve11').removeClass().addClass('dotGreen');
     } else if (achieveUnitNovember == 0) {
@@ -2661,6 +2699,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve11').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve11').attr('title', accounting.formatNumber(achieveUnitNovember, 2) + "%");
 
     if (achieveUnitDecember >= 100) {
         $('#unitAchieve12').removeClass().addClass('dotGreen');
@@ -2669,6 +2708,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieve12').removeClass().addClass('dotRed');
     }
+    $('#unitAchieve12').attr('title', accounting.formatNumber(achieveUnitDecember, 2) + "%");
 
     if (achieveUnitTotal >= 100) {
         $('#unitAchieveTotal').removeClass().addClass('dotGreen');
@@ -2677,6 +2717,7 @@ function calData(year, data) {
     } else {
         $('#unitAchieveTotal').removeClass().addClass('dotRed');
     }
+    $('#unitAchieveTotal').attr('title', accounting.formatNumber(achieveUnitTotal, 2) + "%");
 
     //growthUnit
     if (accounting.formatNumber(growthUnitJanuary) > 0) {
@@ -2686,6 +2727,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth1').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth1').attr('title', accounting.formatNumber(growthUnitJanuary, 2) + "%");
 
     if (accounting.formatNumber(growthUnitFebruary) > 0) {
         $('#unitGrowth2').removeClass().addClass('dotGreen');
@@ -2694,6 +2736,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth2').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth2').attr('title', accounting.formatNumber(growthUnitFebruary, 2) + "%");
 
     if (accounting.formatNumber(growthUnitMarch) > 0) {
         $('#unitGrowth3').removeClass().addClass('dotGreen');
@@ -2702,6 +2745,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth3').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth3').attr('title', accounting.formatNumber(growthUnitMarch, 2) + "%");
 
     if (accounting.formatNumber(growthUnitApril) > 0) {
         $('#unitGrowth4').removeClass().addClass('dotGreen');
@@ -2710,6 +2754,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth4').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth4').attr('title', accounting.formatNumber(growthUnitApril, 2) + "%");
 
     if (accounting.formatNumber(growthUnitMay) > 0) {
         $('#unitGrowth5').removeClass().addClass('dotGreen');
@@ -2718,6 +2763,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth5').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth5').attr('title', accounting.formatNumber(growthUnitMay, 2) + "%");
 
     if (accounting.formatNumber(growthUnitJune) > 0) {
         $('#unitGrowth6').removeClass().addClass('dotGreen');
@@ -2726,6 +2772,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth6').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth6').attr('title', accounting.formatNumber(growthUnitJune, 2) + "%");
 
     if (accounting.formatNumber(growthUnitJuly) > 0) {
         $('#unitGrowth7').removeClass().addClass('dotGreen');
@@ -2734,6 +2781,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth7').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth7').attr('title', accounting.formatNumber(growthUnitJuly, 2) + "%");
 
     if (accounting.formatNumber(growthUnitAugust) > 0) {
         $('#unitGrowth8').removeClass().addClass('dotGreen');
@@ -2742,6 +2790,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth8').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth8').attr('title', accounting.formatNumber(growthUnitAugust, 2) + "%");
 
     if (accounting.formatNumber(growthUnitSeptember) > 0) {
         $('#unitGrowth9').removeClass().addClass('dotGreen');
@@ -2750,6 +2799,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth9').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth9').attr('title', accounting.formatNumber(growthUnitSeptember, 2) + "%");
 
     if (accounting.formatNumber(growthUnitOctober) > 0) {
         $('#unitGrowth10').removeClass().addClass('dotGreen');
@@ -2758,6 +2808,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth10').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth10').attr('title', accounting.formatNumber(growthUnitOctober, 2) + "%");
 
     if (accounting.formatNumber(growthUnitNovember) > 0) {
         $('#unitGrowth11').removeClass().addClass('dotGreen');
@@ -2766,6 +2817,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth11').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth11').attr('title', accounting.formatNumber(growthUnitNovember, 2) + "%");
 
     if (accounting.formatNumber(growthUnitDecember) > 0) {
         $('#unitGrowth12').removeClass().addClass('dotGreen');
@@ -2774,6 +2826,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowth12').removeClass().addClass('dotRed');
     }
+    $('#unitGrowth12').attr('title', accounting.formatNumber(growthUnitDecember, 2) + "%");
 
     if (accounting.formatNumber(growthUnitTotal) > 0) {
         $('#unitGrowthTotal').removeClass().addClass('dotGreen');
@@ -2782,215 +2835,7 @@ function calData(year, data) {
     } else {
         $('#unitGrowthTotal').removeClass().addClass('dotRed');
     }
-
-    //achieveUnit
-    if (achieveUnitJanuary >= 100) {
-        $('#unitAchieve1').removeClass().addClass('dotGreen');
-    } else if (achieveUnitJanuary == 0) {
-        $('#unitAchieve1').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve1').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitFebruary >= 100) {
-        $('#unitAchieve2').removeClass().addClass('dotGreen');
-    } else if (achieveUnitFebruary == 0) {
-        $('#unitAchieve2').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve2').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitMarch >= 100) {
-        $('#unitAchieve3').removeClass().addClass('dotGreen');
-    } else if (achieveUnitMarch == 0) {
-        $('#unitAchieve3').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve3').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitApril >= 100) {
-        $('#unitAchieve4').removeClass().addClass('dotGreen');
-    } else if (achieveUnitApril == 0) {
-        $('#unitAchieve4').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve4').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitMay >= 100) {
-        $('#unitAchieve5').removeClass().addClass('dotGreen');
-    } else if (achieveUnitMay == 0) {
-        $('#unitAchieve5').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve5').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitJune >= 100) {
-        $('#unitAchieve6').removeClass().addClass('dotGreen');
-    } else if (achieveUnitJune == 0) {
-        $('#unitAchieve6').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve6').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitJuly >= 100) {
-        $('#unitAchieve7').removeClass().addClass('dotGreen');
-    } else if (achieveUnitJuly == 0) {
-        $('#unitAchieve7').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve7').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitAugust >= 100) {
-        $('#unitAchieve8').removeClass().addClass('dotGreen');
-    } else if (achieveUnitAugust == 0) {
-        $('#unitAchieve8').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve8').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitSeptember >= 100) {
-        $('#unitAchieve9').removeClass().addClass('dotGreen');
-    } else if (achieveUnitSeptember == 0) {
-        $('#unitAchieve9').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve9').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitOctober >= 100) {
-        $('#unitAchieve10').removeClass().addClass('dotGreen');
-    } else if (achieveUnitOctober == 0) {
-        $('#unitAchieve10').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve10').removeClass().addClass('dotRed');
-    }
-    if (achieveUnitNovember >= 100) {
-        $('#unitAchieve11').removeClass().addClass('dotGreen');
-    } else if (achieveUnitNovember == 0) {
-        $('#unitAchieve11').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve11').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitDecember >= 100) {
-        $('#unitAchieve12').removeClass().addClass('dotGreen');
-    } else if (achieveUnitDecember == 0) {
-        $('#unitAchieve12').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieve12').removeClass().addClass('dotRed');
-    }
-
-    if (achieveUnitTotal >= 100) {
-        $('#unitAchieveTotal').removeClass().addClass('dotGreen');
-    } else if (achieveUnitTotal == 0) {
-        $('#unitAchieveTotal').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitAchieveTotal').removeClass().addClass('dotRed');
-    }
-
-    //growthUnit
-    if (accounting.formatNumber(growthUnitJanuary) > 0) {
-        $('#unitGrowth1').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitJanuary) == -100) {
-        $('#unitGrowth1').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth1').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitFebruary) > 0) {
-        $('#unitGrowth2').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitFebruary) == -100) {
-        $('#unitGrowth2').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth2').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitMarch) > 0) {
-        $('#unitGrowth3').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitMarch) == -100) {
-        $('#unitGrowth3').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth3').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitApril) > 0) {
-        $('#unitGrowth4').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitApril) == -100) {
-        $('#unitGrowth4').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth4').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitMay) > 0) {
-        $('#unitGrowth5').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitMay) == -100) {
-        $('#unitGrowth5').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth5').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitJune) > 0) {
-        $('#unitGrowth6').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitJune) == -100) {
-        $('#unitGrowth6').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth6').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitJuly) > 0) {
-        $('#unitGrowth7').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitJuly) == -100) {
-        $('#unitGrowth7').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth7').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitAugust) > 0) {
-        $('#unitGrowth8').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitAugust) == -100) {
-        $('#unitGrowth8').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth8').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitSeptember) > 0) {
-        $('#unitGrowth9').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitSeptember) == -100) {
-        $('#unitGrowth9').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth9').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitOctober) > 0) {
-        $('#unitGrowth10').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitOctober) == -100) {
-        $('#unitGrowth10').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth10').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitNovember) > 0) {
-        $('#unitGrowth11').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitNovember) == -100) {
-        $('#unitGrowth11').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth11').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitDecember) > 0) {
-        $('#unitGrowth12').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitDecember) == -100) {
-        $('#unitGrowth12').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowth12').removeClass().addClass('dotRed');
-    }
-
-    if (accounting.formatNumber(growthUnitTotal) > 0) {
-        $('#unitGrowthTotal').removeClass().addClass('dotGreen');
-    } else if (accounting.formatNumber(growthUnitTotal) == -100) {
-        $('#unitGrowthTotal').removeClass().addClass('dotWhite');
-    } else {
-        $('#unitGrowthTotal').removeClass().addClass('dotRed');
-    }
+    $('#unitGrowthTotal').attr('title', accounting.formatNumber(growthUnitTotal, 2) + "%");
 
     bahtGraph(year, accounting.unformat(targetREMAMB.Amt01), accounting.unformat(targetREMAMB.Amt02), accounting.unformat(targetREMAMB.Amt03), accounting.unformat(targetREMAMB.Amt04),
         accounting.unformat(targetREMAMB.Amt05), accounting.unformat(targetREMAMB.Amt06), accounting.unformat(targetREMAMB.Amt07), accounting.unformat(targetREMAMB.Amt08),

@@ -16,10 +16,9 @@
                             <th>Subject</th>
                             <th>URL</th>
                             <th>Method</th>
-                            <th>Ip</th>
-                            <th width="300px">User Agent</th>
+                            <th>IP</th>
+                            <th>Time</th>
                             <th>User Id</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>                            
@@ -39,9 +38,11 @@
                                     @endif 
                                 </td>
                                 <td class="text-warning">{{ $log->ip }}</td>
-                                <td class="text-danger">{{ $log->agent }}</td>
+                                @php
+                                    $newDate = date("d/m/y H:i:s", strtotime($log->created_at));
+                                @endphp
+                                <td class="text-danger" style="text-align:center;">{{ $newDate }}</td>
                                 <td>{{ $log->user_id }}</td>
-                                <td><button class="btn btn-danger btn-sm">Delete</button></td>
                             </tr>
                             @endforeach
                         @endif

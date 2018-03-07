@@ -18,6 +18,7 @@
         div.dt-buttons {
             clear: both;
         }
+        .modal .modal-dialog { width: 70%; }
     </style>
 
     <div class="row">
@@ -125,7 +126,7 @@
         </div>
 
         <div class="modal fade" id="modal-customerDataTable">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -203,7 +204,7 @@
     <!-- /.modal -->
 
     <div class="modal fade" id="modal-itemDataTable">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -284,7 +285,7 @@
 
     
     <div class="modal fade" id="modal-invoiceCustomerDataTable">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -366,7 +367,7 @@
     <!-- /.modal -->
 
     <div class="modal fade" id="modal-invoiceItemDataTable">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

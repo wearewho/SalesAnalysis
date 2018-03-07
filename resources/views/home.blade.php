@@ -1434,6 +1434,8 @@
         $('.progress .progress-bar').progressbar({
                 display_text: 'fill'                            
         });    
+        
+        $('[data-toggle="tooltip"]').tooltip();  
 
     });
 
