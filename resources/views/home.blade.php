@@ -399,8 +399,8 @@
                                         <th style="text-align:center">No.</th>
                                         <th>Item</th>
                                         <th style="text-align:center">Group</th>
-                                        <th>Unit</th>
-                                        <th>Baht</th>
+                                        <th style="text-align:right">Unit</th>
+                                        <th style="text-align:right">Baht</th>
                                     </tr>
                                 </thead> 
                                 <tbody id="remProduct"></tbody>
@@ -414,8 +414,8 @@
                                         <th style="text-align:center">No.</th>
                                         <th>Item</th>
                                         <th style="text-align:center">Group</th>
-                                        <th>Unit</th>
-                                        <th>Baht</th>
+                                        <th style="text-align:right">Unit</th>
+                                        <th style="text-align:right">Baht</th>
                                     </tr>
                                 </thead> 
                                 <tbody id="mtdProduct"></tbody>
@@ -448,8 +448,8 @@
                                     <tr>
                                         <th style="text-align:center">No.</th>
                                         <th>Customer</th>
-                                        <th>Unit</th>
-                                        <th>Baht</th>
+                                        <th style="text-align:right">Unit</th>
+                                        <th style="text-align:right">Baht</th>
                                     </tr>
                                 </thead> 
                                 <tbody id="remCustomer"></tbody>
@@ -462,8 +462,8 @@
                                     <tr>
                                         <th style="text-align:center">No.</th>
                                         <th>Customer</th>
-                                        <th>Unit</th>
-                                        <th>Baht</th>
+                                        <th style="text-align:right">Unit</th>
+                                        <th style="text-align:right">Baht</th>
                                     </tr>
                                 </thead> 
                                 <tbody id="mtdCustomer"></tbody>
@@ -495,7 +495,7 @@
                             <table id="BAHTTable" class="table table-bordered" style="font-size: 14px;" >
                                 <thead>
                                     <tr style="text-align:center;" bgcolor="#b6dde8">
-                                        <th style="vertical-align:middle; text-align:center; width:130px;">Sales (1,000 BAHT)</th>
+                                        <th style="vertical-align:middle; text-align:center; width:150px;">Sales (1,000 BAHT)</th>
                                         <th style="text-align:center;">January</th>
                                         <th style="text-align:center;">February</th>
                                         <th style="text-align:center;">March</th>
@@ -629,7 +629,7 @@
                             <table id="UnitTTable" class="table table-bordered" style="font-size: 14px;" >
                                 <thead>
                                     <tr style="text-align:center;" bgcolor="#b6dde8">
-                                        <th style="vertical-align:middle; text-align:center; width:130px;">Sales (UNIT)</th>
+                                        <th style="vertical-align:middle; text-align:center; width:150px;">Sales (UNIT)</th>
                                         <th style="text-align:center;">January</th>
                                         <th style="text-align:center;">February</th>
                                         <th style="text-align:center;">March</th>
@@ -806,7 +806,7 @@
                             <table id="BAHTTable" class="table table-bordered" style="font-size: 14px;" >
                                 <thead>
                                     <tr style="text-align:center;" bgcolor="#b6dde8">
-                                        <th style="vertical-align:middle; text-align:center; width:130px;">Sales (1,000 BAHT)</th>
+                                        <th style="vertical-align:middle; text-align:center; width:150px;">Sales (1,000 BAHT)</th>
                                         <th style="text-align:center;">January</th>
                                         <th style="text-align:center;">February</th>
                                         <th style="text-align:center;">March</th>
@@ -940,7 +940,7 @@
                             <table id="UnitTTable" class="table table-bordered" style="font-size: 14px;" >
                                 <thead>
                                     <tr style="text-align:center;" bgcolor="#b6dde8">
-                                        <th style="vertical-align:middle; text-align:center; width:130px;">Sales (UNIT)</th>
+                                        <th style="vertical-align:middle; text-align:center; width:150px;">Sales (UNIT)</th>
                                         <th style="text-align:center;">January</th>
                                         <th style="text-align:center;">February</th>
                                         <th style="text-align:center;">March</th>
@@ -1117,7 +1117,7 @@
                             <table id="BAHTTable" class="table table-bordered" style="font-size: 14px;" >
                                 <thead>
                                     <tr style="text-align:center;" bgcolor="#b6dde8">
-                                        <th style="vertical-align:middle; text-align:center; width:130px;">Sales (1,000 BAHT)</th>
+                                        <th style="vertical-align:middle; text-align:center; width:150px;">Sales (1,000 BAHT)</th>
                                         <th style="text-align:center;">January</th>
                                         <th style="text-align:center;">February</th>
                                         <th style="text-align:center;">March</th>
@@ -1235,7 +1235,7 @@
                             <table id="UnitTTable" class="table table-bordered" style="font-size: 14px;" >
                                 <thead>
                                     <tr style="text-align:center;" bgcolor="#b6dde8">
-                                        <th style="vertical-align:middle; text-align:center; width:130px;">Sales (UNIT)</th>
+                                        <th style="vertical-align:middle; text-align:center; width:150px;">Sales (UNIT)</th>
                                         <th style="text-align:center;">January</th>
                                         <th style="text-align:center;">February</th>
                                         <th style="text-align:center;">March</th>

@@ -2082,9 +2082,9 @@ function calData(year, data) {
         growthAMBUnitOctober = ((currAMBUnitOctober - oldAMBUnitOctober) * 100) / oldAMBUnitOctober,
         growthAMBUnitNovember = ((currAMBUnitNovember - oldAMBUnitNovember) * 100) / oldAMBUnitNovember,
         growthAMBUnitDecember = ((currAMBUnitDecember - oldAMBUnitDecember) * 100) / oldAMBUnitDecember,
-        growthAMBUnitTotal = ((currAMBTotalUnit - oldAMBTotalUnit) * 100) / oldAMBTotalUnit;
+        growthAMBUnitTotal = ((currAMBTotalUnit - oldAMBTotalUnit) * 100) / oldAMBTotalUnit,
 
-    growthMCBBahtJanuary = ((currMCBBahtJanuary - oldMCBBahtJanuary) * 100) / oldMCBBahtJanuary,
+        growthMCBBahtJanuary = ((currMCBBahtJanuary - oldMCBBahtJanuary) * 100) / oldMCBBahtJanuary,
         growthMCBBahtFebruary = ((currMCBBahtFebruary - oldMCBBahtFebruary) * 100) / oldMCBBahtFebruary,
         growthMCBBahtMarch = ((currMCBBahtMarch - oldMCBBahtMarch) * 100) / oldMCBBahtMarch,
         growthMCBBahtApril = ((currMCBBahtApril - oldMCBBahtApril) * 100) / oldMCBBahtApril,
@@ -2886,8 +2886,8 @@ function tableProduct(type, data) {
         k += '<td style="text-align:center">' + (i + 1) + '</td>';
         k += '<td>' + data[i].Dscription + '</td>';
         k += '<td style="text-align:center">' + data[i].ItemGroupShort + '</td>';
-        k += '<td>' + accounting.formatNumber(data[i].Quantity) + '</td>';
-        k += '<td>' + accounting.formatNumber(data[i].Total) + '</td>';
+        k += '<td style="text-align:right">' + accounting.formatNumber(data[i].Quantity) + '</td>';
+        k += '<td style="text-align:right">' + accounting.formatNumber(data[i].Total) + '</td>';
         k += '</tr>';
     }
     k += '</tbody>';
