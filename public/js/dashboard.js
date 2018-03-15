@@ -1796,8 +1796,6 @@ function calData(year, data) {
     $('#ambUnitActualOld12').html(accounting.formatNumber(oldAMBUnitDecember));
     $('#ambUnitActualOldTotal').html(accounting.formatNumber(oldAMBTotalUnit));
 
-
-
     $('#mcbBahtMTD1').html(accounting.formatNumber(currMCBMTDBahtJanuary / 1000, 2));
     $('#mcbBahtMTD2').html(accounting.formatNumber(currMCBMTDBahtFebruary / 1000, 2));
     $('#mcbBahtMTD3').html(accounting.formatNumber(currMCBMTDBahtMarch / 1000, 2));
@@ -2077,9 +2075,9 @@ function calData(year, data) {
         growthAMBUnitOctober = ((currAMBUnitOctober - oldAMBUnitOctober) * 100) / oldAMBUnitOctober,
         growthAMBUnitNovember = ((currAMBUnitNovember - oldAMBUnitNovember) * 100) / oldAMBUnitNovember,
         growthAMBUnitDecember = ((currAMBUnitDecember - oldAMBUnitDecember) * 100) / oldAMBUnitDecember,
-        growthAMBUnitTotal = ((currAMBTotalUnit - oldAMBTotalUnit) * 100) / oldAMBTotalUnit;
+        growthAMBUnitTotal = ((currAMBTotalUnit - oldAMBTotalUnit) * 100) / oldAMBTotalUnit,
 
-    growthMCBBahtJanuary = ((currMCBBahtJanuary - oldMCBBahtJanuary) * 100) / oldMCBBahtJanuary,
+        growthMCBBahtJanuary = ((currMCBBahtJanuary - oldMCBBahtJanuary) * 100) / oldMCBBahtJanuary,
         growthMCBBahtFebruary = ((currMCBBahtFebruary - oldMCBBahtFebruary) * 100) / oldMCBBahtFebruary,
         growthMCBBahtMarch = ((currMCBBahtMarch - oldMCBBahtMarch) * 100) / oldMCBBahtMarch,
         growthMCBBahtApril = ((currMCBBahtApril - oldMCBBahtApril) * 100) / oldMCBBahtApril,
@@ -2191,18 +2189,18 @@ function calData(year, data) {
     $('#ambBahtGrowth12').html((isNaN(accounting.formatNumber(growthAMBBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtDecember, 2)) + "%");
     $('#ambBahtGrowthTotal').html((isNaN(accounting.formatNumber(growthAMBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtTotal, 2)) + "%");
 
-    $('#UnitTarget1').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt01) + targetMTDAmt01)));
-    $('#UnitTarget2').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt02) + targetMTDAmt02)));
-    $('#UnitTarget3').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt03) + targetMTDAmt03)));
-    $('#UnitTarget4').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt04) + targetMTDAmt04)));
-    $('#UnitTarget5').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt05) + targetMTDAmt05)));
-    $('#UnitTarget6').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt06) + targetMTDAmt06)));
-    $('#UnitTarget7').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt07) + targetMTDAmt07)));
-    $('#UnitTarget8').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt08) + targetMTDAmt08)));
-    $('#UnitTarget9').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt09) + targetMTDAmt09)));
-    $('#UnitTarget10').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt10) + targetMTDAmt10)));
-    $('#UnitTarget11').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt11) + targetMTDAmt11)));
-    $('#UnitTarget12').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt12) + targetMTDAmt12)));
+    $('#UnitTarget1').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit01) + targetMTDUnit01)));
+    $('#UnitTarget2').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit02) + targetMTDUnit02)));
+    $('#UnitTarget3').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit03) + targetMTDUnit03)));
+    $('#UnitTarget4').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit04) + targetMTDUnit04)));
+    $('#UnitTarget5').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit05) + targetMTDUnit05)));
+    $('#UnitTarget6').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit06) + targetMTDUnit06)));
+    $('#UnitTarget7').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit07) + targetMTDUnit07)));
+    $('#UnitTarget8').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit08) + targetMTDUnit08)));
+    $('#UnitTarget9').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit09) + targetMTDUnit09)));
+    $('#UnitTarget10').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit10) + targetMTDUnit10)));
+    $('#UnitTarget11').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit11) + targetMTDUnit11)));
+    $('#UnitTarget12').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit12) + targetMTDUnit12)));
     $('#UnitTargetTotal').html(accounting.formatNumber(totalUnitTarget));
 
     $('#ambUnitTarget1').html(accounting.formatNumber(targetAMBUnitJanuary));
@@ -2881,8 +2879,8 @@ function tableProduct(type, data) {
         k += '<td style="text-align:center">' + (i + 1) + '</td>';
         k += '<td>' + data[i].Dscription + '</td>';
         k += '<td style="text-align:center">' + data[i].ItemGroupShort + '</td>';
-        k += '<td>' + accounting.formatNumber(data[i].Quantity) + '</td>';
-        k += '<td>' + accounting.formatNumber(data[i].Total) + '</td>';
+        k += '<td style="text-align:right">' + accounting.formatNumber(data[i].Quantity) + '</td>';
+        k += '<td style="text-align:right">' + accounting.formatNumber(data[i].Total) + '</td>';
         k += '</tr>';
     }
     k += '</tbody>';
