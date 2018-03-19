@@ -21,6 +21,15 @@
 <!-- date-range-picker -->
 <script src="{{ URL::asset('adminlte/bower_components/moment/min/moment.min.js') }}"></script>
 <script src="{{ URL::asset('adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+
+<!-- Token -->
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
     
     <!-- Sweet Alert -->
     @if (session()->has('complete'))
