@@ -62,7 +62,7 @@
                               <label>Report Year</label>
                               <select class="form-control select2" name="year" style="width: 100%;">
                                 <option selected="selected">2017</option>
-                                <option>2018/option>
+                                <option>2018</option>
                               </select>
                             </div>  
                             <div class="form-group">
@@ -95,18 +95,9 @@
 
                             <div class="form-group">  
                               <label>Region	</label>
-                              <select class="form-control select2" name="region" id="region" style="width: 100%;">
-                                <option selected="selected" value="World">World</option> 
-                                <optgroup label="Outside Thailand">
-                                  <option value="Asia">Asia</option>
-                                  <option value="Europe">Europe</option>
-                                  <option value="Oceania">Oceania</option>
-                                  <option value="Africa">Africa</option>
-                                  <option value="North America">North America</option>
-                                  <option value="South America">South America</option>
-                                </optgroup>  
-                                <optgroup label="Thailand">
-                                  <option value="Thailand">All (Regions in Thailand)</option>      
+                              <select class="form-control select2" name="region" id="region" style="width: 100%;" disabled> 
+                                  <option selected="selected" value="Thailand">All Regions</option>  
+                                <optgroup label="Thailand">    
                                   @foreach ($Region as $region)
                                   <option value="{{ $region->Name }}">{{ $region->Name }}</option>
                                   @endforeach
@@ -116,8 +107,8 @@
 
                             <div class="form-group">
                               <label>Province	</label>
-                              <select class="form-control select2" name="province" id="province" style="width: 100%;">
-                                <option selected="selected">-- Select Region --</option>
+                              <select class="form-control select2" name="province" id="province" style="width: 100%;" disabled>
+                                <option selected="selected">All Provinces</option>
                               </select>
                             </div> 
 
@@ -167,28 +158,21 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        });   
+        });       
 
-        selectMap();  
-        
         $("select[name='region']").change(function(){
           var region = $(this).val();
-          if(region == 'World' || region == 'Asia' || region == 'Europe' || region == 'Oceania' || region == 'Africa' || region == 'North America' || region == 'South America'){
-            $("select[name='province'").empty();
-            $("select[name='province'").append('<option selected="selected">-- Select Region --</option>');
-            
-          }
-          else if(region == 'Thailand'){
-            $("select[name='province'").empty();
-            $("select[name='province'").append('<option selected="selected" value="All" disabled="disabled">All (Provinces in Thailand)</option>');
-          }
+          if(region == 'Thailand'){
+            $("select[name='province']").empty();
+            $("select[name='province']").append('<option selected="selected" value="All" disabled="disabled">All Provinces</option>');
+          }          
           else{
             $.ajax({
               url: "/sa/selectProvince",
               method: 'POST',
               data: {region:region},
               success: function(data) {
-                var $select_elem = $("select[name='province'");
+                var $select_elem = $("select[name='province']");
                 $select_elem.empty();                
                 var results = data[0];  
                 $select_elem.append('<option selected="selected" value="All">All</option>');
@@ -197,488 +181,133 @@
                 });
               }
           });
-          }
+          
+          if(region == "Eastern"){          
+              chart.series[0].data[0].firePointEvent('click');  
+              $("select[name='region']").val(region);
+            } 
+            else if(region == "Central"){          
+              chart.series[0].data[1].firePointEvent('click');  
+            } 
+            else if(region == "Northeastern"){
+              chart.series[0].data[2].firePointEvent('click'); 
+            } 
+            else if(region == "Bangkok and Surrounding"){
+              chart.series[0].data[3].firePointEvent('click');  
+            } 
+            else if(region == "Northern"){
+              chart.series[0].data[4].firePointEvent('click');  
+            } 
+            else if(region == "Western"){
+              chart.series[0].data[5].firePointEvent('click');  
+            }       
+            else if(region == "Southern"){
+              chart.series[0].data[6].firePointEvent('click');  
+            } 
+        }
           
       }); 
 
-
     });     
-      
-      
-      function selectMap() {
-        
-        Highcharts.setOptions({
-            lang: {
-                drillUpText: '◁ Back to previous map'
-            }
+              
+    var data = Highcharts.geojson(Highcharts.maps['countries/th/Region-all']),
+        // Some responsiveness
+        small = $('#map').width() < 400;
+
+        // Set drilldown pointers
+        $.each(data, function (i) {
+        this.drilldown = this.properties['region'];
+        this.value = i; // Non-random bogus data
         });
 
-        // Initiate the map
+        // Instanciate the map
         var chart =  Highcharts.mapChart('map', {
-          title: {
-            text: 'Sales Report World Map'
-          },
-               
-          chart: {
+        chart: {
             events: {
-      
-              drilldown: function(e) {
-                
-                if (!e.seriesOptions) {
-                  var chart = this,
-                    pointWithLatLon = function(point, latLon) {
-                      return Highcharts.merge(point, chart.transformFromLatLon(latLon,
-                        Highcharts.maps['custom/world']['hc-transform']['default']));
-                    };      
-                                      
+                drilldown: function (e) {
 
-                  var continent;
-                  var contName;           
-                  $("select[name='region']").val(e.point.name).change();
+                    if (!e.seriesOptions) {
+                        var chart = this,
+                            mapKey = 'countries/th/' + e.point.drilldown ,
+                            // Handle error, the timeout is cleared on success
+                            fail = setTimeout(function () {
+                                if (!Highcharts.maps[mapKey]) {
+                                    chart.showLoading('<i class="icon-frown"></i> Failed loading ' + e.point.name);
 
-                  switch (e.point.name) {                    
-                    case "Asia":
-                        chart.addSeriesAsDrilldown(e.point, {
-                        mapData: Highcharts.maps['custom/asia'],
-                        joinBy: 'hc-key',
-                        data: [{
-                          'hc-key': 'ph'
-                        }, {
-                          'hc-key': 'ir'
-                        }, {
-                          'hc-key': 'sa'
-                        }, {
-                          'hc-key': 'jp'
-                        }, {    
-                          color: '#3366ff',           
-                          'hc-key': 'th',
-                          drilldown: true,
-                        }, {
-                          'hc-key': 'om'
-                        }, {
-                          'hc-key': 'ye'
-                        }, {
-                          'hc-key': 'in'
-                        }, {
-                          'hc-key': 'kr'
-                        }, {
-                          'hc-key': 'bd'
-                        }, {
-                          'hc-key': 'sp'
-                        }, {
-                          'hc-key': 'cn'
-                        }, {
-                          'hc-key': 'bh'
-                        }, {
-                          'hc-key': 'mm'
-                        }, {
-                          'hc-key': 'id'
-                        }, {
-                          'hc-key': 'sg'
-                        }, {
-                          'hc-key': 'ru'
-                        }, {
-                          'hc-key': 'sh'
-                        }, {
-                          'hc-key': 'my'
-                        }, {
-                          'hc-key': 'az'
-                        }, {
-                          'hc-key': 'am'
-                        }, {
-                          'hc-key': 'vn'
-                        }, {
-                          'hc-key': 'tj'
-                        }, {
-                          'hc-key': 'uz'
-                        }, {
-                          'hc-key': 'tl'
-                        }, {
-                          'hc-key': 'kh'
-                        }, {
-                          'hc-key': 'bt'
-                        }, {
-                          'hc-key': 'ge'
-                        }, {
-                          'hc-key': 'kz'
-                        }, {
-                          'hc-key': 'il'
-                        }, {
-                          'hc-key': 'sy'
-                        }, {
-                          'hc-key': 'jo'
-                        }, {
-                          'hc-key': 'tm'
-                        }, {
-                          'hc-key': 'cnm'
-                        }, {
-                          'hc-key': 'mn'
-                        }, {
-                          'hc-key': 'kw'
-                        }, {
-                          'hc-key': 'iq'
-                        }, {
-                          'hc-key': 'ae'
-                        }, {
-                          'hc-key': 'la'
-                        }, {
-                          'hc-key': 'pk'
-                        }, {
-                          'hc-key': 'jk'
-                        }, {
-                          'hc-key': 'qa'
-                        }, {
-                          'hc-key': 'tr'
-                        }, {
-                          'hc-key': 'bn'
-                        }, {
-                          'hc-key': 'af'
-                        }, {
-                          'hc-key': 'kp'
-                        }, {
-                          'hc-key': 'lb'
-                        }, {
-                          'hc-key': 'nc'
-                        }, {
-                          'hc-key': 'cy'
-                        }, {
-                          'hc-key': 'tw'
-                        }, {
-                          'hc-key': 'np'
-                        }, {
-                          'hc-key': 'lk'
-                        }, {
-                          'hc-key': 'kg'
-                        }],
-                        name: 'Asia', 
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        }
-      
-                      });
-                      break;
-                    case "Europe":
-                        data = Highcharts.geojson(Highcharts.maps['custom/european-union']);
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data,   
-                        name: 'Europe',                      
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        }
-      
-                      });
-                      break;
-                    case "Oceania":
-                        data = Highcharts.geojson(Highcharts.maps['custom/oceania']);
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data,
-                        name: 'Oceania', 
-                        dataLabels: {
-                            enabled: true,
-                            formatter: function() {
-                            return this.point.name;
+                                    fail = setTimeout(function () {
+                                        chart.hideLoading();
+                                    }, 1000);
+                                }
+                            }, 3000);
+                            
+                        // Show the spinner
+                        chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
+
+                        // Load the drilldown map
+                        $.getScript("{{ URL::asset('highmap/mapdata/') }}" + '/' + mapKey + '.js', function () {
+
+                            data = Highcharts.geojson(Highcharts.maps[mapKey]);
+
+                            // Set a non-random bogus value
+                            $.each(data, function (i) {
+                                this.value = i;
+                            });
+                            
+                            if(e.point.name != null){
+                                $("select[name='region']").val(e.point.name).change();
                             }
-                        }
 
+                            // Hide loading and add series
+                            chart.hideLoading();
+                            clearTimeout(fail);
+                            chart.addSeriesAsDrilldown(e.point, {
+                                name: e.point.name,
+                                data: data,
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '{point.name}'
+                                },
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                states: {
+                                    hover: {
+                                        color: '#a4edba'
+                                    },
+                                    select: {
+                                        color: '#fbfff0',
+                                        borderColor: 'black',
+                                        
+                                    }
+                                } 
+                            });
                         });
-                        break;
-                    case "Africa":
-                        data = Highcharts.geojson(Highcharts.maps['custom/africa']);
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'Africa',
-                        dataLabels: {
-                            enabled: true,
-                            formatter: function() {
-                            return this.point.name;
-                            }
-                        }
-
-                        });
-                        break;
-                    case "North America":
-                        data = Highcharts.geojson(Highcharts.maps['custom/north-america']);
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'North America',
-                        dataLabels: {
-                            enabled: true,
-                            formatter: function() {
-                            return this.point.name;
-                            }
-                        }
-
-                        });
-                        break;
-                    case "South America":
-                        data = Highcharts.geojson(Highcharts.maps['custom/south-america']);
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'South America',
-                        dataLabels: {
-                            enabled: true,
-                            formatter: function() {
-                            return this.point.name;
-                            }
-                        }
-
-                        });
-                        break;
-                    case "Thailand":
-                        chart.addSeriesAsDrilldown(e.point, {
-                        mapData: Highcharts.maps['countries/th/Region-all'],
-                        joinBy: 'hc-key',
-                        data: [{           
-                          color: '#009900', 
-                            'hc-key': 'C',
-                            drilldown: true
-                            }, {         
-                          color: '#29a3a3',
-                            'hc-key': 'N',
-                            drilldown: true
-                            }, {
-                          color: '#4747d1',
-                            'hc-key': 'NE', 
-                            drilldown: true
-                            }, {
-                          color: '#ff6600',
-                            'hc-key': 'W', 
-                            drilldown: true
-                            }, {           
-                          color: '#ff9999', 
-                            'hc-key': 'E',
-                            drilldown: true
-                            }, {
-                          color: '#ff1a1a',
-                            'hc-key': 'B', 
-                            drilldown: true
-                            }, {
-                          color: '#ff1aff',
-                            'hc-key': 'S',
-                            drilldown: true
-                            }
-                        ],
-                        name: 'Thailand',
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        }
-      
-                      });
-                      break;
-                    case "Central":
-                        data = Highcharts.geojson(Highcharts.maps['countries/th/Central']),
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'Central',
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        },
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        states: {
-                            hover: {
-                                color: '#a4edba'
-                            },
-                            select: {
-                                color: '#fbfff0',
-                                borderColor: 'black'
-                            }
-                        } 
-                      });
-                      break;
-                    case "Northern":
-                        data = Highcharts.geojson(Highcharts.maps['countries/th/Northern']),
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'Northern',
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        },
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        states: {
-                            hover: {
-                                color: '#a4edba'
-                            },
-                            select: {
-                                color: '#fbfff0',
-                                borderColor: 'black'
-                            }
-                        } 
-      
-                      });
-                      break;
-                    case "Western":
-                        data = Highcharts.geojson(Highcharts.maps['countries/th/Western']),
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'Western',
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        },
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        states: {
-                            hover: {
-                                color: '#a4edba'
-                            },
-                            select: {
-                                color: '#fbfff0',
-                                borderColor: 'black'
-                            }
-                        } 
-      
-                      });
-                      break;
-                    case "Eastern":
-                        data = Highcharts.geojson(Highcharts.maps['countries/th/Eastern']),
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'Eastern',
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        },
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        states: {
-                            hover: {
-                                color: '#a4edba'
-                            },
-                            select: {
-                                color: '#fbfff0',
-                                borderColor: 'black'
-                            }
-                        } 
-      
-                      });
-                      break;
-                    case "Northeastern":
-                        data = Highcharts.geojson(Highcharts.maps['countries/th/Northeastern']),
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'Northeastern',
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        },
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        states: {
-                            hover: {
-                                color: '#a4edba'
-                            },
-                            select: {
-                                color: '#fbfff0',
-                                borderColor: 'black'
-                            }
-                        } 
-      
-                      });
-                      break;
-                    case "Bangkok and Surrounding":
-                        data = Highcharts.geojson(Highcharts.maps['countries/th/Bangkok']),
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'Bangkok and Surrounding',
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        },
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        states: {
-                            hover: {
-                                color: '#a4edba'
-                            },
-                            select: {
-                                color: '#fbfff0',
-                                borderColor: 'black',
-                                
-                            }
-                        } 
-      
-                      });
-                      break;
-                    case "Southern":
-                        data = Highcharts.geojson(Highcharts.maps['countries/th/Southern']),
-                        chart.addSeriesAsDrilldown(e.point, {
-                        data: data, 
-                        name: 'Southern',
-                        dataLabels: {
-                          enabled: true,
-                          formatter: function() {
-                            return this.point.name;
-                          }
-                        },
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        states: {
-                            hover: {
-                                color: '#a4edba'
-                            },
-                            select: {
-                                color: '#fbfff0',
-                                borderColor: 'black'
-                            }
-                        } 
-      
-                      });
-                      break;
-                  }      
-                  /* chart.addSeries({
-                    id: 'cities',
-                    name: 'Cities',
-                    type: 'mappoint',
-                    color: 'black',
-                    marker: {
-                      symbol: 'circle'
                     }
-                  }); */
 
-                }
-              },
-              drillup: function (e) {                
-                  $("select[name='region']").val(this.series[1].name).change();
+                    this.setTitle(null, { text: e.point.name });
+                },
+                drillup: function () {
+                    this.setTitle(null, { text: 'Thailand' });                    
+                    $("select[name='region']").val(this.series[1].name).change();
                 }
             }
-          },
-          mapNavigation: {
+        },
+
+        title: {
+            text: 'Highcharts Map Drilldown'
+        },
+
+        mapNavigation: {
             enabled: true,
             buttonOptions: {
-              verticalAlign: 'bottom'
+                verticalAlign: 'bottom'
             }
-          },
-          plotOptions: {  
-              series: {
+        },
+
+        plotOptions: {          
+            series: {
                 point: {
                     events: {
-
-                      select: function () {                        
+                      select: function () {                 
                         if(this.properties["woe-name"]){                              
                           $("select[name='province']").val(this.properties["woe-name"]).change();
                         }
@@ -698,65 +327,33 @@
                     }
                 }
             }
-          },
-          legend: {
-            enabled: false
-          },
-          series: [{                      
-            name: 'World',
-            color: '#666666',
-            data: [{
-                'hc-key': 'eu',
-                drilldown: true
-              }, {          
-              color: '#666666',
-                'hc-key': 'as',
-                drilldown: true
-              }, {
-                'hc-key': 'oc',
-                drilldown: true
-              }, {
-                'hc-key': 'af',
-                drilldown: true
-              }, {
-                'hc-key': 'na',
-                drilldown: true
-              }, {
-                'hc-key': 'sa',
-                drilldown: true
-              }    
-            ],
-            mapData: Highcharts.maps['custom/world-continents'],
-            joinBy: 'hc-key',
+        },
+
+        series: [{
+            data: data,
+            name: 'Thailand',
             dataLabels: {
-              enabled: true,
-              format: '{point.name}'
-            }          
-          }]
-        });
+                enabled: true,
+                format: '{point.properties.name}'
+            }
+        }],
 
-        if(region == "Asia"){          
-          chart.series[0].data[1].firePointEvent('click');  
-        } 
-        else if(region == "Europe"){
-          chart.series[0].data[2].firePointEvent('click'); 
-        } 
-        else if(region == "Oceania"){
-          chart.series[0].data[2].firePointEvent('click');  
-        } 
-        else if(region == "Africa"){
-          chart.series[0].data[3].firePointEvent('click');  
-        } 
-        else if(region == "North America"){
-          chart.series[0].data[4].firePointEvent('click');  
-        } 
-        else if(region == "South America"){
-          chart.series[0].data[5].firePointEvent('click');  
-        } 
+        drilldown: {
+            activeDataLabelStyle: {
+                color: '#FFFFFF',
+                textDecoration: 'none',
+                textOutline: '1px #000000'
+            },
+            drillUpButton: {
+                relativeTo: 'spacingBox',
+                position: {
+                    x: 0,
+                    y: 60
+                }
+            }
+        }
+        });         
 
-      }
-               
-      
     </script>
 
 @endsection
