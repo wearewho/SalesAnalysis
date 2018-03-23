@@ -43,7 +43,7 @@ class HomeController extends Controller
     } */
     public function index()
     {  
-        $result = session('data');   
+        $result = session('data');  
         return view('home', compact('result'));
     }
 

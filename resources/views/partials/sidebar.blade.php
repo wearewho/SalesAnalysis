@@ -139,6 +139,35 @@
             </li>
             @endcan
             
+            @can('IED')
+            <li class="treeview {{ $request->segment(1) == 'ied' ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-building"></i>
+                    <span class="title">@lang('global.IED.title')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ $request->segment(2) == 'salessummaryIED' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.ied.SalesSummaryIED') }}">
+                            <i class="fa fa-object-group"></i>
+                            <span class="title">
+                            @lang('global.IED.fields.01')
+                            </span>
+                        </a>
+                    </li>  
+                    <li class="{{ $request->segment(2) == 'salesenquiryIED' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.ied.SalesEnquiryIED') }}">
+                            <i class="fa fa-book"></i>
+                            <span class="title">
+                            @lang('global.IED.fields.02')
+                            </span>
+                        </a>
+                    </li>                  
+                </ul>
+            </li>
+            @endcan
             
             <li class="header" style="font-color:red;"><b>Management</b></li>  
             @can('Admin_Manage')        
