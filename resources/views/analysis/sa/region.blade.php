@@ -158,7 +158,7 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        });       
+        });     
 
         $("select[name='region']").change(function(){
           var region = $(this).val();
@@ -168,7 +168,7 @@
           }          
           else{
             $.ajax({
-              url: "/sa/selectProvince",
+              url: "/SalesAnalysis/sa/selectProvince",
               method: 'POST',
               data: {region:region},
               success: function(data) {
@@ -209,19 +209,21 @@
       }); 
 
     });     
+
               
     var data = Highcharts.geojson(Highcharts.maps['countries/th/Region-all']),
         // Some responsiveness
-        small = $('#map').width() < 400;
+        small = $('#map').width() < 450;        
 
         // Set drilldown pointers
         $.each(data, function (i) {
         this.drilldown = this.properties['region'];
+        this.color = getRandomColor();
         this.value = i; // Non-random bogus data
         });
 
         // Instanciate the map
-        var chart =  Highcharts.mapChart('map', {
+        var chart =  Highcharts.mapChart('map', {       
         chart: {
             events: {
                 drilldown: function (e) {
@@ -251,6 +253,7 @@
                             // Set a non-random bogus value
                             $.each(data, function (i) {
                                 this.value = i;
+                                this.color = getRandomColor();
                             });
                             
                             if(e.point.name != null){
@@ -262,7 +265,7 @@
                             clearTimeout(fail);
                             chart.addSeriesAsDrilldown(e.point, {
                                 name: e.point.name,
-                                data: data,
+                                data: data,         
                                 dataLabels: {
                                     enabled: true,
                                     format: '{point.name}'
@@ -275,8 +278,7 @@
                                     },
                                     select: {
                                         color: '#fbfff0',
-                                        borderColor: 'black',
-                                        
+                                        borderColor: 'black',                                        
                                     }
                                 } 
                             });
@@ -295,17 +297,19 @@
         title: {
             text: 'Highcharts Map Drilldown'
         },
-
         mapNavigation: {
             enabled: true,
             buttonOptions: {
                 verticalAlign: 'bottom'
             }
         },
-
+        tooltip: {
+            headerFormat: '',
+            pointFormat: '{point.name}'
+        },   
         plotOptions: {          
             series: {
-                point: {
+                point: {                    
                     events: {
                       select: function () {                 
                         if(this.properties["woe-name"]){                              
@@ -328,16 +332,16 @@
                 }
             }
         },
-
         series: [{
             data: data,
             name: 'Thailand',
             dataLabels: {
                 enabled: true,
                 format: '{point.properties.name}'
-            }
+            },
+            borderColor: '#A0A0A0',
+            showInLegend: false
         }],
-
         drilldown: {
             activeDataLabelStyle: {
                 color: '#FFFFFF',
@@ -352,7 +356,16 @@
                 }
             }
         }
-        });         
+        });            
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }     
 
     </script>
 

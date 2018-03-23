@@ -94,6 +94,16 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'mtd', 'as' => 'analysis.mtd
     Route::post('downloadPDF', ['uses' => 'Analysis\MTDController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
 });
 
+Route::group(['middleware' => ['auth'], 'prefix' => 'ied', 'as' => 'analysis.ied.'], function () {
+    Route::get('salessummaryIED', 'Analysis\IEDController@salessummaryIED')->name('SalesSummaryIED');
+    Route::get('salesenquiryIED', 'Analysis\IEDController@salesenquiryIED')->name('SalesEnquiryIED');
+    Route::post('selectIED', 'Analysis\IEDController@selectIED')->name('selectIED');
+    Route::post('selectDataTableIED', 'Analysis\IEDController@selectDataTableIED')->name('selectDataTableIED');
+    Route::post('selectEnquiryDataTableIED', 'Analysis\IEDController@selectEnquiryDataTableIED')->name('selectEnquiryDataTableIED');
+    Route::post('selectEnquiryDataTableModalIED', 'Analysis\IEDController@selectEnquiryDataTableModalIED')->name('selectEnquiryDataTableModalIED');
+    Route::post('downloadPDF', ['uses' => 'Analysis\IEDController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
+});
+
 
 
     
