@@ -169,6 +169,36 @@
             </li>
             @endcan
             
+            @can('SPD')
+            <li class="treeview {{ $request->segment(1) == 'spd' ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-building"></i>
+                    <span class="title">@lang('global.SPD.title')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ $request->segment(2) == 'salessummarySPD' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.spd.SalesSummarySPD') }}">
+                            <i class="fa fa-object-group"></i>
+                            <span class="title">
+                            @lang('global.SPD.fields.01')
+                            </span>
+                        </a>
+                    </li>  
+                    <li class="{{ $request->segment(2) == 'salesenquirySPD' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.spd.SalesEnquirySPD') }}">
+                            <i class="fa fa-book"></i>
+                            <span class="title">
+                            @lang('global.SPD.fields.02')
+                            </span>
+                        </a>
+                    </li>                  
+                </ul>
+            </li>
+            @endcan
+            
             <li class="header" style="font-color:red;"><b>Management</b></li>  
             @can('Admin_Manage')        
             <li class="treeview {{ $request->segment(1) == 'admin' || $request->segment(1) ==  'system' ? 'active' : '' }}">

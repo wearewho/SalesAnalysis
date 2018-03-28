@@ -104,6 +104,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'ied', 'as' => 'analysis.ied
     Route::post('downloadPDF', ['uses' => 'Analysis\IEDController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
 });
 
+Route::group(['middleware' => ['auth'], 'prefix' => 'spd', 'as' => 'analysis.spd.'], function () {
+    Route::get('salessummarySPD', 'Analysis\SPDController@salessummarySPD')->name('SalesSummarySPD');
+    Route::get('salesenquirySPD', 'Analysis\SPDController@salesenquirySPD')->name('SalesEnquirySPD');
+    Route::post('selectSPD', 'Analysis\SPDController@selectSPD')->name('selectSPD');
+    Route::post('selectDataTableSPD', 'Analysis\SPDController@selectDataTableSPD')->name('selectDataTableSPD');
+    Route::post('selectEnquiryDataTableSPD', 'Analysis\SPDController@selectEnquiryDataTableSPD')->name('selectEnquiryDataTableSPD');
+    Route::post('selectEnquiryDataTableModalSPD', 'Analysis\SPDController@selectEnquiryDataTableModalSPD')->name('selectEnquiryDataTableModalSPD');
+    Route::post('downloadPDF', ['uses' => 'Analysis\SPDController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
+});
 
 
     
