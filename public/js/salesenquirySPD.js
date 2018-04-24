@@ -108,16 +108,28 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             Product.DataTable().column(3).search('').draw();
                         }
                     }, {
-                        text: 'AMB',
+                        text: 'NP',
                         className: "btn-sm margin",
                         action: function(e, dt, node, config) {
-                            Product.DataTable().column(3).search('AMB').draw();
+                            Product.DataTable().column(3).search('NP').draw();
                         }
                     }, {
-                        text: 'MCB',
+                        text: 'EB',
                         className: "btn-sm margin",
                         action: function(e, dt, node, config) {
-                            Product.DataTable().column(3).search('MCB').draw();
+                            Product.DataTable().column(3).search('EB').draw();
+                        }
+                    }, {
+                        text: 'IND',
+                        className: "btn-sm margin",
+                        action: function(e, dt, node, config) {
+                            Product.DataTable().column(3).search('IND').draw();
+                        }
+                    }, {
+                        text: 'OTH',
+                        className: "btn-sm margin",
+                        action: function(e, dt, node, config) {
+                            Product.DataTable().column(3).search('OTH').draw();
                         }
                     }],
                     data: Item,
@@ -129,7 +141,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             data: "ItemCode",
                             className: "ItemCode text-center"
                         },
-                        { data: "Dscription" },
+                        { data: "ItemShortName" },
                         { data: "ItemGroupShort" },
                         { data: "Brand" },
                         { data: "Commodity" },
@@ -415,19 +427,31 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         text: 'All',
                         className: "btn-sm margin",
                         action: function(e, dt, node, config) {
-                            Customer.DataTable().column(3).search('').draw();
+                            Product.DataTable().column(3).search('').draw();
                         }
                     }, {
-                        text: 'AMB',
+                        text: 'NP',
                         className: "btn-sm margin",
                         action: function(e, dt, node, config) {
-                            Customer.DataTable().column(3).search('AMB').draw();
+                            Product.DataTable().column(3).search('NP').draw();
                         }
                     }, {
-                        text: 'MCB',
+                        text: 'EB',
                         className: "btn-sm margin",
                         action: function(e, dt, node, config) {
-                            Customer.DataTable().column(3).search('MCB').draw();
+                            Product.DataTable().column(3).search('EB').draw();
+                        }
+                    }, {
+                        text: 'IND',
+                        className: "btn-sm margin",
+                        action: function(e, dt, node, config) {
+                            Product.DataTable().column(3).search('IND').draw();
+                        }
+                    }, {
+                        text: 'OTH',
+                        className: "btn-sm margin",
+                        action: function(e, dt, node, config) {
+                            Product.DataTable().column(3).search('OTH').draw();
                         }
                     }],
                     data: Cust,
@@ -1016,16 +1040,28 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 Product.DataTable().column(3).search('').draw();
                             }
                         }, {
-                            text: 'AMB',
+                            text: 'NP',
                             className: "btn-sm margin",
                             action: function(e, dt, node, config) {
-                                Product.DataTable().column(3).search('AMB').draw();
+                                Product.DataTable().column(3).search('NP').draw();
                             }
                         }, {
-                            text: 'MCB',
+                            text: 'EB',
                             className: "btn-sm margin",
                             action: function(e, dt, node, config) {
-                                Product.DataTable().column(3).search('MCB').draw();
+                                Product.DataTable().column(3).search('EB').draw();
+                            }
+                        }, {
+                            text: 'IND',
+                            className: "btn-sm margin",
+                            action: function(e, dt, node, config) {
+                                Product.DataTable().column(3).search('IND').draw();
+                            }
+                        }, {
+                            text: 'OTH',
+                            className: "btn-sm margin",
+                            action: function(e, dt, node, config) {
+                                Product.DataTable().column(3).search('OTH').draw();
                             }
                         }],
                         data: results,
@@ -1034,7 +1070,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 defaultContent: ''
                             },
                             { data: "ItemCode" },
-                            { data: "Dscription" },
+                            { data: "ItemShortName" },
                             { data: "ItemGroupShort" },
                             { data: "Brand" },
                             { data: "Commodity" },
@@ -1590,19 +1626,31 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             text: 'All',
                             className: "btn-sm margin",
                             action: function(e, dt, node, config) {
-                                Product.DataTable().column(5).search('').draw();
+                                Product.DataTable().column(3).search('').draw();
                             }
                         }, {
-                            text: 'AMB',
+                            text: 'NP',
                             className: "btn-sm margin",
                             action: function(e, dt, node, config) {
-                                Product.DataTable().column(5).search('AMB').draw();
+                                Product.DataTable().column(3).search('NP').draw();
                             }
                         }, {
-                            text: 'MCB',
+                            text: 'EB',
                             className: "btn-sm margin",
                             action: function(e, dt, node, config) {
-                                Product.DataTable().column(5).search('MCB').draw();
+                                Product.DataTable().column(3).search('EB').draw();
+                            }
+                        }, {
+                            text: 'IND',
+                            className: "btn-sm margin",
+                            action: function(e, dt, node, config) {
+                                Product.DataTable().column(3).search('IND').draw();
+                            }
+                        }, {
+                            text: 'OTH',
+                            className: "btn-sm margin",
+                            action: function(e, dt, node, config) {
+                                Product.DataTable().column(3).search('OTH').draw();
                             }
                         }],
                         data: results,
@@ -1618,7 +1666,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                     return moment(data).format('DD/MM/YYYY');
                                 }
                             },
-                            { data: "Dscription" },
+                            { data: "ItemShortName" },
                             { data: "ItemGroupShort" },
                             {
                                 data: "Quantity",

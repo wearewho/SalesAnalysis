@@ -20,36 +20,60 @@ $(function() {
     $('#allUnitTargetNow').text("Target " + year);
     $('#allBahtActualOld').text("Actual " + (year - 1));
     $('#allUnitActualOld').text("Actual " + (year - 1));
-    $('#ambBahtActualNow').text("Actual " + year);
-    $('#ambBahtTargetNow').text("Target " + year);
-    $('#ambUnitActualNow').text("Actual " + year);
-    $('#ambUnitTargetNow').text("Target " + year);
-    $('#ambBahtActualOld').text("Actual " + (year - 1));
-    $('#ambUnitActualOld').text("Actual " + (year - 1));
-    $('#mcbBahtActualNow').text("Actual " + year);
-    $('#mcbBahtTargetNow').text("Target " + year);
-    $('#mcbUnitActualNow').text("Actual " + year);
-    $('#mcbUnitTargetNow').text("Target " + year);
-    $('#mcbBahtActualOld').text("Actual " + (year - 1));
-    $('#mcbUnitActualOld').text("Actual " + (year - 1));
+    $('#npBahtActualNow').text("Actual " + year);
+    $('#npBahtTargetNow').text("Target " + year);
+    $('#npUnitActualNow').text("Actual " + year);
+    $('#npUnitTargetNow').text("Target " + year);
+    $('#npBahtActualOld').text("Actual " + (year - 1));
+    $('#npUnitActualOld').text("Actual " + (year - 1));
+    $('#ebBahtActualNow').text("Actual " + year);
+    $('#ebBahtTargetNow').text("Target " + year);
+    $('#ebUnitActualNow').text("Actual " + year);
+    $('#ebUnitTargetNow').text("Target " + year);
+    $('#ebBahtActualOld').text("Actual " + (year - 1));
+    $('#ebUnitActualOld').text("Actual " + (year - 1));
+    $('#indBahtActualNow').text("Actual " + year);
+    $('#indBahtTargetNow').text("Target " + year);
+    $('#indUnitActualNow').text("Actual " + year);
+    $('#indUnitTargetNow').text("Target " + year);
+    $('#indBahtActualOld').text("Actual " + (year - 1));
+    $('#indUnitActualOld').text("Actual " + (year - 1));
+    $('#othBahtActualNow').text("Actual " + year);
+    $('#othBahtTargetNow').text("Target " + year);
+    $('#othUnitActualNow').text("Actual " + year);
+    $('#othUnitTargetNow').text("Target " + year);
+    $('#othBahtActualOld').text("Actual " + (year - 1));
+    $('#othUnitActualOld').text("Actual " + (year - 1));
     $('#allBahtActualQNow').text("Actual " + year);
     $('#allBahtTargetQNow').text("Target " + year);
     $('#allUnitActualQNow').text("Actual " + year);
     $('#allUnitTargetQNow').text("Target " + year);
     $('#allBahtActualQOld').text("Actual " + (year - 1));
     $('#allUnitActualQOld').text("Actual " + (year - 1));
-    $('#ambBahtActualQNow').text("Actual " + year);
-    $('#ambBahtTargetQNow').text("Target " + year);
-    $('#ambUnitActualQNow').text("Actual " + year);
-    $('#ambUnitTargetQNow').text("Target " + year);
-    $('#ambBahtActualQOld').text("Actual " + (year - 1));
-    $('#ambUnitActualQOld').text("Actual " + (year - 1));
-    $('#mcbBahtActualQNow').text("Actual " + year);
-    $('#mcbBahtTargetQNow').text("Target " + year);
-    $('#mcbUnitActualQNow').text("Actual " + year);
-    $('#mcbUnitTargetQNow').text("Target " + year);
-    $('#mcbBahtActualQOld').text("Actual " + (year - 1));
-    $('#mcbUnitActualQOld').text("Actual " + (year - 1));
+    $('#npBahtActualQNow').text("Actual " + year);
+    $('#npBahtTargetQNow').text("Target " + year);
+    $('#npUnitActualQNow').text("Actual " + year);
+    $('#npUnitTargetQNow').text("Target " + year);
+    $('#npBahtActualQOld').text("Actual " + (year - 1));
+    $('#npUnitActualQOld').text("Actual " + (year - 1));
+    $('#ebBahtActualQNow').text("Actual " + year);
+    $('#ebBahtTargetQNow').text("Target " + year);
+    $('#ebUnitActualQNow').text("Actual " + year);
+    $('#ebUnitTargetQNow').text("Target " + year);
+    $('#ebBahtActualQOld').text("Actual " + (year - 1));
+    $('#ebUnitActualQOld').text("Actual " + (year - 1));
+    $('#indBahtActualQNow').text("Actual " + year);
+    $('#indBahtTargetQNow').text("Target " + year);
+    $('#indUnitActualQNow').text("Actual " + year);
+    $('#indUnitTargetQNow').text("Target " + year);
+    $('#indBahtActualQOld').text("Actual " + (year - 1));
+    $('#indUnitActualQOld').text("Actual " + (year - 1));
+    $('#othBahtActualQNow').text("Actual " + year);
+    $('#othBahtTargetQNow').text("Target " + year);
+    $('#othUnitActualQNow').text("Actual " + year);
+    $('#othUnitTargetQNow').text("Target " + year);
+    $('#othBahtActualQOld').text("Actual " + (year - 1));
+    $('#othUnitActualQOld').text("Actual " + (year - 1));
 
     //Change Year
     $(".date-picker-year").datepicker({
@@ -67,48 +91,80 @@ $(function() {
         $('#allUnitTargetNow').text("Target " + currYear);
         $('#allBahtActualOld').text("Actual " + (currYear - 1));
         $('#allUnitActualOld').text("Actual " + (currYear - 1));
-        $('#ambBahtActualNow').text("Actual " + currYear);
-        $('#ambBahtTargetNow').text("Target " + currYear);
-        $('#ambUnitActualNow').text("Actual " + currYear);
-        $('#ambUnitTargetNow').text("Target " + currYear);
-        $('#ambBahtActualOld').text("Actual " + (currYear - 1));
-        $('#ambUnitActualOld').text("Actual " + (currYear - 1));
-        $('#mcbBahtActualNow').text("Actual " + currYear);
-        $('#mcbBahtTargetNow').text("Target " + currYear);
-        $('#mcbUnitActualNow').text("Actual " + currYear);
-        $('#mcbUnitTargetNow').text("Target " + currYear);
-        $('#mcbBahtActualOld').text("Actual " + (currYear - 1));
-        $('#mcbUnitActualOld').text("Actual " + (currYear - 1));
+        $('#npBahtActualNow').text("Actual " + currYear);
+        $('#npBahtTargetNow').text("Target " + currYear);
+        $('#npUnitActualNow').text("Actual " + currYear);
+        $('#npUnitTargetNow').text("Target " + currYear);
+        $('#npBahtActualOld').text("Actual " + (currYear - 1));
+        $('#npUnitActualOld').text("Actual " + (currYear - 1));
+        $('#ebBahtActualNow').text("Actual " + currYear);
+        $('#ebBahtTargetNow').text("Target " + currYear);
+        $('#ebUnitActualNow').text("Actual " + currYear);
+        $('#ebUnitTargetNow').text("Target " + currYear);
+        $('#ebBahtActualOld').text("Actual " + (currYear - 1));
+        $('#ebUnitActualOld').text("Actual " + (currYear - 1));
+        $('#indBahtActualNow').text("Actual " + currYear);
+        $('#indBahtTargetNow').text("Target " + currYear);
+        $('#indUnitActualNow').text("Actual " + currYear);
+        $('#indUnitTargetNow').text("Target " + currYear);
+        $('#indBahtActualOld').text("Actual " + (currYear - 1));
+        $('#indUnitActualOld').text("Actual " + (currYear - 1));
+        $('#othBahtActualNow').text("Actual " + currYear);
+        $('#othBahtTargetNow').text("Target " + currYear);
+        $('#othUnitActualNow').text("Actual " + currYear);
+        $('#othUnitTargetNow').text("Target " + currYear);
+        $('#othBahtActualOld').text("Actual " + (currYear - 1));
+        $('#othUnitActualOld').text("Actual " + (currYear - 1));
         $('#allBahtActualQNow').text("Actual " + currYear);
         $('#allBahtTargetQNow').text("Target " + currYear);
         $('#allUnitActualQNow').text("Actual " + currYear);
         $('#allUnitTargetQNow').text("Target " + currYear);
         $('#allBahtActualQOld').text("Actual " + (currYear - 1));
         $('#allUnitActualQOld').text("Actual " + (currYear - 1));
-        $('#ambBahtActualQNow').text("Actual " + currYear);
-        $('#ambBahtTargetQNow').text("Target " + currYear);
-        $('#ambUnitActualQNow').text("Actual " + currYear);
-        $('#ambUnitTargetQNow').text("Target " + currYear);
-        $('#ambBahtActualQOld').text("Actual " + (currYear - 1));
-        $('#ambUnitActualQOld').text("Actual " + (currYear - 1));
-        $('#mcbBahtActualQNow').text("Actual " + currYear);
-        $('#mcbBahtTargetQNow').text("Target " + currYear);
-        $('#mcbUnitActualQNow').text("Actual " + currYear);
-        $('#mcbUnitTargetQNow').text("Target " + currYear);
-        $('#mcbBahtActualQOld').text("Actual " + (currYear - 1));
-        $('#mcbUnitActualQOld').text("Actual " + (currYear - 1));
+        $('#npBahtActualQNow').text("Actual " + currYear);
+        $('#npBahtTargetQNow').text("Target " + currYear);
+        $('#npUnitActualQNow').text("Actual " + currYear);
+        $('#npUnitTargetQNow').text("Target " + currYear);
+        $('#npBahtActualQOld').text("Actual " + (currYear - 1));
+        $('#npUnitActualQOld').text("Actual " + (currYear - 1));
+        $('#ebBahtActualQNow').text("Actual " + currYear);
+        $('#ebBahtTargetQNow').text("Target " + currYear);
+        $('#ebUnitActualQNow').text("Actual " + currYear);
+        $('#ebUnitTargetQNow').text("Target " + currYear);
+        $('#ebBahtActualQOld').text("Actual " + (currYear - 1));
+        $('#ebUnitActualQOld').text("Actual " + (currYear - 1));
+        $('#indBahtActualQNow').text("Actual " + currYear);
+        $('#indBahtTargetQNow').text("Target " + currYear);
+        $('#indUnitActualQNow').text("Actual " + currYear);
+        $('#indUnitTargetQNow').text("Target " + currYear);
+        $('#indBahtActualQOld').text("Actual " + (currYear - 1));
+        $('#indUnitActualQOld').text("Actual " + (currYear - 1));
+        $('#othBahtActualQNow').text("Actual " + currYear);
+        $('#othBahtTargetQNow').text("Target " + currYear);
+        $('#othUnitActualQNow').text("Actual " + currYear);
+        $('#othUnitTargetQNow').text("Target " + currYear);
+        $('#othBahtActualQOld').text("Actual " + (currYear - 1));
+        $('#othUnitActualQOld').text("Actual " + (currYear - 1));
         selectData(currYear);
     });
 
     //Hide Table
-    $('#AMBBAHTTable').hide();
-    $('#AMBUNITTable').hide();
-    $('#MCBBAHTTable').hide();
-    $('#MCBUNITTable').hide();
-    $('#AMBQBAHTTable').hide();
-    $('#AMBQUNITTable').hide();
-    $('#MCBQBAHTTable').hide();
-    $('#MCBQUNITTable').hide();
+    $('#NPBAHTTable').hide();
+    $('#NPUNITTable').hide();
+    $('#NPQBAHTTable').hide();
+    $('#NPQUNITTable').hide();
+    $('#EBBAHTTable').hide();
+    $('#EBUNITTable').hide();
+    $('#EBQBAHTTable').hide();
+    $('#EBQUNITTable').hide();
+    $('#INDBAHTTable').hide();
+    $('#INDUNITTable').hide();
+    $('#INDQBAHTTable').hide();
+    $('#INDQUNITTable').hide();
+    $('#OTHBAHTTable').hide();
+    $('#OTHUNITTable').hide();
+    $('#OTHQBAHTTable').hide();
+    $('#OTHQUNITTable').hide();
 
     $(document).on("click", "#pdf", function() {
 
@@ -178,27 +234,61 @@ $(function() {
     $(document).on("click", "#itemGroup", function() {
 
         var itemGroup = $(this).val();
-        if (itemGroup == "AMB") {
+        if (itemGroup == "NP") {
             $('#allBAHTTable').hide();
             $('#allUNITTable').hide();
-            $('#AMBBAHTTable').show();
-            $('#AMBUNITTable').show();
-            $('#MCBBAHTTable').hide();
-            $('#MCBUNITTable').hide();
-        } else if (itemGroup == "MCB") {
+            $('#NPBAHTTable').show();
+            $('#NPUNITTable').show();
+            $('#EBBAHTTable').hide();
+            $('#EBUNITTable').hide();
+            $('#INDBAHTTable').hide();
+            $('#INDUNITTable').hide();
+            $('#OTHBAHTTable').hide();
+            $('#OTHUNITTable').hide();
+        } else if (itemGroup == "EB") {
             $('#allBAHTTable').hide();
             $('#allUNITTable').hide();
-            $('#AMBBAHTTable').hide();
-            $('#AMBUNITTable').hide();
-            $('#MCBBAHTTable').show();
-            $('#MCBUNITTable').show();
+            $('#NPBAHTTable').hide();
+            $('#NPUNITTable').hide();
+            $('#EBBAHTTable').show();
+            $('#EBUNITTable').show();
+            $('#INDBAHTTable').hide();
+            $('#INDUNITTable').hide();
+            $('#OTHBAHTTable').hide();
+            $('#OTHUNITTable').hide();
+        } else if (itemGroup == "IND") {
+            $('#allBAHTTable').hide();
+            $('#allUNITTable').hide();
+            $('#NPBAHTTable').hide();
+            $('#NPUNITTable').hide();
+            $('#EBBAHTTable').hide();
+            $('#EBUNITTable').hide();
+            $('#INDBAHTTable').show();
+            $('#INDUNITTable').show();
+            $('#OTHBAHTTable').hide();
+            $('#OTHUNITTable').hide();
+        } else if (itemGroup == "OTH") {
+            $('#allBAHTTable').hide();
+            $('#allUNITTable').hide();
+            $('#NPBAHTTable').hide();
+            $('#NPUNITTable').hide();
+            $('#EBBAHTTable').hide();
+            $('#EBUNITTable').hide();
+            $('#INDBAHTTable').hide();
+            $('#INDUNITTable').hide();
+            $('#OTHBAHTTable').show();
+            $('#OTHUNITTable').show();
         } else {
             $('#allBAHTTable').show();
             $('#allUNITTable').show();
-            $('#AMBBAHTTable').hide();
-            $('#AMBUNITTable').hide();
-            $('#MCBBAHTTable').hide();
-            $('#MCBUNITTable').hide();
+            $('#NPBAHTTable').hide();
+            $('#NPUNITTable').hide();
+            $('#EBBAHTTable').hide();
+            $('#EBUNITTable').hide();
+            $('#INDBAHTTable').hide();
+            $('#INDUNITTable').hide();
+            $('#OTHBAHTTable').hide();
+            $('#OTHUNITTable').hide();
         }
 
     });
@@ -206,27 +296,61 @@ $(function() {
     $(document).on("click", "#itemGroupQ", function() {
 
         var itemGroup = $(this).val();
-        if (itemGroup == "AMB") {
+        if (itemGroup == "NP") {
             $('#allQBAHTTable').hide();
             $('#allQUNITTable').hide();
-            $('#AMBQBAHTTable').show();
-            $('#AMBQUNITTable').show();
-            $('#MCBQBAHTTable').hide();
-            $('#MCBQUNITTable').hide();
-        } else if (itemGroup == "MCB") {
+            $('#NPQBAHTTable').show();
+            $('#NPQUNITTable').show();
+            $('#EBQBAHTTable').hide();
+            $('#EBQUNITTable').hide();
+            $('#INDQBAHTTable').hide();
+            $('#INDQUNITTable').hide();
+            $('#OTHQBAHTTable').hide();
+            $('#OTHQUNITTable').hide();
+        } else if (itemGroup == "EB") {
             $('#allQBAHTTable').hide();
             $('#allQUNITTable').hide();
-            $('#AMBQBAHTTable').hide();
-            $('#AMBQUNITTable').hide();
-            $('#MCBQBAHTTable').show();
-            $('#MCBQUNITTable').show();
+            $('#NPQBAHTTable').hide();
+            $('#NPQUNITTable').hide();
+            $('#EBQBAHTTable').show();
+            $('#EBQUNITTable').show();
+            $('#INDQBAHTTable').hide();
+            $('#INDQUNITTable').hide();
+            $('#OTHQBAHTTable').hide();
+            $('#OTHQUNITTable').hide();
+        } else if (itemGroup == "IND") {
+            $('#allQBAHTTable').hide();
+            $('#allQUNITTable').hide();
+            $('#NPQBAHTTable').hide();
+            $('#NPQUNITTable').hide();
+            $('#EBQBAHTTable').hide();
+            $('#EBQUNITTable').hide();
+            $('#INDQBAHTTable').show();
+            $('#INDQUNITTable').show();
+            $('#OTHQBAHTTable').hide();
+            $('#OTHQUNITTable').hide();
+        } else if (itemGroup == "OTH") {
+            $('#allQBAHTTable').hide();
+            $('#allQUNITTable').hide();
+            $('#NPQBAHTTable').hide();
+            $('#NPQUNITTable').hide();
+            $('#EBQBAHTTable').hide();
+            $('#EBQUNITTable').hide();
+            $('#INDQBAHTTable').hide();
+            $('#INDQUNITTable').hide();
+            $('#OTHQBAHTTable').show();
+            $('#OTHQUNITTable').show();
         } else {
             $('#allQBAHTTable').show();
             $('#allQUNITTable').show();
-            $('#AMBQBAHTTable').hide();
-            $('#AMBQUNITTable').hide();
-            $('#MCBQBAHTTable').hide();
-            $('#MCBQUNITTable').hide();
+            $('#NPQBAHTTable').hide();
+            $('#NPQUNITTable').hide();
+            $('#EBQBAHTTable').hide();
+            $('#EBQUNITTable').hide();
+            $('#INDQBAHTTable').hide();
+            $('#INDQUNITTable').hide();
+            $('#OTHQBAHTTable').hide();
+            $('#OTHQUNITTable').hide();
         }
 
     });
@@ -370,7 +494,7 @@ function selectDataTable(nameMonth, month, year, type) {
                             defaultContent: ''
                         },
                         { data: "ItemCode" },
-                        { data: "Dscription" },
+                        { data: "ItemShortName" },
                         { data: "ItemGroupShort" },
                         { data: "Brand" },
                         { data: "Commodity" },
@@ -904,281 +1028,548 @@ function selectDataTable(nameMonth, month, year, type) {
 }
 
 function calData(year, data) {
+
     var currYear = data[0];
     var oldYear = data[1];
+    var targetYear = data[2];
 
-    if (data[2][0].ItemGroup == 'AMB') {
-        var targetAMB = data[2][0];
-        var targetMCB = data[2][1];
-    } else {
-        var targetMCB = data[2][0];
-        var targetAMB = data[2][1];
-    }
+    var groupedItem = _.groupBy(targetYear, function(targetYear) {
+        return targetYear.ItemGroup;
+    });
 
-    var currAMBTotalBaht = 0,
-        currAMBTotalUnit = 0,
-        oldAMBTotalBaht = 0,
-        oldAMBTotalUnit = 0,
-        currAMBUnitJanuary = 0,
-        currAMBUnitFebruary = 0,
-        currAMBUnitMarch = 0,
-        currAMBUnitApril = 0,
-        currAMBUnitMay = 0,
-        currAMBUnitJune = 0,
-        currAMBUnitJuly = 0,
-        currAMBUnitAugust = 0,
-        currAMBUnitSeptember = 0,
-        currAMBUnitOctober = 0,
-        currAMBUnitNovember = 0,
-        currAMBUnitDecember = 0,
-        currAMBBahtJanuary = 0,
-        currAMBBahtFebruary = 0,
-        currAMBBahtMarch = 0,
-        currAMBBahtApril = 0,
-        currAMBBahtMay = 0,
-        currAMBBahtJune = 0,
-        currAMBBahtJuly = 0,
-        currAMBBahtAugust = 0,
-        currAMBBahtSeptember = 0,
-        currAMBBahtOctober = 0,
-        currAMBBahtNovember = 0,
-        currAMBBahtDecember = 0,
-        currAMBUnitQ1 = 0,
-        currAMBBahtQ1 = 0,
-        currAMBUnitQ2 = 0,
-        currAMBBahtQ2 = 0,
-        currAMBUnitQ3 = 0,
-        currAMBBahtQ3 = 0,
-        currAMBUnitQ4 = 0,
-        currAMBBahtQ4 = 0,
-        oldAMBUnitJanuary = 0,
-        oldAMBUnitFebruary = 0,
-        oldAMBUnitMarch = 0,
-        oldAMBUnitApril = 0,
-        oldAMBUnitMay = 0,
-        oldAMBUnitJune = 0,
-        oldAMBUnitJuly = 0,
-        oldAMBUnitAugust = 0,
-        oldAMBUnitSeptember = 0,
-        oldAMBUnitOctober = 0,
-        oldAMBUnitNovember = 0,
-        oldAMBUnitDecember = 0,
-        oldAMBBahtJanuary = 0,
-        oldAMBBahtFebruary = 0,
-        oldAMBBahtMarch = 0,
-        oldAMBBahtApril = 0,
-        oldAMBBahtMay = 0,
-        oldAMBBahtJune = 0,
-        oldAMBBahtJuly = 0,
-        oldAMBBahtAugust = 0,
-        oldAMBBahtSeptember = 0,
-        oldAMBBahtOctober = 0,
-        oldAMBBahtNovember = 0,
-        oldAMBBahtDecember = 0,
-        oldAMBUnitQ1 = 0,
-        oldAMBBahtQ1 = 0,
-        oldAMBUnitQ2 = 0,
-        oldAMBBahtQ2 = 0,
-        oldAMBUnitQ3 = 0,
-        oldAMBBahtQ3 = 0,
-        oldAMBUnitQ4 = 0,
-        oldAMBBahtQ4 = 0,
-        achieveAMBBahtJanuary = 0,
-        achieveAMBBahtFebruary = 0,
-        achieveAMBBahtMarch = 0,
-        achieveAMBBahtApril = 0,
-        achieveAMBBahtMay = 0,
-        achieveAMBBahtJune = 0,
-        achieveAMBBahtJuly = 0,
-        achieveAMBBahtAugust = 0,
-        achieveAMBBahtSeptember = 0,
-        achieveAMBBahtOctober = 0,
-        achieveAMBBahtNovember = 0,
-        achieveAMBBahtDecember = 0,
-        achieveAMBBahtQ1 = 0,
-        achieveAMBUnitQ1 = 0,
-        achieveAMBBahtQ2 = 0,
-        achieveAMBUnitQ2 = 0,
-        achieveAMBBahtQ3 = 0,
-        achieveAMBUnitQ3 = 0,
-        achieveAMBBahtQ4 = 0,
-        achieveAMBUnitQ4 = 0,
-        growthAMBBahtJanuary = 0,
-        growthAMBBahtFebruary = 0,
-        growthAMBBahtMarch = 0,
-        growthAMBBahtApril = 0,
-        growthAMBBahtMay = 0,
-        growthAMBBahtJune = 0,
-        growthAMBBahtJuly = 0,
-        growthAMBBahtAugust = 0,
-        growthAMBBahtSeptember = 0,
-        growthAMBBahtOctober = 0,
-        growthAMBBahtNovember = 0,
-        growthAMBBahtDecember = 0,
-        achieveAMBUnitJanuary = 0,
-        achieveAMBUnitFebruary = 0,
-        achieveAMBUnitMarch = 0,
-        achieveAMBUnitApril = 0,
-        achieveAMBUnitMay = 0,
-        achieveAMBUnitJune = 0,
-        achieveAMBUnitJuly = 0,
-        achieveAMBUnitAugust = 0,
-        achieveAMBUnitSeptember = 0,
-        achieveAMBUnitOctober = 0,
-        achieveAMBUnitNovember = 0,
-        achieveAMBUnitDecember = 0,
-        growthAMBUnitJanuary = 0,
-        growthAMBUnitFebruary = 0,
-        growthAMBUnitMarch = 0,
-        growthAMBUnitApril = 0,
-        growthAMBUnitMay = 0,
-        growthAMBUnitJune = 0,
-        growthAMBUnitJuly = 0,
-        growthAMBUnitAugust = 0,
-        growthAMBUnitSeptember = 0,
-        growthAMBUnitOctober = 0,
-        growthAMBUnitNovember = 0,
-        growthAMBUnitDecember = 0,
-        growthAMBBahtQ1 = 0,
-        growthAMBUnitQ1 = 0,
-        growthAMBBahtQ2 = 0,
-        growthAMBUnitQ2 = 0,
-        growthAMBBahtQ3 = 0,
-        growthAMBUnitQ3 = 0,
-        growthAMBBahtQ4 = 0,
-        growthAMBUnitQ4 = 0,
-        currMCBTotalBaht = 0,
-        currMCBTotalUnit = 0,
-        oldMCBTotalBaht = 0,
-        oldMCBTotalUnit = 0,
-        currMCBUnitJanuary = 0,
-        currMCBUnitFebruary = 0,
-        currMCBUnitMarch = 0,
-        currMCBUnitApril = 0,
-        currMCBUnitMay = 0,
-        currMCBUnitJune = 0,
-        currMCBUnitJuly = 0,
-        currMCBUnitAugust = 0,
-        currMCBUnitSeptember = 0,
-        currMCBUnitOctober = 0,
-        currMCBUnitNovember = 0,
-        currMCBUnitDecember = 0,
-        currMCBBahtJanuary = 0,
-        currMCBBahtFebruary = 0,
-        currMCBBahtMarch = 0,
-        currMCBBahtApril = 0,
-        currMCBBahtMay = 0,
-        currMCBBahtJune = 0,
-        currMCBBahtJuly = 0,
-        currMCBBahtAugust = 0,
-        currMCBBahtSeptember = 0,
-        currMCBBahtOctober = 0,
-        currMCBBahtNovember = 0,
-        currMCBBahtDecember = 0,
-        currMCBUnitQ1 = 0,
-        currMCBBahtQ1 = 0,
-        currMCBUnitQ2 = 0,
-        currMCBBahtQ2 = 0,
-        currMCBUnitQ3 = 0,
-        currMCBBahtQ3 = 0,
-        currMCBUnitQ4 = 0,
-        currMCBBahtQ4 = 0,
-        oldMCBUnitJanuary = 0,
-        oldMCBUnitFebruary = 0,
-        oldMCBUnitMarch = 0,
-        oldMCBUnitApril = 0,
-        oldMCBUnitMay = 0,
-        oldMCBUnitJune = 0,
-        oldMCBUnitJuly = 0,
-        oldMCBUnitAugust = 0,
-        oldMCBUnitSeptember = 0,
-        oldMCBUnitOctober = 0,
-        oldMCBUnitNovember = 0,
-        oldMCBUnitDecember = 0,
-        oldMCBBahtJanuary = 0,
-        oldMCBBahtFebruary = 0,
-        oldMCBBahtMarch = 0,
-        oldMCBBahtApril = 0,
-        oldMCBBahtMay = 0,
-        oldMCBBahtJune = 0,
-        oldMCBBahtJuly = 0,
-        oldMCBBahtAugust = 0,
-        oldMCBBahtSeptember = 0,
-        oldMCBBahtOctober = 0,
-        oldMCBBahtNovember = 0,
-        oldMCBBahtDecember = 0,
-        oldMCBUnitQ1 = 0,
-        oldMCBBahtQ1 = 0,
-        oldMCBUnitQ2 = 0,
-        oldMCBBahtQ2 = 0,
-        oldMCBUnitQ3 = 0,
-        oldMCBBahtQ3 = 0,
-        oldMCBUnitQ4 = 0,
-        oldMCBBahtQ4 = 0,
-        achieveMCBBahtJanuary = 0,
-        achieveMCBBahtFebruary = 0,
-        achieveMCBBahtMarch = 0,
-        achieveMCBBahtApril = 0,
-        achieveMCBBahtMay = 0,
-        achieveMCBBahtJune = 0,
-        achieveMCBBahtJuly = 0,
-        achieveMCBBahtAugust = 0,
-        achieveMCBBahtSeptember = 0,
-        achieveMCBBahtOctober = 0,
-        achieveMCBBahtNovember = 0,
-        achieveMCBBahtDecember = 0,
-        achieveMCBBahtQ1 = 0,
-        achieveMCBUnitQ1 = 0,
-        achieveMCBBahtQ2 = 0,
-        achieveMCBUnitQ2 = 0,
-        achieveMCBBahtQ3 = 0,
-        achieveMCBUnitQ3 = 0,
-        achieveMCBBahtQ4 = 0,
-        achieveMCBUnitQ4 = 0,
-        growthMCBBahtJanuary = 0,
-        growthMCBBahtFebruary = 0,
-        growthMCBBahtMarch = 0,
-        growthMCBBahtApril = 0,
-        growthMCBBahtMay = 0,
-        growthMCBBahtJune = 0,
-        growthMCBBahtJuly = 0,
-        growthMCBBahtAugust = 0,
-        growthMCBBahtSeptember = 0,
-        growthMCBBahtOctober = 0,
-        growthMCBBahtNovember = 0,
-        growthMCBBahtDecember = 0,
-        achieveMCBUnitJanuary = 0,
-        achieveMCBUnitFebruary = 0,
-        achieveMCBUnitMarch = 0,
-        achieveMCBUnitApril = 0,
-        achieveMCBUnitMay = 0,
-        achieveMCBUnitJune = 0,
-        achieveMCBUnitJuly = 0,
-        achieveMCBUnitAugust = 0,
-        achieveMCBUnitSeptember = 0,
-        achieveMCBUnitOctober = 0,
-        achieveMCBUnitNovember = 0,
-        achieveMCBUnitDecember = 0,
-        growthMCBUnitJanuary = 0,
-        growthMCBUnitFebruary = 0,
-        growthMCBUnitMarch = 0,
-        growthMCBUnitApril = 0,
-        growthMCBUnitMay = 0,
-        growthMCBUnitJune = 0,
-        growthMCBUnitJuly = 0,
-        growthMCBUnitAugust = 0,
-        growthMCBUnitSeptember = 0,
-        growthMCBUnitOctober = 0,
-        growthMCBUnitNovember = 0,
-        growthMCBUnitDecember = 0,
-        growthMCBBahtQ1 = 0,
-        growthMCBUnitQ1 = 0,
-        growthMCBBahtQ2 = 0,
-        growthMCBUnitQ2 = 0,
-        growthMCBBahtQ3 = 0,
-        growthMCBUnitQ3 = 0,
-        growthMCBBahtQ4 = 0,
-        growthMCBUnitQ4 = 0;
+    var targetNP = groupedItem.NP[0];
+    var targetEB = groupedItem.EB[0];
+    var targetIND = groupedItem.IND[0];
+    var targetOTH = groupedItem.Retifier[0];
+
+    var currEBTotalBaht = 0,
+        currEBTotalUnit = 0,
+        oldEBTotalBaht = 0,
+        oldEBTotalUnit = 0,
+        currEBUnitJanuary = 0,
+        currEBUnitFebruary = 0,
+        currEBUnitMarch = 0,
+        currEBUnitApril = 0,
+        currEBUnitMay = 0,
+        currEBUnitJune = 0,
+        currEBUnitJuly = 0,
+        currEBUnitAugust = 0,
+        currEBUnitSeptember = 0,
+        currEBUnitOctober = 0,
+        currEBUnitNovember = 0,
+        currEBUnitDecember = 0,
+        currEBBahtJanuary = 0,
+        currEBBahtFebruary = 0,
+        currEBBahtMarch = 0,
+        currEBBahtApril = 0,
+        currEBBahtMay = 0,
+        currEBBahtJune = 0,
+        currEBBahtJuly = 0,
+        currEBBahtAugust = 0,
+        currEBBahtSeptember = 0,
+        currEBBahtOctober = 0,
+        currEBBahtNovember = 0,
+        currEBBahtDecember = 0,
+        currEBUnitQ1 = 0,
+        currEBBahtQ1 = 0,
+        currEBUnitQ2 = 0,
+        currEBBahtQ2 = 0,
+        currEBUnitQ3 = 0,
+        currEBBahtQ3 = 0,
+        currEBUnitQ4 = 0,
+        currEBBahtQ4 = 0,
+        oldEBUnitJanuary = 0,
+        oldEBUnitFebruary = 0,
+        oldEBUnitMarch = 0,
+        oldEBUnitApril = 0,
+        oldEBUnitMay = 0,
+        oldEBUnitJune = 0,
+        oldEBUnitJuly = 0,
+        oldEBUnitAugust = 0,
+        oldEBUnitSeptember = 0,
+        oldEBUnitOctober = 0,
+        oldEBUnitNovember = 0,
+        oldEBUnitDecember = 0,
+        oldEBBahtJanuary = 0,
+        oldEBBahtFebruary = 0,
+        oldEBBahtMarch = 0,
+        oldEBBahtApril = 0,
+        oldEBBahtMay = 0,
+        oldEBBahtJune = 0,
+        oldEBBahtJuly = 0,
+        oldEBBahtAugust = 0,
+        oldEBBahtSeptember = 0,
+        oldEBBahtOctober = 0,
+        oldEBBahtNovember = 0,
+        oldEBBahtDecember = 0,
+        oldEBUnitQ1 = 0,
+        oldEBBahtQ1 = 0,
+        oldEBUnitQ2 = 0,
+        oldEBBahtQ2 = 0,
+        oldEBUnitQ3 = 0,
+        oldEBBahtQ3 = 0,
+        oldEBUnitQ4 = 0,
+        oldEBBahtQ4 = 0,
+        achieveEBBahtJanuary = 0,
+        achieveEBBahtFebruary = 0,
+        achieveEBBahtMarch = 0,
+        achieveEBBahtApril = 0,
+        achieveEBBahtMay = 0,
+        achieveEBBahtJune = 0,
+        achieveEBBahtJuly = 0,
+        achieveEBBahtAugust = 0,
+        achieveEBBahtSeptember = 0,
+        achieveEBBahtOctober = 0,
+        achieveEBBahtNovember = 0,
+        achieveEBBahtDecember = 0,
+        achieveEBBahtQ1 = 0,
+        achieveEBUnitQ1 = 0,
+        achieveEBBahtQ2 = 0,
+        achieveEBUnitQ2 = 0,
+        achieveEBBahtQ3 = 0,
+        achieveEBUnitQ3 = 0,
+        achieveEBBahtQ4 = 0,
+        achieveEBUnitQ4 = 0,
+        growthEBBahtJanuary = 0,
+        growthEBBahtFebruary = 0,
+        growthEBBahtMarch = 0,
+        growthEBBahtApril = 0,
+        growthEBBahtMay = 0,
+        growthEBBahtJune = 0,
+        growthEBBahtJuly = 0,
+        growthEBBahtAugust = 0,
+        growthEBBahtSeptember = 0,
+        growthEBBahtOctober = 0,
+        growthEBBahtNovember = 0,
+        growthEBBahtDecember = 0,
+        achieveEBUnitJanuary = 0,
+        achieveEBUnitFebruary = 0,
+        achieveEBUnitMarch = 0,
+        achieveEBUnitApril = 0,
+        achieveEBUnitMay = 0,
+        achieveEBUnitJune = 0,
+        achieveEBUnitJuly = 0,
+        achieveEBUnitAugust = 0,
+        achieveEBUnitSeptember = 0,
+        achieveEBUnitOctober = 0,
+        achieveEBUnitNovember = 0,
+        achieveEBUnitDecember = 0,
+        growthEBUnitJanuary = 0,
+        growthEBUnitFebruary = 0,
+        growthEBUnitMarch = 0,
+        growthEBUnitApril = 0,
+        growthEBUnitMay = 0,
+        growthEBUnitJune = 0,
+        growthEBUnitJuly = 0,
+        growthEBUnitAugust = 0,
+        growthEBUnitSeptember = 0,
+        growthEBUnitOctober = 0,
+        growthEBUnitNovember = 0,
+        growthEBUnitDecember = 0,
+        growthEBBahtQ1 = 0,
+        growthEBUnitQ1 = 0,
+        growthEBBahtQ2 = 0,
+        growthEBUnitQ2 = 0,
+        growthEBBahtQ3 = 0,
+        growthEBUnitQ3 = 0,
+        growthEBBahtQ4 = 0,
+        growthEBUnitQ4 = 0,
+        currNPTotalBaht = 0,
+        currNPTotalUnit = 0,
+        oldNPTotalBaht = 0,
+        oldNPTotalUnit = 0,
+        currNPUnitJanuary = 0,
+        currNPUnitFebruary = 0,
+        currNPUnitMarch = 0,
+        currNPUnitApril = 0,
+        currNPUnitMay = 0,
+        currNPUnitJune = 0,
+        currNPUnitJuly = 0,
+        currNPUnitAugust = 0,
+        currNPUnitSeptember = 0,
+        currNPUnitOctober = 0,
+        currNPUnitNovember = 0,
+        currNPUnitDecember = 0,
+        currNPBahtJanuary = 0,
+        currNPBahtFebruary = 0,
+        currNPBahtMarch = 0,
+        currNPBahtApril = 0,
+        currNPBahtMay = 0,
+        currNPBahtJune = 0,
+        currNPBahtJuly = 0,
+        currNPBahtAugust = 0,
+        currNPBahtSeptember = 0,
+        currNPBahtOctober = 0,
+        currNPBahtNovember = 0,
+        currNPBahtDecember = 0,
+        currNPUnitQ1 = 0,
+        currNPBahtQ1 = 0,
+        currNPUnitQ2 = 0,
+        currNPBahtQ2 = 0,
+        currNPUnitQ3 = 0,
+        currNPBahtQ3 = 0,
+        currNPUnitQ4 = 0,
+        currNPBahtQ4 = 0,
+        oldNPUnitJanuary = 0,
+        oldNPUnitFebruary = 0,
+        oldNPUnitMarch = 0,
+        oldNPUnitApril = 0,
+        oldNPUnitMay = 0,
+        oldNPUnitJune = 0,
+        oldNPUnitJuly = 0,
+        oldNPUnitAugust = 0,
+        oldNPUnitSeptember = 0,
+        oldNPUnitOctober = 0,
+        oldNPUnitNovember = 0,
+        oldNPUnitDecember = 0,
+        oldNPBahtJanuary = 0,
+        oldNPBahtFebruary = 0,
+        oldNPBahtMarch = 0,
+        oldNPBahtApril = 0,
+        oldNPBahtMay = 0,
+        oldNPBahtJune = 0,
+        oldNPBahtJuly = 0,
+        oldNPBahtAugust = 0,
+        oldNPBahtSeptember = 0,
+        oldNPBahtOctober = 0,
+        oldNPBahtNovember = 0,
+        oldNPBahtDecember = 0,
+        oldNPUnitQ1 = 0,
+        oldNPBahtQ1 = 0,
+        oldNPUnitQ2 = 0,
+        oldNPBahtQ2 = 0,
+        oldNPUnitQ3 = 0,
+        oldNPBahtQ3 = 0,
+        oldNPUnitQ4 = 0,
+        oldNPBahtQ4 = 0,
+        achieveNPBahtJanuary = 0,
+        achieveNPBahtFebruary = 0,
+        achieveNPBahtMarch = 0,
+        achieveNPBahtApril = 0,
+        achieveNPBahtMay = 0,
+        achieveNPBahtJune = 0,
+        achieveNPBahtJuly = 0,
+        achieveNPBahtAugust = 0,
+        achieveNPBahtSeptember = 0,
+        achieveNPBahtOctober = 0,
+        achieveNPBahtNovember = 0,
+        achieveNPBahtDecember = 0,
+        achieveNPBahtQ1 = 0,
+        achieveNPUnitQ1 = 0,
+        achieveNPBahtQ2 = 0,
+        achieveNPUnitQ2 = 0,
+        achieveNPBahtQ3 = 0,
+        achieveNPUnitQ3 = 0,
+        achieveNPBahtQ4 = 0,
+        achieveNPUnitQ4 = 0,
+        growthNPBahtJanuary = 0,
+        growthNPBahtFebruary = 0,
+        growthNPBahtMarch = 0,
+        growthNPBahtApril = 0,
+        growthNPBahtMay = 0,
+        growthNPBahtJune = 0,
+        growthNPBahtJuly = 0,
+        growthNPBahtAugust = 0,
+        growthNPBahtSeptember = 0,
+        growthNPBahtOctober = 0,
+        growthNPBahtNovember = 0,
+        growthNPBahtDecember = 0,
+        achieveNPUnitJanuary = 0,
+        achieveNPUnitFebruary = 0,
+        achieveNPUnitMarch = 0,
+        achieveNPUnitApril = 0,
+        achieveNPUnitMay = 0,
+        achieveNPUnitJune = 0,
+        achieveNPUnitJuly = 0,
+        achieveNPUnitAugust = 0,
+        achieveNPUnitSeptember = 0,
+        achieveNPUnitOctober = 0,
+        achieveNPUnitNovember = 0,
+        achieveNPUnitDecember = 0,
+        growthNPUnitJanuary = 0,
+        growthNPUnitFebruary = 0,
+        growthNPUnitMarch = 0,
+        growthNPUnitApril = 0,
+        growthNPUnitMay = 0,
+        growthNPUnitJune = 0,
+        growthNPUnitJuly = 0,
+        growthNPUnitAugust = 0,
+        growthNPUnitSeptember = 0,
+        growthNPUnitOctober = 0,
+        growthNPUnitNovember = 0,
+        growthNPUnitDecember = 0,
+        growthNPBahtQ1 = 0,
+        growthNPUnitQ1 = 0,
+        growthNPBahtQ2 = 0,
+        growthNPUnitQ2 = 0,
+        growthNPBahtQ3 = 0,
+        growthNPUnitQ3 = 0,
+        growthNPBahtQ4 = 0,
+        growthNPUnitQ4 = 0,
+        currINDTotalBaht = 0,
+        currINDTotalUnit = 0,
+        oldINDTotalBaht = 0,
+        oldINDTotalUnit = 0,
+        currINDUnitJanuary = 0,
+        currINDUnitFebruary = 0,
+        currINDUnitMarch = 0,
+        currINDUnitApril = 0,
+        currINDUnitMay = 0,
+        currINDUnitJune = 0,
+        currINDUnitJuly = 0,
+        currINDUnitAugust = 0,
+        currINDUnitSeptember = 0,
+        currINDUnitOctober = 0,
+        currINDUnitNovember = 0,
+        currINDUnitDecember = 0,
+        currINDBahtJanuary = 0,
+        currINDBahtFebruary = 0,
+        currINDBahtMarch = 0,
+        currINDBahtApril = 0,
+        currINDBahtMay = 0,
+        currINDBahtJune = 0,
+        currINDBahtJuly = 0,
+        currINDBahtAugust = 0,
+        currINDBahtSeptember = 0,
+        currINDBahtOctober = 0,
+        currINDBahtNovember = 0,
+        currINDBahtDecember = 0,
+        currINDUnitQ1 = 0,
+        currINDBahtQ1 = 0,
+        currINDUnitQ2 = 0,
+        currINDBahtQ2 = 0,
+        currINDUnitQ3 = 0,
+        currINDBahtQ3 = 0,
+        currINDUnitQ4 = 0,
+        currINDBahtQ4 = 0,
+        oldINDUnitJanuary = 0,
+        oldINDUnitFebruary = 0,
+        oldINDUnitMarch = 0,
+        oldINDUnitApril = 0,
+        oldINDUnitMay = 0,
+        oldINDUnitJune = 0,
+        oldINDUnitJuly = 0,
+        oldINDUnitAugust = 0,
+        oldINDUnitSeptember = 0,
+        oldINDUnitOctober = 0,
+        oldINDUnitNovember = 0,
+        oldINDUnitDecember = 0,
+        oldINDBahtJanuary = 0,
+        oldINDBahtFebruary = 0,
+        oldINDBahtMarch = 0,
+        oldINDBahtApril = 0,
+        oldINDBahtMay = 0,
+        oldINDBahtJune = 0,
+        oldINDBahtJuly = 0,
+        oldINDBahtAugust = 0,
+        oldINDBahtSeptember = 0,
+        oldINDBahtOctober = 0,
+        oldINDBahtNovember = 0,
+        oldINDBahtDecember = 0,
+        oldINDUnitQ1 = 0,
+        oldINDBahtQ1 = 0,
+        oldINDUnitQ2 = 0,
+        oldINDBahtQ2 = 0,
+        oldINDUnitQ3 = 0,
+        oldINDBahtQ3 = 0,
+        oldINDUnitQ4 = 0,
+        oldINDBahtQ4 = 0,
+        achieveINDBahtJanuary = 0,
+        achieveINDBahtFebruary = 0,
+        achieveINDBahtMarch = 0,
+        achieveINDBahtApril = 0,
+        achieveINDBahtMay = 0,
+        achieveINDBahtJune = 0,
+        achieveINDBahtJuly = 0,
+        achieveINDBahtAugust = 0,
+        achieveINDBahtSeptember = 0,
+        achieveINDBahtOctober = 0,
+        achieveINDBahtNovember = 0,
+        achieveINDBahtDecember = 0,
+        achieveINDBahtQ1 = 0,
+        achieveINDUnitQ1 = 0,
+        achieveINDBahtQ2 = 0,
+        achieveINDUnitQ2 = 0,
+        achieveINDBahtQ3 = 0,
+        achieveINDUnitQ3 = 0,
+        achieveINDBahtQ4 = 0,
+        achieveINDUnitQ4 = 0,
+        growthINDBahtJanuary = 0,
+        growthINDBahtFebruary = 0,
+        growthINDBahtMarch = 0,
+        growthINDBahtApril = 0,
+        growthINDBahtMay = 0,
+        growthINDBahtJune = 0,
+        growthINDBahtJuly = 0,
+        growthINDBahtAugust = 0,
+        growthINDBahtSeptember = 0,
+        growthINDBahtOctober = 0,
+        growthINDBahtNovember = 0,
+        growthINDBahtDecember = 0,
+        achieveINDUnitJanuary = 0,
+        achieveINDUnitFebruary = 0,
+        achieveINDUnitMarch = 0,
+        achieveINDUnitApril = 0,
+        achieveINDUnitMay = 0,
+        achieveINDUnitJune = 0,
+        achieveINDUnitJuly = 0,
+        achieveINDUnitAugust = 0,
+        achieveINDUnitSeptember = 0,
+        achieveINDUnitOctober = 0,
+        achieveINDUnitNovember = 0,
+        achieveINDUnitDecember = 0,
+        growthINDUnitJanuary = 0,
+        growthINDUnitFebruary = 0,
+        growthINDUnitMarch = 0,
+        growthINDUnitApril = 0,
+        growthINDUnitMay = 0,
+        growthINDUnitJune = 0,
+        growthINDUnitJuly = 0,
+        growthINDUnitAugust = 0,
+        growthINDUnitSeptember = 0,
+        growthINDUnitOctober = 0,
+        growthINDUnitNovember = 0,
+        growthINDUnitDecember = 0,
+        growthINDBahtQ1 = 0,
+        growthINDUnitQ1 = 0,
+        growthINDBahtQ2 = 0,
+        growthINDUnitQ2 = 0,
+        growthINDBahtQ3 = 0,
+        growthINDUnitQ3 = 0,
+        growthINDBahtQ4 = 0,
+        growthINDUnitQ4 = 0,
+        currOTHTotalBaht = 0,
+        currOTHTotalUnit = 0,
+        oldOTHTotalBaht = 0,
+        oldOTHTotalUnit = 0,
+        currOTHUnitJanuary = 0,
+        currOTHUnitFebruary = 0,
+        currOTHUnitMarch = 0,
+        currOTHUnitApril = 0,
+        currOTHUnitMay = 0,
+        currOTHUnitJune = 0,
+        currOTHUnitJuly = 0,
+        currOTHUnitAugust = 0,
+        currOTHUnitSeptember = 0,
+        currOTHUnitOctober = 0,
+        currOTHUnitNovember = 0,
+        currOTHUnitDecember = 0,
+        currOTHBahtJanuary = 0,
+        currOTHBahtFebruary = 0,
+        currOTHBahtMarch = 0,
+        currOTHBahtApril = 0,
+        currOTHBahtMay = 0,
+        currOTHBahtJune = 0,
+        currOTHBahtJuly = 0,
+        currOTHBahtAugust = 0,
+        currOTHBahtSeptember = 0,
+        currOTHBahtOctober = 0,
+        currOTHBahtNovember = 0,
+        currOTHBahtDecember = 0,
+        currOTHUnitQ1 = 0,
+        currOTHBahtQ1 = 0,
+        currOTHUnitQ2 = 0,
+        currOTHBahtQ2 = 0,
+        currOTHUnitQ3 = 0,
+        currOTHBahtQ3 = 0,
+        currOTHUnitQ4 = 0,
+        currOTHBahtQ4 = 0,
+        oldOTHUnitJanuary = 0,
+        oldOTHUnitFebruary = 0,
+        oldOTHUnitMarch = 0,
+        oldOTHUnitApril = 0,
+        oldOTHUnitMay = 0,
+        oldOTHUnitJune = 0,
+        oldOTHUnitJuly = 0,
+        oldOTHUnitAugust = 0,
+        oldOTHUnitSeptember = 0,
+        oldOTHUnitOctober = 0,
+        oldOTHUnitNovember = 0,
+        oldOTHUnitDecember = 0,
+        oldOTHBahtJanuary = 0,
+        oldOTHBahtFebruary = 0,
+        oldOTHBahtMarch = 0,
+        oldOTHBahtApril = 0,
+        oldOTHBahtMay = 0,
+        oldOTHBahtJune = 0,
+        oldOTHBahtJuly = 0,
+        oldOTHBahtAugust = 0,
+        oldOTHBahtSeptember = 0,
+        oldOTHBahtOctober = 0,
+        oldOTHBahtNovember = 0,
+        oldOTHBahtDecember = 0,
+        oldOTHUnitQ1 = 0,
+        oldOTHBahtQ1 = 0,
+        oldOTHUnitQ2 = 0,
+        oldOTHBahtQ2 = 0,
+        oldOTHUnitQ3 = 0,
+        oldOTHBahtQ3 = 0,
+        oldOTHUnitQ4 = 0,
+        oldOTHBahtQ4 = 0,
+        achieveOTHBahtJanuary = 0,
+        achieveOTHBahtFebruary = 0,
+        achieveOTHBahtMarch = 0,
+        achieveOTHBahtApril = 0,
+        achieveOTHBahtMay = 0,
+        achieveOTHBahtJune = 0,
+        achieveOTHBahtJuly = 0,
+        achieveOTHBahtAugust = 0,
+        achieveOTHBahtSeptember = 0,
+        achieveOTHBahtOctober = 0,
+        achieveOTHBahtNovember = 0,
+        achieveOTHBahtDecember = 0,
+        achieveOTHBahtQ1 = 0,
+        achieveOTHUnitQ1 = 0,
+        achieveOTHBahtQ2 = 0,
+        achieveOTHUnitQ2 = 0,
+        achieveOTHBahtQ3 = 0,
+        achieveOTHUnitQ3 = 0,
+        achieveOTHBahtQ4 = 0,
+        achieveOTHUnitQ4 = 0,
+        growthOTHBahtJanuary = 0,
+        growthOTHBahtFebruary = 0,
+        growthOTHBahtMarch = 0,
+        growthOTHBahtApril = 0,
+        growthOTHBahtMay = 0,
+        growthOTHBahtJune = 0,
+        growthOTHBahtJuly = 0,
+        growthOTHBahtAugust = 0,
+        growthOTHBahtSeptember = 0,
+        growthOTHBahtOctober = 0,
+        growthOTHBahtNovember = 0,
+        growthOTHBahtDecember = 0,
+        achieveOTHUnitJanuary = 0,
+        achieveOTHUnitFebruary = 0,
+        achieveOTHUnitMarch = 0,
+        achieveOTHUnitApril = 0,
+        achieveOTHUnitMay = 0,
+        achieveOTHUnitJune = 0,
+        achieveOTHUnitJuly = 0,
+        achieveOTHUnitAugust = 0,
+        achieveOTHUnitSeptember = 0,
+        achieveOTHUnitOctober = 0,
+        achieveOTHUnitNovember = 0,
+        achieveOTHUnitDecember = 0,
+        growthOTHUnitJanuary = 0,
+        growthOTHUnitFebruary = 0,
+        growthOTHUnitMarch = 0,
+        growthOTHUnitApril = 0,
+        growthOTHUnitMay = 0,
+        growthOTHUnitJune = 0,
+        growthOTHUnitJuly = 0,
+        growthOTHUnitAugust = 0,
+        growthOTHUnitSeptember = 0,
+        growthOTHUnitOctober = 0,
+        growthOTHUnitNovember = 0,
+        growthOTHUnitDecember = 0,
+        growthOTHBahtQ1 = 0,
+        growthOTHUnitQ1 = 0,
+        growthOTHBahtQ2 = 0,
+        growthOTHUnitQ2 = 0,
+        growthOTHBahtQ3 = 0,
+        growthOTHUnitQ3 = 0,
+        growthOTHBahtQ4 = 0,
+        growthOTHUnitQ4 = 0;
 
     var groupedCurrYear = _.groupBy(currYear, function(currYear) {
         return currYear.ItemGroupShort;
@@ -1188,539 +1579,933 @@ function calData(year, data) {
         return oldYear.ItemGroupShort;
     });
 
-    $.each(groupedCurrYear.AMB, function() {
+    $.each(groupedCurrYear.NP, function() {
         if (this.DocMonth == '1') {
-            currAMBUnitJanuary += parseFloat(this.Quantity);
-            currAMBBahtJanuary += parseFloat(this.Total);
+            currNPUnitJanuary += parseFloat(this.Quantity);
+            currNPBahtJanuary += parseFloat(this.Total);
         } else if (this.DocMonth == '2') {
-            currAMBUnitFebruary += parseFloat(this.Quantity);
-            currAMBBahtFebruary += parseFloat(this.Total);
+            currNPUnitFebruary += parseFloat(this.Quantity);
+            currNPBahtFebruary += parseFloat(this.Total);
         } else if (this.DocMonth == '3') {
-            currAMBUnitMarch += parseFloat(this.Quantity);
-            currAMBBahtMarch += parseFloat(this.Total);
+            currNPUnitMarch += parseFloat(this.Quantity);
+            currNPBahtMarch += parseFloat(this.Total);
         } else if (this.DocMonth == '4') {
-            currAMBUnitApril += parseFloat(this.Quantity);
-            currAMBBahtApril += parseFloat(this.Total);
+            currNPUnitApril += parseFloat(this.Quantity);
+            currNPBahtApril += parseFloat(this.Total);
         } else if (this.DocMonth == '5') {
-            currAMBUnitMay += parseFloat(this.Quantity);
-            currAMBBahtMay += parseFloat(this.Total);
+            currNPUnitMay += parseFloat(this.Quantity);
+            currNPBahtMay += parseFloat(this.Total);
         } else if (this.DocMonth == '6') {
-            currAMBUnitJune += parseFloat(this.Quantity);
-            currAMBBahtJune += parseFloat(this.Total);
+            currNPUnitJune += parseFloat(this.Quantity);
+            currNPBahtJune += parseFloat(this.Total);
         } else if (this.DocMonth == '7') {
-            currAMBUnitJuly += parseFloat(this.Quantity);
-            currAMBBahtJuly += parseFloat(this.Total);
+            currNPUnitJuly += parseFloat(this.Quantity);
+            currNPBahtJuly += parseFloat(this.Total);
         } else if (this.DocMonth == '8') {
-            currAMBUnitAugust += parseFloat(this.Quantity);
-            currAMBBahtAugust += parseFloat(this.Total);
+            currNPUnitAugust += parseFloat(this.Quantity);
+            currNPBahtAugust += parseFloat(this.Total);
         } else if (this.DocMonth == '9') {
-            currAMBUnitSeptember += parseFloat(this.Quantity);
-            currAMBBahtSeptember += parseFloat(this.Total);
+            currNPUnitSeptember += parseFloat(this.Quantity);
+            currNPBahtSeptember += parseFloat(this.Total);
         } else if (this.DocMonth == '10') {
-            currAMBUnitOctober += parseFloat(this.Quantity);
-            currAMBBahtOctober += parseFloat(this.Total);
+            currNPUnitOctober += parseFloat(this.Quantity);
+            currNPBahtOctober += parseFloat(this.Total);
         } else if (this.DocMonth == '11') {
-            currAMBUnitNovember += parseFloat(this.Quantity);
-            currAMBBahtNovember += parseFloat(this.Total);
+            currNPUnitNovember += parseFloat(this.Quantity);
+            currNPBahtNovember += parseFloat(this.Total);
         } else if (this.DocMonth == '12') {
-            currAMBUnitDecember += parseFloat(this.Quantity);
-            currAMBBahtDecember += parseFloat(this.Total);
+            currNPUnitDecember += parseFloat(this.Quantity);
+            currNPBahtDecember += parseFloat(this.Total);
         }
 
-        currAMBTotalBaht += parseFloat(this.Total);
-        currAMBTotalUnit += parseFloat(this.Quantity);
+        currNPTotalBaht += parseFloat(this.Total);
+        currNPTotalUnit += parseFloat(this.Quantity);
 
     });
 
-    $.each(groupedCurrYear.MCB, function() {
+    $.each(groupedCurrYear.EB, function() {
         if (this.DocMonth == '1') {
-            currMCBUnitJanuary += parseFloat(this.Quantity);
-            currMCBBahtJanuary += parseFloat(this.Total);
+            currEBUnitJanuary += parseFloat(this.Quantity);
+            currEBBahtJanuary += parseFloat(this.Total);
         } else if (this.DocMonth == '2') {
-            currMCBUnitFebruary += parseFloat(this.Quantity);
-            currMCBBahtFebruary += parseFloat(this.Total);
+            currEBUnitFebruary += parseFloat(this.Quantity);
+            currEBBahtFebruary += parseFloat(this.Total);
         } else if (this.DocMonth == '3') {
-            currMCBUnitMarch += parseFloat(this.Quantity);
-            currMCBBahtMarch += parseFloat(this.Total);
+            currEBUnitMarch += parseFloat(this.Quantity);
+            currEBBahtMarch += parseFloat(this.Total);
         } else if (this.DocMonth == '4') {
-            currMCBUnitApril += parseFloat(this.Quantity);
-            currMCBBahtApril += parseFloat(this.Total);
+            currEBUnitApril += parseFloat(this.Quantity);
+            currEBBahtApril += parseFloat(this.Total);
         } else if (this.DocMonth == '5') {
-            currMCBUnitMay += parseFloat(this.Quantity);
-            currMCBBahtMay += parseFloat(this.Total);
+            currEBUnitMay += parseFloat(this.Quantity);
+            currEBBahtMay += parseFloat(this.Total);
         } else if (this.DocMonth == '6') {
-            currMCBUnitJune += parseFloat(this.Quantity);
-            currMCBBahtJune += parseFloat(this.Total);
+            currEBUnitJune += parseFloat(this.Quantity);
+            currEBBahtJune += parseFloat(this.Total);
         } else if (this.DocMonth == '7') {
-            currMCBUnitJuly += parseFloat(this.Quantity);
-            currMCBBahtJuly += parseFloat(this.Total);
+            currEBUnitJuly += parseFloat(this.Quantity);
+            currEBBahtJuly += parseFloat(this.Total);
         } else if (this.DocMonth == '8') {
-            currMCBUnitAugust += parseFloat(this.Quantity);
-            currMCBBahtAugust += parseFloat(this.Total);
+            currEBUnitAugust += parseFloat(this.Quantity);
+            currEBBahtAugust += parseFloat(this.Total);
         } else if (this.DocMonth == '9') {
-            currMCBUnitSeptember += parseFloat(this.Quantity);
-            currMCBBahtSeptember += parseFloat(this.Total);
+            currEBUnitSeptember += parseFloat(this.Quantity);
+            currEBBahtSeptember += parseFloat(this.Total);
         } else if (this.DocMonth == '10') {
-            currMCBUnitOctober += parseFloat(this.Quantity);
-            currMCBBahtOctober += parseFloat(this.Total);
+            currEBUnitOctober += parseFloat(this.Quantity);
+            currEBBahtOctober += parseFloat(this.Total);
         } else if (this.DocMonth == '11') {
-            currMCBUnitNovember += parseFloat(this.Quantity);
-            currMCBBahtNovember += parseFloat(this.Total);
+            currEBUnitNovember += parseFloat(this.Quantity);
+            currEBBahtNovember += parseFloat(this.Total);
         } else if (this.DocMonth == '12') {
-            currMCBUnitDecember += parseFloat(this.Quantity);
-            currMCBBahtDecember += parseFloat(this.Total);
+            currEBUnitDecember += parseFloat(this.Quantity);
+            currEBBahtDecember += parseFloat(this.Total);
         }
 
-        currMCBTotalBaht += parseFloat(this.Total);
-        currMCBTotalUnit += parseFloat(this.Quantity);
+        currEBTotalBaht += parseFloat(this.Total);
+        currEBTotalUnit += parseFloat(this.Quantity);
 
     });
 
-    $.each(groupedCurrYear.AMB, function() {
-        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
-            currAMBUnitQ1 += parseFloat(this.Quantity);
-            currAMBBahtQ1 += parseFloat(this.Total);
-        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
-            currAMBUnitQ2 += parseFloat(this.Quantity);
-            currAMBBahtQ2 += parseFloat(this.Total);
-        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
-            currAMBUnitQ3 += parseFloat(this.Quantity);
-            currAMBBahtQ3 += parseFloat(this.Total);
-        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
-            currAMBUnitQ4 += parseFloat(this.Quantity);
-            currAMBBahtQ4 += parseFloat(this.Total);
-        }
-
-    });
-
-    $.each(groupedCurrYear.MCB, function() {
-        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
-            currMCBUnitQ1 += parseFloat(this.Quantity);
-            currMCBBahtQ1 += parseFloat(this.Total);
-        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
-            currMCBUnitQ2 += parseFloat(this.Quantity);
-            currMCBBahtQ2 += parseFloat(this.Total);
-        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
-            currMCBUnitQ3 += parseFloat(this.Quantity);
-            currMCBBahtQ3 += parseFloat(this.Total);
-        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
-            currMCBUnitQ4 += parseFloat(this.Quantity);
-            currMCBBahtQ4 += parseFloat(this.Total);
-        }
-
-    });
-
-    $.each(groupedOldYear.AMB, function() {
+    $.each(groupedCurrYear.IND, function() {
         if (this.DocMonth == '1') {
-            oldAMBUnitJanuary += parseFloat(this.Quantity);
-            oldAMBBahtJanuary += parseFloat(this.Total);
+            currINDUnitJanuary += parseFloat(this.Quantity);
+            currINDBahtJanuary += parseFloat(this.Total);
         } else if (this.DocMonth == '2') {
-            oldAMBUnitFebruary += parseFloat(this.Quantity);
-            oldAMBBahtFebruary += parseFloat(this.Total);
+            currINDUnitFebruary += parseFloat(this.Quantity);
+            currINDBahtFebruary += parseFloat(this.Total);
         } else if (this.DocMonth == '3') {
-            oldAMBUnitMarch += parseFloat(this.Quantity);
-            oldAMBBahtMarch += parseFloat(this.Total);
+            currINDUnitMarch += parseFloat(this.Quantity);
+            currINDBahtMarch += parseFloat(this.Total);
         } else if (this.DocMonth == '4') {
-            oldAMBUnitApril += parseFloat(this.Quantity);
-            oldAMBBahtApril += parseFloat(this.Total);
+            currINDUnitApril += parseFloat(this.Quantity);
+            currINDBahtApril += parseFloat(this.Total);
         } else if (this.DocMonth == '5') {
-            oldAMBUnitMay += parseFloat(this.Quantity);
-            oldAMBBahtMay += parseFloat(this.Total);
+            currINDUnitMay += parseFloat(this.Quantity);
+            currINDBahtMay += parseFloat(this.Total);
         } else if (this.DocMonth == '6') {
-            oldAMBUnitJune += parseFloat(this.Quantity);
-            oldAMBBahtJune += parseFloat(this.Total);
+            currINDUnitJune += parseFloat(this.Quantity);
+            currINDBahtJune += parseFloat(this.Total);
         } else if (this.DocMonth == '7') {
-            oldAMBUnitJuly += parseFloat(this.Quantity);
-            oldAMBBahtJuly += parseFloat(this.Total);
+            currINDUnitJuly += parseFloat(this.Quantity);
+            currINDBahtJuly += parseFloat(this.Total);
         } else if (this.DocMonth == '8') {
-            oldAMBUnitAugust += parseFloat(this.Quantity);
-            oldAMBBahtAugust += parseFloat(this.Total);
+            currINDUnitAugust += parseFloat(this.Quantity);
+            currINDBahtAugust += parseFloat(this.Total);
         } else if (this.DocMonth == '9') {
-            oldAMBUnitSeptember += parseFloat(this.Quantity);
-            oldAMBBahtSeptember += parseFloat(this.Total);
+            currINDUnitSeptember += parseFloat(this.Quantity);
+            currINDBahtSeptember += parseFloat(this.Total);
         } else if (this.DocMonth == '10') {
-            oldAMBUnitOctober += parseFloat(this.Quantity);
-            oldAMBBahtOctober += parseFloat(this.Total);
+            currINDUnitOctober += parseFloat(this.Quantity);
+            currINDBahtOctober += parseFloat(this.Total);
         } else if (this.DocMonth == '11') {
-            oldAMBUnitNovember += parseFloat(this.Quantity);
-            oldAMBBahtNovember += parseFloat(this.Total);
+            currINDUnitNovember += parseFloat(this.Quantity);
+            currINDBahtNovember += parseFloat(this.Total);
         } else if (this.DocMonth == '12') {
-            oldAMBUnitDecember += parseFloat(this.Quantity);
-            oldAMBBahtDecember += parseFloat(this.Total);
+            currINDUnitDecember += parseFloat(this.Quantity);
+            currINDBahtDecember += parseFloat(this.Total);
         }
 
-        oldAMBTotalBaht += parseFloat(this.Total);
-        oldAMBTotalUnit += parseFloat(this.Quantity);
+        currINDTotalBaht += parseFloat(this.Total);
+        currINDTotalUnit += parseFloat(this.Quantity);
 
     });
 
-    $.each(groupedOldYear.MCB, function() {
+    $.each(groupedCurrYear.OTH, function() {
         if (this.DocMonth == '1') {
-            oldMCBUnitJanuary += parseFloat(this.Quantity);
-            oldMCBBahtJanuary += parseFloat(this.Total);
+            currOTHUnitJanuary += parseFloat(this.Quantity);
+            currOTHBahtJanuary += parseFloat(this.Total);
         } else if (this.DocMonth == '2') {
-            oldMCBUnitFebruary += parseFloat(this.Quantity);
-            oldMCBBahtFebruary += parseFloat(this.Total);
+            currOTHUnitFebruary += parseFloat(this.Quantity);
+            currOTHBahtFebruary += parseFloat(this.Total);
         } else if (this.DocMonth == '3') {
-            oldMCBUnitMarch += parseFloat(this.Quantity);
-            oldMCBBahtMarch += parseFloat(this.Total);
+            currOTHUnitMarch += parseFloat(this.Quantity);
+            currOTHBahtMarch += parseFloat(this.Total);
         } else if (this.DocMonth == '4') {
-            oldMCBUnitApril += parseFloat(this.Quantity);
-            oldMCBBahtApril += parseFloat(this.Total);
+            currOTHUnitApril += parseFloat(this.Quantity);
+            currOTHBahtApril += parseFloat(this.Total);
         } else if (this.DocMonth == '5') {
-            oldMCBUnitMay += parseFloat(this.Quantity);
-            oldMCBBahtMay += parseFloat(this.Total);
+            currOTHUnitMay += parseFloat(this.Quantity);
+            currOTHBahtMay += parseFloat(this.Total);
         } else if (this.DocMonth == '6') {
-            oldMCBUnitJune += parseFloat(this.Quantity);
-            oldMCBBahtJune += parseFloat(this.Total);
+            currOTHUnitJune += parseFloat(this.Quantity);
+            currOTHBahtJune += parseFloat(this.Total);
         } else if (this.DocMonth == '7') {
-            oldMCBUnitJuly += parseFloat(this.Quantity);
-            oldMCBBahtJuly += parseFloat(this.Total);
+            currOTHUnitJuly += parseFloat(this.Quantity);
+            currOTHBahtJuly += parseFloat(this.Total);
         } else if (this.DocMonth == '8') {
-            oldMCBUnitAugust += parseFloat(this.Quantity);
-            oldMCBBahtAugust += parseFloat(this.Total);
+            currOTHUnitAugust += parseFloat(this.Quantity);
+            currOTHBahtAugust += parseFloat(this.Total);
         } else if (this.DocMonth == '9') {
-            oldMCBUnitSeptember += parseFloat(this.Quantity);
-            oldMCBBahtSeptember += parseFloat(this.Total);
+            currOTHUnitSeptember += parseFloat(this.Quantity);
+            currOTHBahtSeptember += parseFloat(this.Total);
         } else if (this.DocMonth == '10') {
-            oldMCBUnitOctober += parseFloat(this.Quantity);
-            oldMCBBahtOctober += parseFloat(this.Total);
+            currOTHUnitOctober += parseFloat(this.Quantity);
+            currOTHBahtOctober += parseFloat(this.Total);
         } else if (this.DocMonth == '11') {
-            oldMCBUnitNovember += parseFloat(this.Quantity);
-            oldMCBBahtNovember += parseFloat(this.Total);
+            currOTHUnitNovember += parseFloat(this.Quantity);
+            currOTHBahtNovember += parseFloat(this.Total);
         } else if (this.DocMonth == '12') {
-            oldMCBUnitDecember += parseFloat(this.Quantity);
-            oldMCBBahtDecember += parseFloat(this.Total);
+            currOTHUnitDecember += parseFloat(this.Quantity);
+            currOTHBahtDecember += parseFloat(this.Total);
         }
 
-        oldMCBTotalBaht += parseFloat(this.Total);
-        oldMCBTotalUnit += parseFloat(this.Quantity);
+        currOTHTotalBaht += parseFloat(this.Total);
+        currOTHTotalUnit += parseFloat(this.Quantity);
 
     });
 
-    $.each(groupedOldYear.AMB, function() {
+    $.each(groupedCurrYear.NP, function() {
         if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
-            oldAMBUnitQ1 += parseFloat(this.Quantity);
-            oldAMBBahtQ1 += parseFloat(this.Total);
+            currNPUnitQ1 += parseFloat(this.Quantity);
+            currNPBahtQ1 += parseFloat(this.Total);
         } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
-            oldAMBUnitQ2 += parseFloat(this.Quantity);
-            oldAMBBahtQ2 += parseFloat(this.Total);
+            currNPUnitQ2 += parseFloat(this.Quantity);
+            currNPBahtQ2 += parseFloat(this.Total);
         } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
-            oldAMBUnitQ3 += parseFloat(this.Quantity);
-            oldAMBBahtQ3 += parseFloat(this.Total);
+            currNPUnitQ3 += parseFloat(this.Quantity);
+            currNPBahtQ3 += parseFloat(this.Total);
         } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
-            oldAMBUnitQ4 += parseFloat(this.Quantity);
-            oldAMBBahtQ4 += parseFloat(this.Total);
+            currNPUnitQ4 += parseFloat(this.Quantity);
+            currNPBahtQ4 += parseFloat(this.Total);
         }
 
     });
 
-    $.each(groupedOldYear.MCB, function() {
+    $.each(groupedCurrYear.EB, function() {
         if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
-            oldMCBUnitQ1 += parseFloat(this.Quantity);
-            oldMCBBahtQ1 += parseFloat(this.Total);
+            currEBUnitQ1 += parseFloat(this.Quantity);
+            currEBBahtQ1 += parseFloat(this.Total);
         } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
-            oldMCBUnitQ2 += parseFloat(this.Quantity);
-            oldMCBBahtQ2 += parseFloat(this.Total);
+            currEBUnitQ2 += parseFloat(this.Quantity);
+            currEBBahtQ2 += parseFloat(this.Total);
         } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
-            oldMCBUnitQ3 += parseFloat(this.Quantity);
-            oldMCBBahtQ3 += parseFloat(this.Total);
+            currEBUnitQ3 += parseFloat(this.Quantity);
+            currEBBahtQ3 += parseFloat(this.Total);
         } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
-            oldMCBUnitQ4 += parseFloat(this.Quantity);
-            oldMCBBahtQ4 += parseFloat(this.Total);
+            currEBUnitQ4 += parseFloat(this.Quantity);
+            currEBBahtQ4 += parseFloat(this.Total);
         }
 
     });
 
-    growthAMBBahtJanuary = ((currAMBBahtJanuary - oldAMBBahtJanuary) * 100) / oldAMBBahtJanuary;
-    growthAMBBahtFebruary = ((currAMBBahtFebruary - oldAMBBahtFebruary) * 100) / oldAMBBahtFebruary;
-    growthAMBBahtMarch = ((currAMBBahtMarch - oldAMBBahtMarch) * 100) / oldAMBBahtMarch;
-    growthAMBBahtApril = ((currAMBBahtApril - oldAMBBahtApril) * 100) / oldAMBBahtApril;
-    growthAMBBahtMay = ((currAMBBahtMay - oldAMBBahtMay) * 100) / oldAMBBahtMay;
-    growthAMBBahtJune = ((currAMBBahtJune - oldAMBBahtJune) * 100) / oldAMBBahtJune;
-    growthAMBBahtJuly = ((currAMBBahtJuly - oldAMBBahtJuly) * 100) / oldAMBBahtJuly;
-    growthAMBBahtAugust = ((currAMBBahtAugust - oldAMBBahtAugust) * 100) / oldAMBBahtAugust;
-    growthAMBBahtSeptember = ((currAMBBahtSeptember - oldAMBBahtSeptember) * 100) / oldAMBBahtSeptember;
-    growthAMBBahtOctober = ((currAMBBahtOctober - oldAMBBahtOctober) * 100) / oldAMBBahtOctober;
-    growthAMBBahtNovember = ((currAMBBahtNovember - oldAMBBahtNovember) * 100) / oldAMBBahtNovember;
-    growthAMBBahtDecember = ((currAMBBahtDecember - oldAMBBahtDecember) * 100) / oldAMBBahtDecember;
-    growthAMBBahtTotal = ((currAMBTotalBaht - oldAMBTotalBaht) * 100) / oldAMBTotalBaht;
-    growthAMBBahtQ1 = ((currAMBBahtQ1 - oldAMBBahtQ1) * 100) / oldAMBBahtQ1;
-    growthAMBBahtQ2 = ((currAMBBahtQ2 - oldAMBBahtQ2) * 100) / oldAMBBahtQ2;
-    growthAMBBahtQ3 = ((currAMBBahtQ3 - oldAMBBahtQ3) * 100) / oldAMBBahtQ3;
-    growthAMBBahtQ4 = ((currAMBBahtQ4 - oldAMBBahtQ4) * 100) / oldAMBBahtQ4;
+    $.each(groupedCurrYear.IND, function() {
+        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
+            currINDUnitQ1 += parseFloat(this.Quantity);
+            currINDBahtQ1 += parseFloat(this.Total);
+        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
+            currINDUnitQ2 += parseFloat(this.Quantity);
+            currINDBahtQ2 += parseFloat(this.Total);
+        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
+            currINDUnitQ3 += parseFloat(this.Quantity);
+            currINDBahtQ3 += parseFloat(this.Total);
+        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
+            currINDUnitQ4 += parseFloat(this.Quantity);
+            currINDBahtQ4 += parseFloat(this.Total);
+        }
 
-    growthAMBUnitJanuary = ((currAMBUnitJanuary - oldAMBUnitJanuary) * 100) / oldAMBUnitJanuary;
-    growthAMBUnitFebruary = ((currAMBUnitFebruary - oldAMBUnitFebruary) * 100) / oldAMBUnitFebruary;
-    growthAMBUnitMarch = ((currAMBUnitMarch - oldAMBUnitMarch) * 100) / oldAMBUnitMarch;
-    growthAMBUnitApril = ((currAMBUnitApril - oldAMBUnitApril) * 100) / oldAMBUnitApril;
-    growthAMBUnitMay = ((currAMBUnitMay - oldAMBUnitMay) * 100) / oldAMBUnitMay;
-    growthAMBUnitJune = ((currAMBUnitJune - oldAMBUnitJune) * 100) / oldAMBUnitJune;
-    growthAMBUnitJuly = ((currAMBUnitJuly - oldAMBUnitJuly) * 100) / oldAMBUnitJuly;
-    growthAMBUnitAugust = ((currAMBUnitAugust - oldAMBUnitAugust) * 100) / oldAMBUnitAugust;
-    growthAMBUnitSeptember = ((currAMBUnitSeptember - oldAMBUnitSeptember) * 100) / oldAMBUnitSeptember;
-    growthAMBUnitOctober = ((currAMBUnitOctober - oldAMBUnitOctober) * 100) / oldAMBUnitOctober;
-    growthAMBUnitNovember = ((currAMBUnitNovember - oldAMBUnitNovember) * 100) / oldAMBUnitNovember;
-    growthAMBUnitDecember = ((currAMBUnitDecember - oldAMBUnitDecember) * 100) / oldAMBUnitDecember;
-    growthAMBUnitTotal = ((currAMBTotalUnit - oldAMBTotalUnit) * 100) / oldAMBTotalUnit;
-    growthAMBUnitQ1 = ((currAMBUnitQ1 - oldAMBUnitQ1) * 100) / oldAMBUnitQ1;
-    growthAMBUnitQ2 = ((currAMBUnitQ2 - oldAMBUnitQ2) * 100) / oldAMBUnitQ2;
-    growthAMBUnitQ3 = ((currAMBUnitQ3 - oldAMBUnitQ3) * 100) / oldAMBUnitQ3;
-    growthAMBUnitQ4 = ((currAMBUnitQ4 - oldAMBUnitQ4) * 100) / oldAMBUnitQ4;
+    });
 
-    growthMCBBahtJanuary = ((currMCBBahtJanuary - oldMCBBahtJanuary) * 100) / oldMCBBahtJanuary;
-    growthMCBBahtFebruary = ((currMCBBahtFebruary - oldMCBBahtFebruary) * 100) / oldMCBBahtFebruary;
-    growthMCBBahtMarch = ((currMCBBahtMarch - oldMCBBahtMarch) * 100) / oldMCBBahtMarch;
-    growthMCBBahtApril = ((currMCBBahtApril - oldMCBBahtApril) * 100) / oldMCBBahtApril;
-    growthMCBBahtMay = ((currMCBBahtMay - oldMCBBahtMay) * 100) / oldMCBBahtMay;
-    growthMCBBahtJune = ((currMCBBahtJune - oldMCBBahtJune) * 100) / oldMCBBahtJune;
-    growthMCBBahtJuly = ((currMCBBahtJuly - oldMCBBahtJuly) * 100) / oldMCBBahtJuly;
-    growthMCBBahtAugust = ((currMCBBahtAugust - oldMCBBahtAugust) * 100) / oldMCBBahtAugust;
-    growthMCBBahtSeptember = ((currMCBBahtSeptember - oldMCBBahtSeptember) * 100) / oldMCBBahtSeptember;
-    growthMCBBahtOctober = ((currMCBBahtOctober - oldMCBBahtOctober) * 100) / oldMCBBahtOctober;
-    growthMCBBahtNovember = ((currMCBBahtNovember - oldMCBBahtNovember) * 100) / oldMCBBahtNovember;
-    growthMCBBahtDecember = ((currMCBBahtDecember - oldMCBBahtDecember) * 100) / oldMCBBahtDecember;
-    growthMCBBahtTotal = ((currMCBTotalBaht - oldMCBTotalBaht) * 100) / oldMCBTotalBaht;
-    growthMCBBahtQ1 = ((currMCBBahtQ1 - oldMCBBahtQ1) * 100) / oldMCBBahtQ1;
-    growthMCBBahtQ2 = ((currMCBBahtQ2 - oldMCBBahtQ2) * 100) / oldMCBBahtQ2;
-    growthMCBBahtQ3 = ((currMCBBahtQ3 - oldMCBBahtQ3) * 100) / oldMCBBahtQ3;
-    growthMCBBahtQ4 = ((currMCBBahtQ4 - oldMCBBahtQ4) * 100) / oldMCBBahtQ4;
+    $.each(groupedCurrYear.OTH, function() {
+        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
+            currOTHUnitQ1 += parseFloat(this.Quantity);
+            currOTHBahtQ1 += parseFloat(this.Total);
+        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
+            currOTHUnitQ2 += parseFloat(this.Quantity);
+            currOTHBahtQ2 += parseFloat(this.Total);
+        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
+            currOTHUnitQ3 += parseFloat(this.Quantity);
+            currOTHBahtQ3 += parseFloat(this.Total);
+        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
+            currOTHUnitQ4 += parseFloat(this.Quantity);
+            currOTHBahtQ4 += parseFloat(this.Total);
+        }
 
-    growthMCBUnitJanuary = ((currMCBUnitJanuary - oldMCBUnitJanuary) * 100) / oldMCBUnitJanuary;
-    growthMCBUnitFebruary = ((currMCBUnitFebruary - oldMCBUnitFebruary) * 100) / oldMCBUnitFebruary;
-    growthMCBUnitMarch = ((currMCBUnitMarch - oldMCBUnitMarch) * 100) / oldMCBUnitMarch;
-    growthMCBUnitApril = ((currMCBUnitApril - oldMCBUnitApril) * 100) / oldMCBUnitApril;
-    growthMCBUnitMay = ((currMCBUnitMay - oldMCBUnitMay) * 100) / oldMCBUnitMay;
-    growthMCBUnitJune = ((currMCBUnitJune - oldMCBUnitJune) * 100) / oldMCBUnitJune;
-    growthMCBUnitJuly = ((currMCBUnitJuly - oldMCBUnitJuly) * 100) / oldMCBUnitJuly;
-    growthMCBUnitAugust = ((currMCBUnitAugust - oldMCBUnitAugust) * 100) / oldMCBUnitAugust;
-    growthMCBUnitSeptember = ((currMCBUnitSeptember - oldMCBUnitSeptember) * 100) / oldMCBUnitSeptember;
-    growthMCBUnitOctober = ((currMCBUnitOctober - oldMCBUnitOctober) * 100) / oldMCBUnitOctober;
-    growthMCBUnitNovember = ((currMCBUnitNovember - oldMCBUnitNovember) * 100) / oldMCBUnitNovember;
-    growthMCBUnitDecember = ((currMCBUnitDecember - oldMCBUnitDecember) * 100) / oldMCBUnitDecember;
-    growthMCBUnitTotal = ((currMCBTotalUnit - oldMCBTotalUnit) * 100) / oldMCBTotalUnit;
-    growthMCBUnitQ1 = ((currMCBUnitQ1 - oldMCBUnitQ1) * 100) / oldMCBUnitQ1;
-    growthMCBUnitQ2 = ((currMCBUnitQ2 - oldMCBUnitQ2) * 100) / oldMCBUnitQ2;
-    growthMCBUnitQ3 = ((currMCBUnitQ3 - oldMCBUnitQ3) * 100) / oldMCBUnitQ3;
-    growthMCBUnitQ4 = ((currMCBUnitQ4 - oldMCBUnitQ4) * 100) / oldMCBUnitQ4;
+    });
 
-    var totalAMBBahtTarget = accounting.unformat(targetAMB.AmtQ1) + accounting.unformat(targetAMB.AmtQ2) + accounting.unformat(targetAMB.AmtQ3) + accounting.unformat(targetAMB.AmtQ4);
-    var totalAMBUnitTarget = accounting.unformat(targetAMB.UnitQ1) + accounting.unformat(targetAMB.UnitQ2) + accounting.unformat(targetAMB.UnitQ3) + accounting.unformat(targetAMB.UnitQ4);
-    var totalMCBBahtTarget = accounting.unformat(targetMCB.AmtQ1) + accounting.unformat(targetMCB.AmtQ2) + accounting.unformat(targetMCB.AmtQ3) + accounting.unformat(targetMCB.AmtQ4);
-    var totalMCBUnitTarget = accounting.unformat(targetMCB.UnitQ1) + accounting.unformat(targetMCB.UnitQ2) + accounting.unformat(targetMCB.UnitQ3) + accounting.unformat(targetMCB.UnitQ4);
 
-    achieveAMBBahtJanuary = (currAMBBahtJanuary * 100) / accounting.unformat(targetAMB.Amt01);
-    achieveAMBBahtFebruary = (currAMBBahtFebruary * 100) / accounting.unformat(targetAMB.Amt02);
-    achieveAMBBahtMarch = (currAMBBahtMarch * 100) / accounting.unformat(targetAMB.Amt03);
-    achieveAMBBahtApril = (currAMBBahtApril * 100) / accounting.unformat(targetAMB.Amt04);
-    achieveAMBBahtMay = (currAMBBahtMay * 100) / accounting.unformat(targetAMB.Amt05);
-    achieveAMBBahtJune = (currAMBBahtJune * 100) / accounting.unformat(targetAMB.Amt06);
-    achieveAMBBahtJuly = (currAMBBahtJuly * 100) / accounting.unformat(targetAMB.Amt07);
-    achieveAMBBahtAugust = (currAMBBahtAugust * 100) / accounting.unformat(targetAMB.Amt08);
-    achieveAMBBahtSeptember = (currAMBBahtSeptember * 100) / accounting.unformat(targetAMB.Amt09);
-    achieveAMBBahtOctober = (currAMBBahtOctober * 100) / accounting.unformat(targetAMB.Amt10);
-    achieveAMBBahtNovember = (currAMBBahtNovember * 100) / accounting.unformat(targetAMB.Amt11);
-    achieveAMBBahtDecember = (currAMBBahtDecember * 100) / accounting.unformat(targetAMB.Amt12);
-    achieveAMBBahtTotal = (currAMBTotalBaht * 100) / totalAMBBahtTarget;
-    achieveAMBBahtQ1 = (currAMBBahtQ1 * 100) / accounting.unformat(targetAMB.AmtQ1);
-    achieveAMBBahtQ2 = (currAMBBahtQ2 * 100) / accounting.unformat(targetAMB.AmtQ2);
-    achieveAMBBahtQ3 = (currAMBBahtQ3 * 100) / accounting.unformat(targetAMB.AmtQ3);
-    achieveAMBBahtQ4 = (currAMBBahtQ4 * 100) / accounting.unformat(targetAMB.AmtQ4);
+    $.each(groupedOldYear.NP, function() {
+        if (this.DocMonth == '1') {
+            oldNPUnitJanuary += parseFloat(this.Quantity);
+            oldNPBahtJanuary += parseFloat(this.Total);
+        } else if (this.DocMonth == '2') {
+            oldNPUnitFebruary += parseFloat(this.Quantity);
+            oldNPBahtFebruary += parseFloat(this.Total);
+        } else if (this.DocMonth == '3') {
+            oldNPUnitMarch += parseFloat(this.Quantity);
+            oldNPBahtMarch += parseFloat(this.Total);
+        } else if (this.DocMonth == '4') {
+            oldNPUnitApril += parseFloat(this.Quantity);
+            oldNPBahtApril += parseFloat(this.Total);
+        } else if (this.DocMonth == '5') {
+            oldNPUnitMay += parseFloat(this.Quantity);
+            oldNPBahtMay += parseFloat(this.Total);
+        } else if (this.DocMonth == '6') {
+            oldNPUnitJune += parseFloat(this.Quantity);
+            oldNPBahtJune += parseFloat(this.Total);
+        } else if (this.DocMonth == '7') {
+            oldNPUnitJuly += parseFloat(this.Quantity);
+            oldNPBahtJuly += parseFloat(this.Total);
+        } else if (this.DocMonth == '8') {
+            oldNPUnitAugust += parseFloat(this.Quantity);
+            oldNPBahtAugust += parseFloat(this.Total);
+        } else if (this.DocMonth == '9') {
+            oldNPUnitSeptember += parseFloat(this.Quantity);
+            oldNPBahtSeptember += parseFloat(this.Total);
+        } else if (this.DocMonth == '10') {
+            oldNPUnitOctober += parseFloat(this.Quantity);
+            oldNPBahtOctober += parseFloat(this.Total);
+        } else if (this.DocMonth == '11') {
+            oldNPUnitNovember += parseFloat(this.Quantity);
+            oldNPBahtNovember += parseFloat(this.Total);
+        } else if (this.DocMonth == '12') {
+            oldNPUnitDecember += parseFloat(this.Quantity);
+            oldNPBahtDecember += parseFloat(this.Total);
+        }
 
-    achieveAMBUnitJanuary = (currAMBUnitJanuary * 100) / accounting.unformat(targetAMB.Unit01);
-    achieveAMBUnitFebruary = (currAMBUnitFebruary * 100) / accounting.unformat(targetAMB.Unit02);
-    achieveAMBUnitMarch = (currAMBUnitMarch * 100) / accounting.unformat(targetAMB.Unit03);
-    achieveAMBUnitApril = (currAMBUnitApril * 100) / accounting.unformat(targetAMB.Unit04);
-    achieveAMBUnitMay = (currAMBUnitMay * 100) / accounting.unformat(targetAMB.Unit05);
-    achieveAMBUnitJune = (currAMBUnitJune * 100) / accounting.unformat(targetAMB.Unit06);
-    achieveAMBUnitJuly = (currAMBUnitJuly * 100) / accounting.unformat(targetAMB.Unit07);
-    achieveAMBUnitAugust = (currAMBUnitAugust * 100) / accounting.unformat(targetAMB.Unit08);
-    achieveAMBUnitSeptember = (currAMBUnitSeptember * 100) / accounting.unformat(targetAMB.Unit09);
-    achieveAMBUnitOctober = (currAMBUnitOctober * 100) / accounting.unformat(targetAMB.Unit10);
-    achieveAMBUnitNovember = (currAMBUnitNovember * 100) / accounting.unformat(targetAMB.Unit11);
-    achieveAMBUnitDecember = (currAMBUnitDecember * 100) / accounting.unformat(targetAMB.Unit12);
-    achieveAMBUnitTotal = (currAMBTotalUnit * 100) / totalAMBUnitTarget;
-    achieveAMBUnitQ1 = (currAMBUnitQ1 * 100) / accounting.unformat(targetAMB.UnitQ1);
-    achieveAMBUnitQ2 = (currAMBUnitQ2 * 100) / accounting.unformat(targetAMB.UnitQ2);
-    achieveAMBUnitQ3 = (currAMBUnitQ3 * 100) / accounting.unformat(targetAMB.UnitQ3);
-    achieveAMBUnitQ4 = (currAMBUnitQ4 * 100) / accounting.unformat(targetAMB.UnitQ4);
+        oldNPTotalBaht += parseFloat(this.Total);
+        oldNPTotalUnit += parseFloat(this.Quantity);
 
-    achieveMCBBahtJanuary = (currMCBBahtJanuary * 100) / accounting.unformat(targetMCB.Amt01);
-    achieveMCBBahtFebruary = (currMCBBahtFebruary * 100) / accounting.unformat(targetMCB.Amt02);
-    achieveMCBBahtMarch = (currMCBBahtMarch * 100) / accounting.unformat(targetMCB.Amt03);
-    achieveMCBBahtApril = (currMCBBahtApril * 100) / accounting.unformat(targetMCB.Amt04);
-    achieveMCBBahtMay = (currMCBBahtMay * 100) / accounting.unformat(targetMCB.Amt05);
-    achieveMCBBahtJune = (currMCBBahtJune * 100) / accounting.unformat(targetMCB.Amt06);
-    achieveMCBBahtJuly = (currMCBBahtJuly * 100) / accounting.unformat(targetMCB.Amt07);
-    achieveMCBBahtAugust = (currMCBBahtAugust * 100) / accounting.unformat(targetMCB.Amt08);
-    achieveMCBBahtSeptember = (currMCBBahtSeptember * 100) / accounting.unformat(targetMCB.Amt09);
-    achieveMCBBahtOctober = (currMCBBahtOctober * 100) / accounting.unformat(targetMCB.Amt10);
-    achieveMCBBahtNovember = (currMCBBahtNovember * 100) / accounting.unformat(targetMCB.Amt11);
-    achieveMCBBahtDecember = (currMCBBahtDecember * 100) / accounting.unformat(targetMCB.Amt12);
-    achieveMCBBahtTotal = (currMCBTotalBaht * 100) / totalMCBBahtTarget;
-    achieveMCBBahtQ1 = (currMCBBahtQ1 * 100) / accounting.unformat(targetMCB.AmtQ1);
-    achieveMCBBahtQ2 = (currMCBBahtQ2 * 100) / accounting.unformat(targetMCB.AmtQ2);
-    achieveMCBBahtQ3 = (currMCBBahtQ3 * 100) / accounting.unformat(targetMCB.AmtQ3);
-    achieveMCBBahtQ4 = (currMCBBahtQ4 * 100) / accounting.unformat(targetMCB.AmtQ4);
+    });
 
-    achieveMCBUnitJanuary = (currMCBUnitJanuary * 100) / accounting.unformat(targetMCB.Unit01);
-    achieveMCBUnitFebruary = (currMCBUnitFebruary * 100) / accounting.unformat(targetMCB.Unit02);
-    achieveMCBUnitMarch = (currMCBUnitMarch * 100) / accounting.unformat(targetMCB.Unit03);
-    achieveMCBUnitApril = (currMCBUnitApril * 100) / accounting.unformat(targetMCB.Unit04);
-    achieveMCBUnitMay = (currMCBUnitMay * 100) / accounting.unformat(targetMCB.Unit05);
-    achieveMCBUnitJune = (currMCBUnitJune * 100) / accounting.unformat(targetMCB.Unit06);
-    achieveMCBUnitJuly = (currMCBUnitJuly * 100) / accounting.unformat(targetMCB.Unit07);
-    achieveMCBUnitAugust = (currMCBUnitAugust * 100) / accounting.unformat(targetMCB.Unit08);
-    achieveMCBUnitSeptember = (currMCBUnitSeptember * 100) / accounting.unformat(targetMCB.Unit09);
-    achieveMCBUnitOctober = (currMCBUnitOctober * 100) / accounting.unformat(targetMCB.Unit10);
-    achieveMCBUnitNovember = (currMCBUnitNovember * 100) / accounting.unformat(targetMCB.Unit11);
-    achieveMCBUnitDecember = (currMCBUnitDecember * 100) / accounting.unformat(targetMCB.Unit12);
-    achieveMCBUnitTotal = (currMCBTotalUnit * 100) / totalMCBUnitTarget;
-    achieveMCBUnitQ1 = (currMCBUnitQ1 * 100) / accounting.unformat(targetMCB.UnitQ1);
-    achieveMCBUnitQ2 = (currMCBUnitQ2 * 100) / accounting.unformat(targetMCB.UnitQ2);
-    achieveMCBUnitQ3 = (currMCBUnitQ3 * 100) / accounting.unformat(targetMCB.UnitQ3);
-    achieveMCBUnitQ4 = (currMCBUnitQ4 * 100) / accounting.unformat(targetMCB.UnitQ4);
+    $.each(groupedOldYear.EB, function() {
+        if (this.DocMonth == '1') {
+            oldEBUnitJanuary += parseFloat(this.Quantity);
+            oldEBBahtJanuary += parseFloat(this.Total);
+        } else if (this.DocMonth == '2') {
+            oldEBUnitFebruary += parseFloat(this.Quantity);
+            oldEBBahtFebruary += parseFloat(this.Total);
+        } else if (this.DocMonth == '3') {
+            oldEBUnitMarch += parseFloat(this.Quantity);
+            oldEBBahtMarch += parseFloat(this.Total);
+        } else if (this.DocMonth == '4') {
+            oldEBUnitApril += parseFloat(this.Quantity);
+            oldEBBahtApril += parseFloat(this.Total);
+        } else if (this.DocMonth == '5') {
+            oldEBUnitMay += parseFloat(this.Quantity);
+            oldEBBahtMay += parseFloat(this.Total);
+        } else if (this.DocMonth == '6') {
+            oldEBUnitJune += parseFloat(this.Quantity);
+            oldEBBahtJune += parseFloat(this.Total);
+        } else if (this.DocMonth == '7') {
+            oldEBUnitJuly += parseFloat(this.Quantity);
+            oldEBBahtJuly += parseFloat(this.Total);
+        } else if (this.DocMonth == '8') {
+            oldEBUnitAugust += parseFloat(this.Quantity);
+            oldEBBahtAugust += parseFloat(this.Total);
+        } else if (this.DocMonth == '9') {
+            oldEBUnitSeptember += parseFloat(this.Quantity);
+            oldEBBahtSeptember += parseFloat(this.Total);
+        } else if (this.DocMonth == '10') {
+            oldEBUnitOctober += parseFloat(this.Quantity);
+            oldEBBahtOctober += parseFloat(this.Total);
+        } else if (this.DocMonth == '11') {
+            oldEBUnitNovember += parseFloat(this.Quantity);
+            oldEBBahtNovember += parseFloat(this.Total);
+        } else if (this.DocMonth == '12') {
+            oldEBUnitDecember += parseFloat(this.Quantity);
+            oldEBBahtDecember += parseFloat(this.Total);
+        }
 
-    var currTotalBaht = currAMBTotalBaht + currMCBTotalBaht,
-        currTotalUnit = currAMBTotalUnit + currMCBTotalUnit,
-        oldTotalBaht = oldAMBTotalBaht + oldMCBTotalBaht,
-        oldTotalUnit = oldAMBTotalUnit + oldMCBTotalUnit,
-        currUnitJanuary = currAMBUnitJanuary + currMCBUnitJanuary,
-        currUnitFebruary = currAMBUnitFebruary + currMCBUnitFebruary,
-        currUnitMarch = currAMBUnitMarch + currMCBUnitMarch,
-        currUnitApril = currAMBUnitApril + currMCBUnitApril,
-        currUnitMay = currAMBUnitMay + currMCBUnitMay,
-        currUnitJune = currAMBUnitJune + currMCBUnitJune,
-        currUnitJuly = currAMBUnitJuly + currMCBUnitJuly,
-        currUnitAugust = currAMBUnitAugust + currMCBUnitAugust,
-        currUnitSeptember = currAMBUnitSeptember + currMCBUnitSeptember,
-        currUnitOctober = currAMBUnitOctober + currMCBUnitOctober,
-        currUnitNovember = currAMBUnitNovember + currMCBUnitNovember,
-        currUnitDecember = currAMBUnitDecember + currMCBUnitDecember,
-        currBahtJanuary = currAMBBahtJanuary + currMCBBahtJanuary,
-        currBahtFebruary = currAMBBahtFebruary + currMCBBahtFebruary,
-        currBahtMarch = currAMBBahtMarch + currMCBBahtMarch,
-        currBahtApril = currAMBBahtApril + currMCBBahtApril,
-        currBahtMay = currAMBBahtMay + currMCBBahtMay,
-        currBahtJune = currAMBBahtJune + currMCBBahtJune,
-        currBahtJuly = currAMBBahtJuly + currMCBBahtJuly,
-        currBahtAugust = currAMBBahtAugust + currMCBBahtAugust,
-        currBahtSeptember = currAMBBahtSeptember + currMCBBahtSeptember,
-        currBahtOctober = currAMBBahtOctober + currMCBBahtOctober,
-        currBahtNovember = currAMBBahtNovember + currMCBBahtNovember,
-        currBahtDecember = currAMBBahtDecember + currMCBBahtDecember,
-        currUnitQ1 = currAMBUnitQ1 + currMCBUnitQ1,
-        currBahtQ1 = currAMBBahtQ1 + currMCBBahtQ1,
-        currUnitQ2 = currAMBUnitQ2 + currMCBUnitQ2,
-        currBahtQ2 = currAMBBahtQ2 + currMCBBahtQ2,
-        currUnitQ3 = currAMBUnitQ3 + currMCBUnitQ3,
-        currBahtQ3 = currAMBBahtQ3 + currMCBBahtQ3,
-        currUnitQ4 = currAMBUnitQ4 + currMCBUnitQ4,
-        currBahtQ4 = currAMBBahtQ4 + currMCBBahtQ4,
-        oldUnitJanuary = oldAMBUnitJanuary + oldMCBUnitJanuary,
-        oldUnitFebruary = oldAMBUnitFebruary + oldMCBUnitFebruary,
-        oldUnitMarch = oldAMBUnitMarch + oldMCBUnitMarch,
-        oldUnitApril = oldAMBUnitApril + oldMCBUnitApril,
-        oldUnitMay = oldAMBUnitMay + oldMCBUnitMay,
-        oldUnitJune = oldAMBUnitJune + oldMCBUnitJune,
-        oldUnitJuly = oldAMBUnitJuly + oldMCBUnitJuly,
-        oldUnitAugust = oldAMBUnitAugust + oldMCBUnitAugust,
-        oldUnitSeptember = oldAMBUnitSeptember + oldMCBUnitSeptember,
-        oldUnitOctober = oldAMBUnitOctober + oldMCBUnitOctober,
-        oldUnitNovember = oldAMBUnitNovember + oldMCBUnitNovember,
-        oldUnitDecember = oldAMBUnitDecember + oldMCBUnitDecember,
-        oldBahtJanuary = oldAMBBahtJanuary + oldMCBBahtJanuary,
-        oldBahtFebruary = oldAMBBahtFebruary + oldMCBBahtFebruary,
-        oldBahtMarch = oldAMBBahtMarch + oldMCBBahtMarch,
-        oldBahtApril = oldAMBBahtApril + oldMCBBahtApril,
-        oldBahtMay = oldAMBBahtMay + oldMCBBahtMay,
-        oldBahtJune = oldAMBBahtJune + oldMCBBahtJune,
-        oldBahtJuly = oldAMBBahtJuly + oldMCBBahtJuly,
-        oldBahtAugust = oldAMBBahtAugust + oldMCBBahtAugust,
-        oldBahtSeptember = oldAMBBahtSeptember + oldMCBBahtSeptember,
-        oldBahtOctober = oldAMBBahtOctober + oldMCBBahtOctober,
-        oldBahtNovember = oldAMBBahtNovember + oldMCBBahtNovember,
-        oldBahtDecember = oldAMBBahtDecember + oldMCBBahtDecember,
-        oldUnitQ1 = oldAMBUnitQ1 + oldMCBUnitQ1,
-        oldBahtQ1 = oldAMBBahtQ1 + oldMCBBahtQ1,
-        oldUnitQ2 = oldAMBUnitQ2 + oldMCBUnitQ2,
-        oldBahtQ2 = oldAMBBahtQ2 + oldMCBBahtQ2,
-        oldUnitQ3 = oldAMBUnitQ3 + oldMCBUnitQ3,
-        oldBahtQ3 = oldAMBBahtQ3 + oldMCBBahtQ3,
-        oldUnitQ4 = oldAMBUnitQ4 + oldMCBUnitQ4,
-        oldBahtQ4 = oldAMBBahtQ4 + oldMCBBahtQ4;
+        oldEBTotalBaht += parseFloat(this.Total);
+        oldEBTotalUnit += parseFloat(this.Quantity);
 
-    var totalBahtTarget = (accounting.unformat(targetAMB.AmtQ1) + accounting.unformat(targetAMB.AmtQ2) + accounting.unformat(targetAMB.AmtQ3) + accounting.unformat(targetAMB.AmtQ4) + accounting.unformat(targetMCB.AmtQ1) + accounting.unformat(targetMCB.AmtQ2) + accounting.unformat(targetMCB.AmtQ3) + accounting.unformat(targetMCB.AmtQ4));
-    var totalUnitTarget = (accounting.unformat(targetAMB.UnitQ1) + accounting.unformat(targetAMB.UnitQ2) + accounting.unformat(targetAMB.UnitQ3) + accounting.unformat(targetAMB.UnitQ4) + accounting.unformat(targetMCB.UnitQ1) + accounting.unformat(targetMCB.UnitQ2) + accounting.unformat(targetMCB.UnitQ3) + accounting.unformat(targetMCB.UnitQ4));
+    });
 
-    var achieveBahtJanuary = achieveAMBBahtJanuary + achieveMCBBahtJanuary,
-        achieveBahtFebruary = achieveAMBBahtFebruary + achieveMCBBahtFebruary,
-        achieveBahtMarch = achieveAMBBahtMarch + achieveMCBBahtMarch,
-        achieveBahtApril = achieveAMBBahtApril + achieveMCBBahtApril,
-        achieveBahtMay = achieveAMBBahtMay + achieveMCBBahtMay,
-        achieveBahtJune = achieveAMBBahtJune + achieveMCBBahtJune,
-        achieveBahtJuly = achieveAMBBahtJuly + achieveMCBBahtJuly,
-        achieveBahtAugust = achieveAMBBahtAugust + achieveMCBBahtAugust,
-        achieveBahtSeptember = achieveAMBBahtSeptember + achieveMCBBahtSeptember,
-        achieveBahtOctober = achieveAMBBahtOctober + achieveMCBBahtOctober,
-        achieveBahtNovember = achieveAMBBahtNovember + achieveMCBBahtNovember,
-        achieveBahtDecember = achieveAMBBahtDecember + achieveMCBBahtDecember,
+    $.each(groupedOldYear.IND, function() {
+        if (this.DocMonth == '1') {
+            oldINDUnitJanuary += parseFloat(this.Quantity);
+            oldINDBahtJanuary += parseFloat(this.Total);
+        } else if (this.DocMonth == '2') {
+            oldINDUnitFebruary += parseFloat(this.Quantity);
+            oldINDBahtFebruary += parseFloat(this.Total);
+        } else if (this.DocMonth == '3') {
+            oldINDUnitMarch += parseFloat(this.Quantity);
+            oldINDBahtMarch += parseFloat(this.Total);
+        } else if (this.DocMonth == '4') {
+            oldINDUnitApril += parseFloat(this.Quantity);
+            oldINDBahtApril += parseFloat(this.Total);
+        } else if (this.DocMonth == '5') {
+            oldINDUnitMay += parseFloat(this.Quantity);
+            oldINDBahtMay += parseFloat(this.Total);
+        } else if (this.DocMonth == '6') {
+            oldINDUnitJune += parseFloat(this.Quantity);
+            oldINDBahtJune += parseFloat(this.Total);
+        } else if (this.DocMonth == '7') {
+            oldINDUnitJuly += parseFloat(this.Quantity);
+            oldINDBahtJuly += parseFloat(this.Total);
+        } else if (this.DocMonth == '8') {
+            oldINDUnitAugust += parseFloat(this.Quantity);
+            oldINDBahtAugust += parseFloat(this.Total);
+        } else if (this.DocMonth == '9') {
+            oldINDUnitSeptember += parseFloat(this.Quantity);
+            oldINDBahtSeptember += parseFloat(this.Total);
+        } else if (this.DocMonth == '10') {
+            oldINDUnitOctober += parseFloat(this.Quantity);
+            oldINDBahtOctober += parseFloat(this.Total);
+        } else if (this.DocMonth == '11') {
+            oldINDUnitNovember += parseFloat(this.Quantity);
+            oldINDBahtNovember += parseFloat(this.Total);
+        } else if (this.DocMonth == '12') {
+            oldINDUnitDecember += parseFloat(this.Quantity);
+            oldINDBahtDecember += parseFloat(this.Total);
+        }
+
+        oldINDTotalBaht += parseFloat(this.Total);
+        oldINDTotalUnit += parseFloat(this.Quantity);
+
+    });
+
+    $.each(groupedOldYear.OTH, function() {
+        if (this.DocMonth == '1') {
+            oldOTHUnitJanuary += parseFloat(this.Quantity);
+            oldOTHBahtJanuary += parseFloat(this.Total);
+        } else if (this.DocMonth == '2') {
+            oldOTHUnitFebruary += parseFloat(this.Quantity);
+            oldOTHBahtFebruary += parseFloat(this.Total);
+        } else if (this.DocMonth == '3') {
+            oldOTHUnitMarch += parseFloat(this.Quantity);
+            oldOTHBahtMarch += parseFloat(this.Total);
+        } else if (this.DocMonth == '4') {
+            oldOTHUnitApril += parseFloat(this.Quantity);
+            oldOTHBahtApril += parseFloat(this.Total);
+        } else if (this.DocMonth == '5') {
+            oldOTHUnitMay += parseFloat(this.Quantity);
+            oldOTHBahtMay += parseFloat(this.Total);
+        } else if (this.DocMonth == '6') {
+            oldOTHUnitJune += parseFloat(this.Quantity);
+            oldOTHBahtJune += parseFloat(this.Total);
+        } else if (this.DocMonth == '7') {
+            oldOTHUnitJuly += parseFloat(this.Quantity);
+            oldOTHBahtJuly += parseFloat(this.Total);
+        } else if (this.DocMonth == '8') {
+            oldOTHUnitAugust += parseFloat(this.Quantity);
+            oldOTHBahtAugust += parseFloat(this.Total);
+        } else if (this.DocMonth == '9') {
+            oldOTHUnitSeptember += parseFloat(this.Quantity);
+            oldOTHBahtSeptember += parseFloat(this.Total);
+        } else if (this.DocMonth == '10') {
+            oldOTHUnitOctober += parseFloat(this.Quantity);
+            oldOTHBahtOctober += parseFloat(this.Total);
+        } else if (this.DocMonth == '11') {
+            oldOTHUnitNovember += parseFloat(this.Quantity);
+            oldOTHBahtNovember += parseFloat(this.Total);
+        } else if (this.DocMonth == '12') {
+            oldOTHUnitDecember += parseFloat(this.Quantity);
+            oldOTHBahtDecember += parseFloat(this.Total);
+        }
+
+        oldOTHTotalBaht += parseFloat(this.Total);
+        oldOTHTotalUnit += parseFloat(this.Quantity);
+
+    });
+
+    $.each(groupedOldYear.NP, function() {
+        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
+            oldNPUnitQ1 += parseFloat(this.Quantity);
+            oldNPBahtQ1 += parseFloat(this.Total);
+        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
+            oldNPUnitQ2 += parseFloat(this.Quantity);
+            oldNPBahtQ2 += parseFloat(this.Total);
+        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
+            oldNPUnitQ3 += parseFloat(this.Quantity);
+            oldNPBahtQ3 += parseFloat(this.Total);
+        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
+            oldNPUnitQ4 += parseFloat(this.Quantity);
+            oldNPBahtQ4 += parseFloat(this.Total);
+        }
+
+    });
+
+    $.each(groupedOldYear.EB, function() {
+        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
+            oldEBUnitQ1 += parseFloat(this.Quantity);
+            oldEBBahtQ1 += parseFloat(this.Total);
+        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
+            oldEBUnitQ2 += parseFloat(this.Quantity);
+            oldEBBahtQ2 += parseFloat(this.Total);
+        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
+            oldEBUnitQ3 += parseFloat(this.Quantity);
+            oldEBBahtQ3 += parseFloat(this.Total);
+        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
+            oldEBUnitQ4 += parseFloat(this.Quantity);
+            oldEBBahtQ4 += parseFloat(this.Total);
+        }
+
+    });
+
+    $.each(groupedOldYear.IND, function() {
+        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
+            oldINDUnitQ1 += parseFloat(this.Quantity);
+            oldINDBahtQ1 += parseFloat(this.Total);
+        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
+            oldINDUnitQ2 += parseFloat(this.Quantity);
+            oldINDBahtQ2 += parseFloat(this.Total);
+        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
+            oldINDUnitQ3 += parseFloat(this.Quantity);
+            oldINDBahtQ3 += parseFloat(this.Total);
+        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
+            oldINDUnitQ4 += parseFloat(this.Quantity);
+            oldINDBahtQ4 += parseFloat(this.Total);
+        }
+
+    });
+
+    $.each(groupedOldYear.OTH, function() {
+        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
+            oldOTHUnitQ1 += parseFloat(this.Quantity);
+            oldOTHBahtQ1 += parseFloat(this.Total);
+        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
+            oldOTHUnitQ2 += parseFloat(this.Quantity);
+            oldOTHBahtQ2 += parseFloat(this.Total);
+        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
+            oldOTHUnitQ3 += parseFloat(this.Quantity);
+            oldOTHBahtQ3 += parseFloat(this.Total);
+        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
+            oldOTHUnitQ4 += parseFloat(this.Quantity);
+            oldOTHBahtQ4 += parseFloat(this.Total);
+        }
+
+    });
+
+    growthNPBahtJanuary = ((currNPBahtJanuary - oldNPBahtJanuary) * 100) / oldNPBahtJanuary;
+    growthNPBahtFebruary = ((currNPBahtFebruary - oldNPBahtFebruary) * 100) / oldNPBahtFebruary;
+    growthNPBahtMarch = ((currNPBahtMarch - oldNPBahtMarch) * 100) / oldNPBahtMarch;
+    growthNPBahtApril = ((currNPBahtApril - oldNPBahtApril) * 100) / oldNPBahtApril;
+    growthNPBahtMay = ((currNPBahtMay - oldNPBahtMay) * 100) / oldNPBahtMay;
+    growthNPBahtJune = ((currNPBahtJune - oldNPBahtJune) * 100) / oldNPBahtJune;
+    growthNPBahtJuly = ((currNPBahtJuly - oldNPBahtJuly) * 100) / oldNPBahtJuly;
+    growthNPBahtAugust = ((currNPBahtAugust - oldNPBahtAugust) * 100) / oldNPBahtAugust;
+    growthNPBahtSeptember = ((currNPBahtSeptember - oldNPBahtSeptember) * 100) / oldNPBahtSeptember;
+    growthNPBahtOctober = ((currNPBahtOctober - oldNPBahtOctober) * 100) / oldNPBahtOctober;
+    growthNPBahtNovember = ((currNPBahtNovember - oldNPBahtNovember) * 100) / oldNPBahtNovember;
+    growthNPBahtDecember = ((currNPBahtDecember - oldNPBahtDecember) * 100) / oldNPBahtDecember;
+    growthNPBahtTotal = ((currNPTotalBaht - oldNPTotalBaht) * 100) / oldNPTotalBaht;
+    growthNPBahtQ1 = ((currNPBahtQ1 - oldNPBahtQ1) * 100) / oldNPBahtQ1;
+    growthNPBahtQ2 = ((currNPBahtQ2 - oldNPBahtQ2) * 100) / oldNPBahtQ2;
+    growthNPBahtQ3 = ((currNPBahtQ3 - oldNPBahtQ3) * 100) / oldNPBahtQ3;
+    growthNPBahtQ4 = ((currNPBahtQ4 - oldNPBahtQ4) * 100) / oldNPBahtQ4;
+
+    growthNPUnitJanuary = ((currNPUnitJanuary - oldNPUnitJanuary) * 100) / oldNPUnitJanuary;
+    growthNPUnitFebruary = ((currNPUnitFebruary - oldNPUnitFebruary) * 100) / oldNPUnitFebruary;
+    growthNPUnitMarch = ((currNPUnitMarch - oldNPUnitMarch) * 100) / oldNPUnitMarch;
+    growthNPUnitApril = ((currNPUnitApril - oldNPUnitApril) * 100) / oldNPUnitApril;
+    growthNPUnitMay = ((currNPUnitMay - oldNPUnitMay) * 100) / oldNPUnitMay;
+    growthNPUnitJune = ((currNPUnitJune - oldNPUnitJune) * 100) / oldNPUnitJune;
+    growthNPUnitJuly = ((currNPUnitJuly - oldNPUnitJuly) * 100) / oldNPUnitJuly;
+    growthNPUnitAugust = ((currNPUnitAugust - oldNPUnitAugust) * 100) / oldNPUnitAugust;
+    growthNPUnitSeptember = ((currNPUnitSeptember - oldNPUnitSeptember) * 100) / oldNPUnitSeptember;
+    growthNPUnitOctober = ((currNPUnitOctober - oldNPUnitOctober) * 100) / oldNPUnitOctober;
+    growthNPUnitNovember = ((currNPUnitNovember - oldNPUnitNovember) * 100) / oldNPUnitNovember;
+    growthNPUnitDecember = ((currNPUnitDecember - oldNPUnitDecember) * 100) / oldNPUnitDecember;
+    growthNPUnitTotal = ((currNPTotalUnit - oldNPTotalUnit) * 100) / oldNPTotalUnit;
+    growthNPUnitQ1 = ((currNPUnitQ1 - oldNPUnitQ1) * 100) / oldNPUnitQ1;
+    growthNPUnitQ2 = ((currNPUnitQ2 - oldNPUnitQ2) * 100) / oldNPUnitQ2;
+    growthNPUnitQ3 = ((currNPUnitQ3 - oldNPUnitQ3) * 100) / oldNPUnitQ3;
+    growthNPUnitQ4 = ((currNPUnitQ4 - oldNPUnitQ4) * 100) / oldNPUnitQ4;
+
+    growthEBBahtJanuary = ((currEBBahtJanuary - oldEBBahtJanuary) * 100) / oldEBBahtJanuary;
+    growthEBBahtFebruary = ((currEBBahtFebruary - oldEBBahtFebruary) * 100) / oldEBBahtFebruary;
+    growthEBBahtMarch = ((currEBBahtMarch - oldEBBahtMarch) * 100) / oldEBBahtMarch;
+    growthEBBahtApril = ((currEBBahtApril - oldEBBahtApril) * 100) / oldEBBahtApril;
+    growthEBBahtMay = ((currEBBahtMay - oldEBBahtMay) * 100) / oldEBBahtMay;
+    growthEBBahtJune = ((currEBBahtJune - oldEBBahtJune) * 100) / oldEBBahtJune;
+    growthEBBahtJuly = ((currEBBahtJuly - oldEBBahtJuly) * 100) / oldEBBahtJuly;
+    growthEBBahtAugust = ((currEBBahtAugust - oldEBBahtAugust) * 100) / oldEBBahtAugust;
+    growthEBBahtSeptember = ((currEBBahtSeptember - oldEBBahtSeptember) * 100) / oldEBBahtSeptember;
+    growthEBBahtOctober = ((currEBBahtOctober - oldEBBahtOctober) * 100) / oldEBBahtOctober;
+    growthEBBahtNovember = ((currEBBahtNovember - oldEBBahtNovember) * 100) / oldEBBahtNovember;
+    growthEBBahtDecember = ((currEBBahtDecember - oldEBBahtDecember) * 100) / oldEBBahtDecember;
+    growthEBBahtTotal = ((currEBTotalBaht - oldEBTotalBaht) * 100) / oldEBTotalBaht;
+    growthEBBahtQ1 = ((currEBBahtQ1 - oldEBBahtQ1) * 100) / oldEBBahtQ1;
+    growthEBBahtQ2 = ((currEBBahtQ2 - oldEBBahtQ2) * 100) / oldEBBahtQ2;
+    growthEBBahtQ3 = ((currEBBahtQ3 - oldEBBahtQ3) * 100) / oldEBBahtQ3;
+    growthEBBahtQ4 = ((currEBBahtQ4 - oldEBBahtQ4) * 100) / oldEBBahtQ4;
+
+    growthEBUnitJanuary = ((currEBUnitJanuary - oldEBUnitJanuary) * 100) / oldEBUnitJanuary;
+    growthEBUnitFebruary = ((currEBUnitFebruary - oldEBUnitFebruary) * 100) / oldEBUnitFebruary;
+    growthEBUnitMarch = ((currEBUnitMarch - oldEBUnitMarch) * 100) / oldEBUnitMarch;
+    growthEBUnitApril = ((currEBUnitApril - oldEBUnitApril) * 100) / oldEBUnitApril;
+    growthEBUnitMay = ((currEBUnitMay - oldEBUnitMay) * 100) / oldEBUnitMay;
+    growthEBUnitJune = ((currEBUnitJune - oldEBUnitJune) * 100) / oldEBUnitJune;
+    growthEBUnitJuly = ((currEBUnitJuly - oldEBUnitJuly) * 100) / oldEBUnitJuly;
+    growthEBUnitAugust = ((currEBUnitAugust - oldEBUnitAugust) * 100) / oldEBUnitAugust;
+    growthEBUnitSeptember = ((currEBUnitSeptember - oldEBUnitSeptember) * 100) / oldEBUnitSeptember;
+    growthEBUnitOctober = ((currEBUnitOctober - oldEBUnitOctober) * 100) / oldEBUnitOctober;
+    growthEBUnitNovember = ((currEBUnitNovember - oldEBUnitNovember) * 100) / oldEBUnitNovember;
+    growthEBUnitDecember = ((currEBUnitDecember - oldEBUnitDecember) * 100) / oldEBUnitDecember;
+    growthEBUnitTotal = ((currEBTotalUnit - oldEBTotalUnit) * 100) / oldEBTotalUnit;
+    growthEBUnitQ1 = ((currEBUnitQ1 - oldEBUnitQ1) * 100) / oldEBUnitQ1;
+    growthEBUnitQ2 = ((currEBUnitQ2 - oldEBUnitQ2) * 100) / oldEBUnitQ2;
+    growthEBUnitQ3 = ((currEBUnitQ3 - oldEBUnitQ3) * 100) / oldEBUnitQ3;
+    growthEBUnitQ4 = ((currEBUnitQ4 - oldEBUnitQ4) * 100) / oldEBUnitQ4;
+
+    growthINDBahtJanuary = ((currINDBahtJanuary - oldINDBahtJanuary) * 100) / oldINDBahtJanuary;
+    growthINDBahtFebruary = ((currINDBahtFebruary - oldINDBahtFebruary) * 100) / oldINDBahtFebruary;
+    growthINDBahtMarch = ((currINDBahtMarch - oldINDBahtMarch) * 100) / oldINDBahtMarch;
+    growthINDBahtApril = ((currINDBahtApril - oldINDBahtApril) * 100) / oldINDBahtApril;
+    growthINDBahtMay = ((currINDBahtMay - oldINDBahtMay) * 100) / oldINDBahtMay;
+    growthINDBahtJune = ((currINDBahtJune - oldINDBahtJune) * 100) / oldINDBahtJune;
+    growthINDBahtJuly = ((currINDBahtJuly - oldINDBahtJuly) * 100) / oldINDBahtJuly;
+    growthINDBahtAugust = ((currINDBahtAugust - oldINDBahtAugust) * 100) / oldINDBahtAugust;
+    growthINDBahtSeptember = ((currINDBahtSeptember - oldINDBahtSeptember) * 100) / oldINDBahtSeptember;
+    growthINDBahtOctober = ((currINDBahtOctober - oldINDBahtOctober) * 100) / oldINDBahtOctober;
+    growthINDBahtNovember = ((currINDBahtNovember - oldINDBahtNovember) * 100) / oldINDBahtNovember;
+    growthINDBahtDecember = ((currINDBahtDecember - oldINDBahtDecember) * 100) / oldINDBahtDecember;
+    growthINDBahtTotal = ((currINDTotalBaht - oldINDTotalBaht) * 100) / oldINDTotalBaht;
+    growthINDBahtQ1 = ((currINDBahtQ1 - oldINDBahtQ1) * 100) / oldINDBahtQ1;
+    growthINDBahtQ2 = ((currINDBahtQ2 - oldINDBahtQ2) * 100) / oldINDBahtQ2;
+    growthINDBahtQ3 = ((currINDBahtQ3 - oldINDBahtQ3) * 100) / oldINDBahtQ3;
+    growthINDBahtQ4 = ((currINDBahtQ4 - oldINDBahtQ4) * 100) / oldINDBahtQ4;
+
+    growthINDUnitJanuary = ((currINDUnitJanuary - oldINDUnitJanuary) * 100) / oldINDUnitJanuary;
+    growthINDUnitFebruary = ((currINDUnitFebruary - oldINDUnitFebruary) * 100) / oldINDUnitFebruary;
+    growthINDUnitMarch = ((currINDUnitMarch - oldINDUnitMarch) * 100) / oldINDUnitMarch;
+    growthINDUnitApril = ((currINDUnitApril - oldINDUnitApril) * 100) / oldINDUnitApril;
+    growthINDUnitMay = ((currINDUnitMay - oldINDUnitMay) * 100) / oldINDUnitMay;
+    growthINDUnitJune = ((currINDUnitJune - oldINDUnitJune) * 100) / oldINDUnitJune;
+    growthINDUnitJuly = ((currINDUnitJuly - oldINDUnitJuly) * 100) / oldINDUnitJuly;
+    growthINDUnitAugust = ((currINDUnitAugust - oldINDUnitAugust) * 100) / oldINDUnitAugust;
+    growthINDUnitSeptember = ((currINDUnitSeptember - oldINDUnitSeptember) * 100) / oldINDUnitSeptember;
+    growthINDUnitOctober = ((currINDUnitOctober - oldINDUnitOctober) * 100) / oldINDUnitOctober;
+    growthINDUnitNovember = ((currINDUnitNovember - oldINDUnitNovember) * 100) / oldINDUnitNovember;
+    growthINDUnitDecember = ((currINDUnitDecember - oldINDUnitDecember) * 100) / oldINDUnitDecember;
+    growthINDUnitTotal = ((currINDTotalUnit - oldINDTotalUnit) * 100) / oldINDTotalUnit;
+    growthINDUnitQ1 = ((currINDUnitQ1 - oldINDUnitQ1) * 100) / oldINDUnitQ1;
+    growthINDUnitQ2 = ((currINDUnitQ2 - oldINDUnitQ2) * 100) / oldINDUnitQ2;
+    growthINDUnitQ3 = ((currINDUnitQ3 - oldINDUnitQ3) * 100) / oldINDUnitQ3;
+    growthINDUnitQ4 = ((currINDUnitQ4 - oldINDUnitQ4) * 100) / oldINDUnitQ4;
+
+    growthOTHBahtJanuary = ((currOTHBahtJanuary - oldOTHBahtJanuary) * 100) / oldOTHBahtJanuary;
+    growthOTHBahtFebruary = ((currOTHBahtFebruary - oldOTHBahtFebruary) * 100) / oldOTHBahtFebruary;
+    growthOTHBahtMarch = ((currOTHBahtMarch - oldOTHBahtMarch) * 100) / oldOTHBahtMarch;
+    growthOTHBahtApril = ((currOTHBahtApril - oldOTHBahtApril) * 100) / oldOTHBahtApril;
+    growthOTHBahtMay = ((currOTHBahtMay - oldOTHBahtMay) * 100) / oldOTHBahtMay;
+    growthOTHBahtJune = ((currOTHBahtJune - oldOTHBahtJune) * 100) / oldOTHBahtJune;
+    growthOTHBahtJuly = ((currOTHBahtJuly - oldOTHBahtJuly) * 100) / oldOTHBahtJuly;
+    growthOTHBahtAugust = ((currOTHBahtAugust - oldOTHBahtAugust) * 100) / oldOTHBahtAugust;
+    growthOTHBahtSeptember = ((currOTHBahtSeptember - oldOTHBahtSeptember) * 100) / oldOTHBahtSeptember;
+    growthOTHBahtOctober = ((currOTHBahtOctober - oldOTHBahtOctober) * 100) / oldOTHBahtOctober;
+    growthOTHBahtNovember = ((currOTHBahtNovember - oldOTHBahtNovember) * 100) / oldOTHBahtNovember;
+    growthOTHBahtDecember = ((currOTHBahtDecember - oldOTHBahtDecember) * 100) / oldOTHBahtDecember;
+    growthOTHBahtTotal = ((currOTHTotalBaht - oldOTHTotalBaht) * 100) / oldOTHTotalBaht;
+    growthOTHBahtQ1 = ((currOTHBahtQ1 - oldOTHBahtQ1) * 100) / oldOTHBahtQ1;
+    growthOTHBahtQ2 = ((currOTHBahtQ2 - oldOTHBahtQ2) * 100) / oldOTHBahtQ2;
+    growthOTHBahtQ3 = ((currOTHBahtQ3 - oldOTHBahtQ3) * 100) / oldOTHBahtQ3;
+    growthOTHBahtQ4 = ((currOTHBahtQ4 - oldOTHBahtQ4) * 100) / oldOTHBahtQ4;
+
+    growthOTHUnitJanuary = ((currOTHUnitJanuary - oldOTHUnitJanuary) * 100) / oldOTHUnitJanuary;
+    growthOTHUnitFebruary = ((currOTHUnitFebruary - oldOTHUnitFebruary) * 100) / oldOTHUnitFebruary;
+    growthOTHUnitMarch = ((currOTHUnitMarch - oldOTHUnitMarch) * 100) / oldOTHUnitMarch;
+    growthOTHUnitApril = ((currOTHUnitApril - oldOTHUnitApril) * 100) / oldOTHUnitApril;
+    growthOTHUnitMay = ((currOTHUnitMay - oldOTHUnitMay) * 100) / oldOTHUnitMay;
+    growthOTHUnitJune = ((currOTHUnitJune - oldOTHUnitJune) * 100) / oldOTHUnitJune;
+    growthOTHUnitJuly = ((currOTHUnitJuly - oldOTHUnitJuly) * 100) / oldOTHUnitJuly;
+    growthOTHUnitAugust = ((currOTHUnitAugust - oldOTHUnitAugust) * 100) / oldOTHUnitAugust;
+    growthOTHUnitSeptember = ((currOTHUnitSeptember - oldOTHUnitSeptember) * 100) / oldOTHUnitSeptember;
+    growthOTHUnitOctober = ((currOTHUnitOctober - oldOTHUnitOctober) * 100) / oldOTHUnitOctober;
+    growthOTHUnitNovember = ((currOTHUnitNovember - oldOTHUnitNovember) * 100) / oldOTHUnitNovember;
+    growthOTHUnitDecember = ((currOTHUnitDecember - oldOTHUnitDecember) * 100) / oldOTHUnitDecember;
+    growthOTHUnitTotal = ((currOTHTotalUnit - oldOTHTotalUnit) * 100) / oldOTHTotalUnit;
+    growthOTHUnitQ1 = ((currOTHUnitQ1 - oldOTHUnitQ1) * 100) / oldOTHUnitQ1;
+    growthOTHUnitQ2 = ((currOTHUnitQ2 - oldOTHUnitQ2) * 100) / oldOTHUnitQ2;
+    growthOTHUnitQ3 = ((currOTHUnitQ3 - oldOTHUnitQ3) * 100) / oldOTHUnitQ3;
+    growthOTHUnitQ4 = ((currOTHUnitQ4 - oldOTHUnitQ4) * 100) / oldOTHUnitQ4;
+
+    var totalNPBahtTarget = accounting.unformat(targetNP.AmtQ1) + accounting.unformat(targetNP.AmtQ2) + accounting.unformat(targetNP.AmtQ3) + accounting.unformat(targetNP.AmtQ4);
+    var totalNPUnitTarget = accounting.unformat(targetNP.UnitQ1) + accounting.unformat(targetNP.UnitQ2) + accounting.unformat(targetNP.UnitQ3) + accounting.unformat(targetNP.UnitQ4);
+    var totalEBBahtTarget = accounting.unformat(targetEB.AmtQ1) + accounting.unformat(targetEB.AmtQ2) + accounting.unformat(targetEB.AmtQ3) + accounting.unformat(targetEB.AmtQ4);
+    var totalEBUnitTarget = accounting.unformat(targetEB.UnitQ1) + accounting.unformat(targetEB.UnitQ2) + accounting.unformat(targetEB.UnitQ3) + accounting.unformat(targetEB.UnitQ4);
+    var totalINDBahtTarget = accounting.unformat(targetIND.AmtQ1) + accounting.unformat(targetIND.AmtQ2) + accounting.unformat(targetIND.AmtQ3) + accounting.unformat(targetIND.AmtQ4);
+    var totalINDUnitTarget = accounting.unformat(targetIND.UnitQ1) + accounting.unformat(targetIND.UnitQ2) + accounting.unformat(targetIND.UnitQ3) + accounting.unformat(targetIND.UnitQ4);
+    var totalOTHBahtTarget = accounting.unformat(targetOTH.AmtQ1) + accounting.unformat(targetOTH.AmtQ2) + accounting.unformat(targetOTH.AmtQ3) + accounting.unformat(targetOTH.AmtQ4);
+    var totalOTHUnitTarget = accounting.unformat(targetOTH.UnitQ1) + accounting.unformat(targetOTH.UnitQ2) + accounting.unformat(targetOTH.UnitQ3) + accounting.unformat(targetOTH.UnitQ4);
+
+    achieveNPBahtJanuary = (currNPBahtJanuary * 100) / accounting.unformat(targetNP.Amt01);
+    achieveNPBahtFebruary = (currNPBahtFebruary * 100) / accounting.unformat(targetNP.Amt02);
+    achieveNPBahtMarch = (currNPBahtMarch * 100) / accounting.unformat(targetNP.Amt03);
+    achieveNPBahtApril = (currNPBahtApril * 100) / accounting.unformat(targetNP.Amt04);
+    achieveNPBahtMay = (currNPBahtMay * 100) / accounting.unformat(targetNP.Amt05);
+    achieveNPBahtJune = (currNPBahtJune * 100) / accounting.unformat(targetNP.Amt06);
+    achieveNPBahtJuly = (currNPBahtJuly * 100) / accounting.unformat(targetNP.Amt07);
+    achieveNPBahtAugust = (currNPBahtAugust * 100) / accounting.unformat(targetNP.Amt08);
+    achieveNPBahtSeptember = (currNPBahtSeptember * 100) / accounting.unformat(targetNP.Amt09);
+    achieveNPBahtOctober = (currNPBahtOctober * 100) / accounting.unformat(targetNP.Amt10);
+    achieveNPBahtNovember = (currNPBahtNovember * 100) / accounting.unformat(targetNP.Amt11);
+    achieveNPBahtDecember = (currNPBahtDecember * 100) / accounting.unformat(targetNP.Amt12);
+    achieveNPBahtTotal = (currNPTotalBaht * 100) / totalNPBahtTarget;
+    achieveNPBahtQ1 = (currNPBahtQ1 * 100) / accounting.unformat(targetNP.AmtQ1);
+    achieveNPBahtQ2 = (currNPBahtQ2 * 100) / accounting.unformat(targetNP.AmtQ2);
+    achieveNPBahtQ3 = (currNPBahtQ3 * 100) / accounting.unformat(targetNP.AmtQ3);
+    achieveNPBahtQ4 = (currNPBahtQ4 * 100) / accounting.unformat(targetNP.AmtQ4);
+
+    achieveNPUnitJanuary = (currNPUnitJanuary * 100) / accounting.unformat(targetNP.Unit01);
+    achieveNPUnitFebruary = (currNPUnitFebruary * 100) / accounting.unformat(targetNP.Unit02);
+    achieveNPUnitMarch = (currNPUnitMarch * 100) / accounting.unformat(targetNP.Unit03);
+    achieveNPUnitApril = (currNPUnitApril * 100) / accounting.unformat(targetNP.Unit04);
+    achieveNPUnitMay = (currNPUnitMay * 100) / accounting.unformat(targetNP.Unit05);
+    achieveNPUnitJune = (currNPUnitJune * 100) / accounting.unformat(targetNP.Unit06);
+    achieveNPUnitJuly = (currNPUnitJuly * 100) / accounting.unformat(targetNP.Unit07);
+    achieveNPUnitAugust = (currNPUnitAugust * 100) / accounting.unformat(targetNP.Unit08);
+    achieveNPUnitSeptember = (currNPUnitSeptember * 100) / accounting.unformat(targetNP.Unit09);
+    achieveNPUnitOctober = (currNPUnitOctober * 100) / accounting.unformat(targetNP.Unit10);
+    achieveNPUnitNovember = (currNPUnitNovember * 100) / accounting.unformat(targetNP.Unit11);
+    achieveNPUnitDecember = (currNPUnitDecember * 100) / accounting.unformat(targetNP.Unit12);
+    achieveNPUnitTotal = (currNPTotalUnit * 100) / totalNPUnitTarget;
+    achieveNPUnitQ1 = (currNPUnitQ1 * 100) / accounting.unformat(targetNP.UnitQ1);
+    achieveNPUnitQ2 = (currNPUnitQ2 * 100) / accounting.unformat(targetNP.UnitQ2);
+    achieveNPUnitQ3 = (currNPUnitQ3 * 100) / accounting.unformat(targetNP.UnitQ3);
+    achieveNPUnitQ4 = (currNPUnitQ4 * 100) / accounting.unformat(targetNP.UnitQ4);
+
+    achieveEBBahtJanuary = (currEBBahtJanuary * 100) / accounting.unformat(targetEB.Amt01);
+    achieveEBBahtFebruary = (currEBBahtFebruary * 100) / accounting.unformat(targetEB.Amt02);
+    achieveEBBahtMarch = (currEBBahtMarch * 100) / accounting.unformat(targetEB.Amt03);
+    achieveEBBahtApril = (currEBBahtApril * 100) / accounting.unformat(targetEB.Amt04);
+    achieveEBBahtMay = (currEBBahtMay * 100) / accounting.unformat(targetEB.Amt05);
+    achieveEBBahtJune = (currEBBahtJune * 100) / accounting.unformat(targetEB.Amt06);
+    achieveEBBahtJuly = (currEBBahtJuly * 100) / accounting.unformat(targetEB.Amt07);
+    achieveEBBahtAugust = (currEBBahtAugust * 100) / accounting.unformat(targetEB.Amt08);
+    achieveEBBahtSeptember = (currEBBahtSeptember * 100) / accounting.unformat(targetEB.Amt09);
+    achieveEBBahtOctober = (currEBBahtOctober * 100) / accounting.unformat(targetEB.Amt10);
+    achieveEBBahtNovember = (currEBBahtNovember * 100) / accounting.unformat(targetEB.Amt11);
+    achieveEBBahtDecember = (currEBBahtDecember * 100) / accounting.unformat(targetEB.Amt12);
+    achieveEBBahtTotal = (currEBTotalBaht * 100) / totalEBBahtTarget;
+    achieveEBBahtQ1 = (currEBBahtQ1 * 100) / accounting.unformat(targetEB.AmtQ1);
+    achieveEBBahtQ2 = (currEBBahtQ2 * 100) / accounting.unformat(targetEB.AmtQ2);
+    achieveEBBahtQ3 = (currEBBahtQ3 * 100) / accounting.unformat(targetEB.AmtQ3);
+    achieveEBBahtQ4 = (currEBBahtQ4 * 100) / accounting.unformat(targetEB.AmtQ4);
+
+    achieveEBUnitJanuary = (currEBUnitJanuary * 100) / accounting.unformat(targetEB.Unit01);
+    achieveEBUnitFebruary = (currEBUnitFebruary * 100) / accounting.unformat(targetEB.Unit02);
+    achieveEBUnitMarch = (currEBUnitMarch * 100) / accounting.unformat(targetEB.Unit03);
+    achieveEBUnitApril = (currEBUnitApril * 100) / accounting.unformat(targetEB.Unit04);
+    achieveEBUnitMay = (currEBUnitMay * 100) / accounting.unformat(targetEB.Unit05);
+    achieveEBUnitJune = (currEBUnitJune * 100) / accounting.unformat(targetEB.Unit06);
+    achieveEBUnitJuly = (currEBUnitJuly * 100) / accounting.unformat(targetEB.Unit07);
+    achieveEBUnitAugust = (currEBUnitAugust * 100) / accounting.unformat(targetEB.Unit08);
+    achieveEBUnitSeptember = (currEBUnitSeptember * 100) / accounting.unformat(targetEB.Unit09);
+    achieveEBUnitOctober = (currEBUnitOctober * 100) / accounting.unformat(targetEB.Unit10);
+    achieveEBUnitNovember = (currEBUnitNovember * 100) / accounting.unformat(targetEB.Unit11);
+    achieveEBUnitDecember = (currEBUnitDecember * 100) / accounting.unformat(targetEB.Unit12);
+    achieveEBUnitTotal = (currEBTotalUnit * 100) / totalEBUnitTarget;
+    achieveEBUnitQ1 = (currEBUnitQ1 * 100) / accounting.unformat(targetEB.UnitQ1);
+    achieveEBUnitQ2 = (currEBUnitQ2 * 100) / accounting.unformat(targetEB.UnitQ2);
+    achieveEBUnitQ3 = (currEBUnitQ3 * 100) / accounting.unformat(targetEB.UnitQ3);
+    achieveEBUnitQ4 = (currEBUnitQ4 * 100) / accounting.unformat(targetEB.UnitQ4);
+
+    achieveINDBahtJanuary = (currINDBahtJanuary * 100) / accounting.unformat(targetIND.Amt01);
+    achieveINDBahtFebruary = (currINDBahtFebruary * 100) / accounting.unformat(targetIND.Amt02);
+    achieveINDBahtMarch = (currINDBahtMarch * 100) / accounting.unformat(targetIND.Amt03);
+    achieveINDBahtApril = (currINDBahtApril * 100) / accounting.unformat(targetIND.Amt04);
+    achieveINDBahtMay = (currINDBahtMay * 100) / accounting.unformat(targetIND.Amt05);
+    achieveINDBahtJune = (currINDBahtJune * 100) / accounting.unformat(targetIND.Amt06);
+    achieveINDBahtJuly = (currINDBahtJuly * 100) / accounting.unformat(targetIND.Amt07);
+    achieveINDBahtAugust = (currINDBahtAugust * 100) / accounting.unformat(targetIND.Amt08);
+    achieveINDBahtSeptember = (currINDBahtSeptember * 100) / accounting.unformat(targetIND.Amt09);
+    achieveINDBahtOctober = (currINDBahtOctober * 100) / accounting.unformat(targetIND.Amt10);
+    achieveINDBahtNovember = (currINDBahtNovember * 100) / accounting.unformat(targetIND.Amt11);
+    achieveINDBahtDecember = (currINDBahtDecember * 100) / accounting.unformat(targetIND.Amt12);
+    achieveINDBahtTotal = (currINDTotalBaht * 100) / totalINDBahtTarget;
+    achieveINDBahtQ1 = (currINDBahtQ1 * 100) / accounting.unformat(targetIND.AmtQ1);
+    achieveINDBahtQ2 = (currINDBahtQ2 * 100) / accounting.unformat(targetIND.AmtQ2);
+    achieveINDBahtQ3 = (currINDBahtQ3 * 100) / accounting.unformat(targetIND.AmtQ3);
+    achieveINDBahtQ4 = (currINDBahtQ4 * 100) / accounting.unformat(targetIND.AmtQ4);
+
+    achieveINDUnitJanuary = (currINDUnitJanuary * 100) / accounting.unformat(targetIND.Unit01);
+    achieveINDUnitFebruary = (currINDUnitFebruary * 100) / accounting.unformat(targetIND.Unit02);
+    achieveINDUnitMarch = (currINDUnitMarch * 100) / accounting.unformat(targetIND.Unit03);
+    achieveINDUnitApril = (currINDUnitApril * 100) / accounting.unformat(targetIND.Unit04);
+    achieveINDUnitMay = (currINDUnitMay * 100) / accounting.unformat(targetIND.Unit05);
+    achieveINDUnitJune = (currINDUnitJune * 100) / accounting.unformat(targetIND.Unit06);
+    achieveINDUnitJuly = (currINDUnitJuly * 100) / accounting.unformat(targetIND.Unit07);
+    achieveINDUnitAugust = (currINDUnitAugust * 100) / accounting.unformat(targetIND.Unit08);
+    achieveINDUnitSeptember = (currINDUnitSeptember * 100) / accounting.unformat(targetIND.Unit09);
+    achieveINDUnitOctober = (currINDUnitOctober * 100) / accounting.unformat(targetIND.Unit10);
+    achieveINDUnitNovember = (currINDUnitNovember * 100) / accounting.unformat(targetIND.Unit11);
+    achieveINDUnitDecember = (currINDUnitDecember * 100) / accounting.unformat(targetIND.Unit12);
+    achieveINDUnitTotal = (currINDTotalUnit * 100) / totalINDUnitTarget;
+    achieveINDUnitQ1 = (currINDUnitQ1 * 100) / accounting.unformat(targetIND.UnitQ1);
+    achieveINDUnitQ2 = (currINDUnitQ2 * 100) / accounting.unformat(targetIND.UnitQ2);
+    achieveINDUnitQ3 = (currINDUnitQ3 * 100) / accounting.unformat(targetIND.UnitQ3);
+    achieveINDUnitQ4 = (currINDUnitQ4 * 100) / accounting.unformat(targetIND.UnitQ4);
+
+    achieveOTHBahtJanuary = (currOTHBahtJanuary * 100) / accounting.unformat(targetOTH.Amt01);
+    achieveOTHBahtFebruary = (currOTHBahtFebruary * 100) / accounting.unformat(targetOTH.Amt02);
+    achieveOTHBahtMarch = (currOTHBahtMarch * 100) / accounting.unformat(targetOTH.Amt03);
+    achieveOTHBahtApril = (currOTHBahtApril * 100) / accounting.unformat(targetOTH.Amt04);
+    achieveOTHBahtMay = (currOTHBahtMay * 100) / accounting.unformat(targetOTH.Amt05);
+    achieveOTHBahtJune = (currOTHBahtJune * 100) / accounting.unformat(targetOTH.Amt06);
+    achieveOTHBahtJuly = (currOTHBahtJuly * 100) / accounting.unformat(targetOTH.Amt07);
+    achieveOTHBahtAugust = (currOTHBahtAugust * 100) / accounting.unformat(targetOTH.Amt08);
+    achieveOTHBahtSeptember = (currOTHBahtSeptember * 100) / accounting.unformat(targetOTH.Amt09);
+    achieveOTHBahtOctober = (currOTHBahtOctober * 100) / accounting.unformat(targetOTH.Amt10);
+    achieveOTHBahtNovember = (currOTHBahtNovember * 100) / accounting.unformat(targetOTH.Amt11);
+    achieveOTHBahtDecember = (currOTHBahtDecember * 100) / accounting.unformat(targetOTH.Amt12);
+    achieveOTHBahtTotal = (currOTHTotalBaht * 100) / totalOTHBahtTarget;
+    achieveOTHBahtQ1 = (currOTHBahtQ1 * 100) / accounting.unformat(targetOTH.AmtQ1);
+    achieveOTHBahtQ2 = (currOTHBahtQ2 * 100) / accounting.unformat(targetOTH.AmtQ2);
+    achieveOTHBahtQ3 = (currOTHBahtQ3 * 100) / accounting.unformat(targetOTH.AmtQ3);
+    achieveOTHBahtQ4 = (currOTHBahtQ4 * 100) / accounting.unformat(targetOTH.AmtQ4);
+
+    achieveOTHUnitJanuary = (currOTHUnitJanuary * 100) / accounting.unformat(targetOTH.Unit01);
+    achieveOTHUnitFebruary = (currOTHUnitFebruary * 100) / accounting.unformat(targetOTH.Unit02);
+    achieveOTHUnitMarch = (currOTHUnitMarch * 100) / accounting.unformat(targetOTH.Unit03);
+    achieveOTHUnitApril = (currOTHUnitApril * 100) / accounting.unformat(targetOTH.Unit04);
+    achieveOTHUnitMay = (currOTHUnitMay * 100) / accounting.unformat(targetOTH.Unit05);
+    achieveOTHUnitJune = (currOTHUnitJune * 100) / accounting.unformat(targetOTH.Unit06);
+    achieveOTHUnitJuly = (currOTHUnitJuly * 100) / accounting.unformat(targetOTH.Unit07);
+    achieveOTHUnitAugust = (currOTHUnitAugust * 100) / accounting.unformat(targetOTH.Unit08);
+    achieveOTHUnitSeptember = (currOTHUnitSeptember * 100) / accounting.unformat(targetOTH.Unit09);
+    achieveOTHUnitOctober = (currOTHUnitOctober * 100) / accounting.unformat(targetOTH.Unit10);
+    achieveOTHUnitNovember = (currOTHUnitNovember * 100) / accounting.unformat(targetOTH.Unit11);
+    achieveOTHUnitDecember = (currOTHUnitDecember * 100) / accounting.unformat(targetOTH.Unit12);
+    achieveOTHUnitTotal = (currOTHTotalUnit * 100) / totalOTHUnitTarget;
+    achieveOTHUnitQ1 = (currOTHUnitQ1 * 100) / accounting.unformat(targetOTH.UnitQ1);
+    achieveOTHUnitQ2 = (currOTHUnitQ2 * 100) / accounting.unformat(targetOTH.UnitQ2);
+    achieveOTHUnitQ3 = (currOTHUnitQ3 * 100) / accounting.unformat(targetOTH.UnitQ3);
+    achieveOTHUnitQ4 = (currOTHUnitQ4 * 100) / accounting.unformat(targetOTH.UnitQ4);
+
+    var currTotalBaht = currNPTotalBaht + currEBTotalBaht + currINDTotalBaht + currOTHTotalBaht,
+        currTotalUnit = currNPTotalUnit + currEBTotalUnit + currINDTotalUnit + currOTHTotalUnit,
+        oldTotalBaht = oldNPTotalBaht + oldEBTotalBaht + oldINDTotalBaht + oldOTHTotalBaht,
+        oldTotalUnit = oldNPTotalUnit + oldEBTotalUnit + oldINDTotalUnit + oldOTHTotalUnit,
+        currUnitJanuary = currNPUnitJanuary + currEBUnitJanuary + currINDUnitJanuary + currOTHUnitJanuary,
+        currUnitFebruary = currNPUnitFebruary + currEBUnitFebruary + currINDUnitFebruary + currOTHUnitFebruary,
+        currUnitMarch = currNPUnitMarch + currEBUnitMarch + currINDUnitMarch + currOTHUnitMarch,
+        currUnitApril = currNPUnitApril + currEBUnitApril + currINDUnitApril + currOTHUnitApril,
+        currUnitMay = currNPUnitMay + currEBUnitMay + currINDUnitMay + currOTHUnitMay,
+        currUnitJune = currNPUnitJune + currEBUnitJune + currINDUnitJune + currOTHUnitJune,
+        currUnitJuly = currNPUnitJuly + currEBUnitJuly + currINDUnitJuly + currOTHUnitJuly,
+        currUnitAugust = currNPUnitAugust + currEBUnitAugust + currINDUnitAugust + currOTHUnitAugust,
+        currUnitSeptember = currNPUnitSeptember + currEBUnitSeptember + currINDUnitSeptember + currOTHUnitSeptember,
+        currUnitOctober = currNPUnitOctober + currEBUnitOctober + currINDUnitOctober + currOTHUnitOctober,
+        currUnitNovember = currNPUnitNovember + currEBUnitNovember + currINDUnitNovember + currOTHUnitNovember,
+        currUnitDecember = currNPUnitDecember + currEBUnitDecember + currINDUnitDecember + currOTHUnitDecember,
+        currBahtJanuary = currNPBahtJanuary + currEBBahtJanuary + currINDBahtJanuary + currOTHBahtJanuary,
+        currBahtFebruary = currNPBahtFebruary + currEBBahtFebruary + currINDBahtFebruary + currOTHBahtFebruary,
+        currBahtMarch = currNPBahtMarch + currEBBahtMarch + currINDBahtMarch + currOTHBahtMarch,
+        currBahtApril = currNPBahtApril + currEBBahtApril + currINDBahtApril + currOTHBahtApril,
+        currBahtMay = currNPBahtMay + currEBBahtMay + currINDBahtMay + currEBBahtMay,
+        currBahtJune = currNPBahtJune + currEBBahtJune + currINDBahtJune + currOTHBahtJune,
+        currBahtJuly = currNPBahtJuly + currEBBahtJuly + currINDBahtJuly + currOTHBahtJuly,
+        currBahtAugust = currNPBahtAugust + currEBBahtAugust + currINDBahtAugust + currOTHBahtAugust,
+        currBahtSeptember = currNPBahtSeptember + currEBBahtSeptember + currINDBahtSeptember + currOTHBahtSeptember,
+        currBahtOctober = currNPBahtOctober + currEBBahtOctober + currINDBahtOctober + currOTHBahtOctober,
+        currBahtNovember = currNPBahtNovember + currEBBahtNovember + currINDBahtNovember + currOTHBahtNovember,
+        currBahtDecember = currNPBahtDecember + currEBBahtDecember + currINDBahtDecember + currOTHBahtDecember,
+        currUnitQ1 = currNPUnitQ1 + currEBUnitQ1 + currINDUnitQ1 + currOTHUnitQ1,
+        currBahtQ1 = currNPBahtQ1 + currEBBahtQ1 + currINDBahtQ1 + currOTHBahtQ1,
+        currUnitQ2 = currNPUnitQ2 + currEBUnitQ2 + currINDUnitQ2 + currOTHUnitQ2,
+        currBahtQ2 = currNPBahtQ2 + currEBBahtQ2 + currINDBahtQ2 + currOTHBahtQ2,
+        currUnitQ3 = currNPUnitQ3 + currEBUnitQ3 + currINDUnitQ3 + currOTHUnitQ3,
+        currBahtQ3 = currNPBahtQ3 + currEBBahtQ3 + currINDBahtQ3 + currOTHBahtQ3,
+        currUnitQ4 = currNPUnitQ4 + currEBUnitQ4 + currINDUnitQ4 + currOTHUnitQ4,
+        currBahtQ4 = currNPBahtQ4 + currEBBahtQ4 + currINDBahtQ4 + currOTHBahtQ4,
+        oldUnitJanuary = oldNPUnitJanuary + oldEBUnitJanuary + oldINDUnitJanuary + oldOTHUnitJanuary,
+        oldUnitFebruary = oldNPUnitFebruary + oldEBUnitFebruary + oldINDUnitFebruary + oldOTHUnitFebruary,
+        oldUnitMarch = oldNPUnitMarch + oldEBUnitMarch + oldINDUnitMarch + oldOTHUnitMarch,
+        oldUnitApril = oldNPUnitApril + oldEBUnitApril + oldINDUnitApril + oldOTHUnitApril,
+        oldUnitMay = oldNPUnitMay + oldEBUnitMay + oldINDUnitMay + oldOTHUnitMay,
+        oldUnitJune = oldNPUnitJune + oldEBUnitJune + oldINDUnitJune + oldOTHUnitJune,
+        oldUnitJuly = oldNPUnitJuly + oldEBUnitJuly + oldINDUnitJuly + oldOTHUnitJuly,
+        oldUnitAugust = oldNPUnitAugust + oldEBUnitAugust + oldINDUnitAugust + oldOTHUnitAugust,
+        oldUnitSeptember = oldNPUnitSeptember + oldEBUnitSeptember + oldINDUnitSeptember + oldOTHUnitSeptember,
+        oldUnitOctober = oldNPUnitOctober + oldEBUnitOctober + oldINDUnitOctober + oldOTHUnitOctober,
+        oldUnitNovember = oldNPUnitNovember + oldEBUnitNovember + oldINDUnitNovember + oldOTHUnitNovember,
+        oldUnitDecember = oldNPUnitDecember + oldEBUnitDecember + oldINDUnitDecember + oldOTHUnitDecember,
+        oldBahtJanuary = oldNPBahtJanuary + oldEBBahtJanuary + oldINDBahtJanuary + oldOTHBahtJanuary,
+        oldBahtFebruary = oldNPBahtFebruary + oldEBBahtFebruary + oldINDBahtFebruary + oldOTHBahtFebruary,
+        oldBahtMarch = oldNPBahtMarch + oldEBBahtMarch + oldINDBahtMarch + oldOTHBahtMarch,
+        oldBahtApril = oldNPBahtApril + oldEBBahtApril + oldINDBahtApril + oldOTHBahtApril,
+        oldBahtMay = oldNPBahtMay + oldEBBahtMay + oldINDBahtMay + oldOTHBahtMay,
+        oldBahtJune = oldNPBahtJune + oldEBBahtJune + oldINDBahtJune + oldOTHBahtJune,
+        oldBahtJuly = oldNPBahtJuly + oldEBBahtJuly + oldINDBahtJuly + oldOTHBahtJuly,
+        oldBahtAugust = oldNPBahtAugust + oldEBBahtAugust + oldINDBahtAugust + oldOTHBahtAugust,
+        oldBahtSeptember = oldNPBahtSeptember + oldEBBahtSeptember + oldINDBahtSeptember + oldOTHBahtSeptember,
+        oldBahtOctober = oldNPBahtOctober + oldEBBahtOctober + oldINDBahtOctober + oldOTHBahtOctober,
+        oldBahtNovember = oldNPBahtNovember + oldEBBahtNovember + oldINDBahtNovember + oldOTHBahtNovember,
+        oldBahtDecember = oldNPBahtDecember + oldEBBahtDecember + oldINDBahtDecember + oldOTHBahtDecember,
+        oldUnitQ1 = oldNPUnitQ1 + oldEBUnitQ1 + oldINDUnitQ1 + oldOTHUnitQ1,
+        oldBahtQ1 = oldNPBahtQ1 + oldEBBahtQ1 + oldINDBahtQ1 + oldOTHBahtQ1,
+        oldUnitQ2 = oldNPUnitQ2 + oldEBUnitQ2 + oldINDUnitQ2 + oldOTHUnitQ2,
+        oldBahtQ2 = oldNPBahtQ2 + oldEBBahtQ2 + oldINDBahtQ2 + oldOTHBahtQ2,
+        oldUnitQ3 = oldNPUnitQ3 + oldEBUnitQ3 + oldINDUnitQ3 + oldOTHUnitQ3,
+        oldBahtQ3 = oldNPBahtQ3 + oldEBBahtQ3 + oldINDBahtQ3 + oldOTHBahtQ3,
+        oldUnitQ4 = oldNPUnitQ4 + oldEBUnitQ4 + oldINDUnitQ4 + oldOTHUnitQ4,
+        oldBahtQ4 = oldNPBahtQ4 + oldEBBahtQ4 + oldINDBahtQ4 + oldOTHBahtQ4;
+
+    var totalBahtTarget = (accounting.unformat(targetNP.AmtQ1) + accounting.unformat(targetNP.AmtQ2) + accounting.unformat(targetNP.AmtQ3) + accounting.unformat(targetNP.AmtQ4) + accounting.unformat(targetEB.AmtQ1) + accounting.unformat(targetEB.AmtQ2) + accounting.unformat(targetEB.AmtQ3) + accounting.unformat(targetEB.AmtQ4)) + (accounting.unformat(targetIND.AmtQ1) + accounting.unformat(targetIND.AmtQ2) + accounting.unformat(targetIND.AmtQ3) + accounting.unformat(targetIND.AmtQ4) + accounting.unformat(targetOTH.AmtQ1) + accounting.unformat(targetOTH.AmtQ2) + accounting.unformat(targetOTH.AmtQ3) + accounting.unformat(targetOTH.AmtQ4));
+    var totalUnitTarget = (accounting.unformat(targetNP.UnitQ1) + accounting.unformat(targetNP.UnitQ2) + accounting.unformat(targetNP.UnitQ3) + accounting.unformat(targetNP.UnitQ4) + accounting.unformat(targetEB.UnitQ1) + accounting.unformat(targetEB.UnitQ2) + accounting.unformat(targetEB.UnitQ3) + accounting.unformat(targetEB.UnitQ4)) + (accounting.unformat(targetIND.UnitQ1) + accounting.unformat(targetIND.UnitQ2) + accounting.unformat(targetIND.UnitQ3) + accounting.unformat(targetIND.UnitQ4) + accounting.unformat(targetOTH.UnitQ1) + accounting.unformat(targetOTH.UnitQ2) + accounting.unformat(targetOTH.UnitQ3) + accounting.unformat(targetOTH.UnitQ4));
+
+    var achieveBahtJanuary = (((currNPBahtJanuary + currEBBahtJanuary + currINDBahtJanuary + currOTHBahtJanuary) * 100) / (accounting.unformat(targetNP.Amt01) + accounting.unformat(targetEB.Amt01) + accounting.unformat(targetIND.Amt01) + accounting.unformat(targetOTH.Amt01))),
+        achieveBahtFebruary = (((currNPBahtFebruary + currEBBahtFebruary + currINDBahtFebruary + currOTHBahtFebruary) * 100) / (accounting.unformat(targetNP.Amt02) + accounting.unformat(targetEB.Amt02) + accounting.unformat(targetIND.Amt02) + accounting.unformat(targetOTH.Amt02))),
+        achieveBahtMarch = (((currNPBahtMarch + currEBBahtMarch + currINDBahtMarch + currOTHBahtMarch) * 100) / (accounting.unformat(targetNP.Amt03) + accounting.unformat(targetEB.Amt03) + accounting.unformat(targetIND.Amt03) + accounting.unformat(targetOTH.Amt03))),
+        achieveBahtApril = (((currNPBahtApril + currEBBahtApril + currINDBahtApril + currOTHBahtApril) * 100) / (accounting.unformat(targetNP.Amt04) + accounting.unformat(targetEB.Amt04) + accounting.unformat(targetIND.Amt04) + accounting.unformat(targetOTH.Amt04))),
+        achieveBahtMay = (((currNPBahtMay + currEBBahtMay + currINDBahtMay + currOTHBahtMay) * 100) / (accounting.unformat(targetNP.Amt05) + accounting.unformat(targetEB.Amt05) + accounting.unformat(targetIND.Amt05) + accounting.unformat(targetOTH.Amt05))),
+        achieveBahtJune = (((currNPBahtJune + currEBBahtJune + currINDBahtJune + currOTHBahtJune) * 100) / (accounting.unformat(targetNP.Amt06) + accounting.unformat(targetEB.Amt06) + accounting.unformat(targetIND.Amt06) + accounting.unformat(targetOTH.Amt06))),
+        achieveBahtJuly = (((currNPBahtJuly + currEBBahtJuly + currINDBahtJuly + currOTHBahtJuly) * 100) / (accounting.unformat(targetNP.Amt07) + accounting.unformat(targetEB.Amt07) + accounting.unformat(targetIND.Amt07) + accounting.unformat(targetOTH.Amt07))),
+        achieveBahtAugust = (((currNPBahtAugust + currEBBahtAugust + currINDBahtAugust + currOTHBahtAugust) * 100) / (accounting.unformat(targetNP.Amt08) + accounting.unformat(targetEB.Amt08) + accounting.unformat(targetIND.Amt08) + accounting.unformat(targetOTH.Amt08))),
+        achieveBahtSeptember = (((currNPBahtSeptember + currEBBahtSeptember + currINDBahtSeptember + currOTHBahtSeptember) * 100) / (accounting.unformat(targetNP.Amt09) + accounting.unformat(targetEB.Amt09) + accounting.unformat(targetIND.Amt09) + accounting.unformat(targetOTH.Amt09))),
+        achieveBahtOctober = (((currNPBahtOctober + currEBBahtOctober + currINDBahtOctober + currOTHBahtOctober) * 100) / (accounting.unformat(targetNP.Amt10) + accounting.unformat(targetEB.Amt10) + accounting.unformat(targetIND.Amt10) + accounting.unformat(targetOTH.Amt10))),
+        achieveBahtNovember = (((currNPBahtNovember + currEBBahtNovember + currINDBahtNovember + currOTHBahtNovember) * 100) / (accounting.unformat(targetNP.Amt11) + accounting.unformat(targetEB.Amt11) + accounting.unformat(targetIND.Amt11) + accounting.unformat(targetOTH.Amt11))),
+        achieveBahtDecember = (((currNPBahtDecember + currEBBahtDecember + currINDBahtDecember + currOTHBahtDecember) * 100) / (accounting.unformat(targetNP.Amt12) + accounting.unformat(targetEB.Amt12) + accounting.unformat(targetIND.Amt12) + accounting.unformat(targetOTH.Amt12))),
         achieveBahtTotal = (currTotalBaht * 100) / totalBahtTarget,
-        achieveBahtQ1 = achieveAMBBahtQ1 + achieveMCBBahtQ1,
-        achieveUnitQ1 = achieveAMBUnitQ1 + achieveMCBUnitQ1,
-        achieveBahtQ2 = achieveAMBBahtQ2 + achieveMCBBahtQ2,
-        achieveUnitQ2 = achieveAMBUnitQ2 + achieveMCBUnitQ2,
-        achieveBahtQ3 = achieveAMBBahtQ3 + achieveMCBBahtQ3,
-        achieveUnitQ3 = achieveAMBUnitQ3 + achieveMCBUnitQ3,
-        achieveBahtQ4 = achieveAMBBahtQ4 + achieveMCBBahtQ4,
-        achieveUnitQ4 = achieveAMBUnitQ4 + achieveMCBUnitQ4,
-        growthBahtJanuary = growthAMBBahtJanuary + growthMCBBahtJanuary,
-        growthBahtFebruary = growthAMBBahtFebruary + growthMCBBahtFebruary,
-        growthBahtMarch = growthAMBBahtMarch + growthMCBBahtMarch,
-        growthBahtApril = growthAMBBahtApril + growthMCBBahtApril,
-        growthBahtMay = growthAMBBahtMay + growthMCBBahtMay,
-        growthBahtJune = growthAMBBahtJune + growthMCBBahtJune,
-        growthBahtJuly = growthAMBBahtJuly + growthMCBBahtJuly,
-        growthBahtAugust = growthAMBBahtAugust + growthMCBBahtAugust,
-        growthBahtSeptember = growthAMBBahtSeptember + growthMCBBahtSeptember,
-        growthBahtOctober = growthAMBBahtOctober + growthMCBBahtOctober,
-        growthBahtNovember = growthAMBBahtNovember + growthMCBBahtNovember,
-        growthBahtDecember = growthAMBBahtDecember + growthMCBBahtDecember,
+        achieveBahtQ1 = (((currNPBahtQ1 + currEBBahtQ1 + currINDBahtQ1 + currOTHBahtQ1) * 100) / (accounting.unformat(targetNP.AmtQ1) + accounting.unformat(targetEB.AmtQ1) + accounting.unformat(targetIND.AmtQ1) + accounting.unformat(targetOTH.AmtQ1))),
+        achieveUnitQ1 = (((currNPUnitQ1 + currEBUnitQ1 + currINDUnitQ1 + currOTHUnitQ1) * 100) / (accounting.unformat(targetNP.UnitQ1) + accounting.unformat(targetEB.UnitQ1) + accounting.unformat(targetIND.UnitQ1) + accounting.unformat(targetOTH.UnitQ1))),
+        achieveBahtQ2 = (((currNPBahtQ2 + currEBBahtQ2 + currINDBahtQ2 + currOTHBahtQ2) * 100) / (accounting.unformat(targetNP.AmtQ2) + accounting.unformat(targetEB.AmtQ2) + accounting.unformat(targetIND.AmtQ2) + accounting.unformat(targetOTH.AmtQ2))),
+        achieveUnitQ2 = (((currNPUnitQ2 + currEBUnitQ2 + currINDUnitQ2 + currOTHUnitQ2) * 100) / (accounting.unformat(targetNP.UnitQ2) + accounting.unformat(targetEB.UnitQ2) + accounting.unformat(targetIND.UnitQ2) + accounting.unformat(targetOTH.UnitQ2))),
+        achieveBahtQ3 = (((currNPBahtQ3 + currEBBahtQ3 + currINDBahtQ3 + currOTHBahtQ3) * 100) / (accounting.unformat(targetNP.AmtQ3) + accounting.unformat(targetEB.AmtQ3) + accounting.unformat(targetIND.AmtQ3) + accounting.unformat(targetOTH.AmtQ3))),
+        achieveUnitQ3 = (((currNPUnitQ3 + currEBUnitQ3 + currINDUnitQ3 + currOTHUnitQ3) * 100) / (accounting.unformat(targetNP.UnitQ3) + accounting.unformat(targetEB.UnitQ3) + accounting.unformat(targetIND.UnitQ3) + accounting.unformat(targetOTH.UnitQ3))),
+        achieveBahtQ4 = (((currNPBahtQ4 + currEBBahtQ4 + currINDBahtQ4 + currOTHBahtQ4) * 100) / (accounting.unformat(targetNP.AmtQ4) + accounting.unformat(targetEB.AmtQ4) + accounting.unformat(targetIND.AmtQ4) + accounting.unformat(targetOTH.AmtQ4))),
+        achieveUnitQ4 = (((currNPUnitQ4 + currEBUnitQ4 + currINDUnitQ4 + currOTHUnitQ4) * 100) / (accounting.unformat(targetNP.UnitQ4) + accounting.unformat(targetEB.UnitQ4) + accounting.unformat(targetIND.UnitQ4) + accounting.unformat(targetOTH.UnitQ4))),
+        growthBahtJanuary = (((currNPBahtJanuary + currEBBahtJanuary + currINDBahtJanuary + currOTHBahtJanuary) - (oldNPBahtJanuary + oldEBBahtJanuary + oldINDBahtJanuary + oldOTHBahtJanuary)) * 100) / (oldNPBahtJanuary + oldEBBahtJanuary + oldINDBahtJanuary + oldOTHBahtJanuary),
+        growthBahtFebruary = (((currNPBahtFebruary + currEBBahtFebruary + currINDBahtFebruary + currOTHBahtFebruary) - (oldNPBahtFebruary + oldEBBahtFebruary + oldINDBahtFebruary + oldOTHBahtFebruary)) * 100) / (oldNPBahtFebruary + oldEBBahtFebruary + oldINDBahtFebruary + oldOTHBahtFebruary),
+        growthBahtMarch = (((currNPBahtMarch + currEBBahtMarch + currINDBahtMarch + currOTHBahtMarch) - (oldNPBahtMarch + oldEBBahtMarch + oldINDBahtMarch + oldOTHBahtMarch)) * 100) / (oldNPBahtMarch + oldEBBahtMarch + oldINDBahtMarch + oldOTHBahtMarch),
+        growthBahtApril = (((currNPBahtApril + currEBBahtApril + currINDBahtApril + currOTHBahtApril) - (oldNPBahtApril + oldEBBahtApril + oldINDBahtApril + oldOTHBahtApril)) * 100) / (oldNPBahtApril + oldEBBahtApril + oldINDBahtApril + oldOTHBahtApril),
+        growthBahtMay = (((currNPBahtMay + currEBBahtMay + currINDBahtMay + currOTHBahtMay) - (oldNPBahtMay + oldEBBahtMay + oldINDBahtMay + oldOTHBahtMay)) * 100) / (oldNPBahtMay + oldEBBahtMay + oldINDBahtMay + oldOTHBahtMay),
+        growthBahtJune = (((currNPBahtJune + currEBBahtJune + currINDBahtJune + currOTHBahtJune) - (oldNPBahtJune + oldEBBahtJune + oldINDBahtJune + oldOTHBahtJune)) * 100) / (oldNPBahtJune + oldEBBahtJune + oldINDBahtJune + oldOTHBahtJune),
+        growthBahtJuly = (((currNPBahtJuly + currEBBahtJuly + currINDBahtJuly + currOTHBahtJuly) - (oldNPBahtJuly + oldEBBahtJuly + oldINDBahtJuly + oldOTHBahtJuly)) * 100) / (oldNPBahtJuly + oldEBBahtJuly + oldINDBahtJuly + oldOTHBahtJuly),
+        growthBahtAugust = (((currNPBahtAugust + currEBBahtAugust + currINDBahtAugust + currOTHBahtAugust) - (oldNPBahtAugust + oldEBBahtAugust + oldINDBahtAugust + oldOTHBahtAugust)) * 100) / (oldNPBahtAugust + oldEBBahtAugust + oldINDBahtAugust + oldOTHBahtAugust),
+        growthBahtSeptember = (((currNPBahtSeptember + currEBBahtSeptember + currINDBahtSeptember + currOTHBahtSeptember) - (oldNPBahtSeptember + oldEBBahtSeptember + oldINDBahtSeptember + oldOTHBahtSeptember)) * 100) / (oldNPBahtSeptember + oldEBBahtSeptember + oldINDBahtSeptember + oldOTHBahtSeptember),
+        growthBahtOctober = (((currNPBahtOctober + currEBBahtOctober + currINDBahtOctober + currOTHBahtOctober) - (oldNPBahtOctober + oldEBBahtOctober + oldINDBahtOctober + oldOTHBahtOctober)) * 100) / (oldNPBahtOctober + oldEBBahtOctober + oldINDBahtOctober + oldOTHBahtOctober),
+        growthBahtNovember = (((currNPBahtNovember + currEBBahtNovember + currINDBahtNovember + currOTHBahtNovember) - (oldNPBahtNovember + oldEBBahtNovember + oldINDBahtNovember + oldOTHBahtNovember)) * 100) / (oldNPBahtNovember + oldEBBahtNovember + oldINDBahtNovember + oldOTHBahtNovember),
+        growthBahtDecember = (((currNPBahtDecember + currEBBahtDecember + currINDBahtDecember + currOTHBahtDecember) - (oldNPBahtDecember + oldEBBahtDecember + oldINDBahtDecember + oldOTHBahtDecember)) * 100) / (oldNPBahtDecember + oldEBBahtDecember + oldINDBahtDecember + oldOTHBahtDecember),
         growthBahtTotal = ((currTotalBaht - oldTotalBaht) * 100) / oldTotalBaht,
-        achieveUnitJanuary = achieveAMBUnitJanuary + achieveMCBUnitJanuary,
-        achieveUnitFebruary = achieveAMBUnitFebruary + achieveMCBUnitFebruary,
-        achieveUnitMarch = achieveAMBUnitMarch + achieveMCBUnitMarch,
-        achieveUnitApril = achieveAMBUnitApril + achieveMCBUnitApril,
-        achieveUnitMay = achieveAMBUnitMay + achieveMCBUnitMay,
-        achieveUnitJune = achieveAMBUnitJune + achieveMCBUnitJune,
-        achieveUnitJuly = achieveAMBUnitJuly + achieveMCBUnitJuly,
-        achieveUnitAugust = achieveAMBUnitAugust + achieveMCBUnitAugust,
-        achieveUnitSeptember = achieveAMBUnitSeptember + achieveMCBUnitSeptember,
-        achieveUnitOctober = achieveAMBUnitOctober + achieveMCBUnitOctober,
-        achieveUnitNovember = achieveAMBUnitNovember + achieveMCBUnitNovember,
-        achieveUnitDecember = achieveAMBUnitDecember + achieveMCBUnitDecember,
+        achieveUnitJanuary = (((currNPUnitJanuary + currEBUnitJanuary + currINDUnitJanuary + currOTHUnitJanuary) * 100) / (accounting.unformat(targetNP.Unit01) + accounting.unformat(targetEB.Unit01) + accounting.unformat(targetIND.Unit01) + accounting.unformat(targetOTH.Unit01))),
+        achieveUnitFebruary = (((currNPUnitFebruary + currEBUnitFebruary + currINDUnitFebruary + currOTHUnitFebruary) * 100) / (accounting.unformat(targetNP.Unit02) + accounting.unformat(targetEB.Unit02) + accounting.unformat(targetIND.Unit02) + accounting.unformat(targetOTH.Unit02))),
+        achieveUnitMarch = (((currNPUnitMarch + currEBUnitMarch + currINDUnitMarch + currOTHUnitMarch) * 100) / (accounting.unformat(targetNP.Unit03) + accounting.unformat(targetEB.Unit03) + accounting.unformat(targetIND.Unit03) + accounting.unformat(targetOTH.Unit03))),
+        achieveUnitApril = (((currNPUnitApril + currEBUnitApril + currINDUnitApril + currOTHUnitApril) * 100) / (accounting.unformat(targetNP.Unit04) + accounting.unformat(targetEB.Unit04) + accounting.unformat(targetIND.Unit04) + accounting.unformat(targetOTH.Unit04))),
+        achieveUnitMay = (((currNPUnitMay + currEBUnitMay + currINDUnitMay + currOTHUnitMay) * 100) / (accounting.unformat(targetNP.Unit05) + accounting.unformat(targetEB.Unit05) + accounting.unformat(targetIND.Unit05) + accounting.unformat(targetOTH.Unit05))),
+        achieveUnitJune = (((currNPUnitJune + currEBUnitJune + currINDUnitJune + currOTHUnitJune) * 100) / (accounting.unformat(targetNP.Unit06) + accounting.unformat(targetEB.Unit06) + accounting.unformat(targetIND.Unit06) + accounting.unformat(targetOTH.Unit06))),
+        achieveUnitJuly = (((currNPUnitJuly + currEBUnitJuly + currINDUnitJuly + currOTHUnitJuly) * 100) / (accounting.unformat(targetNP.Unit07) + accounting.unformat(targetEB.Unit07) + accounting.unformat(targetIND.Unit07) + accounting.unformat(targetOTH.Unit07))),
+        achieveUnitAugust = (((currNPUnitAugust + currEBUnitAugust + currINDUnitAugust + currOTHUnitAugust) * 100) / (accounting.unformat(targetNP.Unit08) + accounting.unformat(targetEB.Unit08) + accounting.unformat(targetIND.Unit08) + accounting.unformat(targetOTH.Unit08))),
+        achieveUnitSeptember = (((currNPUnitSeptember + currEBUnitSeptember + currINDUnitSeptember + currOTHUnitSeptember) * 100) / (accounting.unformat(targetNP.Unit09) + accounting.unformat(targetEB.Unit09) + accounting.unformat(targetIND.Unit09) + accounting.unformat(targetOTH.Unit09))),
+        achieveUnitOctober = (((currNPUnitOctober + currEBUnitOctober + currINDUnitOctober + currOTHUnitOctober) * 100) / (accounting.unformat(targetNP.Unit10) + accounting.unformat(targetEB.Unit10) + accounting.unformat(targetIND.Unit10) + accounting.unformat(targetOTH.Unit10))),
+        achieveUnitNovember = (((currNPUnitNovember + currEBUnitNovember + currINDUnitNovember + currOTHUnitNovember) * 100) / (accounting.unformat(targetNP.Unit11) + accounting.unformat(targetEB.Unit11) + accounting.unformat(targetIND.Unit11) + accounting.unformat(targetOTH.Unit11))),
+        achieveUnitDecember = (((currNPUnitDecember + currEBUnitDecember + currINDUnitDecember + currOTHUnitDecember) * 100) / (accounting.unformat(targetNP.Unit12) + accounting.unformat(targetEB.Unit12) + accounting.unformat(targetIND.Unit12) + accounting.unformat(targetOTH.Unit12))),
         achieveUnitTotal = (currTotalUnit * 100) / totalUnitTarget,
-        growthUnitJanuary = growthAMBUnitJanuary + growthMCBUnitJanuary,
-        growthUnitFebruary = growthAMBUnitFebruary + growthMCBUnitFebruary,
-        growthUnitMarch = growthAMBUnitMarch + growthMCBUnitMarch,
-        growthUnitApril = growthAMBUnitApril + growthMCBUnitApril,
-        growthUnitMay = growthAMBUnitMay + growthMCBUnitMay,
-        growthUnitJune = growthAMBUnitJune + growthMCBUnitJune,
-        growthUnitJuly = growthAMBUnitJuly + growthMCBUnitJuly,
-        growthUnitAugust = growthAMBUnitAugust + growthMCBUnitAugust,
-        growthUnitSeptember = growthAMBUnitSeptember + growthMCBUnitSeptember,
-        growthUnitOctober = growthAMBUnitOctober + growthMCBUnitOctober,
-        growthUnitNovember = growthAMBUnitNovember + growthMCBUnitNovember,
-        growthUnitDecember = growthAMBUnitDecember + growthMCBUnitDecember,
+        growthUnitJanuary = (((currNPUnitJanuary + currEBUnitJanuary + currINDUnitJanuary + currOTHUnitJanuary) - (oldNPUnitJanuary + oldEBUnitJanuary + oldINDUnitJanuary + oldOTHUnitJanuary)) * 100) / (oldNPUnitJanuary + oldEBUnitJanuary + oldINDUnitJanuary + oldOTHUnitJanuary),
+        growthUnitFebruary = (((currNPUnitFebruary + currEBUnitFebruary + currINDUnitFebruary + currOTHUnitFebruary) - (oldNPUnitFebruary + oldEBUnitFebruary + oldINDUnitFebruary + oldOTHUnitFebruary)) * 100) / (oldNPUnitFebruary + oldEBUnitFebruary + oldINDUnitFebruary + oldOTHUnitFebruary),
+        growthUnitMarch = (((currNPUnitMarch + currEBUnitMarch + currINDUnitMarch + currOTHUnitMarch) - (oldNPUnitMarch + oldEBUnitMarch + oldINDUnitMarch + oldOTHUnitMarch)) * 100) / (oldNPUnitMarch + oldEBUnitMarch + oldINDUnitMarch + oldOTHUnitMarch),
+        growthUnitApril = (((currNPUnitApril + currEBUnitApril + currINDUnitApril + currOTHUnitApril) - (oldNPUnitApril + oldEBUnitApril + oldINDUnitApril + oldOTHUnitApril)) * 100) / (oldNPUnitApril + oldEBUnitApril + oldINDUnitApril + oldOTHUnitApril),
+        growthUnitMay = (((currNPUnitMay + currEBUnitMay + currINDUnitMay + currOTHUnitMay) - (oldNPUnitMay + oldEBUnitMay + oldINDUnitMay + oldOTHUnitMay)) * 100) / (oldNPUnitMay + oldEBUnitMay + oldINDUnitMay + oldOTHUnitMay),
+        growthUnitJune = (((currNPUnitJune + currEBUnitJune + currINDUnitJune + currOTHUnitJune) - (oldNPUnitJune + oldEBUnitJune + oldINDUnitJune + oldOTHUnitJune)) * 100) / (oldNPUnitJune + oldEBUnitJune + oldINDUnitJune + oldOTHUnitJune),
+        growthUnitJuly = (((currNPUnitJuly + currEBUnitJuly + currINDUnitJuly + currOTHUnitJuly) - (oldNPUnitJuly + oldEBUnitJuly + oldINDUnitJuly + oldOTHUnitJuly)) * 100) / (oldNPUnitJuly + oldEBUnitJuly + oldINDUnitJuly + oldOTHUnitJuly),
+        growthUnitAugust = (((currNPUnitAugust + currEBUnitAugust + currINDUnitAugust + currOTHUnitAugust) - (oldNPUnitAugust + oldEBUnitAugust + oldINDUnitAugust + oldOTHUnitAugust)) * 100) / (oldNPUnitAugust + oldEBUnitAugust + oldINDUnitAugust + oldOTHUnitAugust),
+        growthUnitSeptember = (((currNPUnitSeptember + currEBUnitSeptember + currINDUnitSeptember + currOTHUnitSeptember) - (oldNPUnitSeptember + oldEBUnitSeptember + oldINDUnitSeptember + oldOTHUnitSeptember)) * 100) / (oldNPUnitSeptember + oldEBUnitSeptember + oldINDUnitSeptember + oldOTHUnitSeptember),
+        growthUnitOctober = (((currNPUnitOctober + currEBUnitOctober + currINDUnitOctober + currOTHUnitOctober) - (oldNPUnitOctober + oldEBUnitOctober + oldINDUnitOctober + oldOTHUnitOctober)) * 100) / (oldNPUnitOctober + oldEBUnitOctober + oldINDUnitOctober + oldOTHUnitOctober),
+        growthUnitNovember = (((currNPUnitNovember + currEBUnitNovember + currINDUnitNovember + currOTHUnitNovember) - (oldNPUnitNovember + oldEBUnitNovember + oldINDUnitNovember + oldOTHUnitNovember)) * 100) / (oldNPUnitNovember + oldEBUnitNovember + oldINDUnitNovember + oldOTHUnitNovember),
+        growthUnitDecember = (((currNPUnitDecember + currEBUnitDecember + currINDUnitDecember + currOTHUnitDecember) - (oldNPUnitDecember + oldEBUnitDecember + oldINDUnitDecember + oldOTHUnitDecember)) * 100) / (oldNPUnitDecember + oldEBUnitDecember + oldINDUnitDecember + oldOTHUnitDecember),
         growthUnitTotal = ((currTotalUnit - oldTotalUnit) * 100) / oldTotalUnit,
-        growthBahtQ1 = growthAMBBahtQ1 + growthMCBBahtQ1,
-        growthUnitQ1 = growthAMBUnitQ1 + growthMCBUnitQ1,
-        growthBahtQ2 = growthAMBBahtQ2 + growthMCBBahtQ2,
-        growthUnitQ2 = growthAMBUnitQ2 + growthMCBUnitQ2,
-        growthBahtQ3 = growthAMBBahtQ3 + growthMCBBahtQ3,
-        growthUnitQ3 = growthAMBUnitQ3 + growthMCBUnitQ3,
-        growthBahtQ4 = growthAMBBahtQ4 + growthMCBBahtQ4,
-        growthUnitQ4 = growthAMBUnitQ4 + growthMCBUnitQ4;
+        growthBahtQ1 = (((currNPBahtQ1 + currEBBahtQ1 + currINDBahtQ1 + currOTHBahtQ1) - (oldNPBahtQ1 + oldEBBahtQ1 + oldINDBahtQ1 + oldOTHBahtQ1)) * 100) / (oldNPBahtQ1 + oldEBBahtQ1 + oldINDBahtQ1 + oldOTHBahtQ1),
+        growthUnitQ1 = (((currNPUnitQ1 + currEBUnitQ1 + currINDUnitQ1 + currOTHUnitQ1) - (oldNPUnitQ1 + oldEBUnitQ1 + oldINDUnitQ1 + oldOTHUnitQ1)) * 100) / (oldNPUnitQ1 + oldEBUnitQ1 + oldINDUnitQ1 + oldOTHUnitQ1),
+        growthBahtQ2 = (((currNPBahtQ2 + currEBBahtQ2 + currINDBahtQ2 + currOTHBahtQ2) - (oldNPBahtQ2 + oldEBBahtQ2 + oldINDBahtQ2 + oldOTHBahtQ2)) * 100) / (oldNPBahtQ2 + oldEBBahtQ2 + oldINDBahtQ2 + oldOTHBahtQ2),
+        growthUnitQ2 = (((currNPUnitQ2 + currEBUnitQ2 + currINDUnitQ2 + currOTHUnitQ2) - (oldNPUnitQ2 + oldEBUnitQ2 + oldINDUnitQ2 + oldOTHUnitQ2)) * 100) / (oldNPUnitQ2 + oldEBUnitQ2 + oldINDUnitQ2 + oldOTHUnitQ2),
+        growthBahtQ3 = (((currNPBahtQ3 + currEBBahtQ3 + currINDBahtQ3 + currOTHBahtQ3) - (oldNPBahtQ3 + oldEBBahtQ3 + oldINDBahtQ3 + oldOTHBahtQ3)) * 100) / (oldNPBahtQ3 + oldEBBahtQ3 + oldINDBahtQ3 + oldOTHBahtQ3),
+        growthUnitQ3 = (((currNPUnitQ3 + currEBUnitQ3 + currINDUnitQ3 + currOTHUnitQ3) - (oldNPUnitQ3 + oldEBUnitQ3 + oldINDUnitQ3 + oldOTHUnitQ3)) * 100) / (oldNPUnitQ3 + oldEBUnitQ3 + oldINDUnitQ3 + oldOTHUnitQ3),
+        growthBahtQ4 = (((currNPBahtQ4 + currEBBahtQ4 + currINDBahtQ4 + currOTHBahtQ4) - (oldNPBahtQ4 + oldEBBahtQ4 + oldINDBahtQ4 + oldOTHBahtQ4)) * 100) / (oldNPBahtQ4 + oldEBBahtQ4 + oldINDBahtQ4 + oldOTHBahtQ4),
+        growthUnitQ4 = (((currNPUnitQ4 + currEBUnitQ4 + currINDUnitQ4 + currOTHUnitQ4) - (oldNPUnitQ4 + oldEBUnitQ4 + oldINDUnitQ4 + oldOTHUnitQ4)) * 100) / (oldNPUnitQ4 + oldEBUnitQ4 + oldINDUnitQ4 + oldOTHUnitQ4);
+
 
     var percentBaht = (currTotalBaht / totalBahtTarget) * 100;
     var percentUnit = (currTotalUnit / totalUnitTarget) * 100;
@@ -1740,426 +2525,808 @@ function calData(year, data) {
     $('#percentBaht').css("width", accounting.formatNumber(percentBaht) + "%");
     $('#percentUnit').css("width", accounting.formatNumber(percentUnit) + "%");
 
-    //AMB        
-    $('#ambBahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetAMB.AmtQ1), 2));
-    $('#ambBahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetAMB.AmtQ2), 2));
-    $('#ambBahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetAMB.AmtQ3), 2));
-    $('#ambBahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetAMB.AmtQ4), 2));
-    $('#ambBahtTargetNow1').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt01) / 1000, 2));
-    $('#ambBahtTargetNow2').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt02) / 1000, 2));
-    $('#ambBahtTargetNow3').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt03) / 1000, 2));
-    $('#ambBahtTargetNow4').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt04) / 1000, 2));
-    $('#ambBahtTargetNow5').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt05) / 1000, 2));
-    $('#ambBahtTargetNow6').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt06) / 1000, 2));
-    $('#ambBahtTargetNow7').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt07) / 1000, 2));
-    $('#ambBahtTargetNow8').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt08) / 1000, 2));
-    $('#ambBahtTargetNow9').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt09) / 1000, 2));
-    $('#ambBahtTargetNow10').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt10) / 1000, 2));
-    $('#ambBahtTargetNow11').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt11) / 1000, 2));
-    $('#ambBahtTargetNow12').html(accounting.formatNumber(accounting.unformat(targetAMB.Amt12) / 1000, 2));
-    $('#ambBahtTargetNowTotal').html(accounting.formatNumber(totalAMBBahtTarget / 1000, 2));
-    $('#ambBahtTargetNowQTotal').html(accounting.formatNumber(totalAMBBahtTarget, 2));
+    //NP        
+    $('#npBahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetNP.AmtQ1), 2));
+    $('#npBahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetNP.AmtQ2), 2));
+    $('#npBahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetNP.AmtQ3), 2));
+    $('#npBahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetNP.AmtQ4), 2));
+    $('#npBahtTargetNow1').html(accounting.formatNumber(accounting.unformat(targetNP.Amt01) / 1000, 2));
+    $('#npBahtTargetNow2').html(accounting.formatNumber(accounting.unformat(targetNP.Amt02) / 1000, 2));
+    $('#npBahtTargetNow3').html(accounting.formatNumber(accounting.unformat(targetNP.Amt03) / 1000, 2));
+    $('#npBahtTargetNow4').html(accounting.formatNumber(accounting.unformat(targetNP.Amt04) / 1000, 2));
+    $('#npBahtTargetNow5').html(accounting.formatNumber(accounting.unformat(targetNP.Amt05) / 1000, 2));
+    $('#npBahtTargetNow6').html(accounting.formatNumber(accounting.unformat(targetNP.Amt06) / 1000, 2));
+    $('#npBahtTargetNow7').html(accounting.formatNumber(accounting.unformat(targetNP.Amt07) / 1000, 2));
+    $('#npBahtTargetNow8').html(accounting.formatNumber(accounting.unformat(targetNP.Amt08) / 1000, 2));
+    $('#npBahtTargetNow9').html(accounting.formatNumber(accounting.unformat(targetNP.Amt09) / 1000, 2));
+    $('#npBahtTargetNow10').html(accounting.formatNumber(accounting.unformat(targetNP.Amt10) / 1000, 2));
+    $('#npBahtTargetNow11').html(accounting.formatNumber(accounting.unformat(targetNP.Amt11) / 1000, 2));
+    $('#npBahtTargetNow12').html(accounting.formatNumber(accounting.unformat(targetNP.Amt12) / 1000, 2));
+    $('#npBahtTargetNowTotal').html(accounting.formatNumber(totalNPBahtTarget / 1000, 2));
+    $('#npBahtTargetNowQTotal').html(accounting.formatNumber(totalNPBahtTarget, 2));
 
-    $('#ambUnitTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetAMB.UnitQ1)));
-    $('#ambUnitTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetAMB.UnitQ2)));
-    $('#ambUnitTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetAMB.UnitQ3)));
-    $('#ambUnitTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetAMB.UnitQ4)));
-    $('#ambUnitTargetNow1').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit01)));
-    $('#ambUnitTargetNow2').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit02)));
-    $('#ambUnitTargetNow3').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit03)));
-    $('#ambUnitTargetNow4').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit04)));
-    $('#ambUnitTargetNow5').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit05)));
-    $('#ambUnitTargetNow6').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit06)));
-    $('#ambUnitTargetNow7').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit07)));
-    $('#ambUnitTargetNow8').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit08)));
-    $('#ambUnitTargetNow9').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit09)));
-    $('#ambUnitTargetNow10').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit10)));
-    $('#ambUnitTargetNow11').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit11)));
-    $('#ambUnitTargetNow12').html(accounting.formatNumber(accounting.unformat(targetAMB.Unit12)));
-    $('#ambUnitTargetNowTotal').html(accounting.formatNumber(totalAMBUnitTarget));
-    $('#ambUnitTargetNowQTotal').html(accounting.formatNumber(totalAMBUnitTarget));
+    $('#npUnitTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetNP.UnitQ1)));
+    $('#npUnitTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetNP.UnitQ2)));
+    $('#npUnitTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetNP.UnitQ3)));
+    $('#npUnitTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetNP.UnitQ4)));
+    $('#npUnitTargetNow1').html(accounting.formatNumber(accounting.unformat(targetNP.Unit01)));
+    $('#npUnitTargetNow2').html(accounting.formatNumber(accounting.unformat(targetNP.Unit02)));
+    $('#npUnitTargetNow3').html(accounting.formatNumber(accounting.unformat(targetNP.Unit03)));
+    $('#npUnitTargetNow4').html(accounting.formatNumber(accounting.unformat(targetNP.Unit04)));
+    $('#npUnitTargetNow5').html(accounting.formatNumber(accounting.unformat(targetNP.Unit05)));
+    $('#npUnitTargetNow6').html(accounting.formatNumber(accounting.unformat(targetNP.Unit06)));
+    $('#npUnitTargetNow7').html(accounting.formatNumber(accounting.unformat(targetNP.Unit07)));
+    $('#npUnitTargetNow8').html(accounting.formatNumber(accounting.unformat(targetNP.Unit08)));
+    $('#npUnitTargetNow9').html(accounting.formatNumber(accounting.unformat(targetNP.Unit09)));
+    $('#npUnitTargetNow10').html(accounting.formatNumber(accounting.unformat(targetNP.Unit10)));
+    $('#npUnitTargetNow11').html(accounting.formatNumber(accounting.unformat(targetNP.Unit11)));
+    $('#npUnitTargetNow12').html(accounting.formatNumber(accounting.unformat(targetNP.Unit12)));
+    $('#npUnitTargetNowTotal').html(accounting.formatNumber(totalNPUnitTarget));
+    $('#npUnitTargetNowQTotal').html(accounting.formatNumber(totalNPUnitTarget));
 
-    $('#ambBahtActualNowQ1').html(accounting.formatNumber(currAMBBahtQ1, 2));
-    $('#ambBahtActualNowQ2').html(accounting.formatNumber(currAMBBahtQ2, 2));
-    $('#ambBahtActualNowQ3').html(accounting.formatNumber(currAMBBahtQ3, 2));
-    $('#ambBahtActualNowQ4').html(accounting.formatNumber(currAMBBahtQ4, 2));
-    $('#ambBahtActualNow1').html(accounting.formatNumber(currAMBBahtJanuary / 1000, 2));
-    $('#ambBahtActualNow2').html(accounting.formatNumber(currAMBBahtFebruary / 1000, 2));
-    $('#ambBahtActualNow3').html(accounting.formatNumber(currAMBBahtMarch / 1000, 2));
-    $('#ambBahtActualNow4').html(accounting.formatNumber(currAMBBahtApril / 1000, 2));
-    $('#ambBahtActualNow5').html(accounting.formatNumber(currAMBBahtMay / 1000, 2));
-    $('#ambBahtActualNow6').html(accounting.formatNumber(currAMBBahtJune / 1000, 2));
-    $('#ambBahtActualNow7').html(accounting.formatNumber(currAMBBahtJuly / 1000, 2));
-    $('#ambBahtActualNow8').html(accounting.formatNumber(currAMBBahtAugust / 1000, 2));
-    $('#ambBahtActualNow9').html(accounting.formatNumber(currAMBBahtSeptember / 1000, 2));
-    $('#ambBahtActualNow10').html(accounting.formatNumber(currAMBBahtOctober / 1000, 2));
-    $('#ambBahtActualNow11').html(accounting.formatNumber(currAMBBahtNovember / 1000, 2));
-    $('#ambBahtActualNow12').html(accounting.formatNumber(currAMBBahtDecember / 1000, 2));
-    $('#ambBahtActualNowTotal').html(accounting.formatNumber(currAMBTotalBaht / 1000, 2));
-    $('#ambBahtActualNowQTotal').html(accounting.formatNumber(currAMBTotalBaht, 2));
+    $('#npBahtActualNowQ1').html(accounting.formatNumber(currNPBahtQ1, 2));
+    $('#npBahtActualNowQ2').html(accounting.formatNumber(currNPBahtQ2, 2));
+    $('#npBahtActualNowQ3').html(accounting.formatNumber(currNPBahtQ3, 2));
+    $('#npBahtActualNowQ4').html(accounting.formatNumber(currNPBahtQ4, 2));
+    $('#npBahtActualNow1').html(accounting.formatNumber(currNPBahtJanuary / 1000, 2));
+    $('#npBahtActualNow2').html(accounting.formatNumber(currNPBahtFebruary / 1000, 2));
+    $('#npBahtActualNow3').html(accounting.formatNumber(currNPBahtMarch / 1000, 2));
+    $('#npBahtActualNow4').html(accounting.formatNumber(currNPBahtApril / 1000, 2));
+    $('#npBahtActualNow5').html(accounting.formatNumber(currNPBahtMay / 1000, 2));
+    $('#npBahtActualNow6').html(accounting.formatNumber(currNPBahtJune / 1000, 2));
+    $('#npBahtActualNow7').html(accounting.formatNumber(currNPBahtJuly / 1000, 2));
+    $('#npBahtActualNow8').html(accounting.formatNumber(currNPBahtAugust / 1000, 2));
+    $('#npBahtActualNow9').html(accounting.formatNumber(currNPBahtSeptember / 1000, 2));
+    $('#npBahtActualNow10').html(accounting.formatNumber(currNPBahtOctober / 1000, 2));
+    $('#npBahtActualNow11').html(accounting.formatNumber(currNPBahtNovember / 1000, 2));
+    $('#npBahtActualNow12').html(accounting.formatNumber(currNPBahtDecember / 1000, 2));
+    $('#npBahtActualNowTotal').html(accounting.formatNumber(currNPTotalBaht / 1000, 2));
+    $('#npBahtActualNowQTotal').html(accounting.formatNumber(currNPTotalBaht, 2));
 
-    $('#ambBahtActualOldQ1').html(accounting.formatNumber(oldAMBBahtQ1, 2));
-    $('#ambBahtActualOldQ2').html(accounting.formatNumber(oldAMBBahtQ2, 2));
-    $('#ambBahtActualOldQ3').html(accounting.formatNumber(oldAMBBahtQ3, 2));
-    $('#ambBahtActualOldQ4').html(accounting.formatNumber(oldAMBBahtQ4, 2));
-    $('#ambBahtActualOld1').html(accounting.formatNumber(oldAMBBahtJanuary / 1000, 2));
-    $('#ambBahtActualOld2').html(accounting.formatNumber(oldAMBBahtFebruary / 1000, 2));
-    $('#ambBahtActualOld3').html(accounting.formatNumber(oldAMBBahtMarch / 1000, 2));
-    $('#ambBahtActualOld4').html(accounting.formatNumber(oldAMBBahtApril / 1000, 2));
-    $('#ambBahtActualOld5').html(accounting.formatNumber(oldAMBBahtMay / 1000, 2));
-    $('#ambBahtActualOld6').html(accounting.formatNumber(oldAMBBahtJune / 1000, 2));
-    $('#ambBahtActualOld7').html(accounting.formatNumber(oldAMBBahtJuly / 1000, 2));
-    $('#ambBahtActualOld8').html(accounting.formatNumber(oldAMBBahtAugust / 1000, 2));
-    $('#ambBahtActualOld9').html(accounting.formatNumber(oldAMBBahtSeptember / 1000, 2));
-    $('#ambBahtActualOld10').html(accounting.formatNumber(oldAMBBahtOctober / 1000, 2));
-    $('#ambBahtActualOld11').html(accounting.formatNumber(oldAMBBahtNovember / 1000, 2));
-    $('#ambBahtActualOld12').html(accounting.formatNumber(oldAMBBahtDecember / 1000, 2));
-    $('#ambBahtActualOldTotal').html(accounting.formatNumber(oldAMBTotalBaht / 1000, 2));
-    $('#ambBahtActualOldQTotal').html(accounting.formatNumber(oldAMBTotalBaht, 2));
+    $('#npBahtActualOldQ1').html(accounting.formatNumber(oldNPBahtQ1, 2));
+    $('#npBahtActualOldQ2').html(accounting.formatNumber(oldNPBahtQ2, 2));
+    $('#npBahtActualOldQ3').html(accounting.formatNumber(oldNPBahtQ3, 2));
+    $('#npBahtActualOldQ4').html(accounting.formatNumber(oldNPBahtQ4, 2));
+    $('#npBahtActualOld1').html(accounting.formatNumber(oldNPBahtJanuary / 1000, 2));
+    $('#npBahtActualOld2').html(accounting.formatNumber(oldNPBahtFebruary / 1000, 2));
+    $('#npBahtActualOld3').html(accounting.formatNumber(oldNPBahtMarch / 1000, 2));
+    $('#npBahtActualOld4').html(accounting.formatNumber(oldNPBahtApril / 1000, 2));
+    $('#npBahtActualOld5').html(accounting.formatNumber(oldNPBahtMay / 1000, 2));
+    $('#npBahtActualOld6').html(accounting.formatNumber(oldNPBahtJune / 1000, 2));
+    $('#npBahtActualOld7').html(accounting.formatNumber(oldNPBahtJuly / 1000, 2));
+    $('#npBahtActualOld8').html(accounting.formatNumber(oldNPBahtAugust / 1000, 2));
+    $('#npBahtActualOld9').html(accounting.formatNumber(oldNPBahtSeptember / 1000, 2));
+    $('#npBahtActualOld10').html(accounting.formatNumber(oldNPBahtOctober / 1000, 2));
+    $('#npBahtActualOld11').html(accounting.formatNumber(oldNPBahtNovember / 1000, 2));
+    $('#npBahtActualOld12').html(accounting.formatNumber(oldNPBahtDecember / 1000, 2));
+    $('#npBahtActualOldTotal').html(accounting.formatNumber(oldNPTotalBaht / 1000, 2));
+    $('#npBahtActualOldQTotal').html(accounting.formatNumber(oldNPTotalBaht, 2));
 
-    $('#ambBahtGrowthQ1').html((isNaN(accounting.formatNumber(growthAMBBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtQ1, 2)) + "%");
-    $('#ambBahtGrowthQ2').html((isNaN(accounting.formatNumber(growthAMBBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtQ2, 2)) + "%");
-    $('#ambBahtGrowthQ3').html((isNaN(accounting.formatNumber(growthAMBBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtQ3, 2)) + "%");
-    $('#ambBahtGrowthQ4').html((isNaN(accounting.formatNumber(growthAMBBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtQ4, 2)) + "%");
-    $('#ambBahtGrowth1').html((isNaN(accounting.formatNumber(growthAMBBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtJanuary, 2)) + "%");
-    $('#ambBahtGrowth2').html((isNaN(accounting.formatNumber(growthAMBBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtFebruary, 2)) + "%");
-    $('#ambBahtGrowth3').html((isNaN(accounting.formatNumber(growthAMBBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtMarch, 2)) + "%");
-    $('#ambBahtGrowth4').html((isNaN(accounting.formatNumber(growthAMBBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtApril, 2)) + "%");
-    $('#ambBahtGrowth5').html((isNaN(accounting.formatNumber(growthAMBBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtMay, 2)) + "%");
-    $('#ambBahtGrowth6').html((isNaN(accounting.formatNumber(growthAMBBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtJune, 2)) + "%");
-    $('#ambBahtGrowth7').html((isNaN(accounting.formatNumber(growthAMBBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtJuly, 2)) + "%");
-    $('#ambBahtGrowth8').html((isNaN(accounting.formatNumber(growthAMBBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtAugust, 2)) + "%");
-    $('#ambBahtGrowth9').html((isNaN(accounting.formatNumber(growthAMBBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtSeptember, 2)) + "%");
-    $('#ambBahtGrowth10').html((isNaN(accounting.formatNumber(growthAMBBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtOctober, 2)) + "%");
-    $('#ambBahtGrowth11').html((isNaN(accounting.formatNumber(growthAMBBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtNovember, 2)) + "%");
-    $('#ambBahtGrowth12').html((isNaN(accounting.formatNumber(growthAMBBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtDecember, 2)) + "%");
-    $('#ambBahtGrowthTotal').html((isNaN(accounting.formatNumber(growthAMBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtTotal, 2)) + "%");
-    $('#ambBahtGrowthQTotal').html((isNaN(accounting.formatNumber(growthAMBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtTotal, 2)) + "%");
+    $('#npBahtGrowthQ1').html((isNaN(accounting.formatNumber(growthNPBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtQ1, 2)) + "%");
+    $('#npBahtGrowthQ2').html((isNaN(accounting.formatNumber(growthNPBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtQ2, 2)) + "%");
+    $('#npBahtGrowthQ3').html((isNaN(accounting.formatNumber(growthNPBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtQ3, 2)) + "%");
+    $('#npBahtGrowthQ4').html((isNaN(accounting.formatNumber(growthNPBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtQ4, 2)) + "%");
+    $('#npBahtGrowth1').html((isNaN(accounting.formatNumber(growthNPBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtJanuary, 2)) + "%");
+    $('#npBahtGrowth2').html((isNaN(accounting.formatNumber(growthNPBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtFebruary, 2)) + "%");
+    $('#npBahtGrowth3').html((isNaN(accounting.formatNumber(growthNPBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtMarch, 2)) + "%");
+    $('#npBahtGrowth4').html((isNaN(accounting.formatNumber(growthNPBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtApril, 2)) + "%");
+    $('#npBahtGrowth5').html((isNaN(accounting.formatNumber(growthNPBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtMay, 2)) + "%");
+    $('#npBahtGrowth6').html((isNaN(accounting.formatNumber(growthNPBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtJune, 2)) + "%");
+    $('#npBahtGrowth7').html((isNaN(accounting.formatNumber(growthNPBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtJuly, 2)) + "%");
+    $('#npBahtGrowth8').html((isNaN(accounting.formatNumber(growthNPBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtAugust, 2)) + "%");
+    $('#npBahtGrowth9').html((isNaN(accounting.formatNumber(growthNPBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtSeptember, 2)) + "%");
+    $('#npBahtGrowth10').html((isNaN(accounting.formatNumber(growthNPBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtOctober, 2)) + "%");
+    $('#npBahtGrowth11').html((isNaN(accounting.formatNumber(growthNPBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtNovember, 2)) + "%");
+    $('#npBahtGrowth12').html((isNaN(accounting.formatNumber(growthNPBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtDecember, 2)) + "%");
+    $('#npBahtGrowthTotal').html((isNaN(accounting.formatNumber(growthNPBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtTotal, 2)) + "%");
+    $('#npBahtGrowthQTotal').html((isNaN(accounting.formatNumber(growthNPBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPBahtTotal, 2)) + "%");
 
-    $('#ambBahtAchieveQ1').html((isNaN(accounting.formatNumber(achieveAMBBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtQ1, 2)) + "%");
-    $('#ambBahtAchieveQ2').html((isNaN(accounting.formatNumber(achieveAMBBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtQ2, 2)) + "%");
-    $('#ambBahtAchieveQ3').html((isNaN(accounting.formatNumber(achieveAMBBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtQ3, 2)) + "%");
-    $('#ambBahtAchieveQ4').html((isNaN(accounting.formatNumber(achieveAMBBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtQ4, 2)) + "%");
-    $('#ambBahtAchieve1').html((isNaN(accounting.formatNumber(achieveAMBBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtJanuary, 2)) + "%");
-    $('#ambBahtAchieve2').html((isNaN(accounting.formatNumber(achieveAMBBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtFebruary, 2)) + "%");
-    $('#ambBahtAchieve3').html((isNaN(accounting.formatNumber(achieveAMBBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtMarch, 2)) + "%");
-    $('#ambBahtAchieve4').html((isNaN(accounting.formatNumber(achieveAMBBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtApril, 2)) + "%");
-    $('#ambBahtAchieve5').html((isNaN(accounting.formatNumber(achieveAMBBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtMay, 2)) + "%");
-    $('#ambBahtAchieve6').html((isNaN(accounting.formatNumber(achieveAMBBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtJune, 2)) + "%");
-    $('#ambBahtAchieve7').html((isNaN(accounting.formatNumber(achieveAMBBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtJuly, 2)) + "%");
-    $('#ambBahtAchieve8').html((isNaN(accounting.formatNumber(achieveAMBBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtAugust, 2)) + "%");
-    $('#ambBahtAchieve9').html((isNaN(accounting.formatNumber(achieveAMBBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtSeptember, 2)) + "%");
-    $('#ambBahtAchieve10').html((isNaN(accounting.formatNumber(achieveAMBBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtOctober, 2)) + "%");
-    $('#ambBahtAchieve11').html((isNaN(accounting.formatNumber(achieveAMBBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtNovember, 2)) + "%");
-    $('#ambBahtAchieve12').html((isNaN(accounting.formatNumber(achieveAMBBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtDecember, 2)) + "%");
-    $('#ambBahtAchieveTotal').html((isNaN(accounting.formatNumber(achieveAMBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtTotal, 2)) + "%");
-    $('#ambBahtAchieveQTotal').html((isNaN(accounting.formatNumber(achieveAMBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBBahtTotal, 2)) + "%");
+    $('#npBahtAchieveQ1').html((isNaN(accounting.formatNumber(achieveNPBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtQ1, 2)) + "%");
+    $('#npBahtAchieveQ2').html((isNaN(accounting.formatNumber(achieveNPBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtQ2, 2)) + "%");
+    $('#npBahtAchieveQ3').html((isNaN(accounting.formatNumber(achieveNPBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtQ3, 2)) + "%");
+    $('#npBahtAchieveQ4').html((isNaN(accounting.formatNumber(achieveNPBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtQ4, 2)) + "%");
+    $('#npBahtAchieve1').html((isNaN(accounting.formatNumber(achieveNPBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtJanuary, 2)) + "%");
+    $('#npBahtAchieve2').html((isNaN(accounting.formatNumber(achieveNPBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtFebruary, 2)) + "%");
+    $('#npBahtAchieve3').html((isNaN(accounting.formatNumber(achieveNPBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtMarch, 2)) + "%");
+    $('#npBahtAchieve4').html((isNaN(accounting.formatNumber(achieveNPBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtApril, 2)) + "%");
+    $('#npBahtAchieve5').html((isNaN(accounting.formatNumber(achieveNPBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtMay, 2)) + "%");
+    $('#npBahtAchieve6').html((isNaN(accounting.formatNumber(achieveNPBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtJune, 2)) + "%");
+    $('#npBahtAchieve7').html((isNaN(accounting.formatNumber(achieveNPBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtJuly, 2)) + "%");
+    $('#npBahtAchieve8').html((isNaN(accounting.formatNumber(achieveNPBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtAugust, 2)) + "%");
+    $('#npBahtAchieve9').html((isNaN(accounting.formatNumber(achieveNPBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtSeptember, 2)) + "%");
+    $('#npBahtAchieve10').html((isNaN(accounting.formatNumber(achieveNPBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtOctober, 2)) + "%");
+    $('#npBahtAchieve11').html((isNaN(accounting.formatNumber(achieveNPBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtNovember, 2)) + "%");
+    $('#npBahtAchieve12').html((isNaN(accounting.formatNumber(achieveNPBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtDecember, 2)) + "%");
+    $('#npBahtAchieveTotal').html((isNaN(accounting.formatNumber(achieveNPBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtTotal, 2)) + "%");
+    $('#npBahtAchieveQTotal').html((isNaN(accounting.formatNumber(achieveNPBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPBahtTotal, 2)) + "%");
 
-    $('#ambUnitActualNowQ1').html(accounting.formatNumber(currAMBUnitQ1));
-    $('#ambUnitActualNowQ2').html(accounting.formatNumber(currAMBUnitQ2));
-    $('#ambUnitActualNowQ3').html(accounting.formatNumber(currAMBUnitQ3));
-    $('#ambUnitActualNowQ4').html(accounting.formatNumber(currAMBUnitQ4));
-    $('#ambUnitActualNow1').html(accounting.formatNumber(currAMBUnitJanuary));
-    $('#ambUnitActualNow2').html(accounting.formatNumber(currAMBUnitFebruary));
-    $('#ambUnitActualNow3').html(accounting.formatNumber(currAMBUnitMarch));
-    $('#ambUnitActualNow4').html(accounting.formatNumber(currAMBUnitApril));
-    $('#ambUnitActualNow5').html(accounting.formatNumber(currAMBUnitMay));
-    $('#ambUnitActualNow6').html(accounting.formatNumber(currAMBUnitJune));
-    $('#ambUnitActualNow7').html(accounting.formatNumber(currAMBUnitJuly));
-    $('#ambUnitActualNow8').html(accounting.formatNumber(currAMBUnitAugust));
-    $('#ambUnitActualNow9').html(accounting.formatNumber(currAMBUnitSeptember));
-    $('#ambUnitActualNow10').html(accounting.formatNumber(currAMBUnitOctober));
-    $('#ambUnitActualNow11').html(accounting.formatNumber(currAMBUnitNovember));
-    $('#ambUnitActualNow12').html(accounting.formatNumber(currAMBUnitDecember));
-    $('#ambUnitActualNowTotal').html(accounting.formatNumber(currAMBTotalUnit));
-    $('#ambUnitActualNowQTotal').html(accounting.formatNumber(currAMBTotalUnit));
+    $('#npUnitActualNowQ1').html(accounting.formatNumber(currNPUnitQ1));
+    $('#npUnitActualNowQ2').html(accounting.formatNumber(currNPUnitQ2));
+    $('#npUnitActualNowQ3').html(accounting.formatNumber(currNPUnitQ3));
+    $('#npUnitActualNowQ4').html(accounting.formatNumber(currNPUnitQ4));
+    $('#npUnitActualNow1').html(accounting.formatNumber(currNPUnitJanuary));
+    $('#npUnitActualNow2').html(accounting.formatNumber(currNPUnitFebruary));
+    $('#npUnitActualNow3').html(accounting.formatNumber(currNPUnitMarch));
+    $('#npUnitActualNow4').html(accounting.formatNumber(currNPUnitApril));
+    $('#npUnitActualNow5').html(accounting.formatNumber(currNPUnitMay));
+    $('#npUnitActualNow6').html(accounting.formatNumber(currNPUnitJune));
+    $('#npUnitActualNow7').html(accounting.formatNumber(currNPUnitJuly));
+    $('#npUnitActualNow8').html(accounting.formatNumber(currNPUnitAugust));
+    $('#npUnitActualNow9').html(accounting.formatNumber(currNPUnitSeptember));
+    $('#npUnitActualNow10').html(accounting.formatNumber(currNPUnitOctober));
+    $('#npUnitActualNow11').html(accounting.formatNumber(currNPUnitNovember));
+    $('#npUnitActualNow12').html(accounting.formatNumber(currNPUnitDecember));
+    $('#npUnitActualNowTotal').html(accounting.formatNumber(currNPTotalUnit));
+    $('#npUnitActualNowQTotal').html(accounting.formatNumber(currNPTotalUnit));
 
-    $('#ambUnitActualOldQ1').html(accounting.formatNumber(oldAMBUnitQ1));
-    $('#ambUnitActualOldQ2').html(accounting.formatNumber(oldAMBUnitQ2));
-    $('#ambUnitActualOldQ3').html(accounting.formatNumber(oldAMBUnitQ3));
-    $('#ambUnitActualOldQ4').html(accounting.formatNumber(oldAMBUnitQ4));
-    $('#ambUnitActualOld1').html(accounting.formatNumber(oldAMBUnitJanuary));
-    $('#ambUnitActualOld2').html(accounting.formatNumber(oldAMBUnitFebruary));
-    $('#ambUnitActualOld3').html(accounting.formatNumber(oldAMBUnitMarch));
-    $('#ambUnitActualOld4').html(accounting.formatNumber(oldAMBUnitApril));
-    $('#ambUnitActualOld5').html(accounting.formatNumber(oldAMBUnitMay));
-    $('#ambUnitActualOld6').html(accounting.formatNumber(oldAMBUnitJune));
-    $('#ambUnitActualOld7').html(accounting.formatNumber(oldAMBUnitJuly));
-    $('#ambUnitActualOld8').html(accounting.formatNumber(oldAMBUnitAugust));
-    $('#ambUnitActualOld9').html(accounting.formatNumber(oldAMBUnitSeptember));
-    $('#ambUnitActualOld10').html(accounting.formatNumber(oldAMBUnitOctober));
-    $('#ambUnitActualOld11').html(accounting.formatNumber(oldAMBUnitNovember));
-    $('#ambUnitActualOld12').html(accounting.formatNumber(oldAMBUnitDecember));
-    $('#ambUnitActualOldTotal').html(accounting.formatNumber(oldAMBTotalUnit));
-    $('#ambUnitActualOldQTotal').html(accounting.formatNumber(oldAMBTotalUnit));
+    $('#npUnitActualOldQ1').html(accounting.formatNumber(oldNPUnitQ1));
+    $('#npUnitActualOldQ2').html(accounting.formatNumber(oldNPUnitQ2));
+    $('#npUnitActualOldQ3').html(accounting.formatNumber(oldNPUnitQ3));
+    $('#npUnitActualOldQ4').html(accounting.formatNumber(oldNPUnitQ4));
+    $('#npUnitActualOld1').html(accounting.formatNumber(oldNPUnitJanuary));
+    $('#npUnitActualOld2').html(accounting.formatNumber(oldNPUnitFebruary));
+    $('#npUnitActualOld3').html(accounting.formatNumber(oldNPUnitMarch));
+    $('#npUnitActualOld4').html(accounting.formatNumber(oldNPUnitApril));
+    $('#npUnitActualOld5').html(accounting.formatNumber(oldNPUnitMay));
+    $('#npUnitActualOld6').html(accounting.formatNumber(oldNPUnitJune));
+    $('#npUnitActualOld7').html(accounting.formatNumber(oldNPUnitJuly));
+    $('#npUnitActualOld8').html(accounting.formatNumber(oldNPUnitAugust));
+    $('#npUnitActualOld9').html(accounting.formatNumber(oldNPUnitSeptember));
+    $('#npUnitActualOld10').html(accounting.formatNumber(oldNPUnitOctober));
+    $('#npUnitActualOld11').html(accounting.formatNumber(oldNPUnitNovember));
+    $('#npUnitActualOld12').html(accounting.formatNumber(oldNPUnitDecember));
+    $('#npUnitActualOldTotal').html(accounting.formatNumber(oldNPTotalUnit));
+    $('#npUnitActualOldQTotal').html(accounting.formatNumber(oldNPTotalUnit));
 
-    $('#ambUnitGrowthQ1').html((isNaN(accounting.formatNumber(growthAMBUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitQ1, 2)) + "%");
-    $('#ambUnitGrowthQ2').html((isNaN(accounting.formatNumber(growthAMBUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitQ2, 2)) + "%");
-    $('#ambUnitGrowthQ3').html((isNaN(accounting.formatNumber(growthAMBUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitQ3, 2)) + "%");
-    $('#ambUnitGrowthQ4').html((isNaN(accounting.formatNumber(growthAMBUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitQ4, 2)) + "%");
-    $('#ambUnitGrowth1').html((isNaN(accounting.formatNumber(growthAMBUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitJanuary, 2)) + "%");
-    $('#ambUnitGrowth2').html((isNaN(accounting.formatNumber(growthAMBUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitFebruary, 2)) + "%");
-    $('#ambUnitGrowth3').html((isNaN(accounting.formatNumber(growthAMBUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitMarch, 2)) + "%");
-    $('#ambUnitGrowth4').html((isNaN(accounting.formatNumber(growthAMBUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitApril, 2)) + "%");
-    $('#ambUnitGrowth5').html((isNaN(accounting.formatNumber(growthAMBUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitMay, 2)) + "%");
-    $('#ambUnitGrowth6').html((isNaN(accounting.formatNumber(growthAMBUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitJune, 2)) + "%");
-    $('#ambUnitGrowth7').html((isNaN(accounting.formatNumber(growthAMBUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitJuly, 2)) + "%");
-    $('#ambUnitGrowth8').html((isNaN(accounting.formatNumber(growthAMBUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitAugust, 2)) + "%");
-    $('#ambUnitGrowth9').html((isNaN(accounting.formatNumber(growthAMBUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitSeptember, 2)) + "%");
-    $('#ambUnitGrowth10').html((isNaN(accounting.formatNumber(growthAMBUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitOctober, 2)) + "%");
-    $('#ambUnitGrowth11').html((isNaN(accounting.formatNumber(growthAMBUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitNovember, 2)) + "%");
-    $('#ambUnitGrowth12').html((isNaN(accounting.formatNumber(growthAMBUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitDecember, 2)) + "%");
-    $('#ambUnitGrowthTotal').html((isNaN(accounting.formatNumber(growthAMBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitTotal, 2)) + "%");
-    $('#ambUnitGrowthQTotal').html((isNaN(accounting.formatNumber(growthAMBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBUnitTotal, 2)) + "%");
+    $('#npUnitGrowthQ1').html((isNaN(accounting.formatNumber(growthNPUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitQ1, 2)) + "%");
+    $('#npUnitGrowthQ2').html((isNaN(accounting.formatNumber(growthNPUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitQ2, 2)) + "%");
+    $('#npUnitGrowthQ3').html((isNaN(accounting.formatNumber(growthNPUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitQ3, 2)) + "%");
+    $('#npUnitGrowthQ4').html((isNaN(accounting.formatNumber(growthNPUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitQ4, 2)) + "%");
+    $('#npUnitGrowth1').html((isNaN(accounting.formatNumber(growthNPUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitJanuary, 2)) + "%");
+    $('#npUnitGrowth2').html((isNaN(accounting.formatNumber(growthNPUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitFebruary, 2)) + "%");
+    $('#npUnitGrowth3').html((isNaN(accounting.formatNumber(growthNPUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitMarch, 2)) + "%");
+    $('#npUnitGrowth4').html((isNaN(accounting.formatNumber(growthNPUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitApril, 2)) + "%");
+    $('#npUnitGrowth5').html((isNaN(accounting.formatNumber(growthNPUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitMay, 2)) + "%");
+    $('#npUnitGrowth6').html((isNaN(accounting.formatNumber(growthNPUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitJune, 2)) + "%");
+    $('#npUnitGrowth7').html((isNaN(accounting.formatNumber(growthNPUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitJuly, 2)) + "%");
+    $('#npUnitGrowth8').html((isNaN(accounting.formatNumber(growthNPUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitAugust, 2)) + "%");
+    $('#npUnitGrowth9').html((isNaN(accounting.formatNumber(growthNPUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitSeptember, 2)) + "%");
+    $('#npUnitGrowth10').html((isNaN(accounting.formatNumber(growthNPUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitOctober, 2)) + "%");
+    $('#npUnitGrowth11').html((isNaN(accounting.formatNumber(growthNPUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitNovember, 2)) + "%");
+    $('#npUnitGrowth12').html((isNaN(accounting.formatNumber(growthNPUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitDecember, 2)) + "%");
+    $('#npUnitGrowthTotal').html((isNaN(accounting.formatNumber(growthNPUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitTotal, 2)) + "%");
+    $('#npUnitGrowthQTotal').html((isNaN(accounting.formatNumber(growthNPUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthNPUnitTotal, 2)) + "%");
 
-    $('#ambUnitAchieveQ1').html((isNaN(accounting.formatNumber(achieveAMBUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitQ1, 2)) + "%");
-    $('#ambUnitAchieveQ2').html((isNaN(accounting.formatNumber(achieveAMBUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitQ2, 2)) + "%");
-    $('#ambUnitAchieveQ3').html((isNaN(accounting.formatNumber(achieveAMBUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitQ3, 2)) + "%");
-    $('#ambUnitAchieveQ4').html((isNaN(accounting.formatNumber(achieveAMBUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitQ4, 2)) + "%");
-    $('#ambUnitAchieve1').html((isNaN(accounting.formatNumber(achieveAMBUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitJanuary, 2)) + "%");
-    $('#ambUnitAchieve2').html((isNaN(accounting.formatNumber(achieveAMBUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitFebruary, 2)) + "%");
-    $('#ambUnitAchieve3').html((isNaN(accounting.formatNumber(achieveAMBUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitMarch, 2)) + "%");
-    $('#ambUnitAchieve4').html((isNaN(accounting.formatNumber(achieveAMBUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitApril, 2)) + "%");
-    $('#ambUnitAchieve5').html((isNaN(accounting.formatNumber(achieveAMBUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitMay, 2)) + "%");
-    $('#ambUnitAchieve6').html((isNaN(accounting.formatNumber(achieveAMBUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitJune, 2)) + "%");
-    $('#ambUnitAchieve7').html((isNaN(accounting.formatNumber(achieveAMBUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitJuly, 2)) + "%");
-    $('#ambUnitAchieve8').html((isNaN(accounting.formatNumber(achieveAMBUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitAugust, 2)) + "%");
-    $('#ambUnitAchieve9').html((isNaN(accounting.formatNumber(achieveAMBUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitSeptember, 2)) + "%");
-    $('#ambUnitAchieve10').html((isNaN(accounting.formatNumber(achieveAMBUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitOctober, 2)) + "%");
-    $('#ambUnitAchieve11').html((isNaN(accounting.formatNumber(achieveAMBUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitNovember, 2)) + "%");
-    $('#ambUnitAchieve12').html((isNaN(accounting.formatNumber(achieveAMBUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitDecember, 2)) + "%");
-    $('#ambUnitAchieveTotal').html((isNaN(accounting.formatNumber(achieveAMBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitTotal, 2)) + "%");
-    $('#ambUnitAchieveQTotal').html((isNaN(accounting.formatNumber(achieveAMBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveAMBUnitTotal, 2)) + "%");
+    $('#npUnitAchieveQ1').html((isNaN(accounting.formatNumber(achieveNPUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitQ1, 2)) + "%");
+    $('#npUnitAchieveQ2').html((isNaN(accounting.formatNumber(achieveNPUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitQ2, 2)) + "%");
+    $('#npUnitAchieveQ3').html((isNaN(accounting.formatNumber(achieveNPUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitQ3, 2)) + "%");
+    $('#npUnitAchieveQ4').html((isNaN(accounting.formatNumber(achieveNPUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitQ4, 2)) + "%");
+    $('#npUnitAchieve1').html((isNaN(accounting.formatNumber(achieveNPUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitJanuary, 2)) + "%");
+    $('#npUnitAchieve2').html((isNaN(accounting.formatNumber(achieveNPUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitFebruary, 2)) + "%");
+    $('#npUnitAchieve3').html((isNaN(accounting.formatNumber(achieveNPUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitMarch, 2)) + "%");
+    $('#npUnitAchieve4').html((isNaN(accounting.formatNumber(achieveNPUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitApril, 2)) + "%");
+    $('#npUnitAchieve5').html((isNaN(accounting.formatNumber(achieveNPUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitMay, 2)) + "%");
+    $('#npUnitAchieve6').html((isNaN(accounting.formatNumber(achieveNPUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitJune, 2)) + "%");
+    $('#npUnitAchieve7').html((isNaN(accounting.formatNumber(achieveNPUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitJuly, 2)) + "%");
+    $('#npUnitAchieve8').html((isNaN(accounting.formatNumber(achieveNPUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitAugust, 2)) + "%");
+    $('#npUnitAchieve9').html((isNaN(accounting.formatNumber(achieveNPUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitSeptember, 2)) + "%");
+    $('#npUnitAchieve10').html((isNaN(accounting.formatNumber(achieveNPUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitOctober, 2)) + "%");
+    $('#npUnitAchieve11').html((isNaN(accounting.formatNumber(achieveNPUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitNovember, 2)) + "%");
+    $('#npUnitAchieve12').html((isNaN(accounting.formatNumber(achieveNPUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitDecember, 2)) + "%");
+    $('#npUnitAchieveTotal').html((isNaN(accounting.formatNumber(achieveNPUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitTotal, 2)) + "%");
+    $('#npUnitAchieveQTotal').html((isNaN(accounting.formatNumber(achieveNPUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveNPUnitTotal, 2)) + "%");
 
-    //MCB
-    $('#mcbBahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetMCB.AmtQ1), 2));
-    $('#mcbBahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetMCB.AmtQ2), 2));
-    $('#mcbBahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetMCB.AmtQ3), 2));
-    $('#mcbBahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetMCB.AmtQ4), 2));
-    $('#mcbBahtTargetNow1').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt01) / 1000, 2));
-    $('#mcbBahtTargetNow2').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt02) / 1000, 2));
-    $('#mcbBahtTargetNow3').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt03) / 1000, 2));
-    $('#mcbBahtTargetNow4').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt04) / 1000, 2));
-    $('#mcbBahtTargetNow5').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt05) / 1000, 2));
-    $('#mcbBahtTargetNow6').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt06) / 1000, 2));
-    $('#mcbBahtTargetNow7').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt07) / 1000, 2));
-    $('#mcbBahtTargetNow8').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt08) / 1000, 2));
-    $('#mcbBahtTargetNow9').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt09) / 1000, 2));
-    $('#mcbBahtTargetNow10').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt10) / 1000, 2));
-    $('#mcbBahtTargetNow11').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt11) / 1000, 2));
-    $('#mcbBahtTargetNow12').html(accounting.formatNumber(accounting.unformat(targetMCB.Amt12) / 1000, 2));
-    $('#mcbBahtTargetNowTotal').html(accounting.formatNumber(totalMCBBahtTarget / 1000, 2));
-    $('#mcbBahtTargetNowQTotal').html(accounting.formatNumber(totalMCBBahtTarget, 2));
+    //EB
+    $('#ebBahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetEB.AmtQ1), 2));
+    $('#ebBahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetEB.AmtQ2), 2));
+    $('#ebBahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetEB.AmtQ3), 2));
+    $('#ebBahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetEB.AmtQ4), 2));
+    $('#ebBahtTargetNow1').html(accounting.formatNumber(accounting.unformat(targetEB.Amt01) / 1000, 2));
+    $('#ebBahtTargetNow2').html(accounting.formatNumber(accounting.unformat(targetEB.Amt02) / 1000, 2));
+    $('#ebBahtTargetNow3').html(accounting.formatNumber(accounting.unformat(targetEB.Amt03) / 1000, 2));
+    $('#ebBahtTargetNow4').html(accounting.formatNumber(accounting.unformat(targetEB.Amt04) / 1000, 2));
+    $('#ebBahtTargetNow5').html(accounting.formatNumber(accounting.unformat(targetEB.Amt05) / 1000, 2));
+    $('#ebBahtTargetNow6').html(accounting.formatNumber(accounting.unformat(targetEB.Amt06) / 1000, 2));
+    $('#ebBahtTargetNow7').html(accounting.formatNumber(accounting.unformat(targetEB.Amt07) / 1000, 2));
+    $('#ebBahtTargetNow8').html(accounting.formatNumber(accounting.unformat(targetEB.Amt08) / 1000, 2));
+    $('#ebBahtTargetNow9').html(accounting.formatNumber(accounting.unformat(targetEB.Amt09) / 1000, 2));
+    $('#ebBahtTargetNow10').html(accounting.formatNumber(accounting.unformat(targetEB.Amt10) / 1000, 2));
+    $('#ebBahtTargetNow11').html(accounting.formatNumber(accounting.unformat(targetEB.Amt11) / 1000, 2));
+    $('#ebBahtTargetNow12').html(accounting.formatNumber(accounting.unformat(targetEB.Amt12) / 1000, 2));
+    $('#ebBahtTargetNowTotal').html(accounting.formatNumber(totalEBBahtTarget / 1000, 2));
+    $('#ebBahtTargetNowQTotal').html(accounting.formatNumber(totalEBBahtTarget, 2));
 
-    $('#mcbUnitTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetMCB.UnitQ1)));
-    $('#mcbUnitTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetMCB.UnitQ2)));
-    $('#mcbUnitTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetMCB.UnitQ3)));
-    $('#mcbUnitTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetMCB.UnitQ4)));
-    $('#mcbUnitTargetNow1').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit01)));
-    $('#mcbUnitTargetNow2').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit02)));
-    $('#mcbUnitTargetNow3').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit03)));
-    $('#mcbUnitTargetNow4').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit04)));
-    $('#mcbUnitTargetNow5').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit05)));
-    $('#mcbUnitTargetNow6').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit06)));
-    $('#mcbUnitTargetNow7').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit07)));
-    $('#mcbUnitTargetNow8').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit08)));
-    $('#mcbUnitTargetNow9').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit09)));
-    $('#mcbUnitTargetNow10').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit10)));
-    $('#mcbUnitTargetNow11').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit11)));
-    $('#mcbUnitTargetNow12').html(accounting.formatNumber(accounting.unformat(targetMCB.Unit12)));
-    $('#mcbUnitTargetNowTotal').html(accounting.formatNumber(totalMCBUnitTarget));
-    $('#mcbUnitTargetNowQTotal').html(accounting.formatNumber(totalMCBUnitTarget));
+    $('#ebUnitTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetEB.UnitQ1)));
+    $('#ebUnitTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetEB.UnitQ2)));
+    $('#ebUnitTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetEB.UnitQ3)));
+    $('#ebUnitTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetEB.UnitQ4)));
+    $('#ebUnitTargetNow1').html(accounting.formatNumber(accounting.unformat(targetEB.Unit01)));
+    $('#ebUnitTargetNow2').html(accounting.formatNumber(accounting.unformat(targetEB.Unit02)));
+    $('#ebUnitTargetNow3').html(accounting.formatNumber(accounting.unformat(targetEB.Unit03)));
+    $('#ebUnitTargetNow4').html(accounting.formatNumber(accounting.unformat(targetEB.Unit04)));
+    $('#ebUnitTargetNow5').html(accounting.formatNumber(accounting.unformat(targetEB.Unit05)));
+    $('#ebUnitTargetNow6').html(accounting.formatNumber(accounting.unformat(targetEB.Unit06)));
+    $('#ebUnitTargetNow7').html(accounting.formatNumber(accounting.unformat(targetEB.Unit07)));
+    $('#ebUnitTargetNow8').html(accounting.formatNumber(accounting.unformat(targetEB.Unit08)));
+    $('#ebUnitTargetNow9').html(accounting.formatNumber(accounting.unformat(targetEB.Unit09)));
+    $('#ebUnitTargetNow10').html(accounting.formatNumber(accounting.unformat(targetEB.Unit10)));
+    $('#ebUnitTargetNow11').html(accounting.formatNumber(accounting.unformat(targetEB.Unit11)));
+    $('#ebUnitTargetNow12').html(accounting.formatNumber(accounting.unformat(targetEB.Unit12)));
+    $('#ebUnitTargetNowTotal').html(accounting.formatNumber(totalEBUnitTarget));
+    $('#ebUnitTargetNowQTotal').html(accounting.formatNumber(totalEBUnitTarget));
 
-    $('#mcbBahtActualNowQ1').html(accounting.formatNumber(currMCBBahtQ1, 2));
-    $('#mcbBahtActualNowQ2').html(accounting.formatNumber(currMCBBahtQ2, 2));
-    $('#mcbBahtActualNowQ3').html(accounting.formatNumber(currMCBBahtQ3, 2));
-    $('#mcbBahtActualNowQ4').html(accounting.formatNumber(currMCBBahtQ4, 2));
-    $('#mcbBahtActualNow1').html(accounting.formatNumber(currMCBBahtJanuary / 1000, 2));
-    $('#mcbBahtActualNow2').html(accounting.formatNumber(currMCBBahtFebruary / 1000, 2));
-    $('#mcbBahtActualNow3').html(accounting.formatNumber(currMCBBahtMarch / 1000, 2));
-    $('#mcbBahtActualNow4').html(accounting.formatNumber(currMCBBahtApril / 1000, 2));
-    $('#mcbBahtActualNow5').html(accounting.formatNumber(currMCBBahtMay / 1000, 2));
-    $('#mcbBahtActualNow6').html(accounting.formatNumber(currMCBBahtJune / 1000, 2));
-    $('#mcbBahtActualNow7').html(accounting.formatNumber(currMCBBahtJuly / 1000, 2));
-    $('#mcbBahtActualNow8').html(accounting.formatNumber(currMCBBahtAugust / 1000, 2));
-    $('#mcbBahtActualNow9').html(accounting.formatNumber(currMCBBahtSeptember / 1000, 2));
-    $('#mcbBahtActualNow10').html(accounting.formatNumber(currMCBBahtOctober / 1000, 2));
-    $('#mcbBahtActualNow11').html(accounting.formatNumber(currMCBBahtNovember / 1000, 2));
-    $('#mcbBahtActualNow12').html(accounting.formatNumber(currMCBBahtDecember / 1000, 2));
-    $('#mcbBahtActualNowTotal').html(accounting.formatNumber(currMCBTotalBaht / 1000, 2));
-    $('#mcbBahtActualNowQTotal').html(accounting.formatNumber(currMCBTotalBaht, 2));
+    $('#ebBahtActualNowQ1').html(accounting.formatNumber(currEBBahtQ1, 2));
+    $('#ebBahtActualNowQ2').html(accounting.formatNumber(currEBBahtQ2, 2));
+    $('#ebBahtActualNowQ3').html(accounting.formatNumber(currEBBahtQ3, 2));
+    $('#ebBahtActualNowQ4').html(accounting.formatNumber(currEBBahtQ4, 2));
+    $('#ebBahtActualNow1').html(accounting.formatNumber(currEBBahtJanuary / 1000, 2));
+    $('#ebBahtActualNow2').html(accounting.formatNumber(currEBBahtFebruary / 1000, 2));
+    $('#ebBahtActualNow3').html(accounting.formatNumber(currEBBahtMarch / 1000, 2));
+    $('#ebBahtActualNow4').html(accounting.formatNumber(currEBBahtApril / 1000, 2));
+    $('#ebBahtActualNow5').html(accounting.formatNumber(currEBBahtMay / 1000, 2));
+    $('#ebBahtActualNow6').html(accounting.formatNumber(currEBBahtJune / 1000, 2));
+    $('#ebBahtActualNow7').html(accounting.formatNumber(currEBBahtJuly / 1000, 2));
+    $('#ebBahtActualNow8').html(accounting.formatNumber(currEBBahtAugust / 1000, 2));
+    $('#ebBahtActualNow9').html(accounting.formatNumber(currEBBahtSeptember / 1000, 2));
+    $('#ebBahtActualNow10').html(accounting.formatNumber(currEBBahtOctober / 1000, 2));
+    $('#ebBahtActualNow11').html(accounting.formatNumber(currEBBahtNovember / 1000, 2));
+    $('#ebBahtActualNow12').html(accounting.formatNumber(currEBBahtDecember / 1000, 2));
+    $('#ebBahtActualNowTotal').html(accounting.formatNumber(currEBTotalBaht / 1000, 2));
+    $('#ebBahtActualNowQTotal').html(accounting.formatNumber(currEBTotalBaht, 2));
 
-    $('#mcbBahtActualOldQ1').html(accounting.formatNumber(oldMCBBahtQ1, 2));
-    $('#mcbBahtActualOldQ2').html(accounting.formatNumber(oldMCBBahtQ2, 2));
-    $('#mcbBahtActualOldQ3').html(accounting.formatNumber(oldMCBBahtQ3, 2));
-    $('#mcbBahtActualOldQ4').html(accounting.formatNumber(oldMCBBahtQ4, 2));
-    $('#mcbBahtActualOld1').html(accounting.formatNumber(oldMCBBahtJanuary / 1000, 2));
-    $('#mcbBahtActualOld2').html(accounting.formatNumber(oldMCBBahtFebruary / 1000, 2));
-    $('#mcbBahtActualOld3').html(accounting.formatNumber(oldMCBBahtMarch / 1000, 2));
-    $('#mcbBahtActualOld4').html(accounting.formatNumber(oldMCBBahtApril / 1000, 2));
-    $('#mcbBahtActualOld5').html(accounting.formatNumber(oldMCBBahtMay / 1000, 2));
-    $('#mcbBahtActualOld6').html(accounting.formatNumber(oldMCBBahtJune / 1000, 2));
-    $('#mcbBahtActualOld7').html(accounting.formatNumber(oldMCBBahtJuly / 1000, 2));
-    $('#mcbBahtActualOld8').html(accounting.formatNumber(oldMCBBahtAugust / 1000, 2));
-    $('#mcbBahtActualOld9').html(accounting.formatNumber(oldMCBBahtSeptember / 1000, 2));
-    $('#mcbBahtActualOld10').html(accounting.formatNumber(oldMCBBahtOctober / 1000, 2));
-    $('#mcbBahtActualOld11').html(accounting.formatNumber(oldMCBBahtNovember / 1000, 2));
-    $('#mcbBahtActualOld12').html(accounting.formatNumber(oldMCBBahtDecember / 1000, 2));
-    $('#mcbBahtActualOldTotal').html(accounting.formatNumber(oldMCBTotalBaht / 1000, 2));
-    $('#mcbBahtActualOldQTotal').html(accounting.formatNumber(oldMCBTotalBaht, 2));
+    $('#ebBahtActualOldQ1').html(accounting.formatNumber(oldEBBahtQ1, 2));
+    $('#ebBahtActualOldQ2').html(accounting.formatNumber(oldEBBahtQ2, 2));
+    $('#ebBahtActualOldQ3').html(accounting.formatNumber(oldEBBahtQ3, 2));
+    $('#ebBahtActualOldQ4').html(accounting.formatNumber(oldEBBahtQ4, 2));
+    $('#ebBahtActualOld1').html(accounting.formatNumber(oldEBBahtJanuary / 1000, 2));
+    $('#ebBahtActualOld2').html(accounting.formatNumber(oldEBBahtFebruary / 1000, 2));
+    $('#ebBahtActualOld3').html(accounting.formatNumber(oldEBBahtMarch / 1000, 2));
+    $('#ebBahtActualOld4').html(accounting.formatNumber(oldEBBahtApril / 1000, 2));
+    $('#ebBahtActualOld5').html(accounting.formatNumber(oldEBBahtMay / 1000, 2));
+    $('#ebBahtActualOld6').html(accounting.formatNumber(oldEBBahtJune / 1000, 2));
+    $('#ebBahtActualOld7').html(accounting.formatNumber(oldEBBahtJuly / 1000, 2));
+    $('#ebBahtActualOld8').html(accounting.formatNumber(oldEBBahtAugust / 1000, 2));
+    $('#ebBahtActualOld9').html(accounting.formatNumber(oldEBBahtSeptember / 1000, 2));
+    $('#ebBahtActualOld10').html(accounting.formatNumber(oldEBBahtOctober / 1000, 2));
+    $('#ebBahtActualOld11').html(accounting.formatNumber(oldEBBahtNovember / 1000, 2));
+    $('#ebBahtActualOld12').html(accounting.formatNumber(oldEBBahtDecember / 1000, 2));
+    $('#ebBahtActualOldTotal').html(accounting.formatNumber(oldEBTotalBaht / 1000, 2));
+    $('#ebBahtActualOldQTotal').html(accounting.formatNumber(oldEBTotalBaht, 2));
 
-    $('#mcbBahtGrowthQ1').html((isNaN(accounting.formatNumber(growthMCBBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtQ1, 2)) + "%");
-    $('#mcbBahtGrowthQ2').html((isNaN(accounting.formatNumber(growthMCBBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtQ2, 2)) + "%");
-    $('#mcbBahtGrowthQ3').html((isNaN(accounting.formatNumber(growthMCBBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtQ3, 2)) + "%");
-    $('#mcbBahtGrowthQ4').html((isNaN(accounting.formatNumber(growthMCBBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtQ4, 2)) + "%");
-    $('#mcbBahtGrowth1').html((isNaN(accounting.formatNumber(growthMCBBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtJanuary, 2)) + "%");
-    $('#mcbBahtGrowth2').html((isNaN(accounting.formatNumber(growthMCBBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtFebruary, 2)) + "%");
-    $('#mcbBahtGrowth3').html((isNaN(accounting.formatNumber(growthMCBBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtMarch, 2)) + "%");
-    $('#mcbBahtGrowth4').html((isNaN(accounting.formatNumber(growthMCBBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtApril, 2)) + "%");
-    $('#mcbBahtGrowth5').html((isNaN(accounting.formatNumber(growthMCBBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtMay, 2)) + "%");
-    $('#mcbBahtGrowth6').html((isNaN(accounting.formatNumber(growthMCBBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtJune, 2)) + "%");
-    $('#mcbBahtGrowth7').html((isNaN(accounting.formatNumber(growthMCBBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtJuly, 2)) + "%");
-    $('#mcbBahtGrowth8').html((isNaN(accounting.formatNumber(growthMCBBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtAugust, 2)) + "%");
-    $('#mcbBahtGrowth9').html((isNaN(accounting.formatNumber(growthMCBBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtSeptember, 2)) + "%");
-    $('#mcbBahtGrowth10').html((isNaN(accounting.formatNumber(growthMCBBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtOctober, 2)) + "%");
-    $('#mcbBahtGrowth11').html((isNaN(accounting.formatNumber(growthMCBBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtNovember, 2)) + "%");
-    $('#mcbBahtGrowth12').html((isNaN(accounting.formatNumber(growthMCBBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtDecember, 2)) + "%");
-    $('#mcbBahtGrowthTotal').html((isNaN(accounting.formatNumber(growthMCBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtTotal, 2)) + "%");
-    $('#mcbBahtGrowthQTotal').html((isNaN(accounting.formatNumber(growthMCBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBBahtTotal, 2)) + "%");
+    $('#ebBahtGrowthQ1').html((isNaN(accounting.formatNumber(growthEBBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtQ1, 2)) + "%");
+    $('#ebBahtGrowthQ2').html((isNaN(accounting.formatNumber(growthEBBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtQ2, 2)) + "%");
+    $('#ebBahtGrowthQ3').html((isNaN(accounting.formatNumber(growthEBBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtQ3, 2)) + "%");
+    $('#ebBahtGrowthQ4').html((isNaN(accounting.formatNumber(growthEBBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtQ4, 2)) + "%");
+    $('#ebBahtGrowth1').html((isNaN(accounting.formatNumber(growthEBBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtJanuary, 2)) + "%");
+    $('#ebBahtGrowth2').html((isNaN(accounting.formatNumber(growthEBBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtFebruary, 2)) + "%");
+    $('#ebBahtGrowth3').html((isNaN(accounting.formatNumber(growthEBBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtMarch, 2)) + "%");
+    $('#ebBahtGrowth4').html((isNaN(accounting.formatNumber(growthEBBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtApril, 2)) + "%");
+    $('#ebBahtGrowth5').html((isNaN(accounting.formatNumber(growthEBBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtMay, 2)) + "%");
+    $('#ebBahtGrowth6').html((isNaN(accounting.formatNumber(growthEBBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtJune, 2)) + "%");
+    $('#ebBahtGrowth7').html((isNaN(accounting.formatNumber(growthEBBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtJuly, 2)) + "%");
+    $('#ebBahtGrowth8').html((isNaN(accounting.formatNumber(growthEBBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtAugust, 2)) + "%");
+    $('#ebBahtGrowth9').html((isNaN(accounting.formatNumber(growthEBBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtSeptember, 2)) + "%");
+    $('#ebBahtGrowth10').html((isNaN(accounting.formatNumber(growthEBBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtOctober, 2)) + "%");
+    $('#ebBahtGrowth11').html((isNaN(accounting.formatNumber(growthEBBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtNovember, 2)) + "%");
+    $('#ebBahtGrowth12').html((isNaN(accounting.formatNumber(growthEBBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtDecember, 2)) + "%");
+    $('#ebBahtGrowthTotal').html((isNaN(accounting.formatNumber(growthEBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtTotal, 2)) + "%");
+    $('#ebBahtGrowthQTotal').html((isNaN(accounting.formatNumber(growthEBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBBahtTotal, 2)) + "%");
 
-    $('#mcbBahtAchieveQ1').html((isNaN(accounting.formatNumber(achieveMCBBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtQ1, 2)) + "%");
-    $('#mcbBahtAchieveQ2').html((isNaN(accounting.formatNumber(achieveMCBBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtQ2, 2)) + "%");
-    $('#mcbBahtAchieveQ3').html((isNaN(accounting.formatNumber(achieveMCBBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtQ3, 2)) + "%");
-    $('#mcbBahtAchieveQ4').html((isNaN(accounting.formatNumber(achieveMCBBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtQ4, 2)) + "%");
-    $('#mcbBahtAchieve1').html((isNaN(accounting.formatNumber(achieveMCBBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtJanuary, 2)) + "%");
-    $('#mcbBahtAchieve2').html((isNaN(accounting.formatNumber(achieveMCBBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtFebruary, 2)) + "%");
-    $('#mcbBahtAchieve3').html((isNaN(accounting.formatNumber(achieveMCBBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtMarch, 2)) + "%");
-    $('#mcbBahtAchieve4').html((isNaN(accounting.formatNumber(achieveMCBBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtApril, 2)) + "%");
-    $('#mcbBahtAchieve5').html((isNaN(accounting.formatNumber(achieveMCBBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtMay, 2)) + "%");
-    $('#mcbBahtAchieve6').html((isNaN(accounting.formatNumber(achieveMCBBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtJune, 2)) + "%");
-    $('#mcbBahtAchieve7').html((isNaN(accounting.formatNumber(achieveMCBBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtJuly, 2)) + "%");
-    $('#mcbBahtAchieve8').html((isNaN(accounting.formatNumber(achieveMCBBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtAugust, 2)) + "%");
-    $('#mcbBahtAchieve9').html((isNaN(accounting.formatNumber(achieveMCBBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtSeptember, 2)) + "%");
-    $('#mcbBahtAchieve10').html((isNaN(accounting.formatNumber(achieveMCBBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtOctober, 2)) + "%");
-    $('#mcbBahtAchieve11').html((isNaN(accounting.formatNumber(achieveMCBBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtNovember, 2)) + "%");
-    $('#mcbBahtAchieve12').html((isNaN(accounting.formatNumber(achieveMCBBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtDecember, 2)) + "%");
-    $('#mcbBahtAchieveTotal').html((isNaN(accounting.formatNumber(achieveMCBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtTotal, 2)) + "%");
-    $('#mcbBahtAchieveQTotal').html((isNaN(accounting.formatNumber(achieveMCBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBBahtTotal, 2)) + "%");
+    $('#ebBahtAchieveQ1').html((isNaN(accounting.formatNumber(achieveEBBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtQ1, 2)) + "%");
+    $('#ebBahtAchieveQ2').html((isNaN(accounting.formatNumber(achieveEBBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtQ2, 2)) + "%");
+    $('#ebBahtAchieveQ3').html((isNaN(accounting.formatNumber(achieveEBBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtQ3, 2)) + "%");
+    $('#ebBahtAchieveQ4').html((isNaN(accounting.formatNumber(achieveEBBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtQ4, 2)) + "%");
+    $('#ebBahtAchieve1').html((isNaN(accounting.formatNumber(achieveEBBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtJanuary, 2)) + "%");
+    $('#ebBahtAchieve2').html((isNaN(accounting.formatNumber(achieveEBBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtFebruary, 2)) + "%");
+    $('#ebBahtAchieve3').html((isNaN(accounting.formatNumber(achieveEBBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtMarch, 2)) + "%");
+    $('#ebBahtAchieve4').html((isNaN(accounting.formatNumber(achieveEBBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtApril, 2)) + "%");
+    $('#ebBahtAchieve5').html((isNaN(accounting.formatNumber(achieveEBBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtMay, 2)) + "%");
+    $('#ebBahtAchieve6').html((isNaN(accounting.formatNumber(achieveEBBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtJune, 2)) + "%");
+    $('#ebBahtAchieve7').html((isNaN(accounting.formatNumber(achieveEBBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtJuly, 2)) + "%");
+    $('#ebBahtAchieve8').html((isNaN(accounting.formatNumber(achieveEBBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtAugust, 2)) + "%");
+    $('#ebBahtAchieve9').html((isNaN(accounting.formatNumber(achieveEBBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtSeptember, 2)) + "%");
+    $('#ebBahtAchieve10').html((isNaN(accounting.formatNumber(achieveEBBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtOctober, 2)) + "%");
+    $('#ebBahtAchieve11').html((isNaN(accounting.formatNumber(achieveEBBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtNovember, 2)) + "%");
+    $('#ebBahtAchieve12').html((isNaN(accounting.formatNumber(achieveEBBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtDecember, 2)) + "%");
+    $('#ebBahtAchieveTotal').html((isNaN(accounting.formatNumber(achieveEBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtTotal, 2)) + "%");
+    $('#ebBahtAchieveQTotal').html((isNaN(accounting.formatNumber(achieveEBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBBahtTotal, 2)) + "%");
 
-    $('#mcbUnitActualNowQ1').html(accounting.formatNumber(currMCBUnitQ1));
-    $('#mcbUnitActualNowQ2').html(accounting.formatNumber(currMCBUnitQ2));
-    $('#mcbUnitActualNowQ3').html(accounting.formatNumber(currMCBUnitQ3));
-    $('#mcbUnitActualNowQ4').html(accounting.formatNumber(currMCBUnitQ4));
-    $('#mcbUnitActualNow1').html(accounting.formatNumber(currMCBUnitJanuary));
-    $('#mcbUnitActualNow2').html(accounting.formatNumber(currMCBUnitFebruary));
-    $('#mcbUnitActualNow3').html(accounting.formatNumber(currMCBUnitMarch));
-    $('#mcbUnitActualNow4').html(accounting.formatNumber(currMCBUnitApril));
-    $('#mcbUnitActualNow5').html(accounting.formatNumber(currMCBUnitMay));
-    $('#mcbUnitActualNow6').html(accounting.formatNumber(currMCBUnitJune));
-    $('#mcbUnitActualNow7').html(accounting.formatNumber(currMCBUnitJuly));
-    $('#mcbUnitActualNow8').html(accounting.formatNumber(currMCBUnitAugust));
-    $('#mcbUnitActualNow9').html(accounting.formatNumber(currMCBUnitSeptember));
-    $('#mcbUnitActualNow10').html(accounting.formatNumber(currMCBUnitOctober));
-    $('#mcbUnitActualNow11').html(accounting.formatNumber(currMCBUnitNovember));
-    $('#mcbUnitActualNow12').html(accounting.formatNumber(currMCBUnitDecember));
-    $('#mcbUnitActualNowTotal').html(accounting.formatNumber(currMCBTotalUnit));
-    $('#mcbUnitActualNowQTotal').html(accounting.formatNumber(currMCBTotalUnit));
+    $('#ebUnitActualNowQ1').html(accounting.formatNumber(currEBUnitQ1));
+    $('#ebUnitActualNowQ2').html(accounting.formatNumber(currEBUnitQ2));
+    $('#ebUnitActualNowQ3').html(accounting.formatNumber(currEBUnitQ3));
+    $('#ebUnitActualNowQ4').html(accounting.formatNumber(currEBUnitQ4));
+    $('#ebUnitActualNow1').html(accounting.formatNumber(currEBUnitJanuary));
+    $('#ebUnitActualNow2').html(accounting.formatNumber(currEBUnitFebruary));
+    $('#ebUnitActualNow3').html(accounting.formatNumber(currEBUnitMarch));
+    $('#ebUnitActualNow4').html(accounting.formatNumber(currEBUnitApril));
+    $('#ebUnitActualNow5').html(accounting.formatNumber(currEBUnitMay));
+    $('#ebUnitActualNow6').html(accounting.formatNumber(currEBUnitJune));
+    $('#ebUnitActualNow7').html(accounting.formatNumber(currEBUnitJuly));
+    $('#ebUnitActualNow8').html(accounting.formatNumber(currEBUnitAugust));
+    $('#ebUnitActualNow9').html(accounting.formatNumber(currEBUnitSeptember));
+    $('#ebUnitActualNow10').html(accounting.formatNumber(currEBUnitOctober));
+    $('#ebUnitActualNow11').html(accounting.formatNumber(currEBUnitNovember));
+    $('#ebUnitActualNow12').html(accounting.formatNumber(currEBUnitDecember));
+    $('#ebUnitActualNowTotal').html(accounting.formatNumber(currEBTotalUnit));
+    $('#ebUnitActualNowQTotal').html(accounting.formatNumber(currEBTotalUnit));
 
-    $('#mcbUnitActualOldQ1').html(accounting.formatNumber(oldMCBUnitQ1));
-    $('#mcbUnitActualOldQ2').html(accounting.formatNumber(oldMCBUnitQ2));
-    $('#mcbUnitActualOldQ3').html(accounting.formatNumber(oldMCBUnitQ3));
-    $('#mcbUnitActualOldQ4').html(accounting.formatNumber(oldMCBUnitQ4));
-    $('#mcbUnitActualOld1').html(accounting.formatNumber(oldMCBUnitJanuary));
-    $('#mcbUnitActualOld2').html(accounting.formatNumber(oldMCBUnitFebruary));
-    $('#mcbUnitActualOld3').html(accounting.formatNumber(oldMCBUnitMarch));
-    $('#mcbUnitActualOld4').html(accounting.formatNumber(oldMCBUnitApril));
-    $('#mcbUnitActualOld5').html(accounting.formatNumber(oldMCBUnitMay));
-    $('#mcbUnitActualOld6').html(accounting.formatNumber(oldMCBUnitJune));
-    $('#mcbUnitActualOld7').html(accounting.formatNumber(oldMCBUnitJuly));
-    $('#mcbUnitActualOld8').html(accounting.formatNumber(oldMCBUnitAugust));
-    $('#mcbUnitActualOld9').html(accounting.formatNumber(oldMCBUnitSeptember));
-    $('#mcbUnitActualOld10').html(accounting.formatNumber(oldMCBUnitOctober));
-    $('#mcbUnitActualOld11').html(accounting.formatNumber(oldMCBUnitNovember));
-    $('#mcbUnitActualOld12').html(accounting.formatNumber(oldMCBUnitDecember));
-    $('#mcbUnitActualOldTotal').html(accounting.formatNumber(oldMCBTotalUnit));
-    $('#mcbUnitActualOldQTotal').html(accounting.formatNumber(oldMCBTotalUnit));
+    $('#ebUnitActualOldQ1').html(accounting.formatNumber(oldEBUnitQ1));
+    $('#ebUnitActualOldQ2').html(accounting.formatNumber(oldEBUnitQ2));
+    $('#ebUnitActualOldQ3').html(accounting.formatNumber(oldEBUnitQ3));
+    $('#ebUnitActualOldQ4').html(accounting.formatNumber(oldEBUnitQ4));
+    $('#ebUnitActualOld1').html(accounting.formatNumber(oldEBUnitJanuary));
+    $('#ebUnitActualOld2').html(accounting.formatNumber(oldEBUnitFebruary));
+    $('#ebUnitActualOld3').html(accounting.formatNumber(oldEBUnitMarch));
+    $('#ebUnitActualOld4').html(accounting.formatNumber(oldEBUnitApril));
+    $('#ebUnitActualOld5').html(accounting.formatNumber(oldEBUnitMay));
+    $('#ebUnitActualOld6').html(accounting.formatNumber(oldEBUnitJune));
+    $('#ebUnitActualOld7').html(accounting.formatNumber(oldEBUnitJuly));
+    $('#ebUnitActualOld8').html(accounting.formatNumber(oldEBUnitAugust));
+    $('#ebUnitActualOld9').html(accounting.formatNumber(oldEBUnitSeptember));
+    $('#ebUnitActualOld10').html(accounting.formatNumber(oldEBUnitOctober));
+    $('#ebUnitActualOld11').html(accounting.formatNumber(oldEBUnitNovember));
+    $('#ebUnitActualOld12').html(accounting.formatNumber(oldEBUnitDecember));
+    $('#ebUnitActualOldTotal').html(accounting.formatNumber(oldEBTotalUnit));
+    $('#ebUnitActualOldQTotal').html(accounting.formatNumber(oldEBTotalUnit));
 
-    $('#mcbUnitGrowthQ1').html((isNaN(accounting.formatNumber(growthMCBUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitQ1, 2)) + "%");
-    $('#mcbUnitGrowthQ2').html((isNaN(accounting.formatNumber(growthMCBUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitQ2, 2)) + "%");
-    $('#mcbUnitGrowthQ3').html((isNaN(accounting.formatNumber(growthMCBUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitQ3, 2)) + "%");
-    $('#mcbUnitGrowthQ4').html((isNaN(accounting.formatNumber(growthMCBUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitQ4, 2)) + "%");
-    $('#mcbUnitGrowth1').html((isNaN(accounting.formatNumber(growthMCBUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitJanuary, 2)) + "%");
-    $('#mcbUnitGrowth2').html((isNaN(accounting.formatNumber(growthMCBUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitFebruary, 2)) + "%");
-    $('#mcbUnitGrowth3').html((isNaN(accounting.formatNumber(growthMCBUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitMarch, 2)) + "%");
-    $('#mcbUnitGrowth4').html((isNaN(accounting.formatNumber(growthMCBUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitApril, 2)) + "%");
-    $('#mcbUnitGrowth5').html((isNaN(accounting.formatNumber(growthMCBUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitMay, 2)) + "%");
-    $('#mcbUnitGrowth6').html((isNaN(accounting.formatNumber(growthMCBUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitJune, 2)) + "%");
-    $('#mcbUnitGrowth7').html((isNaN(accounting.formatNumber(growthMCBUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitJuly, 2)) + "%");
-    $('#mcbUnitGrowth8').html((isNaN(accounting.formatNumber(growthMCBUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitAugust, 2)) + "%");
-    $('#mcbUnitGrowth9').html((isNaN(accounting.formatNumber(growthMCBUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitSeptember, 2)) + "%");
-    $('#mcbUnitGrowth10').html((isNaN(accounting.formatNumber(growthMCBUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitOctober, 2)) + "%");
-    $('#mcbUnitGrowth11').html((isNaN(accounting.formatNumber(growthMCBUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitNovember, 2)) + "%");
-    $('#mcbUnitGrowth12').html((isNaN(accounting.formatNumber(growthMCBUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitDecember, 2)) + "%");
-    $('#mcbUnitGrowthTotal').html((isNaN(accounting.formatNumber(growthMCBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitTotal, 2)) + "%");
-    $('#mcbUnitGrowthQTotal').html((isNaN(accounting.formatNumber(growthMCBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthMCBUnitTotal, 2)) + "%");
+    $('#ebUnitGrowthQ1').html((isNaN(accounting.formatNumber(growthEBUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitQ1, 2)) + "%");
+    $('#ebUnitGrowthQ2').html((isNaN(accounting.formatNumber(growthEBUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitQ2, 2)) + "%");
+    $('#ebUnitGrowthQ3').html((isNaN(accounting.formatNumber(growthEBUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitQ3, 2)) + "%");
+    $('#ebUnitGrowthQ4').html((isNaN(accounting.formatNumber(growthEBUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitQ4, 2)) + "%");
+    $('#ebUnitGrowth1').html((isNaN(accounting.formatNumber(growthEBUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitJanuary, 2)) + "%");
+    $('#ebUnitGrowth2').html((isNaN(accounting.formatNumber(growthEBUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitFebruary, 2)) + "%");
+    $('#ebUnitGrowth3').html((isNaN(accounting.formatNumber(growthEBUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitMarch, 2)) + "%");
+    $('#ebUnitGrowth4').html((isNaN(accounting.formatNumber(growthEBUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitApril, 2)) + "%");
+    $('#ebUnitGrowth5').html((isNaN(accounting.formatNumber(growthEBUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitMay, 2)) + "%");
+    $('#ebUnitGrowth6').html((isNaN(accounting.formatNumber(growthEBUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitJune, 2)) + "%");
+    $('#ebUnitGrowth7').html((isNaN(accounting.formatNumber(growthEBUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitJuly, 2)) + "%");
+    $('#ebUnitGrowth8').html((isNaN(accounting.formatNumber(growthEBUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitAugust, 2)) + "%");
+    $('#ebUnitGrowth9').html((isNaN(accounting.formatNumber(growthEBUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitSeptember, 2)) + "%");
+    $('#ebUnitGrowth10').html((isNaN(accounting.formatNumber(growthEBUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitOctober, 2)) + "%");
+    $('#ebUnitGrowth11').html((isNaN(accounting.formatNumber(growthEBUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitNovember, 2)) + "%");
+    $('#ebUnitGrowth12').html((isNaN(accounting.formatNumber(growthEBUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitDecember, 2)) + "%");
+    $('#ebUnitGrowthTotal').html((isNaN(accounting.formatNumber(growthEBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitTotal, 2)) + "%");
+    $('#ebUnitGrowthQTotal').html((isNaN(accounting.formatNumber(growthEBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthEBUnitTotal, 2)) + "%");
 
-    $('#mcbUnitAchieveQ1').html((isNaN(accounting.formatNumber(achieveMCBUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitQ1, 2)) + "%");
-    $('#mcbUnitAchieveQ2').html((isNaN(accounting.formatNumber(achieveMCBUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitQ2, 2)) + "%");
-    $('#mcbUnitAchieveQ3').html((isNaN(accounting.formatNumber(achieveMCBUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitQ3, 2)) + "%");
-    $('#mcbUnitAchieveQ4').html((isNaN(accounting.formatNumber(achieveMCBUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitQ4, 2)) + "%");
-    $('#mcbUnitAchieve1').html((isNaN(accounting.formatNumber(achieveMCBUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitJanuary, 2)) + "%");
-    $('#mcbUnitAchieve2').html((isNaN(accounting.formatNumber(achieveMCBUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitFebruary, 2)) + "%");
-    $('#mcbUnitAchieve3').html((isNaN(accounting.formatNumber(achieveMCBUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitMarch, 2)) + "%");
-    $('#mcbUnitAchieve4').html((isNaN(accounting.formatNumber(achieveMCBUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitApril, 2)) + "%");
-    $('#mcbUnitAchieve5').html((isNaN(accounting.formatNumber(achieveMCBUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitMay, 2)) + "%");
-    $('#mcbUnitAchieve6').html((isNaN(accounting.formatNumber(achieveMCBUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitJune, 2)) + "%");
-    $('#mcbUnitAchieve7').html((isNaN(accounting.formatNumber(achieveMCBUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitJuly, 2)) + "%");
-    $('#mcbUnitAchieve8').html((isNaN(accounting.formatNumber(achieveMCBUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitAugust, 2)) + "%");
-    $('#mcbUnitAchieve9').html((isNaN(accounting.formatNumber(achieveMCBUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitSeptember, 2)) + "%");
-    $('#mcbUnitAchieve10').html((isNaN(accounting.formatNumber(achieveMCBUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitOctober, 2)) + "%");
-    $('#mcbUnitAchieve11').html((isNaN(accounting.formatNumber(achieveMCBUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitNovember, 2)) + "%");
-    $('#mcbUnitAchieve12').html((isNaN(accounting.formatNumber(achieveMCBUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitDecember, 2)) + "%");
-    $('#mcbUnitAchieveTotal').html((isNaN(accounting.formatNumber(achieveMCBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitTotal, 2)) + "%");
-    $('#mcbUnitAchieveQTotal').html((isNaN(accounting.formatNumber(achieveMCBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveMCBUnitTotal, 2)) + "%");
+    $('#ebUnitAchieveQ1').html((isNaN(accounting.formatNumber(achieveEBUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitQ1, 2)) + "%");
+    $('#ebUnitAchieveQ2').html((isNaN(accounting.formatNumber(achieveEBUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitQ2, 2)) + "%");
+    $('#ebUnitAchieveQ3').html((isNaN(accounting.formatNumber(achieveEBUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitQ3, 2)) + "%");
+    $('#ebUnitAchieveQ4').html((isNaN(accounting.formatNumber(achieveEBUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitQ4, 2)) + "%");
+    $('#ebUnitAchieve1').html((isNaN(accounting.formatNumber(achieveEBUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitJanuary, 2)) + "%");
+    $('#ebUnitAchieve2').html((isNaN(accounting.formatNumber(achieveEBUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitFebruary, 2)) + "%");
+    $('#ebUnitAchieve3').html((isNaN(accounting.formatNumber(achieveEBUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitMarch, 2)) + "%");
+    $('#ebUnitAchieve4').html((isNaN(accounting.formatNumber(achieveEBUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitApril, 2)) + "%");
+    $('#ebUnitAchieve5').html((isNaN(accounting.formatNumber(achieveEBUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitMay, 2)) + "%");
+    $('#ebUnitAchieve6').html((isNaN(accounting.formatNumber(achieveEBUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitJune, 2)) + "%");
+    $('#ebUnitAchieve7').html((isNaN(accounting.formatNumber(achieveEBUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitJuly, 2)) + "%");
+    $('#ebUnitAchieve8').html((isNaN(accounting.formatNumber(achieveEBUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitAugust, 2)) + "%");
+    $('#ebUnitAchieve9').html((isNaN(accounting.formatNumber(achieveEBUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitSeptember, 2)) + "%");
+    $('#ebUnitAchieve10').html((isNaN(accounting.formatNumber(achieveEBUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitOctober, 2)) + "%");
+    $('#ebUnitAchieve11').html((isNaN(accounting.formatNumber(achieveEBUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitNovember, 2)) + "%");
+    $('#ebUnitAchieve12').html((isNaN(accounting.formatNumber(achieveEBUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitDecember, 2)) + "%");
+    $('#ebUnitAchieveTotal').html((isNaN(accounting.formatNumber(achieveEBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitTotal, 2)) + "%");
+    $('#ebUnitAchieveQTotal').html((isNaN(accounting.formatNumber(achieveEBUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveEBUnitTotal, 2)) + "%");
+
+    //IND
+    $('#indBahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetIND.AmtQ1), 2));
+    $('#indBahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetIND.AmtQ2), 2));
+    $('#indBahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetIND.AmtQ3), 2));
+    $('#indBahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetIND.AmtQ4), 2));
+    $('#indBahtTargetNow1').html(accounting.formatNumber(accounting.unformat(targetIND.Amt01) / 1000, 2));
+    $('#indBahtTargetNow2').html(accounting.formatNumber(accounting.unformat(targetIND.Amt02) / 1000, 2));
+    $('#indBahtTargetNow3').html(accounting.formatNumber(accounting.unformat(targetIND.Amt03) / 1000, 2));
+    $('#indBahtTargetNow4').html(accounting.formatNumber(accounting.unformat(targetIND.Amt04) / 1000, 2));
+    $('#indBahtTargetNow5').html(accounting.formatNumber(accounting.unformat(targetIND.Amt05) / 1000, 2));
+    $('#indBahtTargetNow6').html(accounting.formatNumber(accounting.unformat(targetIND.Amt06) / 1000, 2));
+    $('#indBahtTargetNow7').html(accounting.formatNumber(accounting.unformat(targetIND.Amt07) / 1000, 2));
+    $('#indBahtTargetNow8').html(accounting.formatNumber(accounting.unformat(targetIND.Amt08) / 1000, 2));
+    $('#indBahtTargetNow9').html(accounting.formatNumber(accounting.unformat(targetIND.Amt09) / 1000, 2));
+    $('#indBahtTargetNow10').html(accounting.formatNumber(accounting.unformat(targetIND.Amt10) / 1000, 2));
+    $('#indBahtTargetNow11').html(accounting.formatNumber(accounting.unformat(targetIND.Amt11) / 1000, 2));
+    $('#indBahtTargetNow12').html(accounting.formatNumber(accounting.unformat(targetIND.Amt12) / 1000, 2));
+    $('#indBahtTargetNowTotal').html(accounting.formatNumber(totalINDBahtTarget / 1000, 2));
+    $('#indBahtTargetNowQTotal').html(accounting.formatNumber(totalINDBahtTarget, 2));
+
+    $('#indUnitTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetIND.UnitQ1)));
+    $('#indUnitTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetIND.UnitQ2)));
+    $('#indUnitTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetIND.UnitQ3)));
+    $('#indUnitTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetIND.UnitQ4)));
+    $('#indUnitTargetNow1').html(accounting.formatNumber(accounting.unformat(targetIND.Unit01)));
+    $('#indUnitTargetNow2').html(accounting.formatNumber(accounting.unformat(targetIND.Unit02)));
+    $('#indUnitTargetNow3').html(accounting.formatNumber(accounting.unformat(targetIND.Unit03)));
+    $('#indUnitTargetNow4').html(accounting.formatNumber(accounting.unformat(targetIND.Unit04)));
+    $('#indUnitTargetNow5').html(accounting.formatNumber(accounting.unformat(targetIND.Unit05)));
+    $('#indUnitTargetNow6').html(accounting.formatNumber(accounting.unformat(targetIND.Unit06)));
+    $('#indUnitTargetNow7').html(accounting.formatNumber(accounting.unformat(targetIND.Unit07)));
+    $('#indUnitTargetNow8').html(accounting.formatNumber(accounting.unformat(targetIND.Unit08)));
+    $('#indUnitTargetNow9').html(accounting.formatNumber(accounting.unformat(targetIND.Unit09)));
+    $('#indUnitTargetNow10').html(accounting.formatNumber(accounting.unformat(targetIND.Unit10)));
+    $('#indUnitTargetNow11').html(accounting.formatNumber(accounting.unformat(targetIND.Unit11)));
+    $('#indUnitTargetNow12').html(accounting.formatNumber(accounting.unformat(targetIND.Unit12)));
+    $('#indUnitTargetNowTotal').html(accounting.formatNumber(totalINDUnitTarget));
+    $('#indUnitTargetNowQTotal').html(accounting.formatNumber(totalINDUnitTarget));
+
+    $('#indBahtActualNowQ1').html(accounting.formatNumber(currINDBahtQ1, 2));
+    $('#indBahtActualNowQ2').html(accounting.formatNumber(currINDBahtQ2, 2));
+    $('#indBahtActualNowQ3').html(accounting.formatNumber(currINDBahtQ3, 2));
+    $('#indBahtActualNowQ4').html(accounting.formatNumber(currINDBahtQ4, 2));
+    $('#indBahtActualNow1').html(accounting.formatNumber(currINDBahtJanuary / 1000, 2));
+    $('#indBahtActualNow2').html(accounting.formatNumber(currINDBahtFebruary / 1000, 2));
+    $('#indBahtActualNow3').html(accounting.formatNumber(currINDBahtMarch / 1000, 2));
+    $('#indBahtActualNow4').html(accounting.formatNumber(currINDBahtApril / 1000, 2));
+    $('#indBahtActualNow5').html(accounting.formatNumber(currINDBahtMay / 1000, 2));
+    $('#indBahtActualNow6').html(accounting.formatNumber(currINDBahtJune / 1000, 2));
+    $('#indBahtActualNow7').html(accounting.formatNumber(currINDBahtJuly / 1000, 2));
+    $('#indBahtActualNow8').html(accounting.formatNumber(currINDBahtAugust / 1000, 2));
+    $('#indBahtActualNow9').html(accounting.formatNumber(currINDBahtSeptember / 1000, 2));
+    $('#indBahtActualNow10').html(accounting.formatNumber(currINDBahtOctober / 1000, 2));
+    $('#indBahtActualNow11').html(accounting.formatNumber(currINDBahtNovember / 1000, 2));
+    $('#indBahtActualNow12').html(accounting.formatNumber(currINDBahtDecember / 1000, 2));
+    $('#indBahtActualNowTotal').html(accounting.formatNumber(currINDTotalBaht / 1000, 2));
+    $('#indBahtActualNowQTotal').html(accounting.formatNumber(currINDTotalBaht, 2));
+
+    $('#indBahtActualOldQ1').html(accounting.formatNumber(oldINDBahtQ1, 2));
+    $('#indBahtActualOldQ2').html(accounting.formatNumber(oldINDBahtQ2, 2));
+    $('#indBahtActualOldQ3').html(accounting.formatNumber(oldINDBahtQ3, 2));
+    $('#indBahtActualOldQ4').html(accounting.formatNumber(oldINDBahtQ4, 2));
+    $('#indBahtActualOld1').html(accounting.formatNumber(oldINDBahtJanuary / 1000, 2));
+    $('#indBahtActualOld2').html(accounting.formatNumber(oldINDBahtFebruary / 1000, 2));
+    $('#indBahtActualOld3').html(accounting.formatNumber(oldINDBahtMarch / 1000, 2));
+    $('#indBahtActualOld4').html(accounting.formatNumber(oldINDBahtApril / 1000, 2));
+    $('#indBahtActualOld5').html(accounting.formatNumber(oldINDBahtMay / 1000, 2));
+    $('#indBahtActualOld6').html(accounting.formatNumber(oldINDBahtJune / 1000, 2));
+    $('#indBahtActualOld7').html(accounting.formatNumber(oldINDBahtJuly / 1000, 2));
+    $('#indBahtActualOld8').html(accounting.formatNumber(oldINDBahtAugust / 1000, 2));
+    $('#indBahtActualOld9').html(accounting.formatNumber(oldINDBahtSeptember / 1000, 2));
+    $('#indBahtActualOld10').html(accounting.formatNumber(oldINDBahtOctober / 1000, 2));
+    $('#indBahtActualOld11').html(accounting.formatNumber(oldINDBahtNovember / 1000, 2));
+    $('#indBahtActualOld12').html(accounting.formatNumber(oldINDBahtDecember / 1000, 2));
+    $('#indBahtActualOldTotal').html(accounting.formatNumber(oldINDTotalBaht / 1000, 2));
+    $('#indBahtActualOldQTotal').html(accounting.formatNumber(oldINDTotalBaht, 2));
+
+    $('#indBahtGrowthQ1').html((isNaN(accounting.formatNumber(growthINDBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtQ1, 2)) + "%");
+    $('#indBahtGrowthQ2').html((isNaN(accounting.formatNumber(growthINDBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtQ2, 2)) + "%");
+    $('#indBahtGrowthQ3').html((isNaN(accounting.formatNumber(growthINDBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtQ3, 2)) + "%");
+    $('#indBahtGrowthQ4').html((isNaN(accounting.formatNumber(growthINDBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtQ4, 2)) + "%");
+    $('#indBahtGrowth1').html((isNaN(accounting.formatNumber(growthINDBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtJanuary, 2)) + "%");
+    $('#indBahtGrowth2').html((isNaN(accounting.formatNumber(growthINDBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtFebruary, 2)) + "%");
+    $('#indBahtGrowth3').html((isNaN(accounting.formatNumber(growthINDBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtMarch, 2)) + "%");
+    $('#indBahtGrowth4').html((isNaN(accounting.formatNumber(growthINDBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtApril, 2)) + "%");
+    $('#indBahtGrowth5').html((isNaN(accounting.formatNumber(growthINDBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtMay, 2)) + "%");
+    $('#indBahtGrowth6').html((isNaN(accounting.formatNumber(growthINDBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtJune, 2)) + "%");
+    $('#indBahtGrowth7').html((isNaN(accounting.formatNumber(growthINDBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtJuly, 2)) + "%");
+    $('#indBahtGrowth8').html((isNaN(accounting.formatNumber(growthINDBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtAugust, 2)) + "%");
+    $('#indBahtGrowth9').html((isNaN(accounting.formatNumber(growthINDBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtSeptember, 2)) + "%");
+    $('#indBahtGrowth10').html((isNaN(accounting.formatNumber(growthINDBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtOctober, 2)) + "%");
+    $('#indBahtGrowth11').html((isNaN(accounting.formatNumber(growthINDBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtNovember, 2)) + "%");
+    $('#indBahtGrowth12').html((isNaN(accounting.formatNumber(growthINDBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtDecember, 2)) + "%");
+    $('#indBahtGrowthTotal').html((isNaN(accounting.formatNumber(growthINDBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtTotal, 2)) + "%");
+    $('#indBahtGrowthQTotal').html((isNaN(accounting.formatNumber(growthINDBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDBahtTotal, 2)) + "%");
+
+    $('#indBahtAchieveQ1').html((isNaN(accounting.formatNumber(achieveINDBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtQ1, 2)) + "%");
+    $('#indBahtAchieveQ2').html((isNaN(accounting.formatNumber(achieveINDBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtQ2, 2)) + "%");
+    $('#indBahtAchieveQ3').html((isNaN(accounting.formatNumber(achieveINDBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtQ3, 2)) + "%");
+    $('#indBahtAchieveQ4').html((isNaN(accounting.formatNumber(achieveINDBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtQ4, 2)) + "%");
+    $('#indBahtAchieve1').html((isNaN(accounting.formatNumber(achieveINDBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtJanuary, 2)) + "%");
+    $('#indBahtAchieve2').html((isNaN(accounting.formatNumber(achieveINDBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtFebruary, 2)) + "%");
+    $('#indBahtAchieve3').html((isNaN(accounting.formatNumber(achieveINDBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtMarch, 2)) + "%");
+    $('#indBahtAchieve4').html((isNaN(accounting.formatNumber(achieveINDBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtApril, 2)) + "%");
+    $('#indBahtAchieve5').html((isNaN(accounting.formatNumber(achieveINDBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtMay, 2)) + "%");
+    $('#indBahtAchieve6').html((isNaN(accounting.formatNumber(achieveINDBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtJune, 2)) + "%");
+    $('#indBahtAchieve7').html((isNaN(accounting.formatNumber(achieveINDBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtJuly, 2)) + "%");
+    $('#indBahtAchieve8').html((isNaN(accounting.formatNumber(achieveINDBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtAugust, 2)) + "%");
+    $('#indBahtAchieve9').html((isNaN(accounting.formatNumber(achieveINDBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtSeptember, 2)) + "%");
+    $('#indBahtAchieve10').html((isNaN(accounting.formatNumber(achieveINDBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtOctober, 2)) + "%");
+    $('#indBahtAchieve11').html((isNaN(accounting.formatNumber(achieveINDBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtNovember, 2)) + "%");
+    $('#indBahtAchieve12').html((isNaN(accounting.formatNumber(achieveINDBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtDecember, 2)) + "%");
+    $('#indBahtAchieveTotal').html((isNaN(accounting.formatNumber(achieveINDBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtTotal, 2)) + "%");
+    $('#indBahtAchieveQTotal').html((isNaN(accounting.formatNumber(achieveINDBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDBahtTotal, 2)) + "%");
+
+    $('#indUnitActualNowQ1').html(accounting.formatNumber(currINDUnitQ1));
+    $('#indUnitActualNowQ2').html(accounting.formatNumber(currINDUnitQ2));
+    $('#indUnitActualNowQ3').html(accounting.formatNumber(currINDUnitQ3));
+    $('#indUnitActualNowQ4').html(accounting.formatNumber(currINDUnitQ4));
+    $('#indUnitActualNow1').html(accounting.formatNumber(currINDUnitJanuary));
+    $('#indUnitActualNow2').html(accounting.formatNumber(currINDUnitFebruary));
+    $('#indUnitActualNow3').html(accounting.formatNumber(currINDUnitMarch));
+    $('#indUnitActualNow4').html(accounting.formatNumber(currINDUnitApril));
+    $('#indUnitActualNow5').html(accounting.formatNumber(currINDUnitMay));
+    $('#indUnitActualNow6').html(accounting.formatNumber(currINDUnitJune));
+    $('#indUnitActualNow7').html(accounting.formatNumber(currINDUnitJuly));
+    $('#indUnitActualNow8').html(accounting.formatNumber(currINDUnitAugust));
+    $('#indUnitActualNow9').html(accounting.formatNumber(currINDUnitSeptember));
+    $('#indUnitActualNow10').html(accounting.formatNumber(currINDUnitOctober));
+    $('#indUnitActualNow11').html(accounting.formatNumber(currINDUnitNovember));
+    $('#indUnitActualNow12').html(accounting.formatNumber(currINDUnitDecember));
+    $('#indUnitActualNowTotal').html(accounting.formatNumber(currINDTotalUnit));
+    $('#indUnitActualNowQTotal').html(accounting.formatNumber(currINDTotalUnit));
+
+    $('#indUnitActualOldQ1').html(accounting.formatNumber(oldINDUnitQ1));
+    $('#indUnitActualOldQ2').html(accounting.formatNumber(oldINDUnitQ2));
+    $('#indUnitActualOldQ3').html(accounting.formatNumber(oldINDUnitQ3));
+    $('#indUnitActualOldQ4').html(accounting.formatNumber(oldINDUnitQ4));
+    $('#indUnitActualOld1').html(accounting.formatNumber(oldINDUnitJanuary));
+    $('#indUnitActualOld2').html(accounting.formatNumber(oldINDUnitFebruary));
+    $('#indUnitActualOld3').html(accounting.formatNumber(oldINDUnitMarch));
+    $('#indUnitActualOld4').html(accounting.formatNumber(oldINDUnitApril));
+    $('#indUnitActualOld5').html(accounting.formatNumber(oldINDUnitMay));
+    $('#indUnitActualOld6').html(accounting.formatNumber(oldINDUnitJune));
+    $('#indUnitActualOld7').html(accounting.formatNumber(oldINDUnitJuly));
+    $('#indUnitActualOld8').html(accounting.formatNumber(oldINDUnitAugust));
+    $('#indUnitActualOld9').html(accounting.formatNumber(oldINDUnitSeptember));
+    $('#indUnitActualOld10').html(accounting.formatNumber(oldINDUnitOctober));
+    $('#indUnitActualOld11').html(accounting.formatNumber(oldINDUnitNovember));
+    $('#indUnitActualOld12').html(accounting.formatNumber(oldINDUnitDecember));
+    $('#indUnitActualOldTotal').html(accounting.formatNumber(oldINDTotalUnit));
+    $('#indUnitActualOldQTotal').html(accounting.formatNumber(oldINDTotalUnit));
+
+    $('#indUnitGrowthQ1').html((isNaN(accounting.formatNumber(growthINDUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitQ1, 2)) + "%");
+    $('#indUnitGrowthQ2').html((isNaN(accounting.formatNumber(growthINDUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitQ2, 2)) + "%");
+    $('#indUnitGrowthQ3').html((isNaN(accounting.formatNumber(growthINDUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitQ3, 2)) + "%");
+    $('#indUnitGrowthQ4').html((isNaN(accounting.formatNumber(growthINDUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitQ4, 2)) + "%");
+    $('#indUnitGrowth1').html((isNaN(accounting.formatNumber(growthINDUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitJanuary, 2)) + "%");
+    $('#indUnitGrowth2').html((isNaN(accounting.formatNumber(growthINDUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitFebruary, 2)) + "%");
+    $('#indUnitGrowth3').html((isNaN(accounting.formatNumber(growthINDUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitMarch, 2)) + "%");
+    $('#indUnitGrowth4').html((isNaN(accounting.formatNumber(growthINDUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitApril, 2)) + "%");
+    $('#indUnitGrowth5').html((isNaN(accounting.formatNumber(growthINDUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitMay, 2)) + "%");
+    $('#indUnitGrowth6').html((isNaN(accounting.formatNumber(growthINDUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitJune, 2)) + "%");
+    $('#indUnitGrowth7').html((isNaN(accounting.formatNumber(growthINDUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitJuly, 2)) + "%");
+    $('#indUnitGrowth8').html((isNaN(accounting.formatNumber(growthINDUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitAugust, 2)) + "%");
+    $('#indUnitGrowth9').html((isNaN(accounting.formatNumber(growthINDUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitSeptember, 2)) + "%");
+    $('#indUnitGrowth10').html((isNaN(accounting.formatNumber(growthINDUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitOctober, 2)) + "%");
+    $('#indUnitGrowth11').html((isNaN(accounting.formatNumber(growthINDUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitNovember, 2)) + "%");
+    $('#indUnitGrowth12').html((isNaN(accounting.formatNumber(growthINDUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitDecember, 2)) + "%");
+    $('#indUnitGrowthTotal').html((isNaN(accounting.formatNumber(growthINDUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitTotal, 2)) + "%");
+    $('#indUnitGrowthQTotal').html((isNaN(accounting.formatNumber(growthINDUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthINDUnitTotal, 2)) + "%");
+
+    $('#indUnitAchieveQ1').html((isNaN(accounting.formatNumber(achieveINDUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitQ1, 2)) + "%");
+    $('#indUnitAchieveQ2').html((isNaN(accounting.formatNumber(achieveINDUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitQ2, 2)) + "%");
+    $('#indUnitAchieveQ3').html((isNaN(accounting.formatNumber(achieveINDUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitQ3, 2)) + "%");
+    $('#indUnitAchieveQ4').html((isNaN(accounting.formatNumber(achieveINDUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitQ4, 2)) + "%");
+    $('#indUnitAchieve1').html((isNaN(accounting.formatNumber(achieveINDUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitJanuary, 2)) + "%");
+    $('#indUnitAchieve2').html((isNaN(accounting.formatNumber(achieveINDUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitFebruary, 2)) + "%");
+    $('#indUnitAchieve3').html((isNaN(accounting.formatNumber(achieveINDUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitMarch, 2)) + "%");
+    $('#indUnitAchieve4').html((isNaN(accounting.formatNumber(achieveINDUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitApril, 2)) + "%");
+    $('#indUnitAchieve5').html((isNaN(accounting.formatNumber(achieveINDUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitMay, 2)) + "%");
+    $('#indUnitAchieve6').html((isNaN(accounting.formatNumber(achieveINDUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitJune, 2)) + "%");
+    $('#indUnitAchieve7').html((isNaN(accounting.formatNumber(achieveINDUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitJuly, 2)) + "%");
+    $('#indUnitAchieve8').html((isNaN(accounting.formatNumber(achieveINDUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitAugust, 2)) + "%");
+    $('#indUnitAchieve9').html((isNaN(accounting.formatNumber(achieveINDUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitSeptember, 2)) + "%");
+    $('#indUnitAchieve10').html((isNaN(accounting.formatNumber(achieveINDUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitOctober, 2)) + "%");
+    $('#indUnitAchieve11').html((isNaN(accounting.formatNumber(achieveINDUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitNovember, 2)) + "%");
+    $('#indUnitAchieve12').html((isNaN(accounting.formatNumber(achieveINDUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitDecember, 2)) + "%");
+    $('#indUnitAchieveTotal').html((isNaN(accounting.formatNumber(achieveINDUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitTotal, 2)) + "%");
+    $('#indUnitAchieveQTotal').html((isNaN(accounting.formatNumber(achieveINDUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveINDUnitTotal, 2)) + "%");
+
+    //OTH
+    $('#othBahtTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetOTH.AmtQ1), 2));
+    $('#othBahtTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetOTH.AmtQ2), 2));
+    $('#othBahtTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetOTH.AmtQ3), 2));
+    $('#othBahtTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetOTH.AmtQ4), 2));
+    $('#othBahtTargetNow1').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt01) / 1000, 2));
+    $('#othBahtTargetNow2').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt02) / 1000, 2));
+    $('#othBahtTargetNow3').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt03) / 1000, 2));
+    $('#othBahtTargetNow4').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt04) / 1000, 2));
+    $('#othBahtTargetNow5').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt05) / 1000, 2));
+    $('#othBahtTargetNow6').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt06) / 1000, 2));
+    $('#othBahtTargetNow7').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt07) / 1000, 2));
+    $('#othBahtTargetNow8').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt08) / 1000, 2));
+    $('#othBahtTargetNow9').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt09) / 1000, 2));
+    $('#othBahtTargetNow10').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt10) / 1000, 2));
+    $('#othBahtTargetNow11').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt11) / 1000, 2));
+    $('#othBahtTargetNow12').html(accounting.formatNumber(accounting.unformat(targetOTH.Amt12) / 1000, 2));
+    $('#othBahtTargetNowTotal').html(accounting.formatNumber(totalOTHBahtTarget / 1000, 2));
+    $('#othBahtTargetNowQTotal').html(accounting.formatNumber(totalOTHBahtTarget, 2));
+
+    $('#othUnitTargetNowQ1').html(accounting.formatNumber(accounting.unformat(targetOTH.UnitQ1)));
+    $('#othUnitTargetNowQ2').html(accounting.formatNumber(accounting.unformat(targetOTH.UnitQ2)));
+    $('#othUnitTargetNowQ3').html(accounting.formatNumber(accounting.unformat(targetOTH.UnitQ3)));
+    $('#othUnitTargetNowQ4').html(accounting.formatNumber(accounting.unformat(targetOTH.UnitQ4)));
+    $('#othUnitTargetNow1').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit01)));
+    $('#othUnitTargetNow2').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit02)));
+    $('#othUnitTargetNow3').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit03)));
+    $('#othUnitTargetNow4').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit04)));
+    $('#othUnitTargetNow5').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit05)));
+    $('#othUnitTargetNow6').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit06)));
+    $('#othUnitTargetNow7').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit07)));
+    $('#othUnitTargetNow8').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit08)));
+    $('#othUnitTargetNow9').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit09)));
+    $('#othUnitTargetNow10').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit10)));
+    $('#othUnitTargetNow11').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit11)));
+    $('#othUnitTargetNow12').html(accounting.formatNumber(accounting.unformat(targetOTH.Unit12)));
+    $('#othUnitTargetNowTotal').html(accounting.formatNumber(totalOTHUnitTarget));
+    $('#othUnitTargetNowQTotal').html(accounting.formatNumber(totalOTHUnitTarget));
+
+    $('#othBahtActualNowQ1').html(accounting.formatNumber(currOTHBahtQ1, 2));
+    $('#othBahtActualNowQ2').html(accounting.formatNumber(currOTHBahtQ2, 2));
+    $('#othBahtActualNowQ3').html(accounting.formatNumber(currOTHBahtQ3, 2));
+    $('#othBahtActualNowQ4').html(accounting.formatNumber(currOTHBahtQ4, 2));
+    $('#othBahtActualNow1').html(accounting.formatNumber(currOTHBahtJanuary / 1000, 2));
+    $('#othBahtActualNow2').html(accounting.formatNumber(currOTHBahtFebruary / 1000, 2));
+    $('#othBahtActualNow3').html(accounting.formatNumber(currOTHBahtMarch / 1000, 2));
+    $('#othBahtActualNow4').html(accounting.formatNumber(currOTHBahtApril / 1000, 2));
+    $('#othBahtActualNow5').html(accounting.formatNumber(currOTHBahtMay / 1000, 2));
+    $('#othBahtActualNow6').html(accounting.formatNumber(currOTHBahtJune / 1000, 2));
+    $('#othBahtActualNow7').html(accounting.formatNumber(currOTHBahtJuly / 1000, 2));
+    $('#othBahtActualNow8').html(accounting.formatNumber(currOTHBahtAugust / 1000, 2));
+    $('#othBahtActualNow9').html(accounting.formatNumber(currOTHBahtSeptember / 1000, 2));
+    $('#othBahtActualNow10').html(accounting.formatNumber(currOTHBahtOctober / 1000, 2));
+    $('#othBahtActualNow11').html(accounting.formatNumber(currOTHBahtNovember / 1000, 2));
+    $('#othBahtActualNow12').html(accounting.formatNumber(currOTHBahtDecember / 1000, 2));
+    $('#othBahtActualNowTotal').html(accounting.formatNumber(currOTHTotalBaht / 1000, 2));
+    $('#othBahtActualNowQTotal').html(accounting.formatNumber(currOTHTotalBaht, 2));
+
+    $('#othBahtActualOldQ1').html(accounting.formatNumber(oldOTHBahtQ1, 2));
+    $('#othBahtActualOldQ2').html(accounting.formatNumber(oldOTHBahtQ2, 2));
+    $('#othBahtActualOldQ3').html(accounting.formatNumber(oldOTHBahtQ3, 2));
+    $('#othBahtActualOldQ4').html(accounting.formatNumber(oldOTHBahtQ4, 2));
+    $('#othBahtActualOld1').html(accounting.formatNumber(oldOTHBahtJanuary / 1000, 2));
+    $('#othBahtActualOld2').html(accounting.formatNumber(oldOTHBahtFebruary / 1000, 2));
+    $('#othBahtActualOld3').html(accounting.formatNumber(oldOTHBahtMarch / 1000, 2));
+    $('#othBahtActualOld4').html(accounting.formatNumber(oldOTHBahtApril / 1000, 2));
+    $('#othBahtActualOld5').html(accounting.formatNumber(oldOTHBahtMay / 1000, 2));
+    $('#othBahtActualOld6').html(accounting.formatNumber(oldOTHBahtJune / 1000, 2));
+    $('#othBahtActualOld7').html(accounting.formatNumber(oldOTHBahtJuly / 1000, 2));
+    $('#othBahtActualOld8').html(accounting.formatNumber(oldOTHBahtAugust / 1000, 2));
+    $('#othBahtActualOld9').html(accounting.formatNumber(oldOTHBahtSeptember / 1000, 2));
+    $('#othBahtActualOld10').html(accounting.formatNumber(oldOTHBahtOctober / 1000, 2));
+    $('#othBahtActualOld11').html(accounting.formatNumber(oldOTHBahtNovember / 1000, 2));
+    $('#othBahtActualOld12').html(accounting.formatNumber(oldOTHBahtDecember / 1000, 2));
+    $('#othBahtActualOldTotal').html(accounting.formatNumber(oldOTHTotalBaht / 1000, 2));
+    $('#othBahtActualOldQTotal').html(accounting.formatNumber(oldOTHTotalBaht, 2));
+
+    $('#othBahtGrowthQ1').html((isNaN(accounting.formatNumber(growthOTHBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtQ1, 2)) + "%");
+    $('#othBahtGrowthQ2').html((isNaN(accounting.formatNumber(growthOTHBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtQ2, 2)) + "%");
+    $('#othBahtGrowthQ3').html((isNaN(accounting.formatNumber(growthOTHBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtQ3, 2)) + "%");
+    $('#othBahtGrowthQ4').html((isNaN(accounting.formatNumber(growthOTHBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtQ4, 2)) + "%");
+    $('#othBahtGrowth1').html((isNaN(accounting.formatNumber(growthOTHBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtJanuary, 2)) + "%");
+    $('#othBahtGrowth2').html((isNaN(accounting.formatNumber(growthOTHBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtFebruary, 2)) + "%");
+    $('#othBahtGrowth3').html((isNaN(accounting.formatNumber(growthOTHBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtMarch, 2)) + "%");
+    $('#othBahtGrowth4').html((isNaN(accounting.formatNumber(growthOTHBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtApril, 2)) + "%");
+    $('#othBahtGrowth5').html((isNaN(accounting.formatNumber(growthOTHBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtMay, 2)) + "%");
+    $('#othBahtGrowth6').html((isNaN(accounting.formatNumber(growthOTHBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtJune, 2)) + "%");
+    $('#othBahtGrowth7').html((isNaN(accounting.formatNumber(growthOTHBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtJuly, 2)) + "%");
+    $('#othBahtGrowth8').html((isNaN(accounting.formatNumber(growthOTHBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtAugust, 2)) + "%");
+    $('#othBahtGrowth9').html((isNaN(accounting.formatNumber(growthOTHBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtSeptember, 2)) + "%");
+    $('#othBahtGrowth10').html((isNaN(accounting.formatNumber(growthOTHBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtOctober, 2)) + "%");
+    $('#othBahtGrowth11').html((isNaN(accounting.formatNumber(growthOTHBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtNovember, 2)) + "%");
+    $('#othBahtGrowth12').html((isNaN(accounting.formatNumber(growthOTHBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtDecember, 2)) + "%");
+    $('#othBahtGrowthTotal').html((isNaN(accounting.formatNumber(growthOTHBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtTotal, 2)) + "%");
+    $('#othBahtGrowthQTotal').html((isNaN(accounting.formatNumber(growthOTHBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHBahtTotal, 2)) + "%");
+
+    $('#othBahtAchieveQ1').html((isNaN(accounting.formatNumber(achieveOTHBahtQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtQ1, 2)) + "%");
+    $('#othBahtAchieveQ2').html((isNaN(accounting.formatNumber(achieveOTHBahtQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtQ2, 2)) + "%");
+    $('#othBahtAchieveQ3').html((isNaN(accounting.formatNumber(achieveOTHBahtQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtQ3, 2)) + "%");
+    $('#othBahtAchieveQ4').html((isNaN(accounting.formatNumber(achieveOTHBahtQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtQ4, 2)) + "%");
+    $('#othBahtAchieve1').html((isNaN(accounting.formatNumber(achieveOTHBahtJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtJanuary, 2)) + "%");
+    $('#othBahtAchieve2').html((isNaN(accounting.formatNumber(achieveOTHBahtFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtFebruary, 2)) + "%");
+    $('#othBahtAchieve3').html((isNaN(accounting.formatNumber(achieveOTHBahtMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtMarch, 2)) + "%");
+    $('#othBahtAchieve4').html((isNaN(accounting.formatNumber(achieveOTHBahtApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtApril, 2)) + "%");
+    $('#othBahtAchieve5').html((isNaN(accounting.formatNumber(achieveOTHBahtMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtMay, 2)) + "%");
+    $('#othBahtAchieve6').html((isNaN(accounting.formatNumber(achieveOTHBahtJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtJune, 2)) + "%");
+    $('#othBahtAchieve7').html((isNaN(accounting.formatNumber(achieveOTHBahtJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtJuly, 2)) + "%");
+    $('#othBahtAchieve8').html((isNaN(accounting.formatNumber(achieveOTHBahtAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtAugust, 2)) + "%");
+    $('#othBahtAchieve9').html((isNaN(accounting.formatNumber(achieveOTHBahtSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtSeptember, 2)) + "%");
+    $('#othBahtAchieve10').html((isNaN(accounting.formatNumber(achieveOTHBahtOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtOctober, 2)) + "%");
+    $('#othBahtAchieve11').html((isNaN(accounting.formatNumber(achieveOTHBahtNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtNovember, 2)) + "%");
+    $('#othBahtAchieve12').html((isNaN(accounting.formatNumber(achieveOTHBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtDecember, 2)) + "%");
+    $('#othBahtAchieveTotal').html((isNaN(accounting.formatNumber(achieveOTHBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtTotal, 2)) + "%");
+    $('#othBahtAchieveQTotal').html((isNaN(accounting.formatNumber(achieveOTHBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHBahtTotal, 2)) + "%");
+
+    $('#othUnitActualNowQ1').html(accounting.formatNumber(currOTHUnitQ1));
+    $('#othUnitActualNowQ2').html(accounting.formatNumber(currOTHUnitQ2));
+    $('#othUnitActualNowQ3').html(accounting.formatNumber(currOTHUnitQ3));
+    $('#othUnitActualNowQ4').html(accounting.formatNumber(currOTHUnitQ4));
+    $('#othUnitActualNow1').html(accounting.formatNumber(currOTHUnitJanuary));
+    $('#othUnitActualNow2').html(accounting.formatNumber(currOTHUnitFebruary));
+    $('#othUnitActualNow3').html(accounting.formatNumber(currOTHUnitMarch));
+    $('#othUnitActualNow4').html(accounting.formatNumber(currOTHUnitApril));
+    $('#othUnitActualNow5').html(accounting.formatNumber(currOTHUnitMay));
+    $('#othUnitActualNow6').html(accounting.formatNumber(currOTHUnitJune));
+    $('#othUnitActualNow7').html(accounting.formatNumber(currOTHUnitJuly));
+    $('#othUnitActualNow8').html(accounting.formatNumber(currOTHUnitAugust));
+    $('#othUnitActualNow9').html(accounting.formatNumber(currOTHUnitSeptember));
+    $('#othUnitActualNow10').html(accounting.formatNumber(currOTHUnitOctober));
+    $('#othUnitActualNow11').html(accounting.formatNumber(currOTHUnitNovember));
+    $('#othUnitActualNow12').html(accounting.formatNumber(currOTHUnitDecember));
+    $('#othUnitActualNowTotal').html(accounting.formatNumber(currOTHTotalUnit));
+    $('#othUnitActualNowQTotal').html(accounting.formatNumber(currOTHTotalUnit));
+
+    $('#othUnitActualOldQ1').html(accounting.formatNumber(oldOTHUnitQ1));
+    $('#othUnitActualOldQ2').html(accounting.formatNumber(oldOTHUnitQ2));
+    $('#othUnitActualOldQ3').html(accounting.formatNumber(oldOTHUnitQ3));
+    $('#othUnitActualOldQ4').html(accounting.formatNumber(oldOTHUnitQ4));
+    $('#othUnitActualOld1').html(accounting.formatNumber(oldOTHUnitJanuary));
+    $('#othUnitActualOld2').html(accounting.formatNumber(oldOTHUnitFebruary));
+    $('#othUnitActualOld3').html(accounting.formatNumber(oldOTHUnitMarch));
+    $('#othUnitActualOld4').html(accounting.formatNumber(oldOTHUnitApril));
+    $('#othUnitActualOld5').html(accounting.formatNumber(oldOTHUnitMay));
+    $('#othUnitActualOld6').html(accounting.formatNumber(oldOTHUnitJune));
+    $('#othUnitActualOld7').html(accounting.formatNumber(oldOTHUnitJuly));
+    $('#othUnitActualOld8').html(accounting.formatNumber(oldOTHUnitAugust));
+    $('#othUnitActualOld9').html(accounting.formatNumber(oldOTHUnitSeptember));
+    $('#othUnitActualOld10').html(accounting.formatNumber(oldOTHUnitOctober));
+    $('#othUnitActualOld11').html(accounting.formatNumber(oldOTHUnitNovember));
+    $('#othUnitActualOld12').html(accounting.formatNumber(oldOTHUnitDecember));
+    $('#othUnitActualOldTotal').html(accounting.formatNumber(oldOTHTotalUnit));
+    $('#othUnitActualOldQTotal').html(accounting.formatNumber(oldOTHTotalUnit));
+
+    $('#othUnitGrowthQ1').html((isNaN(accounting.formatNumber(growthOTHUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitQ1, 2)) + "%");
+    $('#othUnitGrowthQ2').html((isNaN(accounting.formatNumber(growthOTHUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitQ2, 2)) + "%");
+    $('#othUnitGrowthQ3').html((isNaN(accounting.formatNumber(growthOTHUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitQ3, 2)) + "%");
+    $('#othUnitGrowthQ4').html((isNaN(accounting.formatNumber(growthOTHUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitQ4, 2)) + "%");
+    $('#othUnitGrowth1').html((isNaN(accounting.formatNumber(growthOTHUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitJanuary, 2)) + "%");
+    $('#othUnitGrowth2').html((isNaN(accounting.formatNumber(growthOTHUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitFebruary, 2)) + "%");
+    $('#othUnitGrowth3').html((isNaN(accounting.formatNumber(growthOTHUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitMarch, 2)) + "%");
+    $('#othUnitGrowth4').html((isNaN(accounting.formatNumber(growthOTHUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitApril, 2)) + "%");
+    $('#othUnitGrowth5').html((isNaN(accounting.formatNumber(growthOTHUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitMay, 2)) + "%");
+    $('#othUnitGrowth6').html((isNaN(accounting.formatNumber(growthOTHUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitJune, 2)) + "%");
+    $('#othUnitGrowth7').html((isNaN(accounting.formatNumber(growthOTHUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitJuly, 2)) + "%");
+    $('#othUnitGrowth8').html((isNaN(accounting.formatNumber(growthOTHUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitAugust, 2)) + "%");
+    $('#othUnitGrowth9').html((isNaN(accounting.formatNumber(growthOTHUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitSeptember, 2)) + "%");
+    $('#othUnitGrowth10').html((isNaN(accounting.formatNumber(growthOTHUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitOctober, 2)) + "%");
+    $('#othUnitGrowth11').html((isNaN(accounting.formatNumber(growthOTHUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitNovember, 2)) + "%");
+    $('#othUnitGrowth12').html((isNaN(accounting.formatNumber(growthOTHUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitDecember, 2)) + "%");
+    $('#othUnitGrowthTotal').html((isNaN(accounting.formatNumber(growthOTHUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitTotal, 2)) + "%");
+    $('#othUnitGrowthQTotal').html((isNaN(accounting.formatNumber(growthOTHUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthOTHUnitTotal, 2)) + "%");
+
+    $('#othUnitAchieveQ1').html((isNaN(accounting.formatNumber(achieveOTHUnitQ1, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitQ1, 2)) + "%");
+    $('#othUnitAchieveQ2').html((isNaN(accounting.formatNumber(achieveOTHUnitQ2, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitQ2, 2)) + "%");
+    $('#othUnitAchieveQ3').html((isNaN(accounting.formatNumber(achieveOTHUnitQ3, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitQ3, 2)) + "%");
+    $('#othUnitAchieveQ4').html((isNaN(accounting.formatNumber(achieveOTHUnitQ4, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitQ4, 2)) + "%");
+    $('#othUnitAchieve1').html((isNaN(accounting.formatNumber(achieveOTHUnitJanuary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitJanuary, 2)) + "%");
+    $('#othUnitAchieve2').html((isNaN(accounting.formatNumber(achieveOTHUnitFebruary, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitFebruary, 2)) + "%");
+    $('#othUnitAchieve3').html((isNaN(accounting.formatNumber(achieveOTHUnitMarch, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitMarch, 2)) + "%");
+    $('#othUnitAchieve4').html((isNaN(accounting.formatNumber(achieveOTHUnitApril, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitApril, 2)) + "%");
+    $('#othUnitAchieve5').html((isNaN(accounting.formatNumber(achieveOTHUnitMay, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitMay, 2)) + "%");
+    $('#othUnitAchieve6').html((isNaN(accounting.formatNumber(achieveOTHUnitJune, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitJune, 2)) + "%");
+    $('#othUnitAchieve7').html((isNaN(accounting.formatNumber(achieveOTHUnitJuly, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitJuly, 2)) + "%");
+    $('#othUnitAchieve8').html((isNaN(accounting.formatNumber(achieveOTHUnitAugust, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitAugust, 2)) + "%");
+    $('#othUnitAchieve9').html((isNaN(accounting.formatNumber(achieveOTHUnitSeptember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitSeptember, 2)) + "%");
+    $('#othUnitAchieve10').html((isNaN(accounting.formatNumber(achieveOTHUnitOctober, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitOctober, 2)) + "%");
+    $('#othUnitAchieve11').html((isNaN(accounting.formatNumber(achieveOTHUnitNovember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitNovember, 2)) + "%");
+    $('#othUnitAchieve12').html((isNaN(accounting.formatNumber(achieveOTHUnitDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitDecember, 2)) + "%");
+    $('#othUnitAchieveTotal').html((isNaN(accounting.formatNumber(achieveOTHUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitTotal, 2)) + "%");
+    $('#othUnitAchieveQTotal').html((isNaN(accounting.formatNumber(achieveOTHUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveOTHUnitTotal, 2)) + "%");
 
     //All
-    $('#allBahtTargetNowQ1').html(accounting.formatNumber((accounting.unformat(targetAMB.AmtQ1) + accounting.unformat(targetMCB.AmtQ1)), 2));
-    $('#allBahtTargetNowQ2').html(accounting.formatNumber((accounting.unformat(targetAMB.AmtQ2) + accounting.unformat(targetMCB.AmtQ2)), 2));
-    $('#allBahtTargetNowQ3').html(accounting.formatNumber((accounting.unformat(targetAMB.AmtQ3) + accounting.unformat(targetMCB.AmtQ3)), 2));
-    $('#allBahtTargetNowQ4').html(accounting.formatNumber((accounting.unformat(targetAMB.AmtQ4) + accounting.unformat(targetMCB.AmtQ4)), 2));
-    $('#allBahtTargetNow1').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt01) + accounting.unformat(targetMCB.Amt01)) / 1000, 2));
-    $('#allBahtTargetNow2').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt02) + accounting.unformat(targetMCB.Amt02)) / 1000, 2));
-    $('#allBahtTargetNow3').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt03) + accounting.unformat(targetMCB.Amt03)) / 1000, 2));
-    $('#allBahtTargetNow4').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt04) + accounting.unformat(targetMCB.Amt04)) / 1000, 2));
-    $('#allBahtTargetNow5').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt05) + accounting.unformat(targetMCB.Amt05)) / 1000, 2));
-    $('#allBahtTargetNow6').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt06) + accounting.unformat(targetMCB.Amt06)) / 1000, 2));
-    $('#allBahtTargetNow7').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt07) + accounting.unformat(targetMCB.Amt07)) / 1000, 2));
-    $('#allBahtTargetNow8').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt08) + accounting.unformat(targetMCB.Amt08)) / 1000, 2));
-    $('#allBahtTargetNow9').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt09) + accounting.unformat(targetMCB.Amt09)) / 1000, 2));
-    $('#allBahtTargetNow10').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt10) + accounting.unformat(targetMCB.Amt10)) / 1000, 2));
-    $('#allBahtTargetNow11').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt11) + accounting.unformat(targetMCB.Amt11)) / 1000, 2));
-    $('#allBahtTargetNow12').html(accounting.formatNumber((accounting.unformat(targetAMB.Amt12) + accounting.unformat(targetMCB.Amt12)) / 1000, 2));
-    $('#allBahtTargetNowTotal').html(accounting.formatNumber(totalAMBBahtTarget / 1000, 2));
-    $('#allBahtTargetNowQTotal').html(accounting.formatNumber(totalAMBBahtTarget, 2));
+    $('#allBahtTargetNowQ1').html(accounting.formatNumber((accounting.unformat(targetNP.AmtQ1) + accounting.unformat(targetEB.AmtQ1) + accounting.unformat(targetIND.AmtQ1) + accounting.unformat(targetOTH.AmtQ1)), 2));
+    $('#allBahtTargetNowQ2').html(accounting.formatNumber((accounting.unformat(targetNP.AmtQ2) + accounting.unformat(targetEB.AmtQ2) + accounting.unformat(targetIND.AmtQ2) + accounting.unformat(targetOTH.AmtQ2)), 2));
+    $('#allBahtTargetNowQ3').html(accounting.formatNumber((accounting.unformat(targetNP.AmtQ3) + accounting.unformat(targetEB.AmtQ3) + accounting.unformat(targetIND.AmtQ3) + accounting.unformat(targetOTH.AmtQ3)), 2));
+    $('#allBahtTargetNowQ4').html(accounting.formatNumber((accounting.unformat(targetNP.AmtQ4) + accounting.unformat(targetEB.AmtQ4) + accounting.unformat(targetIND.AmtQ4) + accounting.unformat(targetOTH.AmtQ4)), 2));
+    $('#allBahtTargetNow1').html(accounting.formatNumber((accounting.unformat(targetNP.Amt01) + accounting.unformat(targetEB.Amt01) + accounting.unformat(targetIND.Amt01) + accounting.unformat(targetOTH.Amt01)) / 1000, 2));
+    $('#allBahtTargetNow2').html(accounting.formatNumber((accounting.unformat(targetNP.Amt02) + accounting.unformat(targetEB.Amt02) + accounting.unformat(targetIND.Amt02) + accounting.unformat(targetOTH.Amt02)) / 1000, 2));
+    $('#allBahtTargetNow3').html(accounting.formatNumber((accounting.unformat(targetNP.Amt03) + accounting.unformat(targetEB.Amt03) + accounting.unformat(targetIND.Amt03) + accounting.unformat(targetOTH.Amt03)) / 1000, 2));
+    $('#allBahtTargetNow4').html(accounting.formatNumber((accounting.unformat(targetNP.Amt04) + accounting.unformat(targetEB.Amt04) + accounting.unformat(targetIND.Amt04) + accounting.unformat(targetOTH.Amt04)) / 1000, 2));
+    $('#allBahtTargetNow5').html(accounting.formatNumber((accounting.unformat(targetNP.Amt05) + accounting.unformat(targetEB.Amt05) + accounting.unformat(targetIND.Amt05) + accounting.unformat(targetOTH.Amt05)) / 1000, 2));
+    $('#allBahtTargetNow6').html(accounting.formatNumber((accounting.unformat(targetNP.Amt06) + accounting.unformat(targetEB.Amt06) + accounting.unformat(targetIND.Amt06) + accounting.unformat(targetOTH.Amt06)) / 1000, 2));
+    $('#allBahtTargetNow7').html(accounting.formatNumber((accounting.unformat(targetNP.Amt07) + accounting.unformat(targetEB.Amt07) + accounting.unformat(targetIND.Amt07) + accounting.unformat(targetOTH.Amt07)) / 1000, 2));
+    $('#allBahtTargetNow8').html(accounting.formatNumber((accounting.unformat(targetNP.Amt08) + accounting.unformat(targetEB.Amt08) + accounting.unformat(targetIND.Amt08) + accounting.unformat(targetOTH.Amt08)) / 1000, 2));
+    $('#allBahtTargetNow9').html(accounting.formatNumber((accounting.unformat(targetNP.Amt09) + accounting.unformat(targetEB.Amt09) + accounting.unformat(targetIND.Amt09) + accounting.unformat(targetOTH.Amt09)) / 1000, 2));
+    $('#allBahtTargetNow10').html(accounting.formatNumber((accounting.unformat(targetNP.Amt10) + accounting.unformat(targetEB.Amt10) + accounting.unformat(targetIND.Amt10) + accounting.unformat(targetOTH.Amt10)) / 1000, 2));
+    $('#allBahtTargetNow11').html(accounting.formatNumber((accounting.unformat(targetNP.Amt11) + accounting.unformat(targetEB.Amt11) + accounting.unformat(targetIND.Amt11) + accounting.unformat(targetOTH.Amt11)) / 1000, 2));
+    $('#allBahtTargetNow12').html(accounting.formatNumber((accounting.unformat(targetNP.Amt12) + accounting.unformat(targetEB.Amt12) + accounting.unformat(targetIND.Amt12) + accounting.unformat(targetOTH.Amt12)) / 1000, 2));
+    $('#allBahtTargetNowTotal').html(accounting.formatNumber((accounting.unformat(totalNPBahtTarget) + accounting.unformat(totalEBBahtTarget) + accounting.unformat(totalINDBahtTarget) + accounting.unformat(totalOTHBahtTarget)) / 1000, 2));
+    $('#allBahtTargetNowQTotal').html(accounting.formatNumber((accounting.unformat(totalNPBahtTarget) + accounting.unformat(totalEBBahtTarget) + accounting.unformat(totalINDBahtTarget) + accounting.unformat(totalOTHBahtTarget)), 2));
 
-    $('#allUnitTargetNowQ1').html(accounting.formatNumber((accounting.unformat(targetAMB.UnitQ1) + accounting.unformat(targetMCB.UnitQ1))));
-    $('#allUnitTargetNowQ2').html(accounting.formatNumber((accounting.unformat(targetAMB.UnitQ2) + accounting.unformat(targetMCB.UnitQ2))));
-    $('#allUnitTargetNowQ3').html(accounting.formatNumber((accounting.unformat(targetAMB.UnitQ3) + accounting.unformat(targetMCB.UnitQ3))));
-    $('#allUnitTargetNowQ4').html(accounting.formatNumber((accounting.unformat(targetAMB.UnitQ4) + accounting.unformat(targetMCB.UnitQ4))));
-    $('#allUnitTargetNow1').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit01) + accounting.unformat(targetMCB.Unit01))));
-    $('#allUnitTargetNow2').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit02) + accounting.unformat(targetMCB.Unit02))));
-    $('#allUnitTargetNow3').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit03) + accounting.unformat(targetMCB.Unit03))));
-    $('#allUnitTargetNow4').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit04) + accounting.unformat(targetMCB.Unit04))));
-    $('#allUnitTargetNow5').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit05) + accounting.unformat(targetMCB.Unit05))));
-    $('#allUnitTargetNow6').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit06) + accounting.unformat(targetMCB.Unit06))));
-    $('#allUnitTargetNow7').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit07) + accounting.unformat(targetMCB.Unit07))));
-    $('#allUnitTargetNow8').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit08) + accounting.unformat(targetMCB.Unit08))));
-    $('#allUnitTargetNow9').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit09) + accounting.unformat(targetMCB.Unit09))));
-    $('#allUnitTargetNow10').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit10) + accounting.unformat(targetMCB.Unit10))));
-    $('#allUnitTargetNow11').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit11) + accounting.unformat(targetMCB.Unit11))));
-    $('#allUnitTargetNow12').html(accounting.formatNumber((accounting.unformat(targetAMB.Unit12) + accounting.unformat(targetMCB.Unit12))));
-    $('#allUnitTargetNowTotal').html(accounting.formatNumber(totalAMBUnitTarget));
-    $('#allUnitTargetNowQTotal').html(accounting.formatNumber(totalAMBUnitTarget));
+    $('#allUnitTargetNowQ1').html(accounting.formatNumber((accounting.unformat(targetNP.UnitQ1) + accounting.unformat(targetEB.UnitQ1) + accounting.unformat(targetIND.UnitQ1) + accounting.unformat(targetOTH.UnitQ1))));
+    $('#allUnitTargetNowQ2').html(accounting.formatNumber((accounting.unformat(targetNP.UnitQ2) + accounting.unformat(targetEB.UnitQ2) + accounting.unformat(targetIND.UnitQ2) + accounting.unformat(targetOTH.UnitQ2))));
+    $('#allUnitTargetNowQ3').html(accounting.formatNumber((accounting.unformat(targetNP.UnitQ3) + accounting.unformat(targetEB.UnitQ3) + accounting.unformat(targetIND.UnitQ3) + accounting.unformat(targetOTH.UnitQ3))));
+    $('#allUnitTargetNowQ4').html(accounting.formatNumber((accounting.unformat(targetNP.UnitQ4) + accounting.unformat(targetEB.UnitQ4) + accounting.unformat(targetIND.UnitQ4) + accounting.unformat(targetOTH.UnitQ4))));
+    $('#allUnitTargetNow1').html(accounting.formatNumber((accounting.unformat(targetNP.Unit01) + accounting.unformat(targetEB.Unit01) + accounting.unformat(targetIND.Unit01) + accounting.unformat(targetOTH.Unit01))));
+    $('#allUnitTargetNow2').html(accounting.formatNumber((accounting.unformat(targetNP.Unit02) + accounting.unformat(targetEB.Unit02) + accounting.unformat(targetIND.Unit02) + accounting.unformat(targetOTH.Unit02))));
+    $('#allUnitTargetNow3').html(accounting.formatNumber((accounting.unformat(targetNP.Unit03) + accounting.unformat(targetEB.Unit03) + accounting.unformat(targetIND.Unit03) + accounting.unformat(targetOTH.Unit03))));
+    $('#allUnitTargetNow4').html(accounting.formatNumber((accounting.unformat(targetNP.Unit04) + accounting.unformat(targetEB.Unit04) + accounting.unformat(targetIND.Unit04) + accounting.unformat(targetOTH.Unit04))));
+    $('#allUnitTargetNow5').html(accounting.formatNumber((accounting.unformat(targetNP.Unit05) + accounting.unformat(targetEB.Unit05) + accounting.unformat(targetIND.Unit05) + accounting.unformat(targetOTH.Unit05))));
+    $('#allUnitTargetNow6').html(accounting.formatNumber((accounting.unformat(targetNP.Unit06) + accounting.unformat(targetEB.Unit06) + accounting.unformat(targetIND.Unit06) + accounting.unformat(targetOTH.Unit06))));
+    $('#allUnitTargetNow7').html(accounting.formatNumber((accounting.unformat(targetNP.Unit07) + accounting.unformat(targetEB.Unit07) + accounting.unformat(targetIND.Unit07) + accounting.unformat(targetOTH.Unit07))));
+    $('#allUnitTargetNow8').html(accounting.formatNumber((accounting.unformat(targetNP.Unit08) + accounting.unformat(targetEB.Unit08) + accounting.unformat(targetIND.Unit08) + accounting.unformat(targetOTH.Unit08))));
+    $('#allUnitTargetNow9').html(accounting.formatNumber((accounting.unformat(targetNP.Unit09) + accounting.unformat(targetEB.Unit09) + accounting.unformat(targetIND.Unit09) + accounting.unformat(targetOTH.Unit09))));
+    $('#allUnitTargetNow10').html(accounting.formatNumber((accounting.unformat(targetNP.Unit10) + accounting.unformat(targetEB.Unit10) + accounting.unformat(targetIND.Unit10) + accounting.unformat(targetOTH.Unit10))));
+    $('#allUnitTargetNow11').html(accounting.formatNumber((accounting.unformat(targetNP.Unit11) + accounting.unformat(targetEB.Unit11) + accounting.unformat(targetIND.Unit11) + accounting.unformat(targetOTH.Unit11))));
+    $('#allUnitTargetNow12').html(accounting.formatNumber((accounting.unformat(targetNP.Unit12) + accounting.unformat(targetEB.Unit12) + accounting.unformat(targetIND.Unit12) + accounting.unformat(targetOTH.Unit12))));
+    $('#allUnitTargetNowTotal').html(accounting.formatNumber((accounting.unformat(totalNPUnitTarget) + accounting.unformat(totalEBUnitTarget) + accounting.unformat(totalINDUnitTarget) + accounting.unformat(totalOTHUnitTarget))));
+    $('#allUnitTargetNowQTotal').html(accounting.formatNumber((accounting.unformat(totalNPUnitTarget) + accounting.unformat(totalEBUnitTarget) + accounting.unformat(totalINDUnitTarget) + accounting.unformat(totalOTHUnitTarget))));
 
     $('#allBahtActualNowQ1').html(accounting.formatNumber(currBahtQ1, 2));
     $('#allBahtActualNowQ2').html(accounting.formatNumber(currBahtQ2, 2));
@@ -2313,43 +3480,77 @@ function calData(year, data) {
     $('#allUnitAchieveTotal').html((isNaN(accounting.formatNumber(achieveUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitTotal, 2)) + "%");
     $('#allUnitAchieveQTotal').html((isNaN(accounting.formatNumber(achieveUnitTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(achieveUnitTotal, 2)) + "%");
 
-    unitGraph(year, accounting.unformat(targetAMB.Unit01), accounting.unformat(targetAMB.Unit02), accounting.unformat(targetAMB.Unit03), accounting.unformat(targetAMB.Unit04),
-        accounting.unformat(targetAMB.Unit05), accounting.unformat(targetAMB.Unit06), accounting.unformat(targetAMB.Unit07), accounting.unformat(targetAMB.Unit08),
-        accounting.unformat(targetAMB.Unit09), accounting.unformat(targetAMB.Unit10), accounting.unformat(targetAMB.Unit11), accounting.unformat(targetAMB.Unit12),
-        accounting.unformat(totalAMBUnitTarget), currAMBUnitJanuary, currAMBUnitFebruary, currAMBUnitMarch, currAMBUnitApril, currAMBUnitMay, currAMBUnitJune, currAMBUnitJuly, currAMBUnitAugust,
-        currAMBUnitSeptember, currAMBUnitOctober, currAMBUnitNovember, currAMBUnitDecember, currAMBTotalUnit, oldAMBUnitJanuary, oldAMBUnitFebruary, oldAMBUnitMarch, oldAMBUnitApril, oldAMBUnitMay,
-        oldAMBUnitJune, oldAMBUnitJuly, oldAMBUnitAugust, oldAMBUnitSeptember, oldAMBUnitOctober, oldAMBUnitNovember, oldAMBUnitDecember, oldAMBTotalUnit,
-        accounting.unformat(targetMCB.Unit01), accounting.unformat(targetMCB.Unit02), accounting.unformat(targetMCB.Unit03), accounting.unformat(targetMCB.Unit04),
-        accounting.unformat(targetMCB.Unit05), accounting.unformat(targetMCB.Unit06), accounting.unformat(targetMCB.Unit07), accounting.unformat(targetMCB.Unit08),
-        accounting.unformat(targetMCB.Unit09), accounting.unformat(targetMCB.Unit10), accounting.unformat(targetMCB.Unit11), accounting.unformat(targetMCB.Unit12),
-        accounting.unformat(totalMCBUnitTarget), currMCBUnitJanuary, currMCBUnitFebruary, currMCBUnitMarch, currMCBUnitApril, currMCBUnitMay, currMCBUnitJune, currMCBUnitJuly, currMCBUnitAugust,
-        currMCBUnitSeptember, currMCBUnitOctober, currMCBUnitNovember, currMCBUnitDecember, currMCBTotalUnit, oldMCBUnitJanuary, oldMCBUnitFebruary, oldMCBUnitMarch, oldMCBUnitApril, oldMCBUnitMay,
-        oldMCBUnitJune, oldMCBUnitJuly, oldMCBUnitAugust, oldMCBUnitSeptember, oldMCBUnitOctober, oldMCBUnitNovember, oldMCBUnitDecember, oldMCBTotalUnit);
-    unitGraphQ(year, accounting.unformat(targetAMB.UnitQ1), accounting.unformat(targetAMB.UnitQ2), accounting.unformat(targetAMB.UnitQ3), accounting.unformat(targetAMB.UnitQ4),
-        accounting.unformat(totalAMBUnitTarget), currAMBUnitQ1, currAMBUnitQ2, currAMBUnitQ3, currAMBUnitQ4, currAMBTotalUnit, oldAMBUnitQ1, oldAMBUnitQ2, oldAMBUnitQ3, oldAMBUnitQ4, oldAMBTotalUnit,
-        accounting.unformat(targetMCB.UnitQ1), accounting.unformat(targetMCB.UnitQ2), accounting.unformat(targetMCB.UnitQ3), accounting.unformat(targetMCB.UnitQ4),
-        accounting.unformat(totalMCBUnitTarget), currMCBUnitQ1, currMCBUnitQ2, currMCBUnitQ3, currMCBUnitQ4, currMCBTotalUnit, oldMCBUnitQ1, oldMCBUnitQ2, oldMCBUnitQ3, oldMCBUnitQ4, oldMCBTotalUnit);
-    bahtGraph(year, accounting.unformat(targetAMB.Amt01), accounting.unformat(targetAMB.Amt02), accounting.unformat(targetAMB.Amt03), accounting.unformat(targetAMB.Amt04),
-        accounting.unformat(targetAMB.Amt05), accounting.unformat(targetAMB.Amt06), accounting.unformat(targetAMB.Amt07), accounting.unformat(targetAMB.Amt08),
-        accounting.unformat(targetAMB.Amt09), accounting.unformat(targetAMB.Amt10), accounting.unformat(targetAMB.Amt11), accounting.unformat(targetAMB.Amt12),
-        accounting.unformat(totalAMBBahtTarget), currAMBBahtJanuary, currAMBBahtFebruary, currAMBBahtMarch, currAMBBahtApril, currAMBBahtMay, currAMBBahtJune, currAMBBahtJuly, currAMBBahtAugust,
-        currAMBBahtSeptember, currAMBBahtOctober, currAMBBahtNovember, currAMBBahtDecember, currAMBTotalBaht, oldAMBBahtJanuary, oldAMBBahtFebruary, oldAMBBahtMarch, oldAMBBahtApril, oldAMBBahtMay,
-        oldAMBBahtJune, oldAMBBahtJuly, oldAMBBahtAugust, oldAMBBahtSeptember, oldAMBBahtOctober, oldAMBBahtNovember, oldAMBBahtDecember, oldAMBTotalBaht,
-        accounting.unformat(targetMCB.Amt01), accounting.unformat(targetMCB.Amt02), accounting.unformat(targetMCB.Amt03), accounting.unformat(targetMCB.Amt04),
-        accounting.unformat(targetMCB.Amt05), accounting.unformat(targetMCB.Amt06), accounting.unformat(targetMCB.Amt07), accounting.unformat(targetMCB.Amt08),
-        accounting.unformat(targetMCB.Amt09), accounting.unformat(targetMCB.Amt10), accounting.unformat(targetMCB.Amt11), accounting.unformat(targetMCB.Amt12),
-        accounting.unformat(totalMCBBahtTarget), currMCBBahtJanuary, currMCBBahtFebruary, currMCBBahtMarch, currMCBBahtApril, currMCBBahtMay, currMCBBahtJune, currMCBBahtJuly, currMCBBahtAugust,
-        currMCBBahtSeptember, currMCBBahtOctober, currMCBBahtNovember, currMCBBahtDecember, currMCBTotalBaht, oldMCBBahtJanuary, oldMCBBahtFebruary, oldMCBBahtMarch, oldMCBBahtApril, oldMCBBahtMay,
-        oldMCBBahtJune, oldMCBBahtJuly, oldMCBBahtAugust, oldMCBBahtSeptember, oldMCBBahtOctober, oldMCBBahtNovember, oldMCBBahtDecember, oldMCBTotalBaht);
-    bahtGraphQ(year, accounting.unformat(targetAMB.AmtQ1), accounting.unformat(targetAMB.AmtQ2), accounting.unformat(targetAMB.AmtQ3), accounting.unformat(targetAMB.AmtQ4),
-        accounting.unformat(totalAMBBahtTarget), currAMBBahtQ1, currAMBBahtQ2, currAMBBahtQ3, currAMBBahtQ4, currAMBTotalBaht, oldAMBBahtQ1, oldAMBBahtQ2, oldAMBBahtQ3, oldAMBBahtQ4, oldAMBTotalBaht,
-        accounting.unformat(targetMCB.AmtQ1), accounting.unformat(targetMCB.AmtQ2), accounting.unformat(targetMCB.AmtQ3), accounting.unformat(targetMCB.AmtQ4),
-        accounting.unformat(totalMCBBahtTarget), currMCBBahtQ1, currMCBBahtQ2, currMCBBahtQ3, currMCBBahtQ4, currMCBTotalBaht, oldMCBBahtQ1, oldMCBBahtQ2, oldMCBBahtQ3, oldMCBBahtQ4, oldMCBTotalBaht);
+    unitGraph(year, accounting.unformat(targetNP.Unit01), accounting.unformat(targetNP.Unit02), accounting.unformat(targetNP.Unit03), accounting.unformat(targetNP.Unit04),
+        accounting.unformat(targetNP.Unit05), accounting.unformat(targetNP.Unit06), accounting.unformat(targetNP.Unit07), accounting.unformat(targetNP.Unit08),
+        accounting.unformat(targetNP.Unit09), accounting.unformat(targetNP.Unit10), accounting.unformat(targetNP.Unit11), accounting.unformat(targetNP.Unit12),
+        accounting.unformat(totalNPUnitTarget), currNPUnitJanuary, currNPUnitFebruary, currNPUnitMarch, currNPUnitApril, currNPUnitMay, currNPUnitJune, currNPUnitJuly, currNPUnitAugust,
+        currNPUnitSeptember, currNPUnitOctober, currNPUnitNovember, currNPUnitDecember, currNPTotalUnit, oldNPUnitJanuary, oldNPUnitFebruary, oldNPUnitMarch, oldNPUnitApril, oldNPUnitMay,
+        oldNPUnitJune, oldNPUnitJuly, oldNPUnitAugust, oldNPUnitSeptember, oldNPUnitOctober, oldNPUnitNovember, oldNPUnitDecember, oldNPTotalUnit,
+        accounting.unformat(targetEB.Unit01), accounting.unformat(targetEB.Unit02), accounting.unformat(targetEB.Unit03), accounting.unformat(targetEB.Unit04),
+        accounting.unformat(targetEB.Unit05), accounting.unformat(targetEB.Unit06), accounting.unformat(targetEB.Unit07), accounting.unformat(targetEB.Unit08),
+        accounting.unformat(targetEB.Unit09), accounting.unformat(targetEB.Unit10), accounting.unformat(targetEB.Unit11), accounting.unformat(targetEB.Unit12),
+        accounting.unformat(totalEBUnitTarget), currEBUnitJanuary, currEBUnitFebruary, currEBUnitMarch, currEBUnitApril, currEBUnitMay, currEBUnitJune, currEBUnitJuly, currEBUnitAugust,
+        currEBUnitSeptember, currEBUnitOctober, currEBUnitNovember, currEBUnitDecember, currEBTotalUnit, oldEBUnitJanuary, oldEBUnitFebruary, oldEBUnitMarch, oldEBUnitApril, oldEBUnitMay,
+        oldEBUnitJune, oldEBUnitJuly, oldEBUnitAugust, oldEBUnitSeptember, oldEBUnitOctober, oldEBUnitNovember, oldEBUnitDecember, oldEBTotalUnit,
+        accounting.unformat(targetIND.Unit01), accounting.unformat(targetIND.Unit02), accounting.unformat(targetIND.Unit03), accounting.unformat(targetIND.Unit04),
+        accounting.unformat(targetIND.Unit05), accounting.unformat(targetIND.Unit06), accounting.unformat(targetIND.Unit07), accounting.unformat(targetIND.Unit08),
+        accounting.unformat(targetIND.Unit09), accounting.unformat(targetIND.Unit10), accounting.unformat(targetIND.Unit11), accounting.unformat(targetIND.Unit12),
+        accounting.unformat(totalINDUnitTarget), currINDUnitJanuary, currINDUnitFebruary, currINDUnitMarch, currINDUnitApril, currINDUnitMay, currINDUnitJune, currINDUnitJuly, currINDUnitAugust,
+        currINDUnitSeptember, currINDUnitOctober, currINDUnitNovember, currINDUnitDecember, currINDTotalUnit, oldINDUnitJanuary, oldINDUnitFebruary, oldINDUnitMarch, oldINDUnitApril, oldINDUnitMay,
+        oldINDUnitJune, oldINDUnitJuly, oldINDUnitAugust, oldINDUnitSeptember, oldINDUnitOctober, oldINDUnitNovember, oldINDUnitDecember, oldINDTotalUnit,
+        accounting.unformat(targetOTH.Unit01), accounting.unformat(targetOTH.Unit02), accounting.unformat(targetOTH.Unit03), accounting.unformat(targetOTH.Unit04),
+        accounting.unformat(targetOTH.Unit05), accounting.unformat(targetOTH.Unit06), accounting.unformat(targetOTH.Unit07), accounting.unformat(targetOTH.Unit08),
+        accounting.unformat(targetOTH.Unit09), accounting.unformat(targetOTH.Unit10), accounting.unformat(targetOTH.Unit11), accounting.unformat(targetOTH.Unit12),
+        accounting.unformat(totalOTHUnitTarget), currOTHUnitJanuary, currOTHUnitFebruary, currOTHUnitMarch, currOTHUnitApril, currOTHUnitMay, currOTHUnitJune, currOTHUnitJuly, currOTHUnitAugust,
+        currOTHUnitSeptember, currOTHUnitOctober, currOTHUnitNovember, currOTHUnitDecember, currOTHTotalUnit, oldOTHUnitJanuary, oldOTHUnitFebruary, oldOTHUnitMarch, oldOTHUnitApril, oldOTHUnitMay,
+        oldOTHUnitJune, oldOTHUnitJuly, oldOTHUnitAugust, oldOTHUnitSeptember, oldOTHUnitOctober, oldOTHUnitNovember, oldOTHUnitDecember, oldOTHTotalUnit);
+    unitGraphQ(year, accounting.unformat(targetNP.UnitQ1), accounting.unformat(targetNP.UnitQ2), accounting.unformat(targetNP.UnitQ3), accounting.unformat(targetNP.UnitQ4),
+        accounting.unformat(totalNPUnitTarget), currNPUnitQ1, currNPUnitQ2, currNPUnitQ3, currNPUnitQ4, currNPTotalUnit, oldNPUnitQ1, oldNPUnitQ2, oldNPUnitQ3, oldNPUnitQ4, oldNPTotalUnit,
+        accounting.unformat(targetEB.UnitQ1), accounting.unformat(targetEB.UnitQ2), accounting.unformat(targetEB.UnitQ3), accounting.unformat(targetEB.UnitQ4),
+        accounting.unformat(totalEBUnitTarget), currEBUnitQ1, currEBUnitQ2, currEBUnitQ3, currEBUnitQ4, currEBTotalUnit, oldEBUnitQ1, oldEBUnitQ2, oldEBUnitQ3, oldEBUnitQ4, oldEBTotalUnit,
+        accounting.unformat(targetIND.UnitQ1), accounting.unformat(targetIND.UnitQ2), accounting.unformat(targetIND.UnitQ3), accounting.unformat(targetIND.UnitQ4),
+        accounting.unformat(totalINDUnitTarget), currINDUnitQ1, currINDUnitQ2, currINDUnitQ3, currINDUnitQ4, currINDTotalUnit, oldINDUnitQ1, oldINDUnitQ2, oldINDUnitQ3, oldINDUnitQ4, oldINDTotalUnit,
+        accounting.unformat(targetOTH.UnitQ1), accounting.unformat(targetOTH.UnitQ2), accounting.unformat(targetOTH.UnitQ3), accounting.unformat(targetOTH.UnitQ4),
+        accounting.unformat(totalOTHUnitTarget), currOTHUnitQ1, currOTHUnitQ2, currOTHUnitQ3, currOTHUnitQ4, currOTHTotalUnit, oldOTHUnitQ1, oldOTHUnitQ2, oldOTHUnitQ3, oldOTHUnitQ4, oldOTHTotalUnit);
+    bahtGraph(year, accounting.unformat(targetNP.Amt01), accounting.unformat(targetNP.Amt02), accounting.unformat(targetNP.Amt03), accounting.unformat(targetNP.Amt04),
+        accounting.unformat(targetNP.Amt05), accounting.unformat(targetNP.Amt06), accounting.unformat(targetNP.Amt07), accounting.unformat(targetNP.Amt08),
+        accounting.unformat(targetNP.Amt09), accounting.unformat(targetNP.Amt10), accounting.unformat(targetNP.Amt11), accounting.unformat(targetNP.Amt12),
+        accounting.unformat(totalNPBahtTarget), currNPBahtJanuary, currNPBahtFebruary, currNPBahtMarch, currNPBahtApril, currNPBahtMay, currNPBahtJune, currNPBahtJuly, currNPBahtAugust,
+        currNPBahtSeptember, currNPBahtOctober, currNPBahtNovember, currNPBahtDecember, currNPTotalBaht, oldNPBahtJanuary, oldNPBahtFebruary, oldNPBahtMarch, oldNPBahtApril, oldNPBahtMay,
+        oldNPBahtJune, oldNPBahtJuly, oldNPBahtAugust, oldNPBahtSeptember, oldNPBahtOctober, oldNPBahtNovember, oldNPBahtDecember, oldNPTotalBaht,
+        accounting.unformat(targetEB.Amt01), accounting.unformat(targetEB.Amt02), accounting.unformat(targetEB.Amt03), accounting.unformat(targetEB.Amt04),
+        accounting.unformat(targetEB.Amt05), accounting.unformat(targetEB.Amt06), accounting.unformat(targetEB.Amt07), accounting.unformat(targetEB.Amt08),
+        accounting.unformat(targetEB.Amt09), accounting.unformat(targetEB.Amt10), accounting.unformat(targetEB.Amt11), accounting.unformat(targetEB.Amt12),
+        accounting.unformat(totalEBBahtTarget), currEBBahtJanuary, currEBBahtFebruary, currEBBahtMarch, currEBBahtApril, currEBBahtMay, currEBBahtJune, currEBBahtJuly, currEBBahtAugust,
+        currEBBahtSeptember, currEBBahtOctober, currEBBahtNovember, currEBBahtDecember, currEBTotalBaht, oldEBBahtJanuary, oldEBBahtFebruary, oldEBBahtMarch, oldEBBahtApril, oldEBBahtMay,
+        oldEBBahtJune, oldEBBahtJuly, oldEBBahtAugust, oldEBBahtSeptember, oldEBBahtOctober, oldEBBahtNovember, oldEBBahtDecember, oldEBTotalBaht,
+        accounting.unformat(targetIND.Amt01), accounting.unformat(targetIND.Amt02), accounting.unformat(targetIND.Amt03), accounting.unformat(targetIND.Amt04),
+        accounting.unformat(targetIND.Amt05), accounting.unformat(targetIND.Amt06), accounting.unformat(targetIND.Amt07), accounting.unformat(targetIND.Amt08),
+        accounting.unformat(targetIND.Amt09), accounting.unformat(targetIND.Amt10), accounting.unformat(targetIND.Amt11), accounting.unformat(targetIND.Amt12),
+        accounting.unformat(totalINDBahtTarget), currINDBahtJanuary, currINDBahtFebruary, currINDBahtMarch, currINDBahtApril, currINDBahtMay, currINDBahtJune, currINDBahtJuly, currINDBahtAugust,
+        currINDBahtSeptember, currINDBahtOctober, currINDBahtNovember, currINDBahtDecember, currINDTotalBaht, oldINDBahtJanuary, oldINDBahtFebruary, oldINDBahtMarch, oldINDBahtApril, oldINDBahtMay,
+        oldINDBahtJune, oldINDBahtJuly, oldINDBahtAugust, oldINDBahtSeptember, oldINDBahtOctober, oldINDBahtNovember, oldINDBahtDecember, oldINDTotalBaht,
+        accounting.unformat(targetOTH.Amt01), accounting.unformat(targetOTH.Amt02), accounting.unformat(targetOTH.Amt03), accounting.unformat(targetOTH.Amt04),
+        accounting.unformat(targetOTH.Amt05), accounting.unformat(targetOTH.Amt06), accounting.unformat(targetOTH.Amt07), accounting.unformat(targetOTH.Amt08),
+        accounting.unformat(targetOTH.Amt09), accounting.unformat(targetOTH.Amt10), accounting.unformat(targetOTH.Amt11), accounting.unformat(targetOTH.Amt12),
+        accounting.unformat(totalOTHBahtTarget), currOTHBahtJanuary, currOTHBahtFebruary, currOTHBahtMarch, currOTHBahtApril, currOTHBahtMay, currOTHBahtJune, currOTHBahtJuly, currOTHBahtAugust,
+        currOTHBahtSeptember, currOTHBahtOctober, currOTHBahtNovember, currOTHBahtDecember, currOTHTotalBaht, oldOTHBahtJanuary, oldOTHBahtFebruary, oldOTHBahtMarch, oldOTHBahtApril, oldOTHBahtMay,
+        oldOTHBahtJune, oldOTHBahtJuly, oldOTHBahtAugust, oldOTHBahtSeptember, oldOTHBahtOctober, oldOTHBahtNovember, oldOTHBahtDecember, oldOTHTotalBaht);
+    bahtGraphQ(year, accounting.unformat(targetNP.AmtQ1), accounting.unformat(targetNP.AmtQ2), accounting.unformat(targetNP.AmtQ3), accounting.unformat(targetNP.AmtQ4),
+        accounting.unformat(totalNPBahtTarget), currNPBahtQ1, currNPBahtQ2, currNPBahtQ3, currNPBahtQ4, currNPTotalBaht, oldNPBahtQ1, oldNPBahtQ2, oldNPBahtQ3, oldNPBahtQ4, oldNPTotalBaht,
+        accounting.unformat(targetEB.AmtQ1), accounting.unformat(targetEB.AmtQ2), accounting.unformat(targetEB.AmtQ3), accounting.unformat(targetEB.AmtQ4),
+        accounting.unformat(totalEBBahtTarget), currEBBahtQ1, currEBBahtQ2, currEBBahtQ3, currEBBahtQ4, currEBTotalBaht, oldEBBahtQ1, oldEBBahtQ2, oldEBBahtQ3, oldEBBahtQ4, oldEBTotalBaht,
+        accounting.unformat(targetIND.AmtQ1), accounting.unformat(targetIND.AmtQ2), accounting.unformat(targetIND.AmtQ3), accounting.unformat(targetIND.AmtQ4),
+        accounting.unformat(totalINDBahtTarget), currINDBahtQ1, currINDBahtQ2, currINDBahtQ3, currINDBahtQ4, currINDTotalBaht, oldINDBahtQ1, oldINDBahtQ2, oldINDBahtQ3, oldINDBahtQ4, oldINDTotalBaht,
+        accounting.unformat(targetOTH.AmtQ1), accounting.unformat(targetOTH.AmtQ2), accounting.unformat(targetOTH.AmtQ3), accounting.unformat(targetOTH.AmtQ4),
+        accounting.unformat(totalOTHBahtTarget), currOTHBahtQ1, currOTHBahtQ2, currOTHBahtQ3, currOTHBahtQ4, currOTHTotalBaht, oldOTHBahtQ1, oldOTHBahtQ2, oldOTHBahtQ3, oldOTHBahtQ4, oldOTHTotalBaht);
 
 }
 
-function unitGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetAMB5, targetAMB6, targetAMB7, targetAMB8, targetAMB9, targetAMB10, targetAMB11, targetAMB12, targetAMBTotal, currAMBJanuary, currAMBFebruary, currAMBMarch, currAMBApril, currAMBMay, currAMBJune, currAMBJuly, currAMBAugust, currAMBSeptember, currAMBOctober, currAMBNovember, currAMBDecember, currAMBTotal, oldAMBJanuary, oldAMBFebruary, oldAMBMarch, oldAMBApril, oldAMBMay, oldAMBJune, oldAMBJuly, oldAMBAugust, oldAMBSeptember, oldAMBOctober, oldAMBNovember, oldAMBDecember, oldAMBTotal,
-    targetMCB1, targetMCB2, targetMCB3, targetMCB4, targetMCB5, targetMCB6, targetMCB7, targetMCB8, targetMCB9, targetMCB10, targetMCB11, targetMCB12, targetMCBTotal, currMCBJanuary, currMCBFebruary, currMCBMarch, currMCBApril, currMCBMay, currMCBJune, currMCBJuly, currMCBAugust, currMCBSeptember, currMCBOctober, currMCBNovember, currMCBDecember, currMCBTotal, oldMCBJanuary, oldMCBFebruary, oldMCBMarch, oldMCBApril, oldMCBMay, oldMCBJune, oldMCBJuly, oldMCBAugust, oldMCBSeptember, oldMCBOctober, oldMCBNovember, oldMCBDecember, oldMCBTotal) {
+function unitGraph(year, targetNP1, targetNP2, targetNP3, targetNP4, targetNP5, targetNP6, targetNP7, targetNP8, targetNP9, targetNP10, targetNP11, targetNP12, targetNPTotal, currNPJanuary, currNPFebruary, currNPMarch, currNPApril, currNPMay, currNPJune, currNPJuly, currNPAugust, currNPSeptember, currNPOctober, currNPNovember, currNPDecember, currNPTotal, oldNPJanuary, oldNPFebruary, oldNPMarch, oldNPApril, oldNPMay, oldNPJune, oldNPJuly, oldNPAugust, oldNPSeptember, oldNPOctober, oldNPNovember, oldNPDecember, oldNPTotal,
+    targetEB1, targetEB2, targetEB3, targetEB4, targetEB5, targetEB6, targetEB7, targetEB8, targetEB9, targetEB10, targetEB11, targetEB12, targetEBTotal, currEBJanuary, currEBFebruary, currEBMarch, currEBApril, currEBMay, currEBJune, currEBJuly, currEBAugust, currEBSeptember, currEBOctober, currEBNovember, currEBDecember, currEBTotal, oldEBJanuary, oldEBFebruary, oldEBMarch, oldEBApril, oldEBMay, oldEBJune, oldEBJuly, oldEBAugust, oldEBSeptember, oldEBOctober, oldEBNovember, oldEBDecember, oldEBTotal,
+    targetIND1, targetIND2, targetIND3, targetIND4, targetIND5, targetIND6, targetIND7, targetIND8, targetIND9, targetIND10, targetIND11, targetIND12, targetINDTotal, currINDJanuary, currINDFebruary, currINDMarch, currINDApril, currINDMay, currINDJune, currINDJuly, currINDAugust, currINDSeptember, currINDOctober, currINDNovember, currINDDecember, currINDTotal, oldINDJanuary, oldINDFebruary, oldINDMarch, oldINDApril, oldINDMay, oldINDJune, oldINDJuly, oldINDAugust, oldINDSeptember, oldINDOctober, oldINDNovember, oldINDDecember, oldINDTotal,
+    targetOTH1, targetOTH2, targetOTH3, targetOTH4, targetOTH5, targetOTH6, targetOTH7, targetOTH8, targetOTH9, targetOTH10, targetOTH11, targetOTH12, targetOTHTotal, currOTHJanuary, currOTHFebruary, currOTHMarch, currOTHApril, currOTHMay, currOTHJune, currOTHJuly, currOTHAugust, currOTHSeptember, currOTHOctober, currOTHNovember, currOTHDecember, currOTHTotal, oldOTHJanuary, oldOTHFebruary, oldOTHMarch, oldOTHApril, oldOTHMay, oldOTHJune, oldOTHJuly, oldOTHAugust, oldOTHSeptember, oldOTHOctober, oldOTHNovember, oldOTHDecember, oldOTHTotal) {
 
     Highcharts.chart('Unit', {
         chart: {
@@ -2390,268 +3591,480 @@ function unitGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             text: 'SPD Sales Summary Report : ' + year + ' (Unit)'
         },
         series: [{
-            name: 'AMB ' + (year - 1),
+            name: 'NP ' + (year - 1),
             data: [{
-                y: oldAMBJanuary,
+                y: oldNPJanuary,
                 month: 1,
-                value: accounting.formatNumber(oldAMBJanuary)
+                value: accounting.formatNumber(oldNPJanuary)
             }, {
-                y: oldAMBFebruary,
+                y: oldNPFebruary,
                 month: 2,
-                value: accounting.formatNumber(oldAMBFebruary)
+                value: accounting.formatNumber(oldNPFebruary)
             }, {
-                y: oldAMBMarch,
+                y: oldNPMarch,
                 month: 3,
-                value: accounting.formatNumber(oldAMBMarch)
+                value: accounting.formatNumber(oldNPMarch)
             }, {
-                y: oldAMBApril,
+                y: oldNPApril,
                 month: 4,
-                value: accounting.formatNumber(oldAMBApril)
+                value: accounting.formatNumber(oldNPApril)
             }, {
-                y: oldAMBMay,
+                y: oldNPMay,
                 month: 5,
-                value: accounting.formatNumber(oldAMBMay)
+                value: accounting.formatNumber(oldNPMay)
             }, {
-                y: oldAMBJune,
+                y: oldNPJune,
                 month: 6,
-                value: accounting.formatNumber(oldAMBJune)
+                value: accounting.formatNumber(oldNPJune)
             }, {
-                y: oldAMBJuly,
+                y: oldNPJuly,
                 month: 7,
-                value: accounting.formatNumber(oldAMBJuly)
+                value: accounting.formatNumber(oldNPJuly)
             }, {
-                y: oldAMBAugust,
+                y: oldNPAugust,
                 month: 8,
-                value: accounting.formatNumber(oldAMBAugust)
+                value: accounting.formatNumber(oldNPAugust)
             }, {
-                y: oldAMBSeptember,
+                y: oldNPSeptember,
                 month: 9,
-                value: accounting.formatNumber(oldAMBSeptember)
+                value: accounting.formatNumber(oldNPSeptember)
             }, {
-                y: oldAMBOctober,
+                y: oldNPOctober,
                 month: 10,
-                value: accounting.formatNumber(oldAMBOctober)
+                value: accounting.formatNumber(oldNPOctober)
             }, {
-                y: oldAMBNovember,
+                y: oldNPNovember,
                 month: 11,
-                value: accounting.formatNumber(oldAMBNovember)
+                value: accounting.formatNumber(oldNPNovember)
             }, {
-                y: oldAMBDecember,
+                y: oldNPDecember,
                 month: 12,
-                value: accounting.formatNumber(oldAMBDecember)
+                value: accounting.formatNumber(oldNPDecember)
             }],
             stack: 'old',
-            color: '#7ab9de'
+            color: '#c1b2e6'
         }, {
-            name: 'MCB ' + (year - 1),
+            name: 'EB ' + (year - 1),
             data: [{
-                y: oldMCBJanuary,
+                y: oldEBJanuary,
                 month: 1,
-                value: accounting.formatNumber(oldMCBJanuary)
+                value: accounting.formatNumber(oldEBJanuary)
             }, {
-                y: oldMCBFebruary,
+                y: oldEBFebruary,
                 month: 2,
-                value: accounting.formatNumber(oldMCBFebruary)
+                value: accounting.formatNumber(oldEBFebruary)
             }, {
-                y: oldMCBMarch,
+                y: oldEBMarch,
                 month: 3,
-                value: accounting.formatNumber(oldMCBMarch)
+                value: accounting.formatNumber(oldEBMarch)
             }, {
-                y: oldMCBApril,
+                y: oldEBApril,
                 month: 4,
-                value: accounting.formatNumber(oldMCBApril)
+                value: accounting.formatNumber(oldEBApril)
             }, {
-                y: oldMCBMay,
+                y: oldEBMay,
                 month: 5,
-                value: accounting.formatNumber(oldMCBMay)
+                value: accounting.formatNumber(oldEBMay)
             }, {
-                y: oldMCBJune,
+                y: oldEBJune,
                 month: 6,
-                value: accounting.formatNumber(oldMCBJune)
+                value: accounting.formatNumber(oldEBJune)
             }, {
-                y: oldMCBJuly,
+                y: oldEBJuly,
                 month: 7,
-                value: accounting.formatNumber(oldMCBJuly)
+                value: accounting.formatNumber(oldEBJuly)
             }, {
-                y: oldMCBAugust,
+                y: oldEBAugust,
                 month: 8,
-                value: accounting.formatNumber(oldMCBAugust)
+                value: accounting.formatNumber(oldEBAugust)
             }, {
-                y: oldMCBSeptember,
+                y: oldEBSeptember,
                 month: 9,
-                value: accounting.formatNumber(oldMCBSeptember)
+                value: accounting.formatNumber(oldEBSeptember)
             }, {
-                y: oldMCBOctober,
+                y: oldEBOctober,
                 month: 10,
-                value: accounting.formatNumber(oldMCBOctober)
+                value: accounting.formatNumber(oldEBOctober)
             }, {
-                y: oldMCBNovember,
+                y: oldEBNovember,
                 month: 11,
-                value: accounting.formatNumber(oldMCBNovember)
+                value: accounting.formatNumber(oldEBNovember)
             }, {
-                y: oldMCBDecember,
+                y: oldEBDecember,
                 month: 12,
-                value: accounting.formatNumber(oldMCBDecember)
+                value: accounting.formatNumber(oldEBDecember)
             }],
             stack: 'old',
-            color: '#eed1d2'
+            color: '#dfb9dc'
         }, {
-            name: 'AMB ' + year,
+            name: 'IND ' + (year - 1),
             data: [{
-                y: currAMBJanuary,
+                y: oldINDJanuary,
                 month: 1,
-                value: accounting.formatNumber(currAMBJanuary)
+                value: accounting.formatNumber(oldINDJanuary)
             }, {
-                y: currAMBFebruary,
+                y: oldINDFebruary,
                 month: 2,
-                value: accounting.formatNumber(currAMBFebruary)
+                value: accounting.formatNumber(oldINDFebruary)
             }, {
-                y: currAMBMarch,
+                y: oldINDMarch,
                 month: 3,
-                value: accounting.formatNumber(currAMBMarch)
+                value: accounting.formatNumber(oldINDMarch)
             }, {
-                y: currAMBApril,
+                y: oldINDApril,
                 month: 4,
-                value: accounting.formatNumber(currAMBApril)
+                value: accounting.formatNumber(oldINDApril)
             }, {
-                y: currAMBMay,
+                y: oldINDMay,
                 month: 5,
-                value: accounting.formatNumber(currAMBMay)
+                value: accounting.formatNumber(oldINDMay)
             }, {
-                y: currAMBJune,
+                y: oldINDJune,
                 month: 6,
-                value: accounting.formatNumber(currAMBJune)
+                value: accounting.formatNumber(oldINDJune)
             }, {
-                y: currAMBJuly,
+                y: oldINDJuly,
                 month: 7,
-                value: accounting.formatNumber(currAMBJuly)
+                value: accounting.formatNumber(oldINDJuly)
             }, {
-                y: currAMBAugust,
+                y: oldINDAugust,
                 month: 8,
-                value: accounting.formatNumber(currAMBAugust)
+                value: accounting.formatNumber(oldINDAugust)
             }, {
-                y: currAMBSeptember,
+                y: oldINDSeptember,
                 month: 9,
-                value: accounting.formatNumber(currAMBSeptember)
+                value: accounting.formatNumber(oldINDSeptember)
             }, {
-                y: currAMBOctober,
+                y: oldINDOctober,
                 month: 10,
-                value: accounting.formatNumber(currAMBOctober)
+                value: accounting.formatNumber(oldINDOctober)
             }, {
-                y: currAMBNovember,
+                y: oldINDNovember,
                 month: 11,
-                value: accounting.formatNumber(currAMBNovember)
+                value: accounting.formatNumber(oldINDNovember)
             }, {
-                y: currAMBDecember,
+                y: oldINDDecember,
                 month: 12,
-                value: accounting.formatNumber(currAMBDecember)
+                value: accounting.formatNumber(oldINDDecember)
+            }],
+            stack: 'old',
+            color: '#fa99ff'
+        }, {
+            name: 'OTH ' + (year - 1),
+            data: [{
+                y: oldOTHJanuary,
+                month: 1,
+                value: accounting.formatNumber(oldOTHJanuary)
+            }, {
+                y: oldOTHFebruary,
+                month: 2,
+                value: accounting.formatNumber(oldOTHFebruary)
+            }, {
+                y: oldOTHMarch,
+                month: 3,
+                value: accounting.formatNumber(oldOTHMarch)
+            }, {
+                y: oldOTHApril,
+                month: 4,
+                value: accounting.formatNumber(oldOTHApril)
+            }, {
+                y: oldOTHMay,
+                month: 5,
+                value: accounting.formatNumber(oldOTHMay)
+            }, {
+                y: oldOTHJune,
+                month: 6,
+                value: accounting.formatNumber(oldOTHJune)
+            }, {
+                y: oldOTHJuly,
+                month: 7,
+                value: accounting.formatNumber(oldOTHJuly)
+            }, {
+                y: oldOTHAugust,
+                month: 8,
+                value: accounting.formatNumber(oldOTHAugust)
+            }, {
+                y: oldOTHSeptember,
+                month: 9,
+                value: accounting.formatNumber(oldOTHSeptember)
+            }, {
+                y: oldOTHOctober,
+                month: 10,
+                value: accounting.formatNumber(oldOTHOctober)
+            }, {
+                y: oldOTHNovember,
+                month: 11,
+                value: accounting.formatNumber(oldOTHNovember)
+            }, {
+                y: oldOTHDecember,
+                month: 12,
+                value: accounting.formatNumber(oldOTHDecember)
+            }],
+            stack: 'old',
+            color: '#ff99d6'
+        }, {
+            name: 'NP ' + year,
+            data: [{
+                y: currNPJanuary,
+                month: 1,
+                value: accounting.formatNumber(currNPJanuary)
+            }, {
+                y: currNPFebruary,
+                month: 2,
+                value: accounting.formatNumber(currNPFebruary)
+            }, {
+                y: currNPMarch,
+                month: 3,
+                value: accounting.formatNumber(currNPMarch)
+            }, {
+                y: currNPApril,
+                month: 4,
+                value: accounting.formatNumber(currNPApril)
+            }, {
+                y: currNPMay,
+                month: 5,
+                value: accounting.formatNumber(currNPMay)
+            }, {
+                y: currNPJune,
+                month: 6,
+                value: accounting.formatNumber(currNPJune)
+            }, {
+                y: currNPJuly,
+                month: 7,
+                value: accounting.formatNumber(currNPJuly)
+            }, {
+                y: currNPAugust,
+                month: 8,
+                value: accounting.formatNumber(currNPAugust)
+            }, {
+                y: currNPSeptember,
+                month: 9,
+                value: accounting.formatNumber(currNPSeptember)
+            }, {
+                y: currNPOctober,
+                month: 10,
+                value: accounting.formatNumber(currNPOctober)
+            }, {
+                y: currNPNovember,
+                month: 11,
+                value: accounting.formatNumber(currNPNovember)
+            }, {
+                y: currNPDecember,
+                month: 12,
+                value: accounting.formatNumber(currNPDecember)
             }],
             stack: 'new',
-            color: '#2988bc'
+            color: '#603cba'
         }, {
-            name: 'MCB ' + year,
+            name: 'EB ' + year,
             data: [{
-                y: currMCBJanuary,
+                y: currEBJanuary,
                 month: 1,
-                value: accounting.formatNumber(currMCBJanuary)
+                value: accounting.formatNumber(currEBJanuary)
             }, {
-                y: currMCBFebruary,
+                y: currEBFebruary,
                 month: 2,
-                value: accounting.formatNumber(currMCBFebruary)
+                value: accounting.formatNumber(currEBFebruary)
             }, {
-                y: currMCBMarch,
+                y: currEBMarch,
                 month: 3,
-                value: accounting.formatNumber(currMCBMarch)
+                value: accounting.formatNumber(currEBMarch)
             }, {
-                y: currMCBApril,
+                y: currEBApril,
                 month: 4,
-                value: accounting.formatNumber(currMCBApril)
+                value: accounting.formatNumber(currEBApril)
             }, {
-                y: currMCBMay,
+                y: currEBMay,
                 month: 5,
-                value: accounting.formatNumber(currMCBMay)
+                value: accounting.formatNumber(currEBMay)
             }, {
-                y: currMCBJune,
+                y: currEBJune,
                 month: 6,
-                value: accounting.formatNumber(currMCBJune)
+                value: accounting.formatNumber(currEBJune)
             }, {
-                y: currMCBJuly,
+                y: currEBJuly,
                 month: 7,
-                value: accounting.formatNumber(currMCBJuly)
+                value: accounting.formatNumber(currEBJuly)
             }, {
-                y: currMCBAugust,
+                y: currEBAugust,
                 month: 8,
-                value: accounting.formatNumber(currMCBAugust)
+                value: accounting.formatNumber(currEBAugust)
             }, {
-                y: currMCBSeptember,
+                y: currEBSeptember,
                 month: 9,
-                value: accounting.formatNumber(currMCBSeptember)
+                value: accounting.formatNumber(currEBSeptember)
             }, {
-                y: currMCBOctober,
+                y: currEBOctober,
                 month: 10,
-                value: accounting.formatNumber(currMCBOctober)
+                value: accounting.formatNumber(currEBOctober)
             }, {
-                y: currMCBNovember,
+                y: currEBNovember,
                 month: 11,
-                value: accounting.formatNumber(currMCBNovember)
+                value: accounting.formatNumber(currEBNovember)
             }, {
-                y: currMCBDecember,
+                y: currEBDecember,
                 month: 12,
-                value: accounting.formatNumber(currMCBDecember)
+                value: accounting.formatNumber(currEBDecember)
             }],
             stack: 'new',
-            color: '#ffb6b9'
+            color: '#7e3878'
+        }, {
+            name: 'IND ' + year,
+            data: [{
+                y: currINDJanuary,
+                month: 1,
+                value: accounting.formatNumber(currINDJanuary)
+            }, {
+                y: currINDFebruary,
+                month: 2,
+                value: accounting.formatNumber(currINDFebruary)
+            }, {
+                y: currINDMarch,
+                month: 3,
+                value: accounting.formatNumber(currINDMarch)
+            }, {
+                y: currINDApril,
+                month: 4,
+                value: accounting.formatNumber(currINDApril)
+            }, {
+                y: currINDMay,
+                month: 5,
+                value: accounting.formatNumber(currINDMay)
+            }, {
+                y: currINDJune,
+                month: 6,
+                value: accounting.formatNumber(currINDJune)
+            }, {
+                y: currINDJuly,
+                month: 7,
+                value: accounting.formatNumber(currINDJuly)
+            }, {
+                y: currINDAugust,
+                month: 8,
+                value: accounting.formatNumber(currINDAugust)
+            }, {
+                y: currINDSeptember,
+                month: 9,
+                value: accounting.formatNumber(currINDSeptember)
+            }, {
+                y: currINDOctober,
+                month: 10,
+                value: accounting.formatNumber(currINDOctober)
+            }, {
+                y: currINDNovember,
+                month: 11,
+                value: accounting.formatNumber(currINDNovember)
+            }, {
+                y: currINDDecember,
+                month: 12,
+                value: accounting.formatNumber(currINDDecember)
+            }],
+            stack: 'new',
+            color: '#9f00a7'
+        }, {
+            name: 'OTH ' + year,
+            data: [{
+                y: currOTHJanuary,
+                month: 1,
+                value: accounting.formatNumber(currOTHJanuary)
+            }, {
+                y: currOTHFebruary,
+                month: 2,
+                value: accounting.formatNumber(currOTHFebruary)
+            }, {
+                y: currOTHMarch,
+                month: 3,
+                value: accounting.formatNumber(currOTHMarch)
+            }, {
+                y: currOTHApril,
+                month: 4,
+                value: accounting.formatNumber(currOTHApril)
+            }, {
+                y: currOTHMay,
+                month: 5,
+                value: accounting.formatNumber(currOTHMay)
+            }, {
+                y: currOTHJune,
+                month: 6,
+                value: accounting.formatNumber(currOTHJune)
+            }, {
+                y: currOTHJuly,
+                month: 7,
+                value: accounting.formatNumber(currOTHJuly)
+            }, {
+                y: currOTHAugust,
+                month: 8,
+                value: accounting.formatNumber(currOTHAugust)
+            }, {
+                y: currOTHSeptember,
+                month: 9,
+                value: accounting.formatNumber(currOTHSeptember)
+            }, {
+                y: currOTHOctober,
+                month: 10,
+                value: accounting.formatNumber(currOTHOctober)
+            }, {
+                y: currOTHNovember,
+                month: 11,
+                value: accounting.formatNumber(currOTHNovember)
+            }, {
+                y: currOTHDecember,
+                month: 12,
+                value: accounting.formatNumber(currOTHDecember)
+            }],
+            stack: 'new',
+            color: '#ff0097'
         }, {
             type: 'spline',
             name: 'Target ' + year,
             data: [{
-                y: targetAMB1 + targetMCB1,
+                y: targetNP1 + targetEB1 + targetIND1 + targetOTH1,
                 month: 1,
-                value: accounting.formatNumber(targetAMB1 + targetMCB1)
+                value: accounting.formatNumber(targetNP1 + targetEB1 + targetIND1 + targetOTH1)
             }, {
-                y: targetAMB2 + targetMCB2,
+                y: targetNP2 + targetEB2 + targetIND2 + targetOTH2,
                 month: 2,
-                value: accounting.formatNumber(targetAMB2 + targetMCB2)
+                value: accounting.formatNumber(targetNP2 + targetEB2 + targetIND2 + targetOTH2)
             }, {
-                y: targetAMB3 + targetMCB3,
+                y: targetNP3 + targetEB3 + targetIND3 + targetOTH3,
                 month: 3,
-                value: accounting.formatNumber(targetAMB3 + targetMCB3)
+                value: accounting.formatNumber(targetNP3 + targetEB3 + targetIND3 + targetOTH3)
             }, {
-                y: targetAMB4 + targetMCB4,
+                y: targetNP4 + targetEB4 + targetIND4 + targetOTH4,
                 month: 4,
-                value: accounting.formatNumber(targetAMB4 + targetMCB4)
+                value: accounting.formatNumber(targetNP4 + targetEB4 + targetIND4 + targetOTH4)
             }, {
-                y: targetAMB5 + targetMCB4,
+                y: targetNP5 + targetEB5 + targetIND5 + targetOTH5,
                 month: 5,
-                value: accounting.formatNumber(targetAMB5 + targetMCB4)
+                value: accounting.formatNumber(targetNP5 + targetEB5 + targetIND5 + targetOTH5)
             }, {
-                y: targetAMB6 + targetMCB6,
+                y: targetNP6 + targetEB6 + targetIND6 + targetOTH6,
                 month: 6,
-                value: accounting.formatNumber(targetAMB6 + targetMCB6)
+                value: accounting.formatNumber(targetNP6 + targetEB6 + targetIND6 + targetOTH6)
             }, {
-                y: targetAMB7 + targetMCB7,
+                y: targetNP7 + targetEB7 + targetIND7 + targetOTH7,
                 month: 7,
-                value: accounting.formatNumber(targetAMB7 + targetMCB7)
+                value: accounting.formatNumber(targetNP7 + targetEB7 + targetIND7 + targetOTH7)
             }, {
-                y: targetAMB8 + targetMCB8,
+                y: targetNP8 + targetEB8 + targetIND8 + targetOTH8,
                 month: 8,
-                value: accounting.formatNumber(targetAMB8 + targetMCB8)
+                value: accounting.formatNumber(targetNP8 + targetEB8 + targetIND8 + targetOTH8)
             }, {
-                y: targetAMB9 + targetMCB9,
+                y: targetNP9 + targetEB9 + targetIND9 + targetOTH9,
                 month: 9,
-                value: accounting.formatNumber(targetAMB9 + targetMCB9)
+                value: accounting.formatNumber(targetNP9 + targetEB9 + targetIND9 + targetOTH9)
             }, {
-                y: targetAMB10 + targetMCB10,
+                y: targetNP10 + targetEB10 + targetIND10 + targetOTH10,
                 month: 10,
-                value: accounting.formatNumber(targetAMB10 + targetMCB10)
+                value: accounting.formatNumber(targetNP10 + targetEB10 + targetIND10 + targetOTH10)
             }, {
-                y: targetAMB11 + targetMCB11,
+                y: targetNP11 + targetEB11 + targetIND11 + targetOTH11,
                 month: 11,
-                value: accounting.formatNumber(targetAMB11 + targetMCB11)
+                value: accounting.formatNumber(targetNP11 + targetEB11 + targetIND11 + targetOTH11)
             }, {
-                y: targetAMB12 + targetMCB12,
+                y: targetNP12 + targetEB12 + targetIND12 + targetOTH12,
                 month: 12,
-                value: accounting.formatNumber(targetAMB12 + targetMCB12)
+                value: accounting.formatNumber(targetNP12 + targetEB12 + targetIND12 + targetOTH12)
             }],
             marker: {
                 enabled: false
@@ -2662,8 +4075,10 @@ function unitGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
     });
 }
 
-function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetAMB5, targetAMB6, targetAMB7, targetAMB8, targetAMB9, targetAMB10, targetAMB11, targetAMB12, targetAMBTotal, currAMBJanuary, currAMBFebruary, currAMBMarch, currAMBApril, currAMBMay, currAMBJune, currAMBJuly, currAMBAugust, currAMBSeptember, currAMBOctober, currAMBNovember, currAMBDecember, currAMBTotal, oldAMBJanuary, oldAMBFebruary, oldAMBMarch, oldAMBApril, oldAMBMay, oldAMBJune, oldAMBJuly, oldAMBAugust, oldAMBSeptember, oldAMBOctober, oldAMBNovember, oldAMBDecember, oldAMBTotal,
-    targetMCB1, targetMCB2, targetMCB3, targetMCB4, targetMCB5, targetMCB6, targetMCB7, targetMCB8, targetMCB9, targetMCB10, targetMCB11, targetMCB12, targetMCBTotal, currMCBJanuary, currMCBFebruary, currMCBMarch, currMCBApril, currMCBMay, currMCBJune, currMCBJuly, currMCBAugust, currMCBSeptember, currMCBOctober, currMCBNovember, currMCBDecember, currMCBTotal, oldMCBJanuary, oldMCBFebruary, oldMCBMarch, oldMCBApril, oldMCBMay, oldMCBJune, oldMCBJuly, oldMCBAugust, oldMCBSeptember, oldMCBOctober, oldMCBNovember, oldMCBDecember, oldMCBTotal) {
+function bahtGraph(year, targetNP1, targetNP2, targetNP3, targetNP4, targetNP5, targetNP6, targetNP7, targetNP8, targetNP9, targetNP10, targetNP11, targetNP12, targetNPTotal, currNPJanuary, currNPFebruary, currNPMarch, currNPApril, currNPMay, currNPJune, currNPJuly, currNPAugust, currNPSeptember, currNPOctober, currNPNovember, currNPDecember, currNPTotal, oldNPJanuary, oldNPFebruary, oldNPMarch, oldNPApril, oldNPMay, oldNPJune, oldNPJuly, oldNPAugust, oldNPSeptember, oldNPOctober, oldNPNovember, oldNPDecember, oldNPTotal,
+    targetEB1, targetEB2, targetEB3, targetEB4, targetEB5, targetEB6, targetEB7, targetEB8, targetEB9, targetEB10, targetEB11, targetEB12, targetEBTotal, currEBJanuary, currEBFebruary, currEBMarch, currEBApril, currEBMay, currEBJune, currEBJuly, currEBAugust, currEBSeptember, currEBOctober, currEBNovember, currEBDecember, currEBTotal, oldEBJanuary, oldEBFebruary, oldEBMarch, oldEBApril, oldEBMay, oldEBJune, oldEBJuly, oldEBAugust, oldEBSeptember, oldEBOctober, oldEBNovember, oldEBDecember, oldEBTotal,
+    targetIND1, targetIND2, targetIND3, targetIND4, targetIND5, targetIND6, targetIND7, targetIND8, targetIND9, targetIND10, targetIND11, targetIND12, targetINDTotal, currINDJanuary, currINDFebruary, currINDMarch, currINDApril, currINDMay, currINDJune, currINDJuly, currINDAugust, currINDSeptember, currINDOctober, currINDNovember, currINDDecember, currINDTotal, oldINDJanuary, oldINDFebruary, oldINDMarch, oldINDApril, oldINDMay, oldINDJune, oldINDJuly, oldINDAugust, oldINDSeptember, oldINDOctober, oldINDNovember, oldINDDecember, oldINDTotal,
+    targetOTH1, targetOTH2, targetOTH3, targetOTH4, targetOTH5, targetOTH6, targetOTH7, targetOTH8, targetOTH9, targetOTH10, targetOTH11, targetOTH12, targetOTHTotal, currOTHJanuary, currOTHFebruary, currOTHMarch, currOTHApril, currOTHMay, currOTHJune, currOTHJuly, currOTHAugust, currOTHSeptember, currOTHOctober, currOTHNovember, currOTHDecember, currOTHTotal, oldOTHJanuary, oldOTHFebruary, oldOTHMarch, oldOTHApril, oldOTHMay, oldOTHJune, oldOTHJuly, oldOTHAugust, oldOTHSeptember, oldOTHOctober, oldOTHNovember, oldOTHDecember, oldOTHTotal) {
 
     Highcharts.setOptions({
         colors: ['#DD4B39', '#222D32', '#69acde']
@@ -2708,268 +4123,480 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             min: 0
         },
         series: [{
-            name: 'AMB ' + (year - 1),
+            name: 'NP ' + (year - 1),
             data: [{
-                y: oldAMBJanuary,
+                y: oldNPJanuary,
                 month: 1,
-                value: accounting.formatMoney(oldAMBJanuary, "฿")
+                value: accounting.formatMoney(oldNPJanuary, "฿")
             }, {
-                y: oldAMBFebruary,
+                y: oldNPFebruary,
                 month: 2,
-                value: accounting.formatMoney(oldAMBFebruary, "฿")
+                value: accounting.formatMoney(oldNPFebruary, "฿")
             }, {
-                y: oldAMBMarch,
+                y: oldNPMarch,
                 month: 3,
-                value: accounting.formatMoney(oldAMBMarch, "฿")
+                value: accounting.formatMoney(oldNPMarch, "฿")
             }, {
-                y: oldAMBApril,
+                y: oldNPApril,
                 month: 4,
-                value: accounting.formatMoney(oldAMBApril, "฿")
+                value: accounting.formatMoney(oldNPApril, "฿")
             }, {
-                y: oldAMBMay,
+                y: oldNPMay,
                 month: 5,
-                value: accounting.formatMoney(oldAMBMay, "฿")
+                value: accounting.formatMoney(oldNPMay, "฿")
             }, {
-                y: oldAMBJune,
+                y: oldNPJune,
                 month: 6,
-                value: accounting.formatMoney(oldAMBJune, "฿")
+                value: accounting.formatMoney(oldNPJune, "฿")
             }, {
-                y: oldAMBJuly,
+                y: oldNPJuly,
                 month: 7,
-                value: accounting.formatMoney(oldAMBJuly, "฿")
+                value: accounting.formatMoney(oldNPJuly, "฿")
             }, {
-                y: oldAMBAugust,
+                y: oldNPAugust,
                 month: 8,
-                value: accounting.formatMoney(oldAMBAugust, "฿")
+                value: accounting.formatMoney(oldNPAugust, "฿")
             }, {
-                y: oldAMBSeptember,
+                y: oldNPSeptember,
                 month: 9,
-                value: accounting.formatMoney(oldAMBSeptember, "฿")
+                value: accounting.formatMoney(oldNPSeptember, "฿")
             }, {
-                y: oldAMBOctober,
+                y: oldNPOctober,
                 month: 10,
-                value: accounting.formatMoney(oldAMBOctober, "฿")
+                value: accounting.formatMoney(oldNPOctober, "฿")
             }, {
-                y: oldAMBNovember,
+                y: oldNPNovember,
                 month: 11,
-                value: accounting.formatMoney(oldAMBNovember, "฿")
+                value: accounting.formatMoney(oldNPNovember, "฿")
             }, {
-                y: oldAMBDecember,
+                y: oldNPDecember,
                 month: 12,
-                value: accounting.formatMoney(oldAMBDecember, "฿")
+                value: accounting.formatMoney(oldNPDecember, "฿")
             }],
             stack: 'old',
-            color: '#ff7666'
+            color: '#ffe699'
         }, {
-            name: 'MCB ' + (year - 1),
+            name: 'EB ' + (year - 1),
             data: [{
-                y: oldMCBJanuary,
+                y: oldEBJanuary,
                 month: 1,
-                value: accounting.formatMoney(oldMCBJanuary, "฿")
+                value: accounting.formatMoney(oldEBJanuary, "฿")
             }, {
-                y: oldMCBFebruary,
+                y: oldEBFebruary,
                 month: 2,
-                value: accounting.formatMoney(oldMCBFebruary, "฿")
+                value: accounting.formatMoney(oldEBFebruary, "฿")
             }, {
-                y: oldMCBMarch,
+                y: oldEBMarch,
                 month: 3,
-                value: accounting.formatMoney(oldMCBMarch, "฿")
+                value: accounting.formatMoney(oldEBMarch, "฿")
             }, {
-                y: oldMCBApril,
+                y: oldEBApril,
                 month: 4,
-                value: accounting.formatMoney(oldMCBApril, "฿")
+                value: accounting.formatMoney(oldEBApril, "฿")
             }, {
-                y: oldMCBMay,
+                y: oldEBMay,
                 month: 5,
-                value: accounting.formatMoney(oldMCBMay, "฿")
+                value: accounting.formatMoney(oldEBMay, "฿")
             }, {
-                y: oldMCBJune,
+                y: oldEBJune,
                 month: 6,
-                value: accounting.formatMoney(oldMCBJune, "฿")
+                value: accounting.formatMoney(oldEBJune, "฿")
             }, {
-                y: oldMCBJuly,
+                y: oldEBJuly,
                 month: 7,
-                value: accounting.formatMoney(oldMCBJuly, "฿")
+                value: accounting.formatMoney(oldEBJuly, "฿")
             }, {
-                y: oldMCBAugust,
+                y: oldEBAugust,
                 month: 8,
-                value: accounting.formatMoney(oldMCBAugust, "฿")
+                value: accounting.formatMoney(oldEBAugust, "฿")
             }, {
-                y: oldMCBSeptember,
+                y: oldEBSeptember,
                 month: 9,
-                value: accounting.formatMoney(oldMCBSeptember, "฿")
+                value: accounting.formatMoney(oldEBSeptember, "฿")
             }, {
-                y: oldMCBOctober,
+                y: oldEBOctober,
                 month: 10,
-                value: accounting.formatMoney(oldMCBOctober, "฿")
+                value: accounting.formatMoney(oldEBOctober, "฿")
             }, {
-                y: oldMCBNovember,
+                y: oldEBNovember,
                 month: 11,
-                value: accounting.formatMoney(oldMCBNovember, "฿")
+                value: accounting.formatMoney(oldEBNovember, "฿")
             }, {
-                y: oldMCBDecember,
+                y: oldEBDecember,
                 month: 12,
-                value: accounting.formatMoney(oldMCBDecember, "฿")
+                value: accounting.formatMoney(oldEBDecember, "฿")
             }],
             stack: 'old',
-            color: '#737b7e'
+            color: '#f4dba4'
         }, {
-            name: 'AMB ' + year,
+            name: 'IND ' + (year - 1),
             data: [{
-                y: currAMBJanuary,
+                y: oldINDJanuary,
                 month: 1,
-                value: accounting.formatMoney(currAMBJanuary, "฿")
+                value: accounting.formatMoney(oldINDJanuary, "฿")
             }, {
-                y: currAMBFebruary,
+                y: oldINDFebruary,
                 month: 2,
-                value: accounting.formatMoney(currAMBFebruary, "฿")
+                value: accounting.formatMoney(oldINDFebruary, "฿")
             }, {
-                y: currAMBMarch,
+                y: oldINDMarch,
                 month: 3,
-                value: accounting.formatMoney(currAMBMarch, "฿")
+                value: accounting.formatMoney(oldINDMarch, "฿")
             }, {
-                y: currAMBApril,
+                y: oldINDApril,
                 month: 4,
-                value: accounting.formatMoney(currAMBApril, "฿")
+                value: accounting.formatMoney(oldINDApril, "฿")
             }, {
-                y: currAMBMay,
+                y: oldINDMay,
                 month: 5,
-                value: accounting.formatMoney(currAMBMay, "฿")
+                value: accounting.formatMoney(oldINDMay, "฿")
             }, {
-                y: currAMBJune,
+                y: oldINDJune,
                 month: 6,
-                value: accounting.formatMoney(currAMBJune, "฿")
+                value: accounting.formatMoney(oldINDJune, "฿")
             }, {
-                y: currAMBJuly,
+                y: oldINDJuly,
                 month: 7,
-                value: accounting.formatMoney(currAMBJuly, "฿")
+                value: accounting.formatMoney(oldINDJuly, "฿")
             }, {
-                y: currAMBAugust,
+                y: oldINDAugust,
                 month: 8,
-                value: accounting.formatMoney(currAMBAugust, "฿")
+                value: accounting.formatMoney(oldINDAugust, "฿")
             }, {
-                y: currAMBSeptember,
+                y: oldINDSeptember,
                 month: 9,
-                value: accounting.formatMoney(currAMBSeptember, "฿")
+                value: accounting.formatMoney(oldINDSeptember, "฿")
             }, {
-                y: currAMBOctober,
+                y: oldINDOctober,
                 month: 10,
-                value: accounting.formatMoney(currAMBOctober, "฿")
+                value: accounting.formatMoney(oldINDOctober, "฿")
             }, {
-                y: currAMBNovember,
+                y: oldINDNovember,
                 month: 11,
-                value: accounting.formatMoney(currAMBNovember, "฿")
+                value: accounting.formatMoney(oldINDNovember, "฿")
             }, {
-                y: currAMBDecember,
+                y: oldINDDecember,
                 month: 12,
-                value: accounting.formatMoney(currAMBDecember, "฿")
+                value: accounting.formatMoney(oldINDDecember, "฿")
+            }],
+            stack: 'old',
+            color: '#f0b8a8'
+        }, {
+            name: 'OTH ' + (year - 1),
+            data: [{
+                y: oldOTHJanuary,
+                month: 1,
+                value: accounting.formatMoney(oldOTHJanuary, "฿")
+            }, {
+                y: oldOTHFebruary,
+                month: 2,
+                value: accounting.formatMoney(oldOTHFebruary, "฿")
+            }, {
+                y: oldOTHMarch,
+                month: 3,
+                value: accounting.formatMoney(oldOTHMarch, "฿")
+            }, {
+                y: oldOTHApril,
+                month: 4,
+                value: accounting.formatMoney(oldOTHApril, "฿")
+            }, {
+                y: oldOTHMay,
+                month: 5,
+                value: accounting.formatMoney(oldOTHMay, "฿")
+            }, {
+                y: oldOTHJune,
+                month: 6,
+                value: accounting.formatMoney(oldOTHJune, "฿")
+            }, {
+                y: oldOTHJuly,
+                month: 7,
+                value: accounting.formatMoney(oldOTHJuly, "฿")
+            }, {
+                y: oldOTHAugust,
+                month: 8,
+                value: accounting.formatMoney(oldOTHAugust, "฿")
+            }, {
+                y: oldOTHSeptember,
+                month: 9,
+                value: accounting.formatMoney(oldOTHSeptember, "฿")
+            }, {
+                y: oldOTHOctober,
+                month: 10,
+                value: accounting.formatMoney(oldOTHOctober, "฿")
+            }, {
+                y: oldOTHNovember,
+                month: 11,
+                value: accounting.formatMoney(oldOTHNovember, "฿")
+            }, {
+                y: oldOTHDecember,
+                month: 12,
+                value: accounting.formatMoney(oldOTHDecember, "฿")
+            }],
+            stack: 'old',
+            color: '#f8a0a0'
+        }, {
+            name: 'NP ' + year,
+            data: [{
+                y: currNPJanuary,
+                month: 1,
+                value: accounting.formatMoney(currNPJanuary, "฿")
+            }, {
+                y: currNPFebruary,
+                month: 2,
+                value: accounting.formatMoney(currNPFebruary, "฿")
+            }, {
+                y: currNPMarch,
+                month: 3,
+                value: accounting.formatMoney(currNPMarch, "฿")
+            }, {
+                y: currNPApril,
+                month: 4,
+                value: accounting.formatMoney(currNPApril, "฿")
+            }, {
+                y: currNPMay,
+                month: 5,
+                value: accounting.formatMoney(currNPMay, "฿")
+            }, {
+                y: currNPJune,
+                month: 6,
+                value: accounting.formatMoney(currNPJune, "฿")
+            }, {
+                y: currNPJuly,
+                month: 7,
+                value: accounting.formatMoney(currNPJuly, "฿")
+            }, {
+                y: currNPAugust,
+                month: 8,
+                value: accounting.formatMoney(currNPAugust, "฿")
+            }, {
+                y: currNPSeptember,
+                month: 9,
+                value: accounting.formatMoney(currNPSeptember, "฿")
+            }, {
+                y: currNPOctober,
+                month: 10,
+                value: accounting.formatMoney(currNPOctober, "฿")
+            }, {
+                y: currNPNovember,
+                month: 11,
+                value: accounting.formatMoney(currNPNovember, "฿")
+            }, {
+                y: currNPDecember,
+                month: 12,
+                value: accounting.formatMoney(currNPDecember, "฿")
             }],
             stack: 'new',
-            color: '#DD4B39'
+            color: '#ffc40d'
         }, {
-            name: 'MCB ' + year,
+            name: 'EB ' + year,
             data: [{
-                y: currMCBJanuary,
+                y: currEBJanuary,
                 month: 1,
-                value: accounting.formatMoney(currMCBJanuary, "฿")
+                value: accounting.formatMoney(currEBJanuary, "฿")
             }, {
-                y: currMCBFebruary,
+                y: currEBFebruary,
                 month: 2,
-                value: accounting.formatMoney(currMCBFebruary, "฿")
+                value: accounting.formatMoney(currEBFebruary, "฿")
             }, {
-                y: currMCBMarch,
+                y: currEBMarch,
                 month: 3,
-                value: accounting.formatMoney(currMCBMarch, "฿")
+                value: accounting.formatMoney(currEBMarch, "฿")
             }, {
-                y: currMCBApril,
+                y: currEBApril,
                 month: 4,
-                value: accounting.formatMoney(currMCBApril, "฿")
+                value: accounting.formatMoney(currEBApril, "฿")
             }, {
-                y: currMCBMay,
+                y: currEBMay,
                 month: 5,
-                value: accounting.formatMoney(currMCBMay, "฿")
+                value: accounting.formatMoney(currEBMay, "฿")
             }, {
-                y: currMCBJune,
+                y: currEBJune,
                 month: 6,
-                value: accounting.formatMoney(currMCBJune, "฿")
+                value: accounting.formatMoney(currEBJune, "฿")
             }, {
-                y: currMCBJuly,
+                y: currEBJuly,
                 month: 7,
-                value: accounting.formatMoney(currMCBJuly, "฿")
+                value: accounting.formatMoney(currEBJuly, "฿")
             }, {
-                y: currMCBAugust,
+                y: currEBAugust,
                 month: 8,
-                value: accounting.formatMoney(currMCBAugust, "฿")
+                value: accounting.formatMoney(currEBAugust, "฿")
             }, {
-                y: currMCBSeptember,
+                y: currEBSeptember,
                 month: 9,
-                value: accounting.formatMoney(currMCBSeptember, "฿")
+                value: accounting.formatMoney(currEBSeptember, "฿")
             }, {
-                y: currMCBOctober,
+                y: currEBOctober,
                 month: 10,
-                value: accounting.formatMoney(currMCBOctober, "฿")
+                value: accounting.formatMoney(currEBOctober, "฿")
             }, {
-                y: currMCBNovember,
+                y: currEBNovember,
                 month: 11,
-                value: accounting.formatMoney(currMCBNovember, "฿")
+                value: accounting.formatMoney(currEBNovember, "฿")
             }, {
-                y: currMCBDecember,
+                y: currEBDecember,
                 month: 12,
-                value: accounting.formatMoney(currMCBDecember, "฿")
+                value: accounting.formatMoney(currEBDecember, "฿")
             }],
             stack: 'new',
-            color: '#222D32'
+            color: '#e3a21a'
+        }, {
+            name: 'IND ' + year,
+            data: [{
+                y: currINDJanuary,
+                month: 1,
+                value: accounting.formatMoney(currINDJanuary, "฿")
+            }, {
+                y: currINDFebruary,
+                month: 2,
+                value: accounting.formatMoney(currINDFebruary, "฿")
+            }, {
+                y: currINDMarch,
+                month: 3,
+                value: accounting.formatMoney(currINDMarch, "฿")
+            }, {
+                y: currINDApril,
+                month: 4,
+                value: accounting.formatMoney(currINDApril, "฿")
+            }, {
+                y: currINDMay,
+                month: 5,
+                value: accounting.formatMoney(currINDMay, "฿")
+            }, {
+                y: currINDJune,
+                month: 6,
+                value: accounting.formatMoney(currINDJune, "฿")
+            }, {
+                y: currINDJuly,
+                month: 7,
+                value: accounting.formatMoney(currINDJuly, "฿")
+            }, {
+                y: currINDAugust,
+                month: 8,
+                value: accounting.formatMoney(currINDAugust, "฿")
+            }, {
+                y: currINDSeptember,
+                month: 9,
+                value: accounting.formatMoney(currINDSeptember, "฿")
+            }, {
+                y: currINDOctober,
+                month: 10,
+                value: accounting.formatMoney(currINDOctober, "฿")
+            }, {
+                y: currINDNovember,
+                month: 11,
+                value: accounting.formatMoney(currINDNovember, "฿")
+            }, {
+                y: currINDDecember,
+                month: 12,
+                value: accounting.formatMoney(currINDDecember, "฿")
+            }],
+            stack: 'new',
+            color: '#da532c'
+        }, {
+            name: 'OTH ' + year,
+            data: [{
+                y: currOTHJanuary,
+                month: 1,
+                value: accounting.formatMoney(currOTHJanuary, "฿")
+            }, {
+                y: currOTHFebruary,
+                month: 2,
+                value: accounting.formatMoney(currOTHFebruary, "฿")
+            }, {
+                y: currOTHMarch,
+                month: 3,
+                value: accounting.formatMoney(currOTHMarch, "฿")
+            }, {
+                y: currOTHApril,
+                month: 4,
+                value: accounting.formatMoney(currOTHApril, "฿")
+            }, {
+                y: currOTHMay,
+                month: 5,
+                value: accounting.formatMoney(currOTHMay, "฿")
+            }, {
+                y: currOTHJune,
+                month: 6,
+                value: accounting.formatMoney(currOTHJune, "฿")
+            }, {
+                y: currOTHJuly,
+                month: 7,
+                value: accounting.formatMoney(currOTHJuly, "฿")
+            }, {
+                y: currOTHAugust,
+                month: 8,
+                value: accounting.formatMoney(currOTHAugust, "฿")
+            }, {
+                y: currOTHSeptember,
+                month: 9,
+                value: accounting.formatMoney(currOTHSeptember, "฿")
+            }, {
+                y: currOTHOctober,
+                month: 10,
+                value: accounting.formatMoney(currOTHOctober, "฿")
+            }, {
+                y: currOTHNovember,
+                month: 11,
+                value: accounting.formatMoney(currOTHNovember, "฿")
+            }, {
+                y: currOTHDecember,
+                month: 12,
+                value: accounting.formatMoney(currOTHDecember, "฿")
+            }],
+            stack: 'new',
+            color: '#ee1111'
         }, {
             type: 'spline',
             name: 'Target ' + year,
             data: [{
-                y: targetAMB1 + targetMCB1,
+                y: targetNP1 + targetEB1 + targetIND1 + targetOTH1,
                 month: 1,
-                value: accounting.formatMoney(targetAMB1 + targetMCB1, "฿")
+                value: accounting.formatMoney(targetNP1 + targetEB1 + targetIND1 + targetOTH1, "฿")
             }, {
-                y: targetAMB2 + targetMCB2,
+                y: targetNP2 + targetEB2 + targetIND2 + targetOTH2,
                 month: 2,
-                value: accounting.formatMoney(targetAMB2 + targetMCB2, "฿")
+                value: accounting.formatMoney(targetNP2 + targetEB2 + targetIND2 + targetOTH2, "฿")
             }, {
-                y: targetAMB3 + targetMCB3,
+                y: targetNP3 + targetEB3 + targetIND3 + targetOTH3,
                 month: 3,
-                value: accounting.formatMoney(targetAMB3 + targetMCB3, "฿")
+                value: accounting.formatMoney(targetNP3 + targetEB3 + targetIND3 + targetOTH3, "฿")
             }, {
-                y: targetAMB4 + targetMCB4,
+                y: targetNP4 + targetEB4 + targetIND4 + targetOTH4,
                 month: 4,
-                value: accounting.formatMoney(targetAMB4 + targetMCB4, "฿")
+                value: accounting.formatMoney(targetNP4 + targetEB4 + targetIND4 + targetOTH4, "฿")
             }, {
-                y: targetAMB5 + targetMCB4,
+                y: targetNP5 + targetEB5 + targetIND5 + targetOTH5,
                 month: 5,
-                value: accounting.formatMoney(targetAMB5 + targetMCB4, "฿")
+                value: accounting.formatMoney(targetNP5 + targetEB5 + targetIND5 + targetOTH5, "฿")
             }, {
-                y: targetAMB6 + targetMCB6,
+                y: targetNP6 + targetEB6 + targetIND6 + targetOTH6,
                 month: 6,
-                value: accounting.formatMoney(targetAMB6 + targetMCB6, "฿")
+                value: accounting.formatMoney(targetNP6 + targetEB6 + targetIND6 + targetOTH6, "฿")
             }, {
-                y: targetAMB7 + targetMCB7,
+                y: targetNP7 + targetEB7 + targetIND7 + targetOTH7,
                 month: 7,
-                value: accounting.formatMoney(targetAMB7 + targetMCB7, "฿")
+                value: accounting.formatMoney(targetNP7 + targetEB7 + targetIND7 + targetOTH7, "฿")
             }, {
-                y: targetAMB8 + targetMCB8,
+                y: targetNP8 + targetEB8 + targetIND8 + targetOTH8,
                 month: 8,
-                value: accounting.formatMoney(targetAMB8 + targetMCB8, "฿")
+                value: accounting.formatMoney(targetNP8 + targetEB8 + targetIND8 + targetOTH8, "฿")
             }, {
-                y: targetAMB9 + targetMCB9,
+                y: targetNP9 + targetEB9 + targetIND9 + targetOTH9,
                 month: 9,
-                value: accounting.formatMoney(targetAMB9 + targetMCB9, "฿")
+                value: accounting.formatMoney(targetNP9 + targetEB9 + targetIND9 + targetOTH9, "฿")
             }, {
-                y: targetAMB10 + targetMCB10,
+                y: targetNP10 + targetEB10 + targetIND10 + targetOTH10,
                 month: 10,
-                value: accounting.formatMoney(targetAMB10 + targetMCB10, "฿")
+                value: accounting.formatMoney(targetNP10 + targetEB10 + targetIND10 + targetOTH10, "฿")
             }, {
-                y: targetAMB11 + targetMCB11,
+                y: targetNP11 + targetEB11 + targetIND11 + targetOTH11,
                 month: 11,
-                value: accounting.formatMoney(targetAMB11 + targetMCB11, "฿")
+                value: accounting.formatMoney(targetNP11 + targetEB11 + targetIND11 + targetOTH11, "฿")
             }, {
-                y: targetAMB12 + targetMCB12,
+                y: targetNP12 + targetEB12 + targetIND12 + targetOTH12,
                 month: 12,
-                value: accounting.formatMoney(targetAMB12 + targetMCB12, "฿")
+                value: accounting.formatMoney(targetNP12 + targetEB12 + targetIND12 + targetOTH12, "฿")
             }],
             marker: {
                 enabled: false
@@ -2977,12 +4604,15 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             dashStyle: 'shortdot',
             color: '#69acde'
         }]
+
     });
 
 }
 
-function unitGraphQ(year, targetAMBQ1, targetAMBQ2, targetAMBQ3, targetAMBQ4, targetAMBTotal, currAMBQ1, currAMBQ2, currAMBQ3, currAMBQ4, currAMBTotal, oldAMBQ1, oldAMBQ2, oldAMBQ3, oldAMBQ4, oldAMBTotal,
-    targetMCBQ1, targetMCBQ2, targetMCBQ3, targetMCBQ4, targetMCBTotal, currMCBQ1, currMCBQ2, currMCBQ3, currMCBQ4, currMCBTotal, oldMCBQ1, oldMCBQ2, oldMCBQ3, oldMCBQ4, oldMCBTotal) {
+function unitGraphQ(year, targetNPQ1, targetNPQ2, targetNPQ3, targetNPQ4, targetNPTotal, currNPQ1, currNPQ2, currNPQ3, currNPQ4, currNPTotal, oldNPQ1, oldNPQ2, oldNPQ3, oldNPQ4, oldNPTotal,
+    targetEBQ1, targetEBQ2, targetEBQ3, targetEBQ4, targetEBTotal, currEBQ1, currEBQ2, currEBQ3, currEBQ4, currEBTotal, oldEBQ1, oldEBQ2, oldEBQ3, oldEBQ4, oldEBTotal,
+    targetINDQ1, targetINDQ2, targetINDQ3, targetINDQ4, targetINDTotal, currINDQ1, currINDQ2, currINDQ3, currINDQ4, currINDTotal, oldINDQ1, oldINDQ2, oldINDQ3, oldINDQ4, oldINDTotal,
+    targetOTHQ1, targetOTHQ2, targetOTHQ3, targetOTHQ4, targetOTHTotal, currOTHQ1, currOTHQ2, currOTHQ3, currOTHQ4, currOTHTotal, oldOTHQ1, oldOTHQ2, oldOTHQ3, oldOTHQ4, oldOTHTotal) {
 
     Highcharts.chart('UnitQ', {
         chart: {
@@ -3024,123 +4654,213 @@ function unitGraphQ(year, targetAMBQ1, targetAMBQ2, targetAMBQ3, targetAMBQ4, ta
         },
         series: [{
             type: 'column',
-            name: year - 1,
+            name: 'NP ' + (year - 1),
             stack: 'old',
             data: [{
-                y: oldAMBQ1,
+                y: oldNPQ1,
                 month: 1,
-                value: accounting.formatNumber(oldAMBQ1)
+                value: accounting.formatNumber(oldNPQ1)
             }, {
-                y: oldAMBQ2,
+                y: oldNPQ2,
                 month: 2,
-                value: accounting.formatNumber(oldAMBQ2)
+                value: accounting.formatNumber(oldNPQ2)
             }, {
-                y: oldAMBQ3,
+                y: oldNPQ3,
                 month: 3,
-                value: accounting.formatNumber(oldAMBQ3)
+                value: accounting.formatNumber(oldNPQ3)
             }, {
-                y: oldAMBQ4,
+                y: oldNPQ4,
                 month: 4,
-                value: accounting.formatNumber(oldAMBQ4)
+                value: accounting.formatNumber(oldNPQ4)
             }],
-            color: '#7ab9de'
+            color: '#c1b2e6'
         }, {
             type: 'column',
-            name: year - 1,
+            name: 'EB ' + (year - 1),
             stack: 'old',
             data: [{
-                y: oldMCBQ1,
+                y: oldEBQ1,
                 month: 1,
-                value: accounting.formatNumber(oldMCBQ1)
+                value: accounting.formatNumber(oldEBQ1)
             }, {
-                y: oldMCBQ2,
+                y: oldEBQ2,
                 month: 2,
-                value: accounting.formatNumber(oldMCBQ2)
+                value: accounting.formatNumber(oldEBQ2)
             }, {
-                y: oldMCBQ3,
+                y: oldEBQ3,
                 month: 3,
-                value: accounting.formatNumber(oldMCBQ3)
+                value: accounting.formatNumber(oldEBQ3)
             }, {
-                y: oldMCBQ4,
+                y: oldEBQ4,
                 month: 4,
-                value: accounting.formatNumber(oldMCBQ4)
+                value: accounting.formatNumber(oldEBQ4)
             }],
-            color: '#eed1d2'
+            color: '#dfb9dc'
         }, {
             type: 'column',
-            name: year,
+            name: 'IND ' + (year - 1),
+            stack: 'old',
+            data: [{
+                y: oldINDQ1,
+                month: 1,
+                value: accounting.formatNumber(oldINDQ1)
+            }, {
+                y: oldINDQ2,
+                month: 2,
+                value: accounting.formatNumber(oldINDQ2)
+            }, {
+                y: oldINDQ3,
+                month: 3,
+                value: accounting.formatNumber(oldINDQ3)
+            }, {
+                y: oldINDQ4,
+                month: 4,
+                value: accounting.formatNumber(oldINDQ4)
+            }],
+            color: '#fa99ff'
+        }, {
+            type: 'column',
+            name: 'OTH ' + (year - 1),
+            stack: 'old',
+            data: [{
+                y: oldOTHQ1,
+                month: 1,
+                value: accounting.formatNumber(oldOTHQ1)
+            }, {
+                y: oldOTHQ2,
+                month: 2,
+                value: accounting.formatNumber(oldOTHQ2)
+            }, {
+                y: oldOTHQ3,
+                month: 3,
+                value: accounting.formatNumber(oldOTHQ3)
+            }, {
+                y: oldOTHQ4,
+                month: 4,
+                value: accounting.formatNumber(oldOTHQ4)
+            }],
+            color: '#ff99d6'
+        }, {
+            type: 'column',
+            name: 'NP ' + year,
             stack: 'new',
             data: [{
-                y: currAMBQ1,
+                y: currNPQ1,
                 month: 1,
-                value: accounting.formatNumber(currAMBQ1)
+                value: accounting.formatNumber(currNPQ1)
             }, {
-                y: currAMBQ2,
+                y: currNPQ2,
                 month: 2,
-                value: accounting.formatNumber(currAMBQ2)
+                value: accounting.formatNumber(currNPQ2)
             }, {
-                y: currAMBQ3,
+                y: currNPQ3,
                 month: 3,
-                value: accounting.formatNumber(currAMBQ3)
+                value: accounting.formatNumber(currNPQ3)
             }, {
-                y: currAMBQ4,
+                y: currNPQ4,
                 month: 4,
-                value: accounting.formatNumber(currAMBQ4)
+                value: accounting.formatNumber(currNPQ4)
             }],
             color: '#2988bc'
         }, {
             type: 'column',
-            name: year,
+            name: 'EB ' + year,
             stack: 'new',
             data: [{
-                y: currMCBQ1,
+                y: currEBQ1,
                 month: 1,
-                value: accounting.formatNumber(currMCBQ1)
+                value: accounting.formatNumber(currEBQ1)
             }, {
-                y: currMCBQ2,
+                y: currEBQ2,
                 month: 2,
-                value: accounting.formatNumber(currMCBQ2)
+                value: accounting.formatNumber(currEBQ2)
             }, {
-                y: currMCBQ3,
+                y: currEBQ3,
                 month: 3,
-                value: accounting.formatNumber(currMCBQ3)
+                value: accounting.formatNumber(currEBQ3)
             }, {
-                y: currMCBQ4,
+                y: currEBQ4,
                 month: 4,
-                value: accounting.formatNumber(currMCBQ4)
+                value: accounting.formatNumber(currEBQ4)
             }],
-            color: '#ffb6b9'
+            color: '#603cba'
+        }, {
+            type: 'column',
+            name: 'IND ' + year,
+            stack: 'new',
+            data: [{
+                y: currINDQ1,
+                month: 1,
+                value: accounting.formatNumber(currINDQ1)
+            }, {
+                y: currINDQ2,
+                month: 2,
+                value: accounting.formatNumber(currINDQ2)
+            }, {
+                y: currINDQ3,
+                month: 3,
+                value: accounting.formatNumber(currINDQ3)
+            }, {
+                y: currINDQ4,
+                month: 4,
+                value: accounting.formatNumber(currINDQ4)
+            }],
+            color: '#7e3878'
+        }, {
+            type: 'column',
+            name: 'OTH ' + year,
+            stack: 'new',
+            data: [{
+                y: currOTHQ1,
+                month: 1,
+                value: accounting.formatNumber(currOTHQ1)
+            }, {
+                y: currOTHQ2,
+                month: 2,
+                value: accounting.formatNumber(currOTHQ2)
+            }, {
+                y: currOTHQ3,
+                month: 3,
+                value: accounting.formatNumber(currOTHQ3)
+            }, {
+                y: currOTHQ4,
+                month: 4,
+                value: accounting.formatNumber(currOTHQ4)
+            }],
+            color: '#9f00a7'
         }, {
             type: 'spline',
             name: 'Target ' + year,
             data: [{
-                y: targetAMBQ1 + targetMCBQ1,
+                y: targetNPQ1 + targetEBQ1 + targetINDQ1 + targetOTHQ1,
                 month: 1,
-                value: accounting.formatNumber(targetAMBQ1 + targetMCBQ1)
+                value: accounting.formatNumber(targetNPQ1 + targetEBQ1 + targetINDQ1 + targetOTHQ1)
             }, {
-                y: targetAMBQ2 + targetMCBQ2,
+                y: targetNPQ2 + targetEBQ2 + targetINDQ2 + targetOTHQ2,
                 month: 2,
-                value: accounting.formatNumber(targetAMBQ2 + targetMCBQ2)
+                value: accounting.formatNumber(targetNPQ2 + targetEBQ2 + targetINDQ2 + targetOTHQ2)
             }, {
-                y: targetAMBQ3 + targetMCBQ3,
+                y: targetNPQ3 + targetEBQ3 + targetINDQ3 + targetOTHQ3,
                 month: 3,
-                value: accounting.formatNumber(targetAMBQ3 + targetMCBQ3)
+                value: accounting.formatNumber(targetNPQ3 + targetEBQ3 + targetINDQ3 + targetOTHQ3)
             }, {
-                y: targetAMBQ4 + targetMCBQ4,
+                y: targetNPQ4 + targetEBQ4 + targetINDQ4 + targetOTHQ4,
                 month: 4,
-                value: accounting.formatNumber(targetAMBQ4 + targetMCBQ4)
+                value: accounting.formatNumber(targetNPQ4 + targetEBQ4 + targetINDQ4 + targetOTHQ4)
             }],
             marker: {
                 enabled: false
             },
             dashStyle: 'shortdot',
-            color: '#69acde'
+            color: '#ff0097'
         }]
     });
 }
 
-function bahtGraphQ(year, targetAMBQ1, targetAMBQ2, targetAMBQ3, targetAMBQ4, targetAMBTotal, currAMBQ1, currAMBQ2, currAMBQ3, currAMBQ4, currAMBTotal, oldAMBQ1, oldAMBQ2, oldAMBQ3, oldAMBQ4, oldAMBTotal,
-    targetMCBQ1, targetMCBQ2, targetMCBQ3, targetMCBQ4, targetMCBTotal, currMCBQ1, currMCBQ2, currMCBQ3, currMCBQ4, currMCBTotal, oldMCBQ1, oldMCBQ2, oldMCBQ3, oldMCBQ4, oldMCBTotal) {
+function bahtGraphQ(year, targetNPQ1, targetNPQ2, targetNPQ3, targetNPQ4, targetNPTotal, currNPQ1, currNPQ2, currNPQ3, currNPQ4, currNPTotal, oldNPQ1, oldNPQ2, oldNPQ3, oldNPQ4, oldNPTotal,
+    targetEBQ1, targetEBQ2, targetEBQ3, targetEBQ4, targetEBTotal, currEBQ1, currEBQ2, currEBQ3, currEBQ4, currEBTotal, oldEBQ1, oldEBQ2, oldEBQ3, oldEBQ4, oldEBTotal,
+    targetINDQ1, targetINDQ2, targetINDQ3, targetINDQ4, targetINDTotal, currINDQ1, currINDQ2, currINDQ3, currINDQ4, currINDTotal, oldINDQ1, oldINDQ2, oldINDQ3, oldINDQ4, oldINDTotal,
+    targetOTHQ1, targetOTHQ2, targetOTHQ3, targetOTHQ4, targetOTHTotal, currOTHQ1, currOTHQ2, currOTHQ3, currOTHQ4, currOTHTotal, oldOTHQ1, oldOTHQ2, oldOTHQ3, oldOTHQ4, oldOTHTotal) {
 
     Highcharts.chart('BahtQ', {
         chart: {
@@ -3182,111 +4902,199 @@ function bahtGraphQ(year, targetAMBQ1, targetAMBQ2, targetAMBQ3, targetAMBQ4, ta
         },
         series: [{
             type: 'column',
-            name: year - 1,
+            name: 'NP ' + (year - 1),
             stack: 'old',
             data: [{
-                y: oldAMBQ1,
+                y: oldNPQ1,
                 month: 1,
-                value: accounting.formatNumber(oldAMBQ1)
+                value: accounting.formatMoney(oldNPQ1, "฿")
             }, {
-                y: oldAMBQ2,
+                y: oldNPQ2,
                 month: 2,
-                value: accounting.formatNumber(oldAMBQ2)
+                value: accounting.formatMoney(oldNPQ2, "฿")
             }, {
-                y: oldAMBQ3,
+                y: oldNPQ3,
                 month: 3,
-                value: accounting.formatNumber(oldAMBQ3)
+                value: accounting.formatMoney(oldNPQ3, "฿")
             }, {
-                y: oldAMBQ4,
+                y: oldNPQ4,
                 month: 4,
-                value: accounting.formatNumber(oldAMBQ4)
+                value: accounting.formatMoney(oldNPQ4, "฿")
             }],
-            color: '#ff7666'
+            color: '#ffe699'
         }, {
             type: 'column',
-            name: year - 1,
+            name: 'EB ' + (year - 1),
             stack: 'old',
             data: [{
-                y: oldMCBQ1,
+                y: oldEBQ1,
                 month: 1,
-                value: accounting.formatNumber(oldMCBQ1)
+                value: accounting.formatMoney(oldEBQ1, "฿")
             }, {
-                y: oldMCBQ2,
+                y: oldEBQ2,
                 month: 2,
-                value: accounting.formatNumber(oldMCBQ2)
+                value: accounting.formatMoney(oldEBQ2, "฿")
             }, {
-                y: oldMCBQ3,
+                y: oldEBQ3,
                 month: 3,
-                value: accounting.formatNumber(oldMCBQ3)
+                value: accounting.formatMoney(oldEBQ3, "฿")
             }, {
-                y: oldMCBQ4,
+                y: oldEBQ4,
                 month: 4,
-                value: accounting.formatNumber(oldMCBQ4)
+                value: accounting.formatMoney(oldEBQ4, "฿")
             }],
-            color: '#737b7e'
+            color: '#f4dba4'
         }, {
             type: 'column',
-            name: year,
-            stack: 'new',
+            name: 'IND ' + (year - 1),
+            stack: 'old',
             data: [{
-                y: currAMBQ1,
+                y: oldINDQ1,
                 month: 1,
-                value: accounting.formatNumber(currAMBQ1)
+                value: accounting.formatMoney(oldINDQ1, "฿")
             }, {
-                y: currAMBQ2,
+                y: oldINDQ2,
                 month: 2,
-                value: accounting.formatNumber(currAMBQ2)
+                value: accounting.formatMoney(oldINDQ2, "฿")
             }, {
-                y: currAMBQ3,
+                y: oldINDQ3,
                 month: 3,
-                value: accounting.formatNumber(currAMBQ3)
+                value: accounting.formatMoney(oldINDQ3, "฿")
             }, {
-                y: currAMBQ4,
+                y: oldINDQ4,
                 month: 4,
-                value: accounting.formatNumber(currAMBQ4)
+                value: accounting.formatMoney(oldINDQ4, "฿")
             }],
-            color: '#DD4B39'
+            color: '#f0b8a8'
         }, {
             type: 'column',
-            name: year,
+            name: 'OTH ' + (year - 1),
+            stack: 'old',
+            data: [{
+                y: oldOTHQ1,
+                month: 1,
+                value: accounting.formatMoney(oldOTHQ1, "฿")
+            }, {
+                y: oldOTHQ2,
+                month: 2,
+                value: accounting.formatMoney(oldOTHQ2, "฿")
+            }, {
+                y: oldOTHQ3,
+                month: 3,
+                value: accounting.formatMoney(oldOTHQ3, "฿")
+            }, {
+                y: oldOTHQ4,
+                month: 4,
+                value: accounting.formatMoney(oldOTHQ4, "฿")
+            }],
+            color: '#f8a0a0'
+        }, {
+            type: 'column',
+            name: 'NP ' + year,
             stack: 'new',
             data: [{
-                y: currMCBQ1,
+                y: currNPQ1,
                 month: 1,
-                value: accounting.formatNumber(currMCBQ1)
+                value: accounting.formatMoney(currNPQ1, "฿")
             }, {
-                y: currMCBQ2,
+                y: currNPQ2,
                 month: 2,
-                value: accounting.formatNumber(currMCBQ2)
+                value: accounting.formatMoney(currNPQ2, "฿")
             }, {
-                y: currMCBQ3,
+                y: currNPQ3,
                 month: 3,
-                value: accounting.formatNumber(currMCBQ3)
+                value: accounting.formatMoney(currNPQ3, "฿")
             }, {
-                y: currMCBQ4,
+                y: currNPQ4,
                 month: 4,
-                value: accounting.formatNumber(currMCBQ4)
+                value: accounting.formatMoney(currNPQ4, "฿")
             }],
-            color: '#222D32'
+            color: '#ffc40d'
+        }, {
+            type: 'column',
+            name: 'EB ' + year,
+            stack: 'new',
+            data: [{
+                y: currEBQ1,
+                month: 1,
+                value: accounting.formatMoney(currEBQ1, "฿")
+            }, {
+                y: currEBQ2,
+                month: 2,
+                value: accounting.formatMoney(currEBQ2, "฿")
+            }, {
+                y: currEBQ3,
+                month: 3,
+                value: accounting.formatMoney(currEBQ3, "฿")
+            }, {
+                y: currEBQ4,
+                month: 4,
+                value: accounting.formatMoney(currEBQ4, "฿")
+            }],
+            color: '#e3a21a'
+        }, {
+            type: 'column',
+            name: 'IND ' + year,
+            stack: 'new',
+            data: [{
+                y: currINDQ1,
+                month: 1,
+                value: accounting.formatMoney(currINDQ1, "฿")
+            }, {
+                y: currINDQ2,
+                month: 2,
+                value: accounting.formatMoney(currINDQ2, "฿")
+            }, {
+                y: currINDQ3,
+                month: 3,
+                value: accounting.formatMoney(currINDQ3, "฿")
+            }, {
+                y: currINDQ4,
+                month: 4,
+                value: accounting.formatMoney(currINDQ4, "฿")
+            }],
+            color: '#da532c'
+        }, {
+            type: 'column',
+            name: 'OTH ' + year,
+            stack: 'new',
+            data: [{
+                y: currOTHQ1,
+                month: 1,
+                value: accounting.formatMoney(currOTHQ1, "฿")
+            }, {
+                y: currOTHQ2,
+                month: 2,
+                value: accounting.formatMoney(currOTHQ2, "฿")
+            }, {
+                y: currOTHQ3,
+                month: 3,
+                value: accounting.formatMoney(currOTHQ3, "฿")
+            }, {
+                y: currOTHQ4,
+                month: 4,
+                value: accounting.formatMoney(currOTHQ4, "฿")
+            }],
+            color: '#ee1111'
         }, {
             type: 'spline',
             name: 'Target ' + year,
             data: [{
-                y: targetAMBQ1 + targetMCBQ1,
+                y: targetNPQ1 + targetEBQ1 + targetINDQ1 + targetOTHQ1,
                 month: 1,
-                value: accounting.formatNumber(targetAMBQ1 + targetMCBQ1)
+                value: accounting.formatMoney(targetNPQ1 + targetEBQ1 + targetINDQ1 + targetOTHQ1, "฿")
             }, {
-                y: targetAMBQ2 + targetMCBQ2,
+                y: targetNPQ2 + targetEBQ2 + targetINDQ2 + targetOTHQ2,
                 month: 2,
-                value: accounting.formatNumber(targetAMBQ2 + targetMCBQ2)
+                value: accounting.formatMoney(targetNPQ2 + targetEBQ2 + targetINDQ2 + targetOTHQ2, "฿")
             }, {
-                y: targetAMBQ3 + targetMCBQ3,
+                y: targetNPQ3 + targetEBQ3 + targetINDQ3 + targetOTHQ3,
                 month: 3,
-                value: accounting.formatNumber(targetAMBQ3 + targetMCBQ3)
+                value: accounting.formatMoney(targetNPQ3 + targetEBQ3 + targetINDQ3 + targetOTHQ3, "฿")
             }, {
-                y: targetAMBQ4 + targetMCBQ4,
+                y: targetNPQ4 + targetEBQ4 + targetINDQ4 + targetOTHQ4,
                 month: 4,
-                value: accounting.formatNumber(targetAMBQ4 + targetMCBQ4)
+                value: accounting.formatMoney(targetNPQ4 + targetEBQ4 + targetINDQ4 + targetOTHQ4, "฿")
             }],
             marker: {
                 enabled: false

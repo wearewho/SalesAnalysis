@@ -451,7 +451,7 @@ class MTDController extends Controller
                 $oldYearData = DB::select($strSQL2,[]);   
                 $targetData = DB::select($strSQL3,[]);
     
-                $Filename = "SSTable".$request->month.$request->year.".pdf";        
+                $Filename = "MTD SSTable".$request->month.$request->year.".pdf";        
                 $pdf = PDF::loadView('PDFFormat.salessummaryMTDYearTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape');  
                 return $pdf->download($Filename);  
             }
@@ -527,7 +527,7 @@ class MTDController extends Controller
                 $oldYearData = DB::select($strSQL2,[]);   
                 $targetData = DB::select($strSQL3,[]);   
     
-                $Filename = "SSTableQuaterof".$request->year.".pdf";        
+                $Filename = "MTD SSTableQuaterof".$request->year.".pdf";        
                 $pdf = PDF::loadView('PDFFormat.salessummaryMTDQuaterTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape'); 
                 return $pdf->download($Filename);  
             }

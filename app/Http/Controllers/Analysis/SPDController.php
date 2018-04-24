@@ -84,11 +84,11 @@ class SPDController extends Controller
             $tableName = "YS_".$request->year."";
 
             if(Schema::hasTable($tableName)){             
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'SPD' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'SPD' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                 $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'SPD' Group by CustCode,CustName,MasterDealer,ItemGroupShort ";                         
             }
             else{
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'TEST' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'TEST' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                 $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'TEST' Group by CustCode,CustName,MasterDealer,ItemGroupShort ";   
             }        
                         
@@ -101,24 +101,24 @@ class SPDController extends Controller
 
             if(Schema::hasTable($tableName)){  
                 if($request->month == '1'){
-                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (1,2,3) AND SalesPersonGroup = 'SPD' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                    $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (1,2,3) AND SalesPersonGroup = 'SPD' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                     $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (1,2,3) AND SalesPersonGroup = 'SPD' Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
                 }
                 else if($request->month == '2'){
-                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (4,5,6) AND SalesPersonGroup = 'SPD' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                    $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (4,5,6) AND SalesPersonGroup = 'SPD' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                     $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (4,5,6) AND SalesPersonGroup = 'SPD' Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
                 }
                 else if($request->month == '3'){
-                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (7,8,9) AND SalesPersonGroup = 'SPD' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                    $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (7,8,9) AND SalesPersonGroup = 'SPD' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                     $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (7,8,9) AND SalesPersonGroup = 'SPD' Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
                 }
                 else if($request->month == '4'){
-                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (10,11,12) AND SalesPersonGroup = 'SPD' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                    $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (10,11,12) AND SalesPersonGroup = 'SPD' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                     $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (10,11,12) AND SalesPersonGroup = 'SPD' Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
                 }                      
             }
             else{
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017  WHERE DocMonth = '1' AND SalesPersonGroup = 'TEST' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017  WHERE DocMonth = '1' AND SalesPersonGroup = 'TEST' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                 $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE DocMonth = '1' AND SalesPersonGroup = 'TEST' Group by CustCode,CustName,MasterDealer,ItemGroupShort ";   
             }        
                         
@@ -137,12 +137,12 @@ class SPDController extends Controller
 
             if(Schema::hasTable($tableName)){
                             
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                 $queryCust = " SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'SPD' Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName "; 
                 
             }
             else{
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'TEST' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'TEST' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  ";                      
                 $queryCust = " SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'TEST' Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName "; 
             }
             
@@ -167,9 +167,9 @@ class SPDController extends Controller
                 DECLARE @first varchar(10) = @firstday + @firstyear;
 
                     Select * From (
-                        SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where DocDate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103)  AND SalesPersonGroup = 'SPD' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity
+                        SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where DocDate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103)  AND SalesPersonGroup = 'SPD' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity
                         union all
-                        SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where DocDate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'SPD' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity
+                        SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where DocDate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'SPD' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity
                     ) data                              
                     
                     ";     
@@ -250,7 +250,7 @@ class SPDController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                           
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  "; 
+                $queryItem = " SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity  "; 
                     
                 $Type = 'findItem';
                 $Item = DB::select($queryItem,[]); 
@@ -273,9 +273,9 @@ class SPDController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;                   
                                            
                         Select * From (
-                            SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
+                            SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by ItemCode,ItemShortName,Brand,Commodity 
                             union all
-                            SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
+                            SELECT ItemCode,ItemShortName,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by ItemCode,ItemShortName,Brand,Commodity 
                         ) data 
                         
                         ";
@@ -334,7 +334,7 @@ class SPDController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                           
-                $queryCust= " SELECT DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice  "; 
+                $queryCust= " SELECT DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,ItemShortName,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,ItemShortName,Commodity,ItemGroupShort,UnitPrice  "; 
                     
                 $Type = 'findInCust';
                 $Cust = DB::select($queryCust,[]); 
@@ -357,9 +357,9 @@ class SPDController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;                   
                                            
                         Select * From (
-                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice
+                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,ItemShortName,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,ItemShortName,Commodity,ItemGroupShort,UnitPrice
                             union all
-                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice
+                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,ItemShortName,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'SPD' AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,ItemShortName,Commodity,ItemGroupShort,UnitPrice
                         ) data 
                         
                         ";
@@ -415,7 +415,7 @@ class SPDController extends Controller
             }
             else{
                          
-                $Target = TargetH::where('Year', '=', $request->year)->where('Company', '=', 'YBTH')->where('Market', '=', 'Export')->first();  
+                $Target = TargetH::where('Year', '=', $request->year)->where('Company', '=', 'YBTH')->where('Market', '=', 'SPD')->first();  
                 $messageData = "";
                 $messageTarget  = "";  
                 
@@ -451,7 +451,7 @@ class SPDController extends Controller
                 $oldYearData = DB::select($strSQL2,[]);   
                 $targetData = DB::select($strSQL3,[]);
     
-                $Filename = "SSTable".$request->month.$request->year.".pdf";        
+                $Filename = "SPD SSTable".$request->month.$request->year.".pdf";        
                 $pdf = PDF::loadView('PDFFormat.salessummarySPDYearTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape');  
                 return $pdf->download($Filename);  
             }
@@ -491,7 +491,7 @@ class SPDController extends Controller
             }
             else{
                          
-                $Target = TargetH::where('Year', '=', $request->year)->where('Company', '=', 'YBTH')->where('Market', '=', 'Export')->first();  
+                $Target = TargetH::where('Year', '=', $request->year)->where('Company', '=', 'YBTH')->where('Market', '=', 'SPD')->first();  
                 $messageData = "";
                 $messageTarget  = "";  
                 
@@ -527,7 +527,7 @@ class SPDController extends Controller
                 $oldYearData = DB::select($strSQL2,[]);   
                 $targetData = DB::select($strSQL3,[]);   
     
-                $Filename = "SSTableQuaterof".$request->year.".pdf";        
+                $Filename = "SPD SSTableQuaterof".$request->year.".pdf";        
                 $pdf = PDF::loadView('PDFFormat.salessummarySPDQuaterTable', compact('data','currYearData','oldYearData','targetData'))->setPaper('A4', 'landscape'); 
                 return $pdf->download($Filename);  
             }
