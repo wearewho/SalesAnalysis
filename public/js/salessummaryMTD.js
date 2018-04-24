@@ -294,17 +294,11 @@ function selectData(year) {
                 var base = window.location.origin
                 var route = '/system/targetmaster/create';
                 swal({
-                        title: "Target Year " + year + " not found.",
-                        text: "Please Create Target Master!",
-                        icon: 'info',
-                        buttons: ["Create Target Master", true],
-                        dangerMode: true,
-                    })
-                    .then((willDelete) => {
-                        if (!willDelete) {
-                            window.location = base + route;
-                        }
-                    });
+                    title: "Target Year " + year + " not found.",
+                    text: "Please Create Target Master!",
+                    icon: 'info',
+                    showConfirmButton: false
+                });
                 calData(year, data);
             } else if (data[3] == "nullData" && data[4] == "nullTarget") {
                 var base = window.location.origin
@@ -497,7 +491,7 @@ function selectDataTable(nameMonth, month, year, type) {
                         [5, 10, 25, 50, -1],
                         [5, 10, 25, 50, "All"]
                     ]
-                }, );
+                });
 
                 tableProduct.on('order.dt search.dt', function() {
                     tableProduct.column(0, { search: 'applied', order: 'applied' }).nodes().each(function(cell, i) {
@@ -1659,74 +1653,74 @@ function calData(year, data) {
     var totalBahtTarget = (accounting.unformat(targetAMB.AmtQ1) + accounting.unformat(targetAMB.AmtQ2) + accounting.unformat(targetAMB.AmtQ3) + accounting.unformat(targetAMB.AmtQ4) + accounting.unformat(targetMCB.AmtQ1) + accounting.unformat(targetMCB.AmtQ2) + accounting.unformat(targetMCB.AmtQ3) + accounting.unformat(targetMCB.AmtQ4));
     var totalUnitTarget = (accounting.unformat(targetAMB.UnitQ1) + accounting.unformat(targetAMB.UnitQ2) + accounting.unformat(targetAMB.UnitQ3) + accounting.unformat(targetAMB.UnitQ4) + accounting.unformat(targetMCB.UnitQ1) + accounting.unformat(targetMCB.UnitQ2) + accounting.unformat(targetMCB.UnitQ3) + accounting.unformat(targetMCB.UnitQ4));
 
-    var achieveBahtJanuary = (currBahtJanuary * 100) / (accounting.unformat(targetAMB.Amt01) + accounting.unformat(targetMCB.Amt01)),
-        achieveBahtFebruary = (currBahtFebruary * 100) / (accounting.unformat(targetAMB.Amt02) + accounting.unformat(targetMCB.Amt02)),
-        achieveBahtMarch = (currBahtMarch * 100) / (accounting.unformat(targetAMB.Amt03) + accounting.unformat(targetMCB.Amt03)),
-        achieveBahtApril = (currBahtApril * 100) / (accounting.unformat(targetAMB.Amt04) + accounting.unformat(targetMCB.Amt04)),
-        achieveBahtMay = (currBahtMay * 100) / (accounting.unformat(targetAMB.Amt05) + accounting.unformat(targetMCB.Amt05)),
-        achieveBahtJune = (currBahtJune * 100) / (accounting.unformat(targetAMB.Amt06) + accounting.unformat(targetMCB.Amt06)),
-        achieveBahtJuly = (currBahtJuly * 100) / (accounting.unformat(targetAMB.Amt07) + accounting.unformat(targetMCB.Amt07)),
-        achieveBahtAugust = (currBahtAugust * 100) / (accounting.unformat(targetAMB.Amt08) + accounting.unformat(targetMCB.Amt08)),
-        achieveBahtSeptember = (currBahtSeptember * 100) / (accounting.unformat(targetAMB.Amt09) + accounting.unformat(targetMCB.Amt09)),
-        achieveBahtOctober = (currBahtOctober * 100) / (accounting.unformat(targetAMB.Amt10) + accounting.unformat(targetMCB.Amt10)),
-        achieveBahtNovember = (currBahtNovember * 100) / (accounting.unformat(targetAMB.Amt11) + accounting.unformat(targetMCB.Amt11)),
-        achieveBahtDecember = (currBahtDecember * 100) / (accounting.unformat(targetAMB.Amt12) + accounting.unformat(targetMCB.Amt12)),
+    var achieveBahtJanuary = (((currAMBBahtJanuary + currMCBBahtJanuary) * 100) / (accounting.unformat(targetAMB.Amt01) + accounting.unformat(targetMCB.Amt01))),
+        achieveBahtFebruary = (((currAMBBahtFebruary + currMCBBahtFebruary) * 100) / (accounting.unformat(targetAMB.Amt02) + accounting.unformat(targetMCB.Amt02))),
+        achieveBahtMarch = (((currAMBBahtMarch + currMCBBahtMarch) * 100) / (accounting.unformat(targetAMB.Amt03) + accounting.unformat(targetMCB.Amt03))),
+        achieveBahtApril = (((currAMBBahtApril + currMCBBahtApril) * 100) / (accounting.unformat(targetAMB.Amt04) + accounting.unformat(targetMCB.Amt04))),
+        achieveBahtMay = (((currAMBBahtMay + currMCBBahtMay) * 100) / (accounting.unformat(targetAMB.Amt05) + accounting.unformat(targetMCB.Amt05))),
+        achieveBahtJune = (((currAMBBahtJune + currMCBBahtJune) * 100) / (accounting.unformat(targetAMB.Amt06) + accounting.unformat(targetMCB.Amt06))),
+        achieveBahtJuly = (((currAMBBahtJuly + currMCBBahtJuly) * 100) / (accounting.unformat(targetAMB.Amt07) + accounting.unformat(targetMCB.Amt07))),
+        achieveBahtAugust = (((currAMBBahtAugust + currMCBBahtAugust) * 100) / (accounting.unformat(targetAMB.Amt08) + accounting.unformat(targetMCB.Amt08))),
+        achieveBahtSeptember = (((currAMBBahtSeptember + currMCBBahtSeptember) * 100) / (accounting.unformat(targetAMB.Amt09) + accounting.unformat(targetMCB.Amt09))),
+        achieveBahtOctober = (((currAMBBahtOctober + currMCBBahtOctober) * 100) / (accounting.unformat(targetAMB.Amt10) + accounting.unformat(targetMCB.Amt10))),
+        achieveBahtNovember = (((currAMBBahtNovember + currMCBBahtNovember) * 100) / (accounting.unformat(targetAMB.Amt11) + accounting.unformat(targetMCB.Amt11))),
+        achieveBahtDecember = (((currAMBBahtDecember + currMCBBahtDecember) * 100) / (accounting.unformat(targetAMB.Amt12) + accounting.unformat(targetMCB.Amt12))),
         achieveBahtTotal = (currTotalBaht * 100) / totalBahtTarget,
-        achieveUnitJanuary = (currUnitJanuary * 100) / (accounting.unformat(targetAMB.Unit01) + accounting.unformat(targetMCB.Unit01)),
-        achieveUnitFebruary = (currUnitFebruary * 100) / (accounting.unformat(targetAMB.Unit02) + accounting.unformat(targetMCB.Unit02)),
-        achieveUnitMarch = (currUnitMarch * 100) / (accounting.unformat(targetAMB.Unit03) + accounting.unformat(targetMCB.Unit03)),
-        achieveUnitApril = (currUnitApril * 100) / (accounting.unformat(targetAMB.Unit04) + accounting.unformat(targetMCB.Unit04)),
-        achieveUnitMay = (currUnitMay * 100) / (accounting.unformat(targetAMB.Unit05) + accounting.unformat(targetMCB.Unit05)),
-        achieveUnitJune = (currUnitJune * 100) / (accounting.unformat(targetAMB.Unit06) + accounting.unformat(targetMCB.Unit06)),
-        achieveUnitJuly = (currUnitJuly * 100) / (accounting.unformat(targetAMB.Unit07) + accounting.unformat(targetMCB.Unit07)),
-        achieveUnitAugust = (currUnitAugust * 100) / (accounting.unformat(targetAMB.Unit08) + accounting.unformat(targetMCB.Unit08)),
-        achieveUnitSeptember = (currUnitSeptember * 100) / (accounting.unformat(targetAMB.Unit09) + accounting.unformat(targetMCB.Unit09)),
-        achieveUnitOctober = (currUnitOctober * 100) / (accounting.unformat(targetAMB.Unit10) + accounting.unformat(targetMCB.Unit10)),
-        achieveUnitNovember = (currUnitNovember * 100) / (accounting.unformat(targetAMB.Unit11) + accounting.unformat(targetMCB.Unit11)),
-        achieveUnitDecember = (currUnitDecember * 100) / (accounting.unformat(targetAMB.Unit12) + accounting.unformat(targetMCB.Unit12)),
-        achieveUnitTotal = (currTotalUnit * 100) / totalUnitTarget,
-        achieveBahtQ1 = (currBahtQ1 * 100) / (accounting.unformat(targetAMB.AmtQ1) + accounting.unformat(targetMCB.AmtQ1)),
-        achieveUnitQ1 = (currUnitQ1 * 100) / (accounting.unformat(targetAMB.UnitQ1) + accounting.unformat(targetMCB.UnitQ1)),
-        achieveBahtQ2 = (currBahtQ2 * 100) / (accounting.unformat(targetAMB.AmtQ2) + accounting.unformat(targetMCB.AmtQ2)),
-        achieveUnitQ2 = (currUnitQ2 * 100) / (accounting.unformat(targetAMB.UnitQ2) + accounting.unformat(targetMCB.UnitQ2)),
-        achieveBahtQ3 = (currBahtQ3 * 100) / (accounting.unformat(targetAMB.AmtQ3) + accounting.unformat(targetMCB.AmtQ3)),
-        achieveUnitQ3 = (currUnitQ3 * 100) / (accounting.unformat(targetAMB.UnitQ3) + accounting.unformat(targetMCB.UnitQ3)),
-        achieveBahtQ4 = (currBahtQ4 * 100) / (accounting.unformat(targetAMB.AmtQ4) + accounting.unformat(targetMCB.AmtQ4)),
-        achieveUnitQ4 = (currUnitQ4 * 100) / (accounting.unformat(targetAMB.UnitQ4) + accounting.unformat(targetMCB.UnitQ4)),
-        growthBahtJanuary = ((currBahtJanuary - oldBahtJanuary) * 100) / oldBahtJanuary,
-        growthBahtFebruary = ((currBahtFebruary - oldBahtFebruary) * 100) / oldBahtFebruary,
-        growthBahtMarch = ((currBahtMarch - oldBahtMarch) * 100) / oldBahtMarch,
-        growthBahtApril = ((currBahtApril - oldBahtApril) * 100) / oldBahtApril,
-        growthBahtMay = ((currBahtMay - oldBahtMay) * 100) / oldBahtMay,
-        growthBahtJune = ((currBahtJune - oldBahtJune) * 100) / oldBahtJune,
-        growthBahtJuly = ((currBahtJuly - oldBahtJuly) * 100) / oldBahtJuly,
-        growthBahtAugust = ((currBahtAugust - oldBahtAugust) * 100) / oldBahtAugust,
-        growthBahtSeptember = ((currBahtSeptember - oldBahtSeptember) * 100) / oldBahtSeptember,
-        growthBahtOctober = ((currBahtOctober - oldBahtOctober) * 100) / oldBahtOctober,
-        growthBahtNovember = ((currBahtNovember - oldBahtNovember) * 100) / oldBahtNovember,
-        growthBahtDecember = ((currBahtDecember - oldBahtDecember) * 100) / oldBahtDecember,
+        achieveBahtQ1 = (((currAMBBahtQ1 + currMCBBahtQ1) * 100) / (accounting.unformat(targetAMB.AmtQ1) + accounting.unformat(targetMCB.AmtQ1))),
+        achieveUnitQ1 = (((currAMBUnitQ1 + currMCBUnitQ1) * 100) / (accounting.unformat(targetAMB.UnitQ1) + accounting.unformat(targetMCB.UnitQ1))),
+        achieveBahtQ2 = (((currAMBBahtQ2 + currMCBBahtQ2) * 100) / (accounting.unformat(targetAMB.AmtQ2) + accounting.unformat(targetMCB.AmtQ2))),
+        achieveUnitQ2 = (((currAMBUnitQ2 + currMCBUnitQ2) * 100) / (accounting.unformat(targetAMB.UnitQ2) + accounting.unformat(targetMCB.UnitQ2))),
+        achieveBahtQ3 = (((currAMBBahtQ3 + currMCBBahtQ3) * 100) / (accounting.unformat(targetAMB.AmtQ3) + accounting.unformat(targetMCB.AmtQ3))),
+        achieveUnitQ3 = (((currAMBUnitQ3 + currMCBUnitQ3) * 100) / (accounting.unformat(targetAMB.UnitQ3) + accounting.unformat(targetMCB.UnitQ3))),
+        achieveBahtQ4 = (((currAMBBahtQ4 + currMCBBahtQ4) * 100) / (accounting.unformat(targetAMB.AmtQ4) + accounting.unformat(targetMCB.AmtQ4))),
+        achieveUnitQ4 = (((currAMBUnitQ4 + currMCBUnitQ4) * 100) / (accounting.unformat(targetAMB.UnitQ4) + accounting.unformat(targetMCB.UnitQ4))),
+        growthBahtJanuary = (((currAMBBahtJanuary + currMCBBahtJanuary) - (oldAMBBahtJanuary + oldMCBBahtJanuary)) * 100) / (oldAMBBahtJanuary + oldMCBBahtJanuary),
+        growthBahtFebruary = (((currAMBBahtFebruary + currMCBBahtFebruary) - (oldAMBBahtFebruary + oldMCBBahtFebruary)) * 100) / (oldAMBBahtFebruary + oldMCBBahtFebruary),
+        growthBahtMarch = (((currAMBBahtMarch + currMCBBahtMarch) - (oldAMBBahtMarch + oldMCBBahtMarch)) * 100) / (oldAMBBahtMarch + oldMCBBahtMarch),
+        growthBahtApril = (((currAMBBahtApril + currMCBBahtApril) - (oldAMBBahtApril + oldMCBBahtApril)) * 100) / (oldAMBBahtApril + oldMCBBahtApril),
+        growthBahtMay = (((currAMBBahtMay + currMCBBahtMay) - (oldAMBBahtMay + oldMCBBahtMay)) * 100) / (oldAMBBahtMay + oldMCBBahtMay),
+        growthBahtJune = (((currAMBBahtJune + currMCBBahtJune) - (oldAMBBahtJune + oldMCBBahtJune)) * 100) / (oldAMBBahtJune + oldMCBBahtJune),
+        growthBahtJuly = (((currAMBBahtJuly + currMCBBahtJuly) - (oldAMBBahtJuly + oldMCBBahtJuly)) * 100) / (oldAMBBahtJuly + oldMCBBahtJuly),
+        growthBahtAugust = (((currAMBBahtAugust + currMCBBahtAugust) - (oldAMBBahtAugust + oldMCBBahtAugust)) * 100) / (oldAMBBahtAugust + oldMCBBahtAugust),
+        growthBahtSeptember = (((currAMBBahtSeptember + currMCBBahtSeptember) - (oldAMBBahtSeptember + oldMCBBahtSeptember)) * 100) / (oldAMBBahtJanuary + oldMCBBahtSeptember),
+        growthBahtOctober = (((currAMBBahtOctober + currMCBBahtOctober) - (oldAMBBahtOctober + oldMCBBahtOctober)) * 100) / (oldAMBBahtOctober + oldMCBBahtOctober),
+        growthBahtNovember = (((currAMBBahtNovember + currMCBBahtNovember) - (oldAMBBahtNovember + oldMCBBahtNovember)) * 100) / (oldAMBBahtNovember + oldMCBBahtNovember),
+        growthBahtDecember = (((currAMBBahtDecember + currMCBBahtDecember) - (oldAMBBahtDecember + oldMCBBahtDecember)) * 100) / (oldAMBBahtDecember + oldMCBBahtDecember),
         growthBahtTotal = ((currTotalBaht - oldTotalBaht) * 100) / oldTotalBaht,
-        growthUnitJanuary = ((currUnitJanuary - oldUnitJanuary) * 100) / oldUnitJanuary,
-        growthUnitFebruary = ((currUnitFebruary - oldUnitFebruary) * 100) / oldUnitFebruary,
-        growthUnitMarch = ((currUnitMarch - oldUnitMarch) * 100) / oldUnitMarch,
-        growthUnitApril = ((currUnitApril - oldUnitApril) * 100) / oldUnitApril,
-        growthUnitMay = ((currUnitMay - oldUnitMay) * 100) / oldUnitMay,
-        growthUnitJune = ((currUnitJune - oldUnitJune) * 100) / oldUnitJune,
-        growthUnitJuly = ((currUnitJuly - oldUnitJuly) * 100) / oldUnitJuly,
-        growthUnitAugust = ((currUnitAugust - oldUnitAugust) * 100) / oldUnitAugust,
-        growthUnitSeptember = ((currUnitSeptember - oldUnitSeptember) * 100) / oldUnitSeptember,
-        growthUnitOctober = ((currUnitOctober - oldUnitOctober) * 100) / oldUnitOctober,
-        growthUnitNovember = ((currUnitNovember - oldUnitNovember) * 100) / oldUnitNovember,
-        growthUnitDecember = ((currUnitDecember - oldUnitDecember) * 100) / oldUnitDecember,
+        achieveUnitJanuary = (((currAMBUnitJanuary + currMCBUnitJanuary) * 100) / (accounting.unformat(targetAMB.Unit01) + accounting.unformat(targetMCB.Unit01))),
+        achieveUnitFebruary = (((currAMBUnitFebruary + currMCBUnitFebruary) * 100) / (accounting.unformat(targetAMB.Unit02) + accounting.unformat(targetMCB.Unit02))),
+        achieveUnitMarch = (((currAMBUnitMarch + currMCBUnitMarch) * 100) / (accounting.unformat(targetAMB.Unit03) + accounting.unformat(targetMCB.Unit03))),
+        achieveUnitApril = (((currAMBUnitApril + currMCBUnitApril) * 100) / (accounting.unformat(targetAMB.Unit04) + accounting.unformat(targetMCB.Unit04))),
+        achieveUnitMay = (((currAMBUnitMay + currMCBUnitMay) * 100) / (accounting.unformat(targetAMB.Unit05) + accounting.unformat(targetMCB.Unit05))),
+        achieveUnitJune = (((currAMBUnitJune + currMCBUnitJune) * 100) / (accounting.unformat(targetAMB.Unit06) + accounting.unformat(targetMCB.Unit06))),
+        achieveUnitJuly = (((currAMBUnitJuly + currMCBUnitJuly) * 100) / (accounting.unformat(targetAMB.Unit07) + accounting.unformat(targetMCB.Unit07))),
+        achieveUnitAugust = (((currAMBUnitAugust + currMCBUnitAugust) * 100) / (accounting.unformat(targetAMB.Unit08) + accounting.unformat(targetMCB.Unit08))),
+        achieveUnitSeptember = (((currAMBUnitSeptember + currMCBUnitSeptember) * 100) / (accounting.unformat(targetAMB.Unit09) + accounting.unformat(targetMCB.Unit09))),
+        achieveUnitOctober = (((currAMBUnitOctober + currMCBUnitOctober) * 100) / (accounting.unformat(targetAMB.Unit10) + accounting.unformat(targetMCB.Unit10))),
+        achieveUnitNovember = (((currAMBUnitNovember + currMCBUnitNovember) * 100) / (accounting.unformat(targetAMB.Unit11) + accounting.unformat(targetMCB.Unit11))),
+        achieveUnitDecember = (((currAMBUnitDecember + currMCBUnitDecember) * 100) / (accounting.unformat(targetAMB.Unit12) + accounting.unformat(targetMCB.Unit12))),
+        achieveUnitTotal = (currTotalUnit * 100) / totalUnitTarget,
+        growthUnitJanuary = (((currAMBUnitJanuary + currMCBUnitJanuary) - (oldAMBUnitJanuary + oldMCBUnitJanuary)) * 100) / (oldAMBUnitJanuary + oldMCBUnitJanuary),
+        growthUnitFebruary = (((currAMBUnitFebruary + currMCBUnitFebruary) - (oldAMBUnitFebruary + oldMCBUnitFebruary)) * 100) / (oldAMBUnitFebruary + oldMCBUnitFebruary),
+        growthUnitMarch = (((currAMBUnitMarch + currMCBUnitMarch) - (oldAMBUnitMarch + oldMCBUnitMarch)) * 100) / (oldAMBUnitMarch + oldMCBUnitMarch),
+        growthUnitApril = (((currAMBUnitApril + currMCBUnitApril) - (oldAMBUnitApril + oldMCBUnitApril)) * 100) / (oldAMBUnitApril + oldMCBUnitApril),
+        growthUnitMay = (((currAMBUnitMay + currMCBUnitMay) - (oldAMBUnitMay + oldMCBUnitMay)) * 100) / (oldAMBUnitMay + oldMCBUnitMay),
+        growthUnitJune = (((currAMBUnitJune + currMCBUnitJune) - (oldAMBUnitJune + oldMCBUnitJune)) * 100) / (oldAMBUnitJune + oldMCBUnitJune),
+        growthUnitJuly = (((currAMBUnitJuly + currMCBUnitJuly) - (oldAMBUnitJuly + oldMCBUnitJuly)) * 100) / (oldAMBUnitJuly + oldMCBUnitJuly),
+        growthUnitAugust = (((currAMBUnitAugust + currMCBUnitAugust) - (oldAMBUnitAugust + oldMCBUnitAugust)) * 100) / (oldAMBUnitAugust + oldMCBUnitAugust),
+        growthUnitSeptember = (((currAMBUnitSeptember + currMCBUnitSeptember) - (oldAMBUnitSeptember + oldMCBUnitSeptember)) * 100) / (oldAMBUnitJanuary + oldMCBUnitSeptember),
+        growthUnitOctober = (((currAMBUnitOctober + currMCBUnitOctober) - (oldAMBUnitOctober + oldMCBUnitOctober)) * 100) / (oldAMBUnitOctober + oldMCBUnitOctober),
+        growthUnitNovember = (((currAMBUnitNovember + currMCBUnitNovember) - (oldAMBUnitNovember + oldMCBUnitNovember)) * 100) / (oldAMBUnitNovember + oldMCBUnitNovember),
+        growthUnitDecember = (((currAMBUnitDecember + currMCBUnitDecember) - (oldAMBUnitDecember + oldMCBUnitDecember)) * 100) / (oldAMBUnitDecember + oldMCBUnitDecember),
         growthUnitTotal = ((currTotalUnit - oldTotalUnit) * 100) / oldTotalUnit,
-        growthBahtQ1 = ((currBahtQ1 - oldBahtQ1) * 100) / oldBahtQ1,
-        growthUnitQ1 = ((currUnitQ1 - oldUnitQ1) * 100) / oldUnitQ1,
-        growthBahtQ2 = ((currBahtQ1 - oldBahtQ2) * 100) / oldBahtQ2,
-        growthUnitQ2 = ((currUnitQ2 - oldUnitQ2) * 100) / oldUnitQ2,
-        growthBahtQ3 = ((currBahtQ1 - oldBahtQ3) * 100) / oldBahtQ3,
-        growthUnitQ3 = ((currUnitQ3 - oldUnitQ3) * 100) / oldUnitQ3,
-        growthBahtQ4 = ((currBahtQ1 - oldBahtQ4) * 100) / oldBahtQ4,
-        growthUnitQ4 = ((currUnitQ4 - oldUnitQ4) * 100) / oldUnitQ4;
+        growthBahtQ1 = (((currAMBBahtQ1 + currMCBBahtQ1) - (oldAMBBahtQ1 + oldMCBBahtQ1)) * 100) / (oldAMBBahtQ1 + oldMCBBahtQ1),
+        growthUnitQ1 = (((currAMBUnitQ1 + currMCBUnitQ1) - (oldAMBUnitQ1 + oldMCBUnitQ1)) * 100) / (oldAMBUnitQ1 + oldMCBUnitQ1),
+        growthBahtQ2 = (((currAMBBahtQ2 + currMCBBahtQ2) - (oldAMBBahtQ2 + oldMCBBahtQ2)) * 100) / (oldAMBBahtQ2 + oldMCBBahtQ2),
+        growthUnitQ2 = (((currAMBUnitQ2 + currMCBUnitQ2) - (oldAMBUnitQ2 + oldMCBUnitQ2)) * 100) / (oldAMBUnitQ2 + oldMCBUnitQ2),
+        growthBahtQ3 = (((currAMBBahtQ3 + currMCBBahtQ3) - (oldAMBBahtQ3 + oldMCBBahtQ3)) * 100) / (oldAMBBahtQ3 + oldMCBBahtQ3),
+        growthUnitQ3 = (((currAMBUnitQ3 + currMCBUnitQ3) - (oldAMBUnitQ3 + oldMCBUnitQ3)) * 100) / (oldAMBUnitQ3 + oldMCBUnitQ3),
+        growthBahtQ4 = (((currAMBBahtQ4 + currMCBBahtQ4) - (oldAMBBahtQ4 + oldMCBBahtQ4)) * 100) / (oldAMBBahtQ4 + oldMCBBahtQ4),
+        growthUnitQ4 = (((currAMBUnitQ4 + currMCBUnitQ4) - (oldAMBUnitQ4 + oldMCBUnitQ4)) * 100) / (oldAMBUnitQ4 + oldMCBUnitQ4);
 
     var percentBaht = (currTotalBaht / totalBahtTarget) * 100;
     var percentUnit = (currTotalUnit / totalUnitTarget) * 100;
@@ -2627,9 +2621,9 @@ function unitGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
                 month: 4,
                 value: accounting.formatNumber(targetAMB4 + targetMCB4)
             }, {
-                y: targetAMB5 + targetMCB4,
+                y: targetAMB5 + targetMCB5,
                 month: 5,
-                value: accounting.formatNumber(targetAMB5 + targetMCB4)
+                value: accounting.formatNumber(targetAMB5 + targetMCB5)
             }, {
                 y: targetAMB6 + targetMCB6,
                 month: 6,
@@ -2945,9 +2939,9 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
                 month: 4,
                 value: accounting.formatMoney(targetAMB4 + targetMCB4, "฿")
             }, {
-                y: targetAMB5 + targetMCB4,
+                y: targetAMB5 + targetMCB5,
                 month: 5,
-                value: accounting.formatMoney(targetAMB5 + targetMCB4, "฿")
+                value: accounting.formatMoney(targetAMB5 + targetMCB5, "฿")
             }, {
                 y: targetAMB6 + targetMCB6,
                 month: 6,
