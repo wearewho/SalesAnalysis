@@ -94,6 +94,26 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'mtd', 'as' => 'analysis.mtd
     Route::post('downloadPDF', ['uses' => 'Analysis\MTDController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
 });
 
+Route::group(['middleware' => ['auth'], 'prefix' => 'oem', 'as' => 'analysis.oem.'], function () {
+    Route::get('salessummaryOEM', 'Analysis\OEMController@salessummaryOEM')->name('SalesSummaryOEM');
+    Route::get('salesenquiryOEM', 'Analysis\OEMController@salesenquiryOEM')->name('SalesEnquiryOEM');
+    Route::post('selectOEM', 'Analysis\OEMController@selectOEM')->name('selectOEM');
+    Route::post('selectDataTableOEM', 'Analysis\OEMController@selectDataTableOEM')->name('selectDataTableOEM');
+    Route::post('selectEnquiryDataTableOEM', 'Analysis\OEMController@selectEnquiryDataTableOEM')->name('selectEnquiryDataTableOEM');
+    Route::post('selectEnquiryDataTableModalOEM', 'Analysis\OEMController@selectEnquiryDataTableModalOEM')->name('selectEnquiryDataTableModalOEM');
+    Route::post('downloadPDF', ['uses' => 'Analysis\OEMController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
+});
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'oex', 'as' => 'analysis.oex.'], function () {
+    Route::get('salessummaryOEX', 'Analysis\OEXController@salessummaryOEX')->name('SalesSummaryOEX');
+    Route::get('salesenquiryOEX', 'Analysis\OEXController@salesenquiryOEX')->name('SalesEnquiryOEX');
+    Route::post('selectOEX', 'Analysis\OEXController@selectOEX')->name('selectOEX');
+    Route::post('selectDataTableOEX', 'Analysis\OEXController@selectDataTableOEX')->name('selectDataTableOEX');
+    Route::post('selectEnquiryDataTableOEX', 'Analysis\OEXController@selectEnquiryDataTableOEX')->name('selectEnquiryDataTableOEX');
+    Route::post('selectEnquiryDataTableModalOEX', 'Analysis\OEXController@selectEnquiryDataTableModalOEX')->name('selectEnquiryDataTableModalOEX');
+    Route::post('downloadPDF', ['uses' => 'Analysis\OEXController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
+});
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'ied', 'as' => 'analysis.ied.'], function () {
     Route::get('salessummaryIED', 'Analysis\IEDController@salessummaryIED')->name('SalesSummaryIED');
     Route::get('salesenquiryIED', 'Analysis\IEDController@salesenquiryIED')->name('SalesEnquiryIED');

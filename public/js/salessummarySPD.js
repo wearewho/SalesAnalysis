@@ -476,16 +476,28 @@ function selectDataTable(nameMonth, month, year, type) {
                             Product.DataTable().column(3).search('').draw();
                         }
                     }, {
-                        text: 'AMB',
+                        text: 'NP',
                         className: "btn-xs margin",
                         action: function(e, dt, node, config) {
-                            Product.DataTable().column(3).search('AMB').draw();
+                            Product.DataTable().column(3).search('NP').draw();
                         }
                     }, {
-                        text: 'MCB',
+                        text: 'EB',
                         className: "btn-xs margin",
                         action: function(e, dt, node, config) {
-                            Product.DataTable().column(3).search('MCB').draw();
+                            Product.DataTable().column(3).search('EB').draw();
+                        }
+                    }, {
+                        text: 'IND',
+                        className: "btn-xs margin",
+                        action: function(e, dt, node, config) {
+                            Product.DataTable().column(3).search('IND').draw();
+                        }
+                    }, {
+                        text: 'OTH',
+                        className: "btn-xs margin",
+                        action: function(e, dt, node, config) {
+                            Product.DataTable().column(3).search('OTH').draw();
                         }
                     }],
                     data: Item,
@@ -755,16 +767,28 @@ function selectDataTable(nameMonth, month, year, type) {
                             Customer.DataTable().column(4).search('').draw();
                         }
                     }, {
-                        text: 'AMB',
+                        text: 'NP',
                         className: "btn-xs margin",
                         action: function(e, dt, node, config) {
-                            Customer.DataTable().column(4).search('AMB').draw();
+                            Product.DataTable().column(3).search('NP').draw();
                         }
                     }, {
-                        text: 'MCB',
+                        text: 'EB',
                         className: "btn-xs margin",
                         action: function(e, dt, node, config) {
-                            Customer.DataTable().column(4).search('MCB').draw();
+                            Product.DataTable().column(3).search('EB').draw();
+                        }
+                    }, {
+                        text: 'IND',
+                        className: "btn-xs margin",
+                        action: function(e, dt, node, config) {
+                            Product.DataTable().column(3).search('IND').draw();
+                        }
+                    }, {
+                        text: 'OTH',
+                        className: "btn-xs margin",
+                        action: function(e, dt, node, config) {
+                            Product.DataTable().column(3).search('OTH').draw();
                         }
                     }],
                     data: Cust,

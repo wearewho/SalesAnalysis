@@ -278,7 +278,7 @@ function selectData(year) {
             $(".loading-img").show();
             $(".loading-img2").show();
         },
-        url: '/SalesAnalysis/ied/selectIED',
+        url: '/SalesAnalysis/oem/selectOEM',
         type: "POST",
         data: { "year": year },
         success: function(data, statusText, resObject) {
@@ -330,7 +330,7 @@ function selectData(year) {
 
 function selectDataTable(nameMonth, month, year, type) {
     $.ajax({
-        url: '/SalesAnalysis/ied/selectDataTableIED',
+        url: '/SalesAnalysis/oem/selectDataTableOEM',
         type: "POST",
         data: { "month": month, "year": year, "type": type },
         success: function(data, statusText, resObject) {
@@ -506,14 +506,14 @@ function selectDataTable(nameMonth, month, year, type) {
                         {
                             extend: 'excel',
                             footer: true,
-                            title: "IED Sales Summary by Product : " + nameMonth + " " + year
+                            title: "OEM Sales Summary by Product : " + nameMonth + " " + year
                         }, {
                             extend: 'pdf',
                             footer: true,
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSS" + nameMonth + year,
-                            title: "IED Sales Summary by Product : " + nameMonth + " " + year,
+                            title: "OEM Sales Summary by Product : " + nameMonth + " " + year,
                             exportOptions: {
                                 columns: [0, 1, 2, 4, 5, 6, 7],
                                 search: 'applied',
@@ -562,7 +562,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
-                                                [{ colSpan: 3, text: "IED Sales Summary by Product : " + nameMonth + " " + year, alignment: 'center', bold: true, fontSize: 11 }]
+                                                [{ colSpan: 3, text: "OEM Sales Summary by Product : " + nameMonth + " " + year, alignment: 'center', bold: true, fontSize: 11 }]
                                             ]
 
                                         },
@@ -611,7 +611,7 @@ function selectDataTable(nameMonth, month, year, type) {
                         }, {
                             extend: 'csv',
                             footer: true,
-                            title: "IED Sales Summary by Product : " + nameMonth + " " + year,
+                            title: "OEM Sales Summary by Product : " + nameMonth + " " + year,
                         }
                     ]
                 });
@@ -775,14 +775,14 @@ function selectDataTable(nameMonth, month, year, type) {
                         {
                             extend: 'excel',
                             footer: true,
-                            title: "IED Sales Summary by Customer : " + nameMonth + " " + year,
+                            title: "OEM Sales Summary by Customer : " + nameMonth + " " + year,
                         }, {
                             extend: 'pdf',
                             footer: true,
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSS" + nameMonth + year,
-                            title: "IED Sales Summary by Customer : " + nameMonth + " " + year,
+                            title: "OEM Sales Summary by Customer : " + nameMonth + " " + year,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 5, 6],
                                 search: 'applied',
@@ -831,7 +831,7 @@ function selectDataTable(nameMonth, month, year, type) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
-                                                [{ colSpan: 3, text: "IED Sales Summary by Customer : " + nameMonth + " " + year, alignment: 'center', bold: true, fontSize: 11 }]
+                                                [{ colSpan: 3, text: "OEM Sales Summary by Customer : " + nameMonth + " " + year, alignment: 'center', bold: true, fontSize: 11 }]
                                             ]
 
                                         },
@@ -878,7 +878,7 @@ function selectDataTable(nameMonth, month, year, type) {
                         }, {
                             extend: 'csv',
                             footer: true,
-                            title: "IED Sales Summary by Customer : " + nameMonth + " " + year,
+                            title: "OEM Sales Summary by Customer : " + nameMonth + " " + year,
                         }
                     ]
                 });
@@ -888,11 +888,11 @@ function selectDataTable(nameMonth, month, year, type) {
                 );
 
                 if (type == "M") {
-                    $("#headModal").text("IED Sales Summary: " + nameMonth + " " + year);
+                    $("#headModal").text("OEM Sales Summary: " + nameMonth + " " + year);
                 } else {
-                    $("#headModal").text("IED Sales Summary: " + nameMonth + " of year " + year);
+                    $("#headModal").text("OEM Sales Summary: " + nameMonth + " of year " + year);
                 }
-                $("#rightModal").text("IED");
+                $("#rightModal").text("OEM");
             }
             return false;
 
@@ -1232,50 +1232,6 @@ function calData(year, data) {
 
     });
 
-    $.each(groupedCurrYear.EB, function() {
-        if (this.DocMonth == '1') {
-            currAMBUnitJanuary += parseFloat(this.Quantity);
-            currAMBBahtJanuary += parseFloat(this.Total);
-        } else if (this.DocMonth == '2') {
-            currAMBUnitFebruary += parseFloat(this.Quantity);
-            currAMBBahtFebruary += parseFloat(this.Total);
-        } else if (this.DocMonth == '3') {
-            currAMBUnitMarch += parseFloat(this.Quantity);
-            currAMBBahtMarch += parseFloat(this.Total);
-        } else if (this.DocMonth == '4') {
-            currAMBUnitApril += parseFloat(this.Quantity);
-            currAMBBahtApril += parseFloat(this.Total);
-        } else if (this.DocMonth == '5') {
-            currAMBUnitMay += parseFloat(this.Quantity);
-            currAMBBahtMay += parseFloat(this.Total);
-        } else if (this.DocMonth == '6') {
-            currAMBUnitJune += parseFloat(this.Quantity);
-            currAMBBahtJune += parseFloat(this.Total);
-        } else if (this.DocMonth == '7') {
-            currAMBUnitJuly += parseFloat(this.Quantity);
-            currAMBBahtJuly += parseFloat(this.Total);
-        } else if (this.DocMonth == '8') {
-            currAMBUnitAugust += parseFloat(this.Quantity);
-            currAMBBahtAugust += parseFloat(this.Total);
-        } else if (this.DocMonth == '9') {
-            currAMBUnitSeptember += parseFloat(this.Quantity);
-            currAMBBahtSeptember += parseFloat(this.Total);
-        } else if (this.DocMonth == '10') {
-            currAMBUnitOctober += parseFloat(this.Quantity);
-            currAMBBahtOctober += parseFloat(this.Total);
-        } else if (this.DocMonth == '11') {
-            currAMBUnitNovember += parseFloat(this.Quantity);
-            currAMBBahtNovember += parseFloat(this.Total);
-        } else if (this.DocMonth == '12') {
-            currAMBUnitDecember += parseFloat(this.Quantity);
-            currAMBBahtDecember += parseFloat(this.Total);
-        }
-
-        currAMBTotalBaht += parseFloat(this.Total);
-        currAMBTotalUnit += parseFloat(this.Quantity);
-
-    });
-
     $.each(groupedCurrYear.MCB, function() {
         if (this.DocMonth == '1') {
             currMCBUnitJanuary += parseFloat(this.Quantity);
@@ -1337,23 +1293,6 @@ function calData(year, data) {
 
     });
 
-    $.each(groupedCurrYear.EB, function() {
-        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
-            currAMBUnitQ1 += parseFloat(this.Quantity);
-            currAMBBahtQ1 += parseFloat(this.Total);
-        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
-            currAMBUnitQ2 += parseFloat(this.Quantity);
-            currAMBBahtQ2 += parseFloat(this.Total);
-        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
-            currAMBUnitQ3 += parseFloat(this.Quantity);
-            currAMBBahtQ3 += parseFloat(this.Total);
-        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
-            currAMBUnitQ4 += parseFloat(this.Quantity);
-            currAMBBahtQ4 += parseFloat(this.Total);
-        }
-
-    });
-
     $.each(groupedCurrYear.MCB, function() {
         if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
             currMCBUnitQ1 += parseFloat(this.Quantity);
@@ -1372,50 +1311,6 @@ function calData(year, data) {
     });
 
     $.each(groupedOldYear.AMB, function() {
-        if (this.DocMonth == '1') {
-            oldAMBUnitJanuary += parseFloat(this.Quantity);
-            oldAMBBahtJanuary += parseFloat(this.Total);
-        } else if (this.DocMonth == '2') {
-            oldAMBUnitFebruary += parseFloat(this.Quantity);
-            oldAMBBahtFebruary += parseFloat(this.Total);
-        } else if (this.DocMonth == '3') {
-            oldAMBUnitMarch += parseFloat(this.Quantity);
-            oldAMBBahtMarch += parseFloat(this.Total);
-        } else if (this.DocMonth == '4') {
-            oldAMBUnitApril += parseFloat(this.Quantity);
-            oldAMBBahtApril += parseFloat(this.Total);
-        } else if (this.DocMonth == '5') {
-            oldAMBUnitMay += parseFloat(this.Quantity);
-            oldAMBBahtMay += parseFloat(this.Total);
-        } else if (this.DocMonth == '6') {
-            oldAMBUnitJune += parseFloat(this.Quantity);
-            oldAMBBahtJune += parseFloat(this.Total);
-        } else if (this.DocMonth == '7') {
-            oldAMBUnitJuly += parseFloat(this.Quantity);
-            oldAMBBahtJuly += parseFloat(this.Total);
-        } else if (this.DocMonth == '8') {
-            oldAMBUnitAugust += parseFloat(this.Quantity);
-            oldAMBBahtAugust += parseFloat(this.Total);
-        } else if (this.DocMonth == '9') {
-            oldAMBUnitSeptember += parseFloat(this.Quantity);
-            oldAMBBahtSeptember += parseFloat(this.Total);
-        } else if (this.DocMonth == '10') {
-            oldAMBUnitOctober += parseFloat(this.Quantity);
-            oldAMBBahtOctober += parseFloat(this.Total);
-        } else if (this.DocMonth == '11') {
-            oldAMBUnitNovember += parseFloat(this.Quantity);
-            oldAMBBahtNovember += parseFloat(this.Total);
-        } else if (this.DocMonth == '12') {
-            oldAMBUnitDecember += parseFloat(this.Quantity);
-            oldAMBBahtDecember += parseFloat(this.Total);
-        }
-
-        oldAMBTotalBaht += parseFloat(this.Total);
-        oldAMBTotalUnit += parseFloat(this.Quantity);
-
-    });
-
-    $.each(groupedOldYear.EB, function() {
         if (this.DocMonth == '1') {
             oldAMBUnitJanuary += parseFloat(this.Quantity);
             oldAMBBahtJanuary += parseFloat(this.Total);
@@ -1504,23 +1399,6 @@ function calData(year, data) {
     });
 
     $.each(groupedOldYear.AMB, function() {
-        if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
-            oldAMBUnitQ1 += parseFloat(this.Quantity);
-            oldAMBBahtQ1 += parseFloat(this.Total);
-        } else if (this.DocMonth == '4' || this.DocMonth == '5' || this.DocMonth == '6') {
-            oldAMBUnitQ2 += parseFloat(this.Quantity);
-            oldAMBBahtQ2 += parseFloat(this.Total);
-        } else if (this.DocMonth == '7' || this.DocMonth == '8' || this.DocMonth == '9') {
-            oldAMBUnitQ3 += parseFloat(this.Quantity);
-            oldAMBBahtQ3 += parseFloat(this.Total);
-        } else if (this.DocMonth == '10' || this.DocMonth == '11' || this.DocMonth == '12') {
-            oldAMBUnitQ4 += parseFloat(this.Quantity);
-            oldAMBBahtQ4 += parseFloat(this.Total);
-        }
-
-    });
-
-    $.each(groupedOldYear.EB, function() {
         if (this.DocMonth == '1' || this.DocMonth == '2' || this.DocMonth == '3') {
             oldAMBUnitQ1 += parseFloat(this.Quantity);
             oldAMBBahtQ1 += parseFloat(this.Total);
@@ -2509,7 +2387,7 @@ function unitGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             }
         },
         title: {
-            text: 'IED Sales Summary Report : ' + year + ' (Unit)'
+            text: 'OEM Sales Summary Report : ' + year + ' (Unit)'
         },
         series: [{
             name: 'AMB ' + (year - 1),
@@ -2821,7 +2699,7 @@ function bahtGraph(year, targetAMB1, targetAMB2, targetAMB3, targetAMB4, targetA
             pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name} : <b>{point.value}</b>'
         },
         title: {
-            text: 'IED Sales Summary Report : ' + year + ' (Baht)'
+            text: 'OEM Sales Summary Report : ' + year + ' (Baht)'
         },
         xAxis: {
             categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -3136,7 +3014,7 @@ function unitGraphQ(year, targetAMBQ1, targetAMBQ2, targetAMBQ3, targetAMBQ4, ta
             }
         },
         title: {
-            text: 'IED Sales Summary Report : Quaterly of ' + year + ' (Unit)'
+            text: 'OEM Sales Summary Report : Quaterly of ' + year + ' (Unit)'
         },
         xAxis: {
             categories: ['Q1', 'Q2', 'Q3', 'Q4']
@@ -3294,7 +3172,7 @@ function bahtGraphQ(year, targetAMBQ1, targetAMBQ2, targetAMBQ3, targetAMBQ4, ta
             pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name} : <b>{point.value}</b>'
         },
         title: {
-            text: 'IED Sales Summary Report : Quaterly of ' + year + ' (Baht)'
+            text: 'OEM Sales Summary Report : Quaterly of ' + year + ' (Baht)'
         },
         xAxis: {
             categories: ['Q1', 'Q2', 'Q3', 'Q4']

@@ -53,6 +53,24 @@ return [
 		],
 	],
 
+	'OEM' => [
+		'title' => 'OEM',
+		'created_at' => 'Time',
+		'fields' => [
+			'01' => 'Sales Summary',
+			'02' => 'Sales Enquiry',
+		],
+	],
+
+	'OEX' => [
+		'title' => 'OEM-Export',
+		'created_at' => 'Time',
+		'fields' => [
+			'01' => 'Sales Summary',
+			'02' => 'Sales Enquiry',
+		],
+	],
+
 	'IED' => [
 		'title' => 'IED',
 		'created_at' => 'Time',
