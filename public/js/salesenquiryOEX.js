@@ -86,7 +86,7 @@ $(function() {
 
 function selectDataTable(startYear, endYear, startDate, endDate) {
     $.ajax({
-        url: '/SalesAnalysis/ied/selectEnquiryDataTableIED',
+        url: '/oex/selectEnquiryDataTableOEX',
         type: "POST",
         data: { "startYear": startYear, "endYear": endYear, "startDate": startDate, "endDate": endDate },
         success: function(data, statusText, resObject) {
@@ -282,7 +282,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             extend: 'excel',
                             footer: true,
-                            title: "IED Sales Enquiry by Product: " + startDate + " - " + endDate,
+                            title: "OEM-Export Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                 search: 'applied',
@@ -294,7 +294,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSSITEM" + startDate + " - " + endDate,
-                            title: "IED Sales Enquiry by Product: " + startDate + " - " + endDate,
+                            title: "OEM-Export Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                 search: 'applied',
@@ -343,7 +343,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
-                                                [{ colSpan: 3, text: "IED Sales Enquiry by Product: " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
+                                                [{ colSpan: 3, text: "OEM-Export Sales Enquiry by Product: " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                             ]
 
                                         },
@@ -394,7 +394,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         }, {
                             extend: 'csv',
                             footer: true,
-                            title: "IED Sales Enquiry by Product: " + startDate + " - " + endDate,
+                            title: "OEM-Export Sales Enquiry by Product: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                 search: 'applied',
@@ -586,7 +586,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         {
                             extend: 'excel',
                             footer: true,
-                            title: "IED Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                            title: "OEM-Export Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 4, 5, 6, 7],
                                 search: 'applied',
@@ -598,7 +598,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                             orientation: 'portrait', //landscape
                             pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                             filename: "RSSCustomer" + startDate + " - " + endDate,
-                            title: "IED Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                            title: "OEM-Export Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 4, 5, 6, 7],
                                 search: 'applied',
@@ -647,7 +647,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                                                 [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                     { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                 ],
-                                                [{ colSpan: 3, text: "IED Sales Enquiry by Customer: " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
+                                                [{ colSpan: 3, text: "OEM-Export Sales Enquiry by Customer: " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                             ]
 
                                         },
@@ -696,7 +696,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
                         }, {
                             extend: 'csv',
                             footer: true,
-                            title: "IED Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                            title: "OEM-Export Sales Enquiry by Customer: " + startDate + " - " + endDate,
                             exportOptions: {
                                 columns: [0, 1, 2, 4, 5, 6, 7],
                                 search: 'applied',
@@ -723,7 +723,7 @@ function selectDataTable(startYear, endYear, startDate, endDate) {
 function selectDataTableModal(type, typeItem, data, startDate, endDate, startYear, endYear, desp) {
     var idItem = data;
     $.ajax({
-        url: '/SalesAnalysis/ied/selectEnquiryDataTableModalIED',
+        url: '/oex/selectEnquiryDataTableModalOEX',
         type: "POST",
         data: { "type": type, "data": data, "startDate": startDate, "endDate": endDate, "startYear": startYear, "endYear": endYear },
         success: function(data, statusText, resObject) {
@@ -874,7 +874,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             {
                                 extend: 'excel',
                                 footer: true,
-                                title: "IED Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                                title: "OEM-Export Sales Enquiry by Customer: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -885,8 +885,8 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "IED Sales Enquiry by Customer: " + startDate + " - " + endDate,
-                                title: "IED Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                                filename: "OEM-Export Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                                title: "OEM-Export Sales Enquiry by Customer: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -935,7 +935,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
-                                                    [{ colSpan: 3, text: "IED Sales Enquiry (" + desp + ") by Customer : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
+                                                    [{ colSpan: 3, text: "OEM-Export Sales Enquiry (" + desp + ") by Customer : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -984,7 +984,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             }, {
                                 extend: 'csv',
                                 footer: true,
-                                title: "IED Sales Enquiry by Customer: " + startDate + " - " + endDate,
+                                title: "OEM-Export Sales Enquiry by Customer: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6],
                                     search: 'applied',
@@ -999,7 +999,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                     );
 
 
-                    $("#headCustModal").text("IED Sales Enquiry by Customer :" + startDate + " - " + endDate);
+                    $("#headCustModal").text("OEM-Export Sales Enquiry by Customer :" + startDate + " - " + endDate);
                     $("#rightCustModal").text(idItem + " : " + desp);
 
                 } else if (type == "findItem") {
@@ -1171,7 +1171,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             {
                                 extend: 'excel',
                                 footer: true,
-                                title: "IED Enquiry by Product: " + startDate + " - " + endDate,
+                                title: "OEM-Export Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
@@ -1182,8 +1182,8 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                 footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "IED Enquiry by Product: " + startDate + " - " + endDate,
-                                title: "IED Enquiry by Product: " + startDate + " - " + endDate,
+                                filename: "OEM-Export Enquiry by Product: " + startDate + " - " + endDate,
+                                title: "OEM-Export Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
@@ -1232,7 +1232,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
-                                                    [{ colSpan: 3, text: "IED Sales Enquiry (" + desp + ") by Product : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
+                                                    [{ colSpan: 3, text: "OEM-Export Sales Enquiry (" + desp + ") by Product : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1282,7 +1282,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             }, {
                                 extend: 'csv',
                                 footer: true,
-                                title: "IED Enquiry by Product: " + startDate + " - " + endDate,
+                                title: "OEM-Export Enquiry by Product: " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
@@ -1296,7 +1296,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                         tableProduct.table().container()
                     );
 
-                    $("#headItemModal").text("IED Sales Enquiry by Product :" + startDate + " - " + endDate);
+                    $("#headItemModal").text("OEM-Export Sales Enquiry by Product :" + startDate + " - " + endDate);
                     $("#rightItemModal").text(idItem + " : " + desp);
 
                 } else if (type == "findInItem") {
@@ -1459,14 +1459,14 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             {
                                 extend: 'excel',
                                 footer: true,
-                                title: "IED Sales Enquiry by Invoice : " + startDate + " - " + endDate
+                                title: "OEM-Export Sales Enquiry by Invoice : " + startDate + " - " + endDate
                             }, {
                                 extend: 'pdf',
                                 footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "IED Sales Enquiry by Invoice : " + startDate + " - " + endDate,
-                                title: "IED Sales Enquiry by Invoice : " + startDate + " - " + endDate,
+                                filename: "OEM-Export Sales Enquiry by Invoice : " + startDate + " - " + endDate,
+                                title: "OEM-Export Sales Enquiry by Invoice : " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
                                     search: 'applied',
@@ -1515,7 +1515,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
-                                                    [{ colSpan: 3, text: "IED Sales Enquiry (" + desp + ") by Invoice : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
+                                                    [{ colSpan: 3, text: "OEM-Export Sales Enquiry (" + desp + ") by Invoice : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1567,7 +1567,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             }, {
                                 extend: 'csv',
                                 footer: true,
-                                title: "IED Sales Enquiry by Invoice : " + startDate + " - " + endDate,
+                                title: "OEM-Export Sales Enquiry by Invoice : " + startDate + " - " + endDate,
                             }
                         ]
                     });
@@ -1576,7 +1576,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                         tableProduct.table().container()
                     );
 
-                    $("#headInvoiceItemModal").text("IED Sales Enquiry by Invoice :" + startDate + " - " + endDate);
+                    $("#headInvoiceItemModal").text("OEM-Export Sales Enquiry by Invoice :" + startDate + " - " + endDate);
                     $("#rightInvoiceItemModal").text(idItem + " : " + desp + " (" + typeItem + ")");
 
                 } else if (type == "findInCust") {
@@ -1765,14 +1765,14 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             {
                                 extend: 'excel',
                                 footer: true,
-                                title: "IED Enquiry by Invoice : " + startDate + " - " + endDate
+                                title: "OEM-Export Enquiry by Invoice : " + startDate + " - " + endDate
                             }, {
                                 extend: 'pdf',
                                 footer: true,
                                 orientation: 'portrait', //landscape
                                 pageSize: 'A4', //A3 , A5 , A6 , legal , letter
-                                filename: "IED Enquiry by Invoice : " + startDate + " - " + endDate,
-                                title: "IED Enquiry by Invoice : " + startDate + " - " + endDate,
+                                filename: "OEM-Export Enquiry by Invoice : " + startDate + " - " + endDate,
+                                title: "OEM-Export Enquiry by Invoice : " + startDate + " - " + endDate,
                                 exportOptions: {
                                     columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
                                     search: 'applied',
@@ -1821,7 +1821,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                                                     [{}, { text: 'Yuasa Battery (Thailand) Public Company Limited', alignment: 'left', bold: true, fontSize: 11 },
                                                         { text: userName + " - " + userRoles, alignment: 'right', bold: true, fontSize: 11 }
                                                     ],
-                                                    [{ colSpan: 3, text: "IED Sales Enquiry (" + desp + ") by Invoice : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
+                                                    [{ colSpan: 3, text: "OEM-Export Sales Enquiry (" + desp + ") by Invoice : " + startDate + " - " + endDate, alignment: 'center', bold: true, fontSize: 11 }],
                                                 ]
 
                                             },
@@ -1871,7 +1871,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                             }, {
                                 extend: 'csv',
                                 footer: true,
-                                title: "IED Enquiry by Invoice : " + startDate + " - " + endDate,
+                                title: "OEM-Export Enquiry by Invoice : " + startDate + " - " + endDate,
                             }
                         ]
                     });
@@ -1880,7 +1880,7 @@ function selectDataTableModal(type, typeItem, data, startDate, endDate, startYea
                         tableProduct.table().container()
                     );
 
-                    $("#headInvoiceCustModal").text("IED Sales Enquiry by Invoice : " + startDate + " - " + endDate);
+                    $("#headInvoiceCustModal").text("OEM-Export Sales Enquiry by Invoice : " + startDate + " - " + endDate);
                     $("#rightInvoiceCustModal").text(idItem + " : " + desp);
 
                 }
