@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Silber\Bouncer\Database\Role;
+use Illuminate\Support\Facades\Gate;
 use File;  
 use DB;
 use Response;
@@ -33,18 +34,29 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    /* public function index()
-    {    
-        $strSQL = "SELECT DocMonth,DocYear,SalesPersonGroup,Sum(Quantity) AS Quantity,Sum(Total) As Total 
-                    FROM YS_2017 Group by DocMonth,DocYear,SalesPersonGroup  ";
 
-        $result = DB::select($strSQL,[]); 
-        return view('home', compact('result'));
-    } */
     public function index()
     {  
+        if(Gate::allows('REM') || Gate::allows('MTD')){
+
+            return $this->ysd();
+        }
+        else if(Gate::allows('IED') || Gate::allows('SPD') || Gate::allows('OEM') || Gate::allows('OEX')){
+            
+            return $this->ybth();
+        }
+    }
+
+    public function ysd()
+    {  
+        $result = session('data');          
+        return view('homeYSD', compact('result'));
+    }
+
+    public function ybth()
+    {  
         $result = session('data');  
-        return view('home', compact('result'));
+        return view('homeYBTH', compact('result'));
     }
 
     /**
@@ -140,16 +152,16 @@ class HomeController extends Controller
         $messageTarget  = "";  
          
         if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){    
-            $strSQL1 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName1." WHERE SalesPersonGroup = 'REM' or  SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";     
-            $strSQL2 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName2." WHERE SalesPersonGroup = 'REM' or  SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
+            $strSQL1 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName1." WHERE SalesPersonGroup IN ('REM', 'MTD') and ItemGroupShort  IN ('AMB', 'MCB') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";     
+            $strSQL2 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName2." WHERE SalesPersonGroup IN ('REM', 'MTD') and ItemGroupShort  IN ('AMB', 'MCB') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
         }
         else if(Schema::hasTable($tableName1) && !Schema::hasTable($tableName2)){
-            $strSQL1 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName1." WHERE SalesPersonGroup = 'REM' or  SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
+            $strSQL1 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName1." WHERE SalesPersonGroup IN ('REM', 'MTD') and ItemGroupShort  IN ('AMB', 'MCB') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
             $strSQL2 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' Group by SalesPersonGroup,DocMonth,DocYear  ";
         }
         else if(!Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){
             $strSQL1 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' Group by SalesPersonGroup,DocMonth,DocYear  ";
-            $strSQL2 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName2." WHERE SalesPersonGroup = 'REM' or  SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
+            $strSQL2 = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName2." WHERE SalesPersonGroup  IN ('REM', 'MTD') and ItemGroupShort  IN ('AMB', 'MCB') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
         }
         else{
             $messageData = "nullData";
@@ -177,10 +189,10 @@ class HomeController extends Controller
             $strSQL4 = "SELECT * FROM X_TargetDetails WHERE TargetID = ".$Target2->TargetID." ";
         }
 
-        $strSQL5 = "Select Top 5 ItemCode,Dscription,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[YS_2017] WHERE SalesPersonGroup = 'REM'  Group by ItemCode,Dscription,ItemGroupShort Order by Total desc";
-        $strSQL6 = "Select Top 5 ItemCode,Dscription,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[YS_2017] WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB') Group by ItemCode,Dscription,ItemGroupShort Order by Total desc";
-        $strSQL7 = "Select Top 5 CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[YS_2017] WHERE SalesPersonGroup = 'REM'  Group by CustCode,CustName Order by Total desc";
-        $strSQL8 = "Select Top 5 CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[YS_2017] WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB') Group by CustCode,CustName Order by Total desc";
+        $strSQL5 = "Select Top 5 ItemCode,Dscription,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'REM'  Group by ItemCode,Dscription,ItemGroupShort Order by Total desc";
+        $strSQL6 = "Select Top 5 ItemCode,Dscription,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB') Group by ItemCode,Dscription,ItemGroupShort Order by Total desc";
+        $strSQL7 = "Select Top 5 CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'REM'  Group by CustCode,CustName Order by Total desc";
+        $strSQL8 = "Select Top 5 CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'MTD' and ItemGroupShort  IN ('AMB', 'MCB') Group by CustCode,CustName Order by Total desc";
             
         $table1 = DB::select($strSQL1,[]);   
         $table2 = DB::select($strSQL2,[]);   
@@ -192,8 +204,86 @@ class HomeController extends Controller
         $table8 = DB::select($strSQL8,[]);  
         return Response::json(array($table1,$table2,$table3,$table4,$table5,$table6,$table7,$table8,$messageData,$messageTarget)); 
         
+    }     
+    
+    public function selectYBTH(Request $request) {   
+
+        $oldYear = $request->year - 1;
+        $tableName1 = "YS_".$request->year."";
+        $tableName2 = "YS_".$oldYear."";        
+        $Target1 = TargetH::where('Year', '=', $request->year)->where('Company', '=', 'YBTH')->where('Market', '=', 'OEM')->first();  
+        $Target2 = TargetH::where('Year', '=', $request->year)->where('Company', '=', 'YBTH')->where('Market', '=', 'SPD')->first();  
+        $Target3 = TargetH::where('Year', '=', $request->year)->where('Company', '=', 'YBTH')->where('Market', '=', 'Export')->first();  
+        $Target4 = TargetH::where('Year', '=', $request->year)->where('Company', '=', 'YBTH')->where('Market', '=', 'OEM-Export')->first();  
+        $messageData = "";
+        $messageTarget  = "";  
+         
+        if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){    
+            $strSQLfirst = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName1." WHERE SalesPersonGroup IN ('OEM', 'SPD','Export', 'OEMExport') and ItemGroupShort  IN ('AMB', 'MCB', 'NP', 'EB', 'OTH', 'IND') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";     
+            $strSQLsecond = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName2." WHERE SalesPersonGroup IN ('OEM', 'SPD','Export', 'OEMExport') and ItemGroupShort  IN ('AMB', 'MCB', 'NP', 'EB', 'OTH', 'IND') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
+        }
+        else if(Schema::hasTable($tableName1) && !Schema::hasTable($tableName2)){
+            $strSQLfirst = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName1." WHERE SalesPersonGroup IN ('OEM', 'SPD','Export', 'OEMExport') and ItemGroupShort  IN ('AMB', 'MCB', 'NP', 'EB', 'OTH', 'IND') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
+            $strSQLsecond = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' Group by SalesPersonGroup,DocMonth,DocYear  ";
+        }
+        else if(!Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){
+            $strSQLfirst = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' Group by SalesPersonGroup,DocMonth,DocYear  ";
+            $strSQLsecond = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName2." WHERE SalesPersonGroup  IN ('OEM', 'SPD','Export', 'OEMExport') and ItemGroupShort  IN ('AMB', 'MCB', 'NP', 'EB', 'OTH', 'IND') Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear ";   
+        }
+        else{
+            $messageData = "nullData";
+            $strSQLfirst = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear  ";
+            $strSQLsecond = "SELECT SalesPersonGroup,ItemGroupShort,DocMonth,DocYear,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST' Group by SalesPersonGroup,ItemGroupShort,DocMonth,DocYear  ";                         
+        }
+        
+        for( $i= 1; $i < 5; $i++ )
+        {
+            if($i==2){
+                if(is_null(${'Target' . $i})){
+                    $messageTarget  = "nullTarget";               
+                    ${'strSQL' . $i} = "SELECT * FROM X_TargetDetails WHERE TargetID = 31 ";
+                }
+                else if(!is_null(${'Target' . $i})){
+                    ${'strSQL' . $i} = "SELECT * FROM X_TargetDetails WHERE TargetID = ".${'Target' . $i}->TargetID." ";
+                }
+            }
+            else{
+                if(is_null(${'Target' . $i})){
+                    $messageTarget  = "nullTarget";                    
+                    ${'strSQL' . $i} = "SELECT * FROM X_TargetDetails WHERE TargetID = 30 ";                    
+                }
+                else if(!is_null(${'Target' . $i})){
+                    ${'strSQL' . $i} = "SELECT * FROM X_TargetDetails WHERE TargetID = ".${'Target' . $i}->TargetID." ";
+                }
+            }
+            
+        }
+
+        $strSQL5 = "Select Top 5 ItemCode,ItemShortName,Dscription,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB') Group by ItemCode,ItemShortName,Dscription,ItemGroupShort Order by Total desc";
+        $strSQL6 = "Select Top 5 ItemCode,ItemShortName,Dscription,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'SPD' and ItemGroupShort  IN ('EB', 'NP', 'IND', 'OTH') Group by ItemCode,ItemShortName,Dscription,ItemGroupShort Order by Total desc";
+        $strSQL7 = "Select Top 5 ItemCode,ItemShortName,Dscription,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'OEM' and ItemGroupShort  IN ('AMB', 'MCB') Group by ItemCode,ItemShortName,Dscription,ItemGroupShort Order by Total desc";
+        $strSQL8 = "Select Top 5 ItemCode,ItemShortName,Dscription,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'OEMExport' and ItemGroupShort  IN ('AMB', 'MCB') Group by ItemCode,ItemShortName,Dscription,ItemGroupShort Order by Total desc";
+        $strSQL9 = "Select Top 5 CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB') Group by CustCode,CustName Order by Total desc";
+        $strSQL10 = "Select Top 5 CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'SPD' and ItemGroupShort  IN ('EB', 'NP', 'IND', 'OTH') Group by CustCode,CustName Order by Total desc";
+        $strSQL11 = "Select Top 5 CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'OEM' and ItemGroupShort  IN ('AMB', 'MCB') Group by CustCode,CustName Order by Total desc";
+        $strSQL12 = "Select Top 5 CustCode,CustName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM [SalesPortal].[dbo].[".$tableName1."] WHERE SalesPersonGroup = 'OEMExport' and ItemGroupShort  IN ('AMB', 'MCB') Group by CustCode,CustName Order by Total desc";
+       
+        $tableSelect1 = DB::select($strSQLfirst,[]);
+        $tableSelect2 = DB::select($strSQLsecond,[]);
+        $table1 = DB::select($strSQL1,[]);   
+        $table2 = DB::select($strSQL2,[]);   
+        $table3 = DB::select($strSQL3,[]);   
+        $table4 = DB::select($strSQL4,[]);  
+        $table5 = DB::select($strSQL5,[]);  
+        $table6 = DB::select($strSQL6,[]);  
+        $table7 = DB::select($strSQL7,[]);  
+        $table8 = DB::select($strSQL8,[]);  
+        $table9 = DB::select($strSQL9,[]);  
+        $table10 = DB::select($strSQL10,[]);   
+        $table11 = DB::select($strSQL11,[]); 
+        $table12 = DB::select($strSQL12,[]); 
+        return Response::json(array($tableSelect1,$tableSelect2,$table1,$table2,$table3,$table4,$table5,$table6,$table7,$table8,$table9,$table10,$table11,$table12,$messageData,$messageTarget)); 
+        
     } 
-      
-      
 
 }

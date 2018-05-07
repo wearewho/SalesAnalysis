@@ -3202,9 +3202,9 @@ function bahtGraph(year, targetREM1, targetREM2, targetREM3, targetREM4, targetR
                 month: 4,
                 value: accounting.formatMoney(targetREM4 + targetMTD4, "฿")
             }, {
-                y: targetREM5 + targetMTD4,
+                y: targetREM5 + targetMTD5,
                 month: 5,
-                value: accounting.formatMoney(targetREM5 + targetMTD4, "฿")
+                value: accounting.formatMoney(targetREM5 + targetMTD5, "฿")
             }, {
                 y: targetREM6 + targetMTD6,
                 month: 6,
@@ -3532,9 +3532,9 @@ function unitGraph(year, targetREM1, targetREM2, targetREM3, targetREM4, targetR
                 month: 4,
                 value: accounting.formatNumber(targetREM4 + targetMTD4, "฿")
             }, {
-                y: targetREM5 + targetMTD4,
+                y: targetREM5 + targetMTD5,
                 month: 5,
-                value: accounting.formatNumber(targetREM5 + targetMTD4, "฿")
+                value: accounting.formatNumber(targetREM5 + targetMTD5, "฿")
             }, {
                 y: targetREM6 + targetMTD6,
                 month: 6,

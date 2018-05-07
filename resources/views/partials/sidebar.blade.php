@@ -17,12 +17,43 @@
         <ul class="sidebar-menu">               
             
             <li class="header"><b>Sales Analysis Portal</b></li>
-            <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
-                <a href="{{ url('/') }}">
-                    <i class="fa fa-dashboard"></i>
-                    <span class="title">@lang('global.app_dashboard')</span>
-                </a>
-            </li>
+
+            @if(Gate::check('REM') && Gate::check('SPD'))
+                <li class="treeview {{ $request->segment(1) == 'home' || $request->segment(1) ==  'ysd' || $request->segment(1) ==  'ybth' ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i>
+                        <span class="title">@lang('global.app_dashboard')</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="{{ $request->segment(1) == 'home' || $request->segment(1) == 'ysd' ? 'active' : '' }}">
+                            <a href="{{ url('ysd') }}">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="title">
+                                @lang('global.app_dashboard') YSD
+                                </span>
+                            </a>
+                        </li>   
+                        <li class="{{ $request->segment(1) == 'ybth' ? 'active' : '' }}">
+                            <a href="{{ url('ybth') }}">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="title">
+                                @lang('global.app_dashboard') YBTH
+                                </span>
+                            </a>
+                        </li>                 
+                    </ul>
+                </li>
+            @else
+                <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
+                    <a href="{{ url('/') }}">
+                        <i class="fa fa-dashboard"></i>
+                        <span class="title">@lang('global.app_dashboard')</span>
+                    </a>
+                </li>
+            @endif      
             
             @can('Sales_Analysis') 
             <li class="treeview {{ $request->segment(1) == 'sa' ? 'active' : '' }}">
@@ -79,7 +110,10 @@
             </li>
             @endcan
 
-            <li class="header"><b>YSD</b></li>
+            @if(Gate::check('REM') || Gate::check('MTD'))
+                <li class="header"><b>YSD</b></li>
+            @endif
+
             @can('REM')
             <li class="treeview {{ $request->segment(1) == 'rem' ? 'active' : '' }}">
                 <a href="#">
@@ -139,8 +173,11 @@
                 </ul>
             </li>
             @endcan            
+
+            @if(Gate::check('IED') || Gate::check('SPD') || Gate::check('OEM') || Gate::check('OEX'))
+                <li class="header"><b>YBTH</b></li>
+            @endif
             
-            <li class="header"><b>YBTH</b></li>
             @can('IED')
             <li class="treeview {{ $request->segment(1) == 'ied' ? 'active' : '' }}">
                 <a href="#">

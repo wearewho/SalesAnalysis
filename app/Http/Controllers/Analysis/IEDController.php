@@ -43,17 +43,17 @@ class IEDController extends Controller
         $messageTarget  = "";  
          
         if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){           
-            $strSQL1 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
-            $strSQL2 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
+            $strSQL1 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
+            $strSQL2 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
                          
         }
         else if(Schema::hasTable($tableName1) && !Schema::hasTable($tableName2)){
-            $strSQL1 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
+            $strSQL1 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
             $strSQL2 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'   ";
         }
         else if(!Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){
             $strSQL1 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
-            $strSQL2 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
+            $strSQL2 = "SELECT ItemGroupShort,DocMonth,DocYear,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
         }
         else{
             $messageData = "nullData";
@@ -64,7 +64,7 @@ class IEDController extends Controller
 
         if(is_null($Target)){
             $messageTarget  = "nullTarget";
-            $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 17 ";
+            $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 30 ";
         }
         else{
             $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = ".$Target->TargetID." ";
@@ -84,8 +84,8 @@ class IEDController extends Controller
             $tableName = "YS_".$request->year."";
 
             if(Schema::hasTable($tableName)){             
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
-                $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";                         
+                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";                         
             }
             else{
                 $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_2017  WHERE DocMonth = '$request->month' AND SalesPersonGroup = 'TEST' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
@@ -101,20 +101,20 @@ class IEDController extends Controller
 
             if(Schema::hasTable($tableName)){  
                 if($request->month == '1'){
-                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (1,2,3) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
-                    $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (1,2,3) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
+                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (1,2,3) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                    $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (1,2,3) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
                 }
                 else if($request->month == '2'){
-                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (4,5,6) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
-                    $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (4,5,6) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
+                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (4,5,6) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                    $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (4,5,6) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
                 }
                 else if($request->month == '3'){
-                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (7,8,9) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
-                    $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (7,8,9) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
+                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (7,8,9) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                    $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (7,8,9) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
                 }
                 else if($request->month == '4'){
-                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (10,11,12) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
-                    $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (10,11,12) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
+                    $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE DocMonth IN (10,11,12) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                    $queryCust = " SELECT CustCode,CustName,MasterDealer,ItemGroupShort,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE DocMonth IN (10,11,12) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,MasterDealer,ItemGroupShort ";  
                 }                      
             }
             else{
@@ -137,8 +137,8 @@ class IEDController extends Controller
 
             if(Schema::hasTable($tableName)){
                             
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
-                $queryCust = " SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName "; 
+                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  ";                      
+                $queryCust = " SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName "; 
                 
             }
             else{
@@ -167,9 +167,9 @@ class IEDController extends Controller
                 DECLARE @first varchar(10) = @firstday + @firstyear;
 
                     Select * From (
-                        SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where DocDate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103)  AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity
+                        SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where DocDate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103)  AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity
                         union all
-                        SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where DocDate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity
+                        SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where DocDate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity
                     ) data                              
                     
                     ";     
@@ -186,9 +186,9 @@ class IEDController extends Controller
                 DECLARE @first varchar(10) = @firstday + @firstyear;
                                        
                     Select * From (
-                        SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName
+                        SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName
                         union all
-                        SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName 
+                        SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName 
                     ) data 
                     
                     ";
@@ -208,7 +208,7 @@ class IEDController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                                                       
-                $queryCust = " SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName "; 
+                $queryCust = " SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName."  WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103)  AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName "; 
                     
                 $Type = 'findCustomer';
                 $Cust = DB::select($queryCust,[]); 
@@ -231,9 +231,9 @@ class IEDController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;
                                            
                         Select * From (
-                            SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName 
+                            SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName 
                             union all
-                            SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName
+                            SELECT CustCode,CustName,ItemGroupShort,ProvinceName,RegionName,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by CustCode,CustName,ItemGroupShort,ProvinceName,RegionName
                         ) data 
                         
                         ";
@@ -250,7 +250,7 @@ class IEDController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                           
-                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  "; 
+                $queryItem = " SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by ItemCode,Dscription,ItemGroupShort,Brand,Commodity  "; 
                     
                 $Type = 'findItem';
                 $Item = DB::select($queryItem,[]); 
@@ -273,9 +273,9 @@ class IEDController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;                   
                                            
                         Select * From (
-                            SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
+                            SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
                             union all
-                            SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
+                            SELECT ItemCode,Dscription,ItemGroupShort,Brand,Commodity,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by ItemCode,Dscription,Brand,Commodity 
                         ) data 
                         
                         ";
@@ -292,7 +292,7 @@ class IEDController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                           
-                $queryItem = " SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,ItemGroupShort,UnitPrice  "; 
+                $queryItem = " SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,ItemGroupShort,UnitPrice  "; 
                     
                 $Type = 'findInItem';
                 $Item = DB::select($queryItem,[]); 
@@ -315,9 +315,9 @@ class IEDController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;                   
                                            
                         Select * From (
-                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,ItemGroupShort,UnitPrice 
+                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,ItemGroupShort,UnitPrice 
                             union all
-                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,ItemGroupShort,UnitPrice
+                            SELECT DocNum,[Document Type] AS DocumentType,DocDate,CustName,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND ItemCode = '$request->data' Group by DocNum,[Document Type],DocDate,CustName,ItemGroupShort,UnitPrice
                         ) data 
                         
                         ";
@@ -334,7 +334,7 @@ class IEDController extends Controller
             
                 $tableName = "YS_".$request->startYear."";
                           
-                $queryCust= " SELECT DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice  "; 
+                $queryCust= " SELECT DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM ".$tableName." WHERE Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice  "; 
                     
                 $Type = 'findInCust';
                 $Cust = DB::select($queryCust,[]); 
@@ -357,9 +357,9 @@ class IEDController extends Controller
                     DECLARE @first varchar(10) = @firstday + @firstyear;                   
                                            
                         Select * From (
-                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice
+                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->startYear." Where Docdate BETWEEN convert(datetime, '$request->startDate', 103) AND convert(datetime, (@lastday + @lastyear), 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice
                             union all
-                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice
+                            SELECT  DocNum,[Document Type] AS DocumentType,DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice,SUM(Quantity) As Quantity,SUM(Total) As Total FROM YS_".$request->endYear." Where Docdate BETWEEN convert(datetime, (@firstday + @firstyear), 103) AND convert(datetime, '$request->endDate', 103) AND SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')  AND CustCode = '$request->data' Group by DocNum,[Document Type],DocDate,ItemCode,Dscription,Commodity,ItemGroupShort,UnitPrice
                         ) data 
                         
                         ";
@@ -420,17 +420,17 @@ class IEDController extends Controller
                 $messageTarget  = "";  
                 
                 if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){             
-                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
                                 
                 }
                 else if(Schema::hasTable($tableName1) && !Schema::hasTable($tableName2)){
-                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
                     $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'   ";
                 }
                 else if(!Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){
                     $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
                 }
                 else{
                     $messageData = "nullData";
@@ -441,7 +441,7 @@ class IEDController extends Controller
 
                 if(is_null($Target)){
                     $messageTarget  = "nullTarget";
-                    $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 17 ";
+                    $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 30 ";
                 }
                 else{
                     $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = ".$Target->TargetID." ";
@@ -496,17 +496,17 @@ class IEDController extends Controller
                 $messageTarget  = "";  
                 
                 if(Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){             
-                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')    ";
                                 
                 }
                 else if(Schema::hasTable($tableName1) && !Schema::hasTable($tableName2)){
-                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
+                    $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName1." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
                     $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'   ";
                 }
                 else if(!Schema::hasTable($tableName1) && Schema::hasTable($tableName2)){
                     $strSQL1 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM YS_2017 WHERE SalesPersonGroup = 'TEST'  ";
-                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'IED' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
+                    $strSQL2 = "SELECT DocMonth,DocYear,ItemGroupShort,CustCode,Quantity,UnitPrice,Total FROM ".$tableName2." WHERE SalesPersonGroup = 'Export' and ItemGroupShort  IN ('AMB', 'MCB', 'EB')   ";
                 }
                 else{
                     $messageData = "nullData";
@@ -517,7 +517,7 @@ class IEDController extends Controller
 
                 if(is_null($Target)){
                     $messageTarget  = "nullTarget";
-                    $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 17 ";
+                    $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 30 ";
                 }
                 else{
                     $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = ".$Target->TargetID." ";

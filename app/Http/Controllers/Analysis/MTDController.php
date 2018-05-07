@@ -64,7 +64,7 @@ class MTDController extends Controller
 
         if(is_null($Target)){
             $messageTarget  = "nullTarget";
-            $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 17 ";
+            $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 30 ";
         }
         else{
             $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = ".$Target->TargetID." ";
@@ -441,7 +441,7 @@ class MTDController extends Controller
 
                 if(is_null($Target)){
                     $messageTarget  = "nullTarget";
-                    $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 17 ";
+                    $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 30 ";
                 }
                 else{
                     $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = ".$Target->TargetID." ";
@@ -517,7 +517,7 @@ class MTDController extends Controller
 
                 if(is_null($Target)){
                     $messageTarget  = "nullTarget";
-                    $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 17 ";
+                    $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = 30 ";
                 }
                 else{
                     $strSQL3 = "SELECT * FROM X_TargetDetails WHERE TargetID = ".$Target->TargetID." ";
