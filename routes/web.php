@@ -23,7 +23,10 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 // Dashboard
 $this->get('/home', 'HomeController@index');
+$this->get('/ysd', 'HomeController@ysd');
+$this->get('/ybth', 'HomeController@ybth');
 $this->post('/selectYSD', 'HomeController@selectYSD')->name('selectYSD');
+$this->post('/selectYBTH', 'HomeController@selectYBTH')->name('selectYBTH');
 $this->get('/profile/{id}', 'HomeController@profile');
 $this->put('/profile/{id} ', 'HomeController@profileUpdate')->name('profile');
 
@@ -133,7 +136,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'spd', 'as' => 'analysis.spd
     Route::post('selectEnquiryDataTableModalSPD', 'Analysis\SPDController@selectEnquiryDataTableModalSPD')->name('selectEnquiryDataTableModalSPD');
     Route::post('downloadPDF', ['uses' => 'Analysis\SPDController@downloadPDF', 'as' => 'salessummary.downloadPDF']); 
 });
-
 
 
     

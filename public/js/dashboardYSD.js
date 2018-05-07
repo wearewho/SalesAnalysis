@@ -120,17 +120,12 @@ function selectData(year) {
                 var base = window.location.origin
                 var route = '/system/targetmaster/create';
                 swal({
-                        title: "Target Year " + year + " not found.",
-                        text: "Please Create Target Master!",
-                        icon: 'info',
-                        buttons: ["Create Target Master", true],
-                        dangerMode: true,
-                    })
-                    .then((willDelete) => {
-                        if (!willDelete) {
-                            window.location = base + route;
-                        }
-                    });
+                    title: "Target Year " + year + " not found.",
+                    text: "Please Create Target Master!",
+                    icon: 'info',
+                    buttons: ["Create Target Master", true],
+                    dangerMode: true,
+                });
                 calData(year, data);
             } else if (data[4] == "nullData" && data[5] == "nullTarget") {
                 var base = window.location.origin
@@ -1801,8 +1796,6 @@ function calData(year, data) {
     $('#ambUnitActualOld12').html(accounting.formatNumber(oldAMBUnitDecember));
     $('#ambUnitActualOldTotal').html(accounting.formatNumber(oldAMBTotalUnit));
 
-
-
     $('#mcbBahtMTD1').html(accounting.formatNumber(currMCBMTDBahtJanuary / 1000, 2));
     $('#mcbBahtMTD2').html(accounting.formatNumber(currMCBMTDBahtFebruary / 1000, 2));
     $('#mcbBahtMTD3').html(accounting.formatNumber(currMCBMTDBahtMarch / 1000, 2));
@@ -2196,18 +2189,18 @@ function calData(year, data) {
     $('#ambBahtGrowth12').html((isNaN(accounting.formatNumber(growthAMBBahtDecember, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtDecember, 2)) + "%");
     $('#ambBahtGrowthTotal').html((isNaN(accounting.formatNumber(growthAMBBahtTotal, 2)) ? accounting.formatNumber(0, 2) : accounting.formatNumber(growthAMBBahtTotal, 2)) + "%");
 
-    $('#UnitTarget1').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt01) + targetMTDAmt01)));
-    $('#UnitTarget2').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt02) + targetMTDAmt02)));
-    $('#UnitTarget3').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt03) + targetMTDAmt03)));
-    $('#UnitTarget4').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt04) + targetMTDAmt04)));
-    $('#UnitTarget5').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt05) + targetMTDAmt05)));
-    $('#UnitTarget6').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt06) + targetMTDAmt06)));
-    $('#UnitTarget7').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt07) + targetMTDAmt07)));
-    $('#UnitTarget8').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt08) + targetMTDAmt08)));
-    $('#UnitTarget9').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt09) + targetMTDAmt09)));
-    $('#UnitTarget10').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt10) + targetMTDAmt10)));
-    $('#UnitTarget11').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt11) + targetMTDAmt11)));
-    $('#UnitTarget12').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Amt12) + targetMTDAmt12)));
+    $('#UnitTarget1').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit01) + targetMTDUnit01)));
+    $('#UnitTarget2').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit02) + targetMTDUnit02)));
+    $('#UnitTarget3').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit03) + targetMTDUnit03)));
+    $('#UnitTarget4').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit04) + targetMTDUnit04)));
+    $('#UnitTarget5').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit05) + targetMTDUnit05)));
+    $('#UnitTarget6').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit06) + targetMTDUnit06)));
+    $('#UnitTarget7').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit07) + targetMTDUnit07)));
+    $('#UnitTarget8').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit08) + targetMTDUnit08)));
+    $('#UnitTarget9').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit09) + targetMTDUnit09)));
+    $('#UnitTarget10').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit10) + targetMTDUnit10)));
+    $('#UnitTarget11').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit11) + targetMTDUnit11)));
+    $('#UnitTarget12').html(accounting.formatNumber((accounting.unformat(targetREMAMB.Unit12) + targetMTDUnit12)));
     $('#UnitTargetTotal').html(accounting.formatNumber(totalUnitTarget));
 
     $('#ambUnitTarget1').html(accounting.formatNumber(targetAMBUnitJanuary));
@@ -3209,9 +3202,9 @@ function bahtGraph(year, targetREM1, targetREM2, targetREM3, targetREM4, targetR
                 month: 4,
                 value: accounting.formatMoney(targetREM4 + targetMTD4, "฿")
             }, {
-                y: targetREM5 + targetMTD4,
+                y: targetREM5 + targetMTD5,
                 month: 5,
-                value: accounting.formatMoney(targetREM5 + targetMTD4, "฿")
+                value: accounting.formatMoney(targetREM5 + targetMTD5, "฿")
             }, {
                 y: targetREM6 + targetMTD6,
                 month: 6,
@@ -3539,9 +3532,9 @@ function unitGraph(year, targetREM1, targetREM2, targetREM3, targetREM4, targetR
                 month: 4,
                 value: accounting.formatNumber(targetREM4 + targetMTD4, "฿")
             }, {
-                y: targetREM5 + targetMTD4,
+                y: targetREM5 + targetMTD5,
                 month: 5,
-                value: accounting.formatNumber(targetREM5 + targetMTD4, "฿")
+                value: accounting.formatNumber(targetREM5 + targetMTD5, "฿")
             }, {
                 y: targetREM6 + targetMTD6,
                 month: 6,

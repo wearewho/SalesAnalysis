@@ -4,27 +4,58 @@
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">    
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="{{ URL::asset('images/profiles/'.$objs->img) }}" class="img-circle" alt="User Image">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+            <img src="{{ URL::asset('images/profiles/'.$objs->img) }}" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+            <p>{{$objs->name}}</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
         </div>
-        <div class="pull-left info">
-          <p>{{$objs->name}}</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
         <ul class="sidebar-menu">               
             
             <li class="header"><b>Sales Analysis Portal</b></li>
-            <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
-                <a href="{{ url('/') }}">
-                    <i class="fa fa-dashboard"></i>
-                    <span class="title">@lang('global.app_dashboard')</span>
-                </a>
-            </li>
+
+            @if(Gate::check('REM') && Gate::check('SPD'))
+                <li class="treeview {{ $request->segment(1) == 'home' || $request->segment(1) ==  'ysd' || $request->segment(1) ==  'ybth' ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i>
+                        <span class="title">@lang('global.app_dashboard')</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="{{ $request->segment(1) == 'home' || $request->segment(1) == 'ysd' ? 'active' : '' }}">
+                            <a href="{{ url('ysd') }}">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="title">
+                                @lang('global.app_dashboard') YSD
+                                </span>
+                            </a>
+                        </li>   
+                        <li class="{{ $request->segment(1) == 'ybth' ? 'active' : '' }}">
+                            <a href="{{ url('ybth') }}">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="title">
+                                @lang('global.app_dashboard') YBTH
+                                </span>
+                            </a>
+                        </li>                 
+                    </ul>
+                </li>
+            @else
+                <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
+                    <a href="{{ url('/') }}">
+                        <i class="fa fa-dashboard"></i>
+                        <span class="title">@lang('global.app_dashboard')</span>
+                    </a>
+                </li>
+            @endif      
             
-            @can('Sales_Analysis')
+            @can('Sales_Analysis') 
             <li class="treeview {{ $request->segment(1) == 'sa' ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-building"></i>
@@ -79,7 +110,10 @@
             </li>
             @endcan
 
-            <li class="header"><b>YSD</b></li>
+            @if(Gate::check('REM') || Gate::check('MTD'))
+                <li class="header"><b>YSD</b></li>
+            @endif
+
             @can('REM')
             <li class="treeview {{ $request->segment(1) == 'rem' ? 'active' : '' }}">
                 <a href="#">
@@ -138,9 +172,12 @@
                     </li>                  
                 </ul>
             </li>
-            @endcan
+            @endcan            
+
+            @if(Gate::check('IED') || Gate::check('SPD') || Gate::check('OEM') || Gate::check('OEX'))
+                <li class="header"><b>YBTH</b></li>
+            @endif
             
-            <li class="header"><b>YBTH</b></li>
             @can('IED')
             <li class="treeview {{ $request->segment(1) == 'ied' ? 'active' : '' }}">
                 <a href="#">
@@ -201,65 +238,65 @@
             </li>
             @endcan
            
-           @can('OEM')
-           <li class="treeview {{ $request->segment(1) == 'oem' ? 'active' : '' }}">
-               <a href="#">
-                   <i class="fa fa-building"></i>
-                   <span class="title">@lang('global.OEM.title')</span>
-                   <span class="pull-right-container">
-                       <i class="fa fa-angle-left pull-right"></i>
-                   </span>
-               </a>
-               <ul class="treeview-menu">
-                   <li class="{{ $request->segment(2) == 'salessummaryOEM' ? 'active active-sub' : '' }}">
-                       <a href="{{ route('analysis.oem.SalesSummaryOEM') }}">
-                           <i class="fa fa-object-group"></i>
-                           <span class="title">
-                           @lang('global.OEM.fields.01')
-                           </span>
-                       </a>
-                   </li>  
-                   <li class="{{ $request->segment(2) == 'salesenquiryOEM' ? 'active active-sub' : '' }}">
-                       <a href="{{ route('analysis.oem.SalesEnquiryOEM') }}">
-                           <i class="fa fa-book"></i>
-                           <span class="title">
-                           @lang('global.OEM.fields.02')
-                           </span>
-                       </a>
-                   </li>                  
-               </ul>
-           </li>
-           @endcan
+            @can('OEM')
+            <li class="treeview {{ $request->segment(1) == 'oem' ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-building"></i>
+                    <span class="title">@lang('global.OEM.title')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ $request->segment(2) == 'salessummaryOEM' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.oem.SalesSummaryOEM') }}">
+                            <i class="fa fa-object-group"></i>
+                            <span class="title">
+                            @lang('global.OEM.fields.01')
+                            </span>
+                        </a>
+                    </li>  
+                    <li class="{{ $request->segment(2) == 'salesenquiryOEM' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.oem.SalesEnquiryOEM') }}">
+                            <i class="fa fa-book"></i>
+                            <span class="title">
+                            @lang('global.OEM.fields.02')
+                            </span>
+                        </a>
+                    </li>                  
+                </ul>
+            </li>
+            @endcan
 
-           @can('OEM-Export')
-           <li class="treeview {{ $request->segment(1) == 'oex' ? 'active' : '' }}">
-               <a href="#">
-                   <i class="fa fa-building"></i>
-                   <span class="title">@lang('global.OEX.title')</span>
-                   <span class="pull-right-container">
-                       <i class="fa fa-angle-left pull-right"></i>
-                   </span>
-               </a>
-               <ul class="treeview-menu">
-                   <li class="{{ $request->segment(2) == 'salessummaryOEX' ? 'active active-sub' : '' }}">
-                       <a href="{{ route('analysis.oex.SalesSummaryOEX') }}">
-                           <i class="fa fa-object-group"></i>
-                           <span class="title">
-                           @lang('global.OEX.fields.01')
-                           </span>
-                       </a>
-                   </li>  
-                   <li class="{{ $request->segment(2) == 'salesenquiryOEX' ? 'active active-sub' : '' }}">
-                       <a href="{{ route('analysis.oex.SalesEnquiryOEX') }}">
-                           <i class="fa fa-book"></i>
-                           <span class="title">
-                           @lang('global.OEX.fields.02')
-                           </span>
-                       </a>
-                   </li>                  
-               </ul>
-           </li>
-           @endcan            
+            @can('OEM-Export')
+            <li class="treeview {{ $request->segment(1) == 'oex' ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-building"></i>
+                    <span class="title">@lang('global.OEX.title')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ $request->segment(2) == 'salessummaryOEX' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.oex.SalesSummaryOEX') }}">
+                            <i class="fa fa-object-group"></i>
+                            <span class="title">
+                            @lang('global.OEX.fields.01')
+                            </span>
+                        </a>
+                    </li>  
+                    <li class="{{ $request->segment(2) == 'salesenquiryOEX' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('analysis.oex.SalesEnquiryOEX') }}">
+                            <i class="fa fa-book"></i>
+                            <span class="title">
+                            @lang('global.OEX.fields.02')
+                            </span>
+                        </a>
+                    </li>                  
+                </ul>
+            </li>
+            @endcan
             
             <li class="header" style="font-color:red;"><b>Management</b></li>  
             @can('Admin_Manage')        
@@ -375,8 +412,8 @@
                 </ul>
             </li>
             @endcan
-                          
-            @can('Log_ Activity')
+             
+            @can('Log_Activity')
             <li class="{{ $request->segment(1) == 'logActivity' ? 'active' : '' }}">
                 <a href="{{ route('logActivity') }}">
                     <i class="fa fa-download"></i>
